@@ -1,0 +1,91 @@
+\documentclass[a4paper,twoside,openright,11pt]{report}
+
+% % Include packages % %
+\usepackage[official]{eurosym}
+\usepackage{xspace}
+% Basic
+\usepackage[english]{babel}		% Document language
+\usepackage[utf8x]{inputenc}	% Character encoding
+%\usepackage{appendix}			% Increases control of appendices
+
+% Standard colors
+\PassOptionsToPackage{dvipsnames,table}{xcolor}
+	\RequirePackage{xcolor} % [dvipsnames]
+
+% Captions
+\usepackage[labelfont=bf]{caption}	% Captions with bold font face
+
+% Figures
+\usepackage{float}				% Improves handling of floating objects
+\usepackage[pdftex]{graphicx}	% Improves handling of graphics
+\usepackage{pdfpages}			% Allows inclusion of entire PDF
+\usepackage{tikz}				% Allows construction of diagrams
+\usepackage{tikzscale}			% Allows tikz figures to be scaled
+\usepackage{subcaption}			% For figures with sub-figures
+\usepackage{afterpage}			
+\usepackage[paper=A4,pagesize]{typearea}
+\usepackage{lscape}
+\usepackage{tabularx}
+\usepackage{epstopdf }
+
+% For custom envrionments
+\usepackage{xparse}
+
+% Tables
+\usepackage{tabularx}			% Table package that allows for full-width colums by using X
+\usepackage{multicol}			% Allows multi-columns in tables
+\usepackage{multirow}			% Allows multi-rows in tables
+\usepackage{array}				% Provides the option of linebreak in tables (manual and automatic)
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% Math
+\usepackage{amsmath}			% Adds functionality to math environments
+\usepackage{amssymb} 			% Adds to more symbols to math environments
+\usepackage{nicefrac}           % Adds possibility to make ½ symbols
+
+% Listings
+\usepackage{listings}			% Allows the use of listings
+
+
+% Misc
+%\usepackage[acronym]{glossaries} % Make it possible to use abbreviations - Abbreviations is added to commands.tex
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}% Checkmark
+\newcommand{\xmark}{\ding{55}}% X mark
+\newcommand{\smark}{\ding{86}}% Star
+
+\usepackage{fancyhdr}
+\usepackage{xspace}				% Allows spaces after commands
+\usepackage[disable]{todonotes}					% Enable todo notes
+%\usepackage[disable]{todonotes}			% Disable todo notes
+\usepackage{booktabs}			% Various optimizations to LaTeX
+\usepackage{lastpage}			% Allows reference to LastPage 
+\usepackage{type1cm}			% Increase flexibility of font sizes
+\usepackage{enumerate}			% Allows one to choose the style of an enumeration
+\usepackage[inline]{enumitem}   % Allow inline lists
+\usepackage[square,numbers]{natbib}
+\bibliographystyle{plainnat}
+
+% Hyperlinks
+\usepackage[hyphens]{url}		% Create URL's with line breaks
+\usepackage{hyperref}			% Allows hyperlinks
+\usepackage{bookmark}
+
+% Clever refs - although not clever enough to be included before hyperref....
+\usepackage[noabbrev,capitalize]{cleveref}     % Adds intelligent references ("Figure F1-2", instead of "F1-2")
+
+% Toolbox - Used to edit existing environments, e.g. quote
+\usepackage{etoolbox}
+
+% Allows for strikeout text
+\usepackage{soul}
+
+% Semantics stuff
+\usepackage{semantic}
+
+% ADD THESE LAST BECAUSE OF PACKAGE DEPENDENCIES!
+\input{preamble/pagelayout}		% Layout definitions
+\input{preamble/commands}		% Custom commands and environments
+\input{preamble/setup}			% Package setup

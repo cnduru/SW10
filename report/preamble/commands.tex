@@ -1,0 +1,197 @@
+% definition of example environment
+%\newcommand\getcurrentref[1]{%
+% \ifnumequal{\value{#1}}{0}
+%  {??}
+%  {\the\value{#1}}%
+%}
+
+%\newcommand\exref[1]{%
+%  Example \hyperref[#1]{\getcurrentref{chapter}.\ref{#1}}%
+%}
+
+%\newcommand\resetexamplecounter{%
+ % \ifnum\value{chapter}>\value{prevchapter}
+ %   \setcounter{examplecounter}{0}
+ % \fi
+%}
+%\newcounter{prevchapter}
+%\newcounter{examplecounter}
+%\newenvironment{example}[1]{
+%    \resetexamplecounter
+%    \setcounter{prevchapter}{\value{chapter}}
+%    \refstepcounter{examplecounter}%
+%  \paragraph{Example \getcurrentref{chapter}.\arabic{examplecounter}: #1}%
+%  \quad
+%}
+\usepackage{ifthen}
+\newtheorem{innerExample}{Example}
+\crefname{innerExample}{Example}{Examples}
+\numberwithin{innerExample}{chapter}
+\usepackage{mdframed}
+\newmdenv[
+  topline=false,
+  bottomline=false,
+  rightline=false,
+  skipabove=\topsep,
+  skipbelow=\topsep,
+  leftmargin=-20pt,
+  rightmargin=-10pt,
+  innertopmargin=0pt,
+  innerbottommargin=0pt
+]{siderules}
+
+\DeclareDocumentEnvironment{example}{O {} m}
+    {
+      \vspace{1em}
+        
+      %\vspace{-2em}
+      \ifthenelse{\equal{#1}{}}{\begin{innerExample}#2}{\begin{innerExample}[#1]#2}
+      \end{innerExample} \mbox{}
+      \vspace{-2em}
+      \begin{siderules}
+    }{\end{siderules}}
+
+% Part descriptions
+% Usage \newpart{part name}{part text}
+\newcommand{\newpart}[2]{
+	\part[#1]{#1\\
+		\begin{minipage}[c]{10cm}
+		\centering
+		\vspace{2cm}
+		\normalsize{\textnormal{
+			\textit{#2}
+		}}
+		\end{minipage}
+	}
+}
+
+\lstset{language=C,
+    basicstyle=\ttfamily,
+    keywordstyle=\bfseries,
+    showstringspaces=false,
+    morekeywords={include, printf, CFP, process, flag, start, counter, protection, verify}
+}
+
+\newcommand{\semsp}{\hspace{20px}}
+\newcommand{\semnl}{\vspace{10px}}
+\newcommand{\jcl}{TinyJCL\xspace}
+% Insert figure
+\newcommand{\insertfigure}[4]{%
+    \begin{figure}[H] %
+        \center %
+        \includegraphics[#1]{figures/#2} %
+        \caption{#3} %
+        \label{#4} %
+        \vspace{-5pt}
+    \end{figure} %
+}
+
+% Insert figure
+\newcommand{\inserttexfigure}[3]{%
+    \begin{figure}[H] %
+        \center %
+        \input{figures/#1} %
+        \caption{#2} %
+        \label{#3} %
+        \vspace{-5pt}
+    \end{figure} %
+}
+
+% Allow line break in texttt
+\newcommand*\justify{%
+  \fontdimen2\font=0.4em% interword space
+  \fontdimen3\font=0.2em% interword stretch
+  \fontdimen4\font=0.1em% interword shrink
+  \fontdimen7\font=0.1em% extra space
+  \hyphenchar\font=`\-% allowing hyphenation
+}
+
+\let\oldtexttt\texttt
+\renewcommand*{\texttt}[1]{\oldtexttt{\justify #1}}
+
+% Name ref to a section including its section numbering
+\newcommand{\namedref}[1]{%
+  \nameref{#1} (\cref{#1})\xspace
+}
+
+% Add Blankpage command
+\newcommand{\Blankpage}{ %
+    \newpage               %
+    \thispagestyle{empty}  %
+    \mbox{}                %
+    \newpage               %
+}
+
+% TODO NOTES COMMANDS
+\newcommand{\namedtodo}[5]
+{
+  \stepcounter{todocounter}
+  \ifthenelse{\equal{#1}{inline}}
+  % INLINE TODO
+  {
+    \todo[color=#4,caption={\textbf{\inserttodocounter #3: } #2},inline]
+    {\textbf{\inserttodocounter #3: }\color{#5}#2}
+  }
+  % NORMAL TODO
+  {
+    \todo[color=#4,caption={\textbf{\inserttodocounter #3: } #2}]
+    {\textbf{\inserttodocounter #3: }\color{#5}#2}
+  }
+}
+% Counter format
+\newcommand{\inserttodocounter}{\#\thetodocounter\;}
+
+% FORMAT FOR TODO:
+% Missing color
+\definecolor{BitterSweet}{rgb}{1.0, 0.44, 0.37}
+% [inline] (optional) besked navn bg-farve font-farve
+\newcommand{\kristian}[2][]{\namedtodo{#1}{#2}{Kristian}{NavyBlue!35}{black}}
+\newcommand{\kri}[1]{\kristian[inline]{#1}}
+\newcommand{\christoffer}[2][]{\namedtodo{#1}{#2}{Christoffer}{LimeGreen}{black}}
+\newcommand{\ch}[1]{\christoffer[inline]{#1}}
+\newcommand{\erik}[2][]{\namedtodo{#1}{#2}{Erik}{Apricot!90}{black}}
+\newcommand{\dennis}[2][]{\namedtodo{#1}{#2}{Dennis}{BitterSweet!90}{black}}
+\newcommand{\den}[1]{\dennis[inline]{#1}}
+\newcommand{\style}[2][]{\namedtodo{#1}{#2}{Style}{GreenYellow}{black}}
+\newcommand{\finished}[2][]{\namedtodo{inline}{#2}{Finished}{GreenYellow}{black}}
+
+%Projct commands
+\newcommand{\projecttitle}{\large{An Overview of Fault Injection Attacks and Countermeasures}}
+\newcommand{\projectsubject}{Java Smart Card Security}
+
+% Project classes
+%\newcommand{\RssFeed}{\lstinline{RssFeed}\xspace}
+
+% Tokenize
+\newcommand{\createtoken}[1]{\framebox{%
+\strut #1}}
+
+\makeatletter
+\def\tokenize#1{%
+\expandafter\tokenize@i#1 \@nil}
+\def\tokenize@i#1 #2\@nil{%
+  \createtoken{#1}
+  \ifx\relax#2\relax%
+  % is empty
+  \else
+  \tokenize@i#2\@nil
+  \fi}
+\makeatother
+
+% Create a itemize-like line of text in a table
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+% Commonly used words/terms
+%\newcommand{\rails}{Ruby on Rails\xspace}
+
+% Abbreviations \newacronym{label}{abbreviation}{full description} % USAGE: \gls{label}
+%\newacronym{voip}{VoIP}{Voice over Internet Protocol}
+%\newacronym{osm}{OSM}{OpenStreetMap}
+%\newacronym{p2p}{P2P}{Peer-to-peer}
+%\newacronym{isp}{ISP}{Internet Service Provider}
+%\newacronym{sip}{SIP}{Session Initiation Protocol}
+%\newacronym{xmpp}{XMPP}{Extensible Messaging and Presence Protocol}
+%\newacronym{xml}{XML}{Extensible Markup Language}
+%\newacronym{iq}{IQ}{Info/Query}
+%\newacronym{gcm}{GCM}{Google Cloud Messaging}
+%\newacronym{rtp}{RTP}{Real-time Transport Protocol}
