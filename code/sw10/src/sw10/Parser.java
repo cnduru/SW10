@@ -9,14 +9,10 @@ package sw10;
  *
  * @author Avalon
  */
-public class Sw10 {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        Parser p = new Parser();
+public class Parser 
+{
+    public Parser()
+    {
+        System.out.println("Wiii I was called!");
     }
-    
 }
