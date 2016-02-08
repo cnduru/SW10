@@ -25,15 +25,16 @@
         .stack 1;
         .locals 2;
 
-        1: LOAD 1
-        3: PUTFIELD 0
-        5: RETURN
+        1: LOAD 0
+        3: LOAD 1
+        5: PUTFIELD 0
+        7: RETURN
     }
 
     .method public test()V
     { 
         .stack 3;
-        .locals 1;
+        .locals 2;
 
         1: PUSH 5
         3: PUSH 2
@@ -47,18 +48,19 @@
        17: ADD
        18: PUTSTATIC 0
        20: GOTO 8 // neq
-       22: NEW 1
-       24: DUP
-       25: STORE 0
-       27: PUSH 16
-       29: INVOKEVIRTUAL 60
-       31: LOAD 0
-       33: INVOKESTATIC 61
-       35: LOAD 0
-       37: GETFIELD 0
-       39: ADD
-       40: POP
-       41: RETURN
+       22: POP
+       23: NEW 1
+       25: DUP
+       26: STORE 1
+       28: PUSH 16
+       30: INVOKEVIRTUAL 60
+       32: LOAD 1
+       34: INVOKESTATIC 61
+       36: LOAD 1
+       38: GETFIELD 0
+       40: ADD
+       41: POP
+       42: RETURN
     }
 
     .method static calc(R)S
@@ -68,8 +70,8 @@
 
         1: NOP
         2: LOAD 0
-        3: PUSH 4
-        5: RETURN
+        4: PUSH 4
+        6: RETURN
     }
 
 }
