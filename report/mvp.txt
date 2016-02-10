@@ -1,7 +1,8 @@
 A solution which can:
 * take a Java Byte Code program's annotated source code and a fault model as input
 	* annotations indicate sensitive code regions which should be protected
-* parse the annotated source code
+* use the tool Sawja to parse, modify and rewrite the annotated Java Byte Code ource code
+        * annotations should be preserved across transformations for use in the model
 * implement 2 different countermeasures (code duplication and another more sophisticated countermeasure), and generate a UPPAAL SMC model
 * recommend one of the two countermeasures for each annotated code section, based on a 
  statistical weighing of the protection provided vs. static size overhead
