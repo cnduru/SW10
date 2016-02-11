@@ -1,0 +1,26 @@
+\chapter{Introduction}
+\section{Fault Scenarios}
+We consider two general categories of faults that can occur to a \jc: \textit{persistent} and \textit{transient} faults. The main difference between these is that the persistent faults will affect the program every run, while the transient faults will only be present for a limited amount of time.
+% % %
+Persistent faults in a piece of hardware, such as the RAM, can occur in several ways. One way is when a \jc is exposed to physical abuse, such as a hammer hitting the card's chip to induce a fault. Since the structure of the chip is permanently altered, the fault is persistent.\\
+
+% % %
+% % % what about other ways?
+
+% % %
+Transient faults can occur when the hardware is exposed to radiation sources, e.g. infrared light, laser, heat, or cosmic radiation from space. Such faults are usually not persistent and do not cause any permanent damage to the hardware. They can cause a temporary bit flip, resulting in a corrupted value, changed control flow or a crash of the hardware.
+% % %
+Nonetheless, both persistent and transient faults can have fatal consequences, if they strike at the right time and the right place, e.g. for an attacker trying to execute a sensitive piece of code. In this scenario they are sensitive to the two variables, \textit{time} and \textit{place}, to different degrees. For example, an attacker who is trying to alter a constant in a program on a chipped access card, is able to work on the card in private surroundings. He can remove the protective layer on the chip and induce a persistent error at the right place at his leisure. He is therefore not affected by the timing of the fault introduced. The fault will still be present when he tries to use it later. On the other hand, an attacker who wants to change transient properties such as program flow, affected by some value which is determined at run-time, is very dependent on both time and precision of his attack. \cref{tab:dependencies} illustrates the dependencies of persistent and transient faults.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline  & Persistent & Transient \\ 
+\hline Timing &  & X \\ 
+\hline Precision & X & X \\ 
+\hline 
+\end{tabular} 
+\caption{Table showing dependencies of induced faults}
+\label{tab:dependencies}
+\end{table}
+
