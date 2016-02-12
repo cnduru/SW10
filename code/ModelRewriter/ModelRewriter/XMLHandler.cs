@@ -9,24 +9,55 @@ namespace ModelRewriter
 {
     class XMLHandler
     {
-        private string _path = "";
+        private XDocument _doc;
 
         public XMLHandler(string path)
         {
-            _path = path;
-            readXML();
+            _doc = XDocument.Load(path);
         }
 
-        private void readXML()
+        public Declarations getDeclarations()
         {
-            XDocument doc = XDocument.Load(_path);
-            foreach (var img in doc.Descendants("template"))
+            // store declarations from XML
+            Declarations decl = new Declarations();
+
+            // this foreach is not really needed but i couldn't find a way to just grab the first element
+            foreach (var dec in _doc.Descendants("declaration"))
             {
-                
-                string src = (string)img.Attribute("name");
-                /*img.SetAttributeValue("src", src + "with-changes");*/
-                int x = 2;
+                decl.addDeclaration((string)dec.Value);
             }
+
+            return decl;
+        }
+
+        public List<Template> getTemplates(string path)
+        {
+            List<Template> templates = new List<Template>();
+            
+
+            foreach (var template in _doc.Descendants("template"))
+            {
+                Template t = new Template();
+
+                // store name object from XML
+                t.name = (string)template.Element("name");
+
+                // store location objects from XML
+                foreach (var locs in template.Descendants("location"))
+                {
+                    Location l = new Location();
+
+                    l.id = (string)locs.Attribute("id");
+                    l.x = (string)locs.Attribute("x");
+                    l.y = (string)locs.Attribute("y");
+
+                    t.locations.Add(l);
+                }
+
+                templates.Add(t);
+            }
+
+            return templates;
         }
     }
 }

@@ -10,7 +10,7 @@ namespace ModelRewriter
     {
         static void Main(string[] args)
         {
-            XMLHandler handler = new XMLHandler("C://Users//Avalon//SW10//code//models//sample.xml");
+            Rewriter rw = new Rewriter("C://Users//Avalon//SW10//code//models//sample.xml");
         }
     }
 }
