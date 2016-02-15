@@ -59,5 +59,18 @@ namespace ModelRewriter
 
             return templates;
         }
+
+        public string getSystem()
+        {
+            string system = "";
+
+            // this foreach is not really needed but i couldn't find a way to just grab the first element
+            foreach (var sys in _doc.Descendants("system"))
+            {
+                system = (string)sys;
+            }
+
+            return system;
+        }
     }
 }

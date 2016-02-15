@@ -23,6 +23,11 @@ namespace ModelRewriter
 
             // read templates from XML file
             _templates = handler.getTemplates(path);
+
+            // add fault process
+            string system = handler.getSystem();
+            string sys1 = system.Insert(system.IndexOf(" here.") + 6, "\nFaultInj = Fault();");
+            string sys2 = sys1.Insert(sys1.IndexOf("system ") + 6, " FaultInj,");
         }
     }
 }
