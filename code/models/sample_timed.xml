@@ -8,9 +8,6 @@ int h[1];
 const int obj0 = 0;
 const int obj1 = 0;
 
-bool runInit = false;
-bool runCalc = false;
-
 int par0 = -1;
 int par1 = -1;
 
@@ -197,7 +194,7 @@ int op2 = -1;</declaration>
 			<target ref="id6"/>
 			<label kind="guard" x="280" y="833">t == 1</label>
 			<label kind="synchronisation" x="280" y="816">ccalc!</label>
-			<label kind="assignment" x="280" y="850">runCalc = true, par0 = op0, t = 0</label>
+			<label kind="assignment" x="280" y="850">par0 = op0, t = 0</label>
 			<nail x="272" y="833"/>
 		</transition>
 		<transition>
@@ -387,10 +384,9 @@ int op1 = -1;</declaration>
 		<transition>
 			<source ref="id29"/>
 			<target ref="id32"/>
-			<label kind="guard" x="-136" y="8">t == 1</label>
-			<label kind="synchronisation" x="-136" y="25">ccalc!</label>
-			<label kind="assignment" x="-323" y="-314">runCalc = false,
-par0 = op1, 
+			<label kind="guard" x="-136" y="17">t == 1</label>
+			<label kind="synchronisation" x="-136" y="0">ccalc!</label>
+			<label kind="assignment" x="-136" y="34">par0 = op1, 
 t = 0</label>
 			<nail x="-153" y="17"/>
 			<nail x="-161" y="25"/>
