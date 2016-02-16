@@ -47,7 +47,8 @@ namespace ModelRewriter
                     new XElement("init", 
                         new XAttribute("ref", "id1")),
                     new XElement("transition",
-                        new XElement("source", new XAttribute("ref", "id1"))
+                        new XElement("source", new XAttribute("ref", "id1")),
+                        new XElement("target", new XAttribute("ref", "id0"))
                         )));
            
 
