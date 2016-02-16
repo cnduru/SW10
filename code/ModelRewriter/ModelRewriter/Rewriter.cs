@@ -20,16 +20,10 @@ namespace ModelRewriter
             // add faultAt
             string declarations = handler.getDeclarations();
             declarations += "int faultAt = 0;\n";
-
-            foreach (var sys in doc.Descendants("declarations"))
-            {
-                sys.SetValue(declarations);
-            }
+            doc.Descendants("declaration").ElementAt(0).SetValue(declarations);
 
             // read templates from XML file
             _templates = handler.getTemplates(path);
-            Template faultTemplate = new Template();
-            faultTemplate.name = "Fault";
             
             // add fault template
             doc.Root.Elements().ElementAt(0).AddAfterSelf(
@@ -48,7 +42,15 @@ namespace ModelRewriter
                         new XAttribute("ref", "id1")),
                     new XElement("transition",
                         new XElement("source", new XAttribute("ref", "id1")),
-                        new XElement("target", new XAttribute("ref", "id0"))
+                        new XElement("target", new XAttribute("ref", "id0")),
+                        new XElement("label", "i:int[0,7]", 
+                            new XAttribute("kind", "select"), 
+                            new XAttribute("x", "-110"),
+                            new XAttribute("y", "-127")),
+                        new XElement("label", "faultAt = i", 
+                            new XAttribute("kind", "assignment"), 
+                            new XAttribute("x", "-110"), 
+                            new XAttribute("y", "-68"))
                         )));
            
 
@@ -56,11 +58,10 @@ namespace ModelRewriter
             string system = (string)handler.getSystem();
             string sys1 = system.Insert(system.IndexOf(" here.") + 6, "\nFaultInj = Fault();");
             string sys2 = sys1.Insert(sys1.IndexOf("system ") + 6, " FaultInj,");
-            
-            foreach (var sys in doc.Descendants("system"))
-            {
-                sys.SetValue(sys2);
-            }
+            doc.Descendants("system").ElementAt(0).SetValue(sys2);
+
+            // save transformed XML model
+            doc.Save("C://Users//Avalon//SW10//code//models//sampleGenerated.xml");
         }
     }
 }

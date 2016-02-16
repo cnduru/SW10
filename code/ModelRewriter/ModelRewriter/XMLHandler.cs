@@ -19,17 +19,7 @@ namespace ModelRewriter
 
         public string getDeclarations()
         {
-            // store declarations from XML
-            //Declarations decl = new Declarations();
-            StringBuilder sb = new StringBuilder();
-
-            // this foreach is not really needed but i couldn't find a way to just grab the first element
-            foreach (var dec in _doc.Descendants("declaration"))
-            {
-                sb.Append((string)dec.Value + "\n");
-            }
-
-            return sb.ToString();
+            return (string)_doc.Descendants("declaration").ElementAt(0);
         }
 
         public List<Template> getTemplates(string path)
