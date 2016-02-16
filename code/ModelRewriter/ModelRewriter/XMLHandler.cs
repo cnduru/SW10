@@ -11,23 +11,25 @@ namespace ModelRewriter
     {
         private XDocument _doc;
 
-        public XMLHandler(string path)
+        public XMLHandler(XDocument doc)
         {
-            _doc = XDocument.Load(path);
+            //_doc = XDocument.Load(path);
+            _doc = doc;
         }
 
-        public Declarations getDeclarations()
+        public string getDeclarations()
         {
             // store declarations from XML
-            Declarations decl = new Declarations();
+            //Declarations decl = new Declarations();
+            StringBuilder sb = new StringBuilder();
 
             // this foreach is not really needed but i couldn't find a way to just grab the first element
             foreach (var dec in _doc.Descendants("declaration"))
             {
-                decl.addDeclaration((string)dec.Value);
+                sb.Append((string)dec.Value + "\n");
             }
 
-            return decl;
+            return sb.ToString();
         }
 
         public List<Template> getTemplates(string path)
@@ -62,7 +64,7 @@ namespace ModelRewriter
 
         public string getSystem()
         {
-            string system = "";
+            string system = null;
 
             // this foreach is not really needed but i couldn't find a way to just grab the first element
             foreach (var sys in _doc.Descendants("system"))
