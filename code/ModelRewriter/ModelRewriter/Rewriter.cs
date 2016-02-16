@@ -28,6 +28,29 @@ namespace ModelRewriter
 
             // read templates from XML file
             _templates = handler.getTemplates(path);
+            Template faultTemplate = new Template();
+            faultTemplate.name = "Fault";
+            
+            // add fault template
+            doc.Root.Elements().ElementAt(0).AddAfterSelf(
+                new XElement("Template",
+                    new XElement("name", "Fault"),
+                    new XElement("location", 
+                        new XAttribute("id", "id0"), 
+                        new XAttribute("x", "-17"), 
+                        new XAttribute("y", "-85")),
+                    new XElement("location", 
+                        new XAttribute("id", "id1"), 
+                        new XAttribute("x", "-144"), 
+                        new XAttribute("y", "-85"),
+                        new XElement("committed")),
+                    new XElement("init", 
+                        new XAttribute("ref", "id1")),
+                    new XElement("transition",
+                        new XElement("source", new XAttribute("ref", "id1")),
+                        new XElement("target", new XAttribute("ref", "id0"))
+                        )));
+           
 
             // add fault process
             string system = (string)handler.getSystem();
