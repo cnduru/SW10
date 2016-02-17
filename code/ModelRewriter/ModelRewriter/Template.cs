@@ -15,9 +15,16 @@ namespace ModelRewriter
         {
             for(int i = 0; i < 15; i++)
             {
-                if ((Convert.ToInt16(l1.pc) ^ Convert.ToInt16(Math.Pow(2, i))) == (Convert.ToInt16(l2.pc)))
+                try
                 {
-                    return true;
+                    if ((Convert.ToInt16(l1.pc) ^ Convert.ToInt16(Math.Pow(2, i))) == (Convert.ToInt16(l2.pc)))
+                    {
+                        return true;
+                    }
+                }catch (Exception ex)
+                {
+                    // to catch "None"s
+                    return false;
                 }
             }
 
