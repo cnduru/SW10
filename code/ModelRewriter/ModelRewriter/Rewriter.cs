@@ -63,6 +63,11 @@ namespace ModelRewriter
             // save transformed XML model
             doc.Save("C://Users//Avalon//SW10//code//models//sampleGenerated.xml");*/
 
+            // read templates from XML file
+            XDocument doc = XDocument.Load(path);
+            XMLHandler handler = new XMLHandler(doc);
+            _templates = handler.getTemplates(path);
+
             // read UPPAAL model
             string text = System.IO.File.ReadAllText(@"C://Users//Avalon//SW10//code//models//sample.xml");
             

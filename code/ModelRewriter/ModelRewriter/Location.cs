@@ -11,5 +11,7 @@ namespace ModelRewriter
         public string id { get; set; }
         public string x { get; set; }
         public string y { get; set; }
+        public string name { get; set; }
+        public string pc { get; set; }
     }
 }

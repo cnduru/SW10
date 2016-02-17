@@ -34,12 +34,24 @@ namespace ModelRewriter
                 // store name object from XML
                 t.name = (string)template.Element("name");
 
-                // store location objects from XML
+                // store information about locations from UPPAAL model in objects from XML
                 foreach (var locs in template.Descendants("location"))
                 {
                     Location l = new Location();
 
                     l.id = (string)locs.Attribute("id");
+                    l.name = (string)locs.Element("name");
+
+                    // translate roman numerals to integers
+                    try
+                    {
+                        l.pc = Convert.ToString(RomanToInt.RomanToNumber(l.name.Substring(0, l.name.IndexOf("_"))));
+                    }catch (Exception ex)
+                    {
+                        // yeah.. this should probably be handled more eloquently..
+                        l.pc = "None";
+                    }
+
                     l.x = (string)locs.Attribute("x");
                     l.y = (string)locs.Attribute("y");
 
