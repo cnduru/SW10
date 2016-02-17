@@ -13,7 +13,7 @@ namespace ModelRewriter
 
         public Rewriter(string path)
         {
-            XDocument doc = XDocument.Load(path);
+           /* XDocument doc = XDocument.Load(path);
 
             XMLHandler handler = new XMLHandler(doc);
 
@@ -61,7 +61,27 @@ namespace ModelRewriter
             doc.Descendants("system").ElementAt(0).SetValue(sys2);
 
             // save transformed XML model
-            doc.Save("C://Users//Avalon//SW10//code//models//sampleGenerated.xml");
+            doc.Save("C://Users//Avalon//SW10//code//models//sampleGenerated.xml");*/
+
+            // read UPPAAL model
+            string text = System.IO.File.ReadAllText(@"C://Users//Avalon//SW10//code//models//sample.xml");
+            
+            // get index of declarations and insert new fault template
+            int declIndex = text.IndexOf("</declaration>");
+            string res = text.Insert(declIndex + 14, "\n" + XMLProvider.getFaultTemplate());
+
+            // insert global variable
+            res = res.Insert(declIndex, "\n" + "int faultAt = 0;\n");
+
+            // add fault process to system
+            res = res.Insert(res.IndexOf("template instantiations here.") + 29, "\nFault = FaultInj();");
+            res = res.Insert(res.IndexOf("composed into a system.") + 31, " Fault,");
+            
+            // write file to disk
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C://Users//Avalon//SW10//code//models//sampleGenerated.xml"))
+            {
+                file.Write(res);
+            }
         }
     }
 }
