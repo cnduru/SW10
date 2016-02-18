@@ -68,23 +68,6 @@ namespace ModelRewriter
             XMLHandler handler = new XMLHandler(doc);
             _templates = handler.getTemplates(path);
 
-            Dictionary<Location, Location> locs = new Dictionary<Location, Location>();
-
-            // calculate which states are reachable by a single bit flip
-            foreach (Template t in _templates)
-            {
-                foreach (Location l in t.locations)
-                {
-                    foreach (Location lNext in t.locations)
-                    {
-                        if ((l.id != lNext.id && t.isReachable(l, lNext)) && !(locs.ContainsKey(l) || locs.ContainsKey(lNext)))
-                        {
-                            locs.Add(l, lNext);
-                        }
-                    }
-                }
-            }
-
             // read UPPAAL model
             string text = System.IO.File.ReadAllText(@"C://Users//Avalon//SW10//code//models//sample.xml");
             

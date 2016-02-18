@@ -10,6 +10,22 @@ namespace ModelRewriter
     {
         public string name { get; set; }
         public List<Location> locations = new List<Location>();
+        public Dictionary<Location, Location> reachableLocs = new Dictionary<Location, Location>();
+
+        /*public void calculateReachableLocations()
+        {
+            // calculate which states are reachable by a single bit flip
+            foreach (Location l in locations)
+            {
+                foreach (Location lNext in locations)
+                {
+                    if ((l.id != lNext.id && isReachable(l, lNext)) && !(reachableLocs.ContainsKey(l) || reachableLocs.ContainsKey(lNext)))
+                    {
+                        reachableLocs.Add(l, lNext);
+                    }
+                }
+            }
+        }*/
 
         public bool isReachable(Location l1, Location l2)
         {
