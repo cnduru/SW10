@@ -95,27 +95,27 @@ namespace ModelRewriter
 
                 foreach (KeyValuePair<Location, Location> loc in t.reachableLocs)
                 {
-                    // if there is not already a transition between the states
-                    foreach (Transition l in t.transitions)
+                    // check whether we care about the state
+                    if (!(loc.Key.pc == "None") || (loc.Value.pc == "None"))
                     {
-                        if(l.source != loc.Key.id && 
-                           l.source != loc.Value.id && 
-                           l.target != loc.Key.id && 
-                           l.target != loc.Value.id)
+                        foreach (Transition l in t.transitions)
                         {
-                            Transition newTransition = new Transition();
+                            if (!(l.source == loc.Key.id) || (l.target == loc.Key.id))
+                            {
+                                Transition newTransition = new Transition();
 
-                            newTransition.source = loc.Key.id;
-                            newTransition.target = loc.Value.id;
+                                newTransition.source = loc.Value.id;
+                                newTransition.target = loc.Key.id;
 
-                            // add the new transition
-                            tlist.Add(newTransition);
+                                // add the new transition
+                                tlist.Add(newTransition);
+                            }
                         }
                     }
-
-                    t.transitions.Concat(tlist);
                 }
-                
+
+                t.transitions.AddRange(tlist);
+                t.transitions = t.transitions.Distinct().ToList();
             }
 
             // 
