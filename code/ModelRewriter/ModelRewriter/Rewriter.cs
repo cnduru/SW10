@@ -83,20 +83,40 @@ namespace ModelRewriter
 
             // update locations in templates with new transitions
             _templates = handler.getTemplates(path);
-            /*
+            
+            // workaround for collection change exception
+            List<Transition> tlist;
+
             // caluclate reachable locations
             foreach (Template t in _templates)
             {
+                tlist = new List<Transition>();
                 t.calculateReachableLocations();
 
-                foreach (KeyValuePair<Location, Location> locPair in t.reachableLocs)
+                foreach (KeyValuePair<Location, Location> loc in t.reachableLocs)
                 {
-                    foreach (KeyValuePair<Location, Location> locPair in t.reachableLocs)
+                    // if there is not already a transition between the states
+                    foreach (Transition l in t.transitions)
                     {
+                        if(l.source != loc.Key.id && 
+                           l.source != loc.Value.id && 
+                           l.target != loc.Key.id && 
+                           l.target != loc.Value.id)
+                        {
+                            Transition newTransition = new Transition();
 
-                    }                                           
+                            newTransition.source = loc.Key.id;
+                            newTransition.target = loc.Value.id;
+
+                            // add the new transition
+                            tlist.Add(newTransition);
+                        }
+                    }
+
+                    t.transitions.Concat(tlist);
                 }
-            }*/
+                
+            }
 
             // 
 
