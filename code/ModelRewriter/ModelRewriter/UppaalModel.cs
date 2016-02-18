@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using System.Runtime.CompilerServices;
 using System.Configuration;
+using System.Collections;
 
 namespace ModelRewriter
 {
@@ -20,17 +21,17 @@ namespace ModelRewriter
 		string queries;
 
 		//Create a minimal UPPAAL model
-		public UppaalModel () : this(XDocument.Parse(header + @"<nta>
+		public UppaalModel() : this(XDocument.Parse(header + @"<nta>
 				<declaration>// Place global declarations here.</declaration>
 				<system>// Place template instantiations here.
 				// List one or more processes to be composed into a system.
 				</system><queries></queries></nta>")) { }
 
 		//Create a UPPAAL model from existing file
-		public UppaalModel (string path) : this(XDocument.Load (path)) { }
+		public UppaalModel(string path) : this(XDocument.Load(path)) { }
 
 		//Create a UPPAAL model from xml XDocument
-		public UppaalModel (XDocument xml)
+		public UppaalModel(XDocument xml)
 		{
 			var nta =  xml.Element ("nta");
 			declaration =  nta.Element ("declaration").Value;
@@ -45,24 +46,31 @@ namespace ModelRewriter
 		public void Save(string path)
 		{
 			//Minimal xml document
-			var xml = XDocument.Parse (header + "<nta></nta>");
+			var xml = XDocument.Parse(header + "<nta></nta>");
 			var nta = xml.Element ("nta"); //nta is the root element
 
-			nta.Add (BuildXElement("declaration", declaration));
-			foreach (var template in templates) {
-				nta.Add (template.getXML());
+			nta.Add(BuildXElement("declaration", declaration));
+			foreach (var template in templates) 
+			{
+				nta.Add(template.getXML());
 			}
 
-			nta.Add (BuildXElement("system", system));
-			nta.Add (BuildXElement("queries", queries));
-			xml.Save (path);
+			nta.Add(BuildXElement("system", system));
+			nta.Add(BuildXElement("queries", queries));
+			xml.Save(path);
 		}
+            
+        //Adds method templates from jbc
+        public void AddTemplate(List<string> method)
+        {
+            templates.Add(new Template(method));
+        }
 
 		//Creates a xml element with a tag and value
 		private XElement BuildXElement(string tag, string value)
 		{
-			var t = new XElement (tag, tag);
-			t.SetValue (value); 
+			var t = new XElement(tag, tag);
+			t.SetValue(value); 
 			return t;
 		}
 	}

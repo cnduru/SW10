@@ -32,10 +32,17 @@ public DubTest ( ) ;
 			parseClass(sample);
 		}
 
-		void parseClass(string jbc){
+        UppaalModel parseClass(string jbc){
 			var lines = jbc.Split('\n');
-			var className = lines[0];
+			var classSig = lines[0];
 			var methods = findMethods(lines.Skip(1));
+            var model = new UppaalModel();
+
+            foreach (var m in methods)
+            {
+                model.AddTemplate(m);
+            }
+            return null;
 		}
 
 		List<List<string>> findMethods(IEnumerable<string> jbc)
@@ -43,8 +50,8 @@ public DubTest ( ) ;
 			var methods = new List<List<string>>();
 			List<string> curMethod = new List<string>();
 
-			var methodStart = new Regex("(^privat)|(^public)");
-			var inst = new Regex("(^[0-9]+\\.)"); 
+			var methodStart = new Regex("^(privat)|(public)");
+			var inst = new Regex("^([0-9]+\\.)"); 
 			foreach(var line in jbc) 
 			{
 				if(methodStart.IsMatch(line)) 

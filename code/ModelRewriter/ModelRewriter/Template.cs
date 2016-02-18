@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
+using System.Diagnostics.Tracing;
+using System.Collections;
+
 
 namespace ModelRewriter
 {
@@ -12,19 +15,34 @@ namespace ModelRewriter
     {
         public string name { get; set; }
         public List<Location> locations = new List<Location>();
+        public Dictionary<Location, Location> reachableLocs = new Dictionary<Location, Location>();
+        public List<Transition> transitions = new List<Transition>();
+
 		XElement xml;
 
-		public Template (XElement xe)
+		public Template(XElement xe)
 		{
 			xml = xe;
 		}
 
+        public Template(List<string> method)
+        {
+            name = FirstNonKeyword(method.First());
+
+            for (int i = 1; i < method.Count ; i++)
+            {
+                locations.Add(new Location(i-1, method[i])); 
+            }
+
+
+
+
+        }
+            
 		public XElement getXML()
 		{
 			return xml;
 		}
-        public Dictionary<Location, Location> reachableLocs = new Dictionary<Location, Location>();
-        public List<Transition> transitions = new List<Transition>();
 
         public void calculateReachableLocations()
         {
@@ -59,6 +77,24 @@ namespace ModelRewriter
             }
 
             return false;
+        }
+
+        string FirstNonKeyword(string sig){
+            List<string> javaKeywords = new List<string>{"abstract", "assert", "boolean", "break", "byte", "case", 
+                "catch", "char", "class", "const", "continue", "default", "do", "double", "else", 
+                "enum", "extends", "final", "finally", "float", "for", "goto", "if", "implements", 
+                "import", "instanceof", "int", "interface", "long", "native", "new", "package", 
+                "private", "protected", "public", "return", "short", "static", "strictfp", "super", 
+                "switch", "synchronized", "this", "throw", "throws", "transient", "try", "void", 
+                "volatile", "while", "false", "null", "true"};
+            foreach (var s in sig.Split(' '))
+            {
+                if (!javaKeywords.Contains(s))
+                {
+                    return s;
+                }
+            }
+            return null;
         }
     }
 }
