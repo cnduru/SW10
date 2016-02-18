@@ -25,34 +25,37 @@ public DubTest ( ) ;
 1.   invokespecial void java.lang.Object.<init> ( )
 4.   return";
 
-		public JParser (string path)
+		public JParser(string path)
 		{
-			var um = new UppaalModel ("/home/kristian/Desktop/new.xml");
+			//var um = new UppaalModel ("/home/kristian/Desktop/new.xml");
 			//um.Save ("new2.xml");
-			parseClass (sample);
+			parseClass(sample);
 		}
 
 		void parseClass(string jbc){
-			var lines = jbc.Split ('\n');
-			var className = lines [0];
-			var methods = findMethods (lines.Skip(1));
+			var lines = jbc.Split('\n');
+			var className = lines[0];
+			var methods = findMethods(lines.Skip(1));
 		}
 
-		List<List<string>> findMethods (IEnumerable<string> jbc)
+		List<List<string>> findMethods(IEnumerable<string> jbc)
 		{
-			var methods = new List<List<string>> ();
+			var methods = new List<List<string>>();
 			List<string> curMethod = new List<string>();
 
-			var methodStart = new Regex ("(^privat)|(^public)");
-			var inst = new Regex ("(^[0-9]+\\.)"); 
-			foreach (var line in jbc) {
-				if (methodStart.IsMatch (line)) {
-					curMethod = new List<string> ();
-					curMethod.Add (line);
-					methods.Add (curMethod);
+			var methodStart = new Regex("(^privat)|(^public)");
+			var inst = new Regex("(^[0-9]+\\.)"); 
+			foreach(var line in jbc) 
+			{
+				if(methodStart.IsMatch(line)) 
+				{
+					curMethod = new List<string>();
+					curMethod.Add(line);
+					methods.Add(curMethod);
 				}
-				else if (inst.IsMatch (line)) {
-					curMethod.Add (line);
+				else if(inst.IsMatch(line)) 
+				{
+					curMethod.Add(line);
 				}
 			}
 			return methods;
