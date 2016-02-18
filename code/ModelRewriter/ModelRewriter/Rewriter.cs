@@ -90,22 +90,38 @@ namespace ModelRewriter
             // caluclate reachable locations
             foreach (Template t in _templates)
             {
+                List<string> ban = new List<string>();
                 tlist = new List<Transition>();
                 t.calculateReachableLocations();
 
-                foreach (KeyValuePair<Location, Location> loc in t.reachableLocs)
+                foreach (Location loc in t.locations)
                 {
+                    
                     // check whether we care about the state
-                    if (!(loc.Key.pc == "None") || (loc.Value.pc == "None"))
+                    if ((loc.pc == "None"))
                     {
-                        foreach (Transition l in t.transitions)
+                        ban.Add(loc.id);
+                    }
+                }
+
+                foreach (Location originalLocation in t.locations)
+                {
+                    foreach (KeyValuePair<Location, Location> loc in t.reachableLocs)
+                    {
+                        if ((!ban.Contains(originalLocation.id) && (!ban.Contains(loc.Value.id)) && (!ban.Contains(loc.Key.id))))
                         {
-                            if (!(l.source == loc.Key.id) || (l.target == loc.Key.id))
+                            if (loc.Key.name == "V_PUTFIELD")
+                            {
+                                int wrw = 2;
+                            }
+
+                            if (Template.isReachable(loc.Value, loc.Key))
                             {
                                 Transition newTransition = new Transition();
 
                                 newTransition.source = loc.Value.id;
                                 newTransition.target = loc.Key.id;
+
 
                                 // add the new transition
                                 tlist.Add(newTransition);
@@ -114,6 +130,7 @@ namespace ModelRewriter
                     }
                 }
 
+                // CONTINUE HERE TOMORROW - I THINK NUMBER OF ELEMENTS ARE CORRECT - 18. But are we avoiding the zeno states?
                 t.transitions.AddRange(tlist);
                 t.transitions = t.transitions.Distinct().ToList();
             }

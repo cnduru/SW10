@@ -41,13 +41,20 @@ namespace ModelRewriter
             }
         }
 
-        public bool isReachable(Location l1, Location l2)
+        public static bool isReachable(Location l1, Location l2)
         {
+            if(l1.id == "id35" && l2.id == "id34")
+            {
+                int zz = 2;
+            }
+
             for(int i = 0; i < 15; i++)
             {
                 try
                 {
-                    if ((Convert.ToInt16(l1.pc) ^ Convert.ToInt16(Math.Pow(2, i))) == (Convert.ToInt16(l2.pc)))
+                    int n1 = Int32.Parse(l1.pc.ToString());
+                    int n2 = Int32.Parse(l2.pc.ToString());
+                    if (((n1) ^ Convert.ToInt32(Math.Pow(2, i))) == n2)
                     {
                         return true;
                     }
