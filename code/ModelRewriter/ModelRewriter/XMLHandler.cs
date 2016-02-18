@@ -58,7 +58,20 @@ namespace ModelRewriter
                     t.locations.Add(l);
                 }
 
-                templates.Add(t);
+                // store information about transitions from UPPAAL model in objects from XML
+                List<Transition> transitions = new List<Transition>();
+
+                foreach (var trans in template.Descendants("transition"))
+                {
+                    Transition srcDstPair = new Transition();
+                    srcDstPair.source = (string)trans.Element("source").Attribute("ref");
+                    srcDstPair.target = (string)trans.Element("target").Attribute("ref");
+                    transitions.Add(srcDstPair);
+                }
+
+                t.transitions = transitions;
+
+                templates.Add(t);            
             }
 
             return templates;

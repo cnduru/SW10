@@ -66,7 +66,6 @@ namespace ModelRewriter
             // read templates from XML file
             XDocument doc = XDocument.Load(path);
             XMLHandler handler = new XMLHandler(doc);
-            _templates = handler.getTemplates(path);
 
             // read UPPAAL model
             string text = System.IO.File.ReadAllText(@"C://Users//Avalon//SW10//code//models//sample.xml");
@@ -81,7 +80,29 @@ namespace ModelRewriter
             // add fault process to system
             res = res.Insert(res.IndexOf("template instantiations here.") + 29, "\nFault = FaultInj();");
             res = res.Insert(res.IndexOf("composed into a system.") + 31, " Fault,");
-            
+
+            // update locations in templates with new transitions
+            _templates = handler.getTemplates(path);
+            /*
+            // caluclate reachable locations
+            foreach (Template t in _templates)
+            {
+                t.calculateReachableLocations();
+
+                foreach (KeyValuePair<Location, Location> locPair in t.reachableLocs)
+                {
+                    foreach (KeyValuePair<Location, Location> locPair in t.reachableLocs)
+                    {
+
+                    }                                           
+                }
+            }*/
+
+            // 
+
+            List<Template> updatedTemplates = new List<Template>();
+
+
             // write file to disk
             using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C://Users//Avalon//SW10//code//models//sampleGenerated.xml"))
             {

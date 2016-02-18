@@ -11,8 +11,9 @@ namespace ModelRewriter
         public string name { get; set; }
         public List<Location> locations = new List<Location>();
         public Dictionary<Location, Location> reachableLocs = new Dictionary<Location, Location>();
+        public List<Transition> transitions = new List<Transition>();
 
-        /*public void calculateReachableLocations()
+        public void calculateReachableLocations()
         {
             // calculate which states are reachable by a single bit flip
             foreach (Location l in locations)
@@ -25,7 +26,7 @@ namespace ModelRewriter
                     }
                 }
             }
-        }*/
+        }
 
         public bool isReachable(Location l1, Location l2)
         {
