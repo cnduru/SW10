@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace ModelRewriter
 {
@@ -10,6 +12,17 @@ namespace ModelRewriter
     {
         public string name { get; set; }
         public List<Location> locations = new List<Location>();
+		XElement xml;
+
+		public Template (XElement xe)
+		{
+			xml = xe;
+		}
+
+		public XElement getXML()
+		{
+			return xml;
+		}
 
         public bool isReachable(Location l1, Location l2)
         {

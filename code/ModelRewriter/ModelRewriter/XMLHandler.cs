@@ -29,7 +29,7 @@ namespace ModelRewriter
 
             foreach (var template in _doc.Descendants("template"))
             {
-                Template t = new Template();
+				Template t = new Template(template);
 
                 // store name object from XML
                 t.name = (string)template.Element("name");
@@ -69,6 +69,7 @@ namespace ModelRewriter
             string system = null;
 
             // this foreach is not really needed but i couldn't find a way to just grab the first element
+			//[0]?
             foreach (var sys in _doc.Descendants("system"))
             {
                 system = (string)sys;
