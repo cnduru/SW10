@@ -20,6 +20,10 @@ namespace ModelRewriter
             get { return inst.pc.ToString(); }
             set { inst.pc = Convert.ToInt32(value); }
         }
+        public Location()
+        {
+
+        }
 
         public Location(int count, string instLine)
         {
@@ -40,7 +44,7 @@ namespace ModelRewriter
             locationElement.SetAttributeValue("y", y);
             XElement nameElement = new XElement("name", name);
             nameElement.SetAttributeValue("x", x);
-            nameElement.SetAttributeValue("y", y + 100);
+            nameElement.SetAttributeValue("y", Convert.ToInt32(y) - 100);
 
             if(urgent)
             {
