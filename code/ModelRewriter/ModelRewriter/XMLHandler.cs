@@ -90,5 +90,13 @@ namespace ModelRewriter
 
             return system;
         }
+
+        //Creates a xml element with an tag and value
+        public XElement BuildXElement(string tag, string value)
+        {
+            var t = new XElement(tag, tag);
+            t.SetValue(value);
+            return t;
+        }
     }
 }

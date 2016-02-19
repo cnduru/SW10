@@ -31,5 +31,24 @@ namespace ModelRewriter
                 .ToString().Replace(" ","").Replace('.','_');
             inst = new Instruction(instLine);
         }
+
+        public XElement getXElement(bool urgent = false)
+        {
+            XElement locationElement = new XElement("location");
+            locationElement.SetAttributeValue("id", id);
+            locationElement.SetAttributeValue("x", x);
+            locationElement.SetAttributeValue("y", y);
+            XElement nameElement = new XElement("name", name);
+            nameElement.SetAttributeValue("x", x);
+            nameElement.SetAttributeValue("y", y + 100);
+
+            if(urgent)
+            {
+                locationElement.Add(new XElement("urgent"));
+                return locationElement;
+            }
+
+            return locationElement;        
+        }
     }
 }
