@@ -19,12 +19,10 @@ namespace ModelRewriter
             "<label kind=\"assignment\" x=\"18\" y=\"0\">up</label></transition>";
         public string source { get; set; }
         public string target { get; set; }
-        private string sel = "";
-        private string gua = "";
-        private List<Nail> nails;
+        private List<Label> labels = new List<Label>();
+        private List<Nail> nails = new List<Nail>();
 
-
-
+       
         public Transition ()
         {
             
@@ -35,5 +33,12 @@ namespace ModelRewriter
             public int x;
             public int y;
         }
+        struct Label
+        {
+            public string kind;
+            public int x;
+            public int y;
+        }
+            
     }
 }
