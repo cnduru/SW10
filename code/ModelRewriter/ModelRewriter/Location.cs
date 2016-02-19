@@ -15,11 +15,8 @@ namespace ModelRewriter
         public string x { get; set; }
         public string y { get; set; }
         public string name { get; set; }
-        public string pc 
-        {
-            get { return inst.pc.ToString(); }
-            set { inst.pc = Convert.ToInt32(value); }
-        }
+        public string pc  { get; set; }
+      
         public Location()
         {
 

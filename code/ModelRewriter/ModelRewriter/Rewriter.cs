@@ -103,8 +103,8 @@ namespace ModelRewriter
                         {
                             Transition newTransition = new Transition();
 
-                            newTransition.source = loc.Value.id;
-                            newTransition.target = loc.Key.id;
+                            newTransition.source = loc.Key.id;
+                            newTransition.target = loc.Value.id;
 
 
                             // add the new transition

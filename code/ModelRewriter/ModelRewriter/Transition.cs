@@ -44,7 +44,6 @@ namespace ModelRewriter
             XElement nailElement = new XElement("nail");
             nailElement.SetAttributeValue("x", n.x);
             nailElement.SetAttributeValue("y", n.y);
-            transitionElement.Add();
             offset++;
 
 
@@ -58,6 +57,7 @@ namespace ModelRewriter
 
             transitionElement.Add(srcElement);
             transitionElement.Add(targetElement);
+            transitionElement.Add(nailElement);
 
             return transitionElement;
         }
