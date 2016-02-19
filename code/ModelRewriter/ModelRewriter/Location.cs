@@ -34,7 +34,7 @@ namespace ModelRewriter
             locationElement.SetAttributeValue("y", y);
             XElement nameElement = new XElement("name", name);
             nameElement.SetAttributeValue("x", x);
-            nameElement.SetAttributeValue("y", y + 100);
+            nameElement.SetAttributeValue("y", Convert.ToInt32(y) - 100);
 
             if(urgent)
             {
