@@ -21,11 +21,9 @@ namespace ModelRewriter
 		string queries;
 
 		//Create a minimal UPPAAL model
-		public UppaalModel() : this(XDocument.Parse(header + @"<nta>
-				<declaration>// Place global declarations here.</declaration>
-				<system>// Place template instantiations here.
-				// List one or more processes to be composed into a system.
-				</system><queries></queries></nta>")) { }
+		public UppaalModel() : this(XDocument.Parse(header + @"<nta>"
+            + "<declaration></declaration><system></system>"
+            + "<queries></queries></nta>")) { }
 
 		//Create a UPPAAL model from existing file
 		public UppaalModel(string path) : this(XDocument.Load(path)) { }
@@ -70,7 +68,7 @@ namespace ModelRewriter
 		private XElement BuildXElement(string tag, string value)
 		{
 			var t = new XElement(tag, tag);
-			t.SetValue(value); 
+            t.SetValue(value);
 			return t;
 		}
 	}
