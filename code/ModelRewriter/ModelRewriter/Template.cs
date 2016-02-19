@@ -28,17 +28,28 @@ namespace ModelRewriter
         public Template(List<string> method)
         {
             name = FirstNonKeyword(method.First());
+            locations = ResolveLocations(method);
+            ResolveCode();
+        }
 
+        private List<Location> ResolveLocations(List<string> method)
+        {
+            var locs = new List<Location>();
             for (int i = 1; i < method.Count ; i++)
             {
-                locations.Add(new Location(i-1, method[i])); 
+                locs.Add(new Location(i-1, method[i])); 
             }
-
-
-
-
+            return locs;
         }
-            
+
+        private void ResolveCode()
+        {
+            foreach (var loc in locations)
+            {
+                ;
+            }
+        }
+                        
 		public XElement getXML()
 		{
 			return xml;
@@ -94,11 +105,11 @@ namespace ModelRewriter
                 "private", "protected", "public", "return", "short", "static", "strictfp", "super", 
                 "switch", "synchronized", "this", "throw", "throws", "transient", "try", "void", 
                 "volatile", "while", "false", "null", "true"};
-            foreach (var s in sig.Split(' '))
+            foreach (var word in sig.Split(' '))
             {
-                if (!javaKeywords.Contains(s))
+                if (!javaKeywords.Contains(word))
                 {
-                    return s;
+                    return word;
                 }
             }
             return null;

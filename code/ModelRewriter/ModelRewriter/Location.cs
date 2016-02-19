@@ -4,27 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Xml.Linq;
 
 namespace ModelRewriter
 {
     class Location
     {
+        public Instruction inst;
         public string id { get; set; }
         public string x { get; set; }
         public string y { get; set; }
         public string name { get; set; }
-        public string pc { get; set; }
+        public string pc 
+        {
+            get { return inst.pc.ToString(); }
+            set { inst.pc = Convert.ToInt32(value); }
+        }
 
         public Location(int count, string instLine)
         {
+            inst = new Instruction(instLine);
             id = "id" + count;
-            pc = new Regex("^[0-9]+").Match(instLine).ToString();
             x = (count * 50).ToString();
             y = "0";
             name = "pc" + new Regex("^[0-9]+\\. +[a-zA-Z]+").Match(instLine)
                 .ToString().Replace(" ","").Replace('.','_');
+            inst = new Instruction(instLine);
         }
     }
-
-
 }

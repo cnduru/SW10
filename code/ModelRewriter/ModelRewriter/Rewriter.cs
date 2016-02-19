@@ -13,7 +13,8 @@ namespace ModelRewriter
 
         public Rewriter(string path)
         {
-           /* XDocument doc = XDocument.Load(path);
+            /*
+            XDocument doc = XDocument.Load(path);
 
             XMLHandler handler = new XMLHandler(doc);
 
