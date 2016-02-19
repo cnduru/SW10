@@ -90,61 +90,69 @@ namespace ModelRewriter
             // caluclate reachable locations
             foreach (Template t in _templates)
             {
-                List<string> ban = new List<string>();
                 tlist = new List<Transition>();
                 t.calculateReachableLocations();
-
-                foreach (Location loc in t.locations)
-                {
-                    
-                    // check whether we care about the state
-                    if ((loc.pc == "None"))
-                    {
-                        ban.Add(loc.id);
-                    }
-                }
+                t.locations.RemoveAll(l => l.pc == "None");
 
                 foreach (Location originalLocation in t.locations)
                 {
                     foreach (KeyValuePair<Location, Location> loc in t.reachableLocs)
                     {
-                        if ((!ban.Contains(originalLocation.id) && (!ban.Contains(loc.Value.id)) && (!ban.Contains(loc.Key.id))))
+                        if (Template.isReachable(loc.Value, loc.Key))
                         {
-                            if (loc.Key.name == "V_PUTFIELD")
-                            {
-                                int wrw = 2;
-                            }
+                            Transition newTransition = new Transition();
 
-                            if (Template.isReachable(loc.Value, loc.Key))
-                            {
-                                Transition newTransition = new Transition();
-
-                                newTransition.source = loc.Value.id;
-                                newTransition.target = loc.Key.id;
+                            newTransition.source = loc.Value.id;
+                            newTransition.target = loc.Key.id;
 
 
-                                // add the new transition
-                                tlist.Add(newTransition);
-                            }
+                            // add the new transition
+                            tlist.Add(newTransition);
                         }
                     }
                 }
 
-                // CONTINUE HERE TOMORROW - I THINK NUMBER OF ELEMENTS ARE CORRECT - 18. But are we avoiding the zeno states?
                 t.transitions.AddRange(tlist);
                 t.transitions = t.transitions.Distinct().ToList();
+
+
             }
-
-            // 
-
-            List<Template> updatedTemplates = new List<Template>();
-
 
             // write file to disk
             using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C://Users//Avalon//SW10//code//models//sampleGenerated.xml"))
             {
                 file.Write(res);
             }
+
+
+            // write templates
+            doc = XDocument.Load(@"C://Users//Avalon//SW10//code//models//sampleGenerated.xml");
+            handler = new XMLHandler(doc);
+
+            // get each template node
+            foreach (var template in doc.Root.Elements("template"))
+            {
+                // debug code
+                if(template.Element("name").Value == "Init")
+                {
+                    /*foreach (Template writeTemplate in _templates.ele)
+                    {*/
+                        //foreach (Transition l in writeTemplate.transitions)
+                        foreach (Transition l in _templates.ElementAt(2).transitions)
+                        {
+                            // generate elements
+                            XElement locationElement = l.getXML();
+
+                            // add elements
+                            template.Element("init").AddAfterSelf(locationElement);
+                        }
+
+                        
+                   /* }*/
+                }
+            }
+
+            doc.Save("C://Users//Avalon//SW10//code//models//sampleGenerated.xml");
         }
     }
 }
