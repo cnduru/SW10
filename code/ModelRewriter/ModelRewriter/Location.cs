@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Xml.Linq;
 
 namespace ModelRewriter
 {
@@ -23,6 +24,25 @@ namespace ModelRewriter
             y = "0";
             name = "pc" + new Regex("^[0-9]+\\. +[a-zA-Z]+").Match(instLine)
                 .ToString().Replace(" ","").Replace('.','_');
+        }
+
+        public XElement getXElement(bool urgent = false)
+        {
+            XElement locationElement = new XElement("location");
+            locationElement.SetAttributeValue("id", id);
+            locationElement.SetAttributeValue("x", x);
+            locationElement.SetAttributeValue("y", y);
+            XElement nameElement = new XElement("name", name);
+            nameElement.SetAttributeValue("x", x);
+            nameElement.SetAttributeValue("y", y + 100);
+
+            if(urgent)
+            {
+                locationElement.Add(new XElement("urgent"));
+                return locationElement;
+            }
+
+            return locationElement;        
         }
     }
 
