@@ -20,6 +20,10 @@ namespace ModelRewriter
             get { return inst.pc.ToString(); }
             set { inst.pc = Convert.ToInt32(value); }
         }
+        public Location()
+        {
+
+        }
 
         public Location(int count, string instLine)
         {

@@ -37,7 +37,7 @@ namespace ModelRewriter
                 // store information about locations from UPPAAL model in objects from XML
                 foreach (var locs in template.Descendants("location"))
                 {
-                    Location l = new Location(0,"");
+                    Location l = new Location();
 
                     l.id = (string)locs.Attribute("id");
                     l.name = (string)locs.Element("name");

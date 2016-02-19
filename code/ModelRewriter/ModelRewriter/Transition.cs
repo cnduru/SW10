@@ -35,11 +35,24 @@ namespace ModelRewriter
             public int y;
         }
 
+        int offset = 0;
+
         public XElement getXML()
         {
             XElement transitionElement = new XElement("transition");
+            Nail n = new Nail() { x = 100, y = 100 + offset };
+            nails.Add(n);
+            XElement nailElement = new XElement("nail");
+            nailElement.SetAttributeValue("x", n.x);
+            nailElement.SetAttributeValue("y", n.y);
+            transitionElement.Add();
+            offset++;
+
+
             XElement srcElement = new XElement("source");
             XElement targetElement = new XElement("target");
+
+
 
             srcElement.SetAttributeValue("ref", source);
             targetElement.SetAttributeValue("ref", target);
@@ -48,5 +61,6 @@ namespace ModelRewriter
             transitionElement.Add(targetElement);
 
             return transitionElement;
+        }
     }
 }
