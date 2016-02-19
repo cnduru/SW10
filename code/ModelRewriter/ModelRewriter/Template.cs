@@ -42,11 +42,18 @@ namespace ModelRewriter
             return locs;
         }
 
+        //Magic happens here!
         private void ResolveCode()
         {
             foreach (var loc in locations)
             {
-                ;
+                switch (loc.inst.instArgs[0])
+                {
+                    case "aload":
+                        
+                    default:
+                        throw new System.NotImplementedException(loc.inst.instArgs[0]);
+                }
             }
         }
                         
