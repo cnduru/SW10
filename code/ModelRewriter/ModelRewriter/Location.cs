@@ -34,7 +34,7 @@ namespace ModelRewriter
                 .ToString().Replace(" ","").Replace('.','_');
         }
 
-        public XElement getXElement(bool urgent = false)
+        public XElement getXML(bool urgent = false)
         {
             XElement locationElement = new XElement("location");
             locationElement.SetAttributeValue("id", id);

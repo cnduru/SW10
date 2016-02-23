@@ -82,6 +82,12 @@ namespace ModelRewriter
             res = res.Insert(res.IndexOf("template instantiations here.") + 29, "\nFault = FaultInj();");
             res = res.Insert(res.IndexOf("composed into a system.") + 31, " Fault,");
 
+            // write file to disk
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter("sampleGenerated.xml"))
+            {
+                file.Write(res);
+            }
+
             // update locations in templates with new transitions
             _templates = handler.getTemplates("lalala");
             
@@ -93,40 +99,31 @@ namespace ModelRewriter
             {
                 tlist = new List<Transition>();
                 t.calculateReachableLocations();
-                //t.locations.RemoveAll(l => l.pc == "None");
 
                 foreach (Location originalLocation in t.locations)
                 {
                     foreach (var loc in originalLocation.reachableLocs)
                     {
-                        tlist.Add(new Transition(originalLocation, loc));
+                        tlist.Add(new Transition(originalLocation, loc));  
                     }
                 }
 
-                t.transitions.AddRange(tlist);
-            }
-
-            // write file to disk
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter("sampleGenerated.xml"))
-            {
-                file.Write(res);
+                t.faultTransitions.AddRange(tlist);
             }
 
 
             // write templates
             doc = XDocument.Load("sampleGenerated.xml");
-            handler = new XMLHandler(doc);
 
             // get each template node
-            foreach (var template in doc.Root.Elements("template"))
+            foreach (XElement template in doc.Root.Elements("template"))
             {
-                // debug code
-                if(template.Element("name").Value == "Init")
+                // avoid the fault injection template
+                if(!(template.Element("name").Value == "FaultInj"))
                 {
-                    /*foreach (Template writeTemplate in _templates.ele)
-                    {*/
-                        //foreach (Transition l in writeTemplate.transitions)
-                    foreach (Transition l in tlist)//_templates.ElementAt(2).transitions)
+                    foreach (Template writeTemplate in _templates)
+                    {
+                        foreach (Transition l in writeTemplate.faultTransitions)//_templates.ElementAt(2).faultTransitions)
                         {
                             // generate elements
                             XElement locationElement = l.getXML();
@@ -134,9 +131,7 @@ namespace ModelRewriter
                             // add elements
                             template.Element("init").AddAfterSelf(locationElement);
                         }
-
-                        
-                   /* }*/
+                    }
                 }
             }
 

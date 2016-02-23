@@ -16,6 +16,7 @@ namespace ModelRewriter
         public string name { get; set; }
         public List<Location> locations = new List<Location>();
         public List<Transition> transitions = new List<Transition>();
+        public List<Transition> faultTransitions = new List<Transition>();
 
 		XElement xml;
 
