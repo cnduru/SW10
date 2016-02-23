@@ -26,7 +26,8 @@ namespace ModelRewriter
         [Obsolete]
         public Transition ()
         {
-            
+            source = new Location();
+            target = new Location();
         }
 
         public Transition (Location from, Location to)
@@ -60,18 +61,24 @@ namespace ModelRewriter
             nailElement.SetAttributeValue("y", n.y);
             offset++;
 
-
             XElement srcElement = new XElement("source");
             XElement targetElement = new XElement("target");
-
-
 
             srcElement.SetAttributeValue("ref", source);
             targetElement.SetAttributeValue("ref", target);
 
             transitionElement.Add(srcElement);
             transitionElement.Add(targetElement);
-            transitionElement.Add(nailElement);
+
+            foreach (XElement label in getLabelsXML())
+            {
+                transitionElement.Add(label);
+            }
+
+            foreach (XElement nail in getNailsXML())
+	        {
+                transitionElement.Add(nail);
+        	}
 
             return transitionElement;
         }
@@ -82,6 +89,36 @@ namespace ModelRewriter
             public int x;
             public int y;
         }
-            
+
+        private List<XElement> getNailsXML()
+        {
+            List<XElement> nailElements = new List<XElement>();
+
+            foreach (var nail in nails)
+            {
+                XElement el = new XElement("nail");
+                el.SetAttributeValue("x", nail.x);
+                el.SetAttributeValue("y", nail.y);
+                nailElements.Add(el);
+            }
+
+            return nailElements;
+        }
+
+        private List<XElement> getLabelsXML()
+        {
+            List<XElement> labelElements = new List<XElement>();
+
+            foreach (var label in labels)
+            {
+                XElement el = new XElement(label.content);
+                el.SetAttributeValue("kind", label.kind);
+                el.SetAttributeValue("x", label.x);
+                el.SetAttributeValue("y", label.y);
+                labelElements.Add(el);
+            }
+
+            return labelElements;
+        }
     }
 }

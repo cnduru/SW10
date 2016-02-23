@@ -123,6 +123,7 @@ namespace ModelRewriter
                 {
                     foreach (Template writeTemplate in _templates)
                     {
+                        writeTemplate.getXML();
                         foreach (Transition l in writeTemplate.faultTransitions)//_templates.ElementAt(2).faultTransitions)
                         {
                             // generate elements
