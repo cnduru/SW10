@@ -30,7 +30,7 @@ namespace ModelRewriter
             foreach (var template in _doc.Descendants("template"))
             {
 				Template t = new Template(template);
-                t.initialLocation.name = template.Element("init").Value;
+                t.initialLocation.id = template.Element("init").Attribute("ref").Value;
 
                 // store name object from XML
                 t.name = (string)template.Element("name");
