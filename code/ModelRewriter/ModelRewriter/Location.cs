@@ -26,12 +26,12 @@ namespace ModelRewriter
         public Location(int count, string instLine)
         {
             inst = new Instruction(instLine);
+
             id = "id" + count;
             x = (count * 50).ToString();
             y = "0";
             name = "pc" + new Regex("^[0-9]+\\. +[a-zA-Z]+").Match(instLine)
                 .ToString().Replace(" ","").Replace('.','_');
-            inst = new Instruction(instLine);
         }
 
         public XElement getXElement(bool urgent = false)
