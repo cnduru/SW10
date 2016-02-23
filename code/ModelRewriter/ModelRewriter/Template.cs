@@ -47,10 +47,10 @@ namespace ModelRewriter
         private void ResolveCode()
         {
             var timeGuard = "t == 1";
-            List<Transition.Label> labels;
             ConstantPool CP = new ConstantPool();
             foreach (var loc in locations)
             {
+                List<Transition.Label> labels;
                 var instArg = loc.inst.instArgs;
                 switch (instArg[0])
                 {
@@ -60,10 +60,11 @@ namespace ModelRewriter
                          * Opstack: .. -> .. , locals[n]
                          */
                         labels = new List<Transition.Label>(){
-                            new Transition.Label { content = timeGuard, kind = "guard" },
                             new Transition.Label { 
-                                content = String.Format("os[osp] = loc{0}, osc++, t = 0", instArg[1])
-                                    , kind = "assignment" }
+                                content = timeGuard, kind = "guard" },
+                            new Transition.Label { 
+                                content = String.Format("os[osp] = loc{0}, osc++, t = 0", instArg[1]), 
+                                kind = "assignment" }
                         };
                         transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 1),labels)); //TODO is +1 allways true?
                         break;
@@ -74,24 +75,27 @@ namespace ModelRewriter
                          * Opstack: .. , ref -> .. , lenght
                          */
                         labels = new List<Transition.Label>(){
-                            new Transition.Label { content = timeGuard, kind = "guard" },
-                            new Transition.Label { content = "os[osp] = H[os[osp]], t = 0"
-                                    , kind = "assignment" }
+                            new Transition.Label { 
+                                content = timeGuard, kind = "guard" },
+                            new Transition.Label { 
+                                content = "os[osp] = H[os[osp]], t = 0", kind = "assignment" }
                         };
                         transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 1),labels));
                         break;
                     case "getstatic":
                         /* get a static field value of a class, 
                          * where the field is identified by field reference in the constant pool index
+                         * Opstack: .. -> .. , CP[n]
                          */
                         labels = new List<Transition.Label>(){
-                            new Transition.Label { content = timeGuard, kind = "guard" },
                             new Transition.Label { 
-                                content = String.Format("os[osp] = cp{0}, osp++, t = 0", CP)
-                                    , kind = "assignment" }
+                                content = timeGuard, kind = "guard" },
+                            new Transition.Label { 
+                                content = String.Format("os[osp] = cp{0}, osp++, t = 0",
+                                    CP.Add(String.Join(" ", instArg.Skip(1)))), 
+                                kind = "assignment" }
                         };
                         transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 3),labels));
-                        //CP.Add(String.Join(" ", instArg.Skip(1)));
                         break;
 
                     case "iconst":
@@ -99,10 +103,11 @@ namespace ModelRewriter
                          * Opstack: .. -> .. , n
                          */
                         labels = new List<Transition.Label>(){
-                            new Transition.Label { content = timeGuard, kind = "guard" },
                             new Transition.Label { 
-                                content = String.Format("os[osp] = {0}, osp++, t = 0", instArg[1])
-                                    , kind = "assignment" }
+                                content = timeGuard, kind = "guard" },
+                            new Transition.Label { 
+                                content = String.Format("os[osp] = {0}, osp++, t = 0", instArg[1]), 
+                                kind = "assignment" }
                         };
                         transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 1),labels));
                         break;
@@ -111,23 +116,42 @@ namespace ModelRewriter
                          * Opstack: .. ,value1, value2 -> ..
                          */
                         labels = new List<Transition.Label>(){
-                            new Transition.Label { content = timeGuard + " && os[osp - 2] >= os[osp - 1]"
-                                    , kind = "guard" },
-                            new Transition.Label { content = "osc = osc - 2, t = 0", kind = "assignment" }
+                            new Transition.Label { 
+                                content = timeGuard + " && os[osp - 2] >= os[osp - 1]", kind = "guard" },
+                            new Transition.Label { 
+                                content = "osc = osc - 2, t = 0", kind = "assignment" }
                         };
                         transitions.Add(new Transition(loc, PCToLocation(Convert.ToInt32(instArg[1])), labels));
 
                         labels = new List<Transition.Label>(){
-                            new Transition.Label { content = timeGuard + " && os[osc - 2] < os[osc - 1]"
-                                    , kind = "guard" },
-                            new Transition.Label { content = "osc = osc - 2, t = 0", kind = "assignment" }
+                            new Transition.Label { 
+                                content = timeGuard + " && os[osc - 2] < os[osc - 1]", kind = "guard" },
+                            new Transition.Label { 
+                                content = "osc = osc - 2, t = 0", kind = "assignment" }
                         };
                         transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 3), labels));
                         break;
+                    case "invokespecial":
+                        break;
+                    case "invokevirtual":
+                        //done!
+                        break;
                     case "ldc":
-                        
+                        labels = new List<Transition.Label>(){
+                            new Transition.Label { 
+                                content = timeGuard, kind = "guard" },
+                            new Transition.Label { 
+                                content = String.Format("os[osp] = cp{0}, osp++, t = 0",
+                                    CP.Add(String.Join(" ", instArg.Skip(1)))), 
+                                kind = "assignment" }
+                        };
+                        transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 2),labels));
+                        break;
+                    case "return":
+                        break;
                     default:
                         throw new System.NotImplementedException(instArg[0]);
+
                 }
             }
         }

@@ -35,11 +35,15 @@ namespace ModelRewriter
             target = to;
         }
 
-        public Transition (Location from, Location to, List<Label> labels)
+        public Transition (Location from, Location to, List<Label> labl)
         {
             source = from;
             target = to;
-            labels = labels;
+            foreach (var label in labl)
+            {
+                label.SetCords(from);
+            }
+            labels = labl;
         }
 
         struct Nail 
@@ -81,6 +85,12 @@ namespace ModelRewriter
             public string kind;
             public int x;
             public int y;
+
+            public void SetCords(Location loc)
+            {
+                x = 30;
+                y = Convert.ToInt32(loc.y + 10);
+            }
         }
             
     }

@@ -29,7 +29,7 @@ public DubTest ( ) ;
 		{
 			//var um = new UppaalModel ("/home/kristian/Desktop/new.xml");
 			//um.Save ("new2.xml");
-			parseClass(sample);
+            parseClass(sample).Save("new3.xml");
 		}
 
         UppaalModel parseClass(string jbc){
