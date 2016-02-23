@@ -28,8 +28,8 @@ namespace ModelRewriter
             inst = new Instruction(instLine);
 
             id = "id" + count;
-            x = (count * 50).ToString();
-            y = "0";
+            y = (count * 50).ToString();
+            x = "0";
             name = "pc" + new Regex("^[0-9]+\\. +[a-zA-Z]+").Match(instLine)
                 .ToString().Replace(" ","").Replace('.','_');
         }

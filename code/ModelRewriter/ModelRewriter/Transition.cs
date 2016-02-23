@@ -68,8 +68,8 @@ namespace ModelRewriter
             XElement srcElement = new XElement("source");
             XElement targetElement = new XElement("target");
 
-            srcElement.SetAttributeValue("ref", source);
-            targetElement.SetAttributeValue("ref", target);
+            srcElement.SetAttributeValue("ref", source.id);
+            targetElement.SetAttributeValue("ref", target.id);
 
             transitionElement.Add(srcElement);
             transitionElement.Add(targetElement);
@@ -121,10 +121,11 @@ namespace ModelRewriter
 
             foreach (var label in labels)
             {
-                XElement el = new XElement(label.content);
+                XElement el = new XElement("label");
                 el.SetAttributeValue("kind", label.kind);
                 el.SetAttributeValue("x", label.x);
                 el.SetAttributeValue("y", label.y);
+                el.SetValue(label.content);
                 labelElements.Add(el);
             }
 
