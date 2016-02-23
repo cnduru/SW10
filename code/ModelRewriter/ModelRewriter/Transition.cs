@@ -18,8 +18,8 @@ namespace ModelRewriter
             "<label kind=\"guard\" x=\"18\" y=\"-34\">gu</label>" +
             "<label kind=\"synchronisation\" x=\"18\" y=\"-17\">sy</label>" +
             "<label kind=\"assignment\" x=\"18\" y=\"0\">up</label></transition>";
-        public string source { get; set; }
-        public string target { get; set; }
+        public Location source { get; set; }
+        public Location target { get; set; }
         private List<Label> labels = new List<Label>();
         private List<Nail> nails = new List<Nail>();
 
@@ -31,8 +31,15 @@ namespace ModelRewriter
 
         public Transition (Location from, Location to)
         {
-            source = from.id;
-            target = to.id;
+            source = from;
+            target = to;
+        }
+
+        public Transition (Location from, Location to, List<Label> labels)
+        {
+            source = from;
+            target = to;
+            labels = labels;
         }
 
         struct Nail 
@@ -68,8 +75,9 @@ namespace ModelRewriter
 
             return transitionElement;
         }
-        struct Label
+        public struct Label
         {
+            public string content;
             public string kind;
             public int x;
             public int y;

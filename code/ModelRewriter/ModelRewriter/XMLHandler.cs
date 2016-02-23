@@ -64,8 +64,8 @@ namespace ModelRewriter
                 foreach (var trans in template.Descendants("transition"))
                 {
                     Transition srcDstPair = new Transition();
-                    srcDstPair.source = (string)trans.Element("source").Attribute("ref");
-                    srcDstPair.target = (string)trans.Element("target").Attribute("ref");
+                    srcDstPair.source.id = (string)trans.Element("source").Attribute("ref");
+                    srcDstPair.target.id = (string)trans.Element("target").Attribute("ref");
                     transitions.Add(srcDstPair);
                 }
 
