@@ -48,7 +48,8 @@ namespace ModelRewriter
 			var nta = xml.Element ("nta"); //nta is the root element
 
 			nta.Add(BuildXElement("declaration", declaration));
-			foreach (var template in templates) 
+
+            foreach (var template in templates) 
 			{
 				nta.Add(template.getXML());
 			}

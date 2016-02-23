@@ -23,6 +23,7 @@ namespace ModelRewriter
         private List<Label> labels = new List<Label>();
         private List<Nail> nails = new List<Nail>();
 
+        [Obsolete]
         public Transition ()
         {
             

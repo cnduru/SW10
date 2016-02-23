@@ -69,7 +69,7 @@ namespace ModelRewriter
             XMLHandler handler = new XMLHandler(doc);
 
             // read UPPAAL model
-            string text = System.IO.File.ReadAllText(@"C://Users//Avalon//SW10//code//models//sample.xml");
+            string text = System.IO.File.ReadAllText(path);
             
             // get index of declarations and insert new fault template
             int declIndex = text.IndexOf("</declaration>");
@@ -83,51 +83,38 @@ namespace ModelRewriter
             res = res.Insert(res.IndexOf("composed into a system.") + 31, " Fault,");
 
             // update locations in templates with new transitions
-            _templates = handler.getTemplates(path);
+            _templates = handler.getTemplates("lalala");
             
             // workaround for collection change exception
-            List<Transition> tlist;
+            List<Transition> tlist = new List<Transition>();
 
             // caluclate reachable locations
             foreach (Template t in _templates)
             {
                 tlist = new List<Transition>();
                 t.calculateReachableLocations();
-                t.locations.RemoveAll(l => l.pc == "None");
+                //t.locations.RemoveAll(l => l.pc == "None");
 
                 foreach (Location originalLocation in t.locations)
                 {
-                    foreach (KeyValuePair<Location, Location> loc in t.reachableLocs)
+                    foreach (var loc in originalLocation.reachableLocs)
                     {
-                        if (Template.isReachable(loc.Value, loc.Key))
-                        {
-                            Transition newTransition = new Transition();
-
-                            newTransition.source = loc.Key.id;
-                            newTransition.target = loc.Value.id;
-
-
-                            // add the new transition
-                            tlist.Add(newTransition);
-                        }
+                        tlist.Add(new Transition(originalLocation, loc));
                     }
                 }
 
                 t.transitions.AddRange(tlist);
-                t.transitions = t.transitions.Distinct().ToList();
-
-
             }
 
             // write file to disk
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C://Users//Avalon//SW10//code//models//sampleGenerated.xml"))
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter("sampleGenerated.xml"))
             {
                 file.Write(res);
             }
 
 
             // write templates
-            doc = XDocument.Load(@"C://Users//Avalon//SW10//code//models//sampleGenerated.xml");
+            doc = XDocument.Load("sampleGenerated.xml");
             handler = new XMLHandler(doc);
 
             // get each template node
@@ -139,7 +126,7 @@ namespace ModelRewriter
                     /*foreach (Template writeTemplate in _templates.ele)
                     {*/
                         //foreach (Transition l in writeTemplate.transitions)
-                        foreach (Transition l in _templates.ElementAt(2).transitions)
+                    foreach (Transition l in tlist)//_templates.ElementAt(2).transitions)
                         {
                             // generate elements
                             XElement locationElement = l.getXML();
@@ -153,7 +140,7 @@ namespace ModelRewriter
                 }
             }
 
-            doc.Save("C://Users//Avalon//SW10//code//models//sampleGenerated.xml");
+            doc.Save("sampleGenerated.xml");
         }
     }
 }

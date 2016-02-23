@@ -15,7 +15,6 @@ namespace ModelRewriter
     {
         public string name { get; set; }
         public List<Location> locations = new List<Location>();
-        public Dictionary<Location, Location> reachableLocs = new Dictionary<Location, Location>();
         public List<Transition> transitions = new List<Transition>();
 
 		XElement xml;
@@ -83,9 +82,9 @@ namespace ModelRewriter
             {
                 foreach (Location lNext in locations)
                 {
-                    if ((l.id != lNext.id && isReachable(l, lNext)) && !(reachableLocs.ContainsKey(l) || reachableLocs.ContainsKey(lNext)))
+                    if ((l.id != lNext.id && isReachable(l, lNext)))// && !(reachableLocs.ContainsKey(l) || reachableLocs.ContainsKey(lNext)))
                     {
-                        reachableLocs.Add(l, lNext);
+                        l.reachableLocs.Add(lNext);
                     }
                 }
             }
