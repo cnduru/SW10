@@ -15,15 +15,15 @@ namespace ModelRewriter
     class Template
     {
         public string name { get; set; }
+        public Location initialLocation = new Location();
         public List<Location> locations = new List<Location>();
         public List<Transition> transitions = new List<Transition>();
         public List<Transition> faultTransitions = new List<Transition>();
-
-		XElement xml;
+        public string localDeclarations;
 
 		public Template(XElement xe)
 		{
-			xml = xe;
+            var localDeclarations = xe.Element("declaration").Value;
 		}
 
         public Template(List<string> method)
@@ -170,7 +170,27 @@ namespace ModelRewriter
                         
 		public XElement getXML()
 		{
-			return xml;
+            XElement el = new XElement("template");
+            el.Add(new XElement("name", name));
+            el.Add(new XElement("declaration", localDeclarations));
+            
+            // add locations
+            foreach (var loc in locations)
+            {
+                el.Add(loc.getXML());
+            }
+
+            // add initial state
+            XElement initState = new XElement("init");
+            initState.SetAttributeValue("ref", initialLocation.id);
+            el.Add(initState);
+
+            foreach (var trans in transitions)
+            {
+                el.Add(trans.getXML());
+            }
+
+			return el;
 		}
 
         public void calculateReachableLocations()
@@ -190,12 +210,8 @@ namespace ModelRewriter
 
         public static bool isReachable(Location l1, Location l2)
         {
-            if(l1.id == "id35" && l2.id == "id34")
-            {
-                int zz = 2;
-            }
-
-            for(int i = 0; i < 15; i++)
+            // 8 bits for a single byte
+            for(int i = 0; i < 7; i++)
             {
                 try
                 {

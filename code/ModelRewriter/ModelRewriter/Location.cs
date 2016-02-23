@@ -17,7 +17,7 @@ namespace ModelRewriter
         public string name { get; set; }
         public string pc  { get; set; }
         public List<Location> reachableLocs = new List<Location>();
-      
+
         public Location()
         {
 

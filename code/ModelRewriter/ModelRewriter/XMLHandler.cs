@@ -30,6 +30,7 @@ namespace ModelRewriter
             foreach (var template in _doc.Descendants("template"))
             {
 				Template t = new Template(template);
+                t.initialLocation.name = template.Element("init").Value;
 
                 // store name object from XML
                 t.name = (string)template.Element("name");
@@ -64,6 +65,7 @@ namespace ModelRewriter
                 foreach (var trans in template.Descendants("transition"))
                 {
                     Transition srcDstPair = new Transition();
+                    
                     srcDstPair.source.id = (string)trans.Element("source").Attribute("ref");
                     srcDstPair.target.id = (string)trans.Element("target").Attribute("ref");
                     transitions.Add(srcDstPair);

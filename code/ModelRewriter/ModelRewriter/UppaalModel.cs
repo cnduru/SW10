@@ -15,7 +15,7 @@ namespace ModelRewriter
 			+ @" 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>";
 
 
-		string declaration;
+		string globalDeclarations;
 		List<Template> templates;
 		string system;
 		string queries;
@@ -32,7 +32,7 @@ namespace ModelRewriter
 		public UppaalModel(XDocument xml)
 		{
 			var nta =  xml.Element ("nta");
-			declaration =  nta.Element ("declaration").Value;
+			globalDeclarations =  nta.Element ("declaration").Value;
 			system = nta.Element ("system").Value;
 			queries = nta.Element ("queries").Value;
 
@@ -47,7 +47,7 @@ namespace ModelRewriter
 			var xml = XDocument.Parse(header + "<nta></nta>");
 			var nta = xml.Element ("nta"); //nta is the root element
 
-			nta.Add(BuildXElement("declaration", declaration));
+			nta.Add(BuildXElement("declaration", globalDeclarations));
 
             foreach (var template in templates) 
 			{
