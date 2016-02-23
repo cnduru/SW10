@@ -50,11 +50,25 @@ namespace ModelRewriter
                 switch (loc.inst.instArgs[0])
                 {
                     case "aload":
-                        
+                        var t = new Transition(loc, PCToLocation(loc.inst.pc + 1)); //TODO is that allways true?
+                        transitions.Add(t);
+                        break;
                     default:
                         throw new System.NotImplementedException(loc.inst.instArgs[0]);
                 }
             }
+        }
+
+        private Location PCToLocation(int pc)
+        {
+            foreach (var loc in locations)
+            {
+                if (loc.inst.pc == pc)
+                {
+                    return loc;
+                }
+            }
+            throw new KeyNotFoundException();
         }
                         
 		public XElement getXML()

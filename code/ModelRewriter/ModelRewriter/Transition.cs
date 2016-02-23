@@ -28,6 +28,12 @@ namespace ModelRewriter
             
         }
 
+        public Transition (Location from, Location to)
+        {
+            source = from.id;
+            target = to.id;
+        }
+
         struct Nail 
         {
             public int x;

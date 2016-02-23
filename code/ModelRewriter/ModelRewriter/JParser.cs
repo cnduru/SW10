@@ -42,7 +42,7 @@ public DubTest ( ) ;
             {
                 model.AddTemplate(m);
             }
-            return null;
+            return model;
 		}
 
 		List<List<string>> findMethods(IEnumerable<string> jbc)
