@@ -32,7 +32,7 @@ namespace ModelRewriter
 		public UppaalModel(XDocument xml)
 		{
 			var nta =  xml.Element ("nta");
-			globalDeclarations =  nta.Element ("declaration").Value;
+			globalDeclarations = nta.Element ("declaration").Value;
 			system = nta.Element ("system").Value;
 			queries = nta.Element ("queries").Value;
 

@@ -12,8 +12,8 @@ namespace ModelRewriter
     {
         public Instruction inst;
         public string id { get; set; }
-        public string x { get; set; }
-        public string y { get; set; }
+        public int x { get; set; }
+        public int y { get; set; }
         public string name { get; set; }
         public string pc  { get; set; }
         public List<Location> reachableLocs = new List<Location>();
@@ -28,8 +28,8 @@ namespace ModelRewriter
             inst = new Instruction(instLine);
 
             id = "id" + count;
-            y = (count * 50).ToString();
-            x = "0";
+            y = (count * 50);
+            x = 0;
             name = "pc" + new Regex("^[0-9]+\\. +[a-zA-Z]+").Match(instLine)
                 .ToString().Replace(" ","").Replace('.','_');
         }
@@ -41,9 +41,9 @@ namespace ModelRewriter
             locationElement.SetAttributeValue("x", x);
             locationElement.SetAttributeValue("y", y);
             XElement nameElement = new XElement("name", name);
-            nameElement.SetAttributeValue("x", x);
-            nameElement.SetAttributeValue("y", Convert.ToInt32(y) - 100);
-
+            nameElement.SetAttributeValue("x", x + 20);
+            nameElement.SetAttributeValue("y", y - 15);
+            locationElement.Add(nameElement);
             if(urgent)
             {
                 locationElement.Add(new XElement("urgent"));

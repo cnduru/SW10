@@ -40,11 +40,12 @@ namespace ModelRewriter
         {
             source = from;
             target = to;
-            foreach (var label in labl)
+            for (int i = 0; i < labl.Count; i++)
             {
-                label.SetCords(from);
+                var tmp = labl[i];
+                tmp.SetCords(from, i*12);
+                labels.Add(tmp);
             }
-            labels = labl;
         }
 
         struct Nail 
@@ -58,12 +59,7 @@ namespace ModelRewriter
         public XElement getXML()
         {
             XElement transitionElement = new XElement("transition");
-            Nail n = new Nail() { x = 100, y = 100 + offset };
-            nails.Add(n);
-            XElement nailElement = new XElement("nail");
-            nailElement.SetAttributeValue("x", n.x);
-            nailElement.SetAttributeValue("y", n.y);
-            offset++;
+
 
             XElement srcElement = new XElement("source");
             XElement targetElement = new XElement("target");
@@ -93,10 +89,10 @@ namespace ModelRewriter
             public int x;
             public int y;
 
-            public void SetCords(Location loc)
+            public void SetCords(Location loc, int offset)
             {
-                x = 30;
-                y = Convert.ToInt32(loc.y + 10);
+                x = 20;
+                y = Convert.ToInt32(loc.y) + offset;
             }
         }
 
