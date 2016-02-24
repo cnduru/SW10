@@ -43,7 +43,7 @@ namespace ModelRewriter
             for (int i = 0; i < labl.Count; i++)
             {
                 var tmp = labl[i];
-                tmp.SetCords(from, i*12);
+                tmp.SetCords(from, i*Constants.LabelOffsetY);
                 labels.Add(tmp);
             }
         }
@@ -53,9 +53,7 @@ namespace ModelRewriter
             public int x;
             public int y;
         }
-
-        int offset = 0;
-
+            
         public XElement getXML()
         {
             XElement transitionElement = new XElement("transition");
@@ -82,19 +80,6 @@ namespace ModelRewriter
 
             return transitionElement;
         }
-        public struct Label
-        {
-            public string content;
-            public string kind;
-            public int x;
-            public int y;
-
-            public void SetCords(Location loc, int offset)
-            {
-                x = 20;
-                y = Convert.ToInt32(loc.y) + offset;
-            }
-        }
 
         private List<XElement> getNailsXML()
         {
@@ -117,12 +102,7 @@ namespace ModelRewriter
 
             foreach (var label in labels)
             {
-                XElement el = new XElement("label");
-                el.SetAttributeValue("kind", label.kind);
-                el.SetAttributeValue("x", label.x);
-                el.SetAttributeValue("y", label.y);
-                el.SetValue(label.content);
-                labelElements.Add(el);
+                labelElements.Add(label.GetXML());
             }
 
             return labelElements;

@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace ModelRewriter
 {
-    class Location
+    public class Location
     {
         public Instruction inst;
         public string id { get; set; }
@@ -18,6 +18,9 @@ namespace ModelRewriter
         public string pc  { get; set; }
         public List<Location> reachableLocs = new List<Location>();
 
+        Label invariant;
+
+
         public Location()
         {
 
@@ -26,12 +29,19 @@ namespace ModelRewriter
         public Location(int count, string instLine)
         {
             inst = new Instruction(instLine);
-
             id = "id" + count;
-            y = (count * 50);
+            y = (count * Constants.LabelOffsetY*4);
             x = 0;
             name = "pc" + new Regex("^[0-9]+\\. +[a-zA-Z]+").Match(instLine)
                 .ToString().Replace(" ","").Replace('.','_');
+            if (count >= 0)
+            {
+                parseInst(count);
+            }
+            else
+            {
+                parseCall();
+            }
         }
 
         public XElement getXML(bool urgent = false)
@@ -41,9 +51,10 @@ namespace ModelRewriter
             locationElement.SetAttributeValue("x", x);
             locationElement.SetAttributeValue("y", y);
             XElement nameElement = new XElement("name", name);
-            nameElement.SetAttributeValue("x", x + 20);
-            nameElement.SetAttributeValue("y", y - 15);
+            nameElement.SetAttributeValue("x", x + Constants.LabelOffsetX);
+            nameElement.SetAttributeValue("y", y - Constants.LabelOffsetY);
             locationElement.Add(nameElement);
+            locationElement.Add(invariant.GetXML());
             if(urgent)
             {
                 locationElement.Add(new XElement("urgent"));
@@ -51,6 +62,23 @@ namespace ModelRewriter
             }
 
             return locationElement;        
+        }
+
+        private void parseCall()
+        {
+           // name = "pc" + new Regex(" [a-zA-Z]+(").Match(inst)
+           //     .ToString().Replace(" ","").Replace("(","");
+        }
+
+        private void parseInst(int count){
+
+            invariant = new Label{
+                content = "t <= " + Constants.instTime, 
+                kind = "invariant", 
+                y = y,
+                x = -60               
+            };
+
         }
     }
 }

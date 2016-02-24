@@ -84,7 +84,7 @@ namespace ModelRewriter
             ConstantPool CP = new ConstantPool();
             foreach (var loc in locations)
             {
-                List<Transition.Label> labels;
+                List<Label> labels = new List<Label>();
                 var instArg = loc.inst.instArgs;
                 switch (instArg[0])
                 {
@@ -93,10 +93,10 @@ namespace ModelRewriter
                          * the opstack counter osc is incremented as the opstack grows.
                          * Opstack: .. -> .. , locals[n]
                          */
-                        labels = new List<Transition.Label>(){
-                            new Transition.Label { 
+                        labels = new List<Label>(){
+                            new Label { 
                                 content = timeGuard, kind = "guard" },
-                            new Transition.Label { 
+                            new Label { 
                                 content = String.Format("os[osp] = loc{0}, osc++, t = 0", instArg[1]), 
                                 kind = "assignment" }
                         };
@@ -108,10 +108,10 @@ namespace ModelRewriter
                          * making it identical to getfield 0
                          * Opstack: .. , ref -> .. , lenght
                          */
-                        labels = new List<Transition.Label>(){
-                            new Transition.Label { 
+                        labels = new List<Label>(){
+                            new Label { 
                                 content = timeGuard, kind = "guard" },
-                            new Transition.Label { 
+                            new Label { 
                                 content = "os[osp] = H[os[osp]], t = 0", kind = "assignment" }
                         };
                         transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 1),labels));
@@ -121,10 +121,10 @@ namespace ModelRewriter
                          * where the field is identified by field reference in the constant pool index
                          * Opstack: .. -> .. , CP[n]
                          */
-                        labels = new List<Transition.Label>(){
-                            new Transition.Label { 
+                        labels = new List<Label>(){
+                            new Label { 
                                 content = timeGuard, kind = "guard" },
-                            new Transition.Label { 
+                            new Label { 
                                 content = String.Format("os[osp] = cp{0}, osp++, t = 0",
                                     CP.Add(String.Join(" ", instArg.Skip(1)))), 
                                 kind = "assignment" }
@@ -136,10 +136,10 @@ namespace ModelRewriter
                         /* Pushes a constant value to the opstack
                          * Opstack: .. -> .. , n
                          */
-                        labels = new List<Transition.Label>(){
-                            new Transition.Label { 
+                        labels = new List<Label>(){
+                            new Label { 
                                 content = timeGuard, kind = "guard" },
-                            new Transition.Label { 
+                            new Label { 
                                 content = String.Format("os[osp] = {0}, osp++, t = 0", instArg[1]), 
                                 kind = "assignment" }
                         };
@@ -149,18 +149,18 @@ namespace ModelRewriter
                         /* if greather or eq
                          * Opstack: .. ,value1, value2 -> ..
                          */
-                        labels = new List<Transition.Label>(){
-                            new Transition.Label { 
+                        labels = new List<Label>(){
+                            new Label { 
                                 content = timeGuard + " && os[osp - 2] >= os[osp - 1]", kind = "guard" },
-                            new Transition.Label { 
+                            new Label { 
                                 content = "osc = osc - 2, t = 0", kind = "assignment" }
                         };
                         transitions.Add(new Transition(loc, PCToLocation(Convert.ToInt32(instArg[1])), labels));
 
-                        labels = new List<Transition.Label>(){
-                            new Transition.Label { 
+                        labels = new List<Label>(){
+                            new Label { 
                                 content = timeGuard + " && os[osc - 2] < os[osc - 1]", kind = "guard" },
-                            new Transition.Label { 
+                            new Label { 
                                 content = "osc = osc - 2, t = 0", kind = "assignment" }
                         };
                         transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 3), labels));
@@ -171,10 +171,10 @@ namespace ModelRewriter
                         //done!
                         break;
                     case "ldc":
-                        labels = new List<Transition.Label>(){
-                            new Transition.Label { 
+                        labels = new List<Label>(){
+                            new Label { 
                                 content = timeGuard, kind = "guard" },
-                            new Transition.Label { 
+                            new Label { 
                                 content = String.Format("os[osp] = cp{0}, osp++, t = 0",
                                     CP.Add(String.Join(" ", instArg.Skip(1)))), 
                                 kind = "assignment" }
