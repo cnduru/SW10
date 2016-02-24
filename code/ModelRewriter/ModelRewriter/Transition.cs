@@ -36,7 +36,7 @@ namespace ModelRewriter
             target = to;
         }
 
-        public Transition (Location from, Location to, List<Label> labl)
+        public Transition (Location from, Location to, List<Label> labl = null)
         {
             source = from;
             target = to;

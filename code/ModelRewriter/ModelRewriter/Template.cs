@@ -18,13 +18,47 @@ namespace ModelRewriter
         public Location initialLocation = new Location();
         public List<Location> locations = new List<Location>();
         public List<Transition> transitions = new List<Transition>();
-        public List<Transition> faultTransitions = new List<Transition>();
-        public string localDeclarations;
+        public List<Transition> faultTransitions = new List<Transition>(); // should probably be removed
+        public string localDeclarations = "";
 
-		public Template(XElement xe)
+		public Template(XElement modelXML)
 		{
-            var localDeclarations = xe.Element("declaration").Value;
-		}
+            // name
+            name = modelXML.Element("name").Value;
+
+            // local decls
+            var tempDecl = modelXML.Element("declaration");
+            if(tempDecl != null)
+            {
+                localDeclarations = tempDecl.Value;
+            }
+
+            // locations
+            locations = locationsFromXML(modelXML.Elements("location").ToList());
+
+            // initial location
+            initialLocation.id = modelXML.Element("init").Attribute("ref").Value;
+ 
+            // transitions
+            transitions = transitionsFromXML(modelXML.Elements("transition").ToList());
+        }
+
+        private List<Transition> transitionsFromXML(List<XElement> xml)
+        {
+            // store information about transitions from UPPAAL model in objects from XML
+            List<Transition> transitionsList = new List<Transition>();
+
+            foreach (var transition in xml)
+            {
+                Transition srcDstPair = new Transition();
+
+                srcDstPair.source.id = (string)transition.Element("source").Attribute("ref");
+                srcDstPair.target.id = (string)transition.Element("target").Attribute("ref");
+                transitionsList.Add(srcDstPair);
+            }
+
+            return transitionsList; 
+        }
 
         public Template(List<string> method)
         {
@@ -247,6 +281,38 @@ namespace ModelRewriter
                 }
             }
             return null;
+        }
+
+        private List<Location> locationsFromXML(List<XElement> xml)
+        {
+            List<Location> locationList = new List<Location>();
+
+            // store information about locations from UPPAAL model in objects from XML
+            foreach (var locs in xml)
+            {
+                Location l = new Location();
+
+                l.id = (string)locs.Attribute("id");
+                l.name = (string)locs.Element("name");
+
+                // translate roman numerals to integers
+                try
+                {
+                    l.pc = Convert.ToString(RomanToInt.RomanToNumber(l.name.Substring(0, l.name.IndexOf("_"))));
+                }
+                catch (Exception ex)
+                {
+                    // yeah.. this should probably be handled more eloquently..
+                    l.pc = "None";
+                }
+
+                l.x = Convert.ToInt32(locs.Attribute("x").Value);
+                l.y = Convert.ToInt32(locs.Attribute("y").Value);
+
+                locationList.Add(l);
+            }
+
+            return locationList;
         }
     }
 }

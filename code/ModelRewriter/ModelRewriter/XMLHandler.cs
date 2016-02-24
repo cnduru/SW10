@@ -53,8 +53,8 @@ namespace ModelRewriter
                         l.pc = "None";
                     }
 
-                    l.x = Convert.ToInt32(locs.Attribute("x"));
-                    l.y = Convert.ToInt32(locs.Attribute("y"));
+                    l.x = Convert.ToInt32(locs.Attribute("x").Value);
+                    l.y = Convert.ToInt32(locs.Attribute("y").Value);
 
                     t.locations.Add(l);
                 }
