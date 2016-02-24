@@ -32,7 +32,8 @@ namespace ModelRewriter
             id = "id" + count;
             y = (count * Constants.LabelOffsetY*4);
             x = 0;
-
+            name = "pc" + new Regex("^[0-9]+\\. +[a-zA-Z]+").Match(instLine)
+                .ToString().Replace(" ","").Replace('.','_');
             if (count >= 0)
             {
                 parseInst(count);
@@ -65,13 +66,12 @@ namespace ModelRewriter
 
         private void parseCall()
         {
-            name = "pc" + new Regex(" [a-zA-Z]+(").Match(inst)
-                .ToString().Replace(" ","").Replace("(","");
+           // name = "pc" + new Regex(" [a-zA-Z]+(").Match(inst)
+           //     .ToString().Replace(" ","").Replace("(","");
         }
 
         private void parseInst(int count){
-            name = "pc" + new Regex("^[0-9]+\\. +[a-zA-Z]+").Match(inst)
-                .ToString().Replace(" ","").Replace('.','_');
+
             invariant = new Label{
                 content = "t <= " + Constants.instTime, 
                 kind = "invariant", 

@@ -37,7 +37,7 @@ namespace ModelRewriter
         private List<Location> ResolveLocations(List<string> method)
         {
             var locs = new List<Location>();
-            for (int i = 0; i < method.Count ; i++)
+            for (int i = 1; i < method.Count ; i++)
             {
                 locs.Add(new Location(i-1, method[i])); 
             }
