@@ -44,7 +44,7 @@ namespace ModelRewriter
 
 
 
-
+            /*
             // update locations in templates with new transitions
             _templates = handler.getTemplates("lalala");
             
@@ -92,7 +92,7 @@ namespace ModelRewriter
                     }
                 }
             }
-
+            */
             doc.Save("sampleGenerated.xml");
         }
     }
