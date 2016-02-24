@@ -40,60 +40,6 @@ namespace ModelRewriter
 
             UppaalModel uml = new UppaalModel("sampleGenerated.xml");
             uml.Save("testxml.xml");
-            
-
-
-
-            
-            // update locations in templates with new transitions
-          /*  _templates = handler.getTemplates("lalala");
-            
-            // workaround for collection change exception
-            List<Transition> tlist = new List<Transition>();
-
-            // caluclate reachable locations
-            foreach (Template t in _templates)
-            {
-                tlist = new List<Transition>();
-                t.calculateReachableLocations();
-
-                foreach (Location originalLocation in t.locations)
-                {
-                    foreach (var loc in originalLocation.reachableLocs)
-                    {
-                        tlist.Add(new Transition(originalLocation, loc));  
-                    }
-                }
-
-                t.faultTransitions.AddRange(tlist);
-            }*/
-
-            /*
-            // write templates
-            doc = XDocument.Load("sampleGenerated.xml");
-
-            // get each template node
-            foreach (XElement template in doc.Root.Elements("template"))
-            {
-                // avoid the fault injection template
-                if(!(template.Element("name").Value == "FaultInj"))
-                {
-                    foreach (Template writeTemplate in _templates)
-                    {
-                        writeTemplate.getXML();
-                        foreach (Transition l in writeTemplate.faultTransitions)//_templates.ElementAt(2).faultTransitions)
-                        {
-                            // generate elements
-                            XElement locationElement = l.getXML();
-
-                            // add elements
-                            template.Element("init").AddAfterSelf(locationElement);
-                        }
-                    }
-                }
-            }*/
-            
-           // doc.Save("sampleGenerated.xml");
         }
     }
 }
