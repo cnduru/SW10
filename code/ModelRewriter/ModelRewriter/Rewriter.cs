@@ -44,9 +44,9 @@ namespace ModelRewriter
 
 
 
-            /*
+            
             // update locations in templates with new transitions
-            _templates = handler.getTemplates("lalala");
+          /*  _templates = handler.getTemplates("lalala");
             
             // workaround for collection change exception
             List<Transition> tlist = new List<Transition>();
@@ -66,9 +66,9 @@ namespace ModelRewriter
                 }
 
                 t.faultTransitions.AddRange(tlist);
-            }
+            }*/
 
-
+            /*
             // write templates
             doc = XDocument.Load("sampleGenerated.xml");
 
@@ -91,9 +91,9 @@ namespace ModelRewriter
                         }
                     }
                 }
-            }
-            */
-            doc.Save("sampleGenerated.xml");
+            }*/
+            
+           // doc.Save("sampleGenerated.xml");
         }
     }
 }

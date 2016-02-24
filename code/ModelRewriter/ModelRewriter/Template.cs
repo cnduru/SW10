@@ -42,6 +42,8 @@ namespace ModelRewriter
  
             // transitions
             transitions = transitionsFromXML(modelXML.Elements("transition").ToList());
+
+            // add fault transitions
         }
 
         private List<Transition> transitionsFromXML(List<XElement> xml)
@@ -284,36 +286,24 @@ namespace ModelRewriter
             return null;
         }
 
-        private List<Location> locationsFromXML(List<XElement> xml)
+        public void addFaultTransitions()
         {
-            List<Location> locationList = new List<Location>();
+            // workaround for collection change exception
+            List<Transition> tlist = new List<Transition>();
 
-            // store information about locations from UPPAAL model in objects from XML
-            foreach (var locs in xml)
+            // caluclate reachable locations
+            calculateReachableLocations();
+
+            foreach (Location originalLocation in locations)
             {
-                Location l = new Location();
-
-                l.id = (string)locs.Attribute("id");
-                l.name = (string)locs.Element("name");
-
-                // translate roman numerals to integers
-                try
+                foreach (var loc in originalLocation.reachableLocs)
                 {
-                    l.pc = Convert.ToString(RomanToInt.RomanToNumber(l.name.Substring(0, l.name.IndexOf("_"))));
+                    tlist.Add(new Transition(originalLocation, loc));
                 }
-                catch (Exception ex)
-                {
-                    // yeah.. this should probably be handled more eloquently..
-                    l.pc = "None";
-                }
-
-                l.x = Convert.ToInt32(locs.Attribute("x").Value);
-                l.y = Convert.ToInt32(locs.Attribute("y").Value);
-
-                locationList.Add(l);
             }
 
-            return locationList;
+            faultTransitions.AddRange(tlist);
+            transitions.AddRange(tlist);
         }
     }
 }

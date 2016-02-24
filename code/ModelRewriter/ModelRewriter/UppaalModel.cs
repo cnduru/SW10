@@ -38,6 +38,11 @@ namespace ModelRewriter
 
 			var xh = new XMLHandler (xml);
 			templates = xh.getTemplates ("useless?");
+
+            foreach (var template in templates)
+            {
+                template.addFaultTransitions();
+            }
 		}
 
 		//Store UPPAAL model to a file
