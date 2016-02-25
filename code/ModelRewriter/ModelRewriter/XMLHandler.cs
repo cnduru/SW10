@@ -76,10 +76,6 @@ namespace ModelRewriter
                     // add guards
                     srcDstPair.grds = getGuards(trans);
 
-                    // empty if not a guard on the transition 
-                    // note to self: handle this this in getxml
-
-
                     transitions.Add(srcDstPair);
                 }
 
