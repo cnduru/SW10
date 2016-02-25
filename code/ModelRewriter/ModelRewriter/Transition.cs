@@ -22,6 +22,14 @@ namespace ModelRewriter
         public Location target { get; set; }
         private List<Label> labels = new List<Label>();
         private List<Nail> nails = new List<Nail>();
+        public guards grds = new guards();
+
+        public struct guards 
+        {
+            public string content;
+            public int x;
+            public int y;
+        };
 
         [Obsolete]
         public Transition ()
@@ -78,6 +86,12 @@ namespace ModelRewriter
                 transitionElement.Add(nail);
         	}
 
+            // content is "" if there was no guard
+            if(grds.content != "" && grds.content != null)
+            {
+                transitionElement.Add(getGuards());
+            }
+
             return transitionElement;
         }
 
@@ -106,6 +120,18 @@ namespace ModelRewriter
             }
 
             return labelElements;
+        }
+
+        private XElement getGuards()
+        {
+            XElement el = new XElement("label");
+
+            el.SetValue(grds.content);
+            el.SetAttributeValue("kind", "guard");
+            el.SetAttributeValue("x", grds.x);
+            el.SetAttributeValue("y", grds.y);
+
+            return el;
         }
     }
 }

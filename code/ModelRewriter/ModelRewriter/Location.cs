@@ -54,7 +54,7 @@ namespace ModelRewriter
             nameElement.SetAttributeValue("x", x + Constants.LabelOffsetX);
             nameElement.SetAttributeValue("y", y - Constants.LabelOffsetY);
             locationElement.Add(nameElement);
-            locationElement.Add(invariant.GetXML());
+            //locationElement.Add(invariant.GetXML());
             if(urgent && !committed)
             {
                 locationElement.Add(new XElement("urgent"));
@@ -72,8 +72,8 @@ namespace ModelRewriter
 
         private void parseCall()
         {
-            name = "pc" + new Regex(" [a-zA-Z]+(").Match(inst)
-                .ToString().Replace(" ","").Replace("(","");
+            //name = "pc" + new Regex(" [a-zA-Z]+(").Match(inst)
+                //.ToString().Replace(" ","").Replace("(","");
         }
 
         private void parseInst(int count){

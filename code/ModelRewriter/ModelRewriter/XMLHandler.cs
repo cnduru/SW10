@@ -72,6 +72,14 @@ namespace ModelRewriter
                     
                     srcDstPair.source.id = (string)trans.Element("source").Attribute("ref");
                     srcDstPair.target.id = (string)trans.Element("target").Attribute("ref");
+
+                    // add guards
+                    srcDstPair.grds = getGuards(trans);
+
+                    // empty if not a guard on the transition 
+                    // note to self: handle this this in getxml
+
+
                     transitions.Add(srcDstPair);
                 }
 
@@ -82,6 +90,37 @@ namespace ModelRewriter
             }
 
             return templates;
+        }
+
+        private Transition.guards getGuards(XElement el)
+        {
+            Transition.guards gds = new Transition.guards();
+            XElement guardElement = el.Element("label");
+
+            // figure out some solution to this try catch
+            try
+            {
+                string guardAttr = (string)el.Element("label").Attribute("kind");
+
+                if (guardAttr == "guard")
+                {
+                    gds.content = guardElement.Value;
+                    gds.x = (int)guardElement.Attribute("x");
+                    gds.y = (int)guardElement.Attribute("y");
+                }
+                else
+                {
+                    gds.content = "";
+                    gds.x = 0;
+                    gds.y = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                // only triggered if no guard
+            }
+
+            return gds;
         }
 
         public string getSystem()
