@@ -42,8 +42,15 @@ namespace ModelRewriter
  
             // transitions
             transitions = transitionsFromXML(modelXML.Elements("transition").ToList());
+        }
 
-            // add fault transitions
+        public Template(string tName, Location initial, List<Location> locs, List<Transition> transits, string localDecls)
+        {
+            name = tName;
+            initialLocation = initial;
+            locations = locs;
+            transitions = transits;
+            localDeclarations = localDecls;
         }
 
         private List<Transition> transitionsFromXML(List<XElement> xml)

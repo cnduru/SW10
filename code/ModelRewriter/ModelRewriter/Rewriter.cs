@@ -12,9 +12,9 @@ namespace ModelRewriter
         private List<Template> _templates;
 
         public Rewriter(string path)
-        {
+        {/*
             // read templates from XML file
-            XDocument doc = XDocument.Load(path);
+            XDocument doc = XDocument.Load(@"C:\Users\Avalon\SW10\code\models\sample_timed.xml");
             XMLHandler handler = new XMLHandler(doc);
 
             // read UPPAAL model
@@ -36,9 +36,9 @@ namespace ModelRewriter
             {
                 file.Write(res);
             }
+            */
 
-
-            UppaalModel uml = new UppaalModel("sampleGenerated.xml");
+            UppaalModel uml = new UppaalModel("sample.xml");
             uml.Save("testxml.xml");
         }
     }

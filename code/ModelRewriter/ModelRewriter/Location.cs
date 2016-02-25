@@ -44,7 +44,7 @@ namespace ModelRewriter
             }
         }
 
-        public XElement getXML(bool urgent = false)
+        public XElement getXML(bool urgent = false, bool committed = false)
         {
             XElement locationElement = new XElement("location");
             locationElement.SetAttributeValue("id", id);
@@ -55,9 +55,15 @@ namespace ModelRewriter
             nameElement.SetAttributeValue("y", y - Constants.LabelOffsetY);
             locationElement.Add(nameElement);
             locationElement.Add(invariant.GetXML());
-            if(urgent)
+            if(urgent && !committed)
             {
                 locationElement.Add(new XElement("urgent"));
+                return locationElement;
+            }
+
+            if(committed && !urgent)
+            {
+                locationElement.Add(new XElement("committed"));
                 return locationElement;
             }
 
@@ -66,8 +72,8 @@ namespace ModelRewriter
 
         private void parseCall()
         {
-           // name = "pc" + new Regex(" [a-zA-Z]+(").Match(inst)
-           //     .ToString().Replace(" ","").Replace("(","");
+            name = "pc" + new Regex(" [a-zA-Z]+(").Match(inst)
+                .ToString().Replace(" ","").Replace("(","");
         }
 
         private void parseInst(int count){

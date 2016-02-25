@@ -5,6 +5,8 @@ using System.Xml.Linq;
 using System.Runtime.CompilerServices;
 using System.Configuration;
 using System.Collections;
+using System.Text.RegularExpressions;
+using System.Text;
 
 namespace ModelRewriter
 {
@@ -32,17 +34,12 @@ namespace ModelRewriter
 		public UppaalModel(XDocument xml)
 		{
 			var nta =  xml.Element ("nta");
-			globalDeclarations = nta.Element ("declaration").Value;
-			system = nta.Element ("system").Value;
+            globalDeclarations = getGlobalDeclarations(nta.Element("declaration").Value);
+			system = getSystem(nta.Element ("system").Value);
 			queries = nta.Element ("queries").Value;
 
 			var xh = new XMLHandler (xml);
 			templates = xh.getTemplates ("useless?");
-
-            foreach (var template in templates)
-            {
-                template.addFaultTransitions();
-            }
 		}
 
 		//Store UPPAAL model to a file
@@ -77,6 +74,91 @@ namespace ModelRewriter
             t.SetValue(value);
 			return t;
 		}
+
+        private string getGlobalDeclarations(string declarations)
+        {
+            // quick fix, probably should have an addDeclaration method that adds to a global stringbuilder
+            return declarations += "\n" + "int faultAt = 0;\n";
+            /*
+            // read templates from XML file
+            XDocument doc = XDocument.Load(@"C:\Users\Avalon\SW10\code\models\sample_timed.xml");
+            XMLHandler handler = new XMLHandler(doc);
+
+            // read UPPAAL model
+            string text = System.IO.File.ReadAllText(path);
+
+            // get index of declarations and insert new fault template
+            int declIndex = text.IndexOf("</declaration>");
+            string res = text.Insert(declIndex + 14, "\n" + XMLProvider.getFaultTemplate());
+
+            // insert global variable
+            res = res.Insert(declIndex, "\n" + "int faultAt = 0;\n");
+
+            // add fault process to system
+            res = res.Insert(res.IndexOf("template instantiations here.") + 29, "\nFault = FaultInj();");
+            res = res.Insert(res.IndexOf("composed into a system.") + 31, " Fault,");
+
+            // write file to disk
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter("sampleGenerated.xml"))
+            {
+                file.Write(res);
+            }*/
+        }
+
+        private string getSystem(string stem)
+        {
+            List<string> loadedSystem = new List<string>();
+            List<string> loadedProcesses = new List<string>();
+            StringBuilder sb = new StringBuilder();
+
+            string patternSystem = @"(Process\d? = \w*\(\));";
+
+            // add fault system
+            loadedSystem.Add("Fault = FaultInj();\n");
+            sb.Append("Fault = FaultInj();\n");
+
+            MatchCollection matches = Regex.Matches(stem, patternSystem);
+
+            foreach (Match match in matches)
+            {
+                try
+                {
+                    loadedSystem.Add("" + match.Groups[0].Value + "\n");
+                    sb.Append("" + match.Groups[0].Value + "\n");
+                }
+                catch
+                {
+                }
+
+
+            }
+
+            bool isLast = false;
+            int i = 1;
+
+            sb.Append("\nsystem ");
+
+            foreach (var systemItem in loadedSystem)
+            {
+                isLast = i == loadedSystem.Count ? true : false;
+
+                sb.Append(systemItem.Substring(0, systemItem.IndexOf(" =")));
+
+                if (!isLast)
+                {
+                    sb.Append(", ");
+                }
+                else
+                {
+                    sb.Append(";");
+                }
+
+                i++;
+            }
+
+            return sb.ToString();
+        }
 	}
+
 }
 
