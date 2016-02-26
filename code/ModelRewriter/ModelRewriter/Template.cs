@@ -39,10 +39,6 @@ namespace ModelRewriter
                 localDeclarations = tempDecl.Value;
             }
 
-            // locations
-            // had to be commented out because xmlhandler already loads locations once
-            //locations = locationsFromXML(modelXML.Elements("location").ToList());
-
             // initial location
             initialLocation.id = modelXML.Element("init").Attribute("ref").Value;
  
@@ -84,6 +80,7 @@ namespace ModelRewriter
             localDeclarations = @"int os[10]; 
 int osp = 0;
 int loc0 = 0;";
+            initialLocation = locations.First();
         }
 
         private List<Location> ResolveLocations(List<string> method)

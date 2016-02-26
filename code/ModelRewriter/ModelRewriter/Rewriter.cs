@@ -13,7 +13,7 @@ namespace ModelRewriter
 
         public Rewriter(string path)
         {
-            UppaalModel uml = new UppaalModel("sample_timed.xml");
+            UppaalModel uml = new UppaalModel(path);
             uml.rewritePCFault("testxml.xml");
         }
     }
