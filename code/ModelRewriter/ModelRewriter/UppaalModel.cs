@@ -158,6 +158,16 @@ namespace ModelRewriter
 
             return sb.ToString();
         }
+
+        public void rewritePCFault(string path)
+        {
+            // this has to be first or locations from faultTemplate are not added
+            XElement faultTemplateXML = XElement.Parse(XMLProvider.getFaultTemplate());
+            XMLHandler xhl = new XMLHandler();
+            Template faultTemplate = xhl.getTemplate(faultTemplateXML);
+            templates.Add(faultTemplate);
+            Save(path);
+        }
 	}
 
 }

@@ -16,6 +16,10 @@ namespace ModelRewriter
             //_doc = XDocument.Load(path);
             _doc = doc;
         }
+        public XMLHandler()
+        {
+
+        }
 
         public string getDeclarations()
         {
@@ -26,72 +30,73 @@ namespace ModelRewriter
         {
             List<Template> templates = new List<Template>();
 
-            // this has to be first or locations from faultTemplate are not added
-//            XElement faultTemplate = XElement.Parse(XMLProvider.getFaultTemplate());
-
-//            _doc.Descendants("template").ElementAt(0).AddBeforeSelf(faultTemplate);
-
             foreach (var template in _doc.Descendants("template"))
             {
-				Template t = new Template(template);
-                t.initialLocation.id = template.Element("init").Attribute("ref").Value;
-
-                // store name object from XML
-                t.name = (string)template.Element("name");
-
-                // store information about locations from UPPAAL model in objects from XML
-                foreach (var locs in template.Descendants("location"))
-                {
-                    Location l = new Location();
-
-                    l.id = (string)locs.Attribute("id");
-                    l.name = (string)locs.Element("name");
-
-                    // translate roman numerals to integers
-                    try
-                    {
-                        l.pc = Convert.ToString(RomanToInt.RomanToNumber(l.name.Substring(0, l.name.IndexOf("_"))));
-                    }catch (Exception ex)
-                    {
-                        // yeah.. this should probably be handled more eloquently..
-                        l.pc = "None";
-                    }
-
-                    l.x = Convert.ToInt32(locs.Attribute("x").Value);
-                    l.y = Convert.ToInt32(locs.Attribute("y").Value);
-
-                    t.locations.Add(l);
-                }
-
-                // store information about transitions from UPPAAL model in objects from XML
-                List<Transition> transitions = new List<Transition>();
-
-                foreach (var trans in template.Descendants("transition"))
-                {
-                    Transition srcDstPair = new Transition();
-
-                    srcDstPair.source.id = (string)trans.Element("source").Attribute("ref");
-                    srcDstPair.target.id = (string)trans.Element("target").Attribute("ref");
-
-                    // add guards
-                    srcDstPair.grds = getGuards(trans);
-
-                    // add selections
-                    srcDstPair.sels = getSelections(trans);
-
-                    // add updates
-                    srcDstPair.asms = getAssignments(trans);
-
-                    transitions.Add(srcDstPair);
-                }
-
-                t.transitions = transitions;
-                t.addFaultTransitions();
-
-                templates.Add(t);            
+                templates.Add(getTemplate(template));            
             }
 
             return templates;
+        }
+
+        public Template getTemplate(XElement xel)
+        {
+            Template t = new Template(xel);
+            t.initialLocation.id = xel.Element("init").Attribute("ref").Value;
+
+            // store name object from XML
+            t.name = (string)xel.Element("name");
+
+            // store information about locations from UPPAAL model in objects from XML
+            foreach (var locs in xel.Descendants("location"))
+            {
+                Location l = new Location();
+
+                l.id = (string)locs.Attribute("id");
+                l.name = (string)locs.Element("name");
+
+                // translate roman numerals to integers
+                try
+                {
+                    l.pc = Convert.ToString(RomanToInt.RomanToNumber(l.name.Substring(0, l.name.IndexOf("_"))));
+                }
+                catch (Exception ex)
+                {
+                    // yeah.. this should probably be handled more eloquently..
+                    l.pc = "None";
+                }
+
+                l.x = Convert.ToInt32(locs.Attribute("x").Value);
+                l.y = Convert.ToInt32(locs.Attribute("y").Value);
+
+                t.locations.Add(l);
+            }
+
+            // store information about transitions from UPPAAL model in objects from XML
+            List<Transition> transitions = new List<Transition>();
+
+            foreach (var trans in xel.Descendants("transition"))
+            {
+                Transition srcDstPair = new Transition();
+
+                srcDstPair.source.id = (string)trans.Element("source").Attribute("ref");
+                srcDstPair.target.id = (string)trans.Element("target").Attribute("ref");
+
+                // add guards
+                srcDstPair.grds = getGuards(trans);
+
+                // add selections
+                srcDstPair.sels = getSelections(trans);
+
+                // add updates
+                srcDstPair.asms = getAssignments(trans);
+
+                transitions.Add(srcDstPair);
+            }
+
+            t.transitions = transitions;
+            t.addFaultTransitions();
+
+            return t;
         }
 
         public struct generalLabels

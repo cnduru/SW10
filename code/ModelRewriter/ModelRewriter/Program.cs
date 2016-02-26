@@ -23,6 +23,7 @@ namespace ModelRewriter
 			else 
 			{
 				new Rewriter ("C://Users//Avalon//SW10//code//models//sample.xml");
+                new JParser("");
 			}
         }
     }

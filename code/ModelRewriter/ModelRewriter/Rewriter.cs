@@ -14,7 +14,7 @@ namespace ModelRewriter
         public Rewriter(string path)
         {
             UppaalModel uml = new UppaalModel("sample_timed.xml");
-            uml.Save("testxml.xml");
+            uml.rewritePCFault("testxml.xml");
         }
     }
 }
