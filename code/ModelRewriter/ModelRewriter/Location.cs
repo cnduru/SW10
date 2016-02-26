@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
+using System.Diagnostics;
 
 namespace ModelRewriter
 {
@@ -18,6 +19,7 @@ namespace ModelRewriter
         public string pc  { get; set; }
         public List<Location> reachableLocs = new List<Location>();
 
+
         Label invariant;
 
 
@@ -26,21 +28,32 @@ namespace ModelRewriter
 
         }
 
+        public Location(Location caller)
+        {
+            id = caller.id + "a";
+            y = caller.y + Constants.LabelOffsetY * 2;
+            x = Constants.LabelOffsetX * 10;
+            invariant = new Label{
+                content = "t <= " + (Constants.maxInstTime + 1), 
+                kind = "invariant", 
+                y = y,
+                x = Constants.LabelOffsetX * 10 - 70               
+            };
+
+        }
+
         public Location(int count, string instLine)
         {
-            inst = new Instruction(instLine);
             id = "id" + count;
             y = (count * Constants.LabelOffsetY*4);
             x = 0;
-            name = "pc" + new Regex("^[0-9]+\\. +[a-zA-Z]+").Match(instLine)
-                .ToString().Replace(" ","").Replace('.','_');
             if (count >= 0)
             {
-                parseInst(count);
+                parseInst(count, instLine);
             }
             else
             {
-                parseCall();
+                parseCall(instLine);
             }
         }
 
@@ -54,7 +67,7 @@ namespace ModelRewriter
             nameElement.SetAttributeValue("x", x + Constants.LabelOffsetX);
             nameElement.SetAttributeValue("y", y - Constants.LabelOffsetY);
             locationElement.Add(nameElement);
-            //locationElement.Add(invariant.GetXML());
+            locationElement.Add(invariant.GetXML());
             if(urgent && !committed)
             {
                 locationElement.Add(new XElement("urgent"));
@@ -70,19 +83,28 @@ namespace ModelRewriter
             return locationElement;        
         }
 
-        private void parseCall()
+        private void parseCall(string instLine)
         {
-            //name = "pc" + new Regex(" [a-zA-Z]+(").Match(inst)
-                //.ToString().Replace(" ","").Replace("(","");
+            inst = new Instruction();
+            name = new Regex(" [a-zA-Z]+ \\(").Match(instLine)
+                .ToString().Replace(" ","").Replace("(","");
+            invariant = new Label{
+                content = "t <= " + (Constants.maxInstTime + 1), 
+                kind = "invariant", 
+                y = y,
+                x = -70               
+            };
         }
 
-        private void parseInst(int count){
-
+        private void parseInst(int count, string instLine){
+            inst = new Instruction(instLine);
+            name = "pc" + new Regex("^[0-9]+\\. +[a-zA-Z]+").Match(instLine)
+                .ToString().Replace(" ", "").Replace('.', '_');
             invariant = new Label{
                 content = "t <= " + Constants.instTime, 
                 kind = "invariant", 
                 y = y,
-                x = -60               
+                x = -70               
             };
 
         }

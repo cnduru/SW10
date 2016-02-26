@@ -10,6 +10,11 @@ namespace ModelRewriter
         public int pc;
         public List<string> instArgs = new List<string>(); 
 
+        public Instruction()
+        {
+            pc = -1;
+        }
+
         public Instruction(string code)
         {
             var pcStr = new Regex("^[0-9]+").Match(code).ToString();

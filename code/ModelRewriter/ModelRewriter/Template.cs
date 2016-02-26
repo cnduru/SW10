@@ -8,6 +8,9 @@ using System.Xml.Linq;
 using System.Diagnostics.Tracing;
 using System.Collections;
 using System.Xml.Schema;
+using System.Dynamic;
+using System.Collections.Specialized;
+using System.Net.Mime;
 
 
 namespace ModelRewriter
@@ -20,6 +23,9 @@ namespace ModelRewriter
         public List<Transition> transitions = new List<Transition>();
         public List<Transition> faultTransitions = new List<Transition>(); // should probably be removed
         public string localDeclarations = "";
+
+        private ConstantPool CP = new ConstantPool();
+
 
 		public Template(XElement modelXML)
 		{
@@ -80,7 +86,7 @@ namespace ModelRewriter
         private List<Location> ResolveLocations(List<string> method)
         {
             var locs = new List<Location>();
-            for (int i = 1; i < method.Count ; i++)
+            for (int i = 0; i < method.Count ; i++)
             {
                 locs.Add(new Location(i-1, method[i])); 
             }
@@ -91,10 +97,27 @@ namespace ModelRewriter
         private void ResolveCode()
         {
             var timeGuard = "t == 1";
-            ConstantPool CP = new ConstantPool();
+            var newLocs = new List<Location>();
             foreach (var loc in locations)
             {
                 List<Label> labels = new List<Label>();
+                //TODO maybe move to switch with instArg
+                if (loc.inst.pc == -1)
+                {
+                    labels = new List<Label>(){
+                        new Label { 
+                            content = timeGuard, kind = "guard" },
+                        new Label {
+                            content = String.Format("{0}?", loc.name), 
+                            kind = "synchronisation" },
+                        new Label {
+                            content = String.Format("os[osp] = loc{0}, osc++, t = 0", 0), 
+                            kind = "assignment" }
+                    };
+                    transitions.Add(new Transition(loc, PCToLocation(0),labels));
+                    continue;
+                }
+                
                 var instArg = loc.inst.instArgs;
                 switch (instArg[0])
                 {
@@ -112,6 +135,7 @@ namespace ModelRewriter
                         };
                         transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 1),labels)); //TODO is +1 allways true?
                         break;
+
                     case "arraylength":
                         /* arrays are represented as an object on the heap
                          * the first field (index 0) is used for the lenght
@@ -126,6 +150,7 @@ namespace ModelRewriter
                         };
                         transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 1),labels));
                         break;
+
                     case "getstatic":
                         /* get a static field value of a class, 
                          * where the field is identified by field reference in the constant pool index
@@ -155,6 +180,7 @@ namespace ModelRewriter
                         };
                         transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 1),labels));
                         break;
+
                     case "ifcmpme":
                         /* if greather or eq
                          * Opstack: .. ,value1, value2 -> ..
@@ -175,11 +201,14 @@ namespace ModelRewriter
                         };
                         transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 3), labels));
                         break;
+
                     case "invokespecial":
-                        break;
                     case "invokevirtual":
-                        //done!
+                        var caller = new Location(loc);
+                        transitions.AddRange(Invoke(loc, caller, PCToLocation(loc.inst.pc + 3), true));
+                        newLocs.Add(caller);
                         break;
+
                     case "ldc":
                         labels = new List<Label>(){
                             new Label { 
@@ -191,13 +220,76 @@ namespace ModelRewriter
                         };
                         transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 2),labels));
                         break;
+
                     case "return":
                         break;
+
                     default:
                         throw new System.NotImplementedException(instArg[0]);
-
                 }
             }
+            locations.AddRange(newLocs);
+        }
+
+        private List<Transition>Invoke(Location caller, Location waiter, Location next, bool virt=false)
+        {
+            bool ret = caller.inst.instArgs[1] != "void";
+            string mid = caller.inst.instArgs[2];
+            var param = caller.inst.instArgs.Skip(3).Where(p => p != "(" && p != ")").ToList();
+            bool included = parseable(mid);
+
+            var res = new List<Transition>();
+            var call = new List<Label>(){
+                new Label 
+                {
+                    content = "t == 1", kind = "guard" 
+                }
+            };
+            var wait = new List<Label>();
+            if (included)
+            {
+                throw new NotImplementedException();
+            }
+            else
+            {
+                call.Add(new Label
+                    {
+                        content = String.Format("osp = osp - {0}, t = 0", param.Count + (virt ? 1 : 0)), 
+                        kind = "assignment"
+                    });
+                wait.Add(new Label
+                    {
+                        content = "t == 5", kind = "guard" 
+                    });
+            }
+            if (ret)
+            {
+                wait.Add(new Label
+                    {
+                        content = "t = 0, os[osp] = par0, osp++", kind = "assignment" 
+                    });
+            }
+            else
+            {
+                wait.Add(new Label
+                    {
+                        content = "t = 0", kind = "assignment" 
+                    });
+            }
+            res.Add(new Transition(caller, waiter, call));
+            res.Add(new Transition(waiter, waiter, new List<Label>{
+                new Label{
+                    content = "t == " + Constants.maxInstTime.ToString(), kind = "guard"
+                }
+            }));
+            res.Add(new Transition(waiter, next, wait));
+
+            return res;
+        }
+
+        private bool parseable(string method)
+        {
+            return false;
         }
 
         private Location PCToLocation(int pc)
