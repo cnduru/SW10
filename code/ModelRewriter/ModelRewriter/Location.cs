@@ -28,6 +28,20 @@ namespace ModelRewriter
 
         }
 
+        public Location(Location caller)
+        {
+            id = caller.id + "a";
+            y = caller.y + Constants.LabelOffsetY * 2;
+            x = Constants.LabelOffsetX * 10;
+            invariant = new Label{
+                content = "t <= " + (Constants.maxInstTime + 1), 
+                kind = "invariant", 
+                y = y,
+                x = Constants.LabelOffsetX * 10 - 70               
+            };
+
+        }
+
         public Location(int count, string instLine)
         {
             id = "id" + count;
@@ -75,10 +89,10 @@ namespace ModelRewriter
             name = new Regex(" [a-zA-Z]+ \\(").Match(instLine)
                 .ToString().Replace(" ","").Replace("(","");
             invariant = new Label{
-                content = "t <= " + Constants.instTime, 
+                content = "t <= " + (Constants.maxInstTime + 1), 
                 kind = "invariant", 
                 y = y,
-                x = -60               
+                x = -70               
             };
         }
 
@@ -90,7 +104,7 @@ namespace ModelRewriter
                 content = "t <= " + Constants.instTime, 
                 kind = "invariant", 
                 y = y,
-                x = -60               
+                x = -70               
             };
 
         }
