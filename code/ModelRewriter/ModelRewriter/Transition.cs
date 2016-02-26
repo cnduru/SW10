@@ -23,6 +23,9 @@ namespace ModelRewriter
         private List<Label> labels = new List<Label>();
         private List<Nail> nails = new List<Nail>();
         public guards grds = new guards();
+        public selections sels = new selections();
+        public assignments asms = new assignments();
+
 
         public struct guards 
         {
@@ -30,6 +33,22 @@ namespace ModelRewriter
             public int x;
             public int y;
         };
+
+        public struct selections
+        {
+            public string content;
+            public int x;
+            public int y;
+        };
+
+
+        public struct assignments
+        {
+            public string content;
+            public int x;
+            public int y;
+        };
+
 
         [Obsolete]
         public Transition ()
@@ -92,6 +111,18 @@ namespace ModelRewriter
                 transitionElement.Add(getGuards());
             }
 
+            // content is "" if there was no guard
+            if (sels.content != "" && sels.content != null)
+            {
+                transitionElement.Add(getSelections());
+            }
+
+            // content is "" if there was no guard
+            if (asms.content != "" && asms.content != null)
+            {
+                transitionElement.Add(getAssignments());
+            }
+
             return transitionElement;
         }
 
@@ -130,6 +161,30 @@ namespace ModelRewriter
             el.SetAttributeValue("kind", "guard");
             el.SetAttributeValue("x", grds.x);
             el.SetAttributeValue("y", grds.y);
+
+            return el;
+        }
+
+        private XElement getSelections()
+        {
+            XElement el = new XElement("label");
+
+            el.SetValue(sels.content);
+            el.SetAttributeValue("kind", "select");
+            el.SetAttributeValue("x", sels.x);
+            el.SetAttributeValue("y", sels.y);
+
+            return el;
+        }
+
+        private XElement getAssignments()
+        {
+            XElement el = new XElement("label");
+
+            el.SetValue(asms.content);
+            el.SetAttributeValue("kind", "assignment");
+            el.SetAttributeValue("x", asms.x);
+            el.SetAttributeValue("y", asms.y);
 
             return el;
         }

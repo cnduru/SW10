@@ -69,12 +69,18 @@ namespace ModelRewriter
                 foreach (var trans in template.Descendants("transition"))
                 {
                     Transition srcDstPair = new Transition();
-                    
+
                     srcDstPair.source.id = (string)trans.Element("source").Attribute("ref");
                     srcDstPair.target.id = (string)trans.Element("target").Attribute("ref");
 
                     // add guards
                     srcDstPair.grds = getGuards(trans);
+
+                    // add selections
+                    srcDstPair.sels = getSelections(trans);
+
+                    // add updates
+                    srcDstPair.asms = getAssignments(trans);
 
                     transitions.Add(srcDstPair);
                 }
@@ -88,35 +94,67 @@ namespace ModelRewriter
             return templates;
         }
 
+        public struct generalLabels
+        {
+            public string content;
+            public int x;
+            public int y;
+        }
+
         private Transition.guards getGuards(XElement el)
         {
-            Transition.guards gds = new Transition.guards();
-            XElement guardElement = el.Element("label");
-
-            // figure out some solution to this try catch
             try
             {
-                string guardAttr = (string)el.Element("label").Attribute("kind");
+                XElement xel1 = el.Elements("label").Where(l => l.Attribute("kind").Value == "guard").ElementAt(0);
 
-                if (guardAttr == "guard")
+                return new Transition.guards()
                 {
-                    gds.content = guardElement.Value;
-                    gds.x = (int)guardElement.Attribute("x");
-                    gds.y = (int)guardElement.Attribute("y");
-                }
-                else
+                    content = xel1.Value,
+                    x = Convert.ToInt32(xel1.Attribute("x").Value),
+                    y = Convert.ToInt32(xel1.Attribute("y").Value)
+                };
+            }
+            catch (Exception ex) 
+            {
+                return new Transition.guards() { content = "", x = 0, y = 0 };
+            }
+        }
+
+        private Transition.assignments getAssignments(XElement el)
+        {
+            try
+            {
+                XElement xel1 = el.Elements("label").Where(l => l.Attribute("kind").Value == "assignment").ElementAt(0);
+
+                return new Transition.assignments()
                 {
-                    gds.content = "";
-                    gds.x = 0;
-                    gds.y = 0;
-                }
+                    content = xel1.Value,
+                    x = Convert.ToInt32(xel1.Attribute("x").Value),
+                    y = Convert.ToInt32(xel1.Attribute("y").Value)
+                };
             }
             catch (Exception ex)
             {
-                // only triggered if no guard
+                return new Transition.assignments() { content = "", x = 0, y = 0 };
             }
+        }
+        private Transition.selections getSelections(XElement el)
+        {
+            try
+            {
+                XElement xel1 = el.Elements("label").Where(l => l.Attribute("kind").Value == "select").ElementAt(0);
 
-            return gds;
+                return new Transition.selections()
+                {
+                    content = xel1.Value,
+                    x = Convert.ToInt32(xel1.Attribute("x").Value),
+                    y = Convert.ToInt32(xel1.Attribute("y").Value)
+                };
+            }
+            catch (Exception ex)
+            {
+                return new Transition.selections() { content = "", x = 0, y = 0 };
+            }
         }
 
         public string getSystem()
