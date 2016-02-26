@@ -42,6 +42,20 @@ namespace ModelRewriter
 			templates = xh.getTemplates ("useless?");
 		}
 
+        //Sets dec, sys, and queries
+        public void updateDec()
+        {
+            globalDeclarations = @"clock t;
+int H[10];
+int cp0;
+int cp1;
+chan mainc;
+chan DubTestc;";
+            system = @"s = main();
+s1 = DubTest();
+system s, s1;";
+        }
+
 		//Store UPPAAL model to a file
 		public void Save(string path)
 		{
@@ -65,6 +79,7 @@ namespace ModelRewriter
         public void AddTemplate(List<string> method)
         {
             templates.Add(new Template(method));
+
         }
 
 		//Creates a xml element with a tag and value
