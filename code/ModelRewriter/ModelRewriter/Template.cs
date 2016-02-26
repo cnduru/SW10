@@ -81,6 +81,9 @@ namespace ModelRewriter
             name = FirstNonKeyword(method.First());
             locations = ResolveLocations(method);
             ResolveCode();
+            localDeclarations = @"int os[10]; 
+int osp = 0;
+int loc0 = 0;";
         }
 
         private List<Location> ResolveLocations(List<string> method)
@@ -108,10 +111,10 @@ namespace ModelRewriter
                         new Label { 
                             content = timeGuard, kind = "guard" },
                         new Label {
-                            content = String.Format("{0}?", loc.name), 
+                            content = String.Format("{0}c?", loc.name), 
                             kind = "synchronisation" },
                         new Label {
-                            content = String.Format("os[osp] = loc{0}, osc++, t = 0", 0), 
+                            content = String.Format("os[osp] = loc{0}, osp++, t = 0", 0), 
                             kind = "assignment" }
                     };
                     transitions.Add(new Transition(loc, PCToLocation(0),labels));
@@ -123,14 +126,14 @@ namespace ModelRewriter
                 {
                     case "aload":
                         /* aload load a refernce from locals into the opstack
-                         * the opstack counter osc is incremented as the opstack grows.
+                         * the opstack counter osp is incremented as the opstack grows.
                          * Opstack: .. -> .. , locals[n]
                          */
                         labels = new List<Label>(){
                             new Label { 
                                 content = timeGuard, kind = "guard" },
                             new Label { 
-                                content = String.Format("os[osp] = loc{0}, osc++, t = 0", instArg[1]), 
+                                content = String.Format("os[osp] = loc{0}, osp++, t = 0", instArg[1]), 
                                 kind = "assignment" }
                         };
                         transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 1),labels)); //TODO is +1 allways true?
@@ -189,15 +192,15 @@ namespace ModelRewriter
                             new Label { 
                                 content = timeGuard + " && os[osp - 2] >= os[osp - 1]", kind = "guard" },
                             new Label { 
-                                content = "osc = osc - 2, t = 0", kind = "assignment" }
+                                content = "osp = osp - 2, t = 0", kind = "assignment" }
                         };
                         transitions.Add(new Transition(loc, PCToLocation(Convert.ToInt32(instArg[1])), labels));
 
                         labels = new List<Label>(){
                             new Label { 
-                                content = timeGuard + " && os[osc - 2] < os[osc - 1]", kind = "guard" },
+                                content = timeGuard + " && os[osp - 2] < os[osp - 1]", kind = "guard" },
                             new Label { 
-                                content = "osc = osc - 2, t = 0", kind = "assignment" }
+                                content = "osp = osp - 2, t = 0", kind = "assignment" }
                         };
                         transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 3), labels));
                         break;

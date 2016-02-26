@@ -42,6 +42,7 @@ public DubTest ( ) ;
             {
                 model.AddTemplate(m);
             }
+            model.updateDec();
             return model;
 		}
 
