@@ -67,7 +67,12 @@ namespace ModelRewriter
             nameElement.SetAttributeValue("x", x + Constants.LabelOffsetX);
             nameElement.SetAttributeValue("y", y - Constants.LabelOffsetY);
             locationElement.Add(nameElement);
-            locationElement.Add(invariant.GetXML());
+
+            if(invariant != null)
+            {
+                locationElement.Add(invariant.GetXML());
+            }
+
             if(urgent && !committed)
             {
                 locationElement.Add(new XElement("urgent"));
