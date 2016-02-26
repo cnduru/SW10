@@ -27,9 +27,9 @@ namespace ModelRewriter
             List<Template> templates = new List<Template>();
 
             // this has to be first or locations from faultTemplate are not added
-            XElement faultTemplate = XElement.Parse(XMLProvider.getFaultTemplate());
+//            XElement faultTemplate = XElement.Parse(XMLProvider.getFaultTemplate());
 
-            _doc.Descendants("template").ElementAt(0).AddBeforeSelf(faultTemplate);
+//            _doc.Descendants("template").ElementAt(0).AddBeforeSelf(faultTemplate);
 
             foreach (var template in _doc.Descendants("template"))
             {

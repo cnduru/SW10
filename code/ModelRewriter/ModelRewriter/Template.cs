@@ -80,7 +80,7 @@ namespace ModelRewriter
         private List<Location> ResolveLocations(List<string> method)
         {
             var locs = new List<Location>();
-            for (int i = 1; i < method.Count ; i++)
+            for (int i = 0; i < method.Count ; i++)
             {
                 locs.Add(new Location(i-1, method[i])); 
             }
@@ -95,6 +95,23 @@ namespace ModelRewriter
             foreach (var loc in locations)
             {
                 List<Label> labels = new List<Label>();
+
+                if (loc.inst.pc == -1)
+                {
+                    labels = new List<Label>(){
+                        new Label { 
+                            content = timeGuard, kind = "guard" },
+                        new Label { 
+                            content = String.Format("{0}?", loc.name), 
+                            kind = "synchronisation" },
+                        new Label { 
+                            content = String.Format("os[osp] = loc{0}, osc++, t = 0", 0), 
+                            kind = "assignment" }
+                    };
+                    transitions.Add(new Transition(loc, PCToLocation(0),labels));
+                    continue;
+                }
+                
                 var instArg = loc.inst.instArgs;
                 switch (instArg[0])
                 {
