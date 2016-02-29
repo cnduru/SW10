@@ -25,7 +25,7 @@ namespace ModelRewriter
         public guards grds = new guards();
         public selections sels = new selections();
         public assignments asms = new assignments();
-
+        public synchronizations syncs = new synchronizations();
 
         public struct guards 
         {
@@ -49,6 +49,12 @@ namespace ModelRewriter
             public int y;
         };
 
+        public struct synchronizations
+        {
+            public string content;
+            public int x;
+            public int y;
+        };
 
         [Obsolete]
         public Transition ()
@@ -123,6 +129,12 @@ namespace ModelRewriter
                 transitionElement.Add(getAssignments());
             }
 
+            // content is "" if there was no guard
+            if (syncs.content != "" && syncs.content != null)
+            {
+                transitionElement.Add(getSyncs());
+            }
+
             return transitionElement;
         }
 
@@ -185,6 +197,18 @@ namespace ModelRewriter
             el.SetAttributeValue("kind", "assignment");
             el.SetAttributeValue("x", asms.x);
             el.SetAttributeValue("y", asms.y);
+
+            return el;
+        }
+
+        private XElement getSyncs()
+        {
+            XElement el = new XElement("label");
+
+            el.SetValue(syncs.content);
+            el.SetAttributeValue("kind", "synchronisation");
+            el.SetAttributeValue("x", syncs.x);
+            el.SetAttributeValue("y", syncs.y);
 
             return el;
         }

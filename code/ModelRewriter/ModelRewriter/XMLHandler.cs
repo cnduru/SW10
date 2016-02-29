@@ -90,6 +90,9 @@ namespace ModelRewriter
                 // add updates
                 srcDstPair.asms = getAssignments(trans);
 
+                // add synchronizations
+                srcDstPair.syncs = getSyncs(trans);
+
                 transitions.Add(srcDstPair);
             }
 
@@ -159,6 +162,25 @@ namespace ModelRewriter
             catch (Exception ex)
             {
                 return new Transition.selections() { content = "", x = 0, y = 0 };
+            }
+        }
+
+        private Transition.synchronizations getSyncs(XElement el)
+        {
+            try
+            {
+                XElement xel1 = el.Elements("label").Where(l => l.Attribute("kind").Value == "synchronisation").ElementAt(0);
+
+                return new Transition.synchronizations()
+                {
+                    content = xel1.Value,
+                    x = Convert.ToInt32(xel1.Attribute("x").Value),
+                    y = Convert.ToInt32(xel1.Attribute("y").Value)
+                };
+            }
+            catch (Exception ex)
+            {
+                return new Transition.synchronizations() { content = "", x = 0, y = 0 };
             }
         }
 
