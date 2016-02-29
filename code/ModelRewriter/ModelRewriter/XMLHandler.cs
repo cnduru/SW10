@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
@@ -53,11 +54,21 @@ namespace ModelRewriter
 
                 l.id = (string)locs.Attribute("id");
                 l.name = (string)locs.Element("name");
-
-                // translate roman numerals to integers
                 try
                 {
-                    l.pc = Convert.ToString(RomanToInt.RomanToNumber(l.name.Substring(0, l.name.IndexOf("_"))));
+                    // load pc number
+                    //l.pc = Convert.ToString(RomanToInt.RomanToNumber(l.name.Substring(0, l.name.IndexOf("_"))));        
+                    Regex regex = new Regex(@"pc(\d*)");
+                    Match match = regex.Match(l.name);
+
+                    if (match.Success)
+                    {
+                        l.pc = match.Value.Replace("pc", "");
+                    } 
+                     
+                    
+
+
                 }
                 catch (Exception ex)
                 {
