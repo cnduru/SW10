@@ -1,3 +1,6 @@
 \chapter{Building a UPPAAL Model}
-\section{Choosing a program representation}
+\section{Choosing a Program Representation}
+When translating a program to a Uppaal model, it is important to choose an appropriate representation of the program. Several representations are possible, depending on what one wants to show. One could for example represent a program merely in terms of program flow if a simulation of a disruption of the program flow is to be shown, e.g an error in the progrma counter. One could also model the data flow in the program if a simulation of a corruption of a memory value is to be shown. These are just a few examples and many representations can be chosen.\\
+
+We have chosen the former and model the program in terms of program flow, so that we can simulation disruptions in the programs execution flow. 
 \section{Rewriting the Model}
