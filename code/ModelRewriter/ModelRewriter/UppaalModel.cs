@@ -126,7 +126,7 @@ system s, s1;";
             List<string> loadedProcesses = new List<string>();
             StringBuilder sb = new StringBuilder();
 
-            string patternSystem = @"(Process\d? = \w*\(\));";
+            string patternSystem = @"(\w*\s=\s\w*\(\));";//@"(Process\d? = \w*\(\));";
 
             // add fault system
             loadedSystem.Add("Fault = FaultInj();\n");
@@ -144,8 +144,6 @@ system s, s1;";
                 catch
                 {
                 }
-
-
             }
 
             bool isLast = false;

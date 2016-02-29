@@ -65,10 +65,6 @@ namespace ModelRewriter
                     {
                         l.pc = match.Value.Replace("pc", "");
                     } 
-                     
-                    
-
-
                 }
                 catch (Exception ex)
                 {
