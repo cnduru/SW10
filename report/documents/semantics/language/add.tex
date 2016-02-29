@@ -1,0 +1,12 @@
+\subsection{ADD}
+This instruction consumes the two top elements of the operand stack, adding them together and pushes the result back onto the stack.
+$$\inference[ADD]{ 
+inst(P, mid, pc) = \texttt{ADD} \semsp
+v = x_{n-1} + x_n \semnl \\
+ops = (x_0,x_1, \ldots,x_{n-2},x_{n-1},x_n)\semsp
+ops' = (x_0 \ldots x_{n-2},v)
+}
+{CP, P \vdash \langle H, (CS, \langle mid, loc, ops, pc \rangle)\rangle \Rightarrow 
+ \langle H, (CS, \langle mid, loc, ops', pc + 1 \rangle)\rangle 
+}$$
+

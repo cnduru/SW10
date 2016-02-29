@@ -1,0 +1,15 @@
+\subsection{PUTSTATIC}
+This is used to write a value to a class variable on the heap.
+
+$$\inference[PUTSTATIC]{
+inst(P,mid, pc) = \texttt{PUTSTATIC } fid \semnl \\
+CP(fid) = a\semsp
+H' = H[a\mapsto v] \semnl \\
+ops = (x_0, \ldots, x_n, v) \semsp 
+ops' = (x_0, \ldots, x_{n})
+}
+{CP, P \vdash \langle H, (CS, \langle mid, loc, ops, pc \rangle )\rangle \Rightarrow \langle H', (CS, \langle mid, loc, ops', pc + 2 \rangle )\rangle}$$
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../master"
+%%% End:

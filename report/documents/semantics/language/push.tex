@@ -1,0 +1,7 @@
+\subsection{PUSH}
+\texttt{PUSH} $v$ is used to add the value from the parameter $v$ onto the top of the operand stack. Since the \texttt{PUSH} $v$ instruction takes up two bytes due to the parameter, $pc$ is incremented by two.
+$$\inference[PUSH]{
+inst(P, mid, pc) = \texttt{PUSH }v \semnl\\
+ ops = (x_0,\ldots,x_n) \semsp ops' = (x_0, \ldots, x_n, v) \ }
+{CP, P \vdash \langle H, (CS, \langle mid, loc, ops, pc \rangle)\rangle \Rightarrow
+ \langle H, (CS, \langle mid, loc, ops', pc + 2 \rangle)\rangle}$$\\

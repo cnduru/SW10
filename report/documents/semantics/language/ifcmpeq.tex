@@ -1,0 +1,15 @@
+%!TEX root = ../../master.tex
+\subsection{IF\_CMPEQ}
+This compares and consumes the two top elements of the operand stack.
+If they are equal it will make a jump to the address given as a parameter, otherwise it will increment $pc$ by two.
+
+$$inst(P, mid, pc) = \texttt{IF\_CMPEQ }a$$
+\[
+    pc'= 
+\begin{cases}
+    a,& \text{if } x_{n-1} = x_n\\
+    pc+2,              & \text{otherwise}
+\end{cases}
+\]
+$$\inference[IF\_CMPEQ]{ops=(x_0, \ldots, x_{n-2}, x_{n-1}, x_n) \semsp ops'=(x_0, \ldots, x_{n-2})}
+{CP, P \vdash \langle H, (CS, \langle mid, locals, ops, pc \rangle)\rangle \Rightarrow \langle H, (CS, \langle mid, locals, ops', pc' \rangle)\rangle}$$

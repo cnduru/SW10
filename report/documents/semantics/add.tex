@@ -1,0 +1,11 @@
+\subsection{ADD}
+$$\inference[ADD]{ 
+inst(P, mid, pc) = \texttt{ADD} \semsp
+v = x_{k-1} + x_k \semnl \\
+ops = (x_0,x_1, \ldots,x_{k-2},x_{k-1},x_k)\semsp
+ops' = (x_0 \ldots x_{k-2},v)
+}
+{CP, P \vdash H, (CS, \langle mid, loc, ops, pc \rangle) \Rightarrow 
+ H, (CS, \langle mid, loc, ops', pc + 1 \rangle)
+}$$
+

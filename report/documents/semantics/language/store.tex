@@ -1,0 +1,11 @@
+%!TEX root = ../../master.tex
+\subsection{STORE}
+This will store a new value in a local variable.
+
+$$\inference[STORE]{
+inst(P,mid, pc) = \texttt{STORE }i \semsp
+loc' = loc[i \mapsto x_n]\semnl\\
+ops = (x_0, \ldots, x_{n-1}, x_n) \semsp 
+ops' = (x_0, \ldots, x_{n-1})
+}
+{CP, P \vdash \langle H, (CS, \langle mid, loc, ops, pc \rangle )\rangle \Rightarrow \langle H, (CS, \langle mid, loc', ops', pc + 2 \rangle )\rangle}$$

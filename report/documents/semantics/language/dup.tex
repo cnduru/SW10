@@ -1,0 +1,10 @@
+\subsection{DUP}
+\texttt{DUP} duplicates the top element of the operand stack, leaving two identical elements as the two top elements of the operand stack.
+$$\inference[DUP]{ 
+inst(P, mid, pc) = \texttt{DUP} \semnl \\
+ops = (x_0, \ldots,x_n)\semsp
+ops' = (x_0, \ldots, x_{n}, x_{n})
+}
+{CP, P \vdash \langle H, (CS, \langle mid, loc, ops, pc \rangle)\rangle \Rightarrow \langle H, (CS, \langle mid, loc, ops', pc + 1 \rangle)\rangle
+}$$
+

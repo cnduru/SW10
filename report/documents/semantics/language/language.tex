@@ -1,0 +1,68 @@
+%!TEX root = ../../master.tex
+In this chapter we describe and formalise the language \jcl, which contains a variation of the core instructions of the Java Card bytecode language. In this context the term core describes the basic set of instructions from which all other Java Card instructions can be built. 
+We created this language because it is easier to model the fewer instructions in this language, rather than all the instructions in Java Card.
+The full set of Java Card instructions can be built from combinations of the instructions in \jcl.
+Furthermore, there exists no official formal semantics for the Java Card language.
+The instructions of \jcl are defined as:
+\begin{align*}
+  Instructions = \{
+  & \texttt{NOP}, && \texttt{PUSH } v, && \texttt{POP}, \\ 
+  & \texttt{ADD}, && \texttt{DUP}, && \texttt{GOTO } a, \\ 
+  & \texttt{IF\_CMPEQ } a, && \texttt{INVOKESTATIC } mid, && \texttt{RETURN},\\ 
+  & \texttt{PUTSTATIC } fid, && \texttt{GETSTATIC } fid, && \texttt{LOAD } a, \\
+  & \texttt{STORE } a, && \texttt{INVOKEVIRTUAL } mid, && \texttt{PUTFIELD } fid,\\ 
+  & \texttt{GETFIELD } fid, && \texttt{NEW } ci && \}
+\end{align*}
+
+$\mathbb{N}$ is defined as the set of all natural numbers, including zero, and $\mathbb{Z}$ is defined as the set of all integers.
+In the operational semantics we want to describe values as an integer between a minimum value and a maximum value, $Values = \{ x | x \in \mathbb{Z} \wedge x \geq \texttt{INT\_MIN} \wedge x \leq \texttt{INT\_MAX} \}$.
+In addition we want a notion of addresses which is used to refer to an instruction in a method and mapping to the heap: $Addresses  = \mathbb{N}$.
+A program counter is used to represent the current address $ProgramCounters = PC = Addresses$. Instructions with parameters, such as \texttt{PUSH } $v$, increment the program counter with more than one, since it uses more than one byte. \\
+
+The program is a sequence of instructions, we denote a program as $P = (i_0, \ldots, i_k)$ where $k$ is the number of instructions in the program. 
+A program consist solely of instructions $P \in Programs$ and $Programs =  \{ x | x \in Instructions^{*} \}$.
+To access instructions we introduce a function accepting a program, method identifier, and a program counter. 
+It returns the instruction in the method of the program at the program counter.
+The function is defined as:
+$$inst = Programs \times MethodID \times PC \to   Instructions$$
+$$MethodID = \mathbb{N}$$
+
+To describe a running program we use configurations.
+A configuration is a 4-tuple consisting of a program, constant pool, heap and a call stack. 
+$$Conf = Program \times ConstPool \times Heap \times CallStack$$
+Executing an instruction means moving from one configuration to another. 
+We will use $\vdash$ to indicate no change in the elements left of $\vdash$. 
+For the semantic rules, no change will occur in program and constant pool e.g.:
+$$CP, P \vdash \langle H, CS \rangle \rightarrow \langle H', CS' \rangle$$
+Where $CP \in ConstPool$, $H,H' \in Heap$, and $CS, CS' \in CallStack$.
+We use a shorthand dot notation to access elements of a tuple e.g. $conf.Program$ where $conf \in Conf$, indicates the program used in the configuration $conf$.\\
+
+The heap can be described as a function which takes a heap address and returns either the address \textit{or} value associated with that address $Heap = Addresses \to   (Addresses + Values)_\perp$. $\perp$ represents an undefined value, and is included to describe that $Addresses$ can also map to undefined addresses/values in the heap.\\
+
+The call stack is used to keep track of the current method scope, it is a sequence of stack frames $CallStack = StackFrames^{*}$.
+A stack frame holds the method id, local variables, operand stack and the program counter for the method.
+
+$$StackFrame = MethodID \times Locals \times OpStack \times PC $$
+
+Local variables are represented by the function $Locals = \mathbb{N} \to   Values_\perp$. 
+The operand stack is a sequence of values and addresses $OpStack = (Values + Addresses)^{*}$. \\
+
+To represent objects we need classes in our language.
+We represent classes as a 2-tuple with a possible super class and a function for resolving methods: $Class = Class_\perp \times Methods$.
+$Class_\perp$ is the super class or $\perp$ in the case of no super class  
+$Methods$ is the set of all method identifiers implemented by the class.
+Object are represented by a 2-tuple with the class and fields of the object: 
+$$Object = Class \times Fields$$ 
+
+Fields is a function for resolving the values of class variables:
+$$Fields = FieldID \mapsto (Values + Addresses)$$ 
+$$FieldID = \mathbb{N}$$
+
+Finally we make use of a constant pool to resolve static method ids, fields of static classes and class definition when creating new objects:
+$$CP = ConstPool = (MethodID \to \mathbb{N}) + (FieldID \to Addresses) + (ClassIndex \to  Class)$$
+$$ClassIndex = \mathbb{N}$$
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../master"
+%%% End:

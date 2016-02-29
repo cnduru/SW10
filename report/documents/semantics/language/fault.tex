@@ -1,0 +1,15 @@
+%!TEX root = ../../master.tex
+\section{Fault Semantics}
+\label{sec:semFault}
+We now introduce a fault model  formalising the fault injections which can happen. This serves the purpose of showing exactly how a certain fault affects the Java Card, whether it be a program flow change or a change in the memory.\\
+
+To describe the fault semantics, we represent $Values$ and $Addresses$ as bit strings. 
+We then use a Hamming distance of one, $\equiv_1$, to represent a bit flip, so $a \equiv_1 b$ means $a$ differs from $b$ with only one bit. 
+It can also be stated as 
+$$\exists x \in \mathbb{N}: a \equiv_1 b \Rightarrow a = b \oplus 2^x$$
+where $\oplus$ is the binary \texttt{XOR} operation. 
+It can be expressed similarly with sequences $$A \equiv_1 B \Rightarrow e \neq e' | A = (x_0, \ldots, x_{n-1}, e, x_{n+1} \ldots,
+ x_m) \land B = (x_0, \ldots,x_{n-1}, e', x_{n+1} \ldots, x_m)$$ where $n$ is the position of the differentiating element in the sequences $A$ and $B$.
+
+
+\input{documents/semantics/language/fault_semantics}

@@ -1,0 +1,9 @@
+\subsection{GETFIELD}
+\texttt{GETFIELD} $fid$ reads and consumes an object reference from the operand stack, and reads the value of the specified field in the object which is then stored on the operand stack. 
+
+$$\inference[GETFIELD]{
+inst(P,mid, pc) = \texttt{GETFIELD }fid \semnl\\
+obj = H(objr) \semsp
+v = obj.Fields(fid)\semnl \\
+ops = (x_0, \ldots, x_n, objr) \semsp ops' = (x_0, \ldots, x_n, v)}
+{CP, P \vdash \langle H, (CS, \langle mid, loc, ops, pc \rangle )\rangle \Rightarrow \langle H, (CS, \langle mid, loc, ops', pc + 2 \rangle )\rangle}$$

@@ -1,0 +1,12 @@
+%!TEX root = ../../master.tex
+\subsection{PUTFIELD}
+\texttt{PUTFIELD} $fid$ takes an object reference and a value from the top of the operand stack and stores the value in a specific field in the object.
+
+$$\inference[PUTFIELD]{
+inst(P,mid, pc) = \texttt{PUTFIELD } fid \semsp
+H(objr) = obj \semnl \\
+H' = H[objr \mapsto obj'] \semsp 
+obj' = obj.Fields[fid \mapsto v] \semnl\\
+ops = (x_0, \ldots, x_n, objr, v) \semsp
+ops' = (x_0, \ldots, x_{n})}
+{CP, P \vdash \langle H, (CS, \langle mid, loc, ops, pc \rangle )\rangle \Rightarrow \langle H', (CS, \langle mid, loc, ops', pc + 2 \rangle )\rangle}$$

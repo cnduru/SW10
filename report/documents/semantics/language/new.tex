@@ -1,0 +1,19 @@
+%!TEX root = ../../master.tex
+\subsection{NEW}
+\texttt{NEW} $ci$ creates a new object on the heap as well as pushing an object reference to the operand stack.
+
+$$\inference[NEW]{
+inst(P,mid, pc) = \texttt{NEW }ci \semsp
+CP(ci) = cl \semnl \\
+obj = \langle cl, fields \rangle \semsp
+fields \in Fields \semnl \\
+H(objr) = \perp \semsp
+H' = H[objr \mapsto obj]  \semnl \\
+ops = (x_0, \ldots, x_n) \semsp
+ops' = (x_o, \ldots, x_n, objr)
+}
+{CP, P \vdash \langle H, (CS, \langle mid, loc, ops, pc \rangle )\rangle \Rightarrow \langle H', (CS, \langle mid, loc, ops', pc + 2 \rangle )\rangle}$$
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../master"
+%%% End:

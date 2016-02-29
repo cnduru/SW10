@@ -1,0 +1,18 @@
+\subsection{LOAD}
+\texttt{LOAD} $i$ is used to load the value of a local variable onto the operand stack.
+
+$$\inference[LOAD]{
+inst(P, mid, pc) = \texttt{LOAD } i \semsp 
+loc(i) = v \semsp
+v \neq \perp \semnl \\
+ops = (x_0 \ldots x_n) \semsp
+ops' = (x_0 \ldots x_n,v)  
+}
+{CP, P \vdash \langle H, (CS, \langle mid, loc, ops, pc \rangle)\rangle \Rightarrow 
+ \langle H, (CS, \langle mid, loc, ops', pc + 2 \rangle)\rangle 
+}$$
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../master"
+%%% End:

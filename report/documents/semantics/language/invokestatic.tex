@@ -1,0 +1,21 @@
+%!TEX root = ../../master.tex
+\subsection{INVOKESTATIC}
+\texttt{INVOKESTATIC} $mid$ is used to call a static method.
+%This involves adding a new stack frame on the call stack with  locals which are the parameters taken by the method being the parameters taken by the method as well as local variables.
+This involves adding a new stack frame on the call stack.
+The parameters of the methods are stored in local variables of that stack frame.
+These parameters are read from the operand stack.
+The number of parameters, $pn$, are found in the constant pool. 
+
+$$\inference[INVOKESTATIC]{
+inst(P,mid,pc) = \texttt{INVOKESTATIC }mid' \semsp 
+CP(mid') = pn \semnl \\
+ops = (x_0, \ldots, x_n) \semsp
+ops' = (x_0, \ldots, x_{n-pn}) \semnl\\
+loc' = [0 \mapsto x_{n-pn}, \ldots, pn \mapsto x_n])}
+{CP, P \vdash \langle H, (CS, \langle mid, loc, ops, pc \rangle)\rangle \Rightarrow }$$
+$$\langle H, (CS, \langle mid, loc, ops', pc \rangle, \langle mid', loc', \epsilon, 0 \rangle)\rangle$$
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../master"
+%%% End:

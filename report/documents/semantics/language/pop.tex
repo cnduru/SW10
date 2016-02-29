@@ -1,0 +1,8 @@
+\subsection{POP}
+This will remove and discard the top element of the operand stack.
+
+$$\inference[POP]{
+inst(P, mid, pc) = \texttt{POP} \semnl \\
+ops = (x_0, \ldots, x_{n-1}, x_n) \semsp 
+ops' = (x_0, \ldots, x_{n-1})}
+{CP, P \vdash \langle H, (CS, \langle mid, loc, ops, pc \rangle)\rangle  \Rightarrow \langle H, (CS, \langle mid, loc, ops', pc + 1 \rangle)\rangle}$$

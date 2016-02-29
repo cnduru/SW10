@@ -1,0 +1,6 @@
+\subsection{PUSH}
+$$\inference[PUSH]{
+inst(P, mid, pc) = \texttt{PUSH }v \semnl\\
+ ops = (x_0,\ldots,x_k) \semsp ops' = (x_0, \ldots, x_k, v) \ }
+{CP, P \vdash (H, (CS, \langle mid, loc, ops, pc \rangle)) \Rightarrow
+ (H, (CS, \langle mid, loc, ops', pc + 1 \rangle))}$$\\

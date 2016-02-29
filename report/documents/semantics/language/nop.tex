@@ -1,0 +1,23 @@
+%!TEX root = ../../master.tex
+
+
+\subsection{NOP}
+%This instruction has no effect other than incremented $PC$ by one.
+The instruction has no other effect than incrementing the $pc$.
+%The no operation (NOP) instruction does nothing. Therefore only the program counter, $PC$, is incremented to point to the next instruction to be executed. Additionaly, it should also be checked whether the instruction we are currently executing is indeed a NOP. This is done with $inst(P, mid, pc) = \texttt{NOP}$\\
+
+%This results in a changed program counter, but an unchanged stack. The operational semantics for the NOP instruction are then as follows:
+%$$\inference[NOP]{PC' = PC + 1 \semsp inst(P, PC) = \texttt{NOP}}{CP, P \vdash \langle PC, S \rangle \Rightarrow \langle PC', S \rangle}$$\\
+
+$$\inference[NOP]{inst(P, mid, pc) = \texttt{NOP}}
+% % % % % % % % % % % % % % % %
+{CP, P \vdash \langle H, (CS, \langle mid, loc, ops, pc \rangle)\rangle \Rightarrow 
+ \langle H, (CS, \langle mid, loc, ops, pc + 1 \rangle)\rangle
+}$$
+
+%{CP, P \vdash \langle PC, S \rangle \Rightarrow \langle PC', S \rangle}$$\\
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../master"
+%%% End:

@@ -1,0 +1,13 @@
+%!TEX root = ../../master.tex
+\subsection{GOTO}
+\texttt{GOTO} $a$ takes an address as parameter and performs a jump to the specified address.
+
+$$\inference[GOTO]{
+inst(P, mid, pc) = \texttt{GOTO } a \semsp
+pc' = a}
+{CP, P \vdash \langle H, (CS, \langle mid, loc, ops, pc \rangle)\rangle \Rightarrow \langle H, (CS, \langle mid, loc, ops, pc' \rangle)\rangle}$$
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../master"
+%%% End:

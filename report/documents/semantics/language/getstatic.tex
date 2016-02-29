@@ -1,0 +1,17 @@
+\subsection{GETSTATIC}
+This reads the value of a class variable on the heap.
+
+$$\inference[GETSTATIC]{  
+inst(P, mid, pc) = \texttt{GETSTATIC }fid\semnl \\
+CP(fid) = a \semsp 
+H(a) = v \semsp 
+v \neq \perp \semnl \\
+ops = (x_0, \ldots, x_n) \semsp 
+ops' = (x_0, \ldots, x_n, v) 
+}
+{CP, P \vdash \langle H, (CS, \langle  mid, loc, ops, pc \rangle)\rangle \Rightarrow \langle H, (CS, \langle mid, loc, ops', pc+2 \rangle)\rangle}$$
+
+%%% Local Variables:
+%%% mode: plain-tex
+%%% TeX-master: "../../master"
+%%% End:
