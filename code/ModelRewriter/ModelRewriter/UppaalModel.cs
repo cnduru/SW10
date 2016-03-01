@@ -92,8 +92,12 @@ system s, s1;";
 
         private string getGlobalDeclarations(string declarations)
         {
-            // quick fix, probably should have an addDeclaration method that adds to a global stringbuilder
-            return declarations += "\n" + "int faultAt = 0;\n";
+            StringBuilder sb = new StringBuilder();
+            sb.Append(declarations);
+            sb.Append("\nint faultAt = 0;");
+            sb.Append("\nclock globalClock;");
+
+            return sb.ToString();
         }
 
         private string getSystem(string stem)
