@@ -18,7 +18,8 @@ namespace ModelRewriter
         public string name { get; set; }
         public string pc  { get; set; }
         public List<Location> reachableLocs = new List<Location>();
-        
+        public bool urgent { get; set; }
+        public bool committed { get; set; }
         public Label invariant;
 
         public Location()
@@ -55,7 +56,7 @@ namespace ModelRewriter
             }
         }
 
-        public XElement getXML(bool urgent = false, bool committed = false)
+        public XElement getXML()
         {
             XElement locationElement = new XElement("location");
             locationElement.SetAttributeValue("id", id);
@@ -71,13 +72,13 @@ namespace ModelRewriter
                 locationElement.Add(invariant.GetXML());
             }
 
-            if(urgent && !committed)
+            if(urgent)
             {
                 locationElement.Add(new XElement("urgent"));
                 return locationElement;
             }
 
-            if (committed && !urgent)
+            if (committed)
             {
                 locationElement.Add(new XElement("committed"));
                 return locationElement;
