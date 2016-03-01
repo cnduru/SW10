@@ -222,8 +222,21 @@ int loc0 = 0;";
                         break;
 
                     case "return":
+                        labels = new List<Label>()
+                        {
+                            new Label
+                            { 
+                                content = timeGuard, kind = "guard"
+                            },
+                            new Label
+                            { 
+                                content = String.Format("par0 = os[osp], osp = 0, t = 0",
+                                    CP.Add(String.Join(" ", instArg.Skip(1)))), 
+                                kind = "assignment"
+                            }
+                        };
+                        transitions.Add(new Transition(loc, PCToLocation(-1), labels));
                         break;
-
                     default:
                         throw new System.NotImplementedException(instArg[0]);
                 }
