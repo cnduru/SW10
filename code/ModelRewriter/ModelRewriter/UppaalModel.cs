@@ -49,7 +49,7 @@ namespace ModelRewriter
 int H[10];
 int cp0;
 int cp1;
-par0;
+int par0;
 chan mainc;
 chan DubTestc;";
             system = @"s = main();
