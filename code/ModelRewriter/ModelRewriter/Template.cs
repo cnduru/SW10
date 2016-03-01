@@ -124,6 +124,15 @@ int loc0 = 0;";
                         }
                     };
                     transitions.Add(new Transition(loc, PCToLocation(0), labels));
+                    labels = new List<Label>()
+                    {
+                        new Label
+                        { 
+                            content = "t == 12", kind = "guard"
+                        }
+                            
+                    };
+                    transitions.Add(new Transition(loc, loc, labels));
                     continue;
                 }
                 
@@ -274,7 +283,7 @@ int loc0 = 0;";
                             },
                             new Label
                             { 
-                                content = String.Format("par0 = os[osp], osp = 0, t = 0",
+                                content = String.Format("par0 = os[osp], osp = 0, t = 0, done = true",
                                     CP.Add(String.Join(" ", instArg.Skip(1)))), 
                                 kind = "assignment"
                             }
