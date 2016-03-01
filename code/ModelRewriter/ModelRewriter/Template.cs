@@ -124,6 +124,15 @@ int loc0 = 0;";
                         }
                     };
                     transitions.Add(new Transition(loc, PCToLocation(0), labels));
+                    labels = new List<Label>()
+                    {
+                        new Label
+                        { 
+                            content = "t == 12", kind = "guard"
+                        }
+                            
+                    };
+                    transitions.Add(new Transition(loc, loc, labels));
                     continue;
                 }
                 
