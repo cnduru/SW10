@@ -15,7 +15,6 @@ namespace ModelRewriter
 		<location id=""id0"" x=""-17"" y=""-85"">
 		</location>
 		<location id=""id1"" x=""-144"" y=""-85"">
-			<committed/>
 		</location>
 		<init ref=""id1""/>
 		<transition>

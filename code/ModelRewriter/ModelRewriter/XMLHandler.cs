@@ -204,27 +204,5 @@ namespace ModelRewriter
                 return new Transition.synchronizations() { content = "", x = 0, y = 0 };
             }
         }
-
-        public string getSystem()
-        {
-            string system = null;
-
-            // this foreach is not really needed but i couldn't find a way to just grab the first element
-			//[0]?
-            foreach (var sys in _doc.Descendants("system"))
-            {
-                system = (string)sys;
-            }
-
-            return system;
-        }
-
-        //Creates a xml element with an tag and value
-        public XElement BuildXElement(string tag, string value)
-        {
-            var t = new XElement(tag, tag);
-            t.SetValue(value);
-            return t;
-        }
     }
 }

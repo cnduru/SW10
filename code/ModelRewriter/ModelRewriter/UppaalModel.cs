@@ -159,6 +159,7 @@ system s, s1;";
             XElement faultTemplateXML = XElement.Parse(XMLProvider.getFaultTemplate());
             XMLHandler xhl = new XMLHandler();
             Template faultTemplate = xhl.getTemplate(faultTemplateXML);
+            faultTemplate.locations[1].urgent = true;
             templates.Add(faultTemplate);
             Save(path);
         }
