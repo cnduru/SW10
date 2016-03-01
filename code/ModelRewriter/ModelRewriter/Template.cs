@@ -274,7 +274,7 @@ int loc0 = 0;";
                             },
                             new Label
                             { 
-                                content = String.Format("par0 = os[osp], osp = 0, t = 0",
+                                content = String.Format("par0 = os[osp], osp = 0, t = 0, done = true",
                                     CP.Add(String.Join(" ", instArg.Skip(1)))), 
                                 kind = "assignment"
                             }
