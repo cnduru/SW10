@@ -54,10 +54,24 @@ namespace ModelRewriter
 
                 l.id = (string)locs.Attribute("id");
                 l.name = (string)locs.Element("name");
+
+                try
+                {
+                    XElement xele = locs.Element("label");
+                    XAttribute invElement = xele.Attribute("kind");
+                    int xCoord = Convert.ToInt32(xele.Attribute("x").Value);
+                    int yCoord = Convert.ToInt32(xele.Attribute("y").Value);
+
+                    Label invariant = new Label { kind = "invariant", content = (string)xele.Value, x = xCoord, y = yCoord };
+                    l.invariant = invariant;
+                }catch (Exception ex)
+                {
+
+                }
+
                 try
                 {
                     // load pc number
-                    //l.pc = Convert.ToString(RomanToInt.RomanToNumber(l.name.Substring(0, l.name.IndexOf("_"))));        
                     Regex regex = new Regex(@"pc(\d*)");
                     Match match = regex.Match(l.name);
 

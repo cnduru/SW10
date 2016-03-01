@@ -18,10 +18,8 @@ namespace ModelRewriter
         public string name { get; set; }
         public string pc  { get; set; }
         public List<Location> reachableLocs = new List<Location>();
-
-
-        Label invariant;
-
+        
+        public Label invariant;
 
         public Location()
         {
@@ -79,7 +77,7 @@ namespace ModelRewriter
                 return locationElement;
             }
 
-            if(committed && !urgent)
+            if (committed && !urgent)
             {
                 locationElement.Add(new XElement("committed"));
                 return locationElement;
