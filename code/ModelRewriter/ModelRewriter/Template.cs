@@ -461,7 +461,18 @@ int loc0 = 0;";
             {
                 foreach (var loc in originalLocation.reachableLocs)
                 {
-                    tlist.Add(new Transition(originalLocation, loc));
+                    // add fault guard
+                    Transition tr = new Transition(originalLocation, loc);
+                    tr.grds.content += "faultAt == globalClock";
+                    tr.grds.x = 100;
+                    tr.grds.y = 100;
+
+                    // add fault update so only one fault happens each run
+                    tr.asms.content += "faultAt = -1, t = 0";
+                    tr.asms.x = 130;
+                    tr.asms.y = 130;
+
+                    tlist.Add(tr);
                 }
             }
 
