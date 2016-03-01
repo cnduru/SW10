@@ -18,23 +18,25 @@ namespace ModelRewriter
     class Template
     {
         public string name { get; set; }
+
         public Location initialLocation = new Location();
         public List<Location> locations = new List<Location>();
         public List<Transition> transitions = new List<Transition>();
-        public List<Transition> faultTransitions = new List<Transition>(); // should probably be removed
+        public List<Transition> faultTransitions = new List<Transition>();
+        // should probably be removed
         public string localDeclarations = "";
 
         private ConstantPool CP = new ConstantPool();
 
 
-		public Template(XElement modelXML)
-		{
+        public Template(XElement modelXML)
+        {
             // name
             name = modelXML.Element("name").Value;
 
             // local decls
             var tempDecl = modelXML.Element("declaration");
-            if(tempDecl != null)
+            if (tempDecl != null)
             {
                 localDeclarations = tempDecl.Value;
             }
@@ -86,9 +88,9 @@ int loc0 = 0;";
         private List<Location> ResolveLocations(List<string> method)
         {
             var locs = new List<Location>();
-            for (int i = 0; i < method.Count ; i++)
+            for (int i = 0; i < method.Count; i++)
             {
-                locs.Add(new Location(i-1, method[i])); 
+                locs.Add(new Location(i - 1, method[i])); 
             }
             return locs;
         }
@@ -104,17 +106,24 @@ int loc0 = 0;";
                 //TODO maybe move to switch with instArg
                 if (loc.inst.pc == -1)
                 {
-                    labels = new List<Label>(){
-                        new Label { 
-                            content = timeGuard, kind = "guard" },
-                        new Label {
+                    labels = new List<Label>()
+                    {
+                        new Label
+                        { 
+                            content = timeGuard, kind = "guard"
+                        },
+                        new Label
+                        {
                             content = String.Format("{0}c?", loc.name), 
-                            kind = "synchronisation" },
-                        new Label {
+                            kind = "synchronisation"
+                        },
+                        new Label
+                        {
                             content = String.Format("os[osp] = loc{0}, osp++, t = 0", 0), 
-                            kind = "assignment" }
+                            kind = "assignment"
+                        }
                     };
-                    transitions.Add(new Transition(loc, PCToLocation(0),labels));
+                    transitions.Add(new Transition(loc, PCToLocation(0), labels));
                     continue;
                 }
                 
@@ -126,14 +135,19 @@ int loc0 = 0;";
                          * the opstack counter osp is incremented as the opstack grows.
                          * Opstack: .. -> .. , locals[n]
                          */
-                        labels = new List<Label>(){
-                            new Label { 
-                                content = timeGuard, kind = "guard" },
-                            new Label { 
+                        labels = new List<Label>()
+                        {
+                            new Label
+                            { 
+                                content = timeGuard, kind = "guard"
+                            },
+                            new Label
+                            { 
                                 content = String.Format("os[osp] = loc{0}, osp++, t = 0", instArg[1]), 
-                                kind = "assignment" }
+                                kind = "assignment"
+                            }
                         };
-                        transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 1),labels)); //TODO is +1 allways true?
+                        transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 1), labels)); //TODO is +1 allways true?
                         break;
 
                     case "arraylength":
@@ -142,13 +156,18 @@ int loc0 = 0;";
                          * making it identical to getfield 0
                          * Opstack: .. , ref -> .. , lenght
                          */
-                        labels = new List<Label>(){
-                            new Label { 
-                                content = timeGuard, kind = "guard" },
-                            new Label { 
-                                content = "os[osp] = H[os[osp]], t = 0", kind = "assignment" }
+                        labels = new List<Label>()
+                        {
+                            new Label
+                            { 
+                                content = timeGuard, kind = "guard"
+                            },
+                            new Label
+                            { 
+                                content = "os[osp] = H[os[osp]], t = 0", kind = "assignment"
+                            }
                         };
-                        transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 1),labels));
+                        transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 1), labels));
                         break;
 
                     case "getstatic":
@@ -156,48 +175,68 @@ int loc0 = 0;";
                          * where the field is identified by field reference in the constant pool index
                          * Opstack: .. -> .. , CP[n]
                          */
-                        labels = new List<Label>(){
-                            new Label { 
-                                content = timeGuard, kind = "guard" },
-                            new Label { 
+                        labels = new List<Label>()
+                        {
+                            new Label
+                            { 
+                                content = timeGuard, kind = "guard"
+                            },
+                            new Label
+                            { 
                                 content = String.Format("os[osp] = cp{0}, osp++, t = 0",
                                     CP.Add(String.Join(" ", instArg.Skip(1)))), 
-                                kind = "assignment" }
+                                kind = "assignment"
+                            }
                         };
-                        transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 3),labels));
+                        transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 3), labels));
                         break;
 
                     case "iconst":
                         /* Pushes a constant value to the opstack
                          * Opstack: .. -> .. , n
                          */
-                        labels = new List<Label>(){
-                            new Label { 
-                                content = timeGuard, kind = "guard" },
-                            new Label { 
+                        labels = new List<Label>()
+                        {
+                            new Label
+                            { 
+                                content = timeGuard, kind = "guard"
+                            },
+                            new Label
+                            { 
                                 content = String.Format("os[osp] = {0}, osp++, t = 0", instArg[1]), 
-                                kind = "assignment" }
+                                kind = "assignment"
+                            }
                         };
-                        transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 1),labels));
+                        transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 1), labels));
                         break;
 
                     case "ifcmpme":
                         /* if greather or eq
                          * Opstack: .. ,value1, value2 -> ..
                          */
-                        labels = new List<Label>(){
-                            new Label { 
-                                content = timeGuard + " && os[osp - 2] >= os[osp - 1]", kind = "guard" },
-                            new Label { 
-                                content = "osp = osp - 2, t = 0", kind = "assignment" }
+                        labels = new List<Label>()
+                        {
+                            new Label
+                            { 
+                                content = timeGuard + " && os[osp - 2] >= os[osp - 1]", kind = "guard"
+                            },
+                            new Label
+                            { 
+                                content = "osp = osp - 2, t = 0", kind = "assignment"
+                            }
                         };
                         transitions.Add(new Transition(loc, PCToLocation(Convert.ToInt32(instArg[1])), labels));
 
-                        labels = new List<Label>(){
-                            new Label { 
-                                content = timeGuard + " && os[osp - 2] < os[osp - 1]", kind = "guard" },
-                            new Label { 
-                                content = "osp = osp - 2, t = 0", kind = "assignment" }
+                        labels = new List<Label>()
+                        {
+                            new Label
+                            { 
+                                content = timeGuard + " && os[osp - 2] < os[osp - 1]", kind = "guard"
+                            },
+                            new Label
+                            { 
+                                content = "osp = osp - 2, t = 0", kind = "assignment"
+                            }
                         };
                         transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 3), labels));
                         break;
@@ -210,15 +249,20 @@ int loc0 = 0;";
                         break;
 
                     case "ldc":
-                        labels = new List<Label>(){
-                            new Label { 
-                                content = timeGuard, kind = "guard" },
-                            new Label { 
+                        labels = new List<Label>()
+                        {
+                            new Label
+                            { 
+                                content = timeGuard, kind = "guard"
+                            },
+                            new Label
+                            { 
                                 content = String.Format("os[osp] = cp{0}, osp++, t = 0",
                                     CP.Add(String.Join(" ", instArg.Skip(1)))), 
-                                kind = "assignment" }
+                                kind = "assignment"
+                            }
                         };
-                        transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 2),labels));
+                        transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 2), labels));
                         break;
 
                     case "return":
@@ -244,7 +288,7 @@ int loc0 = 0;";
             locations.AddRange(newLocs);
         }
 
-        private List<Transition>Invoke(Location caller, Location waiter, Location next, bool virt=false)
+        private List<Transition>Invoke(Location caller, Location waiter, Location next, bool virt = false)
         {
             bool ret = caller.inst.instArgs[1] != "void";
             string mid = caller.inst.instArgs[2];
@@ -252,8 +296,9 @@ int loc0 = 0;";
             bool included = parseable(mid);
 
             var res = new List<Transition>();
-            var call = new List<Label>(){
-                new Label 
+            var call = new List<Label>()
+            {
+                new Label
                 {
                     content = "t == 1", kind = "guard" 
                 }
@@ -290,11 +335,13 @@ int loc0 = 0;";
                     });
             }
             res.Add(new Transition(caller, waiter, call));
-            res.Add(new Transition(waiter, waiter, new List<Label>{
-                new Label{
-                    content = "t == " + Constants.maxInstTime.ToString(), kind = "guard"
-                }
-            }));
+            res.Add(new Transition(waiter, waiter, new List<Label>
+                    {
+                        new Label
+                        {
+                            content = "t == " + Constants.maxInstTime.ToString(), kind = "guard"
+                        }
+                    }));
             res.Add(new Transition(waiter, next, wait));
 
             return res;
@@ -316,9 +363,9 @@ int loc0 = 0;";
             }
             throw new KeyNotFoundException();
         }
-                        
-		public XElement getXML()
-		{
+
+        public XElement getXML()
+        {
             XElement el = new XElement("template");
             el.Add(new XElement("name", name));
             el.Add(new XElement("declaration", localDeclarations));
@@ -339,8 +386,8 @@ int loc0 = 0;";
                 el.Add(trans.getXML());
             }
 
-			return el;
-		}
+            return el;
+        }
 
         public void calculateReachableLocations()
         {
@@ -360,7 +407,7 @@ int loc0 = 0;";
         public static bool isReachable(Location l1, Location l2)
         {
             // 8 bits for a single byte
-            for(int i = 0; i < 7; i++)
+            for (int i = 0; i < 7; i++)
             {
                 try
                 {
@@ -370,7 +417,8 @@ int loc0 = 0;";
                     {
                         return true;
                     }
-                }catch (Exception ex)
+                }
+                catch (Exception ex)
                 {
                     // to catch "None"s
                     return false;
@@ -380,14 +428,17 @@ int loc0 = 0;";
             return false;
         }
 
-        string FirstNonKeyword(string sig){
-            List<string> javaKeywords = new List<string>{"abstract", "assert", "boolean", "break", "byte", "case", 
+        string FirstNonKeyword(string sig)
+        {
+            List<string> javaKeywords = new List<string>
+            {"abstract", "assert", "boolean", "break", "byte", "case", 
                 "catch", "char", "class", "const", "continue", "default", "do", "double", "else", 
                 "enum", "extends", "final", "finally", "float", "for", "goto", "if", "implements", 
                 "import", "instanceof", "int", "interface", "long", "native", "new", "package", 
                 "private", "protected", "public", "return", "short", "static", "strictfp", "super", 
                 "switch", "synchronized", "this", "throw", "throws", "transient", "try", "void", 
-                "volatile", "while", "false", "null", "true"};
+                "volatile", "while", "false", "null", "true"
+            };
             foreach (var word in sig.Split(' '))
             {
                 if (!javaKeywords.Contains(word))
