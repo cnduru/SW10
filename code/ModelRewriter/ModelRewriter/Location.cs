@@ -32,7 +32,7 @@ namespace ModelRewriter
             y = caller.y + Constants.LabelOffsetY * 2;
             x = Constants.LabelOffsetX * 10;
             invariant = new Label{
-                content = "t <= " + (Constants.maxInstTime + 1), 
+                content = "t <= 5", 
                 kind = "invariant", 
                 y = y,
                 x = Constants.LabelOffsetX * 10 - 70               

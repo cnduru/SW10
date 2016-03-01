@@ -106,6 +106,24 @@ int loc0 = 0;";
                 //TODO maybe move to switch with instArg
                 if (loc.inst.pc == -1)
                 {
+                    if (loc.name == "main")
+                    {
+
+                        labels = new List<Label>()
+                        {
+                            new Label
+                            { 
+                                content = "t == 0", kind = "guard"
+                            }
+                        };
+                        transitions.Add(new Transition(loc, PCToLocation(0), labels));
+                        loc.invariant = new Label
+                        { 
+                            content = "t == 0", kind = "invariant"
+                        };
+                        continue; //clean up later
+                    }
+
                     labels = new List<Label>()
                     {
                         new Label
@@ -128,7 +146,7 @@ int loc0 = 0;";
                     {
                         new Label
                         { 
-                            content = "t == 12", kind = "guard"
+                            content = "t == 11", kind = "guard"
                         }
                             
                     };

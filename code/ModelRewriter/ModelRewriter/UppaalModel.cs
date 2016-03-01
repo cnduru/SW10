@@ -56,6 +56,7 @@ bool done = false;";
             system = @"s = main();
 s1 = DubTest();
 system s, s1;";
+            queries = @"Pr[<= 20] (<> done)";
         }
 
 		//Store UPPAAL model to a file
