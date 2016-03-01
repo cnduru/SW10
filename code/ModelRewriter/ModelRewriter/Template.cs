@@ -108,19 +108,8 @@ int loc0 = 0;";
                 {
                     if (loc.name == "main")
                     {
-
-                        labels = new List<Label>()
-                        {
-                            new Label
-                            { 
-                                content = "t == 0", kind = "guard"
-                            }
-                        };
-                        transitions.Add(new Transition(loc, PCToLocation(0), labels));
-                        loc.invariant = new Label
-                        { 
-                            content = "t == 0", kind = "invariant"
-                        };
+                        loc.urgent = true;
+                        transitions.Add(new Transition(loc, PCToLocation(0), labels = new List<Label>()));
                         continue; //clean up later
                     }
 
