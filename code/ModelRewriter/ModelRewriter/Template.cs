@@ -100,16 +100,18 @@ int loc0 = 0;";
         {
             var timeGuard = "t == 1";
             var newLocs = new List<Location>();
+            List<Label> labels = new List<Label>();
+
             foreach (var loc in locations)
             {
-                List<Label> labels = new List<Label>();
                 //TODO maybe move to switch with instArg
                 if (loc.inst.pc == -1)
                 {
+                    // special case for main
                     if (loc.name == "main")
                     {
                         loc.urgent = true;
-                        transitions.Add(new Transition(loc, PCToLocation(0), labels = new List<Label>()));
+                        transitions.Add(new Transition(loc, PCToLocation(0), new List<Label>()));
                         continue; //clean up later
                     }
 
@@ -126,6 +128,7 @@ int loc0 = 0;";
                         },
                         new Label
                         {
+                            // TODO this should probably be fixed..
                             content = String.Format("os[osp] = loc{0}, osp++, t = 0", 0), 
                             kind = "assignment"
                         }
@@ -139,6 +142,7 @@ int loc0 = 0;";
                         }
                             
                     };
+                    // TODO done location
                     transitions.Add(new Transition(loc, loc, labels));
                     continue;
                 }
@@ -259,9 +263,9 @@ int loc0 = 0;";
 
                     case "invokespecial":
                     case "invokevirtual":
-                        var caller = new Location(loc);
-                        transitions.AddRange(Invoke(loc, caller, PCToLocation(loc.inst.pc + 3), true));
-                        newLocs.Add(caller);
+                        var waiter = new Location(loc);
+                        transitions.AddRange(Invoke(loc, waiter, PCToLocation(loc.inst.pc + 3), true));
+                        newLocs.Add(waiter);
                         break;
 
                     case "ldc":

@@ -41,14 +41,15 @@ namespace ModelRewriter
 
         }
 
-        public Location(int count, string instLine)
+        // Method uses count as y coordinate and unique id in UPPAAL model 
+        public Location(int identifier, string instLine)
         {
-            id = "id" + count;
-            y = (count * Constants.LabelOffsetY*4);
+            id = "id" + identifier;
+            y = (identifier * Constants.LabelOffsetY * 4);
             x = 0;
-            if (count >= 0)
+            if (identifier >= 0)
             {
-                parseInst(count, instLine);
+                parseInst(identifier, instLine);
             }
             else
             {
