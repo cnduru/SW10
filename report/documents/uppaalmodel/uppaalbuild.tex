@@ -1,6 +1,13 @@
 \chapter{Building a UPPAAL Model}
 \section{Choosing a Program Representation}
-When translating a program to a Uppaal model, it is important to choose an appropriate representation of the program. Several representations are possible, depending on what one wants to show. One could for example represent a program merely in terms of program flow if a simulation of a disruption of the program flow is to be shown, e.g an error in the progrma counter. One could also model the data flow in the program if a simulation of a corruption of a memory value is to be shown. These are just a few examples and many representations can be chosen.\\
+When translating a program to a UPPAAL of the program. Several representations are possible, depending on what one wants to show. One could for example represent a program merely in terms of program flow if a simulation of a disruption of the program flow is to be shown, e.g an error in the program counter. One could also include the data flow in the program if a simulation of a corruption of a memory value is to be shown. These are just a few examples and many representations can be chosen.\\
 
-We have chosen the former and model the program in terms of program flow, so that we can simulation disruptions in the programs execution flow. 
+We have chosen the later and model the program in terms of program flow and data flow, so that we can simulation disruptions in the programs execution flow. 
+
+
+\subsection{Representation Details}
+The program simulation is based on \jcl semantics, most Java bytecodes can be translated directly to \jcl at the loss of type information.\\
+
+When representing Java bytecode in UPPAAL we have chosen to represent an instruction, such as \texttt{iload a} and \texttt{dub}, as UPPAAL locations. This implies that a change in the program counter is a change of the location. In turn this means that when an instruction is to be executed the change to the program configuration \textit{Conf} \cref{sec:semintro} \kristian{ref til semantik}.
+
 \section{Rewriting the Model}
