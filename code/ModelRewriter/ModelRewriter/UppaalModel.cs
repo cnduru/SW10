@@ -85,7 +85,6 @@ system s, s1;";
         public void AddTemplate(List<string> method)
         {
             templates.Add(new Template(method));
-
         }
 
 		//Creates a xml element with a tag and value

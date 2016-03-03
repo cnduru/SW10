@@ -69,14 +69,14 @@ namespace ModelRewriter
             target = to;
         }
 
-        public Transition (Location from, Location to, List<Label> labl = null)
+        public Transition (Location from, Location to, List<Label> labl)
         {
             source = from;
             target = to;
             for (int i = 0; i < labl.Count; i++)
             {
                 var tmp = labl[i];
-                tmp.SetCords(from, i*Constants.LabelOffsetY);
+                tmp.SetCords(from, i * Constants.LabelOffsetY);
                 labels.Add(tmp);
             }
         }
