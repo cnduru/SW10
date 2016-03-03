@@ -22,7 +22,7 @@ namespace ModelRewriter
         public Location initialLocation = new Location();
         public List<Location> locations = new List<Location>();
         public List<Transition> transitions = new List<Transition>();
-        public List<Transition> faultTransitions = new List<Transition>();
+        //public List<Transition> faultTransitions = new List<Transition>();
         // should probably be removed
         public string localDeclarations = "";
 
@@ -42,7 +42,7 @@ namespace ModelRewriter
             }
 
             // initial location
-            initialLocation.id = modelXML.Element("init").Attribute("ref").Value;
+            //initialLocation.id = modelXML.Element("init").Attribute("ref").Value;
  
             // transitions
             transitions = transitionsFromXML(modelXML.Elements("transition").ToList());
@@ -484,19 +484,19 @@ int loc0 = 0;";
                     // add fault guard
                     Transition tr = new Transition(originalLocation, loc);
                     tr.grds.content += "faultAt == globalClock";
-                    tr.grds.x = 100;
-                    tr.grds.y = 100;
+                    tr.grds.x = -100;
+                    tr.grds.y = loc.y;
 
                     // add fault update so only one fault happens each run
                     tr.asms.content += "faultAt = -1, t = 0";
-                    tr.asms.x = 130;
-                    tr.asms.y = 130;
+                    tr.asms.x = -130;
+                    tr.asms.y = loc.y + 30;
 
                     tlist.Add(tr);
                 }
             }
 
-            faultTransitions.AddRange(tlist);
+            //faultTransitions.AddRange(tlist);
             transitions.AddRange(tlist);
         }
     }

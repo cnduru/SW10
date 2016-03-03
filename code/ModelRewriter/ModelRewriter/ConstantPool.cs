@@ -19,7 +19,7 @@ namespace ModelRewriter
             {
                 _cp[value] = _cp.Count();
             }
-            return  _cp[value];
+            return  _cp[value]; //returns the index
         }
 
         public IEnumerator GetEnumerator()
