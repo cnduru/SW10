@@ -66,7 +66,7 @@ namespace ModelRewriter
                     l.invariant = invariant;
                 }catch (Exception ex)
                 {
-
+                    
                 }
 
                 try
