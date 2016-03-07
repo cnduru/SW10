@@ -79,10 +79,16 @@ goto
 
 conditionals
 \subsubsection{Method Calls}
-Method calls are represented by two additions to the model. The first is an extra location in every template, which serves the initial state of every template. This location does not have any associated program counter since it is not a part of the original program.\ch{mention in modelling a fault injection that there should not be any fault transitions going back to the added state since it does not have a program counter}. This special location is added to capture the notion of arguments being passed into the method.
+Method calls are represented by three additions to the model. These additions consist of locations, but they do not have any associated program counter since they are not a part of the original program.\\
 
-The second is a new location in the caller for every method call it performs. This makes it possible to simulate parameter passing, as well as control transfer when waiting for a callee to return control to the caller after a method call. The simulation of the caller remains in this new location until the callee returns control after its simulation has finished.\ch{insert ref to figure}.
-%new location
-%parameter parsing
+% special case for main
+The first is an addition of a location in the template of the \texttt{main} method. This location captures the notion that this is the start of the program.\\
+
+% caller
+The second is a new location in the caller for every method call it performs. This makes it possible to simulate parameter passing, as well as control transfer when waiting for a callee to return control to the caller after a method call. The simulation of the caller remains in this location until the callee returns control, after its simulation has finished. This control transfer is modeled with a synchronisation on the edge going from the new state in the caller and back to its original control flow.\ch{insert ref to figure}~\\
+
+% callee
+The third is an addition of a two initial locations in every template except for the \texttt{main} template. The first, initial, location serves dual purposes: it enables the control transfer from the caller to itself by synchronisation, and simulates passing of arguments into the method from the caller. The second location is the \textit{done} location, where the simulation ends up when it has finished its simulation. This is where control is transferred back to the caller.
 
 \section{Modelling a Fault Injection}
+\ch{mention in modelling a fault injection that there should not be any fault transitions going back to the added state since it does not have a program counter}
