@@ -78,7 +78,7 @@ In UPPAAL the location pc0\_aload represent \texttt{aload 0}. The UPPAAL model i
 goto
 
 conditionals
-\subsubsection{Method Calls}
+\subsubsection{Method Calls}\label{subsubsec:method}
 Method calls are represented by three additions to the model. These additions consist of locations, but they do not have any associated program counter since they are not a part of the original program.\\
 
 % special case for main
@@ -91,4 +91,10 @@ The second is a new location in the caller for every method call it performs. Th
 The third is an addition of a two initial locations in every template except for the \texttt{main} template. The first, initial, location serves dual purposes: it enables the control transfer from the caller to itself by synchronisation, and simulates passing of arguments into the method from the caller. The second location is the \textit{done} location, where the simulation ends up when it has finished its simulation. This is where control is transferred back to the caller.
 \ch{show how parameters are passed in figure}
 \section{Modelling a Fault Injection}
-\ch{mention in modelling a fault injection that there should not be any fault transitions going back to the added state since it does not have a program counter}
+To simulate a single bit flip occurring in the program's execution a special fault template is introduced. The template calculates a random value between $0$ and the maximum possible global clock value, which represents when in the programs execution a fault happens. The random value is assigned to a global variable in the UPPAAL system.\\\\
+Every instruction in the Java bytecode is represented by a location, and has an associated program counter. There are edges from each location going to the locations which can be reached if one bit is flipped in the program counter. These edges have guards which check whether the time the fault is injected, corresponds to the global clock at the time the model simulation is at that particular edge. If it is, the guard will allow the edge to be traversed. There are no fault edges going back to the added locations described in \cref{subsubsec:method}, since these are not a part of the original program and therefore do not have an associated program counter.
+\begin{figure}[H]
+\centering
+\includegraphics{figures/fault.png}
+\caption{The UPPAAL template which performs a bit flip in the program counter}
+\end{figure}\ch{update figure to use fault at between 0 and global clock}
