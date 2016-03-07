@@ -8,9 +8,48 @@ We have chosen the later and model the program in terms of program flow and data
 \subsection{Representation Details}
 The program simulation is based on \jcl semantics, most Java bytecodes can be translated directly to \jcl at the loss of type information.\\
 
-When representing Java bytecode in UPPAAL we have chosen to represent an instruction, such as \texttt{aload a} and \texttt{dub}, as UPPAAL locations. 
+When representing Java bytecode in UPPAAL we have chosen to represent an instruction, such as \texttt{aload a} and \texttt{dup}, as UPPAAL locations. 
 This implies that a change in the program counter is a change of the location. 
 In turn this means that when an instruction is to be executed the change to the program configuration \textit{Conf} from  \cref{sec:semintro} occurs on the edge to next location.
+
+\begin{lstlisting}[caption=Jave code.]
+public class Sample{
+    public static void main(String[] args) {
+        for (String a : args)         
+        {
+            System.out.print(a);
+        }
+    }
+}
+\end{lstlisting}
+
+\begin{lstlisting}[caption=Bytecode.]
+public static void main(java.lang.String[]);
+ Code:
+   0: aload_0       
+   1: astore_1      
+   2: aload_1       
+   3: arraylength   
+   4: istore_2      
+   5: iconst_0      
+   6: istore_3      
+   7: iload_3       
+   8: iload_2       
+   9: if_icmpge     31
+  12: aload_1       
+  13: iload_3       
+  14: aaload        
+  15: astore        4
+  17: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+  20: aload         4
+  22: invokevirtual #3                  // Method java/io/PrintStream.print:(Ljava/lang/String;)V
+  25: iinc          3, 1
+  28: goto          7
+  31: return        
+
+\end{lstlisting}
+
+
 \subsubsection{Simple Instructions}
 \begin{figure}[H]
 \centering
