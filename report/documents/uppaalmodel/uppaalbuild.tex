@@ -1,5 +1,5 @@
 \chapter{Building a UPPAAL Model}
-\section{Choosing a Program Representation}
+\section{Program Representation}
 When translating a program to a UPPAAL of the program. Several representations are possible, depending on what one wants to show. One could for example represent a program merely in terms of program flow if a simulation of a disruption of the program flow is to be shown, e.g an error in the program counter. One could also include the data flow in the program if a simulation of a corruption of a memory value is to be shown. These are just a few examples and many representations can be chosen.\\
 
 We have chosen the later and model the program in terms of program flow and data flow, so that we can simulation disruptions in the programs execution flow. 
@@ -68,7 +68,7 @@ public static void main(java.lang.String[]);
 \caption{Java Bytecode and Corresponding UPPAAL Model.}
 \label{fig:uppaal1}
 \end{figure}
-
+\kri{lav ny model til nyt smaple}
 \Cref{fig:uppaal1} show how two Java Bytecode instructions are represented in UPPAAL. On the Left we see the Java bytecode, the first line with program counter 0 we have the \texttt{aload 0} instruction. \texttt{aload 0} pushes a reference to the top of the operation stack from local variables a position zero, then increments the operation stack pointer and program counter.
 
 arraylength
