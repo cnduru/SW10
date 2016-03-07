@@ -83,7 +83,9 @@ goto
 
 conditionals
 \subsubsection{Method Calls}
-Method calls are represented by two additions to the model. The first is an extra location which becomes the initial state of every template. The second is a new location for This makes it possible to simulate parameter passing,
+Method calls are represented by two additions to the model. The first is an extra location in every template, which serves the initial state of every template. This location does not have any associated program counter since it is not a part of the original program.\ch{mention in modelling a fault injection that there should not be any fault transitions going back to the added state since it does not have a program counter}. This special location is added to capture the notion of arguments being passed into the method.
+
+The second is a new location in the caller for every method call it performs. This makes it possible to simulate parameter passing, as well as control transfer when waiting for a callee to return control to the caller after a method call. The simulation of the caller remains in this new location until the callee returns control after its simulation has finished.\ch{insert ref to figure}.
 %new location
 %parameter parsing
 
