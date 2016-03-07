@@ -104,6 +104,6 @@ To simulate a single bit flip occurring in the program's execution a special fau
 Every instruction in the Java bytecode is represented by a location, and has an associated program counter. There are edges from each location going to the locations which can be reached if one bit is flipped in the program counter. These edges have guards which check whether the time the fault is injected, corresponds to the global clock at the time the model simulation is at that particular edge. If it is, the guard will allow the edge to be traversed. There are no fault edges going back to the added locations described in \cref{subsubsec:method}, since these are not a part of the original program and therefore do not have an associated program counter.
 \begin{figure}[H]
 \centering
-\includegraphics{figures/fault.png}
+\includegraphics{figures/fault.PNG}
 \caption{The UPPAAL template which performs a bit flip in the program counter}
 \end{figure}\ch{update figure to use fault at between 0 and global clock}
