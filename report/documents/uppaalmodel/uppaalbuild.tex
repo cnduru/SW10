@@ -12,7 +12,7 @@ When representing Java bytecode in UPPAAL we have chosen to represent an instruc
 This implies that a change in the program counter is a change of the location. 
 In turn this means that when an instruction is to be executed the change to the program configuration \textit{Conf} from  \cref{sec:semintro} occurs on the edge to next location.
 
-\begin{lstlisting}[caption=Jave code.]
+\begin{lstlisting}[caption=Jave code sample.]
 public class Sample{
     public static void main(String[] args) {
         for (String a : args)         
@@ -23,7 +23,7 @@ public class Sample{
 }
 \end{lstlisting}
 
-\begin{lstlisting}[caption=Bytecode.]
+\begin{lstlisting}[caption=Bytecode sample.]
 public static void main(java.lang.String[]);
  Code:
    0: aload_0       
@@ -49,12 +49,12 @@ public static void main(java.lang.String[]);
 
 \end{lstlisting}
 
-\begin{figure}
+\begin{figure}[H]
 \includegraphics[width=\textwidth]{generated_wip}
-\caption{Auto Generated Model Work in Progress.}
+\caption{Auto generated model, work in progress.}
 \label{fig:generated_wip}
 \end{figure}
-
+\kri{update the model for the new sample}
 
 \subsubsection{Simple Instructions}
 \begin{figure}[H]
@@ -72,14 +72,16 @@ public static void main(java.lang.String[]);
   \includegraphics[width=\textwidth]{UPPAAL1.png}
   \caption{Generated model from Sample.}
 \end{subfigure}
-\caption{Java Bytecode and Corresponding UPPAAL Model.}
+\caption{Java bytecode and corresponding UPPAAL model.}
 \label{fig:uppaal1}
 \end{figure}
-\kri{lav ny model til nyt smaple}
-\Cref{fig:uppaal1} show how two Java Bytecode instructions are represented in UPPAAL. On the Left we see the Java bytecode, the first line with program counter 0 we have the \texttt{aload 0} instruction. \texttt{aload 0} pushes a reference to the top of the operation stack from local variables a position zero, then increments the operation stack pointer and program counter.
+\kri{lav ny model til nyt sample}
+\Cref{fig:uppaal1} show how two Java Bytecode instructions are represented in UPPAAL. On the Left we see the Java bytecode, the first line with program counter 0 we have the \texttt{aload 0} instruction. \texttt{aload 0} pushes a reference to the top of the operation stack from local variables at position zero, then increments the operation stack pointer and program counter.
 
 %uppaal location edge
-In UPPAAL the location pc0\_aload represent \texttt{aload 0}. The UPPAAL model is seen in \Cref{fig:uppaal1}b 
+In UPPAAL the location \texttt{pc0\_aload} represent \texttt{aload 0}. The UPPAAL model is seen in \Cref{fig:uppaal1}b. We simulate execution time with the location invariant \texttt{t <= 1}  and guard \texttt{t == 1} on the edge leading to the next location. The guard is found right below the location name right of the edge and invariant is to the left of the edge. In this sample we defined the execution time as 1 time-unit.
+
+In the update on the edge seen below the guard, we simulate the data flow by assigning the value of the local variable \texttt{loc0} to the top of the operand stack \texttt{os} represented by operand stack pointer \texttt{osp}. \texttt{osp} is incremented as the operand stack grows, the increment of the program counter is simulated by the edge itself.
 
 \subsubsection{Jumps and Branches}
 goto
