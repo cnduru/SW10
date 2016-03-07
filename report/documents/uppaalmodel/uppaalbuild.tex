@@ -8,6 +8,46 @@ We have chosen the later and model the program in terms of program flow and data
 \subsection{Representation Details}
 The program simulation is based on \jcl semantics, most Java bytecodes can be translated directly to \jcl at the loss of type information.\\
 
-When representing Java bytecode in UPPAAL we have chosen to represent an instruction, such as \texttt{iload a} and \texttt{dub}, as UPPAAL locations. This implies that a change in the program counter is a change of the location. In turn this means that when an instruction is to be executed the change to the program configuration \textit{Conf} \cref{sec:semintro} \kristian{ref til semantik}.
+When representing Java bytecode in UPPAAL we have chosen to represent an instruction, such as \texttt{aload a} and \texttt{dub}, as UPPAAL locations. 
+This implies that a change in the program counter is a change of the location. 
+In turn this means that when an instruction is to be executed the change to the program configuration \textit{Conf} from  \cref{sec:semintro} occurs on the edge to next location.
+\subsubsection{Simple Instructions}
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.3\textwidth}
+  \begin{lstlisting}
+  0. aload 0
+  1. arraylength
+  ...
+  \end{lstlisting}
+  \caption{Java Bytecode Sample.}
+\end{subfigure} 
+\hspace{10px}
+\begin{subfigure}{.6\textwidth}
+  \includegraphics[width=\textwidth]{UPPAAL1.png}
+  \caption{Generated model from Sample.}
+\end{subfigure}
+\caption{Java Bytecode and Corresponding UPPAAL Model.}
+\label{fig:uppaal1}
+\end{figure}
+
+\Cref{fig:uppaal1} show how two Java Bytecode instructions are represented in UPPAAL. On the Left we see the Java bytecode, the first line with program counter 0 we have the \texttt{aload 0} instruction. \texttt{aload 0} pushes a reference to the top of the operation stack from local variables a position zero, then increments the operation stack pointer and program counter.
+
+arraylength
+
+uppaal location edge
+
+update
+
+invariant guard
+
+\subsubsection{Jumps and Branches}
+goto
+
+conditionals
+\subsubsection{Method Calls}
+new location
+
+parameter parsing
 
 \section{Rewriting the Model}
