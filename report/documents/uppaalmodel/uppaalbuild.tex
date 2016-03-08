@@ -97,7 +97,7 @@ The first is an addition of a location in the template of the \texttt{main} meth
 The second is a new location in the caller for every method call it performs. This makes it possible to simulate parameter passing, as well as control transfer when waiting for a callee to return control to the caller after a method call. The simulation of the caller remains in this location until the callee returns control, after its simulation has finished. This control transfer is modeled with a synchronisation on the edge going from the new state in the caller and back to its original control flow.\ch{insert ref to figure}~\\
 
 % callee
-The third is an addition of a two initial locations in every template except for the \texttt{main} template. The first, initial, location serves dual purposes: it enables the control transfer from the caller to itself by synchronisation, and simulates passing of arguments into the method from the caller. The second location is the \textit{done} location, where the simulation ends up when it has finished its simulation. This is where control is transferred back to the caller.
+The third is an addition of two additional states in every template, except for the \texttt{main} template. The first, initial, location serves dual purposes: it enables the control transfer from the caller to itself by synchronisation, and simulates passing of arguments into the method from the caller. The second location is the \textit{Done} location, where the simulation ends up when it has finished its simulation. This is where control is transferred back to the caller.
 \ch{show how parameters are passed in figure}
 \ch{rewrite this}
 \section{Modelling a Fault Injection}
