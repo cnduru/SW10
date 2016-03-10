@@ -7,7 +7,7 @@ We have chosen the later and model the program in terms of program flow and data
 
 \subsection{Representation Details}
 The program simulation is based on \jcl semantics, most Java bytecodes can be translated directly to \jcl at the loss of type information.\\
-
+\kri{what does it mean for us?}
 When representing Java bytecode in UPPAAL we have chosen to represent an instruction, such as \texttt{aload a} and \texttt{dup}, as UPPAAL locations. 
 This implies that a change in the program counter is a change of the location. 
 In turn this means that when an instruction is to be executed the change to the program configuration \textit{Conf} from  \cref{sec:semintro} occurs on the edge to next location.
@@ -76,10 +76,10 @@ public static void main(java.lang.String[]);
 \label{fig:uppaal1}
 \end{figure}
 \kri{lav ny model til nyt sample}
-\Cref{fig:uppaal1} show how two Java Bytecode instructions are represented in UPPAAL. On the Left we see the Java bytecode, the first line with program counter 0 we have the \texttt{aload 0} instruction. \texttt{aload 0} pushes a reference to the top of the operation stack from local variables at position zero, then increments the operation stack pointer and program counter.
+\Cref{fig:uppaal1} show how two Java Bytecode instructions are represented in UPPAAL. On the left we see the Java bytecode, the first line with program counter 0 we have the \texttt{aload 0} instruction. \texttt{aload 0} pushes a reference to the top of the operation stack from local variables at position zero, then increments the operand stack pointer and program counter.
 
 %uppaal location edge
-In UPPAAL the location \texttt{pc0\_aload} represent \texttt{aload 0}. The UPPAAL model is seen in \Cref{fig:uppaal1}b. We simulate execution time with the location invariant \texttt{t <= 1}  and guard \texttt{t == 1} on the edge leading to the next location. The guard is found right below the location name right of the edge and invariant is to the left of the edge. In this sample we defined the execution time as 1 time-unit.
+In UPPAAL the location \texttt{pc0\_aload} represent \texttt{aload 0}. The UPPAAL model is seen in \Cref{fig:uppaal1}b. We simulate execution time with the location invariant \texttt{t <= 1}  and guard \texttt{t == 1} on the edge leading to the next location. The guard is found right below the location name right of the edge and invariant is to the left of the edge. In this sample we defined the execution time as 1 time unit.
 
 In the update on the edge seen below the guard, we simulate the data flow by assigning the value of the local variable \texttt{loc0} to the top of the operand stack \texttt{os} represented by operand stack pointer \texttt{osp}. \texttt{osp} is incremented as the operand stack grows, the increment of the program counter is simulated by the edge itself.
 
@@ -113,6 +113,6 @@ Every instruction in the Java bytecode is represented by a location, and has an 
 \subsection{Opstack complications}
 Under normal execution the value of the operand stack pointer can be known at compile  time \kri{double check, etv find source}. This leaves us with two ways to simulate it, use a operand stack pointer to point at the top element or staticly define the opstack element to be accessed for each instruction.
 
-Under normal execution there is to difference between the two approaches, but then introducing fault models as PC\_Fault and INST\_Fault it is possible to change the behaviour. This can let the operand stack pointer point to a value a instruction never would access or in the extreme case go out of bounds for the method.
+Under normal execution there is to difference between the two approaches, but then introducing fault models as PC\_Fault and INST\_Fault it is possible to change the behaviour. This can let the operand stack pointer point to a value an instruction never would access or in the extreme case go out of bounds for the method.
 
 Our approach is the operand stack pointer and assume that the virtual machine will detect out of bounds. As such under a PC\_FAULT a former value of might be read instead of the current one.
