@@ -84,9 +84,9 @@ In UPPAAL the location \texttt{pc0\_aload} represent \texttt{aload 0}. The UPPAA
 In the update on the edge seen below the guard, we simulate the data flow by assigning the value of the local variable \texttt{loc0} to the top of the operand stack \texttt{os} represented by operand stack pointer \texttt{osp}. \texttt{osp} is incremented as the operand stack grows, the increment of the program counter is simulated by the edge itself.
 
 \subsubsection{Jumps and Branches}
-goto
+For the majority of instructions the program counter is set to the next instruction after execution, but for a jump with \texttt{goto a} the edge goes to the instruction with the program counter corresponding with value of \texttt{a}.
 
-conditionals
+Conditionals such as \texttt{if\_cmpeq a} is the only instruction that is modelled by a location having two outgoing edges , one to the next instruction and one for the program counter of a. On these edges the guard is used to determine which of the edges is to be traversed. \kri{insert example}
 \subsubsection{Method Calls}\label{subsubsec:method}
 Method calls are represented by three additions to the model. These additions consist of locations, but they do not have any associated program counter since they are not a part of the original program.\\
 
@@ -108,3 +108,9 @@ Every instruction in the Java bytecode is represented by a location, and has an 
 \includegraphics{figures/fault.PNG}
 \caption{The UPPAAL template which performs a bit flip in the program counter}
 \end{figure}\ch{update figure to use fault at between 0 and global clock}
+
+
+\subsection{Opstack complications}
+Under normal execution the value of the operand stack pointer can be known at compile  time \kri{double check, etv find source}. This leaves us with two ways to simulate it, use a operand stack pointer to point at the top element or staticly define the opstack element to be accessed for each instruction.
+
+Under normal execution there is to difference between the two approaches, but then introducing fault models as PC\_Fault and INST\_Fault it is possible to change the behaviour enough to let a operand stack pointer point to out of the operand stack.
