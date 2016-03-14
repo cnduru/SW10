@@ -13,7 +13,7 @@ Nonetheless, both persistent and transient faults can have fatal consequences, i
 
 The two categories of fault injection are thus sensitive to two variables, \textit{time} and \textit{place}, to different degrees. For example, an attacker who is trying to alter a constant in a program on a chipped access card, is able to work on the card in private surroundings. He can remove the protective layer on the chip and induce a persistent error on the card. Since the card is offline, the timing of the fault injection does not matter because he can only affect static values on the chip. The fault will still be present when the card is powered on at a later time. 
 
-On the other hand, an attacker who wants to change transient properties such as program flow dependent on a non-constant value, is very dependent on both timing and precision of his attack. He has to affect the correct place in memory at just the right time in the program's life cycle to alter the program flow. \cref{tab:dependencies} illustrates the dependencies of persistent and transient fault injections.
+On the other hand, an attacker who wants to change transient properties such as program flow dependent on a non-constant value, is very dependent on both timing and precision of his attack. He has to affect the correct place in memory at just the right time in the program's execution to alter the program flow. \cref{tab:dependencies} illustrates the dependencies of persistent and transient fault injections.
 
 \begin{table}[h!]
 \centering
