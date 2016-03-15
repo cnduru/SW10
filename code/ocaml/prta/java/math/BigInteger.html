@@ -15289,15 +15289,15 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.math.BigInteger:floatValue:F" href="#">
+<a name="java.math.BigInteger:longValue:J" href="#">
 
 </a>
 <div class="method_signature">
 public 
-float
+long
  
-<span>
-floatValue
+<span class="methodname clickable" onclick="showInfoList(this)">
+longValue
 </span>
 (
 )
@@ -15307,7 +15307,16 @@ floatValue
 Concrete Method 
 </li>
 <li>
-Not parsed
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.math.BigInteger:toString:Ijava.lang.String" title="java.lang.String toString(int)">
+java.math.BigInteger.toString(int)
+</a>
+</div>
 </li>
 </ul>
 </div>
@@ -15315,73 +15324,169 @@ Not parsed
 <li value="0">
 <div class="instruction">
 <span>
-aload  0
+lconst %Ld0
 </span>
 </div>
 </li>
 <li value="1">
 <div class="instruction">
 <span>
-invokevirtual 
+lstore  1
 </span>
-<span>
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.String toString()">
-java.math.BigInteger.toString
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.math.BigInteger:toString:java.lang.String" title="java.lang.String toString()">
-java.math.BigInteger.toString
-</a>
 </div>
 </li>
-</ul>
+<li value="2">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+istore  3
+</span>
 </div>
 </li>
 <li value="4">
 <div class="instruction">
 <span>
-invokestatic 
+iload  3
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+iflt 25
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+lload  1
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+bipush 32
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+lshl
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+invokespecial 
 </span>
 <span>
-float
+int
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="float parseFloat(java.lang.String)">
-java.lang.Float.parseFloat
+<span title="int getInt(int)">
+java.math.BigInteger.getInt
 </span>
 </span>
 <span>
 (
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
+int
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-No reachable result.
+<a href="#java.math.BigInteger:getInt:II" title="int getInt(int)">
+java.math.BigInteger.getInt
+</a>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="7">
+<li value="17">
 <div class="instruction">
 <span>
-freturn
+i2l
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+lconst %Ld4294967295
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+land
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+ladd
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+lstore  1
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+iinc 3 -1
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+goto -23
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+lload  1
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+lreturn
 </span>
 </div>
 </li>
@@ -19108,433 +19213,6 @@ iconst 0
 <div class="instruction">
 <span>
 ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.math.BigInteger:&lt;init&gt;:I.-void" href="#">
-
-</a>
-<div class="method_signature">
-private 
-<span>
-BigInteger
-</span>
-(
-int[]
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.Number.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/Number.html#java.lang.Number:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.lang.Number.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-arraylength
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-ifne 13
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/NumberFormatException.html">
-java.lang.NumberFormatException
-</a>
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-ldc string &apos;Zero length BigInteger&apos;
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.lang.NumberFormatException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/NumberFormatException.html#java.lang.NumberFormatException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
-java.lang.NumberFormatException.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-iaload
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-ifge 19
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-int[]
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int[] makePositive(int[])">
-java.math.BigInteger.makePositive
-</span>
-</span>
-<span>
-(
-int[]
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.math.BigInteger:mag:I.-">
-java.math.BigInteger.mag
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int[]
-</span>
-</div>
-</li>
-<li value="33">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="34">
-<div class="instruction">
-<span>
-iconst -1
-</span>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.math.BigInteger:signum:I">
-java.math.BigInteger.signum
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="38">
-<div class="instruction">
-<span>
-goto 28
-</span>
-</div>
-</li>
-<li value="41">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="42">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="43">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-int[]
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int[] trustedStripLeadingZeroInts(int[])">
-java.math.BigInteger.trustedStripLeadingZeroInts
-</span>
-</span>
-<span>
-(
-int[]
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.math.BigInteger:trustedStripLeadingZeroInts:I.-I.-" title="int[] trustedStripLeadingZeroInts(int[])">
-java.math.BigInteger.trustedStripLeadingZeroInts
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="46">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.math.BigInteger:mag:I.-">
-java.math.BigInteger.mag
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int[]
-</span>
-</div>
-</li>
-<li value="49">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="50">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="51">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.math.BigInteger:mag:I.-">
-java.math.BigInteger.mag
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int[]
-</span>
-</div>
-</li>
-<li value="54">
-<div class="instruction">
-<span>
-arraylength
-</span>
-</div>
-</li>
-<li value="55">
-<div class="instruction">
-<span>
-ifne 7
-</span>
-</div>
-</li>
-<li value="58">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="59">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="62">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="63">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.math.BigInteger:signum:I">
-java.math.BigInteger.signum
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="66">
-<div class="instruction">
-<span>
-return
 </span>
 </div>
 </li>
@@ -25283,6 +24961,411 @@ ireturn
 </ol>
 </div>
 <div class="method">
+<a name="java.math.BigInteger:getInt:II" href="#">
+
+</a>
+<div class="method_signature">
+private 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getInt
+</span>
+(
+int
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.math.BigInteger:longValue:J" title="long longValue()">
+java.math.BigInteger.longValue()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.math.BigInteger:testBit:IZ" title="bool testBit(int)">
+java.math.BigInteger.testBit(int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+ifge 5
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.math.BigInteger:mag:I.-">
+java.math.BigInteger.mag
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int[]
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+ifcmplt 8
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int signInt()">
+java.math.BigInteger.signInt
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.math.BigInteger:signInt:I" title="int signInt()">
+java.math.BigInteger.signInt
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.math.BigInteger:mag:I.-">
+java.math.BigInteger.mag
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int[]
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.math.BigInteger:mag:I.-">
+java.math.BigInteger.mag
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int[]
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+iaload
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+istore  2
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.math.BigInteger:signum:I">
+java.math.BigInteger.signum
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+iflt 7
+</span>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+goto 19
+</span>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int firstNonzeroIntNum()">
+java.math.BigInteger.firstNonzeroIntNum
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.math.BigInteger:firstNonzeroIntNum:I" title="int firstNonzeroIntNum()">
+java.math.BigInteger.firstNonzeroIntNum
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="51">
+<div class="instruction">
+<span>
+ifcmpgt 8
+</span>
+</div>
+</li>
+<li value="54">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="55">
+<div class="instruction">
+<span>
+ineg
+</span>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+goto 6
+</span>
+</div>
+</li>
+<li value="59">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="60">
+<div class="instruction">
+<span>
+iconst -1
+</span>
+</div>
+</li>
+<li value="61">
+<div class="instruction">
+<span>
+ixor
+</span>
+</div>
+</li>
+<li value="62">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
 <a name="java.math.BigInteger:&lt;init&gt;:II.-void" href="#">
 
 </a>
@@ -27810,6 +27893,107 @@ int[]
 <div class="instruction">
 <span>
 return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.math.BigInteger:doubleValue:D" href="#">
+
+</a>
+<div class="method_signature">
+public 
+double
+ 
+<span>
+doubleValue
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toString()">
+java.math.BigInteger.toString
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.math.BigInteger:toString:java.lang.String" title="java.lang.String toString()">
+java.math.BigInteger.toString
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+double
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="double parseDouble(java.lang.String)">
+java.lang.Double.parseDouble
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+dreturn
 </span>
 </div>
 </li>
@@ -40788,411 +40972,6 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.math.BigInteger:getInt:II" href="#">
-
-</a>
-<div class="method_signature">
-private 
-int
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-getInt
-</span>
-(
-int
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.math.BigInteger:longValue:J" title="long longValue()">
-java.math.BigInteger.longValue()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.math.BigInteger:testBit:IZ" title="bool testBit(int)">
-java.math.BigInteger.testBit(int)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-ifge 5
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.math.BigInteger:mag:I.-">
-java.math.BigInteger.mag
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int[]
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-arraylength
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-ifcmplt 8
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int signInt()">
-java.math.BigInteger.signInt
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.math.BigInteger:signInt:I" title="int signInt()">
-java.math.BigInteger.signInt
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.math.BigInteger:mag:I.-">
-java.math.BigInteger.mag
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int[]
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.math.BigInteger:mag:I.-">
-java.math.BigInteger.mag
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int[]
-</span>
-</div>
-</li>
-<li value="28">
-<div class="instruction">
-<span>
-arraylength
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-isub
-</span>
-</div>
-</li>
-<li value="31">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="32">
-<div class="instruction">
-<span>
-isub
-</span>
-</div>
-</li>
-<li value="33">
-<div class="instruction">
-<span>
-iaload
-</span>
-</div>
-</li>
-<li value="34">
-<div class="instruction">
-<span>
-istore  2
-</span>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="36">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.math.BigInteger:signum:I">
-java.math.BigInteger.signum
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="39">
-<div class="instruction">
-<span>
-iflt 7
-</span>
-</div>
-</li>
-<li value="42">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="43">
-<div class="instruction">
-<span>
-goto 19
-</span>
-</div>
-</li>
-<li value="46">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="47">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="48">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int firstNonzeroIntNum()">
-java.math.BigInteger.firstNonzeroIntNum
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.math.BigInteger:firstNonzeroIntNum:I" title="int firstNonzeroIntNum()">
-java.math.BigInteger.firstNonzeroIntNum
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="51">
-<div class="instruction">
-<span>
-ifcmpgt 8
-</span>
-</div>
-</li>
-<li value="54">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="55">
-<div class="instruction">
-<span>
-ineg
-</span>
-</div>
-</li>
-<li value="56">
-<div class="instruction">
-<span>
-goto 6
-</span>
-</div>
-</li>
-<li value="59">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="60">
-<div class="instruction">
-<span>
-iconst -1
-</span>
-</div>
-</li>
-<li value="61">
-<div class="instruction">
-<span>
-ixor
-</span>
-</div>
-</li>
-<li value="62">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
 <a name="java.math.BigInteger:&lt;init&gt;:IB.-void" href="#">
 
 </a>
@@ -43040,15 +42819,15 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.math.BigInteger:doubleValue:D" href="#">
+<a name="java.math.BigInteger:floatValue:F" href="#">
 
 </a>
 <div class="method_signature">
 public 
-double
+float
  
 <span>
-doubleValue
+floatValue
 </span>
 (
 )
@@ -43106,11 +42885,11 @@ java.math.BigInteger.toString
 invokestatic 
 </span>
 <span>
-double
+float
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="double parseDouble(java.lang.String)">
-java.lang.Double.parseDouble
+<span title="float parseFloat(java.lang.String)">
+java.lang.Float.parseFloat
 </span>
 </span>
 <span>
@@ -43132,7 +42911,7 @@ No reachable result.
 <li value="7">
 <div class="instruction">
 <span>
-dreturn
+freturn
 </span>
 </div>
 </li>
@@ -46885,6 +46664,433 @@ java.math.BigInteger.equals
 <div class="instruction">
 <span>
 ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.math.BigInteger:&lt;init&gt;:I.-void" href="#">
+
+</a>
+<div class="method_signature">
+private 
+<span>
+BigInteger
+</span>
+(
+int[]
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Number.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Number.html#java.lang.Number:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.Number.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+ifne 13
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/NumberFormatException.html">
+java.lang.NumberFormatException
+</a>
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+ldc string &apos;Zero length BigInteger&apos;
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.lang.NumberFormatException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/NumberFormatException.html#java.lang.NumberFormatException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
+java.lang.NumberFormatException.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+iaload
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+ifge 19
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+int[]
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int[] makePositive(int[])">
+java.math.BigInteger.makePositive
+</span>
+</span>
+<span>
+(
+int[]
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.math.BigInteger:mag:I.-">
+java.math.BigInteger.mag
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int[]
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+iconst -1
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.math.BigInteger:signum:I">
+java.math.BigInteger.signum
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+goto 28
+</span>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+int[]
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int[] trustedStripLeadingZeroInts(int[])">
+java.math.BigInteger.trustedStripLeadingZeroInts
+</span>
+</span>
+<span>
+(
+int[]
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.math.BigInteger:trustedStripLeadingZeroInts:I.-I.-" title="int[] trustedStripLeadingZeroInts(int[])">
+java.math.BigInteger.trustedStripLeadingZeroInts
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.math.BigInteger:mag:I.-">
+java.math.BigInteger.mag
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int[]
+</span>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="50">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="51">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.math.BigInteger:mag:I.-">
+java.math.BigInteger.mag
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int[]
+</span>
+</div>
+</li>
+<li value="54">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="55">
+<div class="instruction">
+<span>
+ifne 7
+</span>
+</div>
+</li>
+<li value="58">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="59">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="62">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="63">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.math.BigInteger:signum:I">
+java.math.BigInteger.signum
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="66">
+<div class="instruction">
+<span>
+return
 </span>
 </div>
 </li>
@@ -61904,212 +62110,6 @@ l2i
 <div class="instruction">
 <span>
 ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.math.BigInteger:longValue:J" href="#">
-
-</a>
-<div class="method_signature">
-public 
-long
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-longValue
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.math.BigInteger:toString:Ijava.lang.String" title="java.lang.String toString(int)">
-java.math.BigInteger.toString(int)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-lconst %Ld0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-lstore  1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-istore  3
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-iflt 25
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-lload  1
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-bipush 32
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-lshl
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int getInt(int)">
-java.math.BigInteger.getInt
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.math.BigInteger:getInt:II" title="int getInt(int)">
-java.math.BigInteger.getInt
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-i2l
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-lconst %Ld4294967295
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-land
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-ladd
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-lstore  1
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-iinc 3 -1
-</span>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-goto -23
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-lload  1
-</span>
-</div>
-</li>
-<li value="31">
-<div class="instruction">
-<span>
-lreturn
 </span>
 </div>
 </li>

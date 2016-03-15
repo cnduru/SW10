@@ -116,3 +116,5 @@ Under normal execution the value of the operand stack pointer can be known at co
 Under normal execution there is to difference between the two approaches, but then introducing fault models as PC\_Fault and INST\_Fault it is possible to change the behaviour. This can let the operand stack pointer point to a value an instruction never would access or in the extreme case go out of bounds for the method.
 
 Our approach is the operand stack pointer and assume that the virtual machine will detect out of bounds. As such under a PC\_FAULT a former value of might be read instead of the current one.
+
+The Java Virtual Machine assumes that ``There are no operand stack overflows or underflows'' \cite[c. 4.10]{java_specc} which is checked by the verifier.

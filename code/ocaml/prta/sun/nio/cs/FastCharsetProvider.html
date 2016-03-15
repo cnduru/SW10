@@ -71,19 +71,23 @@ java.util.Map
 </span>
 </div>
 <div class="method">
-<a name="sun.nio.cs.FastCharsetProvider:charsets:java.util.Iterator" href="#">
+<a name="sun.nio.cs.FastCharsetProvider:charsetForName:java.lang.Stringjava.nio.charset.Charset" href="#">
 
 </a>
 <div class="method_signature">
 public final 
-<a href="../../../java/util/Iterator.html">
-java.util.Iterator
+<a href="../../../java/nio/charset/Charset.html">
+java.nio.charset.Charset
 </a>
  
-<span>
-charsets
+<span class="methodname clickable" onclick="showInfoList(this)">
+charsetForName
 </span>
 (
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 1
 )
 ;
 <ul class="annot">
@@ -91,7 +95,23 @@ charsets
 Concrete Method 
 </li>
 <li>
-Not parsed
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/nio/charset/Charset.html#java.nio.charset.Charset:lookup2:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset lookup2(java.lang.String)">
+java.nio.charset.Charset.lookup2(java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/nio/charset/Charset.html#java.nio.charset.Charset:lookupExtendedCharset:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset lookupExtendedCharset(java.lang.String)">
+java.nio.charset.Charset.lookupExtendedCharset(java.lang.String)
+</a>
+</div>
 </li>
 </ul>
 </div>
@@ -99,17 +119,28 @@ Not parsed
 <li value="0">
 <div class="instruction">
 <span>
-new 
+aload  0
 </span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
 <span>
-sun.nio.cs.FastCharsetProvider$1
+dup
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+astore  2
 </span>
 </div>
 </li>
 <li value="3">
 <div class="instruction">
 <span>
-dup
+monitorenter
 </span>
 </div>
 </li>
@@ -123,42 +154,157 @@ aload  0
 <li value="5">
 <div class="instruction">
 <span>
+aload  0
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
 invokespecial 
 </span>
 <span>
-void
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(sun.nio.cs.FastCharsetProvider)">
-sun.nio.cs.FastCharsetProvider$1.&lt;init&gt;
+<span title="java.lang.String canonicalize(java.lang.String)">
+sun.nio.cs.FastCharsetProvider.canonicalize
 </span>
 </span>
 <span>
 (
-<a href="FastCharsetProvider.html">
-sun.nio.cs.FastCharsetProvider
+<a href="../../../java/lang/String.html">
+java.lang.String
 </a>
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-No reachable result.
+<a href="#sun.nio.cs.FastCharsetProvider:canonicalize:java.lang.Stringjava.lang.String" title="java.lang.String canonicalize(java.lang.String)">
+sun.nio.cs.FastCharsetProvider.canonicalize
+</a>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="8">
+<li value="10">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+<a href="../../../java/nio/charset/Charset.html">
+java.nio.charset.Charset
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.charset.Charset lookup(java.lang.String)">
+sun.nio.cs.FastCharsetProvider.lookup
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.nio.cs.FastCharsetProvider:lookup:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset lookup(java.lang.String)">
+sun.nio.cs.FastCharsetProvider.lookup
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+monitorexit
+</span>
+</div>
+</li>
+<li value="15">
 <div class="instruction">
 <span>
 areturn
 </span>
 </div>
 </li>
+<li value="16">
+<div class="instruction">
+<span>
+astore  3
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+monitorexit
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
 </ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
 <ol>
+<li>
+<span>
+try start: 4; try end: 15: catch start: 16; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 16; try end: 19: catch start: 16; catched type: None (finally block).
+</span>
+</li>
 </ol>
+</span>
 </div>
 <div class="method">
 <a name="sun.nio.cs.FastCharsetProvider:canonicalize:java.lang.Stringjava.lang.String" href="#">
@@ -487,6 +633,396 @@ sun.nio.cs.FastCharsetProvider.lookup
 <div class="instruction">
 <span>
 areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.nio.cs.FastCharsetProvider:access$000:sun.nio.cs.FastCharsetProviderjava.util.Map" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<a href="../../../java/util/Map.html">
+java.util.Map
+</a>
+ 
+<span>
+access$000
+</span>
+(
+<a href="FastCharsetProvider.html">
+sun.nio.cs.FastCharsetProvider
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.nio.cs.FastCharsetProvider:classMap:java.util.Map">
+sun.nio.cs.FastCharsetProvider.classMap
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/util/Map.html">
+java.util.Map
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.nio.cs.FastCharsetProvider:charsets:java.util.Iterator" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+<a href="../../../java/util/Iterator.html">
+java.util.Iterator
+</a>
+ 
+<span>
+charsets
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+sun.nio.cs.FastCharsetProvider$1
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(sun.nio.cs.FastCharsetProvider)">
+sun.nio.cs.FastCharsetProvider$1.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="FastCharsetProvider.html">
+sun.nio.cs.FastCharsetProvider
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.nio.cs.FastCharsetProvider:&lt;init&gt;:java.lang.Stringjava.util.Mapjava.util.Mapjava.util.Mapvoid" href="#">
+
+</a>
+<div class="method_signature">
+protected 
+<span class="methodname clickable" onclick="showInfoList(this)">
+FastCharsetProvider
+</span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 1
+, 
+<a href="../../../java/util/Map.html">
+java.util.Map
+</a>
+ 2
+, 
+<a href="../../../java/util/Map.html">
+java.util.Map
+</a>
+ 3
+, 
+<a href="../../../java/util/Map.html">
+java.util.Map
+</a>
+ 4
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/nio/cs/StandardCharsets.html#sun.nio.cs.StandardCharsets:&lt;init&gt;:void" title="void &lt;init&gt;()">
+sun.nio.cs.StandardCharsets.&lt;init&gt;()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.nio.charset.spi.CharsetProvider.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/nio/charset/spi/CharsetProvider.html#java.nio.charset.spi.CharsetProvider:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.nio.charset.spi.CharsetProvider.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.nio.cs.FastCharsetProvider:packagePrefix:java.lang.String">
+sun.nio.cs.FastCharsetProvider.packagePrefix
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.nio.cs.FastCharsetProvider:aliasMap:java.util.Map">
+sun.nio.cs.FastCharsetProvider.aliasMap
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/util/Map.html">
+java.util.Map
+</a>
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.nio.cs.FastCharsetProvider:classMap:java.util.Map">
+sun.nio.cs.FastCharsetProvider.classMap
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/util/Map.html">
+java.util.Map
+</a>
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+aload  4
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.nio.cs.FastCharsetProvider:cache:java.util.Map">
+sun.nio.cs.FastCharsetProvider.cache
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/util/Map.html">
+java.util.Map
+</a>
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+return
 </span>
 </div>
 </li>
@@ -1851,542 +2387,6 @@ try start: 83; try end: 145: catch start: 150; catched type: java.lang.IllegalAc
 <li>
 <span>
 try start: 83; try end: 145: catch start: 154; catched type: java.lang.InstantiationException.
-</span>
-</li>
-</ol>
-</span>
-</div>
-<div class="method">
-<a name="sun.nio.cs.FastCharsetProvider:access$000:sun.nio.cs.FastCharsetProviderjava.util.Map" href="#">
-
-</a>
-<div class="method_signature">
- static 
-<a href="../../../java/util/Map.html">
-java.util.Map
-</a>
- 
-<span>
-access$000
-</span>
-(
-<a href="FastCharsetProvider.html">
-sun.nio.cs.FastCharsetProvider
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.nio.cs.FastCharsetProvider:classMap:java.util.Map">
-sun.nio.cs.FastCharsetProvider.classMap
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/util/Map.html">
-java.util.Map
-</a>
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="sun.nio.cs.FastCharsetProvider:&lt;init&gt;:java.lang.Stringjava.util.Mapjava.util.Mapjava.util.Mapvoid" href="#">
-
-</a>
-<div class="method_signature">
-protected 
-<span class="methodname clickable" onclick="showInfoList(this)">
-FastCharsetProvider
-</span>
-(
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
- 1
-, 
-<a href="../../../java/util/Map.html">
-java.util.Map
-</a>
- 2
-, 
-<a href="../../../java/util/Map.html">
-java.util.Map
-</a>
- 3
-, 
-<a href="../../../java/util/Map.html">
-java.util.Map
-</a>
- 4
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../sun/nio/cs/StandardCharsets.html#sun.nio.cs.StandardCharsets:&lt;init&gt;:void" title="void &lt;init&gt;()">
-sun.nio.cs.StandardCharsets.&lt;init&gt;()
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.nio.charset.spi.CharsetProvider.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/nio/charset/spi/CharsetProvider.html#java.nio.charset.spi.CharsetProvider:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.nio.charset.spi.CharsetProvider.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.nio.cs.FastCharsetProvider:packagePrefix:java.lang.String">
-sun.nio.cs.FastCharsetProvider.packagePrefix
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.nio.cs.FastCharsetProvider:aliasMap:java.util.Map">
-sun.nio.cs.FastCharsetProvider.aliasMap
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/util/Map.html">
-java.util.Map
-</a>
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.nio.cs.FastCharsetProvider:classMap:java.util.Map">
-sun.nio.cs.FastCharsetProvider.classMap
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/util/Map.html">
-java.util.Map
-</a>
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-aload  4
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.nio.cs.FastCharsetProvider:cache:java.util.Map">
-sun.nio.cs.FastCharsetProvider.cache
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/util/Map.html">
-java.util.Map
-</a>
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="sun.nio.cs.FastCharsetProvider:charsetForName:java.lang.Stringjava.nio.charset.Charset" href="#">
-
-</a>
-<div class="method_signature">
-public final 
-<a href="../../../java/nio/charset/Charset.html">
-java.nio.charset.Charset
-</a>
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-charsetForName
-</span>
-(
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/nio/charset/Charset.html#java.nio.charset.Charset:lookup2:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset lookup2(java.lang.String)">
-java.nio.charset.Charset.lookup2(java.lang.String)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/nio/charset/Charset.html#java.nio.charset.Charset:lookupExtendedCharset:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset lookupExtendedCharset(java.lang.String)">
-java.nio.charset.Charset.lookupExtendedCharset(java.lang.String)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-astore  2
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-monitorenter
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.String canonicalize(java.lang.String)">
-sun.nio.cs.FastCharsetProvider.canonicalize
-</span>
-</span>
-<span>
-(
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#sun.nio.cs.FastCharsetProvider:canonicalize:java.lang.Stringjava.lang.String" title="java.lang.String canonicalize(java.lang.String)">
-sun.nio.cs.FastCharsetProvider.canonicalize
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-<a href="../../../java/nio/charset/Charset.html">
-java.nio.charset.Charset
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.nio.charset.Charset lookup(java.lang.String)">
-sun.nio.cs.FastCharsetProvider.lookup
-</span>
-</span>
-<span>
-(
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#sun.nio.cs.FastCharsetProvider:lookup:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset lookup(java.lang.String)">
-sun.nio.cs.FastCharsetProvider.lookup
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-monitorexit
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-astore  3
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-monitorexit
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-</ol>
-<span title="Exceptions">
-<h3>
-Exceptions handling:
-</h3>
-<ol>
-<li>
-<span>
-try start: 4; try end: 15: catch start: 16; catched type: None (finally block).
-</span>
-</li>
-<li>
-<span>
-try start: 16; try end: 19: catch start: 16; catched type: None (finally block).
 </span>
 </li>
 </ol>

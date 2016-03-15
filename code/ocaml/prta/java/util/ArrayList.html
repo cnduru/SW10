@@ -863,7 +863,7 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.util.ArrayList:ensureExplicitCapacity:Ivoid" href="#">
+<a name="java.util.ArrayList:ensureCapacityInternal:Ivoid" href="#">
 
 </a>
 <div class="method_signature">
@@ -871,7 +871,7 @@ private
 void
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-ensureExplicitCapacity
+ensureCapacityInternal
 </span>
 (
 int
@@ -889,8 +889,15 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="#java.util.ArrayList:ensureCapacityInternal:Ivoid" title="void ensureCapacityInternal(int)">
-java.util.ArrayList.ensureCapacityInternal(int)
+<a href="#java.util.ArrayList:add:java.lang.ObjectZ" title="bool add(java.lang.Object)">
+java.util.ArrayList.add(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.util.ArrayList:add:Ijava.lang.Objectvoid" title="void add(int, java.lang.Object)">
+java.util.ArrayList.add(int, java.lang.Object)
 </a>
 </div>
 </li>
@@ -905,77 +912,6 @@ aload  0
 </div>
 </li>
 <li value="1">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../java/util/AbstractList.html#java.util.AbstractList:modCount:I">
-java.util.AbstractList.modCount
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="../../java/util/AbstractList.html#java.util.AbstractList:modCount:I">
-java.util.AbstractList.modCount
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="12">
 <div class="instruction">
 <span>
 getfield 
@@ -996,42 +932,101 @@ java.lang.Object
 </span>
 </div>
 </li>
-<li value="15">
+<li value="4">
 <div class="instruction">
 <span>
-arraylength
+getstatic 
+</span>
+<span>
+<a href="#java.util.ArrayList:EMPTY_ELEMENTDATA:java.lang.Object.-">
+java.util.ArrayList.EMPTY_ELEMENTDATA
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
 </span>
 </div>
 </li>
-<li value="16">
+<li value="7">
 <div class="instruction">
 <span>
-isub
+ifacmpne 10
 </span>
 </div>
 </li>
-<li value="17">
+<li value="10">
 <div class="instruction">
 <span>
-ifle 8
+bipush 10
 </span>
 </div>
 </li>
-<li value="20">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="21">
+<li value="12">
 <div class="instruction">
 <span>
 iload  1
 </span>
 </div>
 </li>
-<li value="22">
+<li value="13">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int max(int, int)">
+java.lang.Math.max
+</span>
+</span>
+<span>
+(
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Math.html#java.lang.Math:max:III" title="int max(int, int)">
+java.lang.Math.max
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+istore  1
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="19">
 <div class="instruction">
 <span>
 invokespecial 
@@ -1040,8 +1035,8 @@ invokespecial
 void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void grow(int)">
-java.util.ArrayList.grow
+<span title="void ensureExplicitCapacity(int)">
+java.util.ArrayList.ensureExplicitCapacity
 </span>
 </span>
 <span>
@@ -1052,15 +1047,15 @@ int
 <ul class="clickable">
 <li>
 <div>
-<a href="#java.util.ArrayList:grow:Ivoid" title="void grow(int)">
-java.util.ArrayList.grow
+<a href="#java.util.ArrayList:ensureExplicitCapacity:Ivoid" title="void ensureExplicitCapacity(int)">
+java.util.ArrayList.ensureExplicitCapacity
 </a>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="25">
+<li value="22">
 <div class="instruction">
 <span>
 return
@@ -1330,86 +1325,6 @@ No reachable result.
 </div>
 </li>
 <li value="6">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.ArrayList:access$100:java.util.ArrayListI" href="#">
-
-</a>
-<div class="method_signature">
- static 
-int
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-access$100
-</span>
-(
-<a href="ArrayList.html">
-java.util.ArrayList
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/util/ArrayList$Itr.html#java.util.ArrayList$Itr:hasNext:Z" title="bool hasNext()">
-java.util.ArrayList$Itr.hasNext()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/ArrayList$Itr.html#java.util.ArrayList$Itr:next:java.lang.Object" title="java.lang.Object next()">
-java.util.ArrayList$Itr.next()
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.util.ArrayList:size:I">
-java.util.ArrayList.size
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="4">
 <div class="instruction">
 <span>
 ireturn
@@ -2172,23 +2087,24 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.util.ArrayList:batchRemove:java.util.CollectionZZ" href="#">
+<a name="java.util.ArrayList:subListRangeCheck:IIIvoid" href="#">
 
 </a>
 <div class="method_signature">
-private 
-bool
+ static 
+void
  
-<span>
-batchRemove
+<span class="methodname clickable" onclick="showInfoList(this)">
+subListRangeCheck
 </span>
 (
-<a href="../../java/util/Collection.html">
-java.util.Collection
-</a>
+int
+ 0
+, 
+int
  1
 , 
-bool
+int
  2
 )
 ;
@@ -2197,7 +2113,16 @@ bool
 Concrete Method 
 </li>
 <li>
-Not parsed
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.ArrayList:subList:IIjava.util.List" title="java.util.List subList(int, int)">
+java.util.ArrayList.subList(int, int)
+</a>
+</div>
 </li>
 </ul>
 </div>
@@ -2205,613 +2130,543 @@ Not parsed
 <li value="0">
 <div class="instruction">
 <span>
-aload  0
+iload  0
 </span>
 </div>
 </li>
 <li value="1">
 <div class="instruction">
 <span>
-getfield 
-</span>
-<span>
-<a href="#java.util.ArrayList:elementData:java.lang.Object.-">
-java.util.ArrayList.elementData
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-[]
+ifge 30
 </span>
 </div>
 </li>
 <li value="4">
 <div class="instruction">
 <span>
-astore  3
+new 
+</span>
+<span>
+<a href="../../java/lang/IndexOutOfBoundsException.html">
+java.lang.IndexOutOfBoundsException
+</a>
 </span>
 </div>
 </li>
-<li value="5">
+<li value="7">
 <div class="instruction">
 <span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-istore  4
+dup
 </span>
 </div>
 </li>
 <li value="8">
 <div class="instruction">
 <span>
-iconst 0
+new 
 </span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
 <span>
-istore  5
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
 </span>
 </div>
 </li>
 <li value="11">
 <div class="instruction">
 <span>
-iconst 0
+dup
 </span>
 </div>
 </li>
 <li value="12">
 <div class="instruction">
 <span>
-istore  6
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-iload  4
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-getfield 
+invokespecial 
 </span>
 <span>
-<a href="#java.util.ArrayList:size:I">
-java.util.ArrayList.size
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-ifcmpge 34
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-iload  4
-</span>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-aaload
-</span>
-</div>
-</li>
-<li value="28">
-<div class="instruction">
-<span>
-invokeinterface 
-</span>
-<span>
-bool
+void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool contains(java.lang.Object)">
-java.util.Collection.contains
+<span title="void &lt;init&gt;()">
+java.lang.StringBuilder.&lt;init&gt;
 </span>
 </span>
 <span>
 (
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/util/Collections$SetFromMap.html#java.util.Collections$SetFromMap:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.Collections$SetFromMap.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Hashtable$ValueCollection.html#java.util.Hashtable$ValueCollection:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.Hashtable$ValueCollection.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/IdentityHashMap$Values.html#java.util.IdentityHashMap$Values:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.IdentityHashMap$Values.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Hashtable$EntrySet.html#java.util.Hashtable$EntrySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.Hashtable$EntrySet.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/AbstractMap$2.html#java.util.AbstractMap$2:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.AbstractMap$2.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Hashtable$KeySet.html#java.util.Hashtable$KeySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.Hashtable$KeySet.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/TreeMap$KeySet.html#java.util.TreeMap$KeySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.TreeMap$KeySet.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Collections$UnmodifiableCollection.html#java.util.Collections$UnmodifiableCollection:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.Collections$UnmodifiableCollection.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/HashMap$Values.html#java.util.HashMap$Values:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.HashMap$Values.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/IdentityHashMap$EntrySet.html#java.util.IdentityHashMap$EntrySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.IdentityHashMap$EntrySet.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Collections$EmptySet.html#java.util.Collections$EmptySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.Collections$EmptySet.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/WeakHashMap$KeySet.html#java.util.WeakHashMap$KeySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.WeakHashMap$KeySet.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/AbstractCollection.html#java.util.AbstractCollection:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.AbstractCollection.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/WeakHashMap$Values.html#java.util.WeakHashMap$Values:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.WeakHashMap$Values.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Collections$EmptyList.html#java.util.Collections$EmptyList:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.Collections$EmptyList.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Collections$SingletonSet.html#java.util.Collections$SingletonSet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.Collections$SingletonSet.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/TreeMap$Values.html#java.util.TreeMap$Values:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.TreeMap$Values.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Vector.html#java.util.Vector:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.Vector.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/HashMap$EntrySet.html#java.util.HashMap$EntrySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.HashMap$EntrySet.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Collections$SynchronizedCollection.html#java.util.Collections$SynchronizedCollection:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.Collections$SynchronizedCollection.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/concurrent/ConcurrentHashMap$KeySet.html#java.util.concurrent.ConcurrentHashMap$KeySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.concurrent.ConcurrentHashMap$KeySet.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/TreeSet.html#java.util.TreeSet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.TreeSet.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/HashMap$KeySet.html#java.util.HashMap$KeySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.HashMap$KeySet.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/WeakHashMap$EntrySet.html#java.util.WeakHashMap$EntrySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.WeakHashMap$EntrySet.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/TreeMap$EntrySet.html#java.util.TreeMap$EntrySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.TreeMap$EntrySet.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/concurrent/ConcurrentHashMap$EntrySet.html#java.util.concurrent.ConcurrentHashMap$EntrySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.concurrent.ConcurrentHashMap$EntrySet.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/HashSet.html#java.util.HashSet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.HashSet.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/concurrent/ConcurrentHashMap$Values.html#java.util.concurrent.ConcurrentHashMap$Values:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.concurrent.ConcurrentHashMap$Values.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/LinkedList.html#java.util.LinkedList:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.LinkedList.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Arrays$ArrayList.html#java.util.Arrays$ArrayList:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.Arrays$ArrayList.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.util.ArrayList:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.ArrayList.contains
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/IdentityHashMap$KeySet.html#java.util.IdentityHashMap$KeySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.IdentityHashMap$KeySet.contains
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.StringBuilder.&lt;init&gt;
 </a>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="33">
+<li value="15">
 <div class="instruction">
 <span>
-iload  2
+ldc string &apos;fromIndex = &apos;
 </span>
 </div>
 </li>
-<li value="34">
+<li value="17">
 <div class="instruction">
 <span>
-ifcmpne 14
-</span>
-</div>
-</li>
-<li value="37">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="38">
-<div class="instruction">
-<span>
-iload  5
-</span>
-</div>
-</li>
-<li value="40">
-<div class="instruction">
-<span>
-iinc 5 1
-</span>
-</div>
-</li>
-<li value="43">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="44">
-<div class="instruction">
-<span>
-iload  4
-</span>
-</div>
-</li>
-<li value="46">
-<div class="instruction">
-<span>
-aaload
-</span>
-</div>
-</li>
-<li value="47">
-<div class="instruction">
-<span>
-aastore
-</span>
-</div>
-</li>
-<li value="48">
-<div class="instruction">
-<span>
-iinc 4 1
-</span>
-</div>
-</li>
-<li value="51">
-<div class="instruction">
-<span>
-goto -37
-</span>
-</div>
-</li>
-<li value="54">
-<div class="instruction">
-<span>
-iload  4
-</span>
-</div>
-</li>
-<li value="56">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="57">
-<div class="instruction">
-<span>
-getfield 
+invokevirtual 
 </span>
 <span>
-<a href="#java.util.ArrayList:size:I">
-java.util.ArrayList.size
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
 </a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="60">
-<div class="instruction">
-<span>
-ifcmpeq 31
-</span>
-</div>
-</li>
-<li value="63">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="64">
-<div class="instruction">
-<span>
-iload  4
-</span>
-</div>
-</li>
-<li value="66">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="67">
-<div class="instruction">
-<span>
-iload  5
-</span>
-</div>
-</li>
-<li value="69">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="70">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.util.ArrayList:size:I">
-java.util.ArrayList.size
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="73">
-<div class="instruction">
-<span>
-iload  4
-</span>
-</div>
-</li>
-<li value="75">
-<div class="instruction">
-<span>
-isub
-</span>
-</div>
-</li>
-<li value="76">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void arraycopy(java.lang.Object, int, java.lang.Object, int, int)">
-java.lang.System.arraycopy
+<span title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
 </span>
 </span>
 <span>
 (
-<a href="../../java/lang/Object.html">
-java.lang.Object
+<a href="../../java/lang/String.html">
+java.lang.String
 </a>
-, 
-int
-, 
-<a href="../../java/lang/Object.html">
-java.lang.Object
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
 </a>
-, 
-int
-, 
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(int)">
+java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+(
 int
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/lang/System.html#java.lang.System:arraycopy:java.lang.ObjectIjava.lang.ObjectIIvoid" title="void arraycopy(java.lang.Object, int, java.lang.Object, int, int)">
-java.lang.System.arraycopy
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:Ijava.lang.StringBuilder" title="java.lang.StringBuilder append(int)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toString()">
+java.lang.StringBuilder.toString
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:toString:java.lang.String" title="java.lang.String toString()">
+java.lang.StringBuilder.toString
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.lang.IndexOutOfBoundsException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/IndexOutOfBoundsException.html#java.lang.IndexOutOfBoundsException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
+java.lang.IndexOutOfBoundsException.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+ifcmpme 30
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/IndexOutOfBoundsException.html">
+java.lang.IndexOutOfBoundsException
+</a>
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.StringBuilder.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.StringBuilder.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+ldc string &apos;toIndex = &apos;
+</span>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="52">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="53">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(int)">
+java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:Ijava.lang.StringBuilder" title="java.lang.StringBuilder append(int)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toString()">
+java.lang.StringBuilder.toString
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:toString:java.lang.String" title="java.lang.String toString()">
+java.lang.StringBuilder.toString
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="59">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.lang.IndexOutOfBoundsException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/IndexOutOfBoundsException.html#java.lang.IndexOutOfBoundsException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
+java.lang.IndexOutOfBoundsException.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="62">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="63">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="64">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="65">
+<div class="instruction">
+<span>
+ifcmpme 44
+</span>
+</div>
+</li>
+<li value="68">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+</div>
+</li>
+<li value="71">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="72">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+</div>
+</li>
+<li value="75">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="76">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.StringBuilder.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.StringBuilder.&lt;init&gt;
 </a>
 </div>
 </li>
@@ -2821,882 +2676,277 @@ java.lang.System.arraycopy
 <li value="79">
 <div class="instruction">
 <span>
-iload  5
+ldc string &apos;fromIndex(&apos;
 </span>
 </div>
 </li>
 <li value="81">
 <div class="instruction">
 <span>
-aload  0
-</span>
-</div>
-</li>
-<li value="82">
-<div class="instruction">
-<span>
-getfield 
+invokevirtual 
 </span>
 <span>
-<a href="#java.util.ArrayList:size:I">
-java.util.ArrayList.size
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
 </a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="85">
-<div class="instruction">
-<span>
-iload  4
-</span>
-</div>
-</li>
-<li value="87">
-<div class="instruction">
-<span>
-isub
-</span>
-</div>
-</li>
-<li value="88">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="89">
-<div class="instruction">
-<span>
-istore  5
-</span>
-</div>
-</li>
-<li value="91">
-<div class="instruction">
-<span>
-iload  5
-</span>
-</div>
-</li>
-<li value="93">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="94">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.util.ArrayList:size:I">
-java.util.ArrayList.size
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="97">
-<div class="instruction">
-<span>
-ifcmpeq 155
-</span>
-</div>
-</li>
-<li value="100">
-<div class="instruction">
-<span>
-iload  5
-</span>
-</div>
-</li>
-<li value="102">
-<div class="instruction">
-<span>
-istore  7
-</span>
-</div>
-</li>
-<li value="104">
-<div class="instruction">
-<span>
-iload  7
-</span>
-</div>
-</li>
-<li value="106">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="107">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.util.ArrayList:size:I">
-java.util.ArrayList.size
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="110">
-<div class="instruction">
-<span>
-ifcmpge 14
-</span>
-</div>
-</li>
-<li value="113">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="114">
-<div class="instruction">
-<span>
-iload  7
-</span>
-</div>
-</li>
-<li value="116">
-<div class="instruction">
-<span>
-aconstnull
-</span>
-</div>
-</li>
-<li value="117">
-<div class="instruction">
-<span>
-aastore
-</span>
-</div>
-</li>
-<li value="118">
-<div class="instruction">
-<span>
-iinc 7 1
-</span>
-</div>
-</li>
-<li value="121">
-<div class="instruction">
-<span>
-goto -17
-</span>
-</div>
-</li>
-<li value="124">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="125">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="126">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../java/util/AbstractList.html#java.util.AbstractList:modCount:I">
-java.util.AbstractList.modCount
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="129">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="130">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.util.ArrayList:size:I">
-java.util.ArrayList.size
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="133">
-<div class="instruction">
-<span>
-iload  5
-</span>
-</div>
-</li>
-<li value="135">
-<div class="instruction">
-<span>
-isub
-</span>
-</div>
-</li>
-<li value="136">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="137">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="../../java/util/AbstractList.html#java.util.AbstractList:modCount:I">
-java.util.AbstractList.modCount
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="140">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="141">
-<div class="instruction">
-<span>
-iload  5
-</span>
-</div>
-</li>
-<li value="143">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.util.ArrayList:size:I">
-java.util.ArrayList.size
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="146">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="147">
-<div class="instruction">
-<span>
-istore  6
-</span>
-</div>
-</li>
-<li value="149">
-<div class="instruction">
-<span>
-goto 103
-</span>
-</div>
-</li>
-<li value="152">
-<div class="instruction">
-<span>
-astore  8
-</span>
-</div>
-</li>
-<li value="154">
-<div class="instruction">
-<span>
-iload  4
-</span>
-</div>
-</li>
-<li value="156">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="157">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.util.ArrayList:size:I">
-java.util.ArrayList.size
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="160">
-<div class="instruction">
-<span>
-ifcmpeq 31
-</span>
-</div>
-</li>
-<li value="163">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="164">
-<div class="instruction">
-<span>
-iload  4
-</span>
-</div>
-</li>
-<li value="166">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="167">
-<div class="instruction">
-<span>
-iload  5
-</span>
-</div>
-</li>
-<li value="169">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="170">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.util.ArrayList:size:I">
-java.util.ArrayList.size
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="173">
-<div class="instruction">
-<span>
-iload  4
-</span>
-</div>
-</li>
-<li value="175">
-<div class="instruction">
-<span>
-isub
-</span>
-</div>
-</li>
-<li value="176">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void arraycopy(java.lang.Object, int, java.lang.Object, int, int)">
-java.lang.System.arraycopy
+<span title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
 </span>
 </span>
 <span>
 (
-<a href="../../java/lang/Object.html">
-java.lang.Object
+<a href="../../java/lang/String.html">
+java.lang.String
 </a>
-, 
-int
-, 
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-, 
-int
-, 
-int
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/lang/System.html#java.lang.System:arraycopy:java.lang.ObjectIjava.lang.ObjectIIvoid" title="void arraycopy(java.lang.Object, int, java.lang.Object, int, int)">
-java.lang.System.arraycopy
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
 </a>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="179">
+<li value="84">
 <div class="instruction">
 <span>
-iload  5
+iload  0
 </span>
 </div>
 </li>
-<li value="181">
+<li value="85">
 <div class="instruction">
 <span>
-aload  0
-</span>
-</div>
-</li>
-<li value="182">
-<div class="instruction">
-<span>
-getfield 
+invokevirtual 
 </span>
 <span>
-<a href="#java.util.ArrayList:size:I">
-java.util.ArrayList.size
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
 </a>
 </span>
-<span>
- : 
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(int)">
+java.lang.StringBuilder.append
+</span>
 </span>
 <span>
+(
 int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:Ijava.lang.StringBuilder" title="java.lang.StringBuilder append(int)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="88">
+<div class="instruction">
+<span>
+ldc string &apos;) &gt; toIndex(&apos;
 </span>
 </div>
 </li>
-<li value="185">
+<li value="90">
 <div class="instruction">
 <span>
-iload  4
-</span>
-</div>
-</li>
-<li value="187">
-<div class="instruction">
-<span>
-isub
-</span>
-</div>
-</li>
-<li value="188">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="189">
-<div class="instruction">
-<span>
-istore  5
-</span>
-</div>
-</li>
-<li value="191">
-<div class="instruction">
-<span>
-iload  5
-</span>
-</div>
-</li>
-<li value="193">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="194">
-<div class="instruction">
-<span>
-getfield 
+invokevirtual 
 </span>
 <span>
-<a href="#java.util.ArrayList:size:I">
-java.util.ArrayList.size
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
 </a>
 </span>
-<span>
- : 
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</span>
 </span>
 <span>
-int
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="93">
+<div class="instruction">
+<span>
+iload  1
 </span>
 </div>
 </li>
-<li value="197">
+<li value="94">
 <div class="instruction">
 <span>
-ifcmpeq 52
-</span>
-</div>
-</li>
-<li value="200">
-<div class="instruction">
-<span>
-iload  5
-</span>
-</div>
-</li>
-<li value="202">
-<div class="instruction">
-<span>
-istore  9
-</span>
-</div>
-</li>
-<li value="204">
-<div class="instruction">
-<span>
-iload  9
-</span>
-</div>
-</li>
-<li value="206">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="207">
-<div class="instruction">
-<span>
-getfield 
+invokevirtual 
 </span>
 <span>
-<a href="#java.util.ArrayList:size:I">
-java.util.ArrayList.size
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
 </a>
 </span>
-<span>
- : 
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(int)">
+java.lang.StringBuilder.append
+</span>
 </span>
 <span>
+(
 int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:Ijava.lang.StringBuilder" title="java.lang.StringBuilder append(int)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="97">
+<div class="instruction">
+<span>
+ldc string &apos;)&apos;
 </span>
 </div>
 </li>
-<li value="210">
+<li value="99">
 <div class="instruction">
 <span>
-ifcmpge 14
-</span>
-</div>
-</li>
-<li value="213">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="214">
-<div class="instruction">
-<span>
-iload  9
-</span>
-</div>
-</li>
-<li value="216">
-<div class="instruction">
-<span>
-aconstnull
-</span>
-</div>
-</li>
-<li value="217">
-<div class="instruction">
-<span>
-aastore
-</span>
-</div>
-</li>
-<li value="218">
-<div class="instruction">
-<span>
-iinc 9 1
-</span>
-</div>
-</li>
-<li value="221">
-<div class="instruction">
-<span>
-goto -17
-</span>
-</div>
-</li>
-<li value="224">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="225">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="226">
-<div class="instruction">
-<span>
-getfield 
+invokevirtual 
 </span>
 <span>
-<a href="../../java/util/AbstractList.html#java.util.AbstractList:modCount:I">
-java.util.AbstractList.modCount
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
 </a>
 </span>
-<span>
- : 
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</span>
 </span>
 <span>
-int
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
 </span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
 </div>
 </li>
-<li value="229">
-<div class="instruction">
-<span>
-aload  0
-</span>
+</ul>
 </div>
 </li>
-<li value="230">
+<li value="102">
 <div class="instruction">
 <span>
-getfield 
+invokevirtual 
 </span>
 <span>
-<a href="#java.util.ArrayList:size:I">
-java.util.ArrayList.size
+<a href="../../java/lang/String.html">
+java.lang.String
 </a>
 </span>
-<span>
- : 
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toString()">
+java.lang.StringBuilder.toString
+</span>
 </span>
 <span>
-int
+(
+)
 </span>
-</div>
-</li>
-<li value="233">
-<div class="instruction">
-<span>
-iload  5
-</span>
-</div>
-</li>
-<li value="235">
-<div class="instruction">
-<span>
-isub
-</span>
-</div>
-</li>
-<li value="236">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="237">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="../../java/util/AbstractList.html#java.util.AbstractList:modCount:I">
-java.util.AbstractList.modCount
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:toString:java.lang.String" title="java.lang.String toString()">
+java.lang.StringBuilder.toString
 </a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
 </div>
 </li>
-<li value="240">
-<div class="instruction">
-<span>
-aload  0
-</span>
+</ul>
 </div>
 </li>
-<li value="241">
+<li value="105">
 <div class="instruction">
 <span>
-iload  5
-</span>
-</div>
-</li>
-<li value="243">
-<div class="instruction">
-<span>
-putfield 
+invokespecial 
 </span>
 <span>
-<a href="#java.util.ArrayList:size:I">
-java.util.ArrayList.size
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.lang.IllegalArgumentException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
 </a>
+)
 </span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/IllegalArgumentException.html#java.lang.IllegalArgumentException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
+java.lang.IllegalArgumentException.&lt;init&gt;
+</a>
 </div>
 </li>
-<li value="246">
-<div class="instruction">
-<span>
-iconst 1
-</span>
+</ul>
 </div>
 </li>
-<li value="247">
-<div class="instruction">
-<span>
-istore  6
-</span>
-</div>
-</li>
-<li value="249">
-<div class="instruction">
-<span>
-aload  8
-</span>
-</div>
-</li>
-<li value="251">
+<li value="108">
 <div class="instruction">
 <span>
 athrow
 </span>
 </div>
 </li>
-<li value="252">
+<li value="109">
 <div class="instruction">
 <span>
-iload  6
-</span>
-</div>
-</li>
-<li value="254">
-<div class="instruction">
-<span>
-ireturn
+return
 </span>
 </div>
 </li>
 </ol>
-<span title="Exceptions">
-<h3>
-Exceptions handling:
-</h3>
 <ol>
-<li>
-<span>
-try start: 14; try end: 54: catch start: 152; catched type: None (finally block).
-</span>
-</li>
-<li>
-<span>
-try start: 152; try end: 154: catch start: 152; catched type: None (finally block).
-</span>
-</li>
 </ol>
-</span>
 </div>
 <div class="method">
 <a name="java.util.ArrayList:removeRange:IIvoid" href="#">
@@ -4763,15 +4013,15 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.util.ArrayList:rangeCheck:Ivoid" href="#">
+<a name="java.util.ArrayList:fastRemove:Ivoid" href="#">
 
 </a>
 <div class="method_signature">
 private 
 void
  
-<span class="methodname clickable" onclick="showInfoList(this)">
-rangeCheck
+<span>
+fastRemove
 </span>
 (
 int
@@ -4783,23 +4033,7 @@ int
 Concrete Method 
 </li>
 <li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.ArrayList:remove:Ijava.lang.Object" title="java.lang.Object remove(int)">
-java.util.ArrayList.remove(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.util.ArrayList:get:Ijava.lang.Object" title="java.lang.Object get(int)">
-java.util.ArrayList.get(int)
-</a>
-</div>
+Not parsed
 </li>
 </ul>
 </div>
@@ -4807,18 +4041,75 @@ java.util.ArrayList.get(int)
 <li value="0">
 <div class="instruction">
 <span>
-iload  1
+aload  0
 </span>
 </div>
 </li>
 <li value="1">
 <div class="instruction">
 <span>
-aload  0
+dup
 </span>
 </div>
 </li>
 <li value="2">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../java/util/AbstractList.html#java.util.AbstractList:modCount:I">
+java.util.AbstractList.modCount
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="../../java/util/AbstractList.html#java.util.AbstractList:modCount:I">
+java.util.AbstractList.modCount
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="11">
 <div class="instruction">
 <span>
 getfield 
@@ -4836,116 +4127,301 @@ int
 </span>
 </div>
 </li>
-<li value="5">
-<div class="instruction">
-<span>
-ifcmplt 16
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/IndexOutOfBoundsException.html">
-java.lang.IndexOutOfBoundsException
-</a>
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="13">
+<li value="14">
 <div class="instruction">
 <span>
 iload  1
 </span>
 </div>
 </li>
-<li value="14">
+<li value="15">
 <div class="instruction">
 <span>
-invokespecial 
+isub
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+istore  2
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+ifle 19
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+getfield 
 </span>
 <span>
-<a href="../../java/lang/String.html">
-java.lang.String
+<a href="#java.util.ArrayList:elementData:java.lang.Object.-">
+java.util.ArrayList.elementData
 </a>
 </span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.util.ArrayList:elementData:java.lang.Object.-">
+java.util.ArrayList.elementData
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.String outOfBoundsMsg(int)">
-java.util.ArrayList.outOfBoundsMsg
+<span title="void arraycopy(java.lang.Object, int, java.lang.Object, int, int)">
+java.lang.System.arraycopy
 </span>
 </span>
 <span>
 (
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+int
+, 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+int
+, 
 int
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="#java.util.ArrayList:outOfBoundsMsg:Ijava.lang.String" title="java.lang.String outOfBoundsMsg(int)">
-java.util.ArrayList.outOfBoundsMsg
+<a href="../../java/lang/System.html#java.lang.System:arraycopy:java.lang.ObjectIjava.lang.ObjectIIvoid" title="void arraycopy(java.lang.Object, int, java.lang.Object, int, int)">
+java.lang.System.arraycopy
 </a>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="17">
+<li value="39">
 <div class="instruction">
 <span>
-invokespecial 
+aload  0
 </span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.lang.IndexOutOfBoundsException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/IndexOutOfBoundsException.html#java.lang.IndexOutOfBoundsException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
-java.lang.IndexOutOfBoundsException.&lt;init&gt;
-</a>
 </div>
 </li>
-</ul>
-</div>
-</li>
-<li value="20">
+<li value="40">
 <div class="instruction">
 <span>
-athrow
+getfield 
+</span>
+<span>
+<a href="#java.util.ArrayList:elementData:java.lang.Object.-">
+java.util.ArrayList.elementData
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
 </span>
 </div>
 </li>
-<li value="21">
+<li value="43">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.util.ArrayList:size:I">
+java.util.ArrayList.size
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="50">
+<div class="instruction">
+<span>
+dupX1
+</span>
+</div>
+</li>
+<li value="51">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.util.ArrayList:size:I">
+java.util.ArrayList.size
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="54">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="55">
+<div class="instruction">
+<span>
+aastore
+</span>
+</div>
+</li>
+<li value="56">
 <div class="instruction">
 <span>
 return
@@ -6344,6 +5820,92 @@ areturn
 </ol>
 </div>
 <div class="method">
+<a name="java.util.ArrayList:access$200:java.util.ArrayListjava.lang.Object.-" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+access$200
+</span>
+(
+<a href="ArrayList.html">
+java.util.ArrayList
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/ArrayList$SubList$1.html#java.util.ArrayList$SubList$1:next:java.lang.Object" title="java.lang.Object next()">
+java.util.ArrayList$SubList$1.next()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/ArrayList$Itr.html#java.util.ArrayList$Itr:next:java.lang.Object" title="java.lang.Object next()">
+java.util.ArrayList$Itr.next()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.util.ArrayList:elementData:java.lang.Object.-">
+java.util.ArrayList.elementData
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
 <a name="java.util.ArrayList:clone:java.lang.Object" href="#">
 
 </a>
@@ -7599,15 +7161,15 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.util.ArrayList:fastRemove:Ivoid" href="#">
+<a name="java.util.ArrayList:ensureExplicitCapacity:Ivoid" href="#">
 
 </a>
 <div class="method_signature">
 private 
 void
  
-<span>
-fastRemove
+<span class="methodname clickable" onclick="showInfoList(this)">
+ensureExplicitCapacity
 </span>
 (
 int
@@ -7619,7 +7181,16 @@ int
 Concrete Method 
 </li>
 <li>
-Not parsed
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.ArrayList:ensureCapacityInternal:Ivoid" title="void ensureCapacityInternal(int)">
+java.util.ArrayList.ensureCapacityInternal(int)
+</a>
+</div>
 </li>
 </ul>
 </div>
@@ -7691,323 +7262,103 @@ int
 <li value="10">
 <div class="instruction">
 <span>
-aload  0
+iload  1
 </span>
 </div>
 </li>
 <li value="11">
 <div class="instruction">
 <span>
+aload  0
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
 getfield 
 </span>
 <span>
-<a href="#java.util.ArrayList:size:I">
-java.util.ArrayList.size
+<a href="#java.util.ArrayList:elementData:java.lang.Object.-">
+java.util.ArrayList.elementData
 </a>
 </span>
 <span>
  : 
 </span>
 <span>
-int
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-iload  1
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
 </span>
 </div>
 </li>
 <li value="15">
 <div class="instruction">
 <span>
-isub
+arraylength
 </span>
 </div>
 </li>
 <li value="16">
 <div class="instruction">
 <span>
-iconst 1
+isub
 </span>
 </div>
 </li>
 <li value="17">
 <div class="instruction">
 <span>
-isub
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-istore  2
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-iload  2
+ifle 8
 </span>
 </div>
 </li>
 <li value="20">
 <div class="instruction">
 <span>
-ifle 19
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
 aload  0
 </span>
 </div>
 </li>
-<li value="24">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.util.ArrayList:elementData:java.lang.Object.-">
-java.util.ArrayList.elementData
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-[]
-</span>
-</div>
-</li>
-<li value="27">
+<li value="21">
 <div class="instruction">
 <span>
 iload  1
 </span>
 </div>
 </li>
-<li value="28">
+<li value="22">
 <div class="instruction">
 <span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="31">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.util.ArrayList:elementData:java.lang.Object.-">
-java.util.ArrayList.elementData
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-[]
-</span>
-</div>
-</li>
-<li value="34">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="36">
-<div class="instruction">
-<span>
-invokestatic 
+invokespecial 
 </span>
 <span>
 void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void arraycopy(java.lang.Object, int, java.lang.Object, int, int)">
-java.lang.System.arraycopy
+<span title="void grow(int)">
+java.util.ArrayList.grow
 </span>
 </span>
 <span>
 (
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-, 
-int
-, 
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-, 
-int
-, 
 int
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/lang/System.html#java.lang.System:arraycopy:java.lang.ObjectIjava.lang.ObjectIIvoid" title="void arraycopy(java.lang.Object, int, java.lang.Object, int, int)">
-java.lang.System.arraycopy
+<a href="#java.util.ArrayList:grow:Ivoid" title="void grow(int)">
+java.util.ArrayList.grow
 </a>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="39">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="40">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.util.ArrayList:elementData:java.lang.Object.-">
-java.util.ArrayList.elementData
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-[]
-</span>
-</div>
-</li>
-<li value="43">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="44">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="45">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.util.ArrayList:size:I">
-java.util.ArrayList.size
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="48">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="49">
-<div class="instruction">
-<span>
-isub
-</span>
-</div>
-</li>
-<li value="50">
-<div class="instruction">
-<span>
-dupX1
-</span>
-</div>
-</li>
-<li value="51">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.util.ArrayList:size:I">
-java.util.ArrayList.size
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="54">
-<div class="instruction">
-<span>
-aconstnull
-</span>
-</div>
-</li>
-<li value="55">
-<div class="instruction">
-<span>
-aastore
-</span>
-</div>
-</li>
-<li value="56">
+<li value="25">
 <div class="instruction">
 <span>
 return
@@ -9079,18 +8430,15 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.util.ArrayList:access$200:java.util.ArrayListjava.lang.Object.-" href="#">
+<a name="java.util.ArrayList:access$100:java.util.ArrayListI" href="#">
 
 </a>
 <div class="method_signature">
  static 
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-[]
+int
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-access$200
+access$100
 </span>
 (
 <a href="ArrayList.html">
@@ -9110,8 +8458,8 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/util/ArrayList$SubList$1.html#java.util.ArrayList$SubList$1:next:java.lang.Object" title="java.lang.Object next()">
-java.util.ArrayList$SubList$1.next()
+<a href="../../java/util/ArrayList$Itr.html#java.util.ArrayList$Itr:hasNext:Z" title="bool hasNext()">
+java.util.ArrayList$Itr.hasNext()
 </a>
 </div>
 </li>
@@ -9138,25 +8486,22 @@ aload  0
 getfield 
 </span>
 <span>
-<a href="#java.util.ArrayList:elementData:java.lang.Object.-">
-java.util.ArrayList.elementData
+<a href="#java.util.ArrayList:size:I">
+java.util.ArrayList.size
 </a>
 </span>
 <span>
  : 
 </span>
 <span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-[]
+int
 </span>
 </div>
 </li>
 <li value="4">
 <div class="instruction">
 <span>
-areturn
+ireturn
 </span>
 </div>
 </li>
@@ -10943,6 +10288,1533 @@ ireturn
 </ol>
 </div>
 <div class="method">
+<a name="java.util.ArrayList:batchRemove:java.util.CollectionZZ" href="#">
+
+</a>
+<div class="method_signature">
+private 
+bool
+ 
+<span>
+batchRemove
+</span>
+(
+<a href="../../java/util/Collection.html">
+java.util.Collection
+</a>
+ 1
+, 
+bool
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.util.ArrayList:elementData:java.lang.Object.-">
+java.util.ArrayList.elementData
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+astore  3
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+istore  4
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+istore  5
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+istore  6
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+iload  4
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.util.ArrayList:size:I">
+java.util.ArrayList.size
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+ifcmpge 34
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+iload  4
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+aaload
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+invokeinterface 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool contains(java.lang.Object)">
+java.util.Collection.contains
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/Collections$SetFromMap.html#java.util.Collections$SetFromMap:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.Collections$SetFromMap.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Hashtable$ValueCollection.html#java.util.Hashtable$ValueCollection:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.Hashtable$ValueCollection.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/IdentityHashMap$Values.html#java.util.IdentityHashMap$Values:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.IdentityHashMap$Values.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Hashtable$EntrySet.html#java.util.Hashtable$EntrySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.Hashtable$EntrySet.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/AbstractMap$2.html#java.util.AbstractMap$2:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.AbstractMap$2.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Hashtable$KeySet.html#java.util.Hashtable$KeySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.Hashtable$KeySet.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/TreeMap$KeySet.html#java.util.TreeMap$KeySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.TreeMap$KeySet.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Collections$UnmodifiableCollection.html#java.util.Collections$UnmodifiableCollection:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.Collections$UnmodifiableCollection.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/HashMap$Values.html#java.util.HashMap$Values:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.HashMap$Values.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/IdentityHashMap$EntrySet.html#java.util.IdentityHashMap$EntrySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.IdentityHashMap$EntrySet.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Collections$EmptySet.html#java.util.Collections$EmptySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.Collections$EmptySet.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/WeakHashMap$KeySet.html#java.util.WeakHashMap$KeySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.WeakHashMap$KeySet.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/AbstractCollection.html#java.util.AbstractCollection:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.AbstractCollection.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/WeakHashMap$Values.html#java.util.WeakHashMap$Values:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.WeakHashMap$Values.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Collections$EmptyList.html#java.util.Collections$EmptyList:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.Collections$EmptyList.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Collections$SingletonSet.html#java.util.Collections$SingletonSet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.Collections$SingletonSet.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/TreeMap$Values.html#java.util.TreeMap$Values:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.TreeMap$Values.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Vector.html#java.util.Vector:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.Vector.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/HashMap$EntrySet.html#java.util.HashMap$EntrySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.HashMap$EntrySet.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Collections$SynchronizedCollection.html#java.util.Collections$SynchronizedCollection:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.Collections$SynchronizedCollection.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/ConcurrentHashMap$KeySet.html#java.util.concurrent.ConcurrentHashMap$KeySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap$KeySet.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/TreeSet.html#java.util.TreeSet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.TreeSet.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/HashMap$KeySet.html#java.util.HashMap$KeySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.HashMap$KeySet.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/WeakHashMap$EntrySet.html#java.util.WeakHashMap$EntrySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.WeakHashMap$EntrySet.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/TreeMap$EntrySet.html#java.util.TreeMap$EntrySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.TreeMap$EntrySet.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/ConcurrentHashMap$EntrySet.html#java.util.concurrent.ConcurrentHashMap$EntrySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap$EntrySet.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/HashSet.html#java.util.HashSet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.HashSet.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/ConcurrentHashMap$Values.html#java.util.concurrent.ConcurrentHashMap$Values:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap$Values.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/LinkedList.html#java.util.LinkedList:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.LinkedList.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Arrays$ArrayList.html#java.util.Arrays$ArrayList:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.Arrays$ArrayList.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.util.ArrayList:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.ArrayList.contains
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/IdentityHashMap$KeySet.html#java.util.IdentityHashMap$KeySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.IdentityHashMap$KeySet.contains
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+ifcmpne 14
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+iload  5
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+iinc 5 1
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+iload  4
+</span>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+aaload
+</span>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+aastore
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+iinc 4 1
+</span>
+</div>
+</li>
+<li value="51">
+<div class="instruction">
+<span>
+goto -37
+</span>
+</div>
+</li>
+<li value="54">
+<div class="instruction">
+<span>
+iload  4
+</span>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="57">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.util.ArrayList:size:I">
+java.util.ArrayList.size
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="60">
+<div class="instruction">
+<span>
+ifcmpeq 31
+</span>
+</div>
+</li>
+<li value="63">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="64">
+<div class="instruction">
+<span>
+iload  4
+</span>
+</div>
+</li>
+<li value="66">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="67">
+<div class="instruction">
+<span>
+iload  5
+</span>
+</div>
+</li>
+<li value="69">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="70">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.util.ArrayList:size:I">
+java.util.ArrayList.size
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="73">
+<div class="instruction">
+<span>
+iload  4
+</span>
+</div>
+</li>
+<li value="75">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="76">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void arraycopy(java.lang.Object, int, java.lang.Object, int, int)">
+java.lang.System.arraycopy
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+int
+, 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/System.html#java.lang.System:arraycopy:java.lang.ObjectIjava.lang.ObjectIIvoid" title="void arraycopy(java.lang.Object, int, java.lang.Object, int, int)">
+java.lang.System.arraycopy
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="79">
+<div class="instruction">
+<span>
+iload  5
+</span>
+</div>
+</li>
+<li value="81">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="82">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.util.ArrayList:size:I">
+java.util.ArrayList.size
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="85">
+<div class="instruction">
+<span>
+iload  4
+</span>
+</div>
+</li>
+<li value="87">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="88">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="89">
+<div class="instruction">
+<span>
+istore  5
+</span>
+</div>
+</li>
+<li value="91">
+<div class="instruction">
+<span>
+iload  5
+</span>
+</div>
+</li>
+<li value="93">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="94">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.util.ArrayList:size:I">
+java.util.ArrayList.size
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="97">
+<div class="instruction">
+<span>
+ifcmpeq 155
+</span>
+</div>
+</li>
+<li value="100">
+<div class="instruction">
+<span>
+iload  5
+</span>
+</div>
+</li>
+<li value="102">
+<div class="instruction">
+<span>
+istore  7
+</span>
+</div>
+</li>
+<li value="104">
+<div class="instruction">
+<span>
+iload  7
+</span>
+</div>
+</li>
+<li value="106">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="107">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.util.ArrayList:size:I">
+java.util.ArrayList.size
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="110">
+<div class="instruction">
+<span>
+ifcmpge 14
+</span>
+</div>
+</li>
+<li value="113">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="114">
+<div class="instruction">
+<span>
+iload  7
+</span>
+</div>
+</li>
+<li value="116">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="117">
+<div class="instruction">
+<span>
+aastore
+</span>
+</div>
+</li>
+<li value="118">
+<div class="instruction">
+<span>
+iinc 7 1
+</span>
+</div>
+</li>
+<li value="121">
+<div class="instruction">
+<span>
+goto -17
+</span>
+</div>
+</li>
+<li value="124">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="125">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="126">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../java/util/AbstractList.html#java.util.AbstractList:modCount:I">
+java.util.AbstractList.modCount
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="129">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="130">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.util.ArrayList:size:I">
+java.util.ArrayList.size
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="133">
+<div class="instruction">
+<span>
+iload  5
+</span>
+</div>
+</li>
+<li value="135">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="136">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="137">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="../../java/util/AbstractList.html#java.util.AbstractList:modCount:I">
+java.util.AbstractList.modCount
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="140">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="141">
+<div class="instruction">
+<span>
+iload  5
+</span>
+</div>
+</li>
+<li value="143">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.util.ArrayList:size:I">
+java.util.ArrayList.size
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="146">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="147">
+<div class="instruction">
+<span>
+istore  6
+</span>
+</div>
+</li>
+<li value="149">
+<div class="instruction">
+<span>
+goto 103
+</span>
+</div>
+</li>
+<li value="152">
+<div class="instruction">
+<span>
+astore  8
+</span>
+</div>
+</li>
+<li value="154">
+<div class="instruction">
+<span>
+iload  4
+</span>
+</div>
+</li>
+<li value="156">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="157">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.util.ArrayList:size:I">
+java.util.ArrayList.size
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="160">
+<div class="instruction">
+<span>
+ifcmpeq 31
+</span>
+</div>
+</li>
+<li value="163">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="164">
+<div class="instruction">
+<span>
+iload  4
+</span>
+</div>
+</li>
+<li value="166">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="167">
+<div class="instruction">
+<span>
+iload  5
+</span>
+</div>
+</li>
+<li value="169">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="170">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.util.ArrayList:size:I">
+java.util.ArrayList.size
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="173">
+<div class="instruction">
+<span>
+iload  4
+</span>
+</div>
+</li>
+<li value="175">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="176">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void arraycopy(java.lang.Object, int, java.lang.Object, int, int)">
+java.lang.System.arraycopy
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+int
+, 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/System.html#java.lang.System:arraycopy:java.lang.ObjectIjava.lang.ObjectIIvoid" title="void arraycopy(java.lang.Object, int, java.lang.Object, int, int)">
+java.lang.System.arraycopy
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="179">
+<div class="instruction">
+<span>
+iload  5
+</span>
+</div>
+</li>
+<li value="181">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="182">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.util.ArrayList:size:I">
+java.util.ArrayList.size
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="185">
+<div class="instruction">
+<span>
+iload  4
+</span>
+</div>
+</li>
+<li value="187">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="188">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="189">
+<div class="instruction">
+<span>
+istore  5
+</span>
+</div>
+</li>
+<li value="191">
+<div class="instruction">
+<span>
+iload  5
+</span>
+</div>
+</li>
+<li value="193">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="194">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.util.ArrayList:size:I">
+java.util.ArrayList.size
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="197">
+<div class="instruction">
+<span>
+ifcmpeq 52
+</span>
+</div>
+</li>
+<li value="200">
+<div class="instruction">
+<span>
+iload  5
+</span>
+</div>
+</li>
+<li value="202">
+<div class="instruction">
+<span>
+istore  9
+</span>
+</div>
+</li>
+<li value="204">
+<div class="instruction">
+<span>
+iload  9
+</span>
+</div>
+</li>
+<li value="206">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="207">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.util.ArrayList:size:I">
+java.util.ArrayList.size
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="210">
+<div class="instruction">
+<span>
+ifcmpge 14
+</span>
+</div>
+</li>
+<li value="213">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="214">
+<div class="instruction">
+<span>
+iload  9
+</span>
+</div>
+</li>
+<li value="216">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="217">
+<div class="instruction">
+<span>
+aastore
+</span>
+</div>
+</li>
+<li value="218">
+<div class="instruction">
+<span>
+iinc 9 1
+</span>
+</div>
+</li>
+<li value="221">
+<div class="instruction">
+<span>
+goto -17
+</span>
+</div>
+</li>
+<li value="224">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="225">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="226">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../java/util/AbstractList.html#java.util.AbstractList:modCount:I">
+java.util.AbstractList.modCount
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="229">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="230">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.util.ArrayList:size:I">
+java.util.ArrayList.size
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="233">
+<div class="instruction">
+<span>
+iload  5
+</span>
+</div>
+</li>
+<li value="235">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="236">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="237">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="../../java/util/AbstractList.html#java.util.AbstractList:modCount:I">
+java.util.AbstractList.modCount
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="240">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="241">
+<div class="instruction">
+<span>
+iload  5
+</span>
+</div>
+</li>
+<li value="243">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.util.ArrayList:size:I">
+java.util.ArrayList.size
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="246">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="247">
+<div class="instruction">
+<span>
+istore  6
+</span>
+</div>
+</li>
+<li value="249">
+<div class="instruction">
+<span>
+aload  8
+</span>
+</div>
+</li>
+<li value="251">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="252">
+<div class="instruction">
+<span>
+iload  6
+</span>
+</div>
+</li>
+<li value="254">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 14; try end: 54: catch start: 152; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 152; try end: 154: catch start: 152; catched type: None (finally block).
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
 <a name="java.util.ArrayList:listIterator:Ijava.util.ListIterator" href="#">
 
 </a>
@@ -11883,25 +12755,19 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.util.ArrayList:subListRangeCheck:IIIvoid" href="#">
+<a name="java.util.ArrayList:rangeCheck:Ivoid" href="#">
 
 </a>
 <div class="method_signature">
- static 
+private 
 void
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-subListRangeCheck
+rangeCheck
 </span>
 (
 int
- 0
-, 
-int
  1
-, 
-int
- 2
 )
 ;
 <ul class="annot">
@@ -11915,8 +12781,15 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="#java.util.ArrayList:subList:IIjava.util.List" title="java.util.List subList(int, int)">
-java.util.ArrayList.subList(int, int)
+<a href="#java.util.ArrayList:remove:Ijava.lang.Object" title="java.lang.Object remove(int)">
+java.util.ArrayList.remove(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.util.ArrayList:get:Ijava.lang.Object" title="java.lang.Object get(int)">
+java.util.ArrayList.get(int)
 </a>
 </div>
 </li>
@@ -11926,33 +12799,39 @@ java.util.ArrayList.subList(int, int)
 <li value="0">
 <div class="instruction">
 <span>
-iload  0
+iload  1
 </span>
 </div>
 </li>
 <li value="1">
 <div class="instruction">
 <span>
-ifge 30
+aload  0
 </span>
 </div>
 </li>
-<li value="4">
+<li value="2">
 <div class="instruction">
 <span>
-new 
+getfield 
 </span>
 <span>
-<a href="../../java/lang/IndexOutOfBoundsException.html">
-java.lang.IndexOutOfBoundsException
+<a href="#java.util.ArrayList:size:I">
+java.util.ArrayList.size
 </a>
 </span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
 </div>
 </li>
-<li value="7">
+<li value="5">
 <div class="instruction">
 <span>
-dup
+ifcmplt 16
 </span>
 </div>
 </li>
@@ -11962,8 +12841,8 @@ dup
 new 
 </span>
 <span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
+<a href="../../java/lang/IndexOutOfBoundsException.html">
+java.lang.IndexOutOfBoundsException
 </a>
 </span>
 </div>
@@ -11978,51 +12857,59 @@ dup
 <li value="12">
 <div class="instruction">
 <span>
+aload  0
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
 invokespecial 
 </span>
 <span>
-void
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.StringBuilder.&lt;init&gt;
+<span title="java.lang.String outOfBoundsMsg(int)">
+java.util.ArrayList.outOfBoundsMsg
 </span>
 </span>
 <span>
 (
+int
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.lang.StringBuilder.&lt;init&gt;
+<a href="#java.util.ArrayList:outOfBoundsMsg:Ijava.lang.String" title="java.lang.String outOfBoundsMsg(int)">
+java.util.ArrayList.outOfBoundsMsg
 </a>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="15">
-<div class="instruction">
-<span>
-ldc string &apos;fromIndex = &apos;
-</span>
-</div>
-</li>
 <li value="17">
 <div class="instruction">
 <span>
-invokevirtual 
+invokespecial 
 </span>
 <span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
+void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.StringBuilder append(java.lang.String)">
-java.lang.StringBuilder.append
+<span title="void &lt;init&gt;(java.lang.String)">
+java.lang.IndexOutOfBoundsException.&lt;init&gt;
 </span>
 </span>
 <span>
@@ -12035,8 +12922,8 @@ java.lang.String
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
-java.lang.StringBuilder.append
+<a href="../../java/lang/IndexOutOfBoundsException.html#java.lang.IndexOutOfBoundsException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
+java.lang.IndexOutOfBoundsException.&lt;init&gt;
 </a>
 </div>
 </li>
@@ -12046,694 +12933,11 @@ java.lang.StringBuilder.append
 <li value="20">
 <div class="instruction">
 <span>
-iload  0
+athrow
 </span>
 </div>
 </li>
 <li value="21">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.StringBuilder append(int)">
-java.lang.StringBuilder.append
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:Ijava.lang.StringBuilder" title="java.lang.StringBuilder append(int)">
-java.lang.StringBuilder.append
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.String toString()">
-java.lang.StringBuilder.toString
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:toString:java.lang.String" title="java.lang.String toString()">
-java.lang.StringBuilder.toString
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.lang.IndexOutOfBoundsException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/IndexOutOfBoundsException.html#java.lang.IndexOutOfBoundsException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
-java.lang.IndexOutOfBoundsException.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="31">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="32">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="33">
-<div class="instruction">
-<span>
-ifcmpme 30
-</span>
-</div>
-</li>
-<li value="36">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/IndexOutOfBoundsException.html">
-java.lang.IndexOutOfBoundsException
-</a>
-</span>
-</div>
-</li>
-<li value="39">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="40">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-</span>
-</div>
-</li>
-<li value="43">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="44">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.StringBuilder.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.lang.StringBuilder.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="47">
-<div class="instruction">
-<span>
-ldc string &apos;toIndex = &apos;
-</span>
-</div>
-</li>
-<li value="49">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.StringBuilder append(java.lang.String)">
-java.lang.StringBuilder.append
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
-java.lang.StringBuilder.append
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="52">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="53">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.StringBuilder append(int)">
-java.lang.StringBuilder.append
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:Ijava.lang.StringBuilder" title="java.lang.StringBuilder append(int)">
-java.lang.StringBuilder.append
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="56">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.String toString()">
-java.lang.StringBuilder.toString
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:toString:java.lang.String" title="java.lang.String toString()">
-java.lang.StringBuilder.toString
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="59">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.lang.IndexOutOfBoundsException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/IndexOutOfBoundsException.html#java.lang.IndexOutOfBoundsException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
-java.lang.IndexOutOfBoundsException.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="62">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="63">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="64">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="65">
-<div class="instruction">
-<span>
-ifcmpme 44
-</span>
-</div>
-</li>
-<li value="68">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/IllegalArgumentException.html">
-java.lang.IllegalArgumentException
-</a>
-</span>
-</div>
-</li>
-<li value="71">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="72">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-</span>
-</div>
-</li>
-<li value="75">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="76">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.StringBuilder.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.lang.StringBuilder.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="79">
-<div class="instruction">
-<span>
-ldc string &apos;fromIndex(&apos;
-</span>
-</div>
-</li>
-<li value="81">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.StringBuilder append(java.lang.String)">
-java.lang.StringBuilder.append
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
-java.lang.StringBuilder.append
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="84">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="85">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.StringBuilder append(int)">
-java.lang.StringBuilder.append
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:Ijava.lang.StringBuilder" title="java.lang.StringBuilder append(int)">
-java.lang.StringBuilder.append
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="88">
-<div class="instruction">
-<span>
-ldc string &apos;) &gt; toIndex(&apos;
-</span>
-</div>
-</li>
-<li value="90">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.StringBuilder append(java.lang.String)">
-java.lang.StringBuilder.append
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
-java.lang.StringBuilder.append
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="93">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="94">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.StringBuilder append(int)">
-java.lang.StringBuilder.append
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:Ijava.lang.StringBuilder" title="java.lang.StringBuilder append(int)">
-java.lang.StringBuilder.append
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="97">
-<div class="instruction">
-<span>
-ldc string &apos;)&apos;
-</span>
-</div>
-</li>
-<li value="99">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.StringBuilder append(java.lang.String)">
-java.lang.StringBuilder.append
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
-java.lang.StringBuilder.append
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="102">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.String toString()">
-java.lang.StringBuilder.toString
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:toString:java.lang.String" title="java.lang.String toString()">
-java.lang.StringBuilder.toString
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="105">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.lang.IllegalArgumentException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/IllegalArgumentException.html#java.lang.IllegalArgumentException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
-java.lang.IllegalArgumentException.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="108">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="109">
 <div class="instruction">
 <span>
 return
@@ -15546,210 +15750,6 @@ athrow
 </div>
 </li>
 <li value="25">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.ArrayList:ensureCapacityInternal:Ivoid" href="#">
-
-</a>
-<div class="method_signature">
-private 
-void
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-ensureCapacityInternal
-</span>
-(
-int
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.ArrayList:add:java.lang.ObjectZ" title="bool add(java.lang.Object)">
-java.util.ArrayList.add(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.util.ArrayList:add:Ijava.lang.Objectvoid" title="void add(int, java.lang.Object)">
-java.util.ArrayList.add(int, java.lang.Object)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.util.ArrayList:elementData:java.lang.Object.-">
-java.util.ArrayList.elementData
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-[]
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.util.ArrayList:EMPTY_ELEMENTDATA:java.lang.Object.-">
-java.util.ArrayList.EMPTY_ELEMENTDATA
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-[]
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-ifacmpne 10
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-bipush 10
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int max(int, int)">
-java.lang.Math.max
-</span>
-</span>
-<span>
-(
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/Math.html#java.lang.Math:max:III" title="int max(int, int)">
-java.lang.Math.max
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-istore  1
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void ensureExplicitCapacity(int)">
-java.util.ArrayList.ensureExplicitCapacity
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.ArrayList:ensureExplicitCapacity:Ivoid" title="void ensureExplicitCapacity(int)">
-java.util.ArrayList.ensureExplicitCapacity
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="22">
 <div class="instruction">
 <span>
 return

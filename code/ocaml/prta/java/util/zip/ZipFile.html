@@ -3346,6 +3346,243 @@ Not parsed
 </ol>
 </div>
 <div class="method">
+<a name="java.util.zip.ZipFile:ensureOpen:void" href="#">
+
+</a>
+<div class="method_signature">
+private 
+void
+ 
+<span>
+ensureOpen
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.util.zip.ZipFile:closeRequested:Z">
+java.util.zip.ZipFile.closeRequested
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+bool
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ifeq 13
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../java/lang/IllegalStateException.html">
+java.lang.IllegalStateException
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+ldc string &apos;zip file closed&apos;
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.lang.IllegalStateException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.util.zip.ZipFile:jzfile:J">
+java.util.zip.ZipFile.jzfile
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+long
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+lconst %Ld0
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+lcmp
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+ifne 13
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../java/lang/IllegalStateException.html">
+java.lang.IllegalStateException
+</a>
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+ldc string &apos;The object is not initialized.&apos;
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.lang.IllegalStateException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
 <a name="java.util.zip.ZipFile:entries:java.util.Enumeration" href="#">
 
 </a>
@@ -10887,243 +11124,6 @@ Not parsed
 </ul>
 </div>
 
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.zip.ZipFile:ensureOpen:void" href="#">
-
-</a>
-<div class="method_signature">
-private 
-void
- 
-<span>
-ensureOpen
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.util.zip.ZipFile:closeRequested:Z">
-java.util.zip.ZipFile.closeRequested
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-bool
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ifeq 13
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../../java/lang/IllegalStateException.html">
-java.lang.IllegalStateException
-</a>
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-ldc string &apos;zip file closed&apos;
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.lang.IllegalStateException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.util.zip.ZipFile:jzfile:J">
-java.util.zip.ZipFile.jzfile
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-long
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-lconst %Ld0
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-lcmp
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-ifne 13
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../../java/lang/IllegalStateException.html">
-java.lang.IllegalStateException
-</a>
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-ldc string &apos;The object is not initialized.&apos;
-</span>
-</div>
-</li>
-<li value="32">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.lang.IllegalStateException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="36">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
 <ol>
 </ol>
 </div>
