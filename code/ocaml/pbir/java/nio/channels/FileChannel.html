@@ -1,0 +1,1216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>
+java.nio.channels.FileChannel
+</title>
+<link rel="StyleSheet" href="../../../style.css" type="text/css" media="all" />
+<script type="text/javascript" src="../../../actions.js">
+</script>
+</head>
+<body>
+<div class="class">
+<a name="java.nio.channels.FileChannel" href="#">
+
+</a>
+<div class="classname">
+Class java.nio.channels.FileChannel
+</div>
+<div class="field">
+<a name="java.nio.channels.FileChannel:NO_ATTRIBUTES:java.nio.file.attribute.FileAttribute.-" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+<a href="../../../java/nio/file/attribute/FileAttribute.html">
+java.nio.file.attribute.FileAttribute
+</a>
+[]
+ NO_ATTRIBUTES;
+</span>
+</div>
+<div class="method">
+<a name="java.nio.channels.FileChannel:&lt;clinit&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<span>
+clinit
+</span>
+{};
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+checknegsize 0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../java/nio/file/attribute/FileAttribute.html">
+java.nio.file.attribute.FileAttribute
+</a>
+</span>
+<span>
+[0]
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="FileChannel.html">
+java.nio.channels.FileChannel
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+<a href="#java.nio.channels.FileChannel:NO_ATTRIBUTES:java.nio.file.attribute.FileAttribute.-">
+java.nio.channels.FileChannel.NO_ATTRIBUTES
+</a>
+</span>
+<span>
+:= $irvar0:[java.nio.file.attribute.FileAttribute
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.channels.FileChannel:truncate:Jjava.nio.channels.FileChannel" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="FileChannel.html">
+java.nio.channels.FileChannel
+</a>
+ 
+<span>
+truncate
+</span>
+(
+long
+ 0
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.channels.FileChannel:read:java.nio.ByteBufferJI" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+int
+ 
+<span>
+read
+</span>
+(
+<a href="../../../java/nio/ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+ 0
+, 
+long
+ 1
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.channels.FileChannel:read:java.nio.ByteBufferI" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+int
+ 
+<span>
+read
+</span>
+(
+<a href="../../../java/nio/ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+ 0
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.channels.FileChannel:tryLock:java.nio.channels.FileLock" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+java.nio.channels.FileLock
+ 
+<span>
+tryLock
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.channels.FileLock tryLock(long, long, bool)">
+this:java.lang.Object.tryLock
+</span>
+</span>
+<span>
+(0, 9223372036854775807, 0)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return $irvar0:java.nio.channels.FileLock
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.channels.FileChannel:size:J" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+long
+ 
+<span>
+size
+</span>
+(
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.channels.FileChannel:tryLock:JJZjava.nio.channels.FileLock" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+java.nio.channels.FileLock
+ 
+<span>
+tryLock
+</span>
+(
+long
+ 0
+, 
+long
+ 1
+, 
+bool
+ 2
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.channels.FileChannel:map:java.nio.channels.FileChannel$MapModeJJjava.nio.MappedByteBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+java.nio.MappedByteBuffer
+ 
+<span>
+map
+</span>
+(
+java.nio.channels.FileChannel$MapMode
+ 0
+, 
+long
+ 1
+, 
+long
+ 2
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.channels.FileChannel:write:java.nio.ByteBuffer.-J" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+long
+ 
+<span>
+write
+</span>
+(
+<a href="../../../java/nio/ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+[]
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long write(java.nio.ByteBuffer[], int, int)">
+this:java.lang.Object.write
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object, 0, $bcvar1:java.lang.Object.length)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+return $irvar0:J
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.channels.FileChannel:position:Jjava.nio.channels.SeekableByteChannel" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../../java/nio/channels/SeekableByteChannel.html">
+java.nio.channels.SeekableByteChannel
+</a>
+ 
+<span>
+position
+</span>
+(
+long
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.channels.FileChannel position(long)">
+this:java.lang.Object.position
+</span>
+</span>
+<span>
+($bcvar1:J)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return $irvar0:java.nio.channels.FileChannel
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.channels.FileChannel:transferTo:JJjava.nio.channels.WritableByteChannelJ" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+long
+ 
+<span>
+transferTo
+</span>
+(
+long
+ 0
+, 
+long
+ 1
+, 
+<a href="../../../java/nio/channels/WritableByteChannel.html">
+java.nio.channels.WritableByteChannel
+</a>
+ 2
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.channels.FileChannel:write:java.nio.ByteBuffer.-IIJ" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+long
+ 
+<span>
+write
+</span>
+(
+<a href="../../../java/nio/ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+[]
+ 0
+, 
+int
+ 1
+, 
+int
+ 2
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.channels.FileChannel:lock:JJZjava.nio.channels.FileLock" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+java.nio.channels.FileLock
+ 
+<span>
+lock
+</span>
+(
+long
+ 0
+, 
+long
+ 1
+, 
+bool
+ 2
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.channels.FileChannel:write:java.nio.ByteBufferJI" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+int
+ 
+<span>
+write
+</span>
+(
+<a href="../../../java/nio/ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+ 0
+, 
+long
+ 1
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.channels.FileChannel:&lt;init&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+protected 
+<span>
+FileChannel
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.nio.channels.spi.AbstractInterruptibleChannel.&lt;init&gt;
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.channels.FileChannel:read:java.nio.ByteBuffer.-J" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+long
+ 
+<span>
+read
+</span>
+(
+<a href="../../../java/nio/ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+[]
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long read(java.nio.ByteBuffer[], int, int)">
+this:java.lang.Object.read
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object, 0, $bcvar1:java.lang.Object.length)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+return $irvar0:J
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.channels.FileChannel:truncate:Jjava.nio.channels.SeekableByteChannel" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../../java/nio/channels/SeekableByteChannel.html">
+java.nio.channels.SeekableByteChannel
+</a>
+ 
+<span>
+truncate
+</span>
+(
+long
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.channels.FileChannel truncate(long)">
+this:java.lang.Object.truncate
+</span>
+</span>
+<span>
+($bcvar1:J)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return $irvar0:java.nio.channels.FileChannel
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.channels.FileChannel:force:Zvoid" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+void
+ 
+<span>
+force
+</span>
+(
+bool
+ 0
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.channels.FileChannel:read:java.nio.ByteBuffer.-IIJ" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+long
+ 
+<span>
+read
+</span>
+(
+<a href="../../../java/nio/ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+[]
+ 0
+, 
+int
+ 1
+, 
+int
+ 2
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.channels.FileChannel:open:java.nio.file.Pathjava.util.Setjava.nio.file.attribute.FileAttribute.-java.nio.channels.FileChannel" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="FileChannel.html">
+java.nio.channels.FileChannel
+</a>
+ 
+<span>
+open
+</span>
+(
+<a href="../../../java/nio/file/Path.html">
+java.nio.file.Path
+</a>
+ $bcvar0
+, 
+<a href="../../../java/util/Set.html">
+java.util.Set
+</a>
+ $bcvar1
+, 
+<a href="../../../java/nio/file/attribute/FileAttribute.html">
+java.nio.file.attribute.FileAttribute
+</a>
+[]
+ $bcvar2
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.file.FileSystem getFileSystem()">
+$bcvar0:java.lang.Object.getFileSystem
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull $irvar0:java.nio.file.FileSystem
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$bcvar3 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.file.spi.FileSystemProvider provider()">
+$irvar0:java.nio.file.FileSystem.provider
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+notnull $bcvar3:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.channels.FileChannel newFileChannel(java.nio.file.Path, java.util.Set, java.nio.file.attribute.FileAttribute[])">
+$bcvar3:java.lang.Object.newFileChannel
+</span>
+</span>
+<span>
+($bcvar0:java.lang.Object, $bcvar1:java.lang.Object, $bcvar2:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+return $irvar0:java.nio.channels.FileChannel
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.channels.FileChannel:lock:java.nio.channels.FileLock" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+java.nio.channels.FileLock
+ 
+<span>
+lock
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.channels.FileLock lock(long, long, bool)">
+this:java.lang.Object.lock
+</span>
+</span>
+<span>
+(0, 9223372036854775807, 0)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return $irvar0:java.nio.channels.FileLock
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.channels.FileChannel:position:J" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+long
+ 
+<span>
+position
+</span>
+(
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.channels.FileChannel:write:java.nio.ByteBufferI" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+int
+ 
+<span>
+write
+</span>
+(
+<a href="../../../java/nio/ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+ 0
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.channels.FileChannel:open:java.nio.file.Pathjava.nio.file.OpenOption.-java.nio.channels.FileChannel" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="FileChannel.html">
+java.nio.channels.FileChannel
+</a>
+ 
+<span>
+open
+</span>
+(
+<a href="../../../java/nio/file/Path.html">
+java.nio.file.Path
+</a>
+ $bcvar0
+, 
+java.nio.file.OpenOption[]
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/util/HashSet.html">
+java.util.HashSet
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$bcvar2 := new
+</span>
+<span>
+<a href="../../../java/util/HashSet.html">
+java.util.HashSet
+</a>
+</span>
+<span>
+($bcvar1:java.lang.Object.length)
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/util/Collections.html">
+java.util.Collections
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool addAll(java.util.Collection, java.lang.Object[])">
+java.util.Collections.addAll
+</span>
+</span>
+<span>
+($bcvar2:java.lang.Object, $bcvar1:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="FileChannel.html">
+java.nio.channels.FileChannel
+</a>
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+$irvar0 := java.nio.channels.FileChannel.NO_ATTRIBUTES
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="FileChannel.html">
+java.nio.channels.FileChannel
+</a>
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.channels.FileChannel open(java.nio.file.Path, java.util.Set, java.nio.file.attribute.FileAttribute[])">
+java.nio.channels.FileChannel.open
+</span>
+</span>
+<span>
+($bcvar0:java.lang.Object, $bcvar2:java.lang.Object, $irvar0:[java.nio.file.attribute.FileAttribute)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+return $irvar1:java.nio.channels.FileChannel
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.channels.FileChannel:transferFrom:java.nio.channels.ReadableByteChannelJJJ" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+long
+ 
+<span>
+transferFrom
+</span>
+(
+<a href="../../../java/nio/channels/ReadableByteChannel.html">
+java.nio.channels.ReadableByteChannel
+</a>
+ 0
+, 
+long
+ 1
+, 
+long
+ 2
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.channels.FileChannel:position:Jjava.nio.channels.FileChannel" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="FileChannel.html">
+java.nio.channels.FileChannel
+</a>
+ 
+<span>
+position
+</span>
+(
+long
+ 0
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+</div>
+</body>
+</html>

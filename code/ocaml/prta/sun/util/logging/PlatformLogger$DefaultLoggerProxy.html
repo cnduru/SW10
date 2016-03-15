@@ -1,0 +1,4012 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>
+sun.util.logging.PlatformLogger$DefaultLoggerProxy
+</title>
+<link rel="StyleSheet" href="../../../style.css" type="text/css" media="all" />
+<script type="text/javascript" src="../../../actions.js">
+</script>
+</head>
+<body>
+<div class="class">
+<a name="sun.util.logging.PlatformLogger$DefaultLoggerProxy" href="#">
+
+</a>
+<div class="classname">
+Class sun.util.logging.PlatformLogger$DefaultLoggerProxy
+</div>
+<ul class="annot">
+<li>
+Instantiated
+</li>
+</ul>
+<div class="field">
+<a name="sun.util.logging.PlatformLogger$DefaultLoggerProxy:formatString:java.lang.String" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ formatString;
+</span>
+</div>
+<div class="field">
+<a name="sun.util.logging.PlatformLogger$DefaultLoggerProxy:effectiveLevel:sun.util.logging.PlatformLogger$Level" href="#">
+
+</a>
+<span class="field_signature">
+ volatile 
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+ effectiveLevel;
+</span>
+</div>
+<div class="field">
+<a name="sun.util.logging.PlatformLogger$DefaultLoggerProxy:level:sun.util.logging.PlatformLogger$Level" href="#">
+
+</a>
+<span class="field_signature">
+ volatile 
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+ level;
+</span>
+</div>
+<div class="field">
+<a name="sun.util.logging.PlatformLogger$DefaultLoggerProxy:date:java.util.Date" href="#">
+
+</a>
+<span class="field_signature">
+private  
+<a href="../../../java/util/Date.html">
+java.util.Date
+</a>
+ date;
+</span>
+</div>
+<div class="method">
+<a name="sun.util.logging.PlatformLogger$DefaultLoggerProxy:&lt;clinit&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<span>
+clinit
+</span>
+{};
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String getSimpleFormat(bool)">
+sun.util.logging.LoggingSupport.getSimpleFormat
+</span>
+</span>
+<span>
+(
+bool
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/util/logging/LoggingSupport.html#sun.util.logging.LoggingSupport:getSimpleFormat:Zjava.lang.String" title="java.lang.String getSimpleFormat(bool)">
+sun.util.logging.LoggingSupport.getSimpleFormat
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:formatString:java.lang.String">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.formatString
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.util.logging.PlatformLogger$DefaultLoggerProxy:doLog:sun.util.logging.PlatformLogger$Leveljava.lang.Stringvoid" href="#">
+
+</a>
+<div class="method_signature">
+ 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+doLog
+</span>
+(
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+ 1
+, 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/util/logging/PlatformLogger.html#sun.util.logging.PlatformLogger:config:java.lang.Stringvoid" title="void config(java.lang.String)">
+sun.util.logging.PlatformLogger.config(java.lang.String)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isLoggable(sun.util.logging.PlatformLogger$Level)">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.isLoggable
+</span>
+</span>
+<span>
+(
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:isLoggable:sun.util.logging.PlatformLogger$LevelZ" title="bool isLoggable(sun.util.logging.PlatformLogger$Level)">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.isLoggable
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+ifeq 16
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../../java/io/PrintStream.html">
+java.io.PrintStream
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.io.PrintStream outputStream()">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.outputStream
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:outputStream:java.io.PrintStream" title="java.io.PrintStream outputStream()">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.outputStream
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String format(sun.util.logging.PlatformLogger$Level, java.lang.String, java.lang.Throwable)">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.format
+</span>
+</span>
+<span>
+(
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+, 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+, 
+<a href="../../../java/lang/Throwable.html">
+java.lang.Throwable
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:format:sun.util.logging.PlatformLogger$Leveljava.lang.Stringjava.lang.Throwablejava.lang.String" title="java.lang.String format(sun.util.logging.PlatformLogger$Level, java.lang.String, java.lang.Throwable)">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.format
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void print(java.lang.String)">
+java.io.PrintStream.print
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/io/PrintStream.html#java.io.PrintStream:print:java.lang.Stringvoid" title="void print(java.lang.String)">
+java.io.PrintStream.print
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.util.logging.PlatformLogger$DefaultLoggerProxy:&lt;init&gt;:java.lang.Stringvoid" href="#">
+
+</a>
+<div class="method_signature">
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+PlatformLogger$DefaultLoggerProxy
+</span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/util/logging/PlatformLogger.html#sun.util.logging.PlatformLogger:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
+sun.util.logging.PlatformLogger.&lt;init&gt;(java.lang.String)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+sun.util.logging.PlatformLogger$LoggerProxy.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/util/logging/PlatformLogger$LoggerProxy.html#sun.util.logging.PlatformLogger$LoggerProxy:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
+sun.util.logging.PlatformLogger$LoggerProxy.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../java/util/Date.html">
+java.util.Date
+</a>
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.util.Date.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/Date.html#java.util.Date:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.util.Date.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:date:java.util.Date">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.date
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/util/Date.html">
+java.util.Date
+</a>
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="sun.util.logging.PlatformLogger$Level deriveEffectiveLevel(sun.util.logging.PlatformLogger$Level)">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.deriveEffectiveLevel
+</span>
+</span>
+<span>
+(
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:deriveEffectiveLevel:sun.util.logging.PlatformLogger$Levelsun.util.logging.PlatformLogger$Level" title="sun.util.logging.PlatformLogger$Level deriveEffectiveLevel(sun.util.logging.PlatformLogger$Level)">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.deriveEffectiveLevel
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:effectiveLevel:sun.util.logging.PlatformLogger$Level">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.effectiveLevel
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:level:sun.util.logging.PlatformLogger$Level">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.level
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.util.logging.PlatformLogger$DefaultLoggerProxy:deriveEffectiveLevel:sun.util.logging.PlatformLogger$Levelsun.util.logging.PlatformLogger$Level" href="#">
+
+</a>
+<div class="method_signature">
+private 
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+deriveEffectiveLevel
+</span>
+(
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.&lt;init&gt;(java.lang.String)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+ifnonnull 9
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="sun.util.logging.PlatformLogger$Level access$000()">
+sun.util.logging.PlatformLogger.access$000
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/util/logging/PlatformLogger.html#sun.util.logging.PlatformLogger:access$000:sun.util.logging.PlatformLogger$Level" title="sun.util.logging.PlatformLogger$Level access$000()">
+sun.util.logging.PlatformLogger.access$000
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.util.logging.PlatformLogger$DefaultLoggerProxy:getLevel:sun.util.logging.PlatformLogger$Level" href="#">
+
+</a>
+<div class="method_signature">
+ 
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+ 
+<span>
+getLevel
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:level:sun.util.logging.PlatformLogger$Level">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.level
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.util.logging.PlatformLogger$DefaultLoggerProxy:outputStream:java.io.PrintStream" href="#">
+
+</a>
+<div class="method_signature">
+private static 
+<a href="../../../java/io/PrintStream.html">
+java.io.PrintStream
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+outputStream
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:doLog:sun.util.logging.PlatformLogger$Leveljava.lang.Stringvoid" title="void doLog(sun.util.logging.PlatformLogger$Level, java.lang.String)">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.doLog(sun.util.logging.PlatformLogger$Level, java.lang.String)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="../../../java/lang/System.html#java.lang.System:err:java.io.PrintStream">
+java.lang.System.err
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/io/PrintStream.html">
+java.io.PrintStream
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.util.logging.PlatformLogger$DefaultLoggerProxy:doLog:sun.util.logging.PlatformLogger$Leveljava.lang.Stringjava.lang.Throwablevoid" href="#">
+
+</a>
+<div class="method_signature">
+ 
+void
+ 
+<span>
+doLog
+</span>
+(
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+ 1
+, 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 2
+, 
+<a href="../../../java/lang/Throwable.html">
+java.lang.Throwable
+</a>
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isLoggable(sun.util.logging.PlatformLogger$Level)">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.isLoggable
+</span>
+</span>
+<span>
+(
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:isLoggable:sun.util.logging.PlatformLogger$LevelZ" title="bool isLoggable(sun.util.logging.PlatformLogger$Level)">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.isLoggable
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+ifeq 16
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../../java/io/PrintStream.html">
+java.io.PrintStream
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.io.PrintStream outputStream()">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.outputStream
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:outputStream:java.io.PrintStream" title="java.io.PrintStream outputStream()">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.outputStream
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String format(sun.util.logging.PlatformLogger$Level, java.lang.String, java.lang.Throwable)">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.format
+</span>
+</span>
+<span>
+(
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+, 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+, 
+<a href="../../../java/lang/Throwable.html">
+java.lang.Throwable
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:format:sun.util.logging.PlatformLogger$Leveljava.lang.Stringjava.lang.Throwablejava.lang.String" title="java.lang.String format(sun.util.logging.PlatformLogger$Level, java.lang.String, java.lang.Throwable)">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.format
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void print(java.lang.String)">
+java.io.PrintStream.print
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/io/PrintStream.html#java.io.PrintStream:print:java.lang.Stringvoid" title="void print(java.lang.String)">
+java.io.PrintStream.print
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.util.logging.PlatformLogger$DefaultLoggerProxy:format:sun.util.logging.PlatformLogger$Leveljava.lang.Stringjava.lang.Throwablejava.lang.String" href="#">
+
+</a>
+<div class="method_signature">
+private synchronized 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+format
+</span>
+(
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+ 1
+, 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 2
+, 
+<a href="../../../java/lang/Throwable.html">
+java.lang.Throwable
+</a>
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:doLog:sun.util.logging.PlatformLogger$Leveljava.lang.Stringvoid" title="void doLog(sun.util.logging.PlatformLogger$Level, java.lang.String)">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.doLog(sun.util.logging.PlatformLogger$Level, java.lang.String)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:date:java.util.Date">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.date
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/util/Date.html">
+java.util.Date
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+long
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long currentTimeMillis()">
+java.lang.System.currentTimeMillis
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/System.html#java.lang.System:currentTimeMillis:J" title="long currentTimeMillis()">
+java.lang.System.currentTimeMillis
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void setTime(long)">
+java.util.Date.setTime
+</span>
+</span>
+<span>
+(
+long
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/Date.html#java.util.Date:setTime:Jvoid" title="void setTime(long)">
+java.util.Date.setTime
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+ldc string &apos;&apos;
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+astore  4
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+ifnull 46
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../java/io/StringWriter.html">
+java.io.StringWriter
+</a>
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.io.StringWriter.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/io/StringWriter.html#java.io.StringWriter:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.io.StringWriter.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+astore  5
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../java/io/PrintWriter.html">
+java.io.PrintWriter
+</a>
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+aload  5
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.io.Writer)">
+java.io.PrintWriter.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../../java/io/Writer.html">
+java.io.Writer
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/io/PrintWriter.html#java.io.PrintWriter:&lt;init&gt;:java.io.Writervoid" title="void &lt;init&gt;(java.io.Writer)">
+java.io.PrintWriter.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+astore  6
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+aload  6
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void println()">
+java.io.PrintWriter.println
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/io/PrintWriter.html#java.io.PrintWriter:println:void" title="void println()">
+java.io.PrintWriter.println
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+aload  6
+</span>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void printStackTrace(java.io.PrintWriter)">
+java.lang.Throwable.printStackTrace
+</span>
+</span>
+<span>
+(
+<a href="../../../java/io/PrintWriter.html">
+java.io.PrintWriter
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Throwable.html#java.lang.Throwable:printStackTrace:java.io.PrintWritervoid" title="void printStackTrace(java.io.PrintWriter)">
+java.lang.Throwable.printStackTrace
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+aload  6
+</span>
+</div>
+</li>
+<li value="51">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void close()">
+java.io.PrintWriter.close
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/io/PrintWriter.html#java.io.PrintWriter:close:void" title="void close()">
+java.io.PrintWriter.close
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="54">
+<div class="instruction">
+<span>
+aload  5
+</span>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toString()">
+java.io.StringWriter.toString
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/io/StringWriter.html#java.io.StringWriter:toString:java.lang.String" title="java.lang.String toString()">
+java.io.StringWriter.toString
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="59">
+<div class="instruction">
+<span>
+astore  4
+</span>
+</div>
+</li>
+<li value="61">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:formatString:java.lang.String">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.formatString
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+</div>
+</li>
+<li value="64">
+<div class="instruction">
+<span>
+bipush 6
+</span>
+</div>
+</li>
+<li value="66">
+<div class="instruction">
+<span>
+anewarray 
+</span>
+<span>
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+</div>
+</li>
+<li value="69">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="70">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="71">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="72">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:date:java.util.Date">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.date
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/util/Date.html">
+java.util.Date
+</a>
+</span>
+</div>
+</li>
+<li value="75">
+<div class="instruction">
+<span>
+aastore
+</span>
+</div>
+</li>
+<li value="76">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="77">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="78">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="79">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String getCallerInfo()">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.getCallerInfo
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:getCallerInfo:java.lang.String" title="java.lang.String getCallerInfo()">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.getCallerInfo
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="82">
+<div class="instruction">
+<span>
+aastore
+</span>
+</div>
+</li>
+<li value="83">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="84">
+<div class="instruction">
+<span>
+iconst 2
+</span>
+</div>
+</li>
+<li value="85">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="86">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../../sun/util/logging/PlatformLogger$LoggerProxy.html#sun.util.logging.PlatformLogger$LoggerProxy:name:java.lang.String">
+sun.util.logging.PlatformLogger$LoggerProxy.name
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+</div>
+</li>
+<li value="89">
+<div class="instruction">
+<span>
+aastore
+</span>
+</div>
+</li>
+<li value="90">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="91">
+<div class="instruction">
+<span>
+iconst 3
+</span>
+</div>
+</li>
+<li value="92">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="93">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String name()">
+sun.util.logging.PlatformLogger$Level.name
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Enum.html#java.lang.Enum:name:java.lang.String" title="java.lang.String name()">
+java.lang.Enum.name
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="96">
+<div class="instruction">
+<span>
+aastore
+</span>
+</div>
+</li>
+<li value="97">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="98">
+<div class="instruction">
+<span>
+iconst 4
+</span>
+</div>
+</li>
+<li value="99">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="100">
+<div class="instruction">
+<span>
+aastore
+</span>
+</div>
+</li>
+<li value="101">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="102">
+<div class="instruction">
+<span>
+iconst 5
+</span>
+</div>
+</li>
+<li value="103">
+<div class="instruction">
+<span>
+aload  4
+</span>
+</div>
+</li>
+<li value="105">
+<div class="instruction">
+<span>
+aastore
+</span>
+</div>
+</li>
+<li value="106">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String format(java.lang.String, java.lang.Object[])">
+java.lang.String.format
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+, 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/String.html#java.lang.String:format:java.lang.Stringjava.lang.Object.-java.lang.String" title="java.lang.String format(java.lang.String, java.lang.Object[])">
+java.lang.String.format
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="109">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.util.logging.PlatformLogger$DefaultLoggerProxy:isLoggable:sun.util.logging.PlatformLogger$LevelZ" href="#">
+
+</a>
+<div class="method_signature">
+ 
+bool
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+isLoggable
+</span>
+(
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:doLog:sun.util.logging.PlatformLogger$Leveljava.lang.Stringvoid" title="void doLog(sun.util.logging.PlatformLogger$Level, java.lang.String)">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.doLog(sun.util.logging.PlatformLogger$Level, java.lang.String)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:effectiveLevel:sun.util.logging.PlatformLogger$Level">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.effectiveLevel
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+astore  2
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int intValue()">
+sun.util.logging.PlatformLogger$Level.intValue
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/util/logging/PlatformLogger$Level.html#sun.util.logging.PlatformLogger$Level:intValue:I" title="int intValue()">
+sun.util.logging.PlatformLogger$Level.intValue
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int intValue()">
+sun.util.logging.PlatformLogger$Level.intValue
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/util/logging/PlatformLogger$Level.html#sun.util.logging.PlatformLogger$Level:intValue:I" title="int intValue()">
+sun.util.logging.PlatformLogger$Level.intValue
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+ifcmplt 14
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="../../../sun/util/logging/PlatformLogger$Level.html#sun.util.logging.PlatformLogger$Level:OFF:sun.util.logging.PlatformLogger$Level">
+sun.util.logging.PlatformLogger$Level.OFF
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+ifacmpeq 7
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.util.logging.PlatformLogger$DefaultLoggerProxy:isEnabled:Z" href="#">
+
+</a>
+<div class="method_signature">
+ 
+bool
+ 
+<span>
+isEnabled
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:effectiveLevel:sun.util.logging.PlatformLogger$Level">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.effectiveLevel
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="../../../sun/util/logging/PlatformLogger$Level.html#sun.util.logging.PlatformLogger$Level:OFF:sun.util.logging.PlatformLogger$Level">
+sun.util.logging.PlatformLogger$Level.OFF
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+ifacmpeq 7
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.util.logging.PlatformLogger$DefaultLoggerProxy:doLog:sun.util.logging.PlatformLogger$Leveljava.lang.Stringjava.lang.Object.-void" href="#">
+
+</a>
+<div class="method_signature">
+ 
+void
+ 
+<span>
+doLog
+</span>
+(
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+ 1
+, 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 2
+, 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isLoggable(sun.util.logging.PlatformLogger$Level)">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.isLoggable
+</span>
+</span>
+<span>
+(
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:isLoggable:sun.util.logging.PlatformLogger$LevelZ" title="bool isLoggable(sun.util.logging.PlatformLogger$Level)">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.isLoggable
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+ifeq 25
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String formatMessage(java.lang.String, java.lang.Object[])">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.formatMessage
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+, 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+astore  4
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../../java/io/PrintStream.html">
+java.io.PrintStream
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.io.PrintStream outputStream()">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.outputStream
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:outputStream:java.io.PrintStream" title="java.io.PrintStream outputStream()">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.outputStream
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+aload  4
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String format(sun.util.logging.PlatformLogger$Level, java.lang.String, java.lang.Throwable)">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.format
+</span>
+</span>
+<span>
+(
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+, 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+, 
+<a href="../../../java/lang/Throwable.html">
+java.lang.Throwable
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:format:sun.util.logging.PlatformLogger$Leveljava.lang.Stringjava.lang.Throwablejava.lang.String" title="java.lang.String format(sun.util.logging.PlatformLogger$Level, java.lang.String, java.lang.Throwable)">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.format
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void print(java.lang.String)">
+java.io.PrintStream.print
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/io/PrintStream.html#java.io.PrintStream:print:java.lang.Stringvoid" title="void print(java.lang.String)">
+java.io.PrintStream.print
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.util.logging.PlatformLogger$DefaultLoggerProxy:formatMessage:java.lang.Stringjava.lang.Object.-java.lang.String" href="#">
+
+</a>
+<div class="method_signature">
+private 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span>
+formatMessage
+</span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 1
+, 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+ifnull 8
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+ifne 5
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+ldc string &apos;{0&apos;
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int indexOf(java.lang.String)">
+java.lang.String.indexOf
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/String.html#java.lang.String:indexOf:java.lang.StringI" title="int indexOf(java.lang.String)">
+java.lang.String.indexOf
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+ifge 30
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+ldc string &apos;{1&apos;
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int indexOf(java.lang.String)">
+java.lang.String.indexOf
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/String.html#java.lang.String:indexOf:java.lang.StringI" title="int indexOf(java.lang.String)">
+java.lang.String.indexOf
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+ifge 21
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+ldc string &apos;{2&apos;
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int indexOf(java.lang.String)">
+java.lang.String.indexOf
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/String.html#java.lang.String:indexOf:java.lang.StringI" title="int indexOf(java.lang.String)">
+java.lang.String.indexOf
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+ifge 12
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+ldc string &apos;{3&apos;
+</span>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int indexOf(java.lang.String)">
+java.lang.String.indexOf
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/String.html#java.lang.String:indexOf:java.lang.StringI" title="int indexOf(java.lang.String)">
+java.lang.String.indexOf
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+iflt 9
+</span>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String format(java.lang.String, java.lang.Object[])">
+java.text.MessageFormat.format
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+, 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="52">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+<li value="53">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="54">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+<li value="55">
+<div class="instruction">
+<span>
+astore  3
+</span>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="57">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 0; try end: 10: catch start: 55; catched type: java.lang.Exception.
+</span>
+</li>
+<li>
+<span>
+try start: 11; try end: 52: catch start: 55; catched type: java.lang.Exception.
+</span>
+</li>
+<li>
+<span>
+try start: 53; try end: 54: catch start: 55; catched type: java.lang.Exception.
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
+<a name="sun.util.logging.PlatformLogger$DefaultLoggerProxy:setLevel:sun.util.logging.PlatformLogger$Levelvoid" href="#">
+
+</a>
+<div class="method_signature">
+ 
+void
+ 
+<span>
+setLevel
+</span>
+(
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:level:sun.util.logging.PlatformLogger$Level">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.level
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+astore  2
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+ifacmpeq 17
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:level:sun.util.logging.PlatformLogger$Level">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.level
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="sun.util.logging.PlatformLogger$Level deriveEffectiveLevel(sun.util.logging.PlatformLogger$Level)">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.deriveEffectiveLevel
+</span>
+</span>
+<span>
+(
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:deriveEffectiveLevel:sun.util.logging.PlatformLogger$Levelsun.util.logging.PlatformLogger$Level" title="sun.util.logging.PlatformLogger$Level deriveEffectiveLevel(sun.util.logging.PlatformLogger$Level)">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.deriveEffectiveLevel
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:effectiveLevel:sun.util.logging.PlatformLogger$Level">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.effectiveLevel
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../sun/util/logging/PlatformLogger$Level.html">
+sun.util.logging.PlatformLogger$Level
+</a>
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.util.logging.PlatformLogger$DefaultLoggerProxy:getCallerInfo:java.lang.String" href="#">
+
+</a>
+<div class="method_signature">
+private 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getCallerInfo
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.util.logging.PlatformLogger$DefaultLoggerProxy:format:sun.util.logging.PlatformLogger$Leveljava.lang.Stringjava.lang.Throwablejava.lang.String" title="java.lang.String format(sun.util.logging.PlatformLogger$Level, java.lang.String, java.lang.Throwable)">
+sun.util.logging.PlatformLogger$DefaultLoggerProxy.format(sun.util.logging.PlatformLogger$Level, java.lang.String, java.lang.Throwable)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+astore  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+astore  2
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../../sun/misc/JavaLangAccess.html">
+sun.misc.JavaLangAccess
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="sun.misc.JavaLangAccess getJavaLangAccess()">
+sun.misc.SharedSecrets.getJavaLangAccess
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/misc/SharedSecrets.html#sun.misc.SharedSecrets:getJavaLangAccess:sun.misc.JavaLangAccess" title="sun.misc.JavaLangAccess getJavaLangAccess()">
+sun.misc.SharedSecrets.getJavaLangAccess
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+astore  3
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../java/lang/Throwable.html">
+java.lang.Throwable
+</a>
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Throwable.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Throwable.html#java.lang.Throwable:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.Throwable.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+astore  4
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+aload  4
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+invokeinterface 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getStackTraceDepth(java.lang.Throwable)">
+sun.misc.JavaLangAccess.getStackTraceDepth
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/Throwable.html">
+java.lang.Throwable
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/System$2.html#java.lang.System$2:getStackTraceDepth:java.lang.ThrowableI" title="int getStackTraceDepth(java.lang.Throwable)">
+java.lang.System$2.getStackTraceDepth
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+istore  5
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+ldc string &apos;sun.util.logging.PlatformLogger&apos;
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+astore  6
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+istore  7
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+istore  8
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+iload  8
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+iload  5
+</span>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+ifcmpge 71
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span>
+aload  4
+</span>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+iload  8
+</span>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+invokeinterface 
+</span>
+<span>
+<a href="../../../java/lang/StackTraceElement.html">
+java.lang.StackTraceElement
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StackTraceElement getStackTraceElement(java.lang.Throwable, int)">
+sun.misc.JavaLangAccess.getStackTraceElement
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/Throwable.html">
+java.lang.Throwable
+</a>
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/System$2.html#java.lang.System$2:getStackTraceElement:java.lang.ThrowableIjava.lang.StackTraceElement" title="java.lang.StackTraceElement getStackTraceElement(java.lang.Throwable, int)">
+java.lang.System$2.getStackTraceElement
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="54">
+<div class="instruction">
+<span>
+astore  9
+</span>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+aload  9
+</span>
+</div>
+</li>
+<li value="58">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String getClassName()">
+java.lang.StackTraceElement.getClassName
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="61">
+<div class="instruction">
+<span>
+astore  10
+</span>
+</div>
+</li>
+<li value="63">
+<div class="instruction">
+<span>
+iload  7
+</span>
+</div>
+</li>
+<li value="65">
+<div class="instruction">
+<span>
+ifeq 19
+</span>
+</div>
+</li>
+<li value="68">
+<div class="instruction">
+<span>
+aload  10
+</span>
+</div>
+</li>
+<li value="70">
+<div class="instruction">
+<span>
+aload  6
+</span>
+</div>
+</li>
+<li value="72">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool equals(java.lang.Object)">
+java.lang.String.equals
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/String.html#java.lang.String:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.lang.String.equals
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="75">
+<div class="instruction">
+<span>
+ifeq 31
+</span>
+</div>
+</li>
+<li value="78">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="79">
+<div class="instruction">
+<span>
+istore  7
+</span>
+</div>
+</li>
+<li value="81">
+<div class="instruction">
+<span>
+goto 25
+</span>
+</div>
+</li>
+<li value="84">
+<div class="instruction">
+<span>
+aload  10
+</span>
+</div>
+</li>
+<li value="86">
+<div class="instruction">
+<span>
+aload  6
+</span>
+</div>
+</li>
+<li value="88">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool equals(java.lang.Object)">
+java.lang.String.equals
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/String.html#java.lang.String:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.lang.String.equals
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="91">
+<div class="instruction">
+<span>
+ifne 15
+</span>
+</div>
+</li>
+<li value="94">
+<div class="instruction">
+<span>
+aload  10
+</span>
+</div>
+</li>
+<li value="96">
+<div class="instruction">
+<span>
+astore  1
+</span>
+</div>
+</li>
+<li value="97">
+<div class="instruction">
+<span>
+aload  9
+</span>
+</div>
+</li>
+<li value="99">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String getMethodName()">
+java.lang.StackTraceElement.getMethodName
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="102">
+<div class="instruction">
+<span>
+astore  2
+</span>
+</div>
+</li>
+<li value="103">
+<div class="instruction">
+<span>
+goto 9
+</span>
+</div>
+</li>
+<li value="106">
+<div class="instruction">
+<span>
+iinc 8 1
+</span>
+</div>
+</li>
+<li value="109">
+<div class="instruction">
+<span>
+goto -72
+</span>
+</div>
+</li>
+<li value="112">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="113">
+<div class="instruction">
+<span>
+ifnull 27
+</span>
+</div>
+</li>
+<li value="116">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+</div>
+</li>
+<li value="119">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="120">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.StringBuilder.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/StringBuilder.html#java.lang.StringBuilder:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.StringBuilder.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="123">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="124">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="127">
+<div class="instruction">
+<span>
+ldc string &apos; &apos;
+</span>
+</div>
+</li>
+<li value="129">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="132">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="133">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="136">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toString()">
+java.lang.StringBuilder.toString
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/StringBuilder.html#java.lang.StringBuilder:toString:java.lang.String" title="java.lang.String toString()">
+java.lang.StringBuilder.toString
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="139">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+<li value="140">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="141">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../../sun/util/logging/PlatformLogger$LoggerProxy.html#sun.util.logging.PlatformLogger$LoggerProxy:name:java.lang.String">
+sun.util.logging.PlatformLogger$LoggerProxy.name
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+</div>
+</li>
+<li value="144">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1898 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>
+sun.text.normalizer.UnicodeSetIterator
+</title>
+<link rel="StyleSheet" href="../../../style.css" type="text/css" media="all" />
+<script type="text/javascript" src="../../../actions.js">
+</script>
+</head>
+<body>
+<div class="class">
+<a name="sun.text.normalizer.UnicodeSetIterator" href="#">
+
+</a>
+<div class="classname">
+Class sun.text.normalizer.UnicodeSetIterator
+</div>
+<div class="field">
+<a name="sun.text.normalizer.UnicodeSetIterator:string:java.lang.String" href="#">
+
+</a>
+<span class="field_signature">
+public  
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ string;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.UnicodeSetIterator:codepoint:I" href="#">
+
+</a>
+<span class="field_signature">
+public  
+int
+ codepoint;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.UnicodeSetIterator:endElement:I" href="#">
+
+</a>
+<span class="field_signature">
+protected  
+int
+ endElement;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.UnicodeSetIterator:nextElement:I" href="#">
+
+</a>
+<span class="field_signature">
+protected  
+int
+ nextElement;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.UnicodeSetIterator:set:sun.text.normalizer.UnicodeSet" href="#">
+
+</a>
+<span class="field_signature">
+private  
+<a href="../../../sun/text/normalizer/UnicodeSet.html">
+sun.text.normalizer.UnicodeSet
+</a>
+ set;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.UnicodeSetIterator:range:I" href="#">
+
+</a>
+<span class="field_signature">
+private  
+int
+ range;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.UnicodeSetIterator:IS_STRING:I" href="#">
+
+</a>
+<span class="field_signature">
+public static  
+int
+ IS_STRING;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.UnicodeSetIterator:codepointEnd:I" href="#">
+
+</a>
+<span class="field_signature">
+public  
+int
+ codepointEnd;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.UnicodeSetIterator:endRange:I" href="#">
+
+</a>
+<span class="field_signature">
+private  
+int
+ endRange;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.UnicodeSetIterator:stringIterator:java.util.Iterator" href="#">
+
+</a>
+<span class="field_signature">
+private  
+<a href="../../../java/util/Iterator.html">
+java.util.Iterator
+</a>
+ stringIterator;
+</span>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.UnicodeSetIterator:&lt;clinit&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<span>
+clinit
+</span>
+{};
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="UnicodeSetIterator.html">
+sun.text.normalizer.UnicodeSetIterator
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UnicodeSetIterator:IS_STRING:I">
+sun.text.normalizer.UnicodeSetIterator.IS_STRING
+</a>
+</span>
+<span>
+:= -1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.UnicodeSetIterator:nextRange:Z" href="#">
+
+</a>
+<div class="method_signature">
+public 
+bool
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+nextRange
+</span>
+(
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/NormalizerImpl.html#sun.text.normalizer.NormalizerImpl:internalGetNXCJKCompat:sun.text.normalizer.UnicodeSet" title="sun.text.normalizer.UnicodeSet internalGetNXCJKCompat()">
+sun.text.normalizer.NormalizerImpl.internalGetNXCJKCompat()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.nextElement &gt; this:java.lang.Object.endElement) goto 13
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UnicodeSetIterator:codepointEnd:I">
+this:java.lang.Object.codepointEnd
+</a>
+</span>
+<span>
+:= this:java.lang.Object.endElement
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UnicodeSetIterator:codepoint:I">
+this:java.lang.Object.codepoint
+</a>
+</span>
+<span>
+:= this:java.lang.Object.nextElement
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UnicodeSetIterator:nextElement:I">
+this:java.lang.Object.nextElement
+</a>
+</span>
+<span>
+:= this:java.lang.Object.endElement+1
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+return 1
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.range &gt;= this:java.lang.Object.endRange) goto 32
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+$irvar0 := this:java.lang.Object.range+1
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UnicodeSetIterator:range:I">
+this:java.lang.Object.range
+</a>
+</span>
+<span>
+:= this:java.lang.Object.range+1
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void loadRange(int)">
+this:java.lang.Object.loadRange
+</span>
+</span>
+<span>
+($irvar0:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.UnicodeSetIterator:loadRange:Ivoid" title="void loadRange(int)">
+sun.text.normalizer.UnicodeSetIterator.loadRange
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UnicodeSetIterator:codepointEnd:I">
+this:java.lang.Object.codepointEnd
+</a>
+</span>
+<span>
+:= this:java.lang.Object.endElement
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UnicodeSetIterator:codepoint:I">
+this:java.lang.Object.codepoint
+</a>
+</span>
+<span>
+:= this:java.lang.Object.nextElement
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UnicodeSetIterator:nextElement:I">
+this:java.lang.Object.nextElement
+</a>
+</span>
+<span>
+:= this:java.lang.Object.endElement+1
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+return 1
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.stringIterator != null) goto 35
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+return 0
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="UnicodeSetIterator.html">
+sun.text.normalizer.UnicodeSetIterator
+</a>
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UnicodeSetIterator:codepoint:I">
+this:java.lang.Object.codepoint
+</a>
+</span>
+<span>
+:= sun.text.normalizer.UnicodeSetIterator.IS_STRING
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.stringIterator
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object next()">
+this:java.lang.Object.stringIterator.next
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap$KeyIterator.html#java.util.concurrent.ConcurrentHashMap$KeyIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.concurrent.ConcurrentHashMap$KeyIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/IdentityHashMap$EntryIterator.html#java.util.IdentityHashMap$EntryIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.IdentityHashMap$EntryIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/LinkedHashMap$ValueIterator.html#java.util.LinkedHashMap$ValueIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.LinkedHashMap$ValueIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$EmptyIterator.html#java.util.Collections$EmptyIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.Collections$EmptyIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap$EntryIterator.html#java.util.concurrent.ConcurrentHashMap$EntryIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.concurrent.ConcurrentHashMap$EntryIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap$KeyIterator.html#java.util.HashMap$KeyIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.HashMap$KeyIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/WeakHashMap$ValueIterator.html#java.util.WeakHashMap$ValueIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.WeakHashMap$ValueIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$UnmodifiableCollection$1.html#java.util.Collections$UnmodifiableCollection$1:next:java.lang.Object" title="java.lang.Object next()">
+java.util.Collections$UnmodifiableCollection$1.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/WeakHashMap$KeyIterator.html#java.util.WeakHashMap$KeyIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.WeakHashMap$KeyIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable$Enumerator.html#java.util.Hashtable$Enumerator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.Hashtable$Enumerator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$1.html#java.util.Collections$1:next:java.lang.Object" title="java.lang.Object next()">
+java.util.Collections$1.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$UnmodifiableList$1.html#java.util.Collections$UnmodifiableList$1:next:java.lang.Object" title="java.lang.Object next()">
+java.util.Collections$UnmodifiableList$1.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Vector$Itr.html#java.util.Vector$Itr:next:java.lang.Object" title="java.lang.Object next()">
+java.util.Vector$Itr.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/IdentityHashMap$KeyIterator.html#java.util.IdentityHashMap$KeyIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.IdentityHashMap$KeyIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeMap$EntryIterator.html#java.util.TreeMap$EntryIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.TreeMap$EntryIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap$EntryIterator.html#java.util.HashMap$EntryIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.HashMap$EntryIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/PreHashedMap$2$1.html#sun.util.PreHashedMap$2$1:next:java.lang.Object" title="java.lang.Object next()">
+sun.util.PreHashedMap$2$1.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeMap$KeyIterator.html#java.util.TreeMap$KeyIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.TreeMap$KeyIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/IdentityHashMap$ValueIterator.html#java.util.IdentityHashMap$ValueIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.IdentityHashMap$ValueIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeMap$ValueIterator.html#java.util.TreeMap$ValueIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.TreeMap$ValueIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap$ValueIterator.html#java.util.concurrent.ConcurrentHashMap$ValueIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.concurrent.ConcurrentHashMap$ValueIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractList$Itr.html#java.util.AbstractList$Itr:next:java.lang.Object" title="java.lang.Object next()">
+java.util.AbstractList$Itr.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/LinkedHashMap$EntryIterator.html#java.util.LinkedHashMap$EntryIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.LinkedHashMap$EntryIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractMap$2$1.html#java.util.AbstractMap$2$1:next:java.lang.Object" title="java.lang.Object next()">
+java.util.AbstractMap$2$1.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap$ValueIterator.html#java.util.HashMap$ValueIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.HashMap$ValueIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/LinkedHashMap$KeyIterator.html#java.util.LinkedHashMap$KeyIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.LinkedHashMap$KeyIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/PreHashedMap$1$1.html#sun.util.PreHashedMap$1$1:next:java.lang.Object" title="java.lang.Object next()">
+sun.util.PreHashedMap$1$1.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/LinkedList$ListItr.html#java.util.LinkedList$ListItr:next:java.lang.Object" title="java.lang.Object next()">
+java.util.LinkedList$ListItr.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/ArrayList$SubList$1.html#java.util.ArrayList$SubList$1:next:java.lang.Object" title="java.lang.Object next()">
+java.util.ArrayList$SubList$1.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/WeakHashMap$EntryIterator.html#java.util.WeakHashMap$EntryIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.WeakHashMap$EntryIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/ArrayList$Itr.html#java.util.ArrayList$Itr:next:java.lang.Object" title="java.lang.Object next()">
+java.util.ArrayList$Itr.next
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+checkcast $irvar0:java.lang.Object:
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UnicodeSetIterator:string:java.lang.String">
+this:java.lang.Object.string
+</a>
+</span>
+<span>
+:= (java.lang.String) $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.stringIterator
+</span>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool hasNext()">
+this:java.lang.Object.stringIterator.hasNext
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/IdentityHashMap$IdentityHashMapIterator.html#java.util.IdentityHashMap$IdentityHashMapIterator:hasNext:Z" title="bool hasNext()">
+java.util.IdentityHashMap$IdentityHashMapIterator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap$HashIterator.html#java.util.concurrent.ConcurrentHashMap$HashIterator:hasNext:Z" title="bool hasNext()">
+java.util.concurrent.ConcurrentHashMap$HashIterator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap$HashIterator.html#java.util.HashMap$HashIterator:hasNext:Z" title="bool hasNext()">
+java.util.HashMap$HashIterator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/PreHashedMap$1$1.html#sun.util.PreHashedMap$1$1:hasNext:Z" title="bool hasNext()">
+sun.util.PreHashedMap$1$1.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractList$Itr.html#java.util.AbstractList$Itr:hasNext:Z" title="bool hasNext()">
+java.util.AbstractList$Itr.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractMap$2$1.html#java.util.AbstractMap$2$1:hasNext:Z" title="bool hasNext()">
+java.util.AbstractMap$2$1.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/PreHashedMap$2$1.html#sun.util.PreHashedMap$2$1:hasNext:Z" title="bool hasNext()">
+sun.util.PreHashedMap$2$1.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/LinkedHashMap$LinkedHashIterator.html#java.util.LinkedHashMap$LinkedHashIterator:hasNext:Z" title="bool hasNext()">
+java.util.LinkedHashMap$LinkedHashIterator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/LinkedList$ListItr.html#java.util.LinkedList$ListItr:hasNext:Z" title="bool hasNext()">
+java.util.LinkedList$ListItr.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/ArrayList$SubList$1.html#java.util.ArrayList$SubList$1:hasNext:Z" title="bool hasNext()">
+java.util.ArrayList$SubList$1.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/ArrayList$Itr.html#java.util.ArrayList$Itr:hasNext:Z" title="bool hasNext()">
+java.util.ArrayList$Itr.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable$Enumerator.html#java.util.Hashtable$Enumerator:hasNext:Z" title="bool hasNext()">
+java.util.Hashtable$Enumerator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$1.html#java.util.Collections$1:hasNext:Z" title="bool hasNext()">
+java.util.Collections$1.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$UnmodifiableList$1.html#java.util.Collections$UnmodifiableList$1:hasNext:Z" title="bool hasNext()">
+java.util.Collections$UnmodifiableList$1.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Vector$Itr.html#java.util.Vector$Itr:hasNext:Z" title="bool hasNext()">
+java.util.Vector$Itr.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$EmptyIterator.html#java.util.Collections$EmptyIterator:hasNext:Z" title="bool hasNext()">
+java.util.Collections$EmptyIterator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$UnmodifiableCollection$1.html#java.util.Collections$UnmodifiableCollection$1:hasNext:Z" title="bool hasNext()">
+java.util.Collections$UnmodifiableCollection$1.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/WeakHashMap$HashIterator.html#java.util.WeakHashMap$HashIterator:hasNext:Z" title="bool hasNext()">
+java.util.WeakHashMap$HashIterator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeMap$PrivateEntryIterator.html#java.util.TreeMap$PrivateEntryIterator:hasNext:Z" title="bool hasNext()">
+java.util.TreeMap$PrivateEntryIterator.hasNext
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+if ($irvar0:Z != 0) goto 50
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UnicodeSetIterator:stringIterator:java.util.Iterator">
+this:java.lang.Object.stringIterator
+</a>
+</span>
+<span>
+:= null
+</span>
+</div>
+</li>
+<li value="50">
+<div class="instruction">
+<span>
+return 1
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.UnicodeSetIterator:reset:sun.text.normalizer.UnicodeSetvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+reset
+</span>
+(
+<a href="../../../sun/text/normalizer/UnicodeSet.html">
+sun.text.normalizer.UnicodeSet
+</a>
+ $bcvar1
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.UnicodeSetIterator:&lt;init&gt;:sun.text.normalizer.UnicodeSetvoid" title="void &lt;init&gt;(sun.text.normalizer.UnicodeSet)">
+sun.text.normalizer.UnicodeSetIterator.&lt;init&gt;(sun.text.normalizer.UnicodeSet)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UnicodeSetIterator:set:sun.text.normalizer.UnicodeSet">
+this:java.lang.Object.set
+</a>
+</span>
+<span>
+:= $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void reset()">
+this:java.lang.Object.reset
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.UnicodeSetIterator:reset:void" title="void reset()">
+sun.text.normalizer.UnicodeSetIterator.reset
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.UnicodeSetIterator:&lt;init&gt;:sun.text.normalizer.UnicodeSetvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<span class="methodname clickable" onclick="showInfoList(this)">
+UnicodeSetIterator
+</span>
+(
+<a href="../../../sun/text/normalizer/UnicodeSet.html">
+sun.text.normalizer.UnicodeSet
+</a>
+ $bcvar1
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/NormalizerImpl.html#sun.text.normalizer.NormalizerImpl:internalGetNXCJKCompat:sun.text.normalizer.UnicodeSet" title="sun.text.normalizer.UnicodeSet internalGetNXCJKCompat()">
+sun.text.normalizer.NormalizerImpl.internalGetNXCJKCompat()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Object.html#java.lang.Object:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UnicodeSetIterator:endRange:I">
+this:java.lang.Object.endRange
+</a>
+</span>
+<span>
+:= 0
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UnicodeSetIterator:range:I">
+this:java.lang.Object.range
+</a>
+</span>
+<span>
+:= 0
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UnicodeSetIterator:stringIterator:java.util.Iterator">
+this:java.lang.Object.stringIterator
+</a>
+</span>
+<span>
+:= null
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void reset(sun.text.normalizer.UnicodeSet)">
+this:java.lang.Object.reset
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.UnicodeSetIterator:reset:sun.text.normalizer.UnicodeSetvoid" title="void reset(sun.text.normalizer.UnicodeSet)">
+sun.text.normalizer.UnicodeSetIterator.reset
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.UnicodeSetIterator:loadRange:Ivoid" href="#">
+
+</a>
+<div class="method_signature">
+protected 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+loadRange
+</span>
+(
+int
+ $bcvar1
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.UnicodeSetIterator:reset:void" title="void reset()">
+sun.text.normalizer.UnicodeSetIterator.reset()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#sun.text.normalizer.UnicodeSetIterator:nextRange:Z" title="bool nextRange()">
+sun.text.normalizer.UnicodeSetIterator.nextRange()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.set
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getRangeStart(int)">
+this:java.lang.Object.set.getRangeStart
+</span>
+</span>
+<span>
+($bcvar1:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/UnicodeSet.html#sun.text.normalizer.UnicodeSet:getRangeStart:II" title="int getRangeStart(int)">
+sun.text.normalizer.UnicodeSet.getRangeStart
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UnicodeSetIterator:nextElement:I">
+this:java.lang.Object.nextElement
+</a>
+</span>
+<span>
+:= $irvar0:I
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.set
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getRangeEnd(int)">
+this:java.lang.Object.set.getRangeEnd
+</span>
+</span>
+<span>
+($bcvar1:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/UnicodeSet.html#sun.text.normalizer.UnicodeSet:getRangeEnd:II" title="int getRangeEnd(int)">
+sun.text.normalizer.UnicodeSet.getRangeEnd
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UnicodeSetIterator:endElement:I">
+this:java.lang.Object.endElement
+</a>
+</span>
+<span>
+:= $irvar0:I
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.UnicodeSetIterator:reset:void" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+reset
+</span>
+(
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.UnicodeSetIterator:reset:sun.text.normalizer.UnicodeSetvoid" title="void reset(sun.text.normalizer.UnicodeSet)">
+sun.text.normalizer.UnicodeSetIterator.reset(sun.text.normalizer.UnicodeSet)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.set
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getRangeCount()">
+this:java.lang.Object.set.getRangeCount
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/UnicodeSet.html#sun.text.normalizer.UnicodeSet:getRangeCount:I" title="int getRangeCount()">
+sun.text.normalizer.UnicodeSet.getRangeCount
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UnicodeSetIterator:endRange:I">
+this:java.lang.Object.endRange
+</a>
+</span>
+<span>
+:= $irvar0:I-1
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UnicodeSetIterator:range:I">
+this:java.lang.Object.range
+</a>
+</span>
+<span>
+:= 0
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UnicodeSetIterator:endElement:I">
+this:java.lang.Object.endElement
+</a>
+</span>
+<span>
+:= -1
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UnicodeSetIterator:nextElement:I">
+this:java.lang.Object.nextElement
+</a>
+</span>
+<span>
+:= 0
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.endRange &lt; 0) goto 16
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void loadRange(int)">
+this:java.lang.Object.loadRange
+</span>
+</span>
+<span>
+(this:java.lang.Object.range)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.UnicodeSetIterator:loadRange:Ivoid" title="void loadRange(int)">
+sun.text.normalizer.UnicodeSetIterator.loadRange
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UnicodeSetIterator:stringIterator:java.util.Iterator">
+this:java.lang.Object.stringIterator
+</a>
+</span>
+<span>
+:= null
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.set
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.set.strings == null) goto 33
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.set
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.set.strings
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.util.Iterator iterator()">
+this:java.lang.Object.set.strings.iterator
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/TreeSet.html#java.util.TreeSet:iterator:java.util.Iterator" title="java.util.Iterator iterator()">
+java.util.TreeSet.iterator
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UnicodeSetIterator:stringIterator:java.util.Iterator">
+this:java.lang.Object.stringIterator
+</a>
+</span>
+<span>
+:= $irvar0:java.util.Iterator
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.stringIterator
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool hasNext()">
+this:java.lang.Object.stringIterator.hasNext
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/IdentityHashMap$IdentityHashMapIterator.html#java.util.IdentityHashMap$IdentityHashMapIterator:hasNext:Z" title="bool hasNext()">
+java.util.IdentityHashMap$IdentityHashMapIterator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap$HashIterator.html#java.util.concurrent.ConcurrentHashMap$HashIterator:hasNext:Z" title="bool hasNext()">
+java.util.concurrent.ConcurrentHashMap$HashIterator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap$HashIterator.html#java.util.HashMap$HashIterator:hasNext:Z" title="bool hasNext()">
+java.util.HashMap$HashIterator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/PreHashedMap$1$1.html#sun.util.PreHashedMap$1$1:hasNext:Z" title="bool hasNext()">
+sun.util.PreHashedMap$1$1.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractList$Itr.html#java.util.AbstractList$Itr:hasNext:Z" title="bool hasNext()">
+java.util.AbstractList$Itr.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractMap$2$1.html#java.util.AbstractMap$2$1:hasNext:Z" title="bool hasNext()">
+java.util.AbstractMap$2$1.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/PreHashedMap$2$1.html#sun.util.PreHashedMap$2$1:hasNext:Z" title="bool hasNext()">
+sun.util.PreHashedMap$2$1.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/LinkedHashMap$LinkedHashIterator.html#java.util.LinkedHashMap$LinkedHashIterator:hasNext:Z" title="bool hasNext()">
+java.util.LinkedHashMap$LinkedHashIterator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/LinkedList$ListItr.html#java.util.LinkedList$ListItr:hasNext:Z" title="bool hasNext()">
+java.util.LinkedList$ListItr.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/ArrayList$SubList$1.html#java.util.ArrayList$SubList$1:hasNext:Z" title="bool hasNext()">
+java.util.ArrayList$SubList$1.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/ArrayList$Itr.html#java.util.ArrayList$Itr:hasNext:Z" title="bool hasNext()">
+java.util.ArrayList$Itr.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable$Enumerator.html#java.util.Hashtable$Enumerator:hasNext:Z" title="bool hasNext()">
+java.util.Hashtable$Enumerator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$1.html#java.util.Collections$1:hasNext:Z" title="bool hasNext()">
+java.util.Collections$1.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$UnmodifiableList$1.html#java.util.Collections$UnmodifiableList$1:hasNext:Z" title="bool hasNext()">
+java.util.Collections$UnmodifiableList$1.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Vector$Itr.html#java.util.Vector$Itr:hasNext:Z" title="bool hasNext()">
+java.util.Vector$Itr.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$EmptyIterator.html#java.util.Collections$EmptyIterator:hasNext:Z" title="bool hasNext()">
+java.util.Collections$EmptyIterator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$UnmodifiableCollection$1.html#java.util.Collections$UnmodifiableCollection$1:hasNext:Z" title="bool hasNext()">
+java.util.Collections$UnmodifiableCollection$1.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/WeakHashMap$HashIterator.html#java.util.WeakHashMap$HashIterator:hasNext:Z" title="bool hasNext()">
+java.util.WeakHashMap$HashIterator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeMap$PrivateEntryIterator.html#java.util.TreeMap$PrivateEntryIterator:hasNext:Z" title="bool hasNext()">
+java.util.TreeMap$PrivateEntryIterator.hasNext
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+if ($irvar0:Z != 0) goto 33
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UnicodeSetIterator:stringIterator:java.util.Iterator">
+this:java.lang.Object.stringIterator
+</a>
+</span>
+<span>
+:= null
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+</div>
+</body>
+</html>

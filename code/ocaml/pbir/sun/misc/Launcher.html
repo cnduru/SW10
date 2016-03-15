@@ -1,0 +1,2674 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>
+sun.misc.Launcher
+</title>
+<link rel="StyleSheet" href="../../style.css" type="text/css" media="all" />
+<script type="text/javascript" src="../../actions.js">
+</script>
+</head>
+<body>
+<div class="class">
+<a name="sun.misc.Launcher" href="#">
+
+</a>
+<div class="classname">
+Class sun.misc.Launcher
+</div>
+<div class="field">
+<a name="sun.misc.Launcher:loader:java.lang.ClassLoader" href="#">
+
+</a>
+<span class="field_signature">
+private  
+<a href="../../java/lang/ClassLoader.html">
+java.lang.ClassLoader
+</a>
+ loader;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Launcher:bootClassPath:java.lang.String" href="#">
+
+</a>
+<span class="field_signature">
+private static  
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ bootClassPath;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Launcher:launcher:sun.misc.Launcher" href="#">
+
+</a>
+<span class="field_signature">
+private static  
+<a href="Launcher.html">
+sun.misc.Launcher
+</a>
+ launcher;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Launcher:fileHandler:java.net.URLStreamHandler" href="#">
+
+</a>
+<span class="field_signature">
+private static  
+<a href="../../java/net/URLStreamHandler.html">
+java.net.URLStreamHandler
+</a>
+ fileHandler;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Launcher:factory:java.net.URLStreamHandlerFactory" href="#">
+
+</a>
+<span class="field_signature">
+private static  
+<a href="../../java/net/URLStreamHandlerFactory.html">
+java.net.URLStreamHandlerFactory
+</a>
+ factory;
+</span>
+</div>
+<div class="method">
+<a name="sun.misc.Launcher:&lt;clinit&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<span>
+clinit
+</span>
+{};
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../sun/misc/Launcher$Factory.html">
+sun.misc.Launcher$Factory
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../sun/misc/Launcher$Factory.html">
+sun.misc.Launcher$Factory
+</a>
+</span>
+<span>
+(null)
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="Launcher.html">
+sun.misc.Launcher
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+<a href="#sun.misc.Launcher:factory:java.net.URLStreamHandlerFactory">
+sun.misc.Launcher.factory
+</a>
+</span>
+<span>
+:= $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="Launcher.html">
+sun.misc.Launcher
+</a>
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="Launcher.html">
+sun.misc.Launcher
+</a>
+</span>
+<span>
+()
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="Launcher.html">
+sun.misc.Launcher
+</a>
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+<a href="#sun.misc.Launcher:launcher:sun.misc.Launcher">
+sun.misc.Launcher.launcher
+</a>
+</span>
+<span>
+:= $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/lang/System.html">
+java.lang.System
+</a>
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String getProperty(java.lang.String)">
+java.lang.System.getProperty
+</span>
+</span>
+<span>
+(&apos;sun.boot.class.path&apos;)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/System.html#java.lang.System:getProperty:java.lang.Stringjava.lang.String" title="java.lang.String getProperty(java.lang.String)">
+java.lang.System.getProperty
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="Launcher.html">
+sun.misc.Launcher
+</a>
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+<a href="#sun.misc.Launcher:bootClassPath:java.lang.String">
+sun.misc.Launcher.bootClassPath
+</a>
+</span>
+<span>
+:= $irvar0:java.lang.String
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Launcher:access$400:java.lang.String" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+access$400
+</span>
+(
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/misc/Launcher$BootClassPathHolder.html#sun.misc.Launcher$BootClassPathHolder:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+sun.misc.Launcher$BootClassPathHolder.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="Launcher.html">
+sun.misc.Launcher
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+return sun.misc.Launcher.bootClassPath
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Launcher:getFileURL:java.io.Filejava.net.URL" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<a href="../../java/net/URL.html">
+java.net.URL
+</a>
+ 
+<span>
+getFileURL
+</span>
+(
+<a href="../../java/io/File.html">
+java.io.File
+</a>
+ $bcvar0
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.io.File getCanonicalFile()">
+$bcvar0:java.lang.Object.getCanonicalFile
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$bcvar0 := $irvar0:java.io.File
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+goto 5
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+$bcvar1 := CatchVar8:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+sun.net.www.ParseUtil
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.net.URL fileToEncodedURL(java.io.File)">
+sun.net.www.ParseUtil.fileToEncodedURL
+</span>
+</span>
+<span>
+($bcvar0:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+return $irvar0:java.net.URL
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+$bcvar1 := CatchVar14:java.lang.Object
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/lang/InternalError.html">
+java.lang.InternalError
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../java/lang/InternalError.html">
+java.lang.InternalError
+</a>
+</span>
+<span>
+()
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+throw $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 0; try end: 3: catch start: 4; catched type: java.io.IOException.
+</span>
+</li>
+<li>
+<span>
+try start: 5; try end: 7: catch start: 8; catched type: java.net.MalformedURLException.
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
+<a name="sun.misc.Launcher:getClassLoader:java.lang.ClassLoader" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/lang/ClassLoader.html">
+java.lang.ClassLoader
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getClassLoader
+</span>
+(
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/ClassLoader.html#java.lang.ClassLoader:initSystemClassLoader:void" title="void initSystemClassLoader()">
+java.lang.ClassLoader.initSystemClassLoader()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+return this:java.lang.Object.loader
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Launcher:access$200:java.lang.Stringjava.io.File.-" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<a href="../../java/io/File.html">
+java.io.File
+</a>
+[]
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+access$200
+</span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ $bcvar0
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/misc/Launcher$AppClassLoader.html#sun.misc.Launcher$AppClassLoader:getAppClassLoader:java.lang.ClassLoaderjava.lang.ClassLoader" title="java.lang.ClassLoader getAppClassLoader(java.lang.ClassLoader)">
+sun.misc.Launcher$AppClassLoader.getAppClassLoader(java.lang.ClassLoader)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="Launcher.html">
+sun.misc.Launcher
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.io.File[] getClassPath(java.lang.String)">
+sun.misc.Launcher.getClassPath
+</span>
+</span>
+<span>
+($bcvar0:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Launcher:getClassPath:java.lang.Stringjava.io.File.-" title="java.io.File[] getClassPath(java.lang.String)">
+sun.misc.Launcher.getClassPath
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return $irvar0:[java.io.File
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Launcher:access$100:java.net.URLStreamHandlerFactory" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<a href="../../java/net/URLStreamHandlerFactory.html">
+java.net.URLStreamHandlerFactory
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+access$100
+</span>
+(
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/misc/Launcher$BootClassPathHolder.html#sun.misc.Launcher$BootClassPathHolder:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+sun.misc.Launcher$BootClassPathHolder.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="Launcher.html">
+sun.misc.Launcher
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+return sun.misc.Launcher.factory
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Launcher:getBootstrapClassPath:sun.misc.URLClassPath" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="../../sun/misc/URLClassPath.html">
+sun.misc.URLClassPath
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getBootstrapClassPath
+</span>
+(
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/ClassLoader.html#java.lang.ClassLoader:getBootstrapClassPath:sun.misc.URLClassPath" title="sun.misc.URLClassPath getBootstrapClassPath()">
+java.lang.ClassLoader.getBootstrapClassPath()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../sun/misc/Launcher$BootClassPathHolder.html">
+sun.misc.Launcher$BootClassPathHolder
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+return sun.misc.Launcher$BootClassPathHolder.bcp
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Launcher:getLauncher:sun.misc.Launcher" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="Launcher.html">
+sun.misc.Launcher
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getLauncher
+</span>
+(
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/ClassLoader.html#java.lang.ClassLoader:initSystemClassLoader:void" title="void initSystemClassLoader()">
+java.lang.ClassLoader.initSystemClassLoader()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="Launcher.html">
+sun.misc.Launcher
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+return sun.misc.Launcher.launcher
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Launcher:&lt;init&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<span class="methodname clickable" onclick="showInfoList(this)">
+Launcher
+</span>
+(
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Launcher:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+sun.misc.Launcher.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Object.html#java.lang.Object:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../sun/misc/Launcher$ExtClassLoader.html">
+sun.misc.Launcher$ExtClassLoader
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$bcvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="sun.misc.Launcher$ExtClassLoader getExtClassLoader()">
+sun.misc.Launcher$ExtClassLoader.getExtClassLoader
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/misc/Launcher$ExtClassLoader.html#sun.misc.Launcher$ExtClassLoader:getExtClassLoader:sun.misc.Launcher$ExtClassLoader" title="sun.misc.Launcher$ExtClassLoader getExtClassLoader()">
+sun.misc.Launcher$ExtClassLoader.getExtClassLoader
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+nop
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+goto 11
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+$bcvar2 := CatchVar11:java.lang.Object
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/lang/InternalError.html">
+java.lang.InternalError
+</a>
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../java/lang/InternalError.html">
+java.lang.InternalError
+</a>
+</span>
+<span>
+(&apos;Could not create extension class loader&apos;)
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+throw $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../sun/misc/Launcher$AppClassLoader.html">
+sun.misc.Launcher$AppClassLoader
+</a>
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.ClassLoader getAppClassLoader(java.lang.ClassLoader)">
+sun.misc.Launcher$AppClassLoader.getAppClassLoader
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/misc/Launcher$AppClassLoader.html#sun.misc.Launcher$AppClassLoader:getAppClassLoader:java.lang.ClassLoaderjava.lang.ClassLoader" title="java.lang.ClassLoader getAppClassLoader(java.lang.ClassLoader)">
+sun.misc.Launcher$AppClassLoader.getAppClassLoader
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+<a href="#sun.misc.Launcher:loader:java.lang.ClassLoader">
+this:java.lang.Object.loader
+</a>
+</span>
+<span>
+:= $irvar0:java.lang.ClassLoader
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+goto 21
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+$bcvar2 := CatchVar33:java.lang.Object
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/lang/InternalError.html">
+java.lang.InternalError
+</a>
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../java/lang/InternalError.html">
+java.lang.InternalError
+</a>
+</span>
+<span>
+(&apos;Could not create application class loader&apos;)
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+throw $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/lang/Thread.html">
+java.lang.Thread
+</a>
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Thread currentThread()">
+java.lang.Thread.currentThread
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Thread.html#java.lang.Thread:currentThread:java.lang.Thread" title="java.lang.Thread currentThread()">
+java.lang.Thread.currentThread
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Thread
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void setContextClassLoader(java.lang.ClassLoader)">
+$irvar0:java.lang.Thread.setContextClassLoader
+</span>
+</span>
+<span>
+(this:java.lang.Object.loader)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Thread.html#java.lang.Thread:setContextClassLoader:java.lang.ClassLoadervoid" title="void setContextClassLoader(java.lang.ClassLoader)">
+java.lang.Thread.setContextClassLoader
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/lang/System.html">
+java.lang.System
+</a>
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+$bcvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String getProperty(java.lang.String)">
+java.lang.System.getProperty
+</span>
+</span>
+<span>
+(&apos;java.security.manager&apos;)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/System.html#java.lang.System:getProperty:java.lang.Stringjava.lang.String" title="java.lang.String getProperty(java.lang.String)">
+java.lang.System.getProperty
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+if ($bcvar2:java.lang.Object == null) goto 70
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+$bcvar3 := null
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+notnull &apos;&apos;
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool equals(java.lang.Object)">
+&apos;&apos;.equals
+</span>
+</span>
+<span>
+($bcvar2:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/String.html#java.lang.String:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.lang.String.equals
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+if ($irvar0:Z != 0) goto 36
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+notnull &apos;default&apos;
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool equals(java.lang.Object)">
+&apos;default&apos;.equals
+</span>
+</span>
+<span>
+($bcvar2:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/String.html#java.lang.String:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.lang.String.equals
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+if ($irvar0:Z == 0) goto 39
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/lang/SecurityManager.html">
+java.lang.SecurityManager
+</a>
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+$bcvar3 := new
+</span>
+<span>
+<a href="../../java/lang/SecurityManager.html">
+java.lang.SecurityManager
+</a>
+</span>
+<span>
+()
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+goto 54
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.loader
+</span>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Class loadClass(java.lang.String)">
+this:java.lang.Object.loader.loadClass
+</span>
+</span>
+<span>
+($bcvar2:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Class
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object newInstance()">
+$irvar0:java.lang.Class.newInstance
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Class.html#java.lang.Class:newInstance:java.lang.Object" title="java.lang.Object newInstance()">
+java.lang.Class.newInstance
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+checkcast $irvar1:java.lang.Object:
+</span>
+<span>
+<a href="../../java/lang/SecurityManager.html">
+java.lang.SecurityManager
+</a>
+</span>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span>
+$bcvar3 := (java.lang.SecurityManager) $irvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+goto 54
+</span>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+$bcvar4 := CatchVar113:java.lang.Object
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+goto 54
+</span>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+$bcvar4 := CatchVar118:java.lang.Object
+</span>
+</div>
+</li>
+<li value="50">
+<div class="instruction">
+<span>
+goto 54
+</span>
+</div>
+</li>
+<li value="51">
+<div class="instruction">
+<span>
+$bcvar4 := CatchVar123:java.lang.Object
+</span>
+</div>
+</li>
+<li value="52">
+<div class="instruction">
+<span>
+goto 54
+</span>
+</div>
+</li>
+<li value="53">
+<div class="instruction">
+<span>
+$bcvar4 := CatchVar128:java.lang.Object
+</span>
+</div>
+</li>
+<li value="54">
+<div class="instruction">
+<span>
+if ($bcvar3:java.lang.Object == null) goto 58
+</span>
+</div>
+</li>
+<li value="55">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/lang/System.html">
+java.lang.System
+</a>
+</span>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void setSecurityManager(java.lang.SecurityManager)">
+java.lang.System.setSecurityManager
+</span>
+</span>
+<span>
+($bcvar3:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/System.html#java.lang.System:setSecurityManager:java.lang.SecurityManagervoid" title="void setSecurityManager(java.lang.SecurityManager)">
+java.lang.System.setSecurityManager
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="57">
+<div class="instruction">
+<span>
+goto 70
+</span>
+</div>
+</li>
+<li value="58">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/lang/InternalError.html">
+java.lang.InternalError
+</a>
+</span>
+</div>
+</li>
+<li value="59">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+</div>
+</li>
+<li value="60">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+<span>
+()
+</span>
+</div>
+</li>
+<li value="61">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="62">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+$irvar0:java.lang.Object.append
+</span>
+</span>
+<span>
+(&apos;Could not create SecurityManager: &apos;)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="63">
+<div class="instruction">
+<span>
+notnull $irvar1:java.lang.StringBuilder
+</span>
+</div>
+</li>
+<li value="64">
+<div class="instruction">
+<span>
+$irvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+$irvar1:java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+($bcvar2:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="65">
+<div class="instruction">
+<span>
+notnull $irvar2:java.lang.StringBuilder
+</span>
+</div>
+</li>
+<li value="66">
+<div class="instruction">
+<span>
+$irvar3 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toString()">
+$irvar2:java.lang.StringBuilder.toString
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:toString:java.lang.String" title="java.lang.String toString()">
+java.lang.StringBuilder.toString
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="67">
+<div class="instruction">
+<span>
+$irvar4 := new
+</span>
+<span>
+<a href="../../java/lang/InternalError.html">
+java.lang.InternalError
+</a>
+</span>
+<span>
+($irvar3:java.lang.String)
+</span>
+</div>
+</li>
+<li value="68">
+<div class="instruction">
+<span>
+notnull $irvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="69">
+<div class="instruction">
+<span>
+throw $irvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="70">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 2; try end: 5: catch start: 6; catched type: java.io.IOException.
+</span>
+</li>
+<li>
+<span>
+try start: 11; try end: 15: catch start: 16; catched type: java.io.IOException.
+</span>
+</li>
+<li>
+<span>
+try start: 39; try end: 46: catch start: 47; catched type: java.lang.IllegalAccessException.
+</span>
+</li>
+<li>
+<span>
+try start: 39; try end: 46: catch start: 49; catched type: java.lang.InstantiationException.
+</span>
+</li>
+<li>
+<span>
+try start: 39; try end: 46: catch start: 51; catched type: java.lang.ClassNotFoundException.
+</span>
+</li>
+<li>
+<span>
+try start: 39; try end: 46: catch start: 53; catched type: java.lang.ClassCastException.
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
+<a name="sun.misc.Launcher:pathToURLs:java.io.File.-java.net.URL.-" href="#">
+
+</a>
+<div class="method_signature">
+private static 
+<a href="../../java/net/URL.html">
+java.net.URL
+</a>
+[]
+ 
+<span>
+pathToURLs
+</span>
+(
+<a href="../../java/io/File.html">
+java.io.File
+</a>
+[]
+ $bcvar0
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+checknegsize $bcvar0:java.lang.Object.length
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$bcvar1 := new
+</span>
+<span>
+<a href="../../java/net/URL.html">
+java.net.URL
+</a>
+</span>
+<span>
+[$bcvar0:java.lang.Object.length]
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$bcvar2 := 0
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+notnull $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+if ($bcvar2:I &gt;= $bcvar0:java.lang.Object.length) goto 17
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+notnull $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+checkbound $bcvar0:java.lang.Object[$bcvar2:I]
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+$irvar0 := $bcvar0:java.lang.Object[$bcvar2:I]:java.lang.Object
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="Launcher.html">
+sun.misc.Launcher
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.net.URL getFileURL(java.io.File)">
+sun.misc.Launcher.getFileURL
+</span>
+</span>
+<span>
+($irvar0:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+checkbound $bcvar1:java.lang.Object[$bcvar2:I]
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+checkstore $bcvar1:java.lang.Object[] &lt;- $irvar1:java.net.URL
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+$bcvar1:java.lang.Object[$bcvar2:I] := $irvar1:java.net.URL
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+$bcvar2 := $bcvar2:I+1
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+return $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Launcher:access$300:java.io.File.-java.net.URL.-" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<a href="../../java/net/URL.html">
+java.net.URL
+</a>
+[]
+ 
+<span>
+access$300
+</span>
+(
+<a href="../../java/io/File.html">
+java.io.File
+</a>
+[]
+ $bcvar0
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="Launcher.html">
+sun.misc.Launcher
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.net.URL[] pathToURLs(java.io.File[])">
+sun.misc.Launcher.pathToURLs
+</span>
+</span>
+<span>
+($bcvar0:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return $irvar0:[java.net.URL
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Launcher:getClassPath:java.lang.Stringjava.io.File.-" href="#">
+
+</a>
+<div class="method_signature">
+private static 
+<a href="../../java/io/File.html">
+java.io.File
+</a>
+[]
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getClassPath
+</span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ $bcvar0
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Launcher:access$200:java.lang.Stringjava.io.File.-" title="java.io.File[] access$200(java.lang.String)">
+sun.misc.Launcher.access$200(java.lang.String)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+if ($bcvar0:java.lang.Object == null) goto 73
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$bcvar2 := 0
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$bcvar3 := 1
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$bcvar4 := 0
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+$bcvar5 := 0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/io/File.html">
+java.io.File
+</a>
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+notnull $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int indexOf(java.lang.String, int)">
+$bcvar0:java.lang.Object.indexOf
+</span>
+</span>
+<span>
+(java.io.File.pathSeparator, $bcvar5:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/String.html#java.lang.String:indexOf:java.lang.StringII" title="int indexOf(java.lang.String, int)">
+java.lang.String.indexOf
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+$bcvar4 := $irvar0:I
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+if ($irvar0:I == -1) goto 13
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+$bcvar3 := $bcvar3:I+1
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+$bcvar5 := $bcvar4:I+1
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+goto 5
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+checknegsize $bcvar3:I
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+$bcvar1 := new
+</span>
+<span>
+<a href="../../java/io/File.html">
+java.io.File
+</a>
+</span>
+<span>
+[$bcvar3:I]
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+$bcvar4 := 0
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+$bcvar5 := 0
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/io/File.html">
+java.io.File
+</a>
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+notnull $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int indexOf(java.lang.String, int)">
+$bcvar0:java.lang.Object.indexOf
+</span>
+</span>
+<span>
+(java.io.File.pathSeparator, $bcvar5:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/String.html#java.lang.String:indexOf:java.lang.StringII" title="int indexOf(java.lang.String, int)">
+java.lang.String.indexOf
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+$bcvar4 := $irvar0:I
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+if ($irvar0:I == -1) goto 44
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+if (($bcvar4:I-$bcvar5:I) &lt;= 0) goto 34
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+$irvar0 := $bcvar2:I
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+$bcvar2 := $bcvar2:I+1
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/io/File.html">
+java.io.File
+</a>
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+notnull $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String substring(int, int)">
+$bcvar0:java.lang.Object.substring
+</span>
+</span>
+<span>
+($bcvar5:I, $bcvar4:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/String.html#java.lang.String:substring:IIjava.lang.String" title="java.lang.String substring(int, int)">
+java.lang.String.substring
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+$irvar2 := new
+</span>
+<span>
+<a href="../../java/io/File.html">
+java.io.File
+</a>
+</span>
+<span>
+($irvar1:java.lang.String)
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+checkbound $bcvar1:java.lang.Object[$irvar0:I]
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+checkstore $bcvar1:java.lang.Object[] &lt;- $irvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+$bcvar1:java.lang.Object[$irvar0:I] := $irvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+goto 42
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+$irvar0 := $bcvar2:I
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+$bcvar2 := $bcvar2:I+1
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/io/File.html">
+java.io.File
+</a>
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+$irvar1 := new
+</span>
+<span>
+<a href="../../java/io/File.html">
+java.io.File
+</a>
+</span>
+<span>
+(&apos;.&apos;)
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+checkbound $bcvar1:java.lang.Object[$irvar0:I]
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+checkstore $bcvar1:java.lang.Object[] &lt;- $irvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+$bcvar1:java.lang.Object[$irvar0:I] := $irvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+$bcvar5 := $bcvar4:I+1
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+goto 17
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+notnull $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int length()">
+$bcvar0:java.lang.Object.length
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/String.html#java.lang.String:length:I" title="int length()">
+java.lang.String.length
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+if ($bcvar5:I &gt;= $irvar0:I) goto 58
+</span>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+$irvar0 := $bcvar2:I
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+$bcvar2 := $bcvar2:I+1
+</span>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/io/File.html">
+java.io.File
+</a>
+</span>
+</div>
+</li>
+<li value="50">
+<div class="instruction">
+<span>
+notnull $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="51">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String substring(int)">
+$bcvar0:java.lang.Object.substring
+</span>
+</span>
+<span>
+($bcvar5:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/String.html#java.lang.String:substring:Ijava.lang.String" title="java.lang.String substring(int)">
+java.lang.String.substring
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="52">
+<div class="instruction">
+<span>
+$irvar2 := new
+</span>
+<span>
+<a href="../../java/io/File.html">
+java.io.File
+</a>
+</span>
+<span>
+($irvar1:java.lang.String)
+</span>
+</div>
+</li>
+<li value="53">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="54">
+<div class="instruction">
+<span>
+checkbound $bcvar1:java.lang.Object[$irvar0:I]
+</span>
+</div>
+</li>
+<li value="55">
+<div class="instruction">
+<span>
+checkstore $bcvar1:java.lang.Object[] &lt;- $irvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+$bcvar1:java.lang.Object[$irvar0:I] := $irvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="57">
+<div class="instruction">
+<span>
+goto 66
+</span>
+</div>
+</li>
+<li value="58">
+<div class="instruction">
+<span>
+$irvar0 := $bcvar2:I
+</span>
+</div>
+</li>
+<li value="59">
+<div class="instruction">
+<span>
+$bcvar2 := $bcvar2:I+1
+</span>
+</div>
+</li>
+<li value="60">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/io/File.html">
+java.io.File
+</a>
+</span>
+</div>
+</li>
+<li value="61">
+<div class="instruction">
+<span>
+$irvar1 := new
+</span>
+<span>
+<a href="../../java/io/File.html">
+java.io.File
+</a>
+</span>
+<span>
+(&apos;.&apos;)
+</span>
+</div>
+</li>
+<li value="62">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="63">
+<div class="instruction">
+<span>
+checkbound $bcvar1:java.lang.Object[$irvar0:I]
+</span>
+</div>
+</li>
+<li value="64">
+<div class="instruction">
+<span>
+checkstore $bcvar1:java.lang.Object[] &lt;- $irvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="65">
+<div class="instruction">
+<span>
+$bcvar1:java.lang.Object[$irvar0:I] := $irvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="66">
+<div class="instruction">
+<span>
+if ($bcvar2:I == $bcvar3:I) goto 72
+</span>
+</div>
+</li>
+<li value="67">
+<div class="instruction">
+<span>
+checknegsize $bcvar2:I
+</span>
+</div>
+</li>
+<li value="68">
+<div class="instruction">
+<span>
+$bcvar6 := new
+</span>
+<span>
+<a href="../../java/io/File.html">
+java.io.File
+</a>
+</span>
+<span>
+[$bcvar2:I]
+</span>
+</div>
+</li>
+<li value="69">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/lang/System.html">
+java.lang.System
+</a>
+</span>
+</div>
+</li>
+<li value="70">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void arraycopy(java.lang.Object, int, java.lang.Object, int, int)">
+java.lang.System.arraycopy
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object, 0, $bcvar6:java.lang.Object, 0, $bcvar2:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/System.html#java.lang.System:arraycopy:java.lang.ObjectIjava.lang.ObjectIIvoid" title="void arraycopy(java.lang.Object, int, java.lang.Object, int, int)">
+java.lang.System.arraycopy
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="71">
+<div class="instruction">
+<span>
+$bcvar1 := $bcvar6:java.lang.Object
+</span>
+</div>
+</li>
+<li value="72">
+<div class="instruction">
+<span>
+goto 76
+</span>
+</div>
+</li>
+<li value="73">
+<div class="instruction">
+<span>
+checknegsize 0
+</span>
+</div>
+</li>
+<li value="74">
+<div class="instruction">
+<span>
+$bcvar1 := new
+</span>
+<span>
+<a href="../../java/io/File.html">
+java.io.File
+</a>
+</span>
+<span>
+[0]
+</span>
+</div>
+</li>
+<li value="75">
+<div class="instruction">
+<span>
+nop
+</span>
+</div>
+</li>
+<li value="76">
+<div class="instruction">
+<span>
+return $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+</div>
+</body>
+</html>

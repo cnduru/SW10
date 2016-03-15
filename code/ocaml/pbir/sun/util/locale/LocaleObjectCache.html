@@ -1,0 +1,1246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>
+sun.util.locale.LocaleObjectCache
+</title>
+<link rel="StyleSheet" href="../../../style.css" type="text/css" media="all" />
+<script type="text/javascript" src="../../../actions.js">
+</script>
+</head>
+<body>
+<div class="class">
+<a name="sun.util.locale.LocaleObjectCache" href="#">
+
+</a>
+<div class="classname">
+Class sun.util.locale.LocaleObjectCache
+</div>
+<div class="field">
+<a name="sun.util.locale.LocaleObjectCache:queue:java.lang.ref.ReferenceQueue" href="#">
+
+</a>
+<span class="field_signature">
+private  
+<a href="../../../java/lang/ref/ReferenceQueue.html">
+java.lang.ref.ReferenceQueue
+</a>
+ queue;
+</span>
+</div>
+<div class="field">
+<a name="sun.util.locale.LocaleObjectCache:map:java.util.concurrent.ConcurrentMap" href="#">
+
+</a>
+<span class="field_signature">
+private  
+<a href="../../../java/util/concurrent/ConcurrentMap.html">
+java.util.concurrent.ConcurrentMap
+</a>
+ map;
+</span>
+</div>
+<div class="method">
+<a name="sun.util.locale.LocaleObjectCache:&lt;init&gt;:IFIvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<span class="methodname clickable" onclick="showInfoList(this)">
+LocaleObjectCache
+</span>
+(
+int
+ $bcvar1
+, 
+float
+ $bcvar2
+, 
+int
+ $bcvar3
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.util.locale.LocaleObjectCache:&lt;init&gt;:void" title="void &lt;init&gt;()">
+sun.util.locale.LocaleObjectCache.&lt;init&gt;()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Object.html#java.lang.Object:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/ref/ReferenceQueue.html">
+java.lang.ref.ReferenceQueue
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../java/lang/ref/ReferenceQueue.html">
+java.lang.ref.ReferenceQueue
+</a>
+</span>
+<span>
+()
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+<a href="#sun.util.locale.LocaleObjectCache:queue:java.lang.ref.ReferenceQueue">
+this:java.lang.Object.queue
+</a>
+</span>
+<span>
+:= $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html">
+java.util.concurrent.ConcurrentHashMap
+</a>
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html">
+java.util.concurrent.ConcurrentHashMap
+</a>
+</span>
+<span>
+($bcvar1:I, $bcvar2:F, $bcvar3:I)
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+<a href="#sun.util.locale.LocaleObjectCache:map:java.util.concurrent.ConcurrentMap">
+this:java.lang.Object.map
+</a>
+</span>
+<span>
+:= $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.util.locale.LocaleObjectCache:put:java.lang.Objectjava.lang.Objectjava.lang.Object" href="#">
+
+</a>
+<div class="method_signature">
+protected 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+put
+</span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ $bcvar1
+, 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ $bcvar2
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/util/locale/BaseLocale.html#sun.util.locale.BaseLocale:createInstance:java.lang.Stringjava.lang.Stringsun.util.locale.BaseLocale" title="sun.util.locale.BaseLocale createInstance(java.lang.String, java.lang.String)">
+sun.util.locale.BaseLocale.createInstance(java.lang.String, java.lang.String)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../sun/util/locale/LocaleObjectCache$CacheEntry.html">
+sun.util.locale.LocaleObjectCache$CacheEntry
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$bcvar3 := new
+</span>
+<span>
+<a href="../../../sun/util/locale/LocaleObjectCache$CacheEntry.html">
+sun.util.locale.LocaleObjectCache$CacheEntry
+</a>
+</span>
+<span>
+($bcvar1:java.lang.Object, $bcvar2:java.lang.Object, this:java.lang.Object.queue)
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.map
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+this:java.lang.Object.map.put
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object, $bcvar3:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap.put
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+checkcast $irvar0:java.lang.Object:
+</span>
+<span>
+<a href="../../../sun/util/locale/LocaleObjectCache$CacheEntry.html">
+sun.util.locale.LocaleObjectCache$CacheEntry
+</a>
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+$bcvar4 := (sun.util.locale.LocaleObjectCache$CacheEntry) $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+if ($bcvar4:java.lang.Object != null) goto 11
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+$T0_44 := null
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+goto 14
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+notnull $bcvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object get()">
+$bcvar4:java.lang.Object.get
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/ref/SoftReference.html#java.lang.ref.SoftReference:get:java.lang.Object" title="java.lang.Object get()">
+java.lang.ref.SoftReference.get
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+$T0_44 := $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+return $T0_44:java.lang.Object
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.util.locale.LocaleObjectCache:normalizeKey:java.lang.Objectjava.lang.Object" href="#">
+
+</a>
+<div class="method_signature">
+protected 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+normalizeKey
+</span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ $bcvar1
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.util.locale.LocaleObjectCache:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
+sun.util.locale.LocaleObjectCache.get(java.lang.Object)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+return $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.util.locale.LocaleObjectCache:&lt;init&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<span class="methodname clickable" onclick="showInfoList(this)">
+LocaleObjectCache
+</span>
+(
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/Locale$Cache.html#java.util.Locale$Cache:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.util.Locale$Cache.&lt;init&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/locale/BaseLocale$Cache.html#sun.util.locale.BaseLocale$Cache:&lt;init&gt;:void" title="void &lt;init&gt;()">
+sun.util.locale.BaseLocale$Cache.&lt;init&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/ResourceBundle$Control$CandidateListCache.html#java.util.ResourceBundle$Control$CandidateListCache:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.util.ResourceBundle$Control$CandidateListCache.&lt;init&gt;()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(int, float, int)">
+sun.util.locale.LocaleObjectCache.&lt;init&gt;
+</span>
+</span>
+<span>
+(16, 0.750000, 16)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.util.locale.LocaleObjectCache:&lt;init&gt;:IFIvoid" title="void &lt;init&gt;(int, float, int)">
+sun.util.locale.LocaleObjectCache.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.util.locale.LocaleObjectCache:cleanStaleEntries:void" href="#">
+
+</a>
+<div class="method_signature">
+private 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+cleanStaleEntries
+</span>
+(
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.util.locale.LocaleObjectCache:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
+sun.util.locale.LocaleObjectCache.get(java.lang.Object)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.queue
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.ref.Reference poll()">
+this:java.lang.Object.queue.poll
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/ref/ReferenceQueue.html#java.lang.ref.ReferenceQueue:poll:java.lang.ref.Reference" title="java.lang.ref.Reference poll()">
+java.lang.ref.ReferenceQueue.poll
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+checkcast $irvar0:java.lang.ref.Reference:
+</span>
+<span>
+<a href="../../../sun/util/locale/LocaleObjectCache$CacheEntry.html">
+sun.util.locale.LocaleObjectCache$CacheEntry
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+$bcvar1 := (sun.util.locale.LocaleObjectCache$CacheEntry) $irvar0:java.lang.ref.Reference
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+if ((sun.util.locale.LocaleObjectCache$CacheEntry) $irvar0:java.lang.ref.Reference == null) goto 13
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+$irvar1 := this:java.lang.Object.map
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object getKey()">
+$bcvar1:java.lang.Object.getKey
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/util/locale/LocaleObjectCache$CacheEntry.html#sun.util.locale.LocaleObjectCache$CacheEntry:getKey:java.lang.Object" title="java.lang.Object getKey()">
+sun.util.locale.LocaleObjectCache$CacheEntry.getKey
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+notnull $irvar1:java.util.concurrent.ConcurrentMap
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+$irvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object remove(java.lang.Object)">
+$irvar1:java.util.concurrent.ConcurrentMap.remove
+</span>
+</span>
+<span>
+($irvar0:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:remove:java.lang.Objectjava.lang.Object" title="java.lang.Object remove(java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap.remove
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+goto 0
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.util.locale.LocaleObjectCache:createObject:java.lang.Objectjava.lang.Object" href="#">
+
+</a>
+<div class="method_signature">
+protected abstract 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 
+<span>
+createObject
+</span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.util.locale.LocaleObjectCache:get:java.lang.Objectjava.lang.Object" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+get
+</span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ $bcvar1
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/util/locale/BaseLocale.html#sun.util.locale.BaseLocale:getInstance:java.lang.Stringjava.lang.Stringjava.lang.Stringjava.lang.Stringsun.util.locale.BaseLocale" title="sun.util.locale.BaseLocale getInstance(java.lang.String, java.lang.String, java.lang.String, java.lang.String)">
+sun.util.locale.BaseLocale.getInstance(java.lang.String, java.lang.String, java.lang.String, java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/ResourceBundle$Control.html#java.util.ResourceBundle$Control:getCandidateLocales:java.lang.Stringjava.util.Localejava.util.List" title="java.util.List getCandidateLocales(java.lang.String, java.util.Locale)">
+java.util.ResourceBundle$Control.getCandidateLocales(java.lang.String, java.util.Locale)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Locale.html#java.util.Locale:getInstance:sun.util.locale.BaseLocalesun.util.locale.LocaleExtensionsjava.util.Locale" title="java.util.Locale getInstance(sun.util.locale.BaseLocale, sun.util.locale.LocaleExtensions)">
+java.util.Locale.getInstance(sun.util.locale.BaseLocale, sun.util.locale.LocaleExtensions)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+$bcvar2 := null
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void cleanStaleEntries()">
+sun.util.locale.LocaleObjectCache.cleanStaleEntries
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.util.locale.LocaleObjectCache:cleanStaleEntries:void" title="void cleanStaleEntries()">
+sun.util.locale.LocaleObjectCache.cleanStaleEntries
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.map
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object get(java.lang.Object)">
+this:java.lang.Object.map.get
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap.get
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+checkcast $irvar0:java.lang.Object:
+</span>
+<span>
+<a href="../../../sun/util/locale/LocaleObjectCache$CacheEntry.html">
+sun.util.locale.LocaleObjectCache$CacheEntry
+</a>
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+$bcvar3 := (sun.util.locale.LocaleObjectCache$CacheEntry) $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+if ($bcvar3:java.lang.Object == null) goto 12
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+notnull $bcvar3:java.lang.Object
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+$bcvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object get()">
+$bcvar3:java.lang.Object.get
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/ref/SoftReference.html#java.lang.ref.SoftReference:get:java.lang.Object" title="java.lang.Object get()">
+java.lang.ref.SoftReference.get
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+nop
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+if ($bcvar2:java.lang.Object != null) goto 39
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+$bcvar4 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object createObject(java.lang.Object)">
+this:java.lang.Object.createObject
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/ResourceBundle$Control$CandidateListCache.html#java.util.ResourceBundle$Control$CandidateListCache:createObject:java.lang.Objectjava.lang.Object" title="java.lang.Object createObject(java.lang.Object)">
+java.util.ResourceBundle$Control$CandidateListCache.createObject
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Locale$Cache.html#java.util.Locale$Cache:createObject:java.lang.Objectjava.lang.Object" title="java.lang.Object createObject(java.lang.Object)">
+java.util.Locale$Cache.createObject
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/locale/BaseLocale$Cache.html#sun.util.locale.BaseLocale$Cache:createObject:java.lang.Objectjava.lang.Object" title="java.lang.Object createObject(java.lang.Object)">
+sun.util.locale.BaseLocale$Cache.createObject
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object normalizeKey(java.lang.Object)">
+this:java.lang.Object.normalizeKey
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/util/locale/BaseLocale$Cache.html#sun.util.locale.BaseLocale$Cache:normalizeKey:java.lang.Objectjava.lang.Object" title="java.lang.Object normalizeKey(java.lang.Object)">
+sun.util.locale.BaseLocale$Cache.normalizeKey
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#sun.util.locale.LocaleObjectCache:normalizeKey:java.lang.Objectjava.lang.Object" title="java.lang.Object normalizeKey(java.lang.Object)">
+sun.util.locale.LocaleObjectCache.normalizeKey
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+$bcvar1 := $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+if ($bcvar1:java.lang.Object == null) goto 20
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+if ($bcvar4:java.lang.Object != null) goto 21
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+return null
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../sun/util/locale/LocaleObjectCache$CacheEntry.html">
+sun.util.locale.LocaleObjectCache$CacheEntry
+</a>
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+$bcvar5 := new
+</span>
+<span>
+<a href="../../../sun/util/locale/LocaleObjectCache$CacheEntry.html">
+sun.util.locale.LocaleObjectCache$CacheEntry
+</a>
+</span>
+<span>
+($bcvar1:java.lang.Object, $bcvar4:java.lang.Object, this:java.lang.Object.queue)
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.map
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object putIfAbsent(java.lang.Object, java.lang.Object)">
+this:java.lang.Object.map.putIfAbsent
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object, $bcvar5:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:putIfAbsent:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object putIfAbsent(java.lang.Object, java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap.putIfAbsent
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+checkcast $irvar0:java.lang.Object:
+</span>
+<span>
+<a href="../../../sun/util/locale/LocaleObjectCache$CacheEntry.html">
+sun.util.locale.LocaleObjectCache$CacheEntry
+</a>
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+$bcvar3 := (sun.util.locale.LocaleObjectCache$CacheEntry) $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+if ($bcvar3:java.lang.Object != null) goto 32
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+$bcvar2 := $bcvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+goto 39
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+notnull $bcvar3:java.lang.Object
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+$bcvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object get()">
+$bcvar3:java.lang.Object.get
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/ref/SoftReference.html#java.lang.ref.SoftReference:get:java.lang.Object" title="java.lang.Object get()">
+java.lang.ref.SoftReference.get
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+if ($bcvar2:java.lang.Object != null) goto 39
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.map
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+this:java.lang.Object.map.put
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object, $bcvar5:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap.put
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+$bcvar2 := $bcvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+return $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+</div>
+</body>
+</html>

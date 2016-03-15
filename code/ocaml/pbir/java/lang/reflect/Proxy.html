@@ -1,0 +1,3540 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>
+java.lang.reflect.Proxy
+</title>
+<link rel="StyleSheet" href="../../../style.css" type="text/css" media="all" />
+<script type="text/javascript" src="../../../actions.js">
+</script>
+</head>
+<body>
+<div class="class">
+<a name="java.lang.reflect.Proxy" href="#">
+
+</a>
+<div class="classname">
+Class java.lang.reflect.Proxy
+</div>
+<div class="field">
+<a name="java.lang.reflect.Proxy:h:java.lang.reflect.InvocationHandler" href="#">
+
+</a>
+<span class="field_signature">
+protected  
+<a href="../../../java/lang/reflect/InvocationHandler.html">
+java.lang.reflect.InvocationHandler
+</a>
+ h;
+</span>
+</div>
+<div class="field">
+<a name="java.lang.reflect.Proxy:serialVersionUID:J" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+long
+ serialVersionUID;
+</span>
+</div>
+<div class="field">
+<a name="java.lang.reflect.Proxy:constructorParams:java.lang.Class.-" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+<a href="../../../java/lang/Class.html">
+java.lang.Class
+</a>
+[]
+ constructorParams;
+</span>
+</div>
+<div class="field">
+<a name="java.lang.reflect.Proxy:key0:java.lang.Object" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ key0;
+</span>
+</div>
+<div class="field">
+<a name="java.lang.reflect.Proxy:proxyClassCache:java.lang.reflect.WeakCache" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+<a href="../../../java/lang/reflect/WeakCache.html">
+java.lang.reflect.WeakCache
+</a>
+ proxyClassCache;
+</span>
+</div>
+<div class="method">
+<a name="java.lang.reflect.Proxy:&lt;clinit&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<span>
+clinit
+</span>
+{};
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+checknegsize 1
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../java/lang/Class.html">
+java.lang.Class
+</a>
+</span>
+<span>
+[1]
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull $irvar0:[java.lang.Class
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+checkbound $irvar0:[java.lang.Class[0]
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+checkstore $irvar0:[java.lang.Class[] &lt;- java.lang.reflect.InvocationHandler
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+$irvar0:[java.lang.Class[0] := java.lang.reflect.InvocationHandler
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="Proxy.html">
+java.lang.reflect.Proxy
+</a>
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+<a href="#java.lang.reflect.Proxy:constructorParams:java.lang.Class.-">
+java.lang.reflect.Proxy.constructorParams
+</a>
+</span>
+<span>
+:= $irvar0:[java.lang.Class
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/reflect/WeakCache.html">
+java.lang.reflect.WeakCache
+</a>
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/reflect/Proxy$KeyFactory.html">
+java.lang.reflect.Proxy$KeyFactory
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../java/lang/reflect/Proxy$KeyFactory.html">
+java.lang.reflect.Proxy$KeyFactory
+</a>
+</span>
+<span>
+(null)
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/reflect/Proxy$ProxyClassFactory.html">
+java.lang.reflect.Proxy$ProxyClassFactory
+</a>
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+$irvar1 := new
+</span>
+<span>
+<a href="../../../java/lang/reflect/Proxy$ProxyClassFactory.html">
+java.lang.reflect.Proxy$ProxyClassFactory
+</a>
+</span>
+<span>
+(null)
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+$irvar2 := new
+</span>
+<span>
+<a href="../../../java/lang/reflect/WeakCache.html">
+java.lang.reflect.WeakCache
+</a>
+</span>
+<span>
+($irvar0:java.lang.Object, $irvar1:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="Proxy.html">
+java.lang.reflect.Proxy
+</a>
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+<a href="#java.lang.reflect.Proxy:proxyClassCache:java.lang.reflect.WeakCache">
+java.lang.reflect.Proxy.proxyClassCache
+</a>
+</span>
+<span>
+:= $irvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span>
+()
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="Proxy.html">
+java.lang.reflect.Proxy
+</a>
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+<a href="#java.lang.reflect.Proxy:key0:java.lang.Object">
+java.lang.reflect.Proxy.key0
+</a>
+</span>
+<span>
+:= $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.reflect.Proxy:getInvocationHandler:java.lang.Objectjava.lang.reflect.InvocationHandler" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="../../../java/lang/reflect/InvocationHandler.html">
+java.lang.reflect.InvocationHandler
+</a>
+ 
+<span>
+getInvocationHandler
+</span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ $bcvar0
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Class getClass()">
+$bcvar0:java.lang.Object.getClass
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Object.html#java.lang.Object:getClass:java.lang.Class" title="java.lang.Class getClass()">
+java.lang.Object.getClass
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="Proxy.html">
+java.lang.reflect.Proxy
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isProxyClass(java.lang.Class)">
+java.lang.reflect.Proxy.isProxyClass
+</span>
+</span>
+<span>
+($irvar0:java.lang.Class)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.lang.reflect.Proxy:isProxyClass:java.lang.ClassZ" title="bool isProxyClass(java.lang.Class)">
+java.lang.reflect.Proxy.isProxyClass
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+if ($irvar1:Z != 0) goto 9
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+<span>
+(&apos;not a proxy instance&apos;)
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+throw $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+checkcast $bcvar0:java.lang.Object:
+</span>
+<span>
+<a href="Proxy.html">
+java.lang.reflect.Proxy
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+$bcvar1 := (java.lang.reflect.Proxy) $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+$bcvar2 := $bcvar1:java.lang.Object.h
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/System.html">
+java.lang.System
+</a>
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.SecurityManager getSecurityManager()">
+java.lang.System.getSecurityManager
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/System.html#java.lang.System:getSecurityManager:java.lang.SecurityManager" title="java.lang.SecurityManager getSecurityManager()">
+java.lang.System.getSecurityManager
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+if ($irvar0:java.lang.SecurityManager == null) goto 29
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+$bcvar3 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Class getClass()">
+$bcvar2:java.lang.Object.getClass
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Object.html#java.lang.Object:getClass:java.lang.Class" title="java.lang.Class getClass()">
+java.lang.Object.getClass
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../sun/reflect/Reflection.html">
+sun.reflect.Reflection
+</a>
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+$bcvar4 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Class getCallerClass()">
+sun.reflect.Reflection.getCallerClass
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/reflect/Reflection.html#sun.reflect.Reflection:getCallerClass:java.lang.Class" title="java.lang.Class getCallerClass()">
+sun.reflect.Reflection.getCallerClass
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+notnull $bcvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.ClassLoader getClassLoader()">
+$bcvar4:java.lang.Object.getClassLoader
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Class.html#java.lang.Class:getClassLoader:java.lang.ClassLoader" title="java.lang.ClassLoader getClassLoader()">
+java.lang.Class.getClassLoader
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+notnull $bcvar3:java.lang.Object
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.ClassLoader getClassLoader()">
+$bcvar3:java.lang.Object.getClassLoader
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Class.html#java.lang.Class:getClassLoader:java.lang.ClassLoader" title="java.lang.ClassLoader getClassLoader()">
+java.lang.Class.getClassLoader
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../sun/reflect/misc/ReflectUtil.html">
+sun.reflect.misc.ReflectUtil
+</a>
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+$irvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool needsPackageAccessCheck(java.lang.ClassLoader, java.lang.ClassLoader)">
+sun.reflect.misc.ReflectUtil.needsPackageAccessCheck
+</span>
+</span>
+<span>
+($irvar0:java.lang.ClassLoader, $irvar1:java.lang.ClassLoader)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/reflect/misc/ReflectUtil.html#sun.reflect.misc.ReflectUtil:needsPackageAccessCheck:java.lang.ClassLoaderjava.lang.ClassLoaderZ" title="bool needsPackageAccessCheck(java.lang.ClassLoader, java.lang.ClassLoader)">
+sun.reflect.misc.ReflectUtil.needsPackageAccessCheck
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+if ($irvar2:Z == 0) goto 29
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../sun/reflect/misc/ReflectUtil.html">
+sun.reflect.misc.ReflectUtil
+</a>
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void checkPackageAccess(java.lang.Class)">
+sun.reflect.misc.ReflectUtil.checkPackageAccess
+</span>
+</span>
+<span>
+($bcvar3:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/reflect/misc/ReflectUtil.html#sun.reflect.misc.ReflectUtil:checkPackageAccess:java.lang.Classvoid" title="void checkPackageAccess(java.lang.Class)">
+sun.reflect.misc.ReflectUtil.checkPackageAccess
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+return $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.reflect.Proxy:getProxyClass0:java.lang.ClassLoaderjava.lang.Class.-java.lang.Class" href="#">
+
+</a>
+<div class="method_signature">
+private static 
+<a href="../../../java/lang/Class.html">
+java.lang.Class
+</a>
+ 
+<span>
+getProxyClass0
+</span>
+(
+<a href="../../../java/lang/ClassLoader.html">
+java.lang.ClassLoader
+</a>
+ $bcvar0
+, 
+<a href="../../../java/lang/Class.html">
+java.lang.Class
+</a>
+[]
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+if ($bcvar1:java.lang.Object.length &lt;= 65535) goto 6
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+<span>
+(&apos;interface limit exceeded&apos;)
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+throw $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="Proxy.html">
+java.lang.reflect.Proxy
+</a>
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+notnull java.lang.reflect.Proxy.proxyClassCache
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object get(java.lang.Object, java.lang.Object)">
+java.lang.reflect.Proxy.proxyClassCache.get
+</span>
+</span>
+<span>
+($bcvar0:java.lang.Object, $bcvar1:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+checkcast $irvar0:java.lang.Object:
+</span>
+<span>
+<a href="../../../java/lang/Class.html">
+java.lang.Class
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+return (java.lang.Class) $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.reflect.Proxy:access$200:java.lang.Object" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 
+<span>
+access$200
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="Proxy.html">
+java.lang.reflect.Proxy
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+return java.lang.reflect.Proxy.key0
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.reflect.Proxy:access$400:java.lang.reflect.Constructorjava.lang.reflect.InvocationHandlerjava.lang.Object" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 
+<span>
+access$400
+</span>
+(
+<a href="../../../java/lang/reflect/Constructor.html">
+java.lang.reflect.Constructor
+</a>
+ $bcvar0
+, 
+<a href="../../../java/lang/reflect/InvocationHandler.html">
+java.lang.reflect.InvocationHandler
+</a>
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="Proxy.html">
+java.lang.reflect.Proxy
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object newInstance(java.lang.reflect.Constructor, java.lang.reflect.InvocationHandler)">
+java.lang.reflect.Proxy.newInstance
+</span>
+</span>
+<span>
+($bcvar0:java.lang.Object, $bcvar1:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.reflect.Proxy:defineClass0:java.lang.ClassLoaderjava.lang.StringB.-IIjava.lang.Class" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+<a href="../../../java/lang/Class.html">
+java.lang.Class
+</a>
+ 
+<span>
+defineClass0
+</span>
+(
+<a href="../../../java/lang/ClassLoader.html">
+java.lang.ClassLoader
+</a>
+ 0
+, 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 1
+, 
+byte[]
+ 2
+, 
+int
+ 3
+, 
+int
+ 4
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.reflect.Proxy:getProxyClass:java.lang.ClassLoaderjava.lang.Class.-java.lang.Class" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="../../../java/lang/Class.html">
+java.lang.Class
+</a>
+ 
+<span>
+getProxyClass
+</span>
+(
+<a href="../../../java/lang/ClassLoader.html">
+java.lang.ClassLoader
+</a>
+ $bcvar0
+, 
+<a href="../../../java/lang/Class.html">
+java.lang.Class
+</a>
+[]
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object clone()">
+$bcvar1:java.lang.Object.clone
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/TreeMap.html#java.util.TreeMap:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.TreeMap.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/text/StringCharacterIterator.html#java.text.StringCharacterIterator:clone:java.lang.Object" title="java.lang.Object clone()">
+java.text.StringCharacterIterator.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/calendar/CalendarDate.html#sun.util.calendar.CalendarDate:clone:java.lang.Object" title="java.lang.Object clone()">
+sun.util.calendar.CalendarDate.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Vector.html#java.util.Vector:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.Vector.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/lang/Object.html#java.lang.Object:clone:java.lang.Object" title="java.lang.Object clone()">
+java.lang.Object.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable$Entry.html#java.util.Hashtable$Entry:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.Hashtable$Entry.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/text/normalizer/ReplaceableUCharacterIterator.html#sun.text.normalizer.ReplaceableUCharacterIterator:clone:java.lang.Object" title="java.lang.Object clone()">
+sun.text.normalizer.ReplaceableUCharacterIterator.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/ArrayList.html#java.util.ArrayList:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.ArrayList.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/IdentityHashMap.html#java.util.IdentityHashMap:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.IdentityHashMap.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/GregorianCalendar.html#java.util.GregorianCalendar:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.GregorianCalendar.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/calendar/ZoneInfo.html#sun.util.calendar.ZoneInfo:clone:java.lang.Object" title="java.lang.Object clone()">
+sun.util.calendar.ZoneInfo.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/text/DateFormatSymbols.html#java.text.DateFormatSymbols:clone:java.lang.Object" title="java.lang.Object clone()">
+java.text.DateFormatSymbols.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable.html#java.util.Hashtable:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.Hashtable.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/lang/Thread.html#java.lang.Thread:clone:java.lang.Object" title="java.lang.Object clone()">
+java.lang.Thread.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Locale.html#java.util.Locale:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.Locale.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/lang/Enum.html#java.lang.Enum:clone:java.lang.Object" title="java.lang.Object clone()">
+java.lang.Enum.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/text/DigitList.html#java.text.DigitList:clone:java.lang.Object" title="java.lang.Object clone()">
+java.text.DigitList.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/LinkedList.html#java.util.LinkedList:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.LinkedList.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/text/RuleBasedBreakIterator$SafeCharIterator.html#java.text.RuleBasedBreakIterator$SafeCharIterator:clone:java.lang.Object" title="java.lang.Object clone()">
+java.text.RuleBasedBreakIterator$SafeCharIterator.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/regex/Pattern$CharPropertyNames$CloneableProperty.html#java.util.regex.Pattern$CharPropertyNames$CloneableProperty:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.regex.Pattern$CharPropertyNames$CloneableProperty.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/text/CompactByteArray.html#sun.text.CompactByteArray:clone:java.lang.Object" title="java.lang.Object clone()">
+sun.text.CompactByteArray.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeSet.html#java.util.TreeSet:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.TreeSet.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/SimpleTimeZone.html#java.util.SimpleTimeZone:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.SimpleTimeZone.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:clone:java.lang.Object" title="java.lang.Object clone()">
+java.text.RuleBasedBreakIterator.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Date.html#java.util.Date:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.Date.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/text/DecimalFormatSymbols.html#java.text.DecimalFormatSymbols:clone:java.lang.Object" title="java.lang.Object clone()">
+java.text.DecimalFormatSymbols.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/JapaneseImperialCalendar.html#java.util.JapaneseImperialCalendar:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.JapaneseImperialCalendar.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractMap.html#java.util.AbstractMap:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.AbstractMap.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap.html#java.util.HashMap:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.HashMap.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashSet.html#java.util.HashSet:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.HashSet.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/text/DecimalFormat.html#java.text.DecimalFormat:clone:java.lang.Object" title="java.lang.Object clone()">
+java.text.DecimalFormat.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/calendar/ImmutableGregorianDate.html#sun.util.calendar.ImmutableGregorianDate:clone:java.lang.Object" title="java.lang.Object clone()">
+sun.util.calendar.ImmutableGregorianDate.clone
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+checkcast $irvar0:java.lang.Object:
+</span>
+<span>
+<a href="../../../java/lang/Class.html">
+java.lang.Class
+</a>
+[]
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$bcvar2 := ([java.lang.Class) $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/System.html">
+java.lang.System
+</a>
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+$bcvar3 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.SecurityManager getSecurityManager()">
+java.lang.System.getSecurityManager
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/System.html#java.lang.System:getSecurityManager:java.lang.SecurityManager" title="java.lang.SecurityManager getSecurityManager()">
+java.lang.System.getSecurityManager
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+if ($bcvar3:java.lang.Object == null) goto 11
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../sun/reflect/Reflection.html">
+sun.reflect.Reflection
+</a>
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Class getCallerClass()">
+sun.reflect.Reflection.getCallerClass
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/reflect/Reflection.html#sun.reflect.Reflection:getCallerClass:java.lang.Class" title="java.lang.Class getCallerClass()">
+sun.reflect.Reflection.getCallerClass
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="Proxy.html">
+java.lang.reflect.Proxy
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void checkProxyAccess(java.lang.Class, java.lang.ClassLoader, java.lang.Class[])">
+java.lang.reflect.Proxy.checkProxyAccess
+</span>
+</span>
+<span>
+($irvar0:java.lang.Class, $bcvar0:java.lang.Object, $bcvar2:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="Proxy.html">
+java.lang.reflect.Proxy
+</a>
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Class getProxyClass0(java.lang.ClassLoader, java.lang.Class[])">
+java.lang.reflect.Proxy.getProxyClass0
+</span>
+</span>
+<span>
+($bcvar0:java.lang.Object, $bcvar2:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+return $irvar0:java.lang.Class
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.reflect.Proxy:access$300:java.lang.ClassLoaderjava.lang.StringB.-IIjava.lang.Class" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<a href="../../../java/lang/Class.html">
+java.lang.Class
+</a>
+ 
+<span>
+access$300
+</span>
+(
+<a href="../../../java/lang/ClassLoader.html">
+java.lang.ClassLoader
+</a>
+ $bcvar0
+, 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ $bcvar1
+, 
+byte[]
+ $bcvar2
+, 
+int
+ $bcvar3
+, 
+int
+ $bcvar4
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="Proxy.html">
+java.lang.reflect.Proxy
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Class defineClass0(java.lang.ClassLoader, java.lang.String, byte[], int, int)">
+java.lang.reflect.Proxy.defineClass0
+</span>
+</span>
+<span>
+($bcvar0:java.lang.Object, $bcvar1:java.lang.Object, $bcvar2:java.lang.Object, $bcvar3:I, $bcvar4:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return $irvar0:java.lang.Class
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.reflect.Proxy:&lt;init&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+private 
+<span>
+Proxy
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Object.html#java.lang.Object:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.reflect.Proxy:checkProxyAccess:java.lang.Classjava.lang.ClassLoaderjava.lang.Class.-void" href="#">
+
+</a>
+<div class="method_signature">
+private static 
+void
+ 
+<span>
+checkProxyAccess
+</span>
+(
+<a href="../../../java/lang/Class.html">
+java.lang.Class
+</a>
+ $bcvar0
+, 
+<a href="../../../java/lang/ClassLoader.html">
+java.lang.ClassLoader
+</a>
+ $bcvar1
+, 
+<a href="../../../java/lang/Class.html">
+java.lang.Class
+</a>
+[]
+ $bcvar2
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/System.html">
+java.lang.System
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$bcvar3 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.SecurityManager getSecurityManager()">
+java.lang.System.getSecurityManager
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/System.html#java.lang.System:getSecurityManager:java.lang.SecurityManager" title="java.lang.SecurityManager getSecurityManager()">
+java.lang.System.getSecurityManager
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+if ($bcvar3:java.lang.Object == null) goto 14
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+notnull $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+$bcvar4 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.ClassLoader getClassLoader()">
+$bcvar0:java.lang.Object.getClassLoader
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Class.html#java.lang.Class:getClassLoader:java.lang.ClassLoader" title="java.lang.ClassLoader getClassLoader()">
+java.lang.Class.getClassLoader
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+if ($bcvar1:java.lang.Object != null) goto 12
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+if ($bcvar4:java.lang.Object == null) goto 12
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+java.lang.reflect.Proxy$ProxyAccessHelper
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+if (java.lang.reflect.Proxy$ProxyAccessHelper.allowNullLoader != 0) goto 12
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../sun/security/util/SecurityConstants.html">
+sun.security.util.SecurityConstants
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+notnull $bcvar3:java.lang.Object
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void checkPermission(java.security.Permission)">
+$bcvar3:java.lang.Object.checkPermission
+</span>
+</span>
+<span>
+(sun.security.util.SecurityConstants.GET_CLASSLOADER_PERMISSION)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/SecurityManager.html#java.lang.SecurityManager:checkPermission:java.security.Permissionvoid" title="void checkPermission(java.security.Permission)">
+java.lang.SecurityManager.checkPermission
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../sun/reflect/misc/ReflectUtil.html">
+sun.reflect.misc.ReflectUtil
+</a>
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void checkProxyPackageAccess(java.lang.ClassLoader, java.lang.Class[])">
+sun.reflect.misc.ReflectUtil.checkProxyPackageAccess
+</span>
+</span>
+<span>
+($bcvar4:java.lang.Object, $bcvar2:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/reflect/misc/ReflectUtil.html#sun.reflect.misc.ReflectUtil:checkProxyPackageAccess:java.lang.ClassLoaderjava.lang.Class.-void" title="void checkProxyPackageAccess(java.lang.ClassLoader, java.lang.Class[])">
+sun.reflect.misc.ReflectUtil.checkProxyPackageAccess
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.reflect.Proxy:&lt;init&gt;:java.lang.reflect.InvocationHandlervoid" href="#">
+
+</a>
+<div class="method_signature">
+protected 
+<span>
+Proxy
+</span>
+(
+<a href="../../../java/lang/reflect/InvocationHandler.html">
+java.lang.reflect.InvocationHandler
+</a>
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Object.html#java.lang.Object:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void doNewInstanceCheck()">
+java.lang.reflect.Proxy.doNewInstanceCheck
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+<a href="#java.lang.reflect.Proxy:h:java.lang.reflect.InvocationHandler">
+this:java.lang.Object.h
+</a>
+</span>
+<span>
+:= $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.reflect.Proxy:doNewInstanceCheck:void" href="#">
+
+</a>
+<div class="method_signature">
+private 
+void
+ 
+<span>
+doNewInstanceCheck
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/System.html">
+java.lang.System
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$bcvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.SecurityManager getSecurityManager()">
+java.lang.System.getSecurityManager
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/System.html#java.lang.System:getSecurityManager:java.lang.SecurityManager" title="java.lang.SecurityManager getSecurityManager()">
+java.lang.System.getSecurityManager
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$bcvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Class getClass()">
+this:java.lang.Object.getClass
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Object.html#java.lang.Object:getClass:java.lang.Class" title="java.lang.Class getClass()">
+java.lang.Object.getClass
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+if ($bcvar1:java.lang.Object == null) goto 17
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+java.lang.reflect.Proxy$ProxyAccessHelper
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool needsNewInstanceCheck(java.lang.Class)">
+java.lang.reflect.Proxy$ProxyAccessHelper.needsNewInstanceCheck
+</span>
+</span>
+<span>
+($bcvar2:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+if ($irvar0:Z == 0) goto 17
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+java.lang.reflect.Proxy$ProxyAccessHelper
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void checkPermission(java.security.Permission)">
+$bcvar1:java.lang.Object.checkPermission
+</span>
+</span>
+<span>
+(java.lang.reflect.Proxy$ProxyAccessHelper.PROXY_PERMISSION)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/SecurityManager.html#java.lang.SecurityManager:checkPermission:java.security.Permissionvoid" title="void checkPermission(java.security.Permission)">
+java.lang.SecurityManager.checkPermission
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+goto 17
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+$bcvar3 := CatchVar30:java.lang.Object
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/SecurityException.html">
+java.lang.SecurityException
+</a>
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../java/lang/SecurityException.html">
+java.lang.SecurityException
+</a>
+</span>
+<span>
+(&apos;Not allowed to construct a Proxy instance that implements a non-public interface&apos;, $bcvar3:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+throw $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 8; try end: 11: catch start: 12; catched type: java.lang.SecurityException.
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
+<a name="java.lang.reflect.Proxy:isProxyClass:java.lang.ClassZ" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+bool
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+isProxyClass
+</span>
+(
+<a href="../../../java/lang/Class.html">
+java.lang.Class
+</a>
+ $bcvar0
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Class.html#java.lang.Class:checkPackageAccess:java.lang.ClassLoaderZvoid" title="void checkPackageAccess(java.lang.ClassLoader, bool)">
+java.lang.Class.checkPackageAccess(java.lang.ClassLoader, bool)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/reflect/misc/ReflectUtil.html#sun.reflect.misc.ReflectUtil:checkProxyPackageAccess:java.lang.Classvoid" title="void checkProxyPackageAccess(java.lang.Class)">
+sun.reflect.misc.ReflectUtil.checkProxyPackageAccess(java.lang.Class)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/reflect/misc/ReflectUtil.html#sun.reflect.misc.ReflectUtil:isNonPublicProxyClass:java.lang.ClassZ" title="bool isNonPublicProxyClass(java.lang.Class)">
+sun.reflect.misc.ReflectUtil.isNonPublicProxyClass(java.lang.Class)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull java.lang.reflect.Proxy
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isAssignableFrom(java.lang.Class)">
+java.lang.reflect.Proxy.isAssignableFrom
+</span>
+</span>
+<span>
+($bcvar0:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Class.html#java.lang.Class:isAssignableFrom:java.lang.ClassZ" title="bool isAssignableFrom(java.lang.Class)">
+java.lang.Class.isAssignableFrom
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+if ($irvar0:Z == 0) goto 9
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="Proxy.html">
+java.lang.reflect.Proxy
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+notnull java.lang.reflect.Proxy.proxyClassCache
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool containsValue(java.lang.Object)">
+java.lang.reflect.Proxy.proxyClassCache.containsValue
+</span>
+</span>
+<span>
+($bcvar0:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/reflect/WeakCache.html#java.lang.reflect.WeakCache:containsValue:java.lang.ObjectZ" title="bool containsValue(java.lang.Object)">
+java.lang.reflect.WeakCache.containsValue
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+if ($irvar0:Z == 0) goto 9
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+$T0_25 := 1
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+goto 10
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+$T0_25 := 0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+return $T0_25:I
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.reflect.Proxy:newInstance:java.lang.reflect.Constructorjava.lang.reflect.InvocationHandlerjava.lang.Object" href="#">
+
+</a>
+<div class="method_signature">
+private static 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 
+<span>
+newInstance
+</span>
+(
+<a href="../../../java/lang/reflect/Constructor.html">
+java.lang.reflect.Constructor
+</a>
+ $bcvar0
+, 
+<a href="../../../java/lang/reflect/InvocationHandler.html">
+java.lang.reflect.InvocationHandler
+</a>
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+checknegsize 1
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span>
+[1]
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull $irvar0:[java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+checkbound $irvar0:[java.lang.Object[0]
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+checkstore $irvar0:[java.lang.Object[] &lt;- $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+$irvar0:[java.lang.Object[0] := $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+notnull $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object newInstance(java.lang.Object[])">
+$bcvar0:java.lang.Object.newInstance
+</span>
+</span>
+<span>
+($irvar0:[java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+return $irvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+$bcvar2 := CatchVar13:java.lang.Object
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/InternalError.html">
+java.lang.InternalError
+</a>
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toString()">
+$bcvar2:java.lang.Object.toString
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+$irvar1 := new
+</span>
+<span>
+<a href="../../../java/lang/InternalError.html">
+java.lang.InternalError
+</a>
+</span>
+<span>
+($irvar0:java.lang.String)
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+notnull $irvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+throw $irvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+$bcvar2 := CatchVar26:java.lang.Object
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+$bcvar3 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Throwable getCause()">
+$bcvar2:java.lang.Object.getCause
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+if (InstanceOf java.lang.RuntimeException($bcvar3:java.lang.Object) == 0) goto 23
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+checkcast $bcvar3:java.lang.Object:
+</span>
+<span>
+<a href="../../../java/lang/RuntimeException.html">
+java.lang.RuntimeException
+</a>
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+notnull (java.lang.RuntimeException) $bcvar3:java.lang.Object
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+throw (java.lang.RuntimeException) $bcvar3:java.lang.Object
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/InternalError.html">
+java.lang.InternalError
+</a>
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+notnull $bcvar3:java.lang.Object
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toString()">
+$bcvar3:java.lang.Object.toString
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Throwable.html#java.lang.Throwable:toString:java.lang.String" title="java.lang.String toString()">
+java.lang.Throwable.toString
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+$irvar1 := new
+</span>
+<span>
+<a href="../../../java/lang/InternalError.html">
+java.lang.InternalError
+</a>
+</span>
+<span>
+($irvar0:java.lang.String)
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+notnull $irvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+throw $irvar1:java.lang.Object
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 0; try end: 8: catch start: 9; catched type: java.lang.IllegalAccessException.
+</span>
+</li>
+<li>
+<span>
+try start: 0; try end: 8: catch start: 9; catched type: java.lang.InstantiationException.
+</span>
+</li>
+<li>
+<span>
+try start: 0; try end: 8: catch start: 16; catched type: java.lang.reflect.InvocationTargetException.
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
+<a name="java.lang.reflect.Proxy:newProxyInstance:java.lang.ClassLoaderjava.lang.Class.-java.lang.reflect.InvocationHandlerjava.lang.Object" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 
+<span>
+newProxyInstance
+</span>
+(
+<a href="../../../java/lang/ClassLoader.html">
+java.lang.ClassLoader
+</a>
+ $bcvar0
+, 
+<a href="../../../java/lang/Class.html">
+java.lang.Class
+</a>
+[]
+ $bcvar1
+, 
+<a href="../../../java/lang/reflect/InvocationHandler.html">
+java.lang.reflect.InvocationHandler
+</a>
+ $bcvar2
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+if ($bcvar2:java.lang.Object != null) goto 5
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/NullPointerException.html">
+java.lang.NullPointerException
+</a>
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../java/lang/NullPointerException.html">
+java.lang.NullPointerException
+</a>
+</span>
+<span>
+()
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+throw $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object clone()">
+$bcvar1:java.lang.Object.clone
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/TreeMap.html#java.util.TreeMap:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.TreeMap.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/text/StringCharacterIterator.html#java.text.StringCharacterIterator:clone:java.lang.Object" title="java.lang.Object clone()">
+java.text.StringCharacterIterator.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/calendar/CalendarDate.html#sun.util.calendar.CalendarDate:clone:java.lang.Object" title="java.lang.Object clone()">
+sun.util.calendar.CalendarDate.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Vector.html#java.util.Vector:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.Vector.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/lang/Object.html#java.lang.Object:clone:java.lang.Object" title="java.lang.Object clone()">
+java.lang.Object.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable$Entry.html#java.util.Hashtable$Entry:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.Hashtable$Entry.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/text/normalizer/ReplaceableUCharacterIterator.html#sun.text.normalizer.ReplaceableUCharacterIterator:clone:java.lang.Object" title="java.lang.Object clone()">
+sun.text.normalizer.ReplaceableUCharacterIterator.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/ArrayList.html#java.util.ArrayList:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.ArrayList.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/IdentityHashMap.html#java.util.IdentityHashMap:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.IdentityHashMap.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/GregorianCalendar.html#java.util.GregorianCalendar:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.GregorianCalendar.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/calendar/ZoneInfo.html#sun.util.calendar.ZoneInfo:clone:java.lang.Object" title="java.lang.Object clone()">
+sun.util.calendar.ZoneInfo.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/text/DateFormatSymbols.html#java.text.DateFormatSymbols:clone:java.lang.Object" title="java.lang.Object clone()">
+java.text.DateFormatSymbols.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable.html#java.util.Hashtable:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.Hashtable.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/lang/Thread.html#java.lang.Thread:clone:java.lang.Object" title="java.lang.Object clone()">
+java.lang.Thread.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Locale.html#java.util.Locale:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.Locale.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/lang/Enum.html#java.lang.Enum:clone:java.lang.Object" title="java.lang.Object clone()">
+java.lang.Enum.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/text/DigitList.html#java.text.DigitList:clone:java.lang.Object" title="java.lang.Object clone()">
+java.text.DigitList.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/LinkedList.html#java.util.LinkedList:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.LinkedList.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/text/RuleBasedBreakIterator$SafeCharIterator.html#java.text.RuleBasedBreakIterator$SafeCharIterator:clone:java.lang.Object" title="java.lang.Object clone()">
+java.text.RuleBasedBreakIterator$SafeCharIterator.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/regex/Pattern$CharPropertyNames$CloneableProperty.html#java.util.regex.Pattern$CharPropertyNames$CloneableProperty:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.regex.Pattern$CharPropertyNames$CloneableProperty.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/text/CompactByteArray.html#sun.text.CompactByteArray:clone:java.lang.Object" title="java.lang.Object clone()">
+sun.text.CompactByteArray.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeSet.html#java.util.TreeSet:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.TreeSet.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/SimpleTimeZone.html#java.util.SimpleTimeZone:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.SimpleTimeZone.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:clone:java.lang.Object" title="java.lang.Object clone()">
+java.text.RuleBasedBreakIterator.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Date.html#java.util.Date:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.Date.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/text/DecimalFormatSymbols.html#java.text.DecimalFormatSymbols:clone:java.lang.Object" title="java.lang.Object clone()">
+java.text.DecimalFormatSymbols.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/JapaneseImperialCalendar.html#java.util.JapaneseImperialCalendar:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.JapaneseImperialCalendar.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractMap.html#java.util.AbstractMap:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.AbstractMap.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap.html#java.util.HashMap:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.HashMap.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashSet.html#java.util.HashSet:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.HashSet.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/text/DecimalFormat.html#java.text.DecimalFormat:clone:java.lang.Object" title="java.lang.Object clone()">
+java.text.DecimalFormat.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/calendar/ImmutableGregorianDate.html#sun.util.calendar.ImmutableGregorianDate:clone:java.lang.Object" title="java.lang.Object clone()">
+sun.util.calendar.ImmutableGregorianDate.clone
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+checkcast $irvar0:java.lang.Object:
+</span>
+<span>
+<a href="../../../java/lang/Class.html">
+java.lang.Class
+</a>
+[]
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+$bcvar3 := ([java.lang.Class) $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/System.html">
+java.lang.System
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+$bcvar4 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.SecurityManager getSecurityManager()">
+java.lang.System.getSecurityManager
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/System.html#java.lang.System:getSecurityManager:java.lang.SecurityManager" title="java.lang.SecurityManager getSecurityManager()">
+java.lang.System.getSecurityManager
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+if ($bcvar4:java.lang.Object == null) goto 16
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../sun/reflect/Reflection.html">
+sun.reflect.Reflection
+</a>
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Class getCallerClass()">
+sun.reflect.Reflection.getCallerClass
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/reflect/Reflection.html#sun.reflect.Reflection:getCallerClass:java.lang.Class" title="java.lang.Class getCallerClass()">
+sun.reflect.Reflection.getCallerClass
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="Proxy.html">
+java.lang.reflect.Proxy
+</a>
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void checkProxyAccess(java.lang.Class, java.lang.ClassLoader, java.lang.Class[])">
+java.lang.reflect.Proxy.checkProxyAccess
+</span>
+</span>
+<span>
+($irvar0:java.lang.Class, $bcvar0:java.lang.Object, $bcvar3:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="Proxy.html">
+java.lang.reflect.Proxy
+</a>
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+$bcvar5 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Class getProxyClass0(java.lang.ClassLoader, java.lang.Class[])">
+java.lang.reflect.Proxy.getProxyClass0
+</span>
+</span>
+<span>
+($bcvar0:java.lang.Object, $bcvar3:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+nop
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="Proxy.html">
+java.lang.reflect.Proxy
+</a>
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+notnull $bcvar5:java.lang.Object
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+$bcvar6 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.reflect.Constructor getConstructor(java.lang.Class[])">
+$bcvar5:java.lang.Object.getConstructor
+</span>
+</span>
+<span>
+(java.lang.reflect.Proxy.constructorParams)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+$bcvar7 := $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+if ($bcvar4:java.lang.Object == null) goto 32
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+java.lang.reflect.Proxy$ProxyAccessHelper
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool needsNewInstanceCheck(java.lang.Class)">
+java.lang.reflect.Proxy$ProxyAccessHelper.needsNewInstanceCheck
+</span>
+</span>
+<span>
+($bcvar5:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+if ($irvar0:Z == 0) goto 32
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/reflect/Proxy$1.html">
+java.lang.reflect.Proxy$1
+</a>
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../java/lang/reflect/Proxy$1.html">
+java.lang.reflect.Proxy$1
+</a>
+</span>
+<span>
+($bcvar6:java.lang.Object, $bcvar7:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/security/AccessController.html">
+java.security.AccessController
+</a>
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object doPrivileged(java.security.PrivilegedAction)">
+java.security.AccessController.doPrivileged
+</span>
+</span>
+<span>
+($irvar0:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/security/AccessController.html#java.security.AccessController:doPrivileged:java.security.PrivilegedActionjava.lang.Object" title="java.lang.Object doPrivileged(java.security.PrivilegedAction)">
+java.security.AccessController.doPrivileged
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+return $irvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="Proxy.html">
+java.lang.reflect.Proxy
+</a>
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object newInstance(java.lang.reflect.Constructor, java.lang.reflect.InvocationHandler)">
+java.lang.reflect.Proxy.newInstance
+</span>
+</span>
+<span>
+($bcvar6:java.lang.Object, $bcvar7:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+return $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+$bcvar6 := CatchVar94:java.lang.Object
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/InternalError.html">
+java.lang.InternalError
+</a>
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+notnull $bcvar6:java.lang.Object
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toString()">
+$bcvar6:java.lang.Object.toString
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+$irvar1 := new
+</span>
+<span>
+<a href="../../../java/lang/InternalError.html">
+java.lang.InternalError
+</a>
+</span>
+<span>
+($irvar0:java.lang.String)
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+notnull $irvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+throw $irvar1:java.lang.Object
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 19; try end: 31: catch start: 35; catched type: java.lang.NoSuchMethodException.
+</span>
+</li>
+<li>
+<span>
+try start: 32; try end: 34: catch start: 35; catched type: java.lang.NoSuchMethodException.
+</span>
+</li>
+</ol>
+</span>
+</div>
+</div>
+</body>
+</html>

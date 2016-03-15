@@ -1,0 +1,8585 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>
+java.util.zip.ZipFile
+</title>
+<link rel="StyleSheet" href="../../../style.css" type="text/css" media="all" />
+<script type="text/javascript" src="../../../actions.js">
+</script>
+</head>
+<body>
+<div class="class">
+<a name="java.util.zip.ZipFile" href="#">
+
+</a>
+<div class="classname">
+Class java.util.zip.ZipFile
+</div>
+<div class="field">
+<a name="java.util.zip.ZipFile:JZENTRY_COMMENT:I" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+int
+ JZENTRY_COMMENT;
+</span>
+</div>
+<div class="field">
+<a name="java.util.zip.ZipFile:streams:java.util.Map" href="#">
+
+</a>
+<span class="field_signature">
+private final 
+<a href="../../../java/util/Map.html">
+java.util.Map
+</a>
+ streams;
+</span>
+</div>
+<div class="field">
+<a name="java.util.zip.ZipFile:OPEN_READ:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ OPEN_READ;
+</span>
+</div>
+<div class="field">
+<a name="java.util.zip.ZipFile:closeRequested:Z" href="#">
+
+</a>
+<span class="field_signature">
+private volatile 
+bool
+ closeRequested;
+</span>
+</div>
+<div class="field">
+<a name="java.util.zip.ZipFile:JZENTRY_NAME:I" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+int
+ JZENTRY_NAME;
+</span>
+</div>
+<div class="field">
+<a name="java.util.zip.ZipFile:usemmap:Z" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+bool
+ usemmap;
+</span>
+</div>
+<div class="field">
+<a name="java.util.zip.ZipFile:STORED:I" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+int
+ STORED;
+</span>
+</div>
+<div class="field">
+<a name="java.util.zip.ZipFile:name:java.lang.String" href="#">
+
+</a>
+<span class="field_signature">
+private final 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ name;
+</span>
+</div>
+<div class="field">
+<a name="java.util.zip.ZipFile:total:I" href="#">
+
+</a>
+<span class="field_signature">
+private final 
+int
+ total;
+</span>
+</div>
+<div class="field">
+<a name="java.util.zip.ZipFile:JZENTRY_EXTRA:I" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+int
+ JZENTRY_EXTRA;
+</span>
+</div>
+<div class="field">
+<a name="java.util.zip.ZipFile:inflaterCache:java.util.Deque" href="#">
+
+</a>
+<span class="field_signature">
+private  
+<a href="../../../java/util/Deque.html">
+java.util.Deque
+</a>
+ inflaterCache;
+</span>
+</div>
+<div class="field">
+<a name="java.util.zip.ZipFile:DEFLATED:I" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+int
+ DEFLATED;
+</span>
+</div>
+<div class="field">
+<a name="java.util.zip.ZipFile:jzfile:J" href="#">
+
+</a>
+<span class="field_signature">
+private  
+long
+ jzfile;
+</span>
+</div>
+<div class="field">
+<a name="java.util.zip.ZipFile:OPEN_DELETE:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ OPEN_DELETE;
+</span>
+</div>
+<div class="field">
+<a name="java.util.zip.ZipFile:locsig:Z" href="#">
+
+</a>
+<span class="field_signature">
+private final 
+bool
+ locsig;
+</span>
+</div>
+<div class="field">
+<a name="java.util.zip.ZipFile:zc:java.util.zip.ZipCoder" href="#">
+
+</a>
+<span class="field_signature">
+private  
+<a href="../../../java/util/zip/ZipCoder.html">
+java.util.zip.ZipCoder
+</a>
+ zc;
+</span>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:&lt;clinit&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<span>
+clinit
+</span>
+{};
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void initIDs()">
+java.util.zip.ZipFile.initIDs
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../sun/misc/VM.html">
+sun.misc.VM
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$bcvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String getSavedProperty(java.lang.String)">
+sun.misc.VM.getSavedProperty
+</span>
+</span>
+<span>
+(&apos;sun.zip.disableMemoryMapping&apos;)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/misc/VM.html#sun.misc.VM:getSavedProperty:java.lang.Stringjava.lang.String" title="java.lang.String getSavedProperty(java.lang.String)">
+sun.misc.VM.getSavedProperty
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+if ($bcvar0:java.lang.Object == null) goto 11
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+notnull $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int length()">
+$bcvar0:java.lang.Object.length
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/String.html#java.lang.String:length:I" title="int length()">
+java.lang.String.length
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+if ($irvar0:I == 0) goto 13
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+notnull $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool equalsIgnoreCase(java.lang.String)">
+$bcvar0:java.lang.Object.equalsIgnoreCase
+</span>
+</span>
+<span>
+(&apos;true&apos;)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/String.html#java.lang.String:equalsIgnoreCase:java.lang.StringZ" title="bool equalsIgnoreCase(java.lang.String)">
+java.lang.String.equalsIgnoreCase
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+if ($irvar0:Z != 0) goto 13
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+$T0_34 := 1
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+goto 14
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+$T0_34 := 0
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+<a href="#java.util.zip.ZipFile:usemmap:Z">
+java.util.zip.ZipFile.usemmap
+</a>
+</span>
+<span>
+:= $T0_34:I
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+java.util.zip.ZipFile$2
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+java.util.zip.ZipFile$2
+</span>
+<span>
+()
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../sun/misc/SharedSecrets.html">
+sun.misc.SharedSecrets
+</a>
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void setJavaUtilZipFileAccess(sun.misc.JavaUtilZipFileAccess)">
+sun.misc.SharedSecrets.setJavaUtilZipFileAccess
+</span>
+</span>
+<span>
+($irvar0:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:access$900:java.util.zip.ZipFilejava.lang.StringJjava.util.zip.ZipEntry" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<a href="../../../java/util/zip/ZipEntry.html">
+java.util.zip.ZipEntry
+</a>
+ 
+<span>
+access$900
+</span>
+(
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+ $bcvar0
+, 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ $bcvar1
+, 
+long
+ $bcvar2
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 := $bcvar0:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.util.zip.ZipEntry getZipEntry(java.lang.String, long)">
+java.util.zip.ZipFile.getZipEntry
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object, $bcvar2:J)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return $irvar0:java.util.zip.ZipEntry
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:getEntryTime:JJ" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+long
+ 
+<span>
+getEntryTime
+</span>
+(
+long
+ 0
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:access$100:java.util.zip.ZipFilejava.util.zip.Inflatervoid" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+void
+ 
+<span>
+access$100
+</span>
+(
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+ $bcvar0
+, 
+java.util.zip.Inflater
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$bcvar0:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void releaseInflater(java.util.zip.Inflater)">
+java.util.zip.ZipFile.releaseInflater
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:ensureOpenOrZipException:void" href="#">
+
+</a>
+<div class="method_signature">
+private 
+void
+ 
+<span>
+ensureOpenOrZipException
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.closeRequested == 0) goto 6
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+java.util.zip.ZipException
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+java.util.zip.ZipException
+</span>
+<span>
+(&apos;ZipFile closed&apos;)
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+throw $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:getEntry:JB.-ZJ" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+long
+ 
+<span>
+getEntry
+</span>
+(
+long
+ 0
+, 
+byte[]
+ 1
+, 
+bool
+ 2
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:&lt;init&gt;:java.lang.Stringjava.nio.charset.Charsetvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<span>
+ZipFile
+</span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ $bcvar1
+, 
+<a href="../../../java/nio/charset/Charset.html">
+java.nio.charset.Charset
+</a>
+ $bcvar2
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/io/File.html">
+java.io.File
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../java/io/File.html">
+java.io.File
+</a>
+</span>
+<span>
+($bcvar1:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.io.File, int, java.nio.charset.Charset)">
+java.util.zip.ZipFile.&lt;init&gt;
+</span>
+</span>
+<span>
+($irvar0:java.lang.Object, 1, $bcvar2:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:initIDs:void" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+void
+ 
+<span>
+initIDs
+</span>
+(
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:access$1300:java.util.zip.ZipFilevoid" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+void
+ 
+<span>
+access$1300
+</span>
+(
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+ $bcvar0
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$bcvar0:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void ensureOpenOrZipException()">
+java.util.zip.ZipFile.ensureOpenOrZipException
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:getNextEntry:JIJ" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+long
+ 
+<span>
+getNextEntry
+</span>
+(
+long
+ 0
+, 
+int
+ 1
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:access$500:JIJ" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+long
+ 
+<span>
+access$500
+</span>
+(
+long
+ $bcvar0
+, 
+int
+ $bcvar2
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long getNextEntry(long, int)">
+java.util.zip.ZipFile.getNextEntry
+</span>
+</span>
+<span>
+($bcvar0:J, $bcvar2:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return $irvar0:J
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:getTotal:JI" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+int
+ 
+<span>
+getTotal
+</span>
+(
+long
+ 0
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:releaseInflater:java.util.zip.Inflatervoid" href="#">
+
+</a>
+<div class="method_signature">
+private 
+void
+ 
+<span>
+releaseInflater
+</span>
+(
+java.util.zip.Inflater
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool ended()">
+$bcvar1:java.lang.Object.ended
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+if (0 != $irvar0:Z) goto 20
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void reset()">
+$bcvar1:java.lang.Object.reset
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+$bcvar2 := this:java.lang.Object.inflaterCache
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.inflaterCache
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+monitorenter(this:java.lang.Object.inflaterCache)
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.inflaterCache
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool add(java.lang.Object)">
+this:java.lang.Object.inflaterCache.add
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/LinkedList.html#java.util.LinkedList:add:java.lang.ObjectZ" title="bool add(java.lang.Object)">
+java.util.LinkedList.add
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+monitorexit($bcvar2:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+goto 20
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+$bcvar3 := CatchVar35:java.lang.Object
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+monitorexit($bcvar2:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+notnull $bcvar3:java.lang.Object
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+throw $bcvar3:java.lang.Object
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 9; try end: 14: catch start: 15; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 15; try end: 18: catch start: 15; catched type: None (finally block).
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:ensureOpen:void" href="#">
+
+</a>
+<div class="method_signature">
+private 
+void
+ 
+<span>
+ensureOpen
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.closeRequested == 0) goto 6
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/IllegalStateException.html">
+java.lang.IllegalStateException
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../java/lang/IllegalStateException.html">
+java.lang.IllegalStateException
+</a>
+</span>
+<span>
+(&apos;zip file closed&apos;)
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+throw $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.jzfile != 0) goto 12
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/IllegalStateException.html">
+java.lang.IllegalStateException
+</a>
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../java/lang/IllegalStateException.html">
+java.lang.IllegalStateException
+</a>
+</span>
+<span>
+(&apos;The object is not initialized.&apos;)
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+throw $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:finalize:void" href="#">
+
+</a>
+<div class="method_signature">
+protected 
+void
+ 
+<span>
+finalize
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void close()">
+this:java.lang.Object.close
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:access$1100:JJ" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+long
+ 
+<span>
+access$1100
+</span>
+(
+long
+ $bcvar0
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long getEntryCSize(long)">
+java.util.zip.ZipFile.getEntryCSize
+</span>
+</span>
+<span>
+($bcvar0:J)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return $irvar0:J
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:&lt;init&gt;:java.io.Filevoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<span>
+ZipFile
+</span>
+(
+<a href="../../../java/io/File.html">
+java.io.File
+</a>
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.io.File, int)">
+java.util.zip.ZipFile.&lt;init&gt;
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object, 1)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:startsWithLOC:JZ" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+bool
+ 
+<span>
+startsWithLOC
+</span>
+(
+long
+ 0
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:close:void" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span>
+close
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.closeRequested == 0) goto 3
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+<a href="#java.util.zip.ZipFile:closeRequested:Z">
+this:java.lang.Object.closeRequested
+</a>
+</span>
+<span>
+:= 1
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+$bcvar1 := this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+monitorenter(this:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+$bcvar2 := this:java.lang.Object.streams
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.streams
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+monitorenter(this:java.lang.Object.streams)
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.streams
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isEmpty()">
+this:java.lang.Object.streams.isEmpty
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/Collections$SingletonMap.html#java.util.Collections$SingletonMap:isEmpty:Z" title="bool isEmpty()">
+java.util.Collections$SingletonMap.isEmpty
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:isEmpty:Z" title="bool isEmpty()">
+java.util.concurrent.ConcurrentHashMap.isEmpty
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/IdentityHashMap.html#java.util.IdentityHashMap:isEmpty:Z" title="bool isEmpty()">
+java.util.IdentityHashMap.isEmpty
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/WeakHashMap.html#java.util.WeakHashMap:isEmpty:Z" title="bool isEmpty()">
+java.util.WeakHashMap.isEmpty
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable.html#java.util.Hashtable:isEmpty:Z" title="bool isEmpty()">
+java.util.Hashtable.isEmpty
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap.html#java.util.HashMap:isEmpty:Z" title="bool isEmpty()">
+java.util.HashMap.isEmpty
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractMap.html#java.util.AbstractMap:isEmpty:Z" title="bool isEmpty()">
+java.util.AbstractMap.isEmpty
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$EmptyMap.html#java.util.Collections$EmptyMap:isEmpty:Z" title="bool isEmpty()">
+java.util.Collections$EmptyMap.isEmpty
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+if (0 != $irvar0:Z) goto 47
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/util/HashMap.html">
+java.util.HashMap
+</a>
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+$bcvar3 := new
+</span>
+<span>
+<a href="../../../java/util/HashMap.html">
+java.util.HashMap
+</a>
+</span>
+<span>
+(this:java.lang.Object.streams)
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.streams
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void clear()">
+this:java.lang.Object.streams.clear
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/HashMap.html#java.util.HashMap:clear:void" title="void clear()">
+java.util.HashMap.clear
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/WeakHashMap.html#java.util.WeakHashMap:clear:void" title="void clear()">
+java.util.WeakHashMap.clear
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractMap.html#java.util.AbstractMap:clear:void" title="void clear()">
+java.util.AbstractMap.clear
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/LinkedHashMap.html#java.util.LinkedHashMap:clear:void" title="void clear()">
+java.util.LinkedHashMap.clear
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable.html#java.util.Hashtable:clear:void" title="void clear()">
+java.util.Hashtable.clear
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeMap.html#java.util.TreeMap:clear:void" title="void clear()">
+java.util.TreeMap.clear
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:clear:void" title="void clear()">
+java.util.concurrent.ConcurrentHashMap.clear
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/IdentityHashMap.html#java.util.IdentityHashMap:clear:void" title="void clear()">
+java.util.IdentityHashMap.clear
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+notnull $bcvar3:java.lang.Object
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.util.Set entrySet()">
+$bcvar3:java.lang.Object.entrySet
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:entrySet:java.util.Set" title="java.util.Set entrySet()">
+java.util.concurrent.ConcurrentHashMap.entrySet
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeMap.html#java.util.TreeMap:entrySet:java.util.Set" title="java.util.Set entrySet()">
+java.util.TreeMap.entrySet
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$SingletonMap.html#java.util.Collections$SingletonMap:entrySet:java.util.Set" title="java.util.Set entrySet()">
+java.util.Collections$SingletonMap.entrySet
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/WeakHashMap.html#java.util.WeakHashMap:entrySet:java.util.Set" title="java.util.Set entrySet()">
+java.util.WeakHashMap.entrySet
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/PreHashedMap.html#sun.util.PreHashedMap:entrySet:java.util.Set" title="java.util.Set entrySet()">
+sun.util.PreHashedMap.entrySet
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/IdentityHashMap.html#java.util.IdentityHashMap:entrySet:java.util.Set" title="java.util.Set entrySet()">
+java.util.IdentityHashMap.entrySet
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$EmptyMap.html#java.util.Collections$EmptyMap:entrySet:java.util.Set" title="java.util.Set entrySet()">
+java.util.Collections$EmptyMap.entrySet
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap.html#java.util.HashMap:entrySet:java.util.Set" title="java.util.Set entrySet()">
+java.util.HashMap.entrySet
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable.html#java.util.Hashtable:entrySet:java.util.Set" title="java.util.Set entrySet()">
+java.util.Hashtable.entrySet
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+notnull $irvar0:java.util.Set
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+$bcvar4 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.util.Iterator iterator()">
+$irvar0:java.util.Set.iterator
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/HashSet.html#java.util.HashSet:iterator:java.util.Iterator" title="java.util.Iterator iterator()">
+java.util.HashSet.iterator
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap$KeySet.html#java.util.HashMap$KeySet:iterator:java.util.Iterator" title="java.util.Iterator iterator()">
+java.util.HashMap$KeySet.iterator
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable$KeySet.html#java.util.Hashtable$KeySet:iterator:java.util.Iterator" title="java.util.Iterator iterator()">
+java.util.Hashtable$KeySet.iterator
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeSet.html#java.util.TreeSet:iterator:java.util.Iterator" title="java.util.Iterator iterator()">
+java.util.TreeSet.iterator
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/IdentityHashMap$EntrySet.html#java.util.IdentityHashMap$EntrySet:iterator:java.util.Iterator" title="java.util.Iterator iterator()">
+java.util.IdentityHashMap$EntrySet.iterator
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$SingletonSet.html#java.util.Collections$SingletonSet:iterator:java.util.Iterator" title="java.util.Iterator iterator()">
+java.util.Collections$SingletonSet.iterator
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/PreHashedMap$2.html#sun.util.PreHashedMap$2:iterator:java.util.Iterator" title="java.util.Iterator iterator()">
+sun.util.PreHashedMap$2.iterator
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeMap$KeySet.html#java.util.TreeMap$KeySet:iterator:java.util.Iterator" title="java.util.Iterator iterator()">
+java.util.TreeMap$KeySet.iterator
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap$EntrySet.html#java.util.HashMap$EntrySet:iterator:java.util.Iterator" title="java.util.Iterator iterator()">
+java.util.HashMap$EntrySet.iterator
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable$EntrySet.html#java.util.Hashtable$EntrySet:iterator:java.util.Iterator" title="java.util.Iterator iterator()">
+java.util.Hashtable$EntrySet.iterator
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeMap$EntrySet.html#java.util.TreeMap$EntrySet:iterator:java.util.Iterator" title="java.util.Iterator iterator()">
+java.util.TreeMap$EntrySet.iterator
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$UnmodifiableCollection.html#java.util.Collections$UnmodifiableCollection:iterator:java.util.Iterator" title="java.util.Iterator iterator()">
+java.util.Collections$UnmodifiableCollection.iterator
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$SynchronizedCollection.html#java.util.Collections$SynchronizedCollection:iterator:java.util.Iterator" title="java.util.Iterator iterator()">
+java.util.Collections$SynchronizedCollection.iterator
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/IdentityHashMap$KeySet.html#java.util.IdentityHashMap$KeySet:iterator:java.util.Iterator" title="java.util.Iterator iterator()">
+java.util.IdentityHashMap$KeySet.iterator
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/WeakHashMap$EntrySet.html#java.util.WeakHashMap$EntrySet:iterator:java.util.Iterator" title="java.util.Iterator iterator()">
+java.util.WeakHashMap$EntrySet.iterator
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap$EntrySet.html#java.util.concurrent.ConcurrentHashMap$EntrySet:iterator:java.util.Iterator" title="java.util.Iterator iterator()">
+java.util.concurrent.ConcurrentHashMap$EntrySet.iterator
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/PreHashedMap$1.html#sun.util.PreHashedMap$1:iterator:java.util.Iterator" title="java.util.Iterator iterator()">
+sun.util.PreHashedMap$1.iterator
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$SetFromMap.html#java.util.Collections$SetFromMap:iterator:java.util.Iterator" title="java.util.Iterator iterator()">
+java.util.Collections$SetFromMap.iterator
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap$KeySet.html#java.util.concurrent.ConcurrentHashMap$KeySet:iterator:java.util.Iterator" title="java.util.Iterator iterator()">
+java.util.concurrent.ConcurrentHashMap$KeySet.iterator
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$EmptySet.html#java.util.Collections$EmptySet:iterator:java.util.Iterator" title="java.util.Iterator iterator()">
+java.util.Collections$EmptySet.iterator
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/WeakHashMap$KeySet.html#java.util.WeakHashMap$KeySet:iterator:java.util.Iterator" title="java.util.Iterator iterator()">
+java.util.WeakHashMap$KeySet.iterator
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+nop
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+notnull $bcvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool hasNext()">
+$bcvar4:java.lang.Object.hasNext
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/IdentityHashMap$IdentityHashMapIterator.html#java.util.IdentityHashMap$IdentityHashMapIterator:hasNext:Z" title="bool hasNext()">
+java.util.IdentityHashMap$IdentityHashMapIterator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap$HashIterator.html#java.util.concurrent.ConcurrentHashMap$HashIterator:hasNext:Z" title="bool hasNext()">
+java.util.concurrent.ConcurrentHashMap$HashIterator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap$HashIterator.html#java.util.HashMap$HashIterator:hasNext:Z" title="bool hasNext()">
+java.util.HashMap$HashIterator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/PreHashedMap$1$1.html#sun.util.PreHashedMap$1$1:hasNext:Z" title="bool hasNext()">
+sun.util.PreHashedMap$1$1.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractList$Itr.html#java.util.AbstractList$Itr:hasNext:Z" title="bool hasNext()">
+java.util.AbstractList$Itr.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractMap$2$1.html#java.util.AbstractMap$2$1:hasNext:Z" title="bool hasNext()">
+java.util.AbstractMap$2$1.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/PreHashedMap$2$1.html#sun.util.PreHashedMap$2$1:hasNext:Z" title="bool hasNext()">
+sun.util.PreHashedMap$2$1.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/LinkedHashMap$LinkedHashIterator.html#java.util.LinkedHashMap$LinkedHashIterator:hasNext:Z" title="bool hasNext()">
+java.util.LinkedHashMap$LinkedHashIterator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/LinkedList$ListItr.html#java.util.LinkedList$ListItr:hasNext:Z" title="bool hasNext()">
+java.util.LinkedList$ListItr.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/ArrayList$SubList$1.html#java.util.ArrayList$SubList$1:hasNext:Z" title="bool hasNext()">
+java.util.ArrayList$SubList$1.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/ArrayList$Itr.html#java.util.ArrayList$Itr:hasNext:Z" title="bool hasNext()">
+java.util.ArrayList$Itr.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable$Enumerator.html#java.util.Hashtable$Enumerator:hasNext:Z" title="bool hasNext()">
+java.util.Hashtable$Enumerator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$1.html#java.util.Collections$1:hasNext:Z" title="bool hasNext()">
+java.util.Collections$1.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$UnmodifiableList$1.html#java.util.Collections$UnmodifiableList$1:hasNext:Z" title="bool hasNext()">
+java.util.Collections$UnmodifiableList$1.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Vector$Itr.html#java.util.Vector$Itr:hasNext:Z" title="bool hasNext()">
+java.util.Vector$Itr.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$EmptyIterator.html#java.util.Collections$EmptyIterator:hasNext:Z" title="bool hasNext()">
+java.util.Collections$EmptyIterator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$UnmodifiableCollection$1.html#java.util.Collections$UnmodifiableCollection$1:hasNext:Z" title="bool hasNext()">
+java.util.Collections$UnmodifiableCollection$1.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/WeakHashMap$HashIterator.html#java.util.WeakHashMap$HashIterator:hasNext:Z" title="bool hasNext()">
+java.util.WeakHashMap$HashIterator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeMap$PrivateEntryIterator.html#java.util.TreeMap$PrivateEntryIterator:hasNext:Z" title="bool hasNext()">
+java.util.TreeMap$PrivateEntryIterator.hasNext
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+if ($irvar0:Z == 0) goto 47
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+notnull $bcvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object next()">
+$bcvar4:java.lang.Object.next
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap$KeyIterator.html#java.util.concurrent.ConcurrentHashMap$KeyIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.concurrent.ConcurrentHashMap$KeyIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/IdentityHashMap$EntryIterator.html#java.util.IdentityHashMap$EntryIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.IdentityHashMap$EntryIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/LinkedHashMap$ValueIterator.html#java.util.LinkedHashMap$ValueIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.LinkedHashMap$ValueIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$EmptyIterator.html#java.util.Collections$EmptyIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.Collections$EmptyIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap$EntryIterator.html#java.util.concurrent.ConcurrentHashMap$EntryIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.concurrent.ConcurrentHashMap$EntryIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap$KeyIterator.html#java.util.HashMap$KeyIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.HashMap$KeyIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/WeakHashMap$ValueIterator.html#java.util.WeakHashMap$ValueIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.WeakHashMap$ValueIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$UnmodifiableCollection$1.html#java.util.Collections$UnmodifiableCollection$1:next:java.lang.Object" title="java.lang.Object next()">
+java.util.Collections$UnmodifiableCollection$1.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/WeakHashMap$KeyIterator.html#java.util.WeakHashMap$KeyIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.WeakHashMap$KeyIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable$Enumerator.html#java.util.Hashtable$Enumerator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.Hashtable$Enumerator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$1.html#java.util.Collections$1:next:java.lang.Object" title="java.lang.Object next()">
+java.util.Collections$1.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$UnmodifiableList$1.html#java.util.Collections$UnmodifiableList$1:next:java.lang.Object" title="java.lang.Object next()">
+java.util.Collections$UnmodifiableList$1.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Vector$Itr.html#java.util.Vector$Itr:next:java.lang.Object" title="java.lang.Object next()">
+java.util.Vector$Itr.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/IdentityHashMap$KeyIterator.html#java.util.IdentityHashMap$KeyIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.IdentityHashMap$KeyIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeMap$EntryIterator.html#java.util.TreeMap$EntryIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.TreeMap$EntryIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap$EntryIterator.html#java.util.HashMap$EntryIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.HashMap$EntryIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/PreHashedMap$2$1.html#sun.util.PreHashedMap$2$1:next:java.lang.Object" title="java.lang.Object next()">
+sun.util.PreHashedMap$2$1.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeMap$KeyIterator.html#java.util.TreeMap$KeyIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.TreeMap$KeyIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/IdentityHashMap$ValueIterator.html#java.util.IdentityHashMap$ValueIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.IdentityHashMap$ValueIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeMap$ValueIterator.html#java.util.TreeMap$ValueIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.TreeMap$ValueIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap$ValueIterator.html#java.util.concurrent.ConcurrentHashMap$ValueIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.concurrent.ConcurrentHashMap$ValueIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractList$Itr.html#java.util.AbstractList$Itr:next:java.lang.Object" title="java.lang.Object next()">
+java.util.AbstractList$Itr.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/LinkedHashMap$EntryIterator.html#java.util.LinkedHashMap$EntryIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.LinkedHashMap$EntryIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractMap$2$1.html#java.util.AbstractMap$2$1:next:java.lang.Object" title="java.lang.Object next()">
+java.util.AbstractMap$2$1.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap$ValueIterator.html#java.util.HashMap$ValueIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.HashMap$ValueIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/LinkedHashMap$KeyIterator.html#java.util.LinkedHashMap$KeyIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.LinkedHashMap$KeyIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/PreHashedMap$1$1.html#sun.util.PreHashedMap$1$1:next:java.lang.Object" title="java.lang.Object next()">
+sun.util.PreHashedMap$1$1.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/LinkedList$ListItr.html#java.util.LinkedList$ListItr:next:java.lang.Object" title="java.lang.Object next()">
+java.util.LinkedList$ListItr.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/ArrayList$SubList$1.html#java.util.ArrayList$SubList$1:next:java.lang.Object" title="java.lang.Object next()">
+java.util.ArrayList$SubList$1.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/WeakHashMap$EntryIterator.html#java.util.WeakHashMap$EntryIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.WeakHashMap$EntryIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/ArrayList$Itr.html#java.util.ArrayList$Itr:next:java.lang.Object" title="java.lang.Object next()">
+java.util.ArrayList$Itr.next
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+checkcast $irvar0:java.lang.Object:
+</span>
+<span>
+<a href="../../../java/util/Map$Entry.html">
+java.util.Map$Entry
+</a>
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+$bcvar5 := (java.util.Map$Entry) $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+notnull $bcvar5:java.lang.Object
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object getKey()">
+$bcvar5:java.lang.Object.getKey
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/util/PreHashedMap$2$1$1.html#sun.util.PreHashedMap$2$1$1:getKey:java.lang.Object" title="java.lang.Object getKey()">
+sun.util.PreHashedMap$2$1$1.getKey
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractMap$SimpleEntry.html#java.util.AbstractMap$SimpleEntry:getKey:java.lang.Object" title="java.lang.Object getKey()">
+java.util.AbstractMap$SimpleEntry.getKey
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/WeakHashMap$Entry.html#java.util.WeakHashMap$Entry:getKey:java.lang.Object" title="java.lang.Object getKey()">
+java.util.WeakHashMap$Entry.getKey
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable$Entry.html#java.util.Hashtable$Entry:getKey:java.lang.Object" title="java.lang.Object getKey()">
+java.util.Hashtable$Entry.getKey
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/IdentityHashMap$EntryIterator$Entry.html#java.util.IdentityHashMap$EntryIterator$Entry:getKey:java.lang.Object" title="java.lang.Object getKey()">
+java.util.IdentityHashMap$EntryIterator$Entry.getKey
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap$Entry.html#java.util.HashMap$Entry:getKey:java.lang.Object" title="java.lang.Object getKey()">
+java.util.HashMap$Entry.getKey
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeMap$Entry.html#java.util.TreeMap$Entry:getKey:java.lang.Object" title="java.lang.Object getKey()">
+java.util.TreeMap$Entry.getKey
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractMap$SimpleImmutableEntry.html#java.util.AbstractMap$SimpleImmutableEntry:getKey:java.lang.Object" title="java.lang.Object getKey()">
+java.util.AbstractMap$SimpleImmutableEntry.getKey
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+checkcast $irvar0:java.lang.Object:
+</span>
+<span>
+<a href="../../../java/io/InputStream.html">
+java.io.InputStream
+</a>
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+notnull (java.io.InputStream) $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void close()">
+(java.io.InputStream) $irvar0:java.lang.Object.close
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/io/ByteArrayInputStream.html#java.io.ByteArrayInputStream:close:void" title="void close()">
+java.io.ByteArrayInputStream.close
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/io/BufferedInputStream.html#java.io.BufferedInputStream:close:void" title="void close()">
+java.io.BufferedInputStream.close
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/io/FilterInputStream.html#java.io.FilterInputStream:close:void" title="void close()">
+java.io.FilterInputStream.close
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/io/FileInputStream.html#java.io.FileInputStream:close:void" title="void close()">
+java.io.FileInputStream.close
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+notnull $bcvar5:java.lang.Object
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object getValue()">
+$bcvar5:java.lang.Object.getValue
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/AbstractMap$SimpleImmutableEntry.html#java.util.AbstractMap$SimpleImmutableEntry:getValue:java.lang.Object" title="java.lang.Object getValue()">
+java.util.AbstractMap$SimpleImmutableEntry.getValue
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable$Entry.html#java.util.Hashtable$Entry:getValue:java.lang.Object" title="java.lang.Object getValue()">
+java.util.Hashtable$Entry.getValue
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/IdentityHashMap$EntryIterator$Entry.html#java.util.IdentityHashMap$EntryIterator$Entry:getValue:java.lang.Object" title="java.lang.Object getValue()">
+java.util.IdentityHashMap$EntryIterator$Entry.getValue
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap$Entry.html#java.util.HashMap$Entry:getValue:java.lang.Object" title="java.lang.Object getValue()">
+java.util.HashMap$Entry.getValue
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeMap$Entry.html#java.util.TreeMap$Entry:getValue:java.lang.Object" title="java.lang.Object getValue()">
+java.util.TreeMap$Entry.getValue
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/PreHashedMap$2$1$1.html#sun.util.PreHashedMap$2$1$1:getValue:java.lang.Object" title="java.lang.Object getValue()">
+sun.util.PreHashedMap$2$1$1.getValue
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractMap$SimpleEntry.html#java.util.AbstractMap$SimpleEntry:getValue:java.lang.Object" title="java.lang.Object getValue()">
+java.util.AbstractMap$SimpleEntry.getValue
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/WeakHashMap$Entry.html#java.util.WeakHashMap$Entry:getValue:java.lang.Object" title="java.lang.Object getValue()">
+java.util.WeakHashMap$Entry.getValue
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+checkcast $irvar0:java.lang.Object:
+</span>
+<span>
+java.util.zip.Inflater
+</span>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+$bcvar6 := (java.util.zip.Inflater) $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+if ($bcvar6:java.lang.Object == null) goto 46
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+notnull $bcvar6:java.lang.Object
+</span>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void end()">
+$bcvar6:java.lang.Object.end
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+goto 27
+</span>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+monitorexit($bcvar2:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+goto 55
+</span>
+</div>
+</li>
+<li value="50">
+<div class="instruction">
+<span>
+$bcvar7 := CatchVar136:java.lang.Object
+</span>
+</div>
+</li>
+<li value="51">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="52">
+<div class="instruction">
+<span>
+monitorexit($bcvar2:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="53">
+<div class="instruction">
+<span>
+notnull $bcvar7:java.lang.Object
+</span>
+</div>
+</li>
+<li value="54">
+<div class="instruction">
+<span>
+throw $bcvar7:java.lang.Object
+</span>
+</div>
+</li>
+<li value="55">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+$bcvar3 := this:java.lang.Object.inflaterCache
+</span>
+</div>
+</li>
+<li value="57">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.inflaterCache
+</span>
+</div>
+</li>
+<li value="58">
+<div class="instruction">
+<span>
+monitorenter(this:java.lang.Object.inflaterCache)
+</span>
+</div>
+</li>
+<li value="59">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="60">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.inflaterCache
+</span>
+</div>
+</li>
+<li value="61">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object poll()">
+this:java.lang.Object.inflaterCache.poll
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="62">
+<div class="instruction">
+<span>
+checkcast $irvar0:java.lang.Object:
+</span>
+<span>
+java.util.zip.Inflater
+</span>
+</div>
+</li>
+<li value="63">
+<div class="instruction">
+<span>
+$bcvar2 := (java.util.zip.Inflater) $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="64">
+<div class="instruction">
+<span>
+if (null == (java.util.zip.Inflater) $irvar0:java.lang.Object) goto 68
+</span>
+</div>
+</li>
+<li value="65">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="66">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void end()">
+$bcvar2:java.lang.Object.end
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="67">
+<div class="instruction">
+<span>
+goto 59
+</span>
+</div>
+</li>
+<li value="68">
+<div class="instruction">
+<span>
+notnull $bcvar3:java.lang.Object
+</span>
+</div>
+</li>
+<li value="69">
+<div class="instruction">
+<span>
+monitorexit($bcvar3:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="70">
+<div class="instruction">
+<span>
+goto 76
+</span>
+</div>
+</li>
+<li value="71">
+<div class="instruction">
+<span>
+$bcvar8 := CatchVar180:java.lang.Object
+</span>
+</div>
+</li>
+<li value="72">
+<div class="instruction">
+<span>
+notnull $bcvar3:java.lang.Object
+</span>
+</div>
+</li>
+<li value="73">
+<div class="instruction">
+<span>
+monitorexit($bcvar3:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="74">
+<div class="instruction">
+<span>
+notnull $bcvar8:java.lang.Object
+</span>
+</div>
+</li>
+<li value="75">
+<div class="instruction">
+<span>
+throw $bcvar8:java.lang.Object
+</span>
+</div>
+</li>
+<li value="76">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="77">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.jzfile == 0) goto 84
+</span>
+</div>
+</li>
+<li value="78">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="79">
+<div class="instruction">
+<span>
+$bcvar3 := this:java.lang.Object.jzfile
+</span>
+</div>
+</li>
+<li value="80">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="81">
+<div class="instruction">
+<span>
+<a href="#java.util.zip.ZipFile:jzfile:J">
+this:java.lang.Object.jzfile
+</a>
+</span>
+<span>
+:= 0
+</span>
+</div>
+</li>
+<li value="82">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="83">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void close(long)">
+java.util.zip.ZipFile.close
+</span>
+</span>
+<span>
+($bcvar3:J)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="84">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="85">
+<div class="instruction">
+<span>
+monitorexit($bcvar1:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="86">
+<div class="instruction">
+<span>
+goto 92
+</span>
+</div>
+</li>
+<li value="87">
+<div class="instruction">
+<span>
+$bcvar9 := CatchVar215:java.lang.Object
+</span>
+</div>
+</li>
+<li value="88">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="89">
+<div class="instruction">
+<span>
+monitorexit($bcvar1:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="90">
+<div class="instruction">
+<span>
+notnull $bcvar9:java.lang.Object
+</span>
+</div>
+</li>
+<li value="91">
+<div class="instruction">
+<span>
+throw $bcvar9:java.lang.Object
+</span>
+</div>
+</li>
+<li value="92">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 12; try end: 49: catch start: 50; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 50; try end: 53: catch start: 50; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 59; try end: 70: catch start: 71; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 71; try end: 74: catch start: 71; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 8; try end: 86: catch start: 87; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 87; try end: 90: catch start: 87; catched type: None (finally block).
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:access$300:java.util.zip.ZipFileI" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+int
+ 
+<span>
+access$300
+</span>
+(
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+ $bcvar0
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+return $bcvar0:java.lang.Object.total
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:getEntryFlag:JI" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+int
+ 
+<span>
+getEntryFlag
+</span>
+(
+long
+ 0
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:open:java.lang.StringIJZJ" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+long
+ 
+<span>
+open
+</span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 0
+, 
+int
+ 1
+, 
+long
+ 2
+, 
+bool
+ 3
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:getComment:java.lang.String" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span>
+getComment
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+$bcvar1 := this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+monitorenter(this:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void ensureOpen()">
+java.util.zip.ZipFile.ensureOpen
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+$irvar0 := this:java.lang.Object.jzfile
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+$bcvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="byte[] getCommentBytes(long)">
+java.util.zip.ZipFile.getCommentBytes
+</span>
+</span>
+<span>
+($irvar0:J)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+if ($bcvar2:java.lang.Object != null) goto 13
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+monitorexit($bcvar1:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+return null
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.zc
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toString(byte[], int)">
+this:java.lang.Object.zc.toString
+</span>
+</span>
+<span>
+($bcvar2:java.lang.Object, $bcvar2:java.lang.Object.length)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+monitorexit($bcvar1:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+return $irvar0:java.lang.String
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+$bcvar3 := CatchVar37:java.lang.Object
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+monitorexit($bcvar1:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+notnull $bcvar3:java.lang.Object
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+throw $bcvar3:java.lang.Object
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 3; try end: 12: catch start: 20; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 13; try end: 19: catch start: 20; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 20; try end: 23: catch start: 20; catched type: None (finally block).
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:getInputStream:java.util.zip.ZipEntryjava.io.InputStream" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../../java/io/InputStream.html">
+java.io.InputStream
+</a>
+ 
+<span>
+getInputStream
+</span>
+(
+<a href="../../../java/util/zip/ZipEntry.html">
+java.util.zip.ZipEntry
+</a>
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+if ($bcvar1:java.lang.Object != null) goto 5
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/NullPointerException.html">
+java.lang.NullPointerException
+</a>
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../java/lang/NullPointerException.html">
+java.lang.NullPointerException
+</a>
+</span>
+<span>
+(&apos;entry&apos;)
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+throw $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+$bcvar2 := 0
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+$bcvar4 := null
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+$bcvar5 := this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+monitorenter(this:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void ensureOpen()">
+java.util.zip.ZipFile.ensureOpen
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.zc
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isUTF8()">
+this:java.lang.Object.zc.isUTF8
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+if ($irvar0:Z != 0) goto 27
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+if (And($bcvar1:java.lang.Object.flag,2048) == 0) goto 27
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+$irvar1 := this:java.lang.Object.jzfile
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.zc
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="byte[] getBytesUTF8(java.lang.String)">
+this:java.lang.Object.zc.getBytesUTF8
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object.name)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+$bcvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long getEntry(long, byte[], bool)">
+java.util.zip.ZipFile.getEntry
+</span>
+</span>
+<span>
+($irvar1:J, $irvar0:[B, 0)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+goto 36
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+$irvar1 := this:java.lang.Object.jzfile
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.zc
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="byte[] getBytes(java.lang.String)">
+this:java.lang.Object.zc.getBytes
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object.name)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+$bcvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long getEntry(long, byte[], bool)">
+java.util.zip.ZipFile.getEntry
+</span>
+</span>
+<span>
+($irvar1:J, $irvar0:[B, 0)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+nop
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+if ($bcvar2:J != 0) goto 40
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+notnull $bcvar5:java.lang.Object
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+monitorexit($bcvar5:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+return null
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+java.util.zip.ZipFile$ZipFileInputStream
+</span>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+$bcvar4 := new
+</span>
+<span>
+java.util.zip.ZipFile$ZipFileInputStream
+</span>
+<span>
+(this:java.lang.Object, $bcvar2:J)
+</span>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getEntryMethod(long)">
+java.util.zip.ZipFile.getEntryMethod
+</span>
+</span>
+<span>
+($bcvar2:J)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+if ($irvar0:I == 0) goto 47
+</span>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span>
+if ($irvar0:I == 8) goto 65
+</span>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+goto 94
+</span>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+$bcvar6 := this:java.lang.Object.streams
+</span>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.streams
+</span>
+</div>
+</li>
+<li value="50">
+<div class="instruction">
+<span>
+monitorenter(this:java.lang.Object.streams)
+</span>
+</div>
+</li>
+<li value="51">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="52">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.streams
+</span>
+</div>
+</li>
+<li value="53">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+this:java.lang.Object.streams.put
+</span>
+</span>
+<span>
+($bcvar4:java.lang.Object, null)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap.put
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable.html#java.util.Hashtable:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.Hashtable.put
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/PreHashedMap.html#sun.util.PreHashedMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+sun.util.PreHashedMap.put
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap.html#java.util.HashMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.HashMap.put
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/WeakHashMap.html#java.util.WeakHashMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.WeakHashMap.put
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractMap.html#java.util.AbstractMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.AbstractMap.put
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/IdentityHashMap.html#java.util.IdentityHashMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.IdentityHashMap.put
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeMap.html#java.util.TreeMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.TreeMap.put
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="54">
+<div class="instruction">
+<span>
+notnull $bcvar6:java.lang.Object
+</span>
+</div>
+</li>
+<li value="55">
+<div class="instruction">
+<span>
+monitorexit($bcvar6:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+goto 62
+</span>
+</div>
+</li>
+<li value="57">
+<div class="instruction">
+<span>
+$bcvar7 := CatchVar171:java.lang.Object
+</span>
+</div>
+</li>
+<li value="58">
+<div class="instruction">
+<span>
+notnull $bcvar6:java.lang.Object
+</span>
+</div>
+</li>
+<li value="59">
+<div class="instruction">
+<span>
+monitorexit($bcvar6:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="60">
+<div class="instruction">
+<span>
+notnull $bcvar7:java.lang.Object
+</span>
+</div>
+</li>
+<li value="61">
+<div class="instruction">
+<span>
+throw $bcvar7:java.lang.Object
+</span>
+</div>
+</li>
+<li value="62">
+<div class="instruction">
+<span>
+notnull $bcvar5:java.lang.Object
+</span>
+</div>
+</li>
+<li value="63">
+<div class="instruction">
+<span>
+monitorexit($bcvar5:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="64">
+<div class="instruction">
+<span>
+return $bcvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="65">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="66">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long getEntrySize(long)">
+java.util.zip.ZipFile.getEntrySize
+</span>
+</span>
+<span>
+($bcvar2:J)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="67">
+<div class="instruction">
+<span>
+$bcvar6 := $irvar0:J+2
+</span>
+</div>
+</li>
+<li value="68">
+<div class="instruction">
+<span>
+if ($bcvar6:J &lt;= 65536) goto 70
+</span>
+</div>
+</li>
+<li value="69">
+<div class="instruction">
+<span>
+$bcvar6 := 8192
+</span>
+</div>
+</li>
+<li value="70">
+<div class="instruction">
+<span>
+if ($bcvar6:J &gt; 0) goto 72
+</span>
+</div>
+</li>
+<li value="71">
+<div class="instruction">
+<span>
+$bcvar6 := 4096
+</span>
+</div>
+</li>
+<li value="72">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="73">
+<div class="instruction">
+<span>
+$bcvar8 := this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.util.zip.Inflater getInflater()">
+java.util.zip.ZipFile.getInflater
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="74">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+java.util.zip.ZipFile$ZipFileInflaterInputStream
+</span>
+</div>
+</li>
+<li value="75">
+<div class="instruction">
+<span>
+$bcvar9 := new
+</span>
+<span>
+java.util.zip.ZipFile$ZipFileInflaterInputStream
+</span>
+<span>
+(this:java.lang.Object, $bcvar4:java.lang.Object, $bcvar8:java.lang.Object, L2I($bcvar6:J))
+</span>
+</div>
+</li>
+<li value="76">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="77">
+<div class="instruction">
+<span>
+$bcvar10 := this:java.lang.Object.streams
+</span>
+</div>
+</li>
+<li value="78">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.streams
+</span>
+</div>
+</li>
+<li value="79">
+<div class="instruction">
+<span>
+monitorenter(this:java.lang.Object.streams)
+</span>
+</div>
+</li>
+<li value="80">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="81">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.streams
+</span>
+</div>
+</li>
+<li value="82">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+this:java.lang.Object.streams.put
+</span>
+</span>
+<span>
+($bcvar9:java.lang.Object, $bcvar8:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap.put
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable.html#java.util.Hashtable:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.Hashtable.put
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/PreHashedMap.html#sun.util.PreHashedMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+sun.util.PreHashedMap.put
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap.html#java.util.HashMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.HashMap.put
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/WeakHashMap.html#java.util.WeakHashMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.WeakHashMap.put
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractMap.html#java.util.AbstractMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.AbstractMap.put
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/IdentityHashMap.html#java.util.IdentityHashMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.IdentityHashMap.put
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeMap.html#java.util.TreeMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.TreeMap.put
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="83">
+<div class="instruction">
+<span>
+notnull $bcvar10:java.lang.Object
+</span>
+</div>
+</li>
+<li value="84">
+<div class="instruction">
+<span>
+monitorexit($bcvar10:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="85">
+<div class="instruction">
+<span>
+goto 91
+</span>
+</div>
+</li>
+<li value="86">
+<div class="instruction">
+<span>
+$bcvar11 := CatchVar272:java.lang.Object
+</span>
+</div>
+</li>
+<li value="87">
+<div class="instruction">
+<span>
+notnull $bcvar10:java.lang.Object
+</span>
+</div>
+</li>
+<li value="88">
+<div class="instruction">
+<span>
+monitorexit($bcvar10:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="89">
+<div class="instruction">
+<span>
+notnull $bcvar11:java.lang.Object
+</span>
+</div>
+</li>
+<li value="90">
+<div class="instruction">
+<span>
+throw $bcvar11:java.lang.Object
+</span>
+</div>
+</li>
+<li value="91">
+<div class="instruction">
+<span>
+notnull $bcvar5:java.lang.Object
+</span>
+</div>
+</li>
+<li value="92">
+<div class="instruction">
+<span>
+monitorexit($bcvar5:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="93">
+<div class="instruction">
+<span>
+return $bcvar9:java.lang.Object
+</span>
+</div>
+</li>
+<li value="94">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+java.util.zip.ZipException
+</span>
+</div>
+</li>
+<li value="95">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+java.util.zip.ZipException
+</span>
+<span>
+(&apos;invalid compression method&apos;)
+</span>
+</div>
+</li>
+<li value="96">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="97">
+<div class="instruction">
+<span>
+throw $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="98">
+<div class="instruction">
+<span>
+$bcvar12 := CatchVar296:java.lang.Object
+</span>
+</div>
+</li>
+<li value="99">
+<div class="instruction">
+<span>
+notnull $bcvar5:java.lang.Object
+</span>
+</div>
+</li>
+<li value="100">
+<div class="instruction">
+<span>
+monitorexit($bcvar5:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="101">
+<div class="instruction">
+<span>
+notnull $bcvar12:java.lang.Object
+</span>
+</div>
+</li>
+<li value="102">
+<div class="instruction">
+<span>
+throw $bcvar12:java.lang.Object
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 51; try end: 56: catch start: 57; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 57; try end: 60: catch start: 57; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 80; try end: 85: catch start: 86; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 86; try end: 89: catch start: 86; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 10; try end: 39: catch start: 98; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 40; try end: 64: catch start: 98; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 65; try end: 93: catch start: 98; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 94; try end: 101: catch start: 98; catched type: None (finally block).
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:access$1500:java.util.zip.ZipFileZ" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+bool
+ 
+<span>
+access$1500
+</span>
+(
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+ $bcvar0
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 := $bcvar0:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool startsWithLocHeader()">
+java.util.zip.ZipFile.startsWithLocHeader
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return $irvar0:Z
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:freeEntry:JJvoid" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+void
+ 
+<span>
+freeEntry
+</span>
+(
+long
+ 0
+, 
+long
+ 1
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:access$700:Jjava.lang.String" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span>
+access$700
+</span>
+(
+long
+ $bcvar0
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String getZipMessage(long)">
+java.util.zip.ZipFile.getZipMessage
+</span>
+</span>
+<span>
+($bcvar0:J)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return $irvar0:java.lang.String
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:getEntryCrc:JJ" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+long
+ 
+<span>
+getEntryCrc
+</span>
+(
+long
+ 0
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:&lt;init&gt;:java.lang.Stringvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<span>
+ZipFile
+</span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/io/File.html">
+java.io.File
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../java/io/File.html">
+java.io.File
+</a>
+</span>
+<span>
+($bcvar1:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.io.File, int)">
+java.util.zip.ZipFile.&lt;init&gt;
+</span>
+</span>
+<span>
+($irvar0:java.lang.Object, 1)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:getZipEntry:java.lang.StringJjava.util.zip.ZipEntry" href="#">
+
+</a>
+<div class="method_signature">
+private 
+<a href="../../../java/util/zip/ZipEntry.html">
+java.util.zip.ZipEntry
+</a>
+ 
+<span>
+getZipEntry
+</span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ $bcvar1
+, 
+long
+ $bcvar2
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/util/zip/ZipEntry.html">
+java.util.zip.ZipEntry
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$bcvar4 := new
+</span>
+<span>
+<a href="../../../java/util/zip/ZipEntry.html">
+java.util.zip.ZipEntry
+</a>
+</span>
+<span>
+()
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getEntryFlag(long)">
+java.util.zip.ZipFile.getEntryFlag
+</span>
+</span>
+<span>
+($bcvar2:J)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+notnull $bcvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+<a href="../../../java/util/zip/ZipEntry.html#java.util.zip.ZipEntry:flag:I">
+$bcvar4:java.lang.Object.flag
+</a>
+</span>
+<span>
+:= $irvar0:I
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+if ($bcvar1:java.lang.Object == null) goto 10
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+notnull $bcvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+<a href="../../../java/util/zip/ZipEntry.html#java.util.zip.ZipEntry:name:java.lang.String">
+$bcvar4:java.lang.Object.name
+</a>
+</span>
+<span>
+:= $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+goto 31
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+$bcvar5 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="byte[] getEntryBytes(long, int)">
+java.util.zip.ZipFile.getEntryBytes
+</span>
+</span>
+<span>
+($bcvar2:J, 0)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.zc
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isUTF8()">
+this:java.lang.Object.zc.isUTF8
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+if ($irvar0:Z != 0) goto 25
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+notnull $bcvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+if (And($bcvar4:java.lang.Object.flag,2048) == 0) goto 25
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+notnull $bcvar5:java.lang.Object
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.zc
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toStringUTF8(byte[], int)">
+this:java.lang.Object.zc.toStringUTF8
+</span>
+</span>
+<span>
+($bcvar5:java.lang.Object, $bcvar5:java.lang.Object.length)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+notnull $bcvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+<a href="../../../java/util/zip/ZipEntry.html#java.util.zip.ZipEntry:name:java.lang.String">
+$bcvar4:java.lang.Object.name
+</a>
+</span>
+<span>
+:= $irvar0:java.lang.String
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+goto 31
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+notnull $bcvar5:java.lang.Object
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.zc
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toString(byte[], int)">
+this:java.lang.Object.zc.toString
+</span>
+</span>
+<span>
+($bcvar5:java.lang.Object, $bcvar5:java.lang.Object.length)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+notnull $bcvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+<a href="../../../java/util/zip/ZipEntry.html#java.util.zip.ZipEntry:name:java.lang.String">
+$bcvar4:java.lang.Object.name
+</a>
+</span>
+<span>
+:= $irvar0:java.lang.String
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long getEntryTime(long)">
+java.util.zip.ZipFile.getEntryTime
+</span>
+</span>
+<span>
+($bcvar2:J)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+notnull $bcvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+<a href="../../../java/util/zip/ZipEntry.html#java.util.zip.ZipEntry:time:J">
+$bcvar4:java.lang.Object.time
+</a>
+</span>
+<span>
+:= $irvar0:J
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long getEntryCrc(long)">
+java.util.zip.ZipFile.getEntryCrc
+</span>
+</span>
+<span>
+($bcvar2:J)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+notnull $bcvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+<a href="../../../java/util/zip/ZipEntry.html#java.util.zip.ZipEntry:crc:J">
+$bcvar4:java.lang.Object.crc
+</a>
+</span>
+<span>
+:= $irvar0:J
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long getEntrySize(long)">
+java.util.zip.ZipFile.getEntrySize
+</span>
+</span>
+<span>
+($bcvar2:J)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+notnull $bcvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+<a href="../../../java/util/zip/ZipEntry.html#java.util.zip.ZipEntry:size:J">
+$bcvar4:java.lang.Object.size
+</a>
+</span>
+<span>
+:= $irvar0:J
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long getEntryCSize(long)">
+java.util.zip.ZipFile.getEntryCSize
+</span>
+</span>
+<span>
+($bcvar2:J)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span>
+notnull $bcvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+<a href="../../../java/util/zip/ZipEntry.html#java.util.zip.ZipEntry:csize:J">
+$bcvar4:java.lang.Object.csize
+</a>
+</span>
+<span>
+:= $irvar0:J
+</span>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getEntryMethod(long)">
+java.util.zip.ZipFile.getEntryMethod
+</span>
+</span>
+<span>
+($bcvar2:J)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+notnull $bcvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="50">
+<div class="instruction">
+<span>
+<a href="../../../java/util/zip/ZipEntry.html#java.util.zip.ZipEntry:method:I">
+$bcvar4:java.lang.Object.method
+</a>
+</span>
+<span>
+:= $irvar0:I
+</span>
+</div>
+</li>
+<li value="51">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="52">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="byte[] getEntryBytes(long, int)">
+java.util.zip.ZipFile.getEntryBytes
+</span>
+</span>
+<span>
+($bcvar2:J, 1)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="53">
+<div class="instruction">
+<span>
+notnull $bcvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="54">
+<div class="instruction">
+<span>
+<a href="../../../java/util/zip/ZipEntry.html#java.util.zip.ZipEntry:extra:B.-">
+$bcvar4:java.lang.Object.extra
+</a>
+</span>
+<span>
+:= $irvar0:[B
+</span>
+</div>
+</li>
+<li value="55">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+$bcvar5 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="byte[] getEntryBytes(long, int)">
+java.util.zip.ZipFile.getEntryBytes
+</span>
+</span>
+<span>
+($bcvar2:J, 2)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="57">
+<div class="instruction">
+<span>
+if ($bcvar5:java.lang.Object != null) goto 61
+</span>
+</div>
+</li>
+<li value="58">
+<div class="instruction">
+<span>
+notnull $bcvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="59">
+<div class="instruction">
+<span>
+<a href="../../../java/util/zip/ZipEntry.html#java.util.zip.ZipEntry:comment:java.lang.String">
+$bcvar4:java.lang.Object.comment
+</a>
+</span>
+<span>
+:= null
+</span>
+</div>
+</li>
+<li value="60">
+<div class="instruction">
+<span>
+goto 80
+</span>
+</div>
+</li>
+<li value="61">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="62">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.zc
+</span>
+</div>
+</li>
+<li value="63">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isUTF8()">
+this:java.lang.Object.zc.isUTF8
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="64">
+<div class="instruction">
+<span>
+if ($irvar0:Z != 0) goto 74
+</span>
+</div>
+</li>
+<li value="65">
+<div class="instruction">
+<span>
+notnull $bcvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="66">
+<div class="instruction">
+<span>
+if (And($bcvar4:java.lang.Object.flag,2048) == 0) goto 74
+</span>
+</div>
+</li>
+<li value="67">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="68">
+<div class="instruction">
+<span>
+notnull $bcvar5:java.lang.Object
+</span>
+</div>
+</li>
+<li value="69">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.zc
+</span>
+</div>
+</li>
+<li value="70">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toStringUTF8(byte[], int)">
+this:java.lang.Object.zc.toStringUTF8
+</span>
+</span>
+<span>
+($bcvar5:java.lang.Object, $bcvar5:java.lang.Object.length)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="71">
+<div class="instruction">
+<span>
+notnull $bcvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="72">
+<div class="instruction">
+<span>
+<a href="../../../java/util/zip/ZipEntry.html#java.util.zip.ZipEntry:comment:java.lang.String">
+$bcvar4:java.lang.Object.comment
+</a>
+</span>
+<span>
+:= $irvar0:java.lang.String
+</span>
+</div>
+</li>
+<li value="73">
+<div class="instruction">
+<span>
+goto 80
+</span>
+</div>
+</li>
+<li value="74">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="75">
+<div class="instruction">
+<span>
+notnull $bcvar5:java.lang.Object
+</span>
+</div>
+</li>
+<li value="76">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.zc
+</span>
+</div>
+</li>
+<li value="77">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toString(byte[], int)">
+this:java.lang.Object.zc.toString
+</span>
+</span>
+<span>
+($bcvar5:java.lang.Object, $bcvar5:java.lang.Object.length)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="78">
+<div class="instruction">
+<span>
+notnull $bcvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="79">
+<div class="instruction">
+<span>
+<a href="../../../java/util/zip/ZipEntry.html#java.util.zip.ZipEntry:comment:java.lang.String">
+$bcvar4:java.lang.Object.comment
+</a>
+</span>
+<span>
+:= $irvar0:java.lang.String
+</span>
+</div>
+</li>
+<li value="80">
+<div class="instruction">
+<span>
+return $bcvar4:java.lang.Object
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:access$1000:JJvoid" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+void
+ 
+<span>
+access$1000
+</span>
+(
+long
+ $bcvar0
+, 
+long
+ $bcvar2
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void freeEntry(long, long)">
+java.util.zip.ZipFile.freeEntry
+</span>
+</span>
+<span>
+($bcvar0:J, $bcvar2:J)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:close:Jvoid" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+void
+ 
+<span>
+close
+</span>
+(
+long
+ 0
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:size:I" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span>
+size
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void ensureOpen()">
+java.util.zip.ZipFile.ensureOpen
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+return this:java.lang.Object.total
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:access$200:java.util.zip.ZipFilevoid" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+void
+ 
+<span>
+access$200
+</span>
+(
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+ $bcvar0
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$bcvar0:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void ensureOpen()">
+java.util.zip.ZipFile.ensureOpen
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:startsWithLocHeader:Z" href="#">
+
+</a>
+<div class="method_signature">
+private 
+bool
+ 
+<span>
+startsWithLocHeader
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+return this:java.lang.Object.locsig
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:getZipMessage:Jjava.lang.String" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span>
+getZipMessage
+</span>
+(
+long
+ 0
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:getEntry:java.lang.Stringjava.util.zip.ZipEntry" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../../java/util/zip/ZipEntry.html">
+java.util.zip.ZipEntry
+</a>
+ 
+<span>
+getEntry
+</span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+if ($bcvar1:java.lang.Object != null) goto 5
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/NullPointerException.html">
+java.lang.NullPointerException
+</a>
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../java/lang/NullPointerException.html">
+java.lang.NullPointerException
+</a>
+</span>
+<span>
+(&apos;name&apos;)
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+throw $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+$bcvar2 := 0
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+$bcvar4 := this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+monitorenter(this:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void ensureOpen()">
+java.util.zip.ZipFile.ensureOpen
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+$irvar1 := this:java.lang.Object.jzfile
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.zc
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="byte[] getBytes(java.lang.String)">
+this:java.lang.Object.zc.getBytes
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+$bcvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long getEntry(long, byte[], bool)">
+java.util.zip.ZipFile.getEntry
+</span>
+</span>
+<span>
+($irvar1:J, $irvar0:[B, 1)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+if ($bcvar2:J == 0) goto 28
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+$bcvar5 := this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.util.zip.ZipEntry getZipEntry(java.lang.String, long)">
+java.util.zip.ZipFile.getZipEntry
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object, $bcvar2:J)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+$irvar0 := this:java.lang.Object.jzfile
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void freeEntry(long, long)">
+java.util.zip.ZipFile.freeEntry
+</span>
+</span>
+<span>
+($irvar0:J, $bcvar2:J)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+notnull $bcvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+monitorexit($bcvar4:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+return $bcvar5:java.lang.Object
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+notnull $bcvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+monitorexit($bcvar4:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+goto 36
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+$bcvar6 := CatchVar76:java.lang.Object
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+notnull $bcvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+monitorexit($bcvar4:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+notnull $bcvar6:java.lang.Object
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+throw $bcvar6:java.lang.Object
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+return null
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 9; try end: 27: catch start: 31; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 28; try end: 30: catch start: 31; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 31; try end: 34: catch start: 31; catched type: None (finally block).
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:&lt;init&gt;:java.io.Filejava.nio.charset.Charsetvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<span>
+ZipFile
+</span>
+(
+<a href="../../../java/io/File.html">
+java.io.File
+</a>
+ $bcvar1
+, 
+<a href="../../../java/nio/charset/Charset.html">
+java.nio.charset.Charset
+</a>
+ $bcvar2
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.io.File, int, java.nio.charset.Charset)">
+java.util.zip.ZipFile.&lt;init&gt;
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object, 1, $bcvar2:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:&lt;init&gt;:java.io.FileIvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<span>
+ZipFile
+</span>
+(
+<a href="../../../java/io/File.html">
+java.io.File
+</a>
+ $bcvar1
+, 
+int
+ $bcvar2
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+java.nio.charset.StandardCharsets
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.io.File, int, java.nio.charset.Charset)">
+java.util.zip.ZipFile.&lt;init&gt;
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object, $bcvar2:I, java.nio.charset.StandardCharsets.UTF_8)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:access$1400:JJJB.-III" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+int
+ 
+<span>
+access$1400
+</span>
+(
+long
+ $bcvar0
+, 
+long
+ $bcvar2
+, 
+long
+ $bcvar4
+, 
+byte[]
+ $bcvar6
+, 
+int
+ $bcvar7
+, 
+int
+ $bcvar8
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int read(long, long, long, byte[], int, int)">
+java.util.zip.ZipFile.read
+</span>
+</span>
+<span>
+($bcvar0:J, $bcvar2:J, $bcvar4:J, $bcvar6:java.lang.Object, $bcvar7:I, $bcvar8:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return $irvar0:I
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:getEntryBytes:JIB.-" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+byte[]
+ 
+<span>
+getEntryBytes
+</span>
+(
+long
+ 0
+, 
+int
+ 1
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:getName:java.lang.String" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span>
+getName
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+return this:java.lang.Object.name
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:access$600:java.util.zip.ZipFileZ" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+bool
+ 
+<span>
+access$600
+</span>
+(
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+ $bcvar0
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+return $bcvar0:java.lang.Object.closeRequested
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:getEntryCSize:JJ" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+long
+ 
+<span>
+getEntryCSize
+</span>
+(
+long
+ 0
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:&lt;init&gt;:java.io.FileIjava.nio.charset.Charsetvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<span>
+ZipFile
+</span>
+(
+<a href="../../../java/io/File.html">
+java.io.File
+</a>
+ $bcvar1
+, 
+int
+ $bcvar2
+, 
+<a href="../../../java/nio/charset/Charset.html">
+java.nio.charset.Charset
+</a>
+ $bcvar3
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+<a href="#java.util.zip.ZipFile:closeRequested:Z">
+this:java.lang.Object.closeRequested
+</a>
+</span>
+<span>
+:= 0
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/util/WeakHashMap.html">
+java.util.WeakHashMap
+</a>
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../java/util/WeakHashMap.html">
+java.util.WeakHashMap
+</a>
+</span>
+<span>
+()
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+<a href="#java.util.zip.ZipFile:streams:java.util.Map">
+this:java.lang.Object.streams
+</a>
+</span>
+<span>
+:= $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+java.util.ArrayDeque
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+java.util.ArrayDeque
+</span>
+<span>
+()
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+<a href="#java.util.zip.ZipFile:inflaterCache:java.util.Deque">
+this:java.lang.Object.inflaterCache
+</a>
+</span>
+<span>
+:= $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+if (And($bcvar2:I,1) == 0) goto 14
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+if (And($bcvar2:I,-6) == 0) goto 28
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+<span>
+()
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+$irvar0:java.lang.Object.append
+</span>
+</span>
+<span>
+(&apos;Illegal mode: 0x&apos;)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/Integer.html">
+java.lang.Integer
+</a>
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+$irvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toHexString(int)">
+java.lang.Integer.toHexString
+</span>
+</span>
+<span>
+($bcvar2:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Integer.html#java.lang.Integer:toHexString:Ijava.lang.String" title="java.lang.String toHexString(int)">
+java.lang.Integer.toHexString
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+notnull $irvar1:java.lang.StringBuilder
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+$irvar3 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+$irvar1:java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+($irvar2:java.lang.String)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+notnull $irvar3:java.lang.StringBuilder
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+$irvar4 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toString()">
+$irvar3:java.lang.StringBuilder.toString
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/StringBuilder.html#java.lang.StringBuilder:toString:java.lang.String" title="java.lang.String toString()">
+java.lang.StringBuilder.toString
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+$irvar5 := new
+</span>
+<span>
+<a href="../../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+<span>
+($irvar4:java.lang.String)
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+notnull $irvar5:java.lang.Object
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+throw $irvar5:java.lang.Object
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+$bcvar4 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String getPath()">
+$bcvar1:java.lang.Object.getPath
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/io/File.html#java.io.File:getPath:java.lang.String" title="java.lang.String getPath()">
+java.io.File.getPath
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/System.html">
+java.lang.System
+</a>
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+$bcvar5 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.SecurityManager getSecurityManager()">
+java.lang.System.getSecurityManager
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/System.html#java.lang.System:getSecurityManager:java.lang.SecurityManager" title="java.lang.SecurityManager getSecurityManager()">
+java.lang.System.getSecurityManager
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+if ($bcvar5:java.lang.Object == null) goto 38
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+notnull $bcvar5:java.lang.Object
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void checkRead(java.lang.String)">
+$bcvar5:java.lang.Object.checkRead
+</span>
+</span>
+<span>
+($bcvar4:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+if (And($bcvar2:I,4) == 0) goto 38
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+notnull $bcvar5:java.lang.Object
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void checkDelete(java.lang.String)">
+$bcvar5:java.lang.Object.checkDelete
+</span>
+</span>
+<span>
+($bcvar4:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+if ($bcvar3:java.lang.Object != null) goto 43
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/NullPointerException.html">
+java.lang.NullPointerException
+</a>
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../java/lang/NullPointerException.html">
+java.lang.NullPointerException
+</a>
+</span>
+<span>
+(&apos;charset is null&apos;)
+</span>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+throw $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/util/zip/ZipCoder.html">
+java.util.zip.ZipCoder
+</a>
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.util.zip.ZipCoder get(java.nio.charset.Charset)">
+java.util.zip.ZipCoder.get
+</span>
+</span>
+<span>
+($bcvar3:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+<a href="#java.util.zip.ZipFile:zc:java.util.zip.ZipCoder">
+this:java.lang.Object.zc
+</a>
+</span>
+<span>
+:= $irvar0:java.util.zip.ZipCoder
+</span>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/System.html">
+java.lang.System
+</a>
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+$bcvar6 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long nanoTime()">
+java.lang.System.nanoTime
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/System.html#java.lang.System:nanoTime:J" title="long nanoTime()">
+java.lang.System.nanoTime
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="50">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long lastModified()">
+$bcvar1:java.lang.Object.lastModified
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="51">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="52">
+<div class="instruction">
+<span>
+$irvar1 := java.util.zip.ZipFile.usemmap
+</span>
+</div>
+</li>
+<li value="53">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="54">
+<div class="instruction">
+<span>
+$irvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long open(java.lang.String, int, long, bool)">
+java.util.zip.ZipFile.open
+</span>
+</span>
+<span>
+($bcvar4:java.lang.Object, $bcvar2:I, $irvar0:J, $irvar1:Z)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="55">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+<a href="#java.util.zip.ZipFile:jzfile:J">
+this:java.lang.Object.jzfile
+</a>
+</span>
+<span>
+:= $irvar2:J
+</span>
+</div>
+</li>
+<li value="57">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+sun.misc.PerfCounter
+</span>
+</div>
+</li>
+<li value="58">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="sun.misc.PerfCounter getZipFileOpenTime()">
+sun.misc.PerfCounter.getZipFileOpenTime
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="59">
+<div class="instruction">
+<span>
+notnull $irvar0:sun.misc.PerfCounter
+</span>
+</div>
+</li>
+<li value="60">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void addElapsedTimeFrom(long)">
+$irvar0:sun.misc.PerfCounter.addElapsedTimeFrom
+</span>
+</span>
+<span>
+($bcvar6:J)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="61">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+sun.misc.PerfCounter
+</span>
+</div>
+</li>
+<li value="62">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="sun.misc.PerfCounter getZipFileCount()">
+sun.misc.PerfCounter.getZipFileCount
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="63">
+<div class="instruction">
+<span>
+notnull $irvar0:sun.misc.PerfCounter
+</span>
+</div>
+</li>
+<li value="64">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void increment()">
+$irvar0:sun.misc.PerfCounter.increment
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="65">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="66">
+<div class="instruction">
+<span>
+<a href="#java.util.zip.ZipFile:name:java.lang.String">
+this:java.lang.Object.name
+</a>
+</span>
+<span>
+:= $bcvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="67">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="68">
+<div class="instruction">
+<span>
+$irvar0 := this:java.lang.Object.jzfile
+</span>
+</div>
+</li>
+<li value="69">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="70">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getTotal(long)">
+java.util.zip.ZipFile.getTotal
+</span>
+</span>
+<span>
+($irvar0:J)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="71">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="72">
+<div class="instruction">
+<span>
+<a href="#java.util.zip.ZipFile:total:I">
+this:java.lang.Object.total
+</a>
+</span>
+<span>
+:= $irvar1:I
+</span>
+</div>
+</li>
+<li value="73">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="74">
+<div class="instruction">
+<span>
+$irvar0 := this:java.lang.Object.jzfile
+</span>
+</div>
+</li>
+<li value="75">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="76">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool startsWithLOC(long)">
+java.util.zip.ZipFile.startsWithLOC
+</span>
+</span>
+<span>
+($irvar0:J)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="77">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="78">
+<div class="instruction">
+<span>
+<a href="#java.util.zip.ZipFile:locsig:Z">
+this:java.lang.Object.locsig
+</a>
+</span>
+<span>
+:= $irvar1:Z
+</span>
+</div>
+</li>
+<li value="79">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:access$1200:JJ" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+long
+ 
+<span>
+access$1200
+</span>
+(
+long
+ $bcvar0
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long getEntrySize(long)">
+java.util.zip.ZipFile.getEntrySize
+</span>
+</span>
+<span>
+($bcvar0:J)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return $irvar0:J
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:getCommentBytes:JB.-" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+byte[]
+ 
+<span>
+getCommentBytes
+</span>
+(
+long
+ 0
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:access$400:java.util.zip.ZipFileJ" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+long
+ 
+<span>
+access$400
+</span>
+(
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+ $bcvar0
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+return $bcvar0:java.lang.Object.jzfile
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:getEntryMethod:JI" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+int
+ 
+<span>
+getEntryMethod
+</span>
+(
+long
+ 0
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:getInflater:java.util.zip.Inflater" href="#">
+
+</a>
+<div class="method_signature">
+private 
+java.util.zip.Inflater
+ 
+<span>
+getInflater
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$bcvar2 := this:java.lang.Object.inflaterCache
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.inflaterCache
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+monitorenter(this:java.lang.Object.inflaterCache)
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.inflaterCache
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object poll()">
+this:java.lang.Object.inflaterCache.poll
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+checkcast $irvar0:java.lang.Object:
+</span>
+<span>
+java.util.zip.Inflater
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+$bcvar1 := (java.util.zip.Inflater) $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+if (null == (java.util.zip.Inflater) $irvar0:java.lang.Object) goto 16
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool ended()">
+$bcvar1:java.lang.Object.ended
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+if (0 != $irvar0:Z) goto 4
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+monitorexit($bcvar2:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+return $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+monitorexit($bcvar2:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+goto 24
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+$bcvar3 := CatchVar42:java.lang.Object
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+monitorexit($bcvar2:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+notnull $bcvar3:java.lang.Object
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+throw $bcvar3:java.lang.Object
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+java.util.zip.Inflater
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+java.util.zip.Inflater
+</span>
+<span>
+(1)
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+return $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 4; try end: 15: catch start: 19; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 16; try end: 18: catch start: 19; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 19; try end: 22: catch start: 19; catched type: None (finally block).
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:access$000:java.util.zip.ZipFilejava.util.Map" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<a href="../../../java/util/Map.html">
+java.util.Map
+</a>
+ 
+<span>
+access$000
+</span>
+(
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+ $bcvar0
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+return $bcvar0:java.lang.Object.streams
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:read:JJJB.-III" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+int
+ 
+<span>
+read
+</span>
+(
+long
+ 0
+, 
+long
+ 1
+, 
+long
+ 2
+, 
+byte[]
+ 3
+, 
+int
+ 4
+, 
+int
+ 5
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:access$800:java.util.zip.ZipFilejava.lang.String" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span>
+access$800
+</span>
+(
+<a href="ZipFile.html">
+java.util.zip.ZipFile
+</a>
+ $bcvar0
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+return $bcvar0:java.lang.Object.name
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:getEntrySize:JJ" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+long
+ 
+<span>
+getEntrySize
+</span>
+(
+long
+ 0
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipFile:entries:java.util.Enumeration" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../../java/util/Enumeration.html">
+java.util.Enumeration
+</a>
+ 
+<span>
+entries
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void ensureOpen()">
+java.util.zip.ZipFile.ensureOpen
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+java.util.zip.ZipFile$1
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+java.util.zip.ZipFile$1
+</span>
+<span>
+(this:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+return $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+</div>
+</body>
+</html>

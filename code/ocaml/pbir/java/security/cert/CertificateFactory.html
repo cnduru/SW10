@@ -1,0 +1,1692 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>
+java.security.cert.CertificateFactory
+</title>
+<link rel="StyleSheet" href="../../../style.css" type="text/css" media="all" />
+<script type="text/javascript" src="../../../actions.js">
+</script>
+</head>
+<body>
+<div class="class">
+<a name="java.security.cert.CertificateFactory" href="#">
+
+</a>
+<div class="classname">
+Class java.security.cert.CertificateFactory
+</div>
+<div class="field">
+<a name="java.security.cert.CertificateFactory:certFacSpi:java.security.cert.CertificateFactorySpi" href="#">
+
+</a>
+<span class="field_signature">
+private  
+<a href="../../../java/security/cert/CertificateFactorySpi.html">
+java.security.cert.CertificateFactorySpi
+</a>
+ certFacSpi;
+</span>
+</div>
+<div class="field">
+<a name="java.security.cert.CertificateFactory:type:java.lang.String" href="#">
+
+</a>
+<span class="field_signature">
+private  
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ type;
+</span>
+</div>
+<div class="field">
+<a name="java.security.cert.CertificateFactory:provider:java.security.Provider" href="#">
+
+</a>
+<span class="field_signature">
+private  
+<a href="../../../java/security/Provider.html">
+java.security.Provider
+</a>
+ provider;
+</span>
+</div>
+<div class="method">
+<a name="java.security.cert.CertificateFactory:generateCRLs:java.io.InputStreamjava.util.Collection" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+<a href="../../../java/util/Collection.html">
+java.util.Collection
+</a>
+ 
+<span>
+generateCRLs
+</span>
+(
+<a href="../../../java/io/InputStream.html">
+java.io.InputStream
+</a>
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.certFacSpi
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.util.Collection engineGenerateCRLs(java.io.InputStream)">
+this:java.lang.Object.certFacSpi.engineGenerateCRLs
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+return $irvar0:java.util.Collection
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.security.cert.CertificateFactory:getInstance:java.lang.Stringjava.lang.Stringjava.security.cert.CertificateFactory" href="#">
+
+</a>
+<div class="method_signature">
+public static final 
+<a href="CertificateFactory.html">
+java.security.cert.CertificateFactory
+</a>
+ 
+<span>
+getInstance
+</span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ $bcvar0
+, 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+sun.security.jca.GetInstance
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$bcvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="sun.security.jca.GetInstance$Instance getInstance(java.lang.String, java.lang.Class, java.lang.String, java.lang.String)">
+sun.security.jca.GetInstance.getInstance
+</span>
+</span>
+<span>
+(&apos;CertificateFactory&apos;, java.security.cert.CertificateFactorySpi, $bcvar0:java.lang.Object, $bcvar1:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="CertificateFactory.html">
+java.security.cert.CertificateFactory
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+checkcast $bcvar2:java.lang.Object.impl:
+</span>
+<span>
+<a href="../../../java/security/cert/CertificateFactorySpi.html">
+java.security.cert.CertificateFactorySpi
+</a>
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="CertificateFactory.html">
+java.security.cert.CertificateFactory
+</a>
+</span>
+<span>
+((java.security.cert.CertificateFactorySpi) $bcvar2:java.lang.Object.impl, $bcvar2:java.lang.Object.provider, $bcvar0:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+return $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+$bcvar2 := CatchVar31:java.lang.Object
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+java.security.cert.CertificateException
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+<span>
+()
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+$irvar0:java.lang.Object.append
+</span>
+</span>
+<span>
+($bcvar0:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+notnull $irvar1:java.lang.StringBuilder
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+$irvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+$irvar1:java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+(&apos; not found&apos;)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+notnull $irvar2:java.lang.StringBuilder
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+$irvar3 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toString()">
+$irvar2:java.lang.StringBuilder.toString
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/StringBuilder.html#java.lang.StringBuilder:toString:java.lang.String" title="java.lang.String toString()">
+java.lang.StringBuilder.toString
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+$irvar4 := new
+</span>
+<span>
+java.security.cert.CertificateException
+</span>
+<span>
+($irvar3:java.lang.String, $bcvar2:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+notnull $irvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+throw $irvar4:java.lang.Object
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 0; try end: 7: catch start: 8; catched type: java.security.NoSuchAlgorithmException.
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
+<a name="java.security.cert.CertificateFactory:generateCertificate:java.io.InputStreamjava.security.cert.Certificate" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+<a href="../../../java/security/cert/Certificate.html">
+java.security.cert.Certificate
+</a>
+ 
+<span>
+generateCertificate
+</span>
+(
+<a href="../../../java/io/InputStream.html">
+java.io.InputStream
+</a>
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.certFacSpi
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.security.cert.Certificate engineGenerateCertificate(java.io.InputStream)">
+this:java.lang.Object.certFacSpi.engineGenerateCertificate
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+return $irvar0:java.security.cert.Certificate
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.security.cert.CertificateFactory:generateCertPath:java.io.InputStreamjava.security.cert.CertPath" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+<a href="../../../java/security/cert/CertPath.html">
+java.security.cert.CertPath
+</a>
+ 
+<span>
+generateCertPath
+</span>
+(
+<a href="../../../java/io/InputStream.html">
+java.io.InputStream
+</a>
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.certFacSpi
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.security.cert.CertPath engineGenerateCertPath(java.io.InputStream)">
+this:java.lang.Object.certFacSpi.engineGenerateCertPath
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+return $irvar0:java.security.cert.CertPath
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.security.cert.CertificateFactory:&lt;init&gt;:java.security.cert.CertificateFactorySpijava.security.Providerjava.lang.Stringvoid" href="#">
+
+</a>
+<div class="method_signature">
+protected 
+<span>
+CertificateFactory
+</span>
+(
+<a href="../../../java/security/cert/CertificateFactorySpi.html">
+java.security.cert.CertificateFactorySpi
+</a>
+ $bcvar1
+, 
+<a href="../../../java/security/Provider.html">
+java.security.Provider
+</a>
+ $bcvar2
+, 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ $bcvar3
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+<a href="#java.security.cert.CertificateFactory:certFacSpi:java.security.cert.CertificateFactorySpi">
+this:java.lang.Object.certFacSpi
+</a>
+</span>
+<span>
+:= $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+<a href="#java.security.cert.CertificateFactory:provider:java.security.Provider">
+this:java.lang.Object.provider
+</a>
+</span>
+<span>
+:= $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+<a href="#java.security.cert.CertificateFactory:type:java.lang.String">
+this:java.lang.Object.type
+</a>
+</span>
+<span>
+:= $bcvar3:java.lang.Object
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.security.cert.CertificateFactory:getProvider:java.security.Provider" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+<a href="../../../java/security/Provider.html">
+java.security.Provider
+</a>
+ 
+<span>
+getProvider
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+return this:java.lang.Object.provider
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.security.cert.CertificateFactory:generateCertificates:java.io.InputStreamjava.util.Collection" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+<a href="../../../java/util/Collection.html">
+java.util.Collection
+</a>
+ 
+<span>
+generateCertificates
+</span>
+(
+<a href="../../../java/io/InputStream.html">
+java.io.InputStream
+</a>
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.certFacSpi
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.util.Collection engineGenerateCertificates(java.io.InputStream)">
+this:java.lang.Object.certFacSpi.engineGenerateCertificates
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+return $irvar0:java.util.Collection
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.security.cert.CertificateFactory:getInstance:java.lang.Stringjava.security.Providerjava.security.cert.CertificateFactory" href="#">
+
+</a>
+<div class="method_signature">
+public static final 
+<a href="CertificateFactory.html">
+java.security.cert.CertificateFactory
+</a>
+ 
+<span>
+getInstance
+</span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ $bcvar0
+, 
+<a href="../../../java/security/Provider.html">
+java.security.Provider
+</a>
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+sun.security.jca.GetInstance
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$bcvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="sun.security.jca.GetInstance$Instance getInstance(java.lang.String, java.lang.Class, java.lang.String, java.security.Provider)">
+sun.security.jca.GetInstance.getInstance
+</span>
+</span>
+<span>
+(&apos;CertificateFactory&apos;, java.security.cert.CertificateFactorySpi, $bcvar0:java.lang.Object, $bcvar1:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="CertificateFactory.html">
+java.security.cert.CertificateFactory
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+checkcast $bcvar2:java.lang.Object.impl:
+</span>
+<span>
+<a href="../../../java/security/cert/CertificateFactorySpi.html">
+java.security.cert.CertificateFactorySpi
+</a>
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="CertificateFactory.html">
+java.security.cert.CertificateFactory
+</a>
+</span>
+<span>
+((java.security.cert.CertificateFactorySpi) $bcvar2:java.lang.Object.impl, $bcvar2:java.lang.Object.provider, $bcvar0:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+return $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+$bcvar2 := CatchVar31:java.lang.Object
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+java.security.cert.CertificateException
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+<span>
+()
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+$irvar0:java.lang.Object.append
+</span>
+</span>
+<span>
+($bcvar0:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+notnull $irvar1:java.lang.StringBuilder
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+$irvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+$irvar1:java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+(&apos; not found&apos;)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+notnull $irvar2:java.lang.StringBuilder
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+$irvar3 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toString()">
+$irvar2:java.lang.StringBuilder.toString
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/StringBuilder.html#java.lang.StringBuilder:toString:java.lang.String" title="java.lang.String toString()">
+java.lang.StringBuilder.toString
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+$irvar4 := new
+</span>
+<span>
+java.security.cert.CertificateException
+</span>
+<span>
+($irvar3:java.lang.String, $bcvar2:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+notnull $irvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+throw $irvar4:java.lang.Object
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 0; try end: 7: catch start: 8; catched type: java.security.NoSuchAlgorithmException.
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
+<a name="java.security.cert.CertificateFactory:getInstance:java.lang.Stringjava.security.cert.CertificateFactory" href="#">
+
+</a>
+<div class="method_signature">
+public static final 
+<a href="CertificateFactory.html">
+java.security.cert.CertificateFactory
+</a>
+ 
+<span>
+getInstance
+</span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ $bcvar0
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+sun.security.jca.GetInstance
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$bcvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="sun.security.jca.GetInstance$Instance getInstance(java.lang.String, java.lang.Class, java.lang.String)">
+sun.security.jca.GetInstance.getInstance
+</span>
+</span>
+<span>
+(&apos;CertificateFactory&apos;, java.security.cert.CertificateFactorySpi, $bcvar0:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="CertificateFactory.html">
+java.security.cert.CertificateFactory
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+checkcast $bcvar1:java.lang.Object.impl:
+</span>
+<span>
+<a href="../../../java/security/cert/CertificateFactorySpi.html">
+java.security.cert.CertificateFactorySpi
+</a>
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="CertificateFactory.html">
+java.security.cert.CertificateFactory
+</a>
+</span>
+<span>
+((java.security.cert.CertificateFactorySpi) $bcvar1:java.lang.Object.impl, $bcvar1:java.lang.Object.provider, $bcvar0:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+return $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+$bcvar1 := CatchVar30:java.lang.Object
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+java.security.cert.CertificateException
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+<span>
+()
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+$irvar0:java.lang.Object.append
+</span>
+</span>
+<span>
+($bcvar0:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+notnull $irvar1:java.lang.StringBuilder
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+$irvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+$irvar1:java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+(&apos; not found&apos;)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+notnull $irvar2:java.lang.StringBuilder
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+$irvar3 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toString()">
+$irvar2:java.lang.StringBuilder.toString
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/StringBuilder.html#java.lang.StringBuilder:toString:java.lang.String" title="java.lang.String toString()">
+java.lang.StringBuilder.toString
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+$irvar4 := new
+</span>
+<span>
+java.security.cert.CertificateException
+</span>
+<span>
+($irvar3:java.lang.String, $bcvar1:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+notnull $irvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+throw $irvar4:java.lang.Object
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 0; try end: 7: catch start: 8; catched type: java.security.NoSuchAlgorithmException.
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
+<a name="java.security.cert.CertificateFactory:getType:java.lang.String" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span>
+getType
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+return this:java.lang.Object.type
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.security.cert.CertificateFactory:generateCertPath:java.io.InputStreamjava.lang.Stringjava.security.cert.CertPath" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+<a href="../../../java/security/cert/CertPath.html">
+java.security.cert.CertPath
+</a>
+ 
+<span>
+generateCertPath
+</span>
+(
+<a href="../../../java/io/InputStream.html">
+java.io.InputStream
+</a>
+ $bcvar1
+, 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ $bcvar2
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.certFacSpi
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.security.cert.CertPath engineGenerateCertPath(java.io.InputStream, java.lang.String)">
+this:java.lang.Object.certFacSpi.engineGenerateCertPath
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object, $bcvar2:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+return $irvar0:java.security.cert.CertPath
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.security.cert.CertificateFactory:getCertPathEncodings:java.util.Iterator" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+<a href="../../../java/util/Iterator.html">
+java.util.Iterator
+</a>
+ 
+<span>
+getCertPathEncodings
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.certFacSpi
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.util.Iterator engineGetCertPathEncodings()">
+this:java.lang.Object.certFacSpi.engineGetCertPathEncodings
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+return $irvar0:java.util.Iterator
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.security.cert.CertificateFactory:generateCertPath:java.util.Listjava.security.cert.CertPath" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+<a href="../../../java/security/cert/CertPath.html">
+java.security.cert.CertPath
+</a>
+ 
+<span>
+generateCertPath
+</span>
+(
+<a href="../../../java/util/List.html">
+java.util.List
+</a>
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.certFacSpi
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.security.cert.CertPath engineGenerateCertPath(java.util.List)">
+this:java.lang.Object.certFacSpi.engineGenerateCertPath
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+return $irvar0:java.security.cert.CertPath
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.security.cert.CertificateFactory:generateCRL:java.io.InputStreamjava.security.cert.CRL" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+java.security.cert.CRL
+ 
+<span>
+generateCRL
+</span>
+(
+<a href="../../../java/io/InputStream.html">
+java.io.InputStream
+</a>
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.certFacSpi
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.security.cert.CRL engineGenerateCRL(java.io.InputStream)">
+this:java.lang.Object.certFacSpi.engineGenerateCRL
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+return $irvar0:java.security.cert.CRL
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+</div>
+</body>
+</html>

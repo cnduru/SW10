@@ -1,0 +1,947 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>
+java.io.FilterInputStream
+</title>
+<link rel="StyleSheet" href="../../style.css" type="text/css" media="all" />
+<script type="text/javascript" src="../../actions.js">
+</script>
+</head>
+<body>
+<div class="class">
+<a name="java.io.FilterInputStream" href="#">
+
+</a>
+<div class="classname">
+Class java.io.FilterInputStream
+</div>
+<div class="field">
+<a name="java.io.FilterInputStream:in:java.io.InputStream" href="#">
+
+</a>
+<span class="field_signature">
+protected volatile 
+<a href="../../java/io/InputStream.html">
+java.io.InputStream
+</a>
+ in;
+</span>
+</div>
+<div class="method">
+<a name="java.io.FilterInputStream:read:B.-I" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+read
+</span>
+(
+byte[]
+ $bcvar1
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:readFile:java.lang.StringB.-" title="byte[] readFile(java.lang.String)">
+java.text.RuleBasedBreakIterator.readFile(java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/BreakDictionary.html#java.text.BreakDictionary:readDictionaryFile:java.lang.Stringvoid" title="void readDictionaryFile(java.lang.String)">
+java.text.BreakDictionary.readDictionaryFile(java.lang.String)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int read(byte[], int, int)">
+this:java.lang.Object.read
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object, 0, $bcvar1:java.lang.Object.length)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/io/DataInputStream.html#java.io.DataInputStream:read:B.-III" title="int read(byte[], int, int)">
+java.io.DataInputStream.read
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/BufferedInputStream.html#java.io.BufferedInputStream:read:B.-III" title="int read(byte[], int, int)">
+java.io.BufferedInputStream.read
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+return $irvar0:I
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.FilterInputStream:&lt;init&gt;:java.io.InputStreamvoid" href="#">
+
+</a>
+<div class="method_signature">
+protected 
+<span class="methodname clickable" onclick="showInfoList(this)">
+FilterInputStream
+</span>
+(
+<a href="../../java/io/InputStream.html">
+java.io.InputStream
+</a>
+ $bcvar1
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/io/DataInputStream.html#java.io.DataInputStream:&lt;init&gt;:java.io.InputStreamvoid" title="void &lt;init&gt;(java.io.InputStream)">
+java.io.DataInputStream.&lt;init&gt;(java.io.InputStream)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/BufferedInputStream.html#java.io.BufferedInputStream:&lt;init&gt;:java.io.InputStreamIvoid" title="void &lt;init&gt;(java.io.InputStream, int)">
+java.io.BufferedInputStream.&lt;init&gt;(java.io.InputStream, int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.io.InputStream.&lt;init&gt;
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/io/InputStream.html#java.io.InputStream:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.io.InputStream.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+<a href="#java.io.FilterInputStream:in:java.io.InputStream">
+this:java.lang.Object.in
+</a>
+</span>
+<span>
+:= $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.FilterInputStream:mark:Ivoid" href="#">
+
+</a>
+<div class="method_signature">
+public synchronized 
+void
+ 
+<span>
+mark
+</span>
+(
+int
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.in
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void mark(int)">
+this:java.lang.Object.in.mark
+</span>
+</span>
+<span>
+($bcvar1:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.FilterInputStream:markSupported:Z" href="#">
+
+</a>
+<div class="method_signature">
+public 
+bool
+ 
+<span>
+markSupported
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.in
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool markSupported()">
+this:java.lang.Object.in.markSupported
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+return $irvar0:Z
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.FilterInputStream:available:I" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+available
+</span>
+(
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.io.FilterInputStream:available:I" title="int available()">
+java.io.FilterInputStream.available()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/BufferedInputStream.html#java.io.BufferedInputStream:available:I" title="int available()">
+java.io.BufferedInputStream.available()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/BufferedInputStream.html#java.io.BufferedInputStream:read:B.-III" title="int read(byte[], int, int)">
+java.io.BufferedInputStream.read(byte[], int, int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.in
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int available()">
+this:java.lang.Object.in.available
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.io.FilterInputStream:available:I" title="int available()">
+java.io.FilterInputStream.available
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/FileInputStream.html#java.io.FileInputStream:available:I" title="int available()">
+java.io.FileInputStream.available
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/ByteArrayInputStream.html#java.io.ByteArrayInputStream:available:I" title="int available()">
+java.io.ByteArrayInputStream.available
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/BufferedInputStream.html#java.io.BufferedInputStream:available:I" title="int available()">
+java.io.BufferedInputStream.available
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+return $irvar0:I
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.FilterInputStream:close:void" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+close
+</span>
+(
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/io/BufferedInputStream.html#java.io.BufferedInputStream:close:void" title="void close()">
+java.io.BufferedInputStream.close()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/text/normalizer/UCharacterPropertyReader.html#sun.text.normalizer.UCharacterPropertyReader:read:sun.text.normalizer.UCharacterPropertyvoid" title="void read(sun.text.normalizer.UCharacterProperty)">
+sun.text.normalizer.UCharacterPropertyReader.read(sun.text.normalizer.UCharacterProperty)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/text/normalizer/UBiDiProps.html#sun.text.normalizer.UBiDiProps:&lt;init&gt;:void" title="void &lt;init&gt;()">
+sun.text.normalizer.UBiDiProps.&lt;init&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.io.FilterInputStream:close:void" title="void close()">
+java.io.FilterInputStream.close()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.in
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void close()">
+this:java.lang.Object.in.close
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/io/ByteArrayInputStream.html#java.io.ByteArrayInputStream:close:void" title="void close()">
+java.io.ByteArrayInputStream.close
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/BufferedInputStream.html#java.io.BufferedInputStream:close:void" title="void close()">
+java.io.BufferedInputStream.close
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.io.FilterInputStream:close:void" title="void close()">
+java.io.FilterInputStream.close
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/FileInputStream.html#java.io.FileInputStream:close:void" title="void close()">
+java.io.FileInputStream.close
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.FilterInputStream:read:B.-III" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span>
+read
+</span>
+(
+byte[]
+ $bcvar1
+, 
+int
+ $bcvar2
+, 
+int
+ $bcvar3
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.in
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int read(byte[], int, int)">
+this:java.lang.Object.in.read
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object, $bcvar2:I, $bcvar3:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/io/ByteArrayInputStream.html#java.io.ByteArrayInputStream:read:B.-III" title="int read(byte[], int, int)">
+java.io.ByteArrayInputStream.read
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/FileInputStream.html#java.io.FileInputStream:read:B.-III" title="int read(byte[], int, int)">
+java.io.FileInputStream.read
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/DataInputStream.html#java.io.DataInputStream:read:B.-III" title="int read(byte[], int, int)">
+java.io.DataInputStream.read
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/BufferedInputStream.html#java.io.BufferedInputStream:read:B.-III" title="int read(byte[], int, int)">
+java.io.BufferedInputStream.read
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+return $irvar0:I
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.FilterInputStream:read:I" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+read
+</span>
+(
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.io.FilterInputStream:read:I" title="int read()">
+java.io.FilterInputStream.read()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/DataInputStream.html#java.io.DataInputStream:readByte:B" title="byte readByte()">
+java.io.DataInputStream.readByte()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/DataInputStream.html#java.io.DataInputStream:readChar:C" title="char readChar()">
+java.io.DataInputStream.readChar()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/DataInputStream.html#java.io.DataInputStream:readInt:I" title="int readInt()">
+java.io.DataInputStream.readInt()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.in
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int read()">
+this:java.lang.Object.in.read
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.io.FilterInputStream:read:I" title="int read()">
+java.io.FilterInputStream.read
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/FileInputStream.html#java.io.FileInputStream:read:I" title="int read()">
+java.io.FileInputStream.read
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/BufferedInputStream.html#java.io.BufferedInputStream:read:I" title="int read()">
+java.io.BufferedInputStream.read
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/ByteArrayInputStream.html#java.io.ByteArrayInputStream:read:I" title="int read()">
+java.io.ByteArrayInputStream.read
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+return $irvar0:I
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.FilterInputStream:skip:JJ" href="#">
+
+</a>
+<div class="method_signature">
+public 
+long
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+skip
+</span>
+(
+long
+ $bcvar1
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/io/DataInputStream.html#java.io.DataInputStream:skipBytes:II" title="int skipBytes(int)">
+java.io.DataInputStream.skipBytes(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/BufferedInputStream.html#java.io.BufferedInputStream:skip:JJ" title="long skip(long)">
+java.io.BufferedInputStream.skip(long)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.io.FilterInputStream:skip:JJ" title="long skip(long)">
+java.io.FilterInputStream.skip(long)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.in
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long skip(long)">
+this:java.lang.Object.in.skip
+</span>
+</span>
+<span>
+($bcvar1:J)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/io/BufferedInputStream.html#java.io.BufferedInputStream:skip:JJ" title="long skip(long)">
+java.io.BufferedInputStream.skip
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/ByteArrayInputStream.html#java.io.ByteArrayInputStream:skip:JJ" title="long skip(long)">
+java.io.ByteArrayInputStream.skip
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/FileInputStream.html#java.io.FileInputStream:skip:JJ" title="long skip(long)">
+java.io.FileInputStream.skip
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.io.FilterInputStream:skip:JJ" title="long skip(long)">
+java.io.FilterInputStream.skip
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+return $irvar0:J
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.FilterInputStream:reset:void" href="#">
+
+</a>
+<div class="method_signature">
+public synchronized 
+void
+ 
+<span>
+reset
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.in
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void reset()">
+this:java.lang.Object.in.reset
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+</div>
+</body>
+</html>

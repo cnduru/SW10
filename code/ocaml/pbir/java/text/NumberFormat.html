@@ -1,0 +1,5952 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>
+java.text.NumberFormat
+</title>
+<link rel="StyleSheet" href="../../style.css" type="text/css" media="all" />
+<script type="text/javascript" src="../../actions.js">
+</script>
+</head>
+<body>
+<div class="class">
+<a name="java.text.NumberFormat" href="#">
+
+</a>
+<div class="classname">
+Class java.text.NumberFormat
+</div>
+<div class="field">
+<a name="java.text.NumberFormat:minimumFractionDigits:I" href="#">
+
+</a>
+<span class="field_signature">
+private  
+int
+ minimumFractionDigits;
+</span>
+</div>
+<div class="field">
+<a name="java.text.NumberFormat:currentSerialVersion:I" href="#">
+
+</a>
+<span class="field_signature">
+ static final 
+int
+ currentSerialVersion;
+</span>
+</div>
+<div class="field">
+<a name="java.text.NumberFormat:CURRENCYSTYLE:I" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+int
+ CURRENCYSTYLE;
+</span>
+</div>
+<div class="field">
+<a name="java.text.NumberFormat:serialVersionUID:J" href="#">
+
+</a>
+<span class="field_signature">
+ static final 
+long
+ serialVersionUID;
+</span>
+</div>
+<div class="field">
+<a name="java.text.NumberFormat:minFractionDigits:B" href="#">
+
+</a>
+<span class="field_signature">
+private  
+byte
+ minFractionDigits;
+</span>
+</div>
+<div class="field">
+<a name="java.text.NumberFormat:cachedLocaleData:java.util.Hashtable" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+<a href="../../java/util/Hashtable.html">
+java.util.Hashtable
+</a>
+ cachedLocaleData;
+</span>
+</div>
+<div class="field">
+<a name="java.text.NumberFormat:maximumFractionDigits:I" href="#">
+
+</a>
+<span class="field_signature">
+private  
+int
+ maximumFractionDigits;
+</span>
+</div>
+<div class="field">
+<a name="java.text.NumberFormat:FRACTION_FIELD:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ FRACTION_FIELD;
+</span>
+</div>
+<div class="field">
+<a name="java.text.NumberFormat:SCIENTIFICSTYLE:I" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+int
+ SCIENTIFICSTYLE;
+</span>
+</div>
+<div class="field">
+<a name="java.text.NumberFormat:maxFractionDigits:B" href="#">
+
+</a>
+<span class="field_signature">
+private  
+byte
+ maxFractionDigits;
+</span>
+</div>
+<div class="field">
+<a name="java.text.NumberFormat:serialVersionOnStream:I" href="#">
+
+</a>
+<span class="field_signature">
+private  
+int
+ serialVersionOnStream;
+</span>
+</div>
+<div class="field">
+<a name="java.text.NumberFormat:groupingUsed:Z" href="#">
+
+</a>
+<span class="field_signature">
+private  
+bool
+ groupingUsed;
+</span>
+</div>
+<div class="field">
+<a name="java.text.NumberFormat:maximumIntegerDigits:I" href="#">
+
+</a>
+<span class="field_signature">
+private  
+int
+ maximumIntegerDigits;
+</span>
+</div>
+<div class="field">
+<a name="java.text.NumberFormat:NUMBERSTYLE:I" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+int
+ NUMBERSTYLE;
+</span>
+</div>
+<div class="field">
+<a name="java.text.NumberFormat:INTEGERSTYLE:I" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+int
+ INTEGERSTYLE;
+</span>
+</div>
+<div class="field">
+<a name="java.text.NumberFormat:maxIntegerDigits:B" href="#">
+
+</a>
+<span class="field_signature">
+private  
+byte
+ maxIntegerDigits;
+</span>
+</div>
+<div class="field">
+<a name="java.text.NumberFormat:parseIntegerOnly:Z" href="#">
+
+</a>
+<span class="field_signature">
+private  
+bool
+ parseIntegerOnly;
+</span>
+</div>
+<div class="field">
+<a name="java.text.NumberFormat:minIntegerDigits:B" href="#">
+
+</a>
+<span class="field_signature">
+private  
+byte
+ minIntegerDigits;
+</span>
+</div>
+<div class="field">
+<a name="java.text.NumberFormat:INTEGER_FIELD:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ INTEGER_FIELD;
+</span>
+</div>
+<div class="field">
+<a name="java.text.NumberFormat:PERCENTSTYLE:I" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+int
+ PERCENTSTYLE;
+</span>
+</div>
+<div class="field">
+<a name="java.text.NumberFormat:minimumIntegerDigits:I" href="#">
+
+</a>
+<span class="field_signature">
+private  
+int
+ minimumIntegerDigits;
+</span>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:&lt;clinit&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<span>
+clinit
+</span>
+{};
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/util/Hashtable.html">
+java.util.Hashtable
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../java/util/Hashtable.html">
+java.util.Hashtable
+</a>
+</span>
+<span>
+(3)
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:cachedLocaleData:java.util.Hashtable">
+java.text.NumberFormat.cachedLocaleData
+</a>
+</span>
+<span>
+:= $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:format:Jjava.lang.String" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span>
+format
+</span>
+(
+long
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/lang/StringBuffer.html">
+java.lang.StringBuffer
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../java/lang/StringBuffer.html">
+java.lang.StringBuffer
+</a>
+</span>
+<span>
+()
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+java.text.DontCareFieldPosition
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuffer format(long, java.lang.StringBuffer, java.text.FieldPosition)">
+this:java.lang.Object.format
+</span>
+</span>
+<span>
+($bcvar1:J, $irvar0:java.lang.Object, java.text.DontCareFieldPosition.INSTANCE)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+notnull $irvar1:java.lang.StringBuffer
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+$irvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toString()">
+$irvar1:java.lang.StringBuffer.toString
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuffer.html#java.lang.StringBuffer:toString:java.lang.String" title="java.lang.String toString()">
+java.lang.StringBuffer.toString
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+return $irvar2:java.lang.String
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:getMaximumIntegerDigits:I" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getMaximumIntegerDigits
+</span>
+(
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:&lt;init&gt;:java.lang.Stringjava.text.DecimalFormatSymbolsvoid" title="void &lt;init&gt;(java.lang.String, java.text.DecimalFormatSymbols)">
+java.text.DecimalFormat.&lt;init&gt;(java.lang.String, java.text.DecimalFormatSymbols)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+return this:java.lang.Object.maximumIntegerDigits
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:getCurrencyInstance:java.text.NumberFormat" href="#">
+
+</a>
+<div class="method_signature">
+public static final 
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+ 
+<span>
+getCurrencyInstance
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/util/Locale$Category.html">
+java.util.Locale$Category
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 := java.util.Locale$Category.FORMAT
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/util/Locale.html">
+java.util.Locale
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.util.Locale getDefault(java.util.Locale$Category)">
+java.util.Locale.getDefault
+</span>
+</span>
+<span>
+($irvar0:java.util.Locale$Category)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/Locale.html#java.util.Locale:getDefault:java.util.Locale$Categoryjava.util.Locale" title="java.util.Locale getDefault(java.util.Locale$Category)">
+java.util.Locale.getDefault
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+$irvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.text.NumberFormat getInstance(java.util.Locale, int)">
+java.text.NumberFormat.getInstance
+</span>
+</span>
+<span>
+($irvar1:java.util.Locale, 1)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.text.NumberFormat:getInstance:java.util.LocaleIjava.text.NumberFormat" title="java.text.NumberFormat getInstance(java.util.Locale, int)">
+java.text.NumberFormat.getInstance
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+return $irvar2:java.text.NumberFormat
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:getIntegerInstance:java.util.Localejava.text.NumberFormat" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getIntegerInstance
+</span>
+(
+<a href="../../java/util/Locale.html">
+java.util.Locale
+</a>
+ $bcvar0
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/Formatter$FormatSpecifier.html#java.util.Formatter$FormatSpecifier:localizedMagnitude:java.lang.StringBuilderC.-java.util.Formatter$FlagsIjava.util.Localejava.lang.StringBuilder" title="java.lang.StringBuilder localizedMagnitude(java.lang.StringBuilder, char[], java.util.Formatter$Flags, int, java.util.Locale)">
+java.util.Formatter$FormatSpecifier.localizedMagnitude(java.lang.StringBuilder, char[], java.util.Formatter$Flags, int, java.util.Locale)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.text.NumberFormat getInstance(java.util.Locale, int)">
+java.text.NumberFormat.getInstance
+</span>
+</span>
+<span>
+($bcvar0:java.lang.Object, 4)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.text.NumberFormat:getInstance:java.util.LocaleIjava.text.NumberFormat" title="java.text.NumberFormat getInstance(java.util.Locale, int)">
+java.text.NumberFormat.getInstance
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return $irvar0:java.text.NumberFormat
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:getInstance:java.util.LocaleIjava.text.NumberFormat" href="#">
+
+</a>
+<div class="method_signature">
+private static 
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getInstance
+</span>
+(
+<a href="../../java/util/Locale.html">
+java.util.Locale
+</a>
+ $bcvar0
+, 
+int
+ $bcvar1
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.text.NumberFormat:getIntegerInstance:java.util.Localejava.text.NumberFormat" title="java.text.NumberFormat getIntegerInstance(java.util.Locale)">
+java.text.NumberFormat.getIntegerInstance(java.util.Locale)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../sun/util/LocaleServiceProviderPool.html">
+sun.util.LocaleServiceProviderPool
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$bcvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="sun.util.LocaleServiceProviderPool getPool(java.lang.Class)">
+sun.util.LocaleServiceProviderPool.getPool
+</span>
+</span>
+<span>
+(java.text.spi.NumberFormatProvider)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/util/LocaleServiceProviderPool.html#sun.util.LocaleServiceProviderPool:getPool:java.lang.Classsun.util.LocaleServiceProviderPool" title="sun.util.LocaleServiceProviderPool getPool(java.lang.Class)">
+sun.util.LocaleServiceProviderPool.getPool
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool hasProviders()">
+$bcvar2:java.lang.Object.hasProviders
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/util/LocaleServiceProviderPool.html#sun.util.LocaleServiceProviderPool:hasProviders:Z" title="bool hasProviders()">
+sun.util.LocaleServiceProviderPool.hasProviders
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+if ($irvar0:Z == 0) goto 21
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/text/NumberFormat$NumberFormatGetter.html">
+java.text.NumberFormat$NumberFormatGetter
+</a>
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.text.NumberFormat$NumberFormatGetter access$000()">
+java.text.NumberFormat$NumberFormatGetter.access$000
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/NumberFormat$NumberFormatGetter.html#java.text.NumberFormat$NumberFormatGetter:access$000:java.text.NumberFormat$NumberFormatGetter" title="java.text.NumberFormat$NumberFormatGetter access$000()">
+java.text.NumberFormat$NumberFormatGetter.access$000
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+checknegsize 1
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+$irvar1 := new
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span>
+[1]
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/lang/Integer.html">
+java.lang.Integer
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+$irvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Integer valueOf(int)">
+java.lang.Integer.valueOf
+</span>
+</span>
+<span>
+($bcvar1:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Integer.html#java.lang.Integer:valueOf:Ijava.lang.Integer" title="java.lang.Integer valueOf(int)">
+java.lang.Integer.valueOf
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+notnull $irvar1:[java.lang.Object
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+checkbound $irvar1:[java.lang.Object[0]
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+checkstore $irvar1:[java.lang.Object[] &lt;- $irvar2:java.lang.Integer
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+$irvar1:[java.lang.Object[0] := $irvar2:java.lang.Integer
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+$irvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object getLocalizedObject(sun.util.LocaleServiceProviderPool$LocalizedObjectGetter, java.util.Locale, java.lang.Object[])">
+$bcvar2:java.lang.Object.getLocalizedObject
+</span>
+</span>
+<span>
+($irvar0:java.text.NumberFormat$NumberFormatGetter, $bcvar0:java.lang.Object, $irvar1:[java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/util/LocaleServiceProviderPool.html#sun.util.LocaleServiceProviderPool:getLocalizedObject:sun.util.LocaleServiceProviderPool$LocalizedObjectGetterjava.util.Localejava.lang.Object.-java.lang.Object" title="java.lang.Object getLocalizedObject(sun.util.LocaleServiceProviderPool$LocalizedObjectGetter, java.util.Locale, java.lang.Object[])">
+sun.util.LocaleServiceProviderPool.getLocalizedObject
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+checkcast $irvar2:java.lang.Object:
+</span>
+<span>
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+$bcvar3 := (java.text.NumberFormat) $irvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+if ($bcvar3:java.lang.Object == null) goto 21
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+return $bcvar3:java.lang.Object
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+notnull java.text.NumberFormat.cachedLocaleData
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object get(java.lang.Object)">
+java.text.NumberFormat.cachedLocaleData.get
+</span>
+</span>
+<span>
+($bcvar0:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/Hashtable.html#java.util.Hashtable:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
+java.util.Hashtable.get
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+checkcast $irvar0:java.lang.Object:
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+[]
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+checkcast ([java.lang.String) $irvar0:java.lang.Object:
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+[]
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+$bcvar3 := ([java.lang.String) ([java.lang.String) $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+if ($bcvar3:java.lang.Object != null) goto 36
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../sun/util/resources/LocaleData.html">
+sun.util.resources.LocaleData
+</a>
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+$bcvar4 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.util.ResourceBundle getNumberFormatData(java.util.Locale)">
+sun.util.resources.LocaleData.getNumberFormatData
+</span>
+</span>
+<span>
+($bcvar0:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/util/resources/LocaleData.html#sun.util.resources.LocaleData:getNumberFormatData:java.util.Localejava.util.ResourceBundle" title="java.util.ResourceBundle getNumberFormatData(java.util.Locale)">
+sun.util.resources.LocaleData.getNumberFormatData
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+notnull $bcvar4:java.lang.Object
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+$bcvar3 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String[] getStringArray(java.lang.String)">
+$bcvar4:java.lang.Object.getStringArray
+</span>
+</span>
+<span>
+(&apos;NumberPatterns&apos;)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+notnull java.text.NumberFormat.cachedLocaleData
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.text.NumberFormat.cachedLocaleData.put
+</span>
+</span>
+<span>
+($bcvar0:java.lang.Object, $bcvar3:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/Hashtable.html#java.util.Hashtable:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.Hashtable.put
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+nop
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/text/DecimalFormatSymbols.html">
+java.text.DecimalFormatSymbols
+</a>
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+$bcvar4 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.text.DecimalFormatSymbols getInstance(java.util.Locale)">
+java.text.DecimalFormatSymbols.getInstance
+</span>
+</span>
+<span>
+($bcvar0:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/DecimalFormatSymbols.html#java.text.DecimalFormatSymbols:getInstance:java.util.Localejava.text.DecimalFormatSymbols" title="java.text.DecimalFormatSymbols getInstance(java.util.Locale)">
+java.text.DecimalFormatSymbols.getInstance
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+if ($bcvar1:I != 4) goto 41
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+$T0_100 := 0
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+goto 42
+</span>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+$T0_100 := $bcvar1:I
+</span>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+$bcvar5 := $T0_100:I
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/text/DecimalFormat.html">
+java.text.DecimalFormat
+</a>
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+notnull $bcvar3:java.lang.Object
+</span>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span>
+checkbound $bcvar3:java.lang.Object[$bcvar5:I]
+</span>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+$bcvar6 := new
+</span>
+<span>
+<a href="../../java/text/DecimalFormat.html">
+java.text.DecimalFormat
+</a>
+</span>
+<span>
+($bcvar3:java.lang.Object[$bcvar5:I]:java.lang.Object, $bcvar4:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+if ($bcvar1:I != 4) goto 55
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+notnull $bcvar6:java.lang.Object
+</span>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void setMaximumFractionDigits(int)">
+$bcvar6:java.lang.Object.setMaximumFractionDigits
+</span>
+</span>
+<span>
+(0)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:setMaximumFractionDigits:Ivoid" title="void setMaximumFractionDigits(int)">
+java.text.DecimalFormat.setMaximumFractionDigits
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="50">
+<div class="instruction">
+<span>
+notnull $bcvar6:java.lang.Object
+</span>
+</div>
+</li>
+<li value="51">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void setDecimalSeparatorAlwaysShown(bool)">
+$bcvar6:java.lang.Object.setDecimalSeparatorAlwaysShown
+</span>
+</span>
+<span>
+(0)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:setDecimalSeparatorAlwaysShown:Zvoid" title="void setDecimalSeparatorAlwaysShown(bool)">
+java.text.DecimalFormat.setDecimalSeparatorAlwaysShown
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="52">
+<div class="instruction">
+<span>
+notnull $bcvar6:java.lang.Object
+</span>
+</div>
+</li>
+<li value="53">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void setParseIntegerOnly(bool)">
+$bcvar6:java.lang.Object.setParseIntegerOnly
+</span>
+</span>
+<span>
+(1)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.text.NumberFormat:setParseIntegerOnly:Zvoid" title="void setParseIntegerOnly(bool)">
+java.text.NumberFormat.setParseIntegerOnly
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="54">
+<div class="instruction">
+<span>
+goto 58
+</span>
+</div>
+</li>
+<li value="55">
+<div class="instruction">
+<span>
+if ($bcvar1:I != 1) goto 58
+</span>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+notnull $bcvar6:java.lang.Object
+</span>
+</div>
+</li>
+<li value="57">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void adjustForCurrencyDefaultFractionDigits()">
+$bcvar6:java.lang.Object.adjustForCurrencyDefaultFractionDigits
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:adjustForCurrencyDefaultFractionDigits:void" title="void adjustForCurrencyDefaultFractionDigits()">
+java.text.DecimalFormat.adjustForCurrencyDefaultFractionDigits
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="58">
+<div class="instruction">
+<span>
+return $bcvar6:java.lang.Object
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:setRoundingMode:java.math.RoundingModevoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span>
+setRoundingMode
+</span>
+(
+<a href="../../java/math/RoundingMode.html">
+java.math.RoundingMode
+</a>
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/lang/UnsupportedOperationException.html">
+java.lang.UnsupportedOperationException
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../java/lang/UnsupportedOperationException.html">
+java.lang.UnsupportedOperationException
+</a>
+</span>
+<span>
+()
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+throw $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:getInstance:java.util.Localejava.text.NumberFormat" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+ 
+<span>
+getInstance
+</span>
+(
+<a href="../../java/util/Locale.html">
+java.util.Locale
+</a>
+ $bcvar0
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.text.NumberFormat getInstance(java.util.Locale, int)">
+java.text.NumberFormat.getInstance
+</span>
+</span>
+<span>
+($bcvar0:java.lang.Object, 0)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.text.NumberFormat:getInstance:java.util.LocaleIjava.text.NumberFormat" title="java.text.NumberFormat getInstance(java.util.Locale, int)">
+java.text.NumberFormat.getInstance
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return $irvar0:java.text.NumberFormat
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:setMaximumFractionDigits:Ivoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+setMaximumFractionDigits
+</span>
+(
+int
+ $bcvar1
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:setMinimumFractionDigits:Ivoid" title="void setMinimumFractionDigits(int)">
+java.text.DecimalFormat.setMinimumFractionDigits(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:setMaximumFractionDigits:Ivoid" title="void setMaximumFractionDigits(int)">
+java.text.DecimalFormat.setMaximumFractionDigits(int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/lang/Math.html">
+java.lang.Math
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int max(int, int)">
+java.lang.Math.max
+</span>
+</span>
+<span>
+(0, $bcvar1:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Math.html#java.lang.Math:max:III" title="int max(int, int)">
+java.lang.Math.max
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:maximumFractionDigits:I">
+this:java.lang.Object.maximumFractionDigits
+</a>
+</span>
+<span>
+:= $irvar0:I
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.maximumFractionDigits &gt;= this:java.lang.Object.minimumFractionDigits) goto 10
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:minimumFractionDigits:I">
+this:java.lang.Object.minimumFractionDigits
+</a>
+</span>
+<span>
+:= this:java.lang.Object.maximumFractionDigits
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:getMaximumFractionDigits:I" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getMaximumFractionDigits
+</span>
+(
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:&lt;init&gt;:java.lang.Stringjava.text.DecimalFormatSymbolsvoid" title="void &lt;init&gt;(java.lang.String, java.text.DecimalFormatSymbols)">
+java.text.DecimalFormat.&lt;init&gt;(java.lang.String, java.text.DecimalFormatSymbols)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+return this:java.lang.Object.maximumFractionDigits
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:getScientificInstance:java.text.NumberFormat" href="#">
+
+</a>
+<div class="method_signature">
+ static final 
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+ 
+<span>
+getScientificInstance
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/util/Locale$Category.html">
+java.util.Locale$Category
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 := java.util.Locale$Category.FORMAT
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/util/Locale.html">
+java.util.Locale
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.util.Locale getDefault(java.util.Locale$Category)">
+java.util.Locale.getDefault
+</span>
+</span>
+<span>
+($irvar0:java.util.Locale$Category)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/Locale.html#java.util.Locale:getDefault:java.util.Locale$Categoryjava.util.Locale" title="java.util.Locale getDefault(java.util.Locale$Category)">
+java.util.Locale.getDefault
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+$irvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.text.NumberFormat getInstance(java.util.Locale, int)">
+java.text.NumberFormat.getInstance
+</span>
+</span>
+<span>
+($irvar1:java.util.Locale, 3)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.text.NumberFormat:getInstance:java.util.LocaleIjava.text.NumberFormat" title="java.text.NumberFormat getInstance(java.util.Locale, int)">
+java.text.NumberFormat.getInstance
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+return $irvar2:java.text.NumberFormat
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:isParseIntegerOnly:Z" href="#">
+
+</a>
+<div class="method_signature">
+public 
+bool
+ 
+<span>
+isParseIntegerOnly
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+return this:java.lang.Object.parseIntegerOnly
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:clone:java.lang.Object" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+clone
+</span>
+(
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:clone:java.lang.Object" title="java.lang.Object clone()">
+java.text.DecimalFormat.clone()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 := this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object clone()">
+java.text.Format.clone
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/Format.html#java.text.Format:clone:java.lang.Object" title="java.lang.Object clone()">
+java.text.Format.clone
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+checkcast $irvar0:java.lang.Object:
+</span>
+<span>
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$bcvar1 := (java.text.NumberFormat) $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+return $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:getMinimumIntegerDigits:I" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getMinimumIntegerDigits
+</span>
+(
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:&lt;init&gt;:java.lang.Stringjava.text.DecimalFormatSymbolsvoid" title="void &lt;init&gt;(java.lang.String, java.text.DecimalFormatSymbols)">
+java.text.DecimalFormat.&lt;init&gt;(java.lang.String, java.text.DecimalFormatSymbols)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+return this:java.lang.Object.minimumIntegerDigits
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:readObject:java.io.ObjectInputStreamvoid" href="#">
+
+</a>
+<div class="method_signature">
+private 
+void
+ 
+<span>
+readObject
+</span>
+(
+<a href="../../java/io/ObjectInputStream.html">
+java.io.ObjectInputStream
+</a>
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void defaultReadObject()">
+$bcvar1:java.lang.Object.defaultReadObject
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.serialVersionOnStream &gt;= 1) goto 16
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:maximumIntegerDigits:I">
+this:java.lang.Object.maximumIntegerDigits
+</a>
+</span>
+<span>
+:= this:java.lang.Object.maxIntegerDigits
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:minimumIntegerDigits:I">
+this:java.lang.Object.minimumIntegerDigits
+</a>
+</span>
+<span>
+:= this:java.lang.Object.minIntegerDigits
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:maximumFractionDigits:I">
+this:java.lang.Object.maximumFractionDigits
+</a>
+</span>
+<span>
+:= this:java.lang.Object.maxFractionDigits
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:minimumFractionDigits:I">
+this:java.lang.Object.minimumFractionDigits
+</a>
+</span>
+<span>
+:= this:java.lang.Object.minFractionDigits
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.minimumIntegerDigits &gt; this:java.lang.Object.maximumIntegerDigits) goto 26
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.minimumFractionDigits &gt; this:java.lang.Object.maximumFractionDigits) goto 26
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.minimumIntegerDigits &lt; 0) goto 26
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.minimumFractionDigits &gt;= 0) goto 30
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+java.io.InvalidObjectException
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+java.io.InvalidObjectException
+</span>
+<span>
+(&apos;Digit count range invalid&apos;)
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+throw $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:serialVersionOnStream:I">
+this:java.lang.Object.serialVersionOnStream
+</a>
+</span>
+<span>
+:= 1
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:getPercentInstance:java.text.NumberFormat" href="#">
+
+</a>
+<div class="method_signature">
+public static final 
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+ 
+<span>
+getPercentInstance
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/util/Locale$Category.html">
+java.util.Locale$Category
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 := java.util.Locale$Category.FORMAT
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/util/Locale.html">
+java.util.Locale
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.util.Locale getDefault(java.util.Locale$Category)">
+java.util.Locale.getDefault
+</span>
+</span>
+<span>
+($irvar0:java.util.Locale$Category)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/Locale.html#java.util.Locale:getDefault:java.util.Locale$Categoryjava.util.Locale" title="java.util.Locale getDefault(java.util.Locale$Category)">
+java.util.Locale.getDefault
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+$irvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.text.NumberFormat getInstance(java.util.Locale, int)">
+java.text.NumberFormat.getInstance
+</span>
+</span>
+<span>
+($irvar1:java.util.Locale, 2)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.text.NumberFormat:getInstance:java.util.LocaleIjava.text.NumberFormat" title="java.text.NumberFormat getInstance(java.util.Locale, int)">
+java.text.NumberFormat.getInstance
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+return $irvar2:java.text.NumberFormat
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:format:Djava.lang.StringBufferjava.text.FieldPositionjava.lang.StringBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="../../java/lang/StringBuffer.html">
+java.lang.StringBuffer
+</a>
+ 
+<span>
+format
+</span>
+(
+double
+ 0
+, 
+<a href="../../java/lang/StringBuffer.html">
+java.lang.StringBuffer
+</a>
+ 1
+, 
+<a href="../../java/text/FieldPosition.html">
+java.text.FieldPosition
+</a>
+ 2
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:getNumberInstance:java.util.Localejava.text.NumberFormat" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+ 
+<span>
+getNumberInstance
+</span>
+(
+<a href="../../java/util/Locale.html">
+java.util.Locale
+</a>
+ $bcvar0
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.text.NumberFormat getInstance(java.util.Locale, int)">
+java.text.NumberFormat.getInstance
+</span>
+</span>
+<span>
+($bcvar0:java.lang.Object, 0)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.text.NumberFormat:getInstance:java.util.LocaleIjava.text.NumberFormat" title="java.text.NumberFormat getInstance(java.util.Locale, int)">
+java.text.NumberFormat.getInstance
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return $irvar0:java.text.NumberFormat
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:setParseIntegerOnly:Zvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+setParseIntegerOnly
+</span>
+(
+bool
+ $bcvar1
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.text.NumberFormat:getInstance:java.util.LocaleIjava.text.NumberFormat" title="java.text.NumberFormat getInstance(java.util.Locale, int)">
+java.text.NumberFormat.getInstance(java.util.Locale, int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:parseIntegerOnly:Z">
+this:java.lang.Object.parseIntegerOnly
+</a>
+</span>
+<span>
+:= $bcvar1:I
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:setMinimumFractionDigits:Ivoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+setMinimumFractionDigits
+</span>
+(
+int
+ $bcvar1
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:setMinimumFractionDigits:Ivoid" title="void setMinimumFractionDigits(int)">
+java.text.DecimalFormat.setMinimumFractionDigits(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:setMaximumFractionDigits:Ivoid" title="void setMaximumFractionDigits(int)">
+java.text.DecimalFormat.setMaximumFractionDigits(int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/lang/Math.html">
+java.lang.Math
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int max(int, int)">
+java.lang.Math.max
+</span>
+</span>
+<span>
+(0, $bcvar1:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Math.html#java.lang.Math:max:III" title="int max(int, int)">
+java.lang.Math.max
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:minimumFractionDigits:I">
+this:java.lang.Object.minimumFractionDigits
+</a>
+</span>
+<span>
+:= $irvar0:I
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.maximumFractionDigits &gt;= this:java.lang.Object.minimumFractionDigits) goto 10
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:maximumFractionDigits:I">
+this:java.lang.Object.maximumFractionDigits
+</a>
+</span>
+<span>
+:= this:java.lang.Object.minimumFractionDigits
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:setCurrency:java.util.Currencyvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span>
+setCurrency
+</span>
+(
+<a href="../../java/util/Currency.html">
+java.util.Currency
+</a>
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/lang/UnsupportedOperationException.html">
+java.lang.UnsupportedOperationException
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../java/lang/UnsupportedOperationException.html">
+java.lang.UnsupportedOperationException
+</a>
+</span>
+<span>
+()
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+throw $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:isGroupingUsed:Z" href="#">
+
+</a>
+<div class="method_signature">
+public 
+bool
+ 
+<span>
+isGroupingUsed
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+return this:java.lang.Object.groupingUsed
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:parseObject:java.lang.Stringjava.text.ParsePositionjava.lang.Object" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 
+<span>
+parseObject
+</span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ $bcvar1
+, 
+<a href="../../java/text/ParsePosition.html">
+java.text.ParsePosition
+</a>
+ $bcvar2
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Number parse(java.lang.String, java.text.ParsePosition)">
+this:java.lang.Object.parse
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object, $bcvar2:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return $irvar0:java.lang.Number
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:parse:java.lang.Stringjava.lang.Number" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/lang/Number.html">
+java.lang.Number
+</a>
+ 
+<span>
+parse
+</span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/text/ParsePosition.html">
+java.text.ParsePosition
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$bcvar2 := new
+</span>
+<span>
+<a href="../../java/text/ParsePosition.html">
+java.text.ParsePosition
+</a>
+</span>
+<span>
+(0)
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$bcvar3 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Number parse(java.lang.String, java.text.ParsePosition)">
+this:java.lang.Object.parse
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object, $bcvar2:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+if ($bcvar2:java.lang.Object.index != 0) goto 21
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+java.text.ParseException
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+<span>
+()
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+$irvar0:java.lang.Object.append
+</span>
+</span>
+<span>
+(&apos;Unparseable number: \&quot;&apos;)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+notnull $irvar1:java.lang.StringBuilder
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+$irvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+$irvar1:java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+notnull $irvar2:java.lang.StringBuilder
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+$irvar3 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+$irvar2:java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+(&apos;\&quot;&apos;)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+notnull $irvar3:java.lang.StringBuilder
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+$irvar4 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toString()">
+$irvar3:java.lang.StringBuilder.toString
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:toString:java.lang.String" title="java.lang.String toString()">
+java.lang.StringBuilder.toString
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+$irvar5 := new
+</span>
+<span>
+java.text.ParseException
+</span>
+<span>
+($irvar4:java.lang.String, $bcvar2:java.lang.Object.errorIndex)
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+notnull $irvar5:java.lang.Object
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+throw $irvar5:java.lang.Object
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+return $bcvar3:java.lang.Object
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:setMaximumIntegerDigits:Ivoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+setMaximumIntegerDigits
+</span>
+(
+int
+ $bcvar1
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:setMinimumIntegerDigits:Ivoid" title="void setMinimumIntegerDigits(int)">
+java.text.DecimalFormat.setMinimumIntegerDigits(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:setMaximumIntegerDigits:Ivoid" title="void setMaximumIntegerDigits(int)">
+java.text.DecimalFormat.setMaximumIntegerDigits(int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/lang/Math.html">
+java.lang.Math
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int max(int, int)">
+java.lang.Math.max
+</span>
+</span>
+<span>
+(0, $bcvar1:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Math.html#java.lang.Math:max:III" title="int max(int, int)">
+java.lang.Math.max
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:maximumIntegerDigits:I">
+this:java.lang.Object.maximumIntegerDigits
+</a>
+</span>
+<span>
+:= $irvar0:I
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.minimumIntegerDigits &lt;= this:java.lang.Object.maximumIntegerDigits) goto 10
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:minimumIntegerDigits:I">
+this:java.lang.Object.minimumIntegerDigits
+</a>
+</span>
+<span>
+:= this:java.lang.Object.maximumIntegerDigits
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:writeObject:java.io.ObjectOutputStreamvoid" href="#">
+
+</a>
+<div class="method_signature">
+private 
+void
+ 
+<span>
+writeObject
+</span>
+(
+java.io.ObjectOutputStream
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$T0_15 := this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.maximumIntegerDigits &lt;= 127) goto 6
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$T0_20 := 127
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+$T1_20 := this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+goto 9
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+$T0_20 := I2B(this:java.lang.Object.maximumIntegerDigits)
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+$T1_20 := $T0_15:java.lang.Object
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+notnull $T1_20:java.lang.Object
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:maxIntegerDigits:B">
+$T1_20:java.lang.Object.maxIntegerDigits
+</a>
+</span>
+<span>
+:= $T0_20:I
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+$T0_38 := this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.minimumIntegerDigits &lt;= 127) goto 17
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+$T0_43 := 127
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+$T1_43 := this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+goto 20
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+$T0_43 := I2B(this:java.lang.Object.minimumIntegerDigits)
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+$T1_43 := $T0_38:java.lang.Object
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+notnull $T1_43:java.lang.Object
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:minIntegerDigits:B">
+$T1_43:java.lang.Object.minIntegerDigits
+</a>
+</span>
+<span>
+:= $T0_43:I
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+$T0_61 := this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.maximumFractionDigits &lt;= 127) goto 28
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+$T0_66 := 127
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+$T1_66 := this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+goto 31
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+$T0_66 := I2B(this:java.lang.Object.maximumFractionDigits)
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+$T1_66 := $T0_61:java.lang.Object
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+notnull $T1_66:java.lang.Object
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:maxFractionDigits:B">
+$T1_66:java.lang.Object.maxFractionDigits
+</a>
+</span>
+<span>
+:= $T0_66:I
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+$T0_84 := this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.minimumFractionDigits &lt;= 127) goto 39
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+$T0_89 := 127
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+$T1_89 := this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+goto 42
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+$T0_89 := I2B(this:java.lang.Object.minimumFractionDigits)
+</span>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+$T1_89 := $T0_84:java.lang.Object
+</span>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+notnull $T1_89:java.lang.Object
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:minFractionDigits:B">
+$T1_89:java.lang.Object.minFractionDigits
+</a>
+</span>
+<span>
+:= $T0_89:I
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void defaultWriteObject()">
+$bcvar1:java.lang.Object.defaultWriteObject
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:&lt;init&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+protected 
+<span class="methodname clickable" onclick="showInfoList(this)">
+NumberFormat
+</span>
+(
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:&lt;init&gt;:java.lang.Stringjava.text.DecimalFormatSymbolsvoid" title="void &lt;init&gt;(java.lang.String, java.text.DecimalFormatSymbols)">
+java.text.DecimalFormat.&lt;init&gt;(java.lang.String, java.text.DecimalFormatSymbols)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.text.Format.&lt;init&gt;
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/Format.html#java.text.Format:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.text.Format.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:groupingUsed:Z">
+this:java.lang.Object.groupingUsed
+</a>
+</span>
+<span>
+:= 1
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:maxIntegerDigits:B">
+this:java.lang.Object.maxIntegerDigits
+</a>
+</span>
+<span>
+:= 40
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:minIntegerDigits:B">
+this:java.lang.Object.minIntegerDigits
+</a>
+</span>
+<span>
+:= 1
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:maxFractionDigits:B">
+this:java.lang.Object.maxFractionDigits
+</a>
+</span>
+<span>
+:= 3
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:minFractionDigits:B">
+this:java.lang.Object.minFractionDigits
+</a>
+</span>
+<span>
+:= 0
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:parseIntegerOnly:Z">
+this:java.lang.Object.parseIntegerOnly
+</a>
+</span>
+<span>
+:= 0
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:maximumIntegerDigits:I">
+this:java.lang.Object.maximumIntegerDigits
+</a>
+</span>
+<span>
+:= 40
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:minimumIntegerDigits:I">
+this:java.lang.Object.minimumIntegerDigits
+</a>
+</span>
+<span>
+:= 1
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:maximumFractionDigits:I">
+this:java.lang.Object.maximumFractionDigits
+</a>
+</span>
+<span>
+:= 3
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:minimumFractionDigits:I">
+this:java.lang.Object.minimumFractionDigits
+</a>
+</span>
+<span>
+:= 0
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:serialVersionOnStream:I">
+this:java.lang.Object.serialVersionOnStream
+</a>
+</span>
+<span>
+:= 1
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:getCurrencyInstance:java.util.Localejava.text.NumberFormat" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+ 
+<span>
+getCurrencyInstance
+</span>
+(
+<a href="../../java/util/Locale.html">
+java.util.Locale
+</a>
+ $bcvar0
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.text.NumberFormat getInstance(java.util.Locale, int)">
+java.text.NumberFormat.getInstance
+</span>
+</span>
+<span>
+($bcvar0:java.lang.Object, 1)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.text.NumberFormat:getInstance:java.util.LocaleIjava.text.NumberFormat" title="java.text.NumberFormat getInstance(java.util.Locale, int)">
+java.text.NumberFormat.getInstance
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return $irvar0:java.text.NumberFormat
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:parse:java.lang.Stringjava.text.ParsePositionjava.lang.Number" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="../../java/lang/Number.html">
+java.lang.Number
+</a>
+ 
+<span>
+parse
+</span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 0
+, 
+<a href="../../java/text/ParsePosition.html">
+java.text.ParsePosition
+</a>
+ 1
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:getNumberInstance:java.text.NumberFormat" href="#">
+
+</a>
+<div class="method_signature">
+public static final 
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+ 
+<span>
+getNumberInstance
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/util/Locale$Category.html">
+java.util.Locale$Category
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 := java.util.Locale$Category.FORMAT
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/util/Locale.html">
+java.util.Locale
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.util.Locale getDefault(java.util.Locale$Category)">
+java.util.Locale.getDefault
+</span>
+</span>
+<span>
+($irvar0:java.util.Locale$Category)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/Locale.html#java.util.Locale:getDefault:java.util.Locale$Categoryjava.util.Locale" title="java.util.Locale getDefault(java.util.Locale$Category)">
+java.util.Locale.getDefault
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+$irvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.text.NumberFormat getInstance(java.util.Locale, int)">
+java.text.NumberFormat.getInstance
+</span>
+</span>
+<span>
+($irvar1:java.util.Locale, 0)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.text.NumberFormat:getInstance:java.util.LocaleIjava.text.NumberFormat" title="java.text.NumberFormat getInstance(java.util.Locale, int)">
+java.text.NumberFormat.getInstance
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+return $irvar2:java.text.NumberFormat
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:getMinimumFractionDigits:I" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getMinimumFractionDigits
+</span>
+(
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:&lt;init&gt;:java.lang.Stringjava.text.DecimalFormatSymbolsvoid" title="void &lt;init&gt;(java.lang.String, java.text.DecimalFormatSymbols)">
+java.text.DecimalFormat.&lt;init&gt;(java.lang.String, java.text.DecimalFormatSymbols)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+return this:java.lang.Object.minimumFractionDigits
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:getCurrency:java.util.Currency" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/util/Currency.html">
+java.util.Currency
+</a>
+ 
+<span>
+getCurrency
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/lang/UnsupportedOperationException.html">
+java.lang.UnsupportedOperationException
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../java/lang/UnsupportedOperationException.html">
+java.lang.UnsupportedOperationException
+</a>
+</span>
+<span>
+()
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+throw $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:getAvailableLocales:java.util.Locale.-" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="../../java/util/Locale.html">
+java.util.Locale
+</a>
+[]
+ 
+<span>
+getAvailableLocales
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../sun/util/LocaleServiceProviderPool.html">
+sun.util.LocaleServiceProviderPool
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$bcvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="sun.util.LocaleServiceProviderPool getPool(java.lang.Class)">
+sun.util.LocaleServiceProviderPool.getPool
+</span>
+</span>
+<span>
+(java.text.spi.NumberFormatProvider)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/util/LocaleServiceProviderPool.html#sun.util.LocaleServiceProviderPool:getPool:java.lang.Classsun.util.LocaleServiceProviderPool" title="sun.util.LocaleServiceProviderPool getPool(java.lang.Class)">
+sun.util.LocaleServiceProviderPool.getPool
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.util.Locale[] getAvailableLocales()">
+$bcvar0:java.lang.Object.getAvailableLocales
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+return $irvar0:[java.util.Locale
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:getScientificInstance:java.util.Localejava.text.NumberFormat" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+ 
+<span>
+getScientificInstance
+</span>
+(
+<a href="../../java/util/Locale.html">
+java.util.Locale
+</a>
+ $bcvar0
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.text.NumberFormat getInstance(java.util.Locale, int)">
+java.text.NumberFormat.getInstance
+</span>
+</span>
+<span>
+($bcvar0:java.lang.Object, 3)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.text.NumberFormat:getInstance:java.util.LocaleIjava.text.NumberFormat" title="java.text.NumberFormat getInstance(java.util.Locale, int)">
+java.text.NumberFormat.getInstance
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return $irvar0:java.text.NumberFormat
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:format:java.lang.Objectjava.lang.StringBufferjava.text.FieldPositionjava.lang.StringBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/lang/StringBuffer.html">
+java.lang.StringBuffer
+</a>
+ 
+<span>
+format
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ $bcvar1
+, 
+<a href="../../java/lang/StringBuffer.html">
+java.lang.StringBuffer
+</a>
+ $bcvar2
+, 
+<a href="../../java/text/FieldPosition.html">
+java.text.FieldPosition
+</a>
+ $bcvar3
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+if (InstanceOf java.lang.Long($bcvar1:java.lang.Object) != 0) goto 11
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+if (InstanceOf java.lang.Integer($bcvar1:java.lang.Object) != 0) goto 11
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+if (InstanceOf java.lang.Short($bcvar1:java.lang.Object) != 0) goto 11
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+if (InstanceOf java.lang.Byte($bcvar1:java.lang.Object) != 0) goto 11
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+if (InstanceOf java.util.concurrent.atomic.AtomicInteger($bcvar1:java.lang.Object) != 0) goto 11
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+if (InstanceOf java.util.concurrent.atomic.AtomicLong($bcvar1:java.lang.Object) != 0) goto 11
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+if (InstanceOf java.math.BigInteger($bcvar1:java.lang.Object) == 0) goto 17
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+checkcast $bcvar1:java.lang.Object:
+</span>
+<span>
+<a href="../../java/math/BigInteger.html">
+java.math.BigInteger
+</a>
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+notnull (java.math.BigInteger) $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int bitLength()">
+(java.math.BigInteger) $bcvar1:java.lang.Object.bitLength
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/math/BigInteger.html#java.math.BigInteger:bitLength:I" title="int bitLength()">
+java.math.BigInteger.bitLength
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+if ($irvar0:I &gt;= 64) goto 17
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+checkcast $bcvar1:java.lang.Object:
+</span>
+<span>
+<a href="../../java/lang/Number.html">
+java.lang.Number
+</a>
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+notnull (java.lang.Number) $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long longValue()">
+(java.lang.Number) $bcvar1:java.lang.Object.longValue
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuffer format(long, java.lang.StringBuffer, java.text.FieldPosition)">
+this:java.lang.Object.format
+</span>
+</span>
+<span>
+($irvar0:J, $bcvar2:java.lang.Object, $bcvar3:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+return $irvar1:java.lang.StringBuffer
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+if (InstanceOf java.lang.Number($bcvar1:java.lang.Object) == 0) goto 24
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+checkcast $bcvar1:java.lang.Object:
+</span>
+<span>
+<a href="../../java/lang/Number.html">
+java.lang.Number
+</a>
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+notnull (java.lang.Number) $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="double doubleValue()">
+(java.lang.Number) $bcvar1:java.lang.Object.doubleValue
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuffer format(double, java.lang.StringBuffer, java.text.FieldPosition)">
+this:java.lang.Object.format
+</span>
+</span>
+<span>
+($irvar0:D, $bcvar2:java.lang.Object, $bcvar3:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+return $irvar1:java.lang.StringBuffer
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+<span>
+(&apos;Cannot format given Object as a Number&apos;)
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+throw $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:getInstance:java.text.NumberFormat" href="#">
+
+</a>
+<div class="method_signature">
+public static final 
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+ 
+<span>
+getInstance
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/util/Locale$Category.html">
+java.util.Locale$Category
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 := java.util.Locale$Category.FORMAT
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/util/Locale.html">
+java.util.Locale
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.util.Locale getDefault(java.util.Locale$Category)">
+java.util.Locale.getDefault
+</span>
+</span>
+<span>
+($irvar0:java.util.Locale$Category)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/Locale.html#java.util.Locale:getDefault:java.util.Locale$Categoryjava.util.Locale" title="java.util.Locale getDefault(java.util.Locale$Category)">
+java.util.Locale.getDefault
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+$irvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.text.NumberFormat getInstance(java.util.Locale, int)">
+java.text.NumberFormat.getInstance
+</span>
+</span>
+<span>
+($irvar1:java.util.Locale, 0)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.text.NumberFormat:getInstance:java.util.LocaleIjava.text.NumberFormat" title="java.text.NumberFormat getInstance(java.util.Locale, int)">
+java.text.NumberFormat.getInstance
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+return $irvar2:java.text.NumberFormat
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:setMinimumIntegerDigits:Ivoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+setMinimumIntegerDigits
+</span>
+(
+int
+ $bcvar1
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:setMinimumIntegerDigits:Ivoid" title="void setMinimumIntegerDigits(int)">
+java.text.DecimalFormat.setMinimumIntegerDigits(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:setMaximumIntegerDigits:Ivoid" title="void setMaximumIntegerDigits(int)">
+java.text.DecimalFormat.setMaximumIntegerDigits(int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/lang/Math.html">
+java.lang.Math
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int max(int, int)">
+java.lang.Math.max
+</span>
+</span>
+<span>
+(0, $bcvar1:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Math.html#java.lang.Math:max:III" title="int max(int, int)">
+java.lang.Math.max
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:minimumIntegerDigits:I">
+this:java.lang.Object.minimumIntegerDigits
+</a>
+</span>
+<span>
+:= $irvar0:I
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.minimumIntegerDigits &lt;= this:java.lang.Object.maximumIntegerDigits) goto 10
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:maximumIntegerDigits:I">
+this:java.lang.Object.maximumIntegerDigits
+</a>
+</span>
+<span>
+:= this:java.lang.Object.minimumIntegerDigits
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:getPercentInstance:java.util.Localejava.text.NumberFormat" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+ 
+<span>
+getPercentInstance
+</span>
+(
+<a href="../../java/util/Locale.html">
+java.util.Locale
+</a>
+ $bcvar0
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.text.NumberFormat getInstance(java.util.Locale, int)">
+java.text.NumberFormat.getInstance
+</span>
+</span>
+<span>
+($bcvar0:java.lang.Object, 2)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.text.NumberFormat:getInstance:java.util.LocaleIjava.text.NumberFormat" title="java.text.NumberFormat getInstance(java.util.Locale, int)">
+java.text.NumberFormat.getInstance
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return $irvar0:java.text.NumberFormat
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:format:Jjava.lang.StringBufferjava.text.FieldPositionjava.lang.StringBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="../../java/lang/StringBuffer.html">
+java.lang.StringBuffer
+</a>
+ 
+<span>
+format
+</span>
+(
+long
+ 0
+, 
+<a href="../../java/lang/StringBuffer.html">
+java.lang.StringBuffer
+</a>
+ 1
+, 
+<a href="../../java/text/FieldPosition.html">
+java.text.FieldPosition
+</a>
+ 2
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:hashCode:I" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+hashCode
+</span>
+(
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:hashCode:I" title="int hashCode()">
+java.text.DecimalFormat.hashCode()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return ((this:java.lang.Object.maximumIntegerDigits*37)+this:java.lang.Object.maxFractionDigits)
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:getIntegerInstance:java.text.NumberFormat" href="#">
+
+</a>
+<div class="method_signature">
+public static final 
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+ 
+<span>
+getIntegerInstance
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/util/Locale$Category.html">
+java.util.Locale$Category
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 := java.util.Locale$Category.FORMAT
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/util/Locale.html">
+java.util.Locale
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.util.Locale getDefault(java.util.Locale$Category)">
+java.util.Locale.getDefault
+</span>
+</span>
+<span>
+($irvar0:java.util.Locale$Category)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/Locale.html#java.util.Locale:getDefault:java.util.Locale$Categoryjava.util.Locale" title="java.util.Locale getDefault(java.util.Locale$Category)">
+java.util.Locale.getDefault
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+$irvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.text.NumberFormat getInstance(java.util.Locale, int)">
+java.text.NumberFormat.getInstance
+</span>
+</span>
+<span>
+($irvar1:java.util.Locale, 4)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.text.NumberFormat:getInstance:java.util.LocaleIjava.text.NumberFormat" title="java.text.NumberFormat getInstance(java.util.Locale, int)">
+java.text.NumberFormat.getInstance
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+return $irvar2:java.text.NumberFormat
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:getRoundingMode:java.math.RoundingMode" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/math/RoundingMode.html">
+java.math.RoundingMode
+</a>
+ 
+<span>
+getRoundingMode
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/lang/UnsupportedOperationException.html">
+java.lang.UnsupportedOperationException
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../java/lang/UnsupportedOperationException.html">
+java.lang.UnsupportedOperationException
+</a>
+</span>
+<span>
+()
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+throw $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:setGroupingUsed:Zvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+setGroupingUsed
+</span>
+(
+bool
+ $bcvar1
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:applyPattern:java.lang.StringZvoid" title="void applyPattern(java.lang.String, bool)">
+java.text.DecimalFormat.applyPattern(java.lang.String, bool)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+<a href="#java.text.NumberFormat:groupingUsed:Z">
+this:java.lang.Object.groupingUsed
+</a>
+</span>
+<span>
+:= $bcvar1:I
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:format:Djava.lang.String" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span>
+format
+</span>
+(
+double
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/lang/StringBuffer.html">
+java.lang.StringBuffer
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../java/lang/StringBuffer.html">
+java.lang.StringBuffer
+</a>
+</span>
+<span>
+()
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+java.text.DontCareFieldPosition
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuffer format(double, java.lang.StringBuffer, java.text.FieldPosition)">
+this:java.lang.Object.format
+</span>
+</span>
+<span>
+($bcvar1:D, $irvar0:java.lang.Object, java.text.DontCareFieldPosition.INSTANCE)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+notnull $irvar1:java.lang.StringBuffer
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+$irvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toString()">
+$irvar1:java.lang.StringBuffer.toString
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuffer.html#java.lang.StringBuffer:toString:java.lang.String" title="java.lang.String toString()">
+java.lang.StringBuffer.toString
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+return $irvar2:java.lang.String
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.NumberFormat:equals:java.lang.ObjectZ" href="#">
+
+</a>
+<div class="method_signature">
+public 
+bool
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+equals
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ $bcvar1
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.text.DecimalFormat.equals(java.lang.Object)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+if ($bcvar1:java.lang.Object != null) goto 2
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+return 0
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+if (this:java.lang.Object != $bcvar1:java.lang.Object) goto 4
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+return 1
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Class getClass()">
+this:java.lang.Object.getClass
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Object.html#java.lang.Object:getClass:java.lang.Class" title="java.lang.Class getClass()">
+java.lang.Object.getClass
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+notnull $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Class getClass()">
+$bcvar1:java.lang.Object.getClass
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Object.html#java.lang.Object:getClass:java.lang.Class" title="java.lang.Class getClass()">
+java.lang.Object.getClass
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+if ($irvar0:java.lang.Class == $irvar1:java.lang.Class) goto 10
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+return 0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+checkcast $bcvar1:java.lang.Object:
+</span>
+<span>
+<a href="NumberFormat.html">
+java.text.NumberFormat
+</a>
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+$bcvar2 := (java.text.NumberFormat) $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.maximumIntegerDigits != $bcvar2:java.lang.Object.maximumIntegerDigits) goto 32
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.minimumIntegerDigits != $bcvar2:java.lang.Object.minimumIntegerDigits) goto 32
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.maximumFractionDigits != $bcvar2:java.lang.Object.maximumFractionDigits) goto 32
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.minimumFractionDigits != $bcvar2:java.lang.Object.minimumFractionDigits) goto 32
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.groupingUsed != $bcvar2:java.lang.Object.groupingUsed) goto 32
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.parseIntegerOnly != $bcvar2:java.lang.Object.parseIntegerOnly) goto 32
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+$T0_102 := 1
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+goto 33
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+$T0_102 := 0
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+return $T0_102:I
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+</div>
+</body>
+</html>

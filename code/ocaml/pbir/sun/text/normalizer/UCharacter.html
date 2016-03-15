@@ -1,0 +1,1949 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>
+sun.text.normalizer.UCharacter
+</title>
+<link rel="StyleSheet" href="../../../style.css" type="text/css" media="all" />
+<script type="text/javascript" src="../../../actions.js">
+</script>
+</head>
+<body>
+<div class="class">
+<a name="sun.text.normalizer.UCharacter" href="#">
+
+</a>
+<div class="classname">
+Class sun.text.normalizer.UCharacter
+</div>
+<div class="field">
+<a name="sun.text.normalizer.UCharacter:NUMERIC_TYPE_MASK_:I" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+int
+ NUMERIC_TYPE_MASK_;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.UCharacter:PROPERTY_TRIE_INDEX_:C.-" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+char[]
+ PROPERTY_TRIE_INDEX_;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.UCharacter:MAX_VALUE:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ MAX_VALUE;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.UCharacter:PROPERTY_:sun.text.normalizer.UCharacterProperty" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+<a href="../../../sun/text/normalizer/UCharacterProperty.html">
+sun.text.normalizer.UCharacterProperty
+</a>
+ PROPERTY_;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.UCharacter:PROPERTY_INITIAL_VALUE_:I" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+int
+ PROPERTY_INITIAL_VALUE_;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.UCharacter:NUMERIC_TYPE_SHIFT_:I" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+int
+ NUMERIC_TYPE_SHIFT_;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.UCharacter:PROPERTY_TRIE_DATA_:C.-" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+char[]
+ PROPERTY_TRIE_DATA_;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.UCharacter:MIN_VALUE:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ MIN_VALUE;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.UCharacter:gBdp:sun.text.normalizer.UBiDiProps" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+<a href="../../../sun/text/normalizer/UBiDiProps.html">
+sun.text.normalizer.UBiDiProps
+</a>
+ gBdp;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.UCharacter:SUPPLEMENTARY_MIN_VALUE:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ SUPPLEMENTARY_MIN_VALUE;
+</span>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.UCharacter:&lt;clinit&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<span>
+clinit
+</span>
+{};
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../sun/text/normalizer/UCharacterProperty.html">
+sun.text.normalizer.UCharacterProperty
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="sun.text.normalizer.UCharacterProperty getInstance()">
+sun.text.normalizer.UCharacterProperty.getInstance
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/UCharacterProperty.html#sun.text.normalizer.UCharacterProperty:getInstance:sun.text.normalizer.UCharacterProperty" title="sun.text.normalizer.UCharacterProperty getInstance()">
+sun.text.normalizer.UCharacterProperty.getInstance
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="UCharacter.html">
+sun.text.normalizer.UCharacter
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UCharacter:PROPERTY_:sun.text.normalizer.UCharacterProperty">
+sun.text.normalizer.UCharacter.PROPERTY_
+</a>
+</span>
+<span>
+:= $irvar0:sun.text.normalizer.UCharacterProperty
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="UCharacter.html">
+sun.text.normalizer.UCharacter
+</a>
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+notnull sun.text.normalizer.UCharacter.PROPERTY_
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+$irvar0 := sun.text.normalizer.UCharacter.PROPERTY_.m_trieIndex_
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="UCharacter.html">
+sun.text.normalizer.UCharacter
+</a>
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UCharacter:PROPERTY_TRIE_INDEX_:C.-">
+sun.text.normalizer.UCharacter.PROPERTY_TRIE_INDEX_
+</a>
+</span>
+<span>
+:= $irvar0:[C
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="UCharacter.html">
+sun.text.normalizer.UCharacter
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+notnull sun.text.normalizer.UCharacter.PROPERTY_
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+$irvar0 := sun.text.normalizer.UCharacter.PROPERTY_.m_trieData_
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="UCharacter.html">
+sun.text.normalizer.UCharacter
+</a>
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UCharacter:PROPERTY_TRIE_DATA_:C.-">
+sun.text.normalizer.UCharacter.PROPERTY_TRIE_DATA_
+</a>
+</span>
+<span>
+:= $irvar0:[C
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="UCharacter.html">
+sun.text.normalizer.UCharacter
+</a>
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+notnull sun.text.normalizer.UCharacter.PROPERTY_
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+$irvar0 := sun.text.normalizer.UCharacter.PROPERTY_.m_trieInitialValue_
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="UCharacter.html">
+sun.text.normalizer.UCharacter
+</a>
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UCharacter:PROPERTY_INITIAL_VALUE_:I">
+sun.text.normalizer.UCharacter.PROPERTY_INITIAL_VALUE_
+</a>
+</span>
+<span>
+:= $irvar0:I
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+goto 27
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+$bcvar0 := CatchVar36:java.lang.Object
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/util/MissingResourceException.html">
+java.util.MissingResourceException
+</a>
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+notnull $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String getMessage()">
+$bcvar0:java.lang.Object.getMessage
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/MissingFormatWidthException.html#java.util.MissingFormatWidthException:getMessage:java.lang.String" title="java.lang.String getMessage()">
+java.util.MissingFormatWidthException.getMessage
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/lang/Throwable.html#java.lang.Throwable:getMessage:java.lang.String" title="java.lang.String getMessage()">
+java.lang.Throwable.getMessage
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/IllegalFormatWidthException.html#java.util.IllegalFormatWidthException:getMessage:java.lang.String" title="java.lang.String getMessage()">
+java.util.IllegalFormatWidthException.getMessage
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/IllegalFormatCodePointException.html#java.util.IllegalFormatCodePointException:getMessage:java.lang.String" title="java.lang.String getMessage()">
+java.util.IllegalFormatCodePointException.getMessage
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/FormatFlagsConversionMismatchException.html#java.util.FormatFlagsConversionMismatchException:getMessage:java.lang.String" title="java.lang.String getMessage()">
+java.util.FormatFlagsConversionMismatchException.getMessage
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/UnknownFormatFlagsException.html#java.util.UnknownFormatFlagsException:getMessage:java.lang.String" title="java.lang.String getMessage()">
+java.util.UnknownFormatFlagsException.getMessage
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/MissingFormatArgumentException.html#java.util.MissingFormatArgumentException:getMessage:java.lang.String" title="java.lang.String getMessage()">
+java.util.MissingFormatArgumentException.getMessage
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/IllegalFormatConversionException.html#java.util.IllegalFormatConversionException:getMessage:java.lang.String" title="java.lang.String getMessage()">
+java.util.IllegalFormatConversionException.getMessage
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/nio/charset/MalformedInputException.html#java.nio.charset.MalformedInputException:getMessage:java.lang.String" title="java.lang.String getMessage()">
+java.nio.charset.MalformedInputException.getMessage
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/UnknownFormatConversionException.html#java.util.UnknownFormatConversionException:getMessage:java.lang.String" title="java.lang.String getMessage()">
+java.util.UnknownFormatConversionException.getMessage
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/DuplicateFormatFlagsException.html#java.util.DuplicateFormatFlagsException:getMessage:java.lang.String" title="java.lang.String getMessage()">
+java.util.DuplicateFormatFlagsException.getMessage
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/regex/PatternSyntaxException.html#java.util.regex.PatternSyntaxException:getMessage:java.lang.String" title="java.lang.String getMessage()">
+java.util.regex.PatternSyntaxException.getMessage
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/nio/charset/UnmappableCharacterException.html#java.nio.charset.UnmappableCharacterException:getMessage:java.lang.String" title="java.lang.String getMessage()">
+java.nio.charset.UnmappableCharacterException.getMessage
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/IllegalFormatFlagsException.html#java.util.IllegalFormatFlagsException:getMessage:java.lang.String" title="java.lang.String getMessage()">
+java.util.IllegalFormatFlagsException.getMessage
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/IllegalFormatPrecisionException.html#java.util.IllegalFormatPrecisionException:getMessage:java.lang.String" title="java.lang.String getMessage()">
+java.util.IllegalFormatPrecisionException.getMessage
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+$irvar1 := new
+</span>
+<span>
+<a href="../../../java/util/MissingResourceException.html">
+java.util.MissingResourceException
+</a>
+</span>
+<span>
+($irvar0:java.lang.String, &apos;&apos;, &apos;&apos;)
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+notnull $irvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+throw $irvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../sun/text/normalizer/UBiDiProps.html">
+sun.text.normalizer.UBiDiProps
+</a>
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+$bcvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="sun.text.normalizer.UBiDiProps getSingleton()">
+sun.text.normalizer.UBiDiProps.getSingleton
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/UBiDiProps.html#sun.text.normalizer.UBiDiProps:getSingleton:sun.text.normalizer.UBiDiProps" title="sun.text.normalizer.UBiDiProps getSingleton()">
+sun.text.normalizer.UBiDiProps.getSingleton
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+nop
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+goto 35
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+$bcvar1 := CatchVar60:java.lang.Object
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../sun/text/normalizer/UBiDiProps.html">
+sun.text.normalizer.UBiDiProps
+</a>
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+$bcvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="sun.text.normalizer.UBiDiProps getDummy()">
+sun.text.normalizer.UBiDiProps.getDummy
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/UBiDiProps.html#sun.text.normalizer.UBiDiProps:getDummy:sun.text.normalizer.UBiDiProps" title="sun.text.normalizer.UBiDiProps getDummy()">
+sun.text.normalizer.UBiDiProps.getDummy
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+nop
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="UCharacter.html">
+sun.text.normalizer.UCharacter
+</a>
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.UCharacter:gBdp:sun.text.normalizer.UBiDiProps">
+sun.text.normalizer.UCharacter.gBdp
+</a>
+</span>
+<span>
+:= $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 0; try end: 19: catch start: 20; catched type: java.lang.Exception.
+</span>
+</li>
+<li>
+<span>
+try start: 27; try end: 30: catch start: 31; catched type: java.io.IOException.
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.UCharacter:getDirection:II" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+int
+ 
+<span>
+getDirection
+</span>
+(
+int
+ $bcvar0
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="UCharacter.html">
+sun.text.normalizer.UCharacter
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull sun.text.normalizer.UCharacter.gBdp
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getClass(int)">
+sun.text.normalizer.UCharacter.gBdp.getClass
+</span>
+</span>
+<span>
+($bcvar0:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+return $irvar0:I
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.UCharacter:getAge:Isun.text.normalizer.VersionInfo" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="../../../sun/text/normalizer/VersionInfo.html">
+sun.text.normalizer.VersionInfo
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getAge
+</span>
+(
+int
+ $bcvar0
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/UnicodeSet$VersionFilter.html#sun.text.normalizer.UnicodeSet$VersionFilter:contains:IZ" title="bool contains(int)">
+sun.text.normalizer.UnicodeSet$VersionFilter.contains(int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+if ($bcvar0:I &lt; 0) goto 2
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+if ($bcvar0:I &lt;= 1114111) goto 6
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+<span>
+(&apos;Codepoint out of bounds&apos;)
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+throw $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="UCharacter.html">
+sun.text.normalizer.UCharacter
+</a>
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+notnull sun.text.normalizer.UCharacter.PROPERTY_
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="sun.text.normalizer.VersionInfo getAge(int)">
+sun.text.normalizer.UCharacter.PROPERTY_.getAge
+</span>
+</span>
+<span>
+($bcvar0:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/UCharacterProperty.html#sun.text.normalizer.UCharacterProperty:getAge:Isun.text.normalizer.VersionInfo" title="sun.text.normalizer.VersionInfo getAge(int)">
+sun.text.normalizer.UCharacterProperty.getAge
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+return $irvar0:sun.text.normalizer.VersionInfo
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.UCharacter:getEuropeanDigit:II" href="#">
+
+</a>
+<div class="method_signature">
+private static 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getEuropeanDigit
+</span>
+(
+int
+ $bcvar0
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.UCharacter:digit:III" title="int digit(int, int)">
+sun.text.normalizer.UCharacter.digit(int, int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+if ($bcvar0:I &lt;= 122) goto 2
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+if ($bcvar0:I &lt; 65313) goto 8
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+if ($bcvar0:I &lt; 65) goto 8
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+if ($bcvar0:I &lt;= 90) goto 5
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+if ($bcvar0:I &lt; 97) goto 8
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+if ($bcvar0:I &gt; 65370) goto 8
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+if ($bcvar0:I &lt;= 65338) goto 9
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+if ($bcvar0:I &gt;= 65345) goto 9
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+return -1
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+if ($bcvar0:I &gt; 122) goto 18
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+$T0_71 := $bcvar0:I+10
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+if ($bcvar0:I &gt; 90) goto 15
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+$T0_73 := 65
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+$T1_73 := $bcvar0:I+10
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+goto 17
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+$T0_73 := 97
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+$T1_73 := $T0_71:I
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+return ($T1_73:I-$T0_73:I)
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+if ($bcvar0:I &gt; 65338) goto 20
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+return (($bcvar0:I+10)-65313)
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+return (($bcvar0:I+10)-65345)
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.UCharacter:getProperty:II" href="#">
+
+</a>
+<div class="method_signature">
+private static final 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getProperty
+</span>
+(
+int
+ $bcvar0
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.UCharacter:digit:III" title="int digit(int, int)">
+sun.text.normalizer.UCharacter.digit(int, int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+if ($bcvar0:I &lt; 55296) goto 3
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+if ($bcvar0:I &lt;= 56319) goto 14
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+if ($bcvar0:I &gt;= 65536) goto 14
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="UCharacter.html">
+sun.text.normalizer.UCharacter
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+$irvar0 := sun.text.normalizer.UCharacter.PROPERTY_TRIE_DATA_
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="UCharacter.html">
+sun.text.normalizer.UCharacter
+</a>
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+notnull sun.text.normalizer.UCharacter.PROPERTY_TRIE_INDEX_
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+checkbound sun.text.normalizer.UCharacter.PROPERTY_TRIE_INDEX_[IShr($bcvar0:I,5)]
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+notnull $irvar0:[C
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+checkbound $irvar0:[C[IShl(sun.text.normalizer.UCharacter.PROPERTY_TRIE_INDEX_[IShr($bcvar0:I,5)]:C,2)+And($bcvar0:I,31)]
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+return $irvar0:[C[IShl(sun.text.normalizer.UCharacter.PROPERTY_TRIE_INDEX_[IShr($bcvar0:I,5)]:C,2)+And($bcvar0:I,31)]:C
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+$bcvar1 := CatchVar37:java.lang.Object
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="UCharacter.html">
+sun.text.normalizer.UCharacter
+</a>
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+return sun.text.normalizer.UCharacter.PROPERTY_INITIAL_VALUE_
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+if ($bcvar0:I &gt; 56319) goto 23
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="UCharacter.html">
+sun.text.normalizer.UCharacter
+</a>
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+$irvar0 := sun.text.normalizer.UCharacter.PROPERTY_TRIE_DATA_
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="UCharacter.html">
+sun.text.normalizer.UCharacter
+</a>
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+notnull sun.text.normalizer.UCharacter.PROPERTY_TRIE_INDEX_
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+checkbound sun.text.normalizer.UCharacter.PROPERTY_TRIE_INDEX_[320+IShr($bcvar0:I,5)]
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+notnull $irvar0:[C
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+checkbound $irvar0:[C[IShl(sun.text.normalizer.UCharacter.PROPERTY_TRIE_INDEX_[320+IShr($bcvar0:I,5)]:C,2)+And($bcvar0:I,31)]
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+return $irvar0:[C[IShl(sun.text.normalizer.UCharacter.PROPERTY_TRIE_INDEX_[320+IShr($bcvar0:I,5)]:C,2)+And($bcvar0:I,31)]:C
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+if ($bcvar0:I &gt; 1114111) goto 32
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="UCharacter.html">
+sun.text.normalizer.UCharacter
+</a>
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+notnull sun.text.normalizer.UCharacter.PROPERTY_
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+$irvar0 := sun.text.normalizer.UCharacter.PROPERTY_.m_trie_
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../sun/text/normalizer/UTF16.html">
+sun.text.normalizer.UTF16
+</a>
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="char getLeadSurrogate(int)">
+sun.text.normalizer.UTF16.getLeadSurrogate
+</span>
+</span>
+<span>
+($bcvar0:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/UTF16.html#sun.text.normalizer.UTF16:getLeadSurrogate:IC" title="char getLeadSurrogate(int)">
+sun.text.normalizer.UTF16.getLeadSurrogate
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+notnull $irvar0:sun.text.normalizer.CharTrie
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+$irvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="char getSurrogateValue(char, char)">
+$irvar0:sun.text.normalizer.CharTrie.getSurrogateValue
+</span>
+</span>
+<span>
+($irvar1:C, I2C(And($bcvar0:I,1023)))
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/CharTrie.html#sun.text.normalizer.CharTrie:getSurrogateValue:CCC" title="char getSurrogateValue(char, char)">
+sun.text.normalizer.CharTrie.getSurrogateValue
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+return $irvar2:C
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="UCharacter.html">
+sun.text.normalizer.UCharacter
+</a>
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+return sun.text.normalizer.UCharacter.PROPERTY_INITIAL_VALUE_
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 3; try end: 10: catch start: 11; catched type: java.lang.ArrayIndexOutOfBoundsException.
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.UCharacter:&lt;init&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<span>
+UCharacter
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.UCharacter:getCodePoint:CCI" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+int
+ 
+<span>
+getCodePoint
+</span>
+(
+char
+ $bcvar0
+, 
+char
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../sun/text/normalizer/UTF16.html">
+sun.text.normalizer.UTF16
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isLeadSurrogate(char)">
+sun.text.normalizer.UTF16.isLeadSurrogate
+</span>
+</span>
+<span>
+($bcvar0:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/UTF16.html#sun.text.normalizer.UTF16:isLeadSurrogate:CZ" title="bool isLeadSurrogate(char)">
+sun.text.normalizer.UTF16.isLeadSurrogate
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+if ($irvar0:Z == 0) goto 9
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../sun/text/normalizer/UTF16.html">
+sun.text.normalizer.UTF16
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isTrailSurrogate(char)">
+sun.text.normalizer.UTF16.isTrailSurrogate
+</span>
+</span>
+<span>
+($bcvar1:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/UTF16.html#sun.text.normalizer.UTF16:isTrailSurrogate:CZ" title="bool isTrailSurrogate(char)">
+sun.text.normalizer.UTF16.isTrailSurrogate
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+if ($irvar0:Z == 0) goto 9
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../sun/text/normalizer/UCharacterProperty.html">
+sun.text.normalizer.UCharacterProperty
+</a>
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getRawSupplementary(char, char)">
+sun.text.normalizer.UCharacterProperty.getRawSupplementary
+</span>
+</span>
+<span>
+($bcvar0:I, $bcvar1:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/UCharacterProperty.html#sun.text.normalizer.UCharacterProperty:getRawSupplementary:CCI" title="int getRawSupplementary(char, char)">
+sun.text.normalizer.UCharacterProperty.getRawSupplementary
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+return $irvar0:I
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+<span>
+(&apos;Illegal surrogate characters&apos;)
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+throw $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.UCharacter:getNumericType:II" href="#">
+
+</a>
+<div class="method_signature">
+private static 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getNumericType
+</span>
+(
+int
+ $bcvar0
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.UCharacter:digit:III" title="int digit(int, int)">
+sun.text.normalizer.UCharacter.digit(int, int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+return IShr(And($bcvar0:I,224),5)
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.UCharacter:digit:III" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+digit
+</span>
+(
+int
+ $bcvar0
+, 
+int
+ $bcvar1
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/Utility.html#sun.text.normalizer.Utility:unescapeAt:java.lang.StringI.-I" title="int unescapeAt(java.lang.String, int[])">
+sun.text.normalizer.Utility.unescapeAt(java.lang.String, int[])
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="UCharacter.html">
+sun.text.normalizer.UCharacter
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$bcvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getProperty(int)">
+sun.text.normalizer.UCharacter.getProperty
+</span>
+</span>
+<span>
+($bcvar0:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.UCharacter:getProperty:II" title="int getProperty(int)">
+sun.text.normalizer.UCharacter.getProperty
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="UCharacter.html">
+sun.text.normalizer.UCharacter
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getNumericType(int)">
+sun.text.normalizer.UCharacter.getNumericType
+</span>
+</span>
+<span>
+($bcvar2:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.UCharacter:getNumericType:II" title="int getNumericType(int)">
+sun.text.normalizer.UCharacter.getNumericType
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+if ($irvar0:I != 1) goto 8
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../sun/text/normalizer/UCharacterProperty.html">
+sun.text.normalizer.UCharacterProperty
+</a>
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+$bcvar3 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getUnsignedValue(int)">
+sun.text.normalizer.UCharacterProperty.getUnsignedValue
+</span>
+</span>
+<span>
+($bcvar2:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/UCharacterProperty.html#sun.text.normalizer.UCharacterProperty:getUnsignedValue:II" title="int getUnsignedValue(int)">
+sun.text.normalizer.UCharacterProperty.getUnsignedValue
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+goto 11
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="UCharacter.html">
+sun.text.normalizer.UCharacter
+</a>
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+$bcvar3 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getEuropeanDigit(int)">
+sun.text.normalizer.UCharacter.getEuropeanDigit
+</span>
+</span>
+<span>
+($bcvar0:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.UCharacter:getEuropeanDigit:II" title="int getEuropeanDigit(int)">
+sun.text.normalizer.UCharacter.getEuropeanDigit
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+nop
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+if (0 &gt; $bcvar3:I) goto 15
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+if ($bcvar3:I &gt;= $bcvar1:I) goto 15
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+$T0_41 := $bcvar3:I
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+goto 16
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+$T0_41 := -1
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+return $T0_41:I
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+</div>
+</body>
+</html>
