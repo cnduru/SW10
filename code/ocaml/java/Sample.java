@@ -3,6 +3,6 @@ public class Sample{
         A test = new B();
         for(short i=0; i<5; i++){
               test.add(i);
-         }
+        }
     }
 }

@@ -137,7 +137,7 @@ java.lang.String
 </span>
 </div>
 <div class="method">
-<a name="java.util.zip.ZipEntry:setComment:java.lang.Stringvoid" href="#">
+<a name="java.util.zip.ZipEntry:setExtra:B.-void" href="#">
 
 </a>
 <div class="method_signature">
@@ -145,12 +145,10 @@ public
 void
  
 <span>
-setComment
+setExtra
 </span>
 (
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
+byte[]
  1
 )
 ;
@@ -167,38 +165,140 @@ Not parsed
 <li value="0">
 <div class="instruction">
 <span>
-aload  0
+aload  1
 </span>
 </div>
 </li>
 <li value="1">
 <div class="instruction">
 <span>
+ifnull 20
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
 aload  1
 </span>
 </div>
 </li>
-<li value="2">
+<li value="5">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+iconst 65535
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+ifcmpme 13
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+ldc string &apos;invalid extra field length&apos;
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.lang.IllegalArgumentException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="23">
 <div class="instruction">
 <span>
 putfield 
 </span>
 <span>
-<a href="#java.util.zip.ZipEntry:comment:java.lang.String">
-java.util.zip.ZipEntry.comment
+<a href="#java.util.zip.ZipEntry:extra:B.-">
+java.util.zip.ZipEntry.extra
 </a>
 </span>
 <span>
  : 
 </span>
 <span>
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
+byte[]
 </span>
 </div>
 </li>
-<li value="5">
+<li value="26">
 <div class="instruction">
 <span>
 return
@@ -210,17 +310,19 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.util.zip.ZipEntry:getCompressedSize:J" href="#">
+<a name="java.util.zip.ZipEntry:javaToDosTime:JJ" href="#">
 
 </a>
 <div class="method_signature">
-public 
+private static 
 long
  
 <span>
-getCompressedSize
+javaToDosTime
 </span>
 (
+long
+ 0
 )
 ;
 <ul class="annot">
@@ -236,29 +338,479 @@ Not parsed
 <li value="0">
 <div class="instruction">
 <span>
-aload  0
+new 
+</span>
+<span>
+<a href="../../../java/util/Date.html">
+java.util.Date
+</a>
 </span>
 </div>
 </li>
-<li value="1">
+<li value="3">
 <div class="instruction">
 <span>
-getfield 
-</span>
-<span>
-<a href="#java.util.zip.ZipEntry:csize:J">
-java.util.zip.ZipEntry.csize
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-long
+dup
 </span>
 </div>
 </li>
 <li value="4">
+<div class="instruction">
+<span>
+lload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(long)">
+java.util.Date.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+long
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+astore  2
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getYear()">
+java.util.Date.getYear
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+sipush 1900
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+istore  3
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+sipush 1980
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+ifcmpge 7
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+lconst %Ld2162688
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+lreturn
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+sipush 1980
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+bipush 25
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+ishl
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getMonth()">
+java.util.Date.getMonth
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+bipush 21
+</span>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span>
+ishl
+</span>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+ior
+</span>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getDate()">
+java.util.Date.getDate
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="51">
+<div class="instruction">
+<span>
+bipush 16
+</span>
+</div>
+</li>
+<li value="53">
+<div class="instruction">
+<span>
+ishl
+</span>
+</div>
+</li>
+<li value="54">
+<div class="instruction">
+<span>
+ior
+</span>
+</div>
+</li>
+<li value="55">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getHours()">
+java.util.Date.getHours
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="59">
+<div class="instruction">
+<span>
+bipush 11
+</span>
+</div>
+</li>
+<li value="61">
+<div class="instruction">
+<span>
+ishl
+</span>
+</div>
+</li>
+<li value="62">
+<div class="instruction">
+<span>
+ior
+</span>
+</div>
+</li>
+<li value="63">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="64">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getMinutes()">
+java.util.Date.getMinutes
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="67">
+<div class="instruction">
+<span>
+iconst 5
+</span>
+</div>
+</li>
+<li value="68">
+<div class="instruction">
+<span>
+ishl
+</span>
+</div>
+</li>
+<li value="69">
+<div class="instruction">
+<span>
+ior
+</span>
+</div>
+</li>
+<li value="70">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="71">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getSeconds()">
+java.util.Date.getSeconds
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="74">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="75">
+<div class="instruction">
+<span>
+ishr
+</span>
+</div>
+</li>
+<li value="76">
+<div class="instruction">
+<span>
+ior
+</span>
+</div>
+</li>
+<li value="77">
+<div class="instruction">
+<span>
+i2l
+</span>
+</div>
+</li>
+<li value="78">
 <div class="instruction">
 <span>
 lreturn
@@ -732,172 +1284,6 @@ java.lang.String
 </div>
 </li>
 <li value="78">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.zip.ZipEntry:setMethod:Ivoid" href="#">
-
-</a>
-<div class="method_signature">
-public 
-void
- 
-<span>
-setMethod
-</span>
-(
-int
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-ifeq 19
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-bipush 8
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-ifcmpeq 13
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../../java/lang/IllegalArgumentException.html">
-java.lang.IllegalArgumentException
-</a>
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-ldc string &apos;invalid compression method&apos;
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.lang.IllegalArgumentException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.util.zip.ZipEntry:method:I">
-java.util.zip.ZipEntry.method
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="25">
 <div class="instruction">
 <span>
 return
@@ -1629,6 +2015,193 @@ return
 </ol>
 </div>
 <div class="method">
+<a name="java.util.zip.ZipEntry:setCrc:Jvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span>
+setCrc
+</span>
+(
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+lload  1
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+lconst %Ld0
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+lcmp
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+iflt 11
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+lload  1
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+lconst %Ld4294967295
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+lcmp
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+ifle 13
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+ldc string &apos;invalid entry crc-32&apos;
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.lang.IllegalArgumentException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+lload  1
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.util.zip.ZipEntry:crc:J">
+java.util.zip.ZipEntry.crc
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+long
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
 <a name="java.util.zip.ZipEntry:&lt;init&gt;:void" href="#">
 
 </a>
@@ -1887,7 +2460,7 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.util.zip.ZipEntry:setCrc:Jvoid" href="#">
+<a name="java.util.zip.ZipEntry:setComment:java.lang.Stringvoid" href="#">
 
 </a>
 <div class="method_signature">
@@ -1895,10 +2468,12 @@ public
 void
  
 <span>
-setCrc
+setComment
 </span>
 (
-long
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
  1
 )
 ;
@@ -1915,143 +2490,87 @@ Not parsed
 <li value="0">
 <div class="instruction">
 <span>
-lload  1
+aload  0
 </span>
 </div>
 </li>
 <li value="1">
 <div class="instruction">
 <span>
-lconst %Ld0
+aload  1
 </span>
 </div>
 </li>
 <li value="2">
 <div class="instruction">
 <span>
-lcmp
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-iflt 11
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-lload  1
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-lconst %Ld4294967295
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-lcmp
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-ifle 13
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-new 
+putfield 
 </span>
 <span>
-<a href="../../../java/lang/IllegalArgumentException.html">
-java.lang.IllegalArgumentException
+<a href="#java.util.zip.ZipEntry:comment:java.lang.String">
+java.util.zip.ZipEntry.comment
 </a>
 </span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
 <span>
-dup
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-ldc string &apos;invalid entry crc-32&apos;
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-invokespecial 
+ : 
 </span>
 <span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.lang.IllegalArgumentException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
 <a href="../../../java/lang/String.html">
 java.lang.String
 </a>
-)
 </span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
 </div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipEntry:getCompressedSize:J" href="#">
+
+</a>
+<div class="method_signature">
+public 
+long
+ 
+<span>
+getCompressedSize
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
 </li>
 </ul>
 </div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="24">
+<ol class="code">
+<li value="0">
 <div class="instruction">
 <span>
 aload  0
 </span>
 </div>
 </li>
-<li value="25">
+<li value="1">
 <div class="instruction">
 <span>
-lload  1
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-putfield 
+getfield 
 </span>
 <span>
-<a href="#java.util.zip.ZipEntry:crc:J">
-java.util.zip.ZipEntry.crc
+<a href="#java.util.zip.ZipEntry:csize:J">
+java.util.zip.ZipEntry.csize
 </a>
 </span>
 <span>
@@ -2062,10 +2581,10 @@ long
 </span>
 </div>
 </li>
-<li value="29">
+<li value="4">
 <div class="instruction">
 <span>
-return
+lreturn
 </span>
 </div>
 </li>
@@ -2253,48 +2772,6 @@ java.lang.Object.clone
 <ul class="clickable">
 <li>
 <div>
-<a href="../../../java/util/TreeMap.html#java.util.TreeMap:clone:java.lang.Object" title="java.lang.Object clone()">
-java.util.TreeMap.clone
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/regex/Pattern$CharPropertyNames$CloneableProperty.html#java.util.regex.Pattern$CharPropertyNames$CloneableProperty:clone:java.lang.Object" title="java.lang.Object clone()">
-java.util.regex.Pattern$CharPropertyNames$CloneableProperty.clone
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Hashtable.html#java.util.Hashtable:clone:java.lang.Object" title="java.lang.Object clone()">
-java.util.Hashtable.clone
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Hashtable$Entry.html#java.util.Hashtable$Entry:clone:java.lang.Object" title="java.lang.Object clone()">
-java.util.Hashtable$Entry.clone
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/lang/Object.html#java.lang.Object:clone:java.lang.Object" title="java.lang.Object clone()">
-java.lang.Object.clone
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Vector.html#java.util.Vector:clone:java.lang.Object" title="java.lang.Object clone()">
-java.util.Vector.clone
-</a>
-</div>
-</li>
-<li>
-<div>
 <a href="../../../java/util/GregorianCalendar.html#java.util.GregorianCalendar:clone:java.lang.Object" title="java.lang.Object clone()">
 java.util.GregorianCalendar.clone
 </a>
@@ -2330,6 +2807,13 @@ sun.text.normalizer.ReplaceableUCharacterIterator.clone
 </li>
 <li>
 <div>
+<a href="../../../java/util/Hashtable.html#java.util.Hashtable:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.Hashtable.clone
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../../java/text/DateFormatSymbols.html#java.text.DateFormatSymbols:clone:java.lang.Object" title="java.lang.Object clone()">
 java.text.DateFormatSymbols.clone
 </a>
@@ -2337,8 +2821,15 @@ java.text.DateFormatSymbols.clone
 </li>
 <li>
 <div>
-<a href="../../../java/util/Date.html#java.util.Date:clone:java.lang.Object" title="java.lang.Object clone()">
-java.util.Date.clone
+<a href="../../../java/util/Hashtable$Entry.html#java.util.Hashtable$Entry:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.Hashtable$Entry.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/lang/Object.html#java.lang.Object:clone:java.lang.Object" title="java.lang.Object clone()">
+java.lang.Object.clone
 </a>
 </div>
 </li>
@@ -2351,8 +2842,43 @@ java.text.StringCharacterIterator.clone
 </li>
 <li>
 <div>
-<a href="../../../sun/text/CompactByteArray.html#sun.text.CompactByteArray:clone:java.lang.Object" title="java.lang.Object clone()">
-sun.text.CompactByteArray.clone
+<a href="../../../java/util/Vector.html#java.util.Vector:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.Vector.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/ArrayList.html#java.util.ArrayList:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.ArrayList.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Date.html#java.util.Date:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.Date.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/regex/Pattern$CharPropertyNames$CloneableProperty.html#java.util.regex.Pattern$CharPropertyNames$CloneableProperty:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.regex.Pattern$CharPropertyNames$CloneableProperty.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeMap.html#java.util.TreeMap:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.TreeMap.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/SimpleTimeZone.html#java.util.SimpleTimeZone:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.SimpleTimeZone.clone
 </a>
 </div>
 </li>
@@ -2360,13 +2886,6 @@ sun.text.CompactByteArray.clone
 <div>
 <a href="../../../java/lang/Thread.html#java.lang.Thread:clone:java.lang.Object" title="java.lang.Object clone()">
 java.lang.Thread.clone
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/text/DigitList.html#java.text.DigitList:clone:java.lang.Object" title="java.lang.Object clone()">
-java.text.DigitList.clone
 </a>
 </div>
 </li>
@@ -2381,48 +2900,6 @@ sun.util.calendar.CalendarDate.clone
 <div>
 <a href="../../../java/util/Locale.html#java.util.Locale:clone:java.lang.Object" title="java.lang.Object clone()">
 java.util.Locale.clone
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/HashSet.html#java.util.HashSet:clone:java.lang.Object" title="java.lang.Object clone()">
-java.util.HashSet.clone
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/AbstractMap.html#java.util.AbstractMap:clone:java.lang.Object" title="java.lang.Object clone()">
-java.util.AbstractMap.clone
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:clone:java.lang.Object" title="java.lang.Object clone()">
-java.text.RuleBasedBreakIterator.clone
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/SimpleTimeZone.html#java.util.SimpleTimeZone:clone:java.lang.Object" title="java.lang.Object clone()">
-java.util.SimpleTimeZone.clone
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/lang/Enum.html#java.lang.Enum:clone:java.lang.Object" title="java.lang.Object clone()">
-java.lang.Enum.clone
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/ArrayList.html#java.util.ArrayList:clone:java.lang.Object" title="java.lang.Object clone()">
-java.util.ArrayList.clone
 </a>
 </div>
 </li>
@@ -2449,6 +2926,13 @@ java.text.DecimalFormat.clone
 </li>
 <li>
 <div>
+<a href="../../../java/util/AbstractMap.html#java.util.AbstractMap:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.AbstractMap.clone
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../../java/util/TreeSet.html#java.util.TreeSet:clone:java.lang.Object" title="java.lang.Object clone()">
 java.util.TreeSet.clone
 </a>
@@ -2463,6 +2947,41 @@ java.text.RuleBasedBreakIterator$SafeCharIterator.clone
 </li>
 <li>
 <div>
+<a href="../../../sun/util/calendar/ImmutableGregorianDate.html#sun.util.calendar.ImmutableGregorianDate:clone:java.lang.Object" title="java.lang.Object clone()">
+sun.util.calendar.ImmutableGregorianDate.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/lang/Enum.html#java.lang.Enum:clone:java.lang.Object" title="java.lang.Object clone()">
+java.lang.Enum.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:clone:java.lang.Object" title="java.lang.Object clone()">
+java.text.RuleBasedBreakIterator.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashSet.html#java.util.HashSet:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.HashSet.clone
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/text/DigitList.html#java.text.DigitList:clone:java.lang.Object" title="java.lang.Object clone()">
+java.text.DigitList.clone
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../../java/util/HashMap.html#java.util.HashMap:clone:java.lang.Object" title="java.lang.Object clone()">
 java.util.HashMap.clone
 </a>
@@ -2470,8 +2989,8 @@ java.util.HashMap.clone
 </li>
 <li>
 <div>
-<a href="../../../sun/util/calendar/ImmutableGregorianDate.html#sun.util.calendar.ImmutableGregorianDate:clone:java.lang.Object" title="java.lang.Object clone()">
-sun.util.calendar.ImmutableGregorianDate.clone
+<a href="../../../sun/text/CompactByteArray.html#sun.text.CompactByteArray:clone:java.lang.Object" title="java.lang.Object clone()">
+sun.text.CompactByteArray.clone
 </a>
 </div>
 </li>
@@ -2594,519 +3113,7 @@ try start: 0; try end: 34: catch start: 35; catched type: java.lang.CloneNotSupp
 </span>
 </div>
 <div class="method">
-<a name="java.util.zip.ZipEntry:javaToDosTime:JJ" href="#">
-
-</a>
-<div class="method_signature">
-private static 
-long
- 
-<span>
-javaToDosTime
-</span>
-(
-long
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../../java/util/Date.html">
-java.util.Date
-</a>
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-lload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(long)">
-java.util.Date.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-long
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-astore  2
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int getYear()">
-java.util.Date.getYear
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-sipush 1900
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-istore  3
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-sipush 1980
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-ifcmpge 7
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-lconst %Ld2162688
-</span>
-</div>
-</li>
-<li value="28">
-<div class="instruction">
-<span>
-lreturn
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-sipush 1980
-</span>
-</div>
-</li>
-<li value="33">
-<div class="instruction">
-<span>
-isub
-</span>
-</div>
-</li>
-<li value="34">
-<div class="instruction">
-<span>
-bipush 25
-</span>
-</div>
-</li>
-<li value="36">
-<div class="instruction">
-<span>
-ishl
-</span>
-</div>
-</li>
-<li value="37">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="38">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int getMonth()">
-java.util.Date.getMonth
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="41">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="42">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="43">
-<div class="instruction">
-<span>
-bipush 21
-</span>
-</div>
-</li>
-<li value="45">
-<div class="instruction">
-<span>
-ishl
-</span>
-</div>
-</li>
-<li value="46">
-<div class="instruction">
-<span>
-ior
-</span>
-</div>
-</li>
-<li value="47">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="48">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int getDate()">
-java.util.Date.getDate
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="51">
-<div class="instruction">
-<span>
-bipush 16
-</span>
-</div>
-</li>
-<li value="53">
-<div class="instruction">
-<span>
-ishl
-</span>
-</div>
-</li>
-<li value="54">
-<div class="instruction">
-<span>
-ior
-</span>
-</div>
-</li>
-<li value="55">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="56">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int getHours()">
-java.util.Date.getHours
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="59">
-<div class="instruction">
-<span>
-bipush 11
-</span>
-</div>
-</li>
-<li value="61">
-<div class="instruction">
-<span>
-ishl
-</span>
-</div>
-</li>
-<li value="62">
-<div class="instruction">
-<span>
-ior
-</span>
-</div>
-</li>
-<li value="63">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="64">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int getMinutes()">
-java.util.Date.getMinutes
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="67">
-<div class="instruction">
-<span>
-iconst 5
-</span>
-</div>
-</li>
-<li value="68">
-<div class="instruction">
-<span>
-ishl
-</span>
-</div>
-</li>
-<li value="69">
-<div class="instruction">
-<span>
-ior
-</span>
-</div>
-</li>
-<li value="70">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="71">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int getSeconds()">
-java.util.Date.getSeconds
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="74">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="75">
-<div class="instruction">
-<span>
-ishr
-</span>
-</div>
-</li>
-<li value="76">
-<div class="instruction">
-<span>
-ior
-</span>
-</div>
-</li>
-<li value="77">
-<div class="instruction">
-<span>
-i2l
-</span>
-</div>
-</li>
-<li value="78">
-<div class="instruction">
-<span>
-lreturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.zip.ZipEntry:setExtra:B.-void" href="#">
+<a name="java.util.zip.ZipEntry:setMethod:Ivoid" href="#">
 
 </a>
 <div class="method_signature">
@@ -3114,10 +3121,10 @@ public
 void
  
 <span>
-setExtra
+setMethod
 </span>
 (
-byte[]
+int
  1
 )
 ;
@@ -3134,46 +3141,39 @@ Not parsed
 <li value="0">
 <div class="instruction">
 <span>
-aload  1
+iload  1
 </span>
 </div>
 </li>
 <li value="1">
 <div class="instruction">
 <span>
-ifnull 20
+ifeq 19
 </span>
 </div>
 </li>
 <li value="4">
 <div class="instruction">
 <span>
-aload  1
+iload  1
 </span>
 </div>
 </li>
 <li value="5">
 <div class="instruction">
 <span>
-arraylength
+bipush 8
 </span>
 </div>
 </li>
-<li value="6">
+<li value="7">
 <div class="instruction">
 <span>
-iconst 65535
+ifcmpeq 13
 </span>
 </div>
 </li>
-<li value="8">
-<div class="instruction">
-<span>
-ifcmpme 13
-</span>
-</div>
-</li>
-<li value="11">
+<li value="10">
 <div class="instruction">
 <span>
 new 
@@ -3185,21 +3185,21 @@ java.lang.IllegalArgumentException
 </span>
 </div>
 </li>
-<li value="14">
+<li value="13">
 <div class="instruction">
 <span>
 dup
 </span>
 </div>
 </li>
-<li value="15">
+<li value="14">
 <div class="instruction">
 <span>
-ldc string &apos;invalid extra field length&apos;
+ldc string &apos;invalid compression method&apos;
 </span>
 </div>
 </li>
-<li value="17">
+<li value="16">
 <div class="instruction">
 <span>
 invokespecial 
@@ -3228,31 +3228,91 @@ No reachable result.
 </ul>
 </div>
 </li>
-<li value="20">
+<li value="19">
 <div class="instruction">
 <span>
 athrow
 </span>
 </div>
 </li>
-<li value="21">
+<li value="20">
 <div class="instruction">
 <span>
 aload  0
 </span>
 </div>
 </li>
-<li value="22">
+<li value="21">
 <div class="instruction">
 <span>
-aload  1
+iload  1
 </span>
 </div>
 </li>
-<li value="23">
+<li value="22">
 <div class="instruction">
 <span>
 putfield 
+</span>
+<span>
+<a href="#java.util.zip.ZipEntry:method:I">
+java.util.zip.ZipEntry.method
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipEntry:getExtra:B.-" href="#">
+
+</a>
+<div class="method_signature">
+public 
+byte[]
+ 
+<span>
+getExtra
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
 </span>
 <span>
 <a href="#java.util.zip.ZipEntry:extra:B.-">
@@ -3267,10 +3327,10 @@ byte[]
 </span>
 </div>
 </li>
-<li value="26">
+<li value="4">
 <div class="instruction">
 <span>
-return
+areturn
 </span>
 </div>
 </li>
@@ -3407,7 +3467,7 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.util.zip.ZipEntry:setCompressedSize:Jvoid" href="#">
+<a name="java.util.zip.ZipEntry:setSize:Jvoid" href="#">
 
 </a>
 <div class="method_signature">
@@ -3415,7 +3475,7 @@ public
 void
  
 <span>
-setCompressedSize
+setSize
 </span>
 (
 long
@@ -3435,25 +3495,115 @@ Not parsed
 <li value="0">
 <div class="instruction">
 <span>
-aload  0
+lload  1
 </span>
 </div>
 </li>
 <li value="1">
 <div class="instruction">
 <span>
-lload  1
+lconst %Ld0
 </span>
 </div>
 </li>
 <li value="2">
 <div class="instruction">
 <span>
+lcmp
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+ifge 13
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+ldc string &apos;invalid entry size&apos;
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.lang.IllegalArgumentException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+lload  1
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
 putfield 
 </span>
 <span>
-<a href="#java.util.zip.ZipEntry:csize:J">
-java.util.zip.ZipEntry.csize
+<a href="#java.util.zip.ZipEntry:size:J">
+java.util.zip.ZipEntry.size
 </a>
 </span>
 <span>
@@ -3464,7 +3614,7 @@ long
 </span>
 </div>
 </li>
-<li value="5">
+<li value="21">
 <div class="instruction">
 <span>
 return
@@ -3615,6 +3765,403 @@ lconst %Ld-1
 <div class="instruction">
 <span>
 lreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipEntry:toString:java.lang.String" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span>
+toString
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String getName()">
+java.util.zip.ZipEntry.getName
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipEntry:getCrc:J" href="#">
+
+</a>
+<div class="method_signature">
+public 
+long
+ 
+<span>
+getCrc
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.util.zip.ZipEntry:crc:J">
+java.util.zip.ZipEntry.crc
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+long
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+lreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipEntry:setTime:Jvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span>
+setTime
+</span>
+(
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+lload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+long
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long javaToDosTime(long)">
+java.util.zip.ZipEntry.javaToDosTime
+</span>
+</span>
+<span>
+(
+long
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.util.zip.ZipEntry:time:J">
+java.util.zip.ZipEntry.time
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+long
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipEntry:isDirectory:Z" href="#">
+
+</a>
+<div class="method_signature">
+public 
+bool
+ 
+<span>
+isDirectory
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.util.zip.ZipEntry:name:java.lang.String">
+java.util.zip.ZipEntry.name
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ldc string &apos;/&apos;
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool endsWith(java.lang.String)">
+java.lang.String.endsWith
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/String.html#java.lang.String:endsWith:java.lang.StringZ" title="bool endsWith(java.lang.String)">
+java.lang.String.endsWith
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.zip.ZipEntry:setCompressedSize:Jvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span>
+setCompressedSize
+</span>
+(
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+lload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.util.zip.ZipEntry:csize:J">
+java.util.zip.ZipEntry.csize
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+long
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+return
 </span>
 </div>
 </li>
@@ -4038,553 +4585,6 @@ lreturn
 </ol>
 </div>
 <div class="method">
-<a name="java.util.zip.ZipEntry:toString:java.lang.String" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
- 
-<span>
-toString
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.String getName()">
-java.util.zip.ZipEntry.getName
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.zip.ZipEntry:getMethod:I" href="#">
-
-</a>
-<div class="method_signature">
-public 
-int
- 
-<span>
-getMethod
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.util.zip.ZipEntry:method:I">
-java.util.zip.ZipEntry.method
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.zip.ZipEntry:setTime:Jvoid" href="#">
-
-</a>
-<div class="method_signature">
-public 
-void
- 
-<span>
-setTime
-</span>
-(
-long
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-lload  1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-long
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="long javaToDosTime(long)">
-java.util.zip.ZipEntry.javaToDosTime
-</span>
-</span>
-<span>
-(
-long
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.util.zip.ZipEntry:time:J">
-java.util.zip.ZipEntry.time
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-long
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.zip.ZipEntry:isDirectory:Z" href="#">
-
-</a>
-<div class="method_signature">
-public 
-bool
- 
-<span>
-isDirectory
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.util.zip.ZipEntry:name:java.lang.String">
-java.util.zip.ZipEntry.name
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ldc string &apos;/&apos;
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool endsWith(java.lang.String)">
-java.lang.String.endsWith
-</span>
-</span>
-<span>
-(
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/lang/String.html#java.lang.String:endsWith:java.lang.StringZ" title="bool endsWith(java.lang.String)">
-java.lang.String.endsWith
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.zip.ZipEntry:getCrc:J" href="#">
-
-</a>
-<div class="method_signature">
-public 
-long
- 
-<span>
-getCrc
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.util.zip.ZipEntry:crc:J">
-java.util.zip.ZipEntry.crc
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-long
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-lreturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.zip.ZipEntry:setSize:Jvoid" href="#">
-
-</a>
-<div class="method_signature">
-public 
-void
- 
-<span>
-setSize
-</span>
-(
-long
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-lload  1
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-lconst %Ld0
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-lcmp
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-ifge 13
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../../java/lang/IllegalArgumentException.html">
-java.lang.IllegalArgumentException
-</a>
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-ldc string &apos;invalid entry size&apos;
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.lang.IllegalArgumentException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-lload  1
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.util.zip.ZipEntry:size:J">
-java.util.zip.ZipEntry.size
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-long
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
 <a name="java.util.zip.ZipEntry:getSize:J" href="#">
 
 </a>
@@ -4645,15 +4645,15 @@ lreturn
 </ol>
 </div>
 <div class="method">
-<a name="java.util.zip.ZipEntry:getExtra:B.-" href="#">
+<a name="java.util.zip.ZipEntry:getMethod:I" href="#">
 
 </a>
 <div class="method_signature">
 public 
-byte[]
+int
  
 <span>
-getExtra
+getMethod
 </span>
 (
 )
@@ -4681,22 +4681,22 @@ aload  0
 getfield 
 </span>
 <span>
-<a href="#java.util.zip.ZipEntry:extra:B.-">
-java.util.zip.ZipEntry.extra
+<a href="#java.util.zip.ZipEntry:method:I">
+java.util.zip.ZipEntry.method
 </a>
 </span>
 <span>
  : 
 </span>
 <span>
-byte[]
+int
 </span>
 </div>
 </li>
 <li value="4">
 <div class="instruction">
 <span>
-areturn
+ireturn
 </span>
 </div>
 </li>
