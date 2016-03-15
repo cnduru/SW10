@@ -1,6 +1,6 @@
 public class B extends A{
 
-    public short get_value(){
+    public short bar(){
         reduce();
         return value;
     }

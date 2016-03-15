@@ -1,11 +1,11 @@
 public class A{
     protected short value = 10;
     
-    public short get_value(){
+    public short bar(){
         return value;
     }
     
-    public short add(short v){
+    public short foo(short v){
         value += v;        
         return value;
     }

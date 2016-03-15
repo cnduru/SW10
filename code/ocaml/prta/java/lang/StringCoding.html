@@ -247,18 +247,18 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.StringCoding:safeTrim:C.-Ijava.nio.charset.CharsetZC.-" href="#">
+<a name="java.lang.StringCoding:safeTrim:B.-Ijava.nio.charset.CharsetZB.-" href="#">
 
 </a>
 <div class="method_signature">
 private static 
-char[]
+byte[]
  
-<span class="methodname clickable" onclick="showInfoList(this)">
+<span>
 safeTrim
 </span>
 (
-char[]
+byte[]
  0
 , 
 int
@@ -278,16 +278,7 @@ bool
 Concrete Method 
 </li>
 <li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.lang.StringCoding:access$100:C.-Ijava.nio.charset.CharsetZC.-" title="char[] access$100(char[], int, java.nio.charset.Charset, bool)">
-java.lang.StringCoding.access$100(char[], int, java.nio.charset.Charset, bool)
-</a>
-</div>
+Not parsed
 </li>
 </ul>
 </div>
@@ -405,16 +396,16 @@ iload  1
 invokestatic 
 </span>
 <span>
-char[]
+byte[]
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="char[] copyOf(char[], int)">
+<span title="byte[] copyOf(byte[], int)">
 java.util.Arrays.copyOf
 </span>
 </span>
 <span>
 (
-char[]
+byte[]
 , 
 int
 )
@@ -422,9 +413,7 @@ int
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/util/Arrays.html#java.util.Arrays:copyOf:C.-IC.-" title="char[] copyOf(char[], int)">
-java.util.Arrays.copyOf
-</a>
+No reachable result.
 </div>
 </li>
 </ul>
@@ -1177,30 +1166,22 @@ try start: 57; try end: 83: catch start: 86; catched type: java.nio.charset.Ille
 </span>
 </div>
 <div class="method">
-<a name="java.lang.StringCoding:access$100:C.-Ijava.nio.charset.CharsetZC.-" href="#">
+<a name="java.lang.StringCoding:access$000:IFI" href="#">
 
 </a>
 <div class="method_signature">
  static 
-char[]
+int
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-access$100
+access$000
 </span>
 (
-char[]
+int
  0
 , 
-int
+float
  1
-, 
-<a href="../../java/nio/charset/Charset.html">
-java.nio.charset.Charset
-</a>
- 2
-, 
-bool
- 3
 )
 ;
 <ul class="annot">
@@ -1225,72 +1206,52 @@ java.lang.StringCoding$StringDecoder.decode(byte[], int, int)
 <li value="0">
 <div class="instruction">
 <span>
-aload  0
+iload  0
 </span>
 </div>
 </li>
 <li value="1">
 <div class="instruction">
 <span>
-iload  1
+fload  1
 </span>
 </div>
 </li>
 <li value="2">
 <div class="instruction">
 <span>
-aload  2
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
 invokestatic 
 </span>
 <span>
-char[]
+int
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="char[] safeTrim(char[], int, java.nio.charset.Charset, bool)">
-java.lang.StringCoding.safeTrim
+<span title="int scale(int, float)">
+java.lang.StringCoding.scale
 </span>
 </span>
 <span>
 (
-char[]
-, 
 int
 , 
-<a href="../../java/nio/charset/Charset.html">
-java.nio.charset.Charset
-</a>
-, 
-bool
+float
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="#java.lang.StringCoding:safeTrim:C.-Ijava.nio.charset.CharsetZC.-" title="char[] safeTrim(char[], int, java.nio.charset.Charset, bool)">
-java.lang.StringCoding.safeTrim
+<a href="#java.lang.StringCoding:scale:IFI" title="int scale(int, float)">
+java.lang.StringCoding.scale
 </a>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="7">
+<li value="5">
 <div class="instruction">
 <span>
-areturn
+ireturn
 </span>
 </div>
 </li>
@@ -1299,21 +1260,21 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.StringCoding:lookupCharset:java.lang.Stringjava.nio.charset.Charset" href="#">
+<a name="java.lang.StringCoding:deref:java.lang.ThreadLocaljava.lang.Object" href="#">
 
 </a>
 <div class="method_signature">
 private static 
-<a href="../../java/nio/charset/Charset.html">
-java.nio.charset.Charset
+<a href="../../java/lang/Object.html">
+java.lang.Object
 </a>
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-lookupCharset
+deref
 </span>
 (
-<a href="../../java/lang/String.html">
-java.lang.String
+<a href="../../java/lang/ThreadLocal.html">
+java.lang.ThreadLocal
 </a>
  0
 )
@@ -1347,28 +1308,27 @@ aload  0
 <li value="1">
 <div class="instruction">
 <span>
-invokestatic 
+invokevirtual 
 </span>
 <span>
-bool
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool isSupported(java.lang.String)">
-java.nio.charset.Charset.isSupported
+<span title="java.lang.Object get()">
+java.lang.ThreadLocal.get
 </span>
 </span>
 <span>
 (
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/nio/charset/Charset.html#java.nio.charset.Charset:isSupported:java.lang.StringZ" title="bool isSupported(java.lang.String)">
-java.nio.charset.Charset.isSupported
+<a href="../../java/lang/ThreadLocal.html#java.lang.ThreadLocal:get:java.lang.Object" title="java.lang.Object get()">
+java.lang.ThreadLocal.get
 </a>
 </div>
 </li>
@@ -1378,136 +1338,88 @@ java.nio.charset.Charset.isSupported
 <li value="4">
 <div class="instruction">
 <span>
-ifeq 18
+checkcast 
+</span>
+<span>
+<a href="../../java/lang/ref/SoftReference.html">
+java.lang.ref.SoftReference
+</a>
 </span>
 </div>
 </li>
 <li value="7">
 <div class="instruction">
 <span>
-aload  0
+astore  1
 </span>
 </div>
 </li>
 <li value="8">
 <div class="instruction">
 <span>
-invokestatic 
+aload  1
 </span>
-<span>
-<a href="../../java/nio/charset/Charset.html">
-java.nio.charset.Charset
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.nio.charset.Charset forName(java.lang.String)">
-java.nio.charset.Charset.forName
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/charset/Charset.html#java.nio.charset.Charset:forName:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset forName(java.lang.String)">
-java.nio.charset.Charset.forName
-</a>
 </div>
 </li>
-</ul>
-</div>
-</li>
-<li value="11">
+<li value="9">
 <div class="instruction">
 <span>
-areturn
+ifnonnull 5
 </span>
 </div>
 </li>
 <li value="12">
 <div class="instruction">
 <span>
-astore  1
+aconstnull
 </span>
 </div>
 </li>
 <li value="13">
 <div class="instruction">
 <span>
-new 
-</span>
-<span>
-<a href="../../java/lang/Error.html">
-java.lang.Error
-</a>
+areturn
 </span>
 </div>
 </li>
-<li value="16">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="17">
+<li value="14">
 <div class="instruction">
 <span>
 aload  1
 </span>
 </div>
 </li>
-<li value="18">
+<li value="15">
 <div class="instruction">
 <span>
-invokespecial 
+invokevirtual 
 </span>
 <span>
-void
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.Throwable)">
-java.lang.Error.&lt;init&gt;
+<span title="java.lang.Object get()">
+java.lang.ref.SoftReference.get
 </span>
 </span>
 <span>
 (
-<a href="../../java/lang/Throwable.html">
-java.lang.Throwable
-</a>
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/lang/Error.html#java.lang.Error:&lt;init&gt;:java.lang.Throwablevoid" title="void &lt;init&gt;(java.lang.Throwable)">
-java.lang.Error.&lt;init&gt;
+<a href="../../java/lang/ref/SoftReference.html#java.lang.ref.SoftReference:get:java.lang.Object" title="java.lang.Object get()">
+java.lang.ref.SoftReference.get
 </a>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="21">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-aconstnull
-</span>
-</div>
-</li>
-<li value="23">
+<li value="18">
 <div class="instruction">
 <span>
 areturn
@@ -1515,18 +1427,8 @@ areturn
 </div>
 </li>
 </ol>
-<span title="Exceptions">
-<h3>
-Exceptions handling:
-</h3>
 <ol>
-<li>
-<span>
-try start: 7; try end: 11: catch start: 12; catched type: java.nio.charset.UnsupportedCharsetException.
-</span>
-</li>
 </ol>
-</span>
 </div>
 <div class="method">
 <a name="java.lang.StringCoding:decode:java.nio.charset.CharsetB.-IIC.-" href="#">
@@ -2981,6 +2883,117 @@ return
 </ol>
 </div>
 <div class="method">
+<a name="java.lang.StringCoding:access$300:B.-Ijava.nio.charset.CharsetZB.-" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+byte[]
+ 
+<span>
+access$300
+</span>
+(
+byte[]
+ 0
+, 
+int
+ 1
+, 
+<a href="../../java/nio/charset/Charset.html">
+java.nio.charset.Charset
+</a>
+ 2
+, 
+bool
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+byte[]
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="byte[] safeTrim(byte[], int, java.nio.charset.Charset, bool)">
+java.lang.StringCoding.safeTrim
+</span>
+</span>
+<span>
+(
+byte[]
+, 
+int
+, 
+<a href="../../java/nio/charset/Charset.html">
+java.nio.charset.Charset
+</a>
+, 
+bool
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
 <a name="java.lang.StringCoding:decode:B.-IIC.-" href="#">
 
 </a>
@@ -3555,336 +3568,22 @@ try start: 21; try end: 29: catch start: 30; catched type: java.io.UnsupportedEn
 </span>
 </div>
 <div class="method">
-<a name="java.lang.StringCoding:warnUnsupportedCharset:java.lang.Stringvoid" href="#">
+<a name="java.lang.StringCoding:scale:IFI" href="#">
 
 </a>
 <div class="method_signature">
 private static 
-void
- 
-<span>
-warnUnsupportedCharset
-</span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.lang.StringCoding:warnUnsupportedCharset:Z">
-java.lang.StringCoding.warnUnsupportedCharset
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-bool
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-ifeq 34
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.StringBuilder.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-ldc string &apos;WARNING: Default charset &apos;
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.StringBuilder append(java.lang.String)">
-java.lang.StringBuilder.append
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
-java.lang.StringBuilder.append
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.StringBuilder append(java.lang.String)">
-java.lang.StringBuilder.append
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
-java.lang.StringBuilder.append
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-ldc string &apos; not supported, using ISO-8859-1 instead&apos;
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.StringBuilder append(java.lang.String)">
-java.lang.StringBuilder.append
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
-java.lang.StringBuilder.append
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.String toString()">
-java.lang.StringBuilder.toString
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:toString:java.lang.String" title="java.lang.String toString()">
-java.lang.StringBuilder.toString
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void err(java.lang.String)">
-sun.misc.MessageUtils.err
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="33">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="34">
-<div class="instruction">
-<span>
-putstatic 
-</span>
-<span>
-<a href="#java.lang.StringCoding:warnUnsupportedCharset:Z">
-java.lang.StringCoding.warnUnsupportedCharset
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-bool
-</span>
-</div>
-</li>
-<li value="37">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.StringCoding:deref:java.lang.ThreadLocaljava.lang.Object" href="#">
-
-</a>
-<div class="method_signature">
-private static 
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
+int
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-deref
+scale
 </span>
 (
-<a href="../../java/lang/ThreadLocal.html">
-java.lang.ThreadLocal
-</a>
+int
  0
+, 
+float
+ 1
 )
 ;
 <ul class="annot">
@@ -3898,8 +3597,8 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="#java.lang.StringCoding:decode:java.lang.StringB.-IIC.-" title="char[] decode(java.lang.String, byte[], int, int)">
-java.lang.StringCoding.decode(java.lang.String, byte[], int, int)
+<a href="#java.lang.StringCoding:access$000:IFI" title="int access$000(int, float)">
+java.lang.StringCoding.access$000(int, float)
 </a>
 </div>
 </li>
@@ -3909,107 +3608,157 @@ java.lang.StringCoding.decode(java.lang.String, byte[], int, int)
 <li value="0">
 <div class="instruction">
 <span>
-aload  0
+iload  0
 </span>
 </div>
 </li>
 <li value="1">
 <div class="instruction">
 <span>
-invokevirtual 
+i2d
 </span>
-<span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Object get()">
-java.lang.ThreadLocal.get
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/ThreadLocal.html#java.lang.ThreadLocal:get:java.lang.Object" title="java.lang.Object get()">
-java.lang.ThreadLocal.get
-</a>
 </div>
 </li>
-</ul>
+<li value="2">
+<div class="instruction">
+<span>
+fload  1
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+f2d
+</span>
 </div>
 </li>
 <li value="4">
 <div class="instruction">
 <span>
-checkcast 
+dmult
 </span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
 <span>
-<a href="../../java/lang/ref/SoftReference.html">
-java.lang.ref.SoftReference
+d2i
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.StringCoding:safeTrim:C.-Ijava.nio.charset.CharsetZC.-" href="#">
+
 </a>
+<div class="method_signature">
+private static 
+char[]
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+safeTrim
+</span>
+(
+char[]
+ 0
+, 
+int
+ 1
+, 
+<a href="../../java/nio/charset/Charset.html">
+java.nio.charset.Charset
+</a>
+ 2
+, 
+bool
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.lang.StringCoding:access$100:C.-Ijava.nio.charset.CharsetZC.-" title="char[] access$100(char[], int, java.nio.charset.Charset, bool)">
+java.lang.StringCoding.access$100(char[], int, java.nio.charset.Charset, bool)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+ifcmpne 15
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+iload  3
 </span>
 </div>
 </li>
 <li value="7">
 <div class="instruction">
 <span>
-astore  1
+ifne 9
 </span>
 </div>
 </li>
-<li value="8">
+<li value="10">
 <div class="instruction">
 <span>
-aload  1
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-ifnonnull 5
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-aconstnull
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-invokevirtual 
+invokestatic 
 </span>
 <span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
+<a href="../../java/lang/SecurityManager.html">
+java.lang.SecurityManager
 </a>
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Object get()">
-java.lang.ref.SoftReference.get
+<span title="java.lang.SecurityManager getSecurityManager()">
+java.lang.System.getSecurityManager
 </span>
 </span>
 <span>
@@ -4019,15 +3768,81 @@ java.lang.ref.SoftReference.get
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/lang/ref/SoftReference.html#java.lang.ref.SoftReference:get:java.lang.Object" title="java.lang.Object get()">
-java.lang.ref.SoftReference.get
+<a href="../../java/lang/System.html#java.lang.System:getSecurityManager:java.lang.SecurityManager" title="java.lang.SecurityManager getSecurityManager()">
+java.lang.System.getSecurityManager
 </a>
 </div>
 </li>
 </ul>
 </div>
 </li>
+<li value="13">
+<div class="instruction">
+<span>
+ifnonnull 5
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
 <li value="18">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+char[]
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="char[] copyOf(char[], int)">
+java.util.Arrays.copyOf
+</span>
+</span>
+<span>
+(
+char[]
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/Arrays.html#java.util.Arrays:copyOf:C.-IC.-" title="char[] copyOf(char[], int)">
+java.util.Arrays.copyOf
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="23">
 <div class="instruction">
 <span>
 areturn
@@ -4753,18 +4568,18 @@ try start: 57; try end: 83: catch start: 86; catched type: java.nio.charset.Ille
 </span>
 </div>
 <div class="method">
-<a name="java.lang.StringCoding:access$300:B.-Ijava.nio.charset.CharsetZB.-" href="#">
+<a name="java.lang.StringCoding:access$100:C.-Ijava.nio.charset.CharsetZC.-" href="#">
 
 </a>
 <div class="method_signature">
  static 
-byte[]
+char[]
  
-<span>
-access$300
+<span class="methodname clickable" onclick="showInfoList(this)">
+access$100
 </span>
 (
-byte[]
+char[]
  0
 , 
 int
@@ -4784,7 +4599,16 @@ bool
 Concrete Method 
 </li>
 <li>
-Not parsed
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringCoding$StringDecoder.html#java.lang.StringCoding$StringDecoder:decode:B.-IIC.-" title="char[] decode(byte[], int, int)">
+java.lang.StringCoding$StringDecoder.decode(byte[], int, int)
+</a>
+</div>
 </li>
 </ul>
 </div>
@@ -4823,16 +4647,16 @@ iload  3
 invokestatic 
 </span>
 <span>
-byte[]
+char[]
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="byte[] safeTrim(byte[], int, java.nio.charset.Charset, bool)">
+<span title="char[] safeTrim(char[], int, java.nio.charset.Charset, bool)">
 java.lang.StringCoding.safeTrim
 </span>
 </span>
 <span>
 (
-byte[]
+char[]
 , 
 int
 , 
@@ -4846,7 +4670,9 @@ bool
 <ul class="clickable">
 <li>
 <div>
-No reachable result.
+<a href="#java.lang.StringCoding:safeTrim:C.-Ijava.nio.charset.CharsetZC.-" title="char[] safeTrim(char[], int, java.nio.charset.Charset, bool)">
+java.lang.StringCoding.safeTrim
+</a>
 </div>
 </li>
 </ul>
@@ -5012,22 +4838,23 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.StringCoding:scale:IFI" href="#">
+<a name="java.lang.StringCoding:lookupCharset:java.lang.Stringjava.nio.charset.Charset" href="#">
 
 </a>
 <div class="method_signature">
 private static 
-int
+<a href="../../java/nio/charset/Charset.html">
+java.nio.charset.Charset
+</a>
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-scale
+lookupCharset
 </span>
 (
-int
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
  0
-, 
-float
- 1
 )
 ;
 <ul class="annot">
@@ -5041,8 +4868,8 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="#java.lang.StringCoding:access$000:IFI" title="int access$000(int, float)">
-java.lang.StringCoding.access$000(int, float)
+<a href="#java.lang.StringCoding:decode:java.lang.StringB.-IIC.-" title="char[] decode(java.lang.String, byte[], int, int)">
+java.lang.StringCoding.decode(java.lang.String, byte[], int, int)
 </a>
 </div>
 </li>
@@ -5052,55 +4879,193 @@ java.lang.StringCoding.access$000(int, float)
 <li value="0">
 <div class="instruction">
 <span>
-iload  0
+aload  0
 </span>
 </div>
 </li>
 <li value="1">
 <div class="instruction">
 <span>
-i2d
+invokestatic 
 </span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isSupported(java.lang.String)">
+java.nio.charset.Charset.isSupported
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/charset/Charset.html#java.nio.charset.Charset:isSupported:java.lang.StringZ" title="bool isSupported(java.lang.String)">
+java.nio.charset.Charset.isSupported
+</a>
 </div>
 </li>
-<li value="2">
-<div class="instruction">
-<span>
-fload  1
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-f2d
-</span>
+</ul>
 </div>
 </li>
 <li value="4">
 <div class="instruction">
 <span>
-dmult
+ifeq 18
 </span>
 </div>
 </li>
-<li value="5">
+<li value="7">
 <div class="instruction">
 <span>
-d2i
+aload  0
 </span>
 </div>
 </li>
-<li value="6">
+<li value="8">
 <div class="instruction">
 <span>
-ireturn
+invokestatic 
+</span>
+<span>
+<a href="../../java/nio/charset/Charset.html">
+java.nio.charset.Charset
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.charset.Charset forName(java.lang.String)">
+java.nio.charset.Charset.forName
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/charset/Charset.html#java.nio.charset.Charset:forName:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset forName(java.lang.String)">
+java.nio.charset.Charset.forName
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+astore  1
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/Error.html">
+java.lang.Error
+</a>
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.Throwable)">
+java.lang.Error.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Throwable.html">
+java.lang.Throwable
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Error.html#java.lang.Error:&lt;init&gt;:java.lang.Throwablevoid" title="void &lt;init&gt;(java.lang.Throwable)">
+java.lang.Error.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+areturn
 </span>
 </div>
 </li>
 </ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
 <ol>
+<li>
+<span>
+try start: 7; try end: 11: catch start: 12; catched type: java.nio.charset.UnsupportedCharsetException.
+</span>
+</li>
 </ol>
+</span>
 </div>
 <div class="method">
 <a name="java.lang.StringCoding:encode:java.nio.charset.CharsetC.-IIB.-" href="#">
@@ -6483,100 +6448,6 @@ try start: 140; try end: 187: catch start: 190; catched type: java.nio.charset.C
 </span>
 </div>
 <div class="method">
-<a name="java.lang.StringCoding:access$000:IFI" href="#">
-
-</a>
-<div class="method_signature">
- static 
-int
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-access$000
-</span>
-(
-int
- 0
-, 
-float
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringCoding$StringDecoder.html#java.lang.StringCoding$StringDecoder:decode:B.-IIC.-" title="char[] decode(byte[], int, int)">
-java.lang.StringCoding$StringDecoder.decode(byte[], int, int)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-fload  1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int scale(int, float)">
-java.lang.StringCoding.scale
-</span>
-</span>
-<span>
-(
-int
-, 
-float
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.lang.StringCoding:scale:IFI" title="int scale(int, float)">
-java.lang.StringCoding.scale
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
 <a name="java.lang.StringCoding:encode:C.-IIB.-" href="#">
 
 </a>
@@ -7147,30 +7018,21 @@ try start: 21; try end: 29: catch start: 30; catched type: java.io.UnsupportedEn
 </span>
 </div>
 <div class="method">
-<a name="java.lang.StringCoding:safeTrim:B.-Ijava.nio.charset.CharsetZB.-" href="#">
+<a name="java.lang.StringCoding:warnUnsupportedCharset:java.lang.Stringvoid" href="#">
 
 </a>
 <div class="method_signature">
 private static 
-byte[]
+void
  
 <span>
-safeTrim
+warnUnsupportedCharset
 </span>
 (
-byte[]
- 0
-, 
-int
- 1
-, 
-<a href="../../java/nio/charset/Charset.html">
-java.nio.charset.Charset
+<a href="../../java/lang/String.html">
+java.lang.String
 </a>
- 2
-, 
-bool
- 3
+ 0
 )
 ;
 <ul class="annot">
@@ -7186,58 +7048,58 @@ Not parsed
 <li value="0">
 <div class="instruction">
 <span>
-iload  1
+getstatic 
 </span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
 <span>
-aload  0
+<a href="#java.lang.StringCoding:warnUnsupportedCharset:Z">
+java.lang.StringCoding.warnUnsupportedCharset
+</a>
 </span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
 <span>
-arraylength
+ : 
+</span>
+<span>
+bool
 </span>
 </div>
 </li>
 <li value="3">
 <div class="instruction">
 <span>
-ifcmpne 15
+ifeq 34
 </span>
 </div>
 </li>
 <li value="6">
 <div class="instruction">
 <span>
-iload  3
+new 
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
 </span>
 </div>
 </li>
-<li value="7">
+<li value="9">
 <div class="instruction">
 <span>
-ifne 9
+dup
 </span>
 </div>
 </li>
 <li value="10">
 <div class="instruction">
 <span>
-invokestatic 
+invokespecial 
 </span>
 <span>
-<a href="../../java/lang/SecurityManager.html">
-java.lang.SecurityManager
-</a>
+void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.SecurityManager getSecurityManager()">
-java.lang.System.getSecurityManager
+<span title="void &lt;init&gt;()">
+java.lang.StringBuilder.&lt;init&gt;
 </span>
 </span>
 <span>
@@ -7247,9 +7109,7 @@ java.lang.System.getSecurityManager
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/lang/System.html#java.lang.System:getSecurityManager:java.lang.SecurityManager" title="java.lang.SecurityManager getSecurityManager()">
-java.lang.System.getSecurityManager
-</a>
+No reachable result.
 </div>
 </li>
 </ul>
@@ -7258,22 +7118,41 @@ java.lang.System.getSecurityManager
 <li value="13">
 <div class="instruction">
 <span>
-ifnonnull 5
+ldc string &apos;WARNING: Default charset &apos;
 </span>
 </div>
 </li>
-<li value="16">
+<li value="15">
 <div class="instruction">
 <span>
-aload  0
+invokevirtual 
 </span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
 </div>
 </li>
-<li value="17">
-<div class="instruction">
-<span>
-areturn
-</span>
+</ul>
 </div>
 </li>
 <li value="18">
@@ -7286,28 +7165,124 @@ aload  0
 <li value="19">
 <div class="instruction">
 <span>
-iload  1
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+ldc string &apos; not supported, using ISO-8859-1 instead&apos;
 </span>
 </div>
 </li>
-<li value="20">
+<li value="24">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toString()">
+java.lang.StringBuilder.toString
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:toString:java.lang.String" title="java.lang.String toString()">
+java.lang.StringBuilder.toString
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="30">
 <div class="instruction">
 <span>
 invokestatic 
 </span>
 <span>
-byte[]
+void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="byte[] copyOf(byte[], int)">
-java.util.Arrays.copyOf
+<span title="void err(java.lang.String)">
+sun.misc.MessageUtils.err
 </span>
 </span>
 <span>
 (
-byte[]
-, 
-int
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
 )
 </span>
 <ul class="clickable">
@@ -7319,10 +7294,35 @@ No reachable result.
 </ul>
 </div>
 </li>
-<li value="23">
+<li value="33">
 <div class="instruction">
 <span>
-areturn
+iconst 0
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#java.lang.StringCoding:warnUnsupportedCharset:Z">
+java.lang.StringCoding.warnUnsupportedCharset
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+bool
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+return
 </span>
 </div>
 </li>
