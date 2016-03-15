@@ -1,5 +1,5 @@
 %!TEX root = ../../master.tex
-\subsection{INVOKEVIRTUAL}
+\subsection{INVOKE\_VIRTUAL}
 \texttt{INVOKEVIRTUAL} is similar to \texttt{INVOKESTATIC} but in addition an object reference from the operand stack is stored as the first local variable, and the method for the actual class is resolved by a method lookup, inspired by \cite{dalvik}. For this we introduce two functions $signa$, and $methodLookup$. $signa = MethodID \to Signature$, where $Signature$ is the method's signature e.g. name and parameters. And $methodLookup$ used to lookup the intended method identifier, either from the class itself or a super class, defined as: \\\\
 $methodLookup(mid, cl) = $ \vspace{-10px}
 \[

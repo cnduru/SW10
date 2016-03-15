@@ -1,4 +1,4 @@
-\subsection{DATAFAULT}
+\subsection{DATA\_FAULT}
 A data fault can occur three places: the operand stack, the local variables or the heap. These faults are formalised in the \texttt{DF\_OPS}, \texttt{DF\_LOC} and \texttt{DF\_HEAP} rules respectively.
 
 $$\inference[DF\_OPS]{  
@@ -25,7 +25,7 @@ a \in H \semsp
 {CP, P \vdash \langle H, CS\rangle  \Rightarrow \langle H[a \mapsto v'], CS\rangle }$$
 
 
-\subsection{PROGRAMFLOWFAULT} \label{sec:pff}
+\subsection{PROGRAM\_FLOW\_FAULT} \label{sec:pff}
 This fault causes a change in the program flow of the applet. There are two cases: In the first case, either the fault changes the program counter, which has the consequence of changing which instruction is to be executed next. But since we have defined the program counter to only span locally within the method body, \texttt{PFF\_PC} only describes a change in program flow within the method body. In the second case, \texttt{PFF\_M} describes a fault which changes the method identifier, \textit{mid}, of the method to be executed. The fault described by \texttt{PFF\_M} will change the program flow to another method, outside of the current stack frame, but at the same program counter value within the new method's stack frame.
 
 $$\inference[PFF\_PC]{  
@@ -38,7 +38,7 @@ mid' \equiv_1 mid
 }
 {CP, P \vdash \langle H, (CS, \langle  mid, loc, ops, pc \rangle)\rangle  \Rightarrow \langle H, (CS, \langle mid', loc, ops, pc \rangle)\rangle }$$
 
-\subsection{INSTRUCTIONFAULT}
+\subsection{INSTRUCTION\_FAULT}
 This fault causes a change in an instruction, e.g. changing a \texttt{ADD} to a \texttt{POP} by changing a single bit in the instruction.
 
 $$\inference[INST\_F]{
