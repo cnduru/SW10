@@ -19,8 +19,8 @@ GET\_STATIC \textit{fid}  & Pushes a class variable from the heap onto the stack
 LOAD \textit{i}           & Loads a local variable onto the stack.  \\ \hline
 STORE \textit{i}          & Stores a value from the stack in a local variable.\\ \hline
 PUT\_FIELD \textit{fid}   & Stores a value from the top of the stack and stores it in a field in an object.   \\ \hline
-GET\_FIELD      &   \\ \hline
-NEW             &   \\ \hline  
+GET\_FIELD \textit{fid}	  & Reads a field in an object and pushes it onto the stack. \\ \hline
+NEW   		              & Creates an object on the heap and pushes a reference to it onto the stack.  \\ \hline  
 \end{tabular}
 \caption{\jcl semantics with a short description. Note that stack refers to the operand stack.}
 \end{table}
