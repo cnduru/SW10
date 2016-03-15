@@ -4,14 +4,14 @@
 \label{tab:instr}
 \begin{tabular}{l|l}
 \hline
-NOP             &   \\ \hline
-PUSH            &   \\ \hline
-POP             &   \\ \hline
-ADD             &   \\ \hline
-DUP             &   \\ \hline
-GOTO            &   \\ \hline
-IF\_CMPEQ       &   \\ \hline
-INVOKESTATIC    &   \\ \hline
+NOP             		  & No operation. Only increments the program counter. \\ \hline
+PUSH \textit{v}           & Pushes parameter \textit{v on top of the stack.} \\ \hline
+POP             		  & Removes and discards top element of the stack.\\ \hline
+ADD             		  & Adds the two top elements of the stack and pushes the result back onto the stack.  \\ \hline
+DUP             		  & Duplicates the top element of the stack and pushes it onto the stack. \\ \hline
+GOTO \textit{a}           & Jumps to a certain address in the program.  \\ \hline
+IF\_CMPEQ \textit{a}   	  & Compares the two top stack elements and performs a conditional jump to \textit{a}  \\ \hline
+INVOKE\_STATIC     		  &   \\ \hline
 RETURN          &   \\ \hline
 PUT\_STATIC     &   \\ \hline
 GET\_STATIC     &   \\ \hline
@@ -22,5 +22,5 @@ PUT\_FIELD      &   \\ \hline
 GET\_FIELD      &   \\ \hline
 NEW             &   \\ \hline  
 \end{tabular}
-\caption{\jcl semantics with a short description}
+\caption{\jcl semantics with a short description. Note that stack refers to the operand stack.}
 \end{table}
