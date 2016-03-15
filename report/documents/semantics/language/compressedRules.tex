@@ -16,9 +16,9 @@ INVOKE\_VIRTUAL 		  & ...  \\ \hline
 RETURN                    & Returns from a method. If the stack is non-empty the top value is returned.   \\ \hline
 PUT\_STATIC \textit{fid}  & Writes the top value of the stack to a class variable on the heap.  \\ \hline
 GET\_STATIC \textit{fid}  & Pushes a class variable from the heap onto the stack. \\ \hline
-LOAD            &   \\ \hline
-STORE           &   \\ \hline
-PUT\_FIELD      &   \\ \hline
+LOAD \textit{i}           & Loads a local variable onto the stack.  \\ \hline
+STORE \textit{i}          & Stores a value from the stack in a local variable.\\ \hline
+PUT\_FIELD \textit{fid}   & Stores a value from the top of the stack and stores it in a field in an object.   \\ \hline
 GET\_FIELD      &   \\ \hline
 NEW             &   \\ \hline  
 \end{tabular}
