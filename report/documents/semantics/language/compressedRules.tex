@@ -11,13 +11,13 @@ ADD             		  & Adds the two top elements of the stack and pushes the resu
 DUP             		  & Duplicates the top element of the stack and pushes it onto the stack. \\ \hline
 GOTO \textit{a}           & Jumps to a certain address in the program.  \\ \hline
 IF\_CMPEQ \textit{a}   	  & Compares the two top stack elements and performs a conditional jump to \textit{a}  \\ \hline
-INVOKE\_STATIC     		  &   \\ \hline
-RETURN          &   \\ \hline
-PUT\_STATIC     &   \\ \hline
-GET\_STATIC     &   \\ \hline
+INVOKE\_STATIC     		  & Calls a static method.  \\ \hline
+INVOKE\_VIRTUAL 		  & ...  \\ \hline
+RETURN                    & Returns from a method. If the stack is non-empty the top value is returned.   \\ \hline
+PUT\_STATIC \textit{fid}  & Writes the top value of the stack to a class variable on the heap.  \\ \hline
+GET\_STATIC \textit{fid}  & Pushes a class variable from the heap onto the stack. \\ \hline
 LOAD            &   \\ \hline
 STORE           &   \\ \hline
-INVOKE\_VIRTUAL &   \\ \hline
 PUT\_FIELD      &   \\ \hline
 GET\_FIELD      &   \\ \hline
 NEW             &   \\ \hline  
