@@ -1,0 +1,1014 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>
+java.net.InterfaceAddress
+</title>
+<link rel="StyleSheet" href="../../style.css" type="text/css" media="all" />
+<script type="text/javascript" src="../../actions.js">
+</script>
+</head>
+<body>
+<div class="class">
+<a name="java.net.InterfaceAddress" href="#">
+
+</a>
+<div class="classname">
+Class java.net.InterfaceAddress
+</div>
+<div class="field">
+<a name="java.net.InterfaceAddress:broadcast:java.net.Inet4Address" href="#">
+
+</a>
+<span class="field_signature">
+private  
+<a href="../../java/net/Inet4Address.html">
+java.net.Inet4Address
+</a>
+ broadcast;
+</span>
+</div>
+<div class="field">
+<a name="java.net.InterfaceAddress:address:java.net.InetAddress" href="#">
+
+</a>
+<span class="field_signature">
+private  
+<a href="../../java/net/InetAddress.html">
+java.net.InetAddress
+</a>
+ address;
+</span>
+</div>
+<div class="field">
+<a name="java.net.InterfaceAddress:maskLength:S" href="#">
+
+</a>
+<span class="field_signature">
+private  
+short
+ maskLength;
+</span>
+</div>
+<div class="method">
+<a name="java.net.InterfaceAddress:getNetworkPrefixLength:S" href="#">
+
+</a>
+<div class="method_signature">
+public 
+short
+ 
+<span>
+getNetworkPrefixLength
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+return this:java.lang.Object.maskLength
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.net.InterfaceAddress:toString:java.lang.String" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span>
+toString
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+<span>
+()
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.Object)">
+$irvar0:java.lang.Object.append
+</span>
+</span>
+<span>
+(this:java.lang.Object.address)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Objectjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.Object)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+notnull $irvar1:java.lang.StringBuilder
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+$irvar2 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+$irvar1:java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+(&apos;/&apos;)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+notnull $irvar2:java.lang.StringBuilder
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+$irvar3 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(int)">
+$irvar2:java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+(this:java.lang.Object.maskLength)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:Ijava.lang.StringBuilder" title="java.lang.StringBuilder append(int)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+notnull $irvar3:java.lang.StringBuilder
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+$irvar4 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+$irvar3:java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+(&apos; [&apos;)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+notnull $irvar4:java.lang.StringBuilder
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+$irvar5 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.Object)">
+$irvar4:java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+(this:java.lang.Object.broadcast)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Objectjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.Object)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+notnull $irvar5:java.lang.StringBuilder
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+$irvar6 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+$irvar5:java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+(&apos;]&apos;)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+notnull $irvar6:java.lang.StringBuilder
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+$irvar7 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toString()">
+$irvar6:java.lang.StringBuilder.toString
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:toString:java.lang.String" title="java.lang.String toString()">
+java.lang.StringBuilder.toString
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+return $irvar7:java.lang.String
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.net.InterfaceAddress:&lt;init&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+ 
+<span>
+InterfaceAddress
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+<a href="#java.net.InterfaceAddress:address:java.net.InetAddress">
+this:java.lang.Object.address
+</a>
+</span>
+<span>
+:= null
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+<a href="#java.net.InterfaceAddress:broadcast:java.net.Inet4Address">
+this:java.lang.Object.broadcast
+</a>
+</span>
+<span>
+:= null
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+<a href="#java.net.InterfaceAddress:maskLength:S">
+this:java.lang.Object.maskLength
+</a>
+</span>
+<span>
+:= 0
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.net.InterfaceAddress:getBroadcast:java.net.InetAddress" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/net/InetAddress.html">
+java.net.InetAddress
+</a>
+ 
+<span>
+getBroadcast
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+return this:java.lang.Object.broadcast
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.net.InterfaceAddress:getAddress:java.net.InetAddress" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/net/InetAddress.html">
+java.net.InetAddress
+</a>
+ 
+<span>
+getAddress
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+return this:java.lang.Object.address
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.net.InterfaceAddress:hashCode:I" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span>
+hashCode
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.address
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int hashCode()">
+this:java.lang.Object.address.hashCode
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+$T0_24 := $irvar0:I
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.broadcast == null) goto 12
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.broadcast
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int hashCode()">
+this:java.lang.Object.broadcast.hashCode
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+$T0_25 := $irvar1:I
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+$T1_25 := $irvar0:I
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+goto 14
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+$T0_25 := 0
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+$T1_25 := $T0_24:I
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+return (($T1_25:I+$T0_25:I)+this:java.lang.Object.maskLength)
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.net.InterfaceAddress:equals:java.lang.ObjectZ" href="#">
+
+</a>
+<div class="method_signature">
+public 
+bool
+ 
+<span>
+equals
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ $bcvar1
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+if (InstanceOf java.net.InterfaceAddress($bcvar1:java.lang.Object) != 0) goto 2
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+return 0
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+checkcast $bcvar1:java.lang.Object:
+</span>
+<span>
+<a href="InterfaceAddress.html">
+java.net.InterfaceAddress
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$bcvar2 := (java.net.InterfaceAddress) $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.address != null) goto 9
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+if ($bcvar2:java.lang.Object.address != null) goto 14
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+goto 15
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.address
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool equals(java.lang.Object)">
+this:java.lang.Object.address.equals
+</span>
+</span>
+<span>
+($bcvar2:java.lang.Object.address)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/net/Inet4Address.html#java.net.Inet4Address:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.net.Inet4Address.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/net/Inet6Address.html#java.net.Inet6Address:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.net.Inet6Address.equals
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+if ($irvar0:Z != 0) goto 15
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+return 0
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.broadcast != null) goto 20
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+if ($bcvar2:java.lang.Object.broadcast != null) goto 25
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+goto 26
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.broadcast
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool equals(java.lang.Object)">
+this:java.lang.Object.broadcast.equals
+</span>
+</span>
+<span>
+($bcvar2:java.lang.Object.broadcast)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+if ($irvar0:Z != 0) goto 26
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+return 0
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+if (this:java.lang.Object.maskLength == $bcvar2:java.lang.Object.maskLength) goto 30
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+return 0
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+return 1
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+</div>
+</body>
+</html>

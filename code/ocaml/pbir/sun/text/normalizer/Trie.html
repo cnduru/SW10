@@ -1,0 +1,2133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>
+sun.text.normalizer.Trie
+</title>
+<link rel="StyleSheet" href="../../../style.css" type="text/css" media="all" />
+<script type="text/javascript" src="../../../actions.js">
+</script>
+</head>
+<body>
+<div class="class">
+<a name="sun.text.normalizer.Trie" href="#">
+
+</a>
+<div class="classname">
+Class sun.text.normalizer.Trie
+</div>
+<div class="field">
+<a name="sun.text.normalizer.Trie:HEADER_OPTIONS_INDEX_SHIFT_:I" href="#">
+
+</a>
+<span class="field_signature">
+protected static final 
+int
+ HEADER_OPTIONS_INDEX_SHIFT_;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.Trie:INDEX_STAGE_2_SHIFT_:I" href="#">
+
+</a>
+<span class="field_signature">
+protected static final 
+int
+ INDEX_STAGE_2_SHIFT_;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.Trie:SURROGATE_MASK_:I" href="#">
+
+</a>
+<span class="field_signature">
+protected static final 
+int
+ SURROGATE_MASK_;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.Trie:m_options_:I" href="#">
+
+</a>
+<span class="field_signature">
+private  
+int
+ m_options_;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.Trie:HEADER_SIGNATURE_:I" href="#">
+
+</a>
+<span class="field_signature">
+protected static final 
+int
+ HEADER_SIGNATURE_;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.Trie:m_dataLength_:I" href="#">
+
+</a>
+<span class="field_signature">
+protected  
+int
+ m_dataLength_;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.Trie:LEAD_INDEX_OFFSET_:I" href="#">
+
+</a>
+<span class="field_signature">
+protected static final 
+int
+ LEAD_INDEX_OFFSET_;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.Trie:INDEX_STAGE_3_MASK_:I" href="#">
+
+</a>
+<span class="field_signature">
+protected static final 
+int
+ INDEX_STAGE_3_MASK_;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.Trie:BMP_INDEX_LENGTH:I" href="#">
+
+</a>
+<span class="field_signature">
+protected static final 
+int
+ BMP_INDEX_LENGTH;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.Trie:HEADER_OPTIONS_SHIFT_MASK_:I" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+int
+ HEADER_OPTIONS_SHIFT_MASK_;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.Trie:m_dataOffset_:I" href="#">
+
+</a>
+<span class="field_signature">
+protected  
+int
+ m_dataOffset_;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.Trie:INDEX_STAGE_1_SHIFT_:I" href="#">
+
+</a>
+<span class="field_signature">
+protected static final 
+int
+ INDEX_STAGE_1_SHIFT_;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.Trie:SURROGATE_BLOCK_COUNT:I" href="#">
+
+</a>
+<span class="field_signature">
+protected static final 
+int
+ SURROGATE_BLOCK_COUNT;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.Trie:SURROGATE_BLOCK_BITS:I" href="#">
+
+</a>
+<span class="field_signature">
+protected static final 
+int
+ SURROGATE_BLOCK_BITS;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.Trie:m_dataManipulate_:sun.text.normalizer.Trie$DataManipulate" href="#">
+
+</a>
+<span class="field_signature">
+protected  
+<a href="../../../sun/text/normalizer/Trie$DataManipulate.html">
+sun.text.normalizer.Trie$DataManipulate
+</a>
+ m_dataManipulate_;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.Trie:HEADER_OPTIONS_LATIN1_IS_LINEAR_MASK_:I" href="#">
+
+</a>
+<span class="field_signature">
+protected static final 
+int
+ HEADER_OPTIONS_LATIN1_IS_LINEAR_MASK_;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.Trie:m_isLatin1Linear_:Z" href="#">
+
+</a>
+<span class="field_signature">
+private  
+bool
+ m_isLatin1Linear_;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.Trie:DATA_BLOCK_LENGTH:I" href="#">
+
+</a>
+<span class="field_signature">
+protected static final 
+int
+ DATA_BLOCK_LENGTH;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.Trie:m_index_:C.-" href="#">
+
+</a>
+<span class="field_signature">
+protected  
+char[]
+ m_index_;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.Trie:HEADER_OPTIONS_DATA_IS_32_BIT_:I" href="#">
+
+</a>
+<span class="field_signature">
+protected static final 
+int
+ HEADER_OPTIONS_DATA_IS_32_BIT_;
+</span>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.Trie:unserialize:java.io.InputStreamvoid" href="#">
+
+</a>
+<div class="method_signature">
+protected 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+unserialize
+</span>
+(
+<a href="../../../java/io/InputStream.html">
+java.io.InputStream
+</a>
+ $bcvar1
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/IntTrie.html#sun.text.normalizer.IntTrie:unserialize:java.io.InputStreamvoid" title="void unserialize(java.io.InputStream)">
+sun.text.normalizer.IntTrie.unserialize(java.io.InputStream)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+checknegsize this:java.lang.Object.m_dataOffset_
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+char
+</span>
+<span>
+[this:java.lang.Object.m_dataOffset_]
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.Trie:m_index_:C.-">
+this:java.lang.Object.m_index_
+</a>
+</span>
+<span>
+:= $irvar0:[C
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/io/DataInputStream.html">
+java.io.DataInputStream
+</a>
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+$bcvar2 := new
+</span>
+<span>
+<a href="../../../java/io/DataInputStream.html">
+java.io.DataInputStream
+</a>
+</span>
+<span>
+($bcvar1:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+$bcvar3 := 0
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+if ($bcvar3:I &gt;= this:java.lang.Object.m_dataOffset_) goto 19
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+$irvar1 := this:java.lang.Object.m_index_
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+notnull $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="char readChar()">
+$bcvar2:java.lang.Object.readChar
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/io/DataInputStream.html#java.io.DataInputStream:readChar:C" title="char readChar()">
+java.io.DataInputStream.readChar
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+notnull $irvar1:[C
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+checkbound $irvar1:[C[$bcvar3:I]
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+$irvar1:[C[$bcvar3:I] := $irvar0:C
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+$bcvar3 := $bcvar3:I+1
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+goto 8
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.Trie:getCodePointOffset:II" href="#">
+
+</a>
+<div class="method_signature">
+protected final 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getCodePointOffset
+</span>
+(
+int
+ $bcvar1
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/IntTrie.html#sun.text.normalizer.IntTrie:getCodePointValue:II" title="int getCodePointValue(int)">
+sun.text.normalizer.IntTrie.getCodePointValue(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/text/normalizer/CharTrie.html#sun.text.normalizer.CharTrie:getCodePointValue:IC" title="char getCodePointValue(int)">
+sun.text.normalizer.CharTrie.getCodePointValue(int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+if ($bcvar1:I &gt;= 0) goto 2
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+return -1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+if ($bcvar1:I &gt;= 55296) goto 6
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getRawOffset(int, char)">
+this:java.lang.Object.getRawOffset
+</span>
+</span>
+<span>
+(0, I2C($bcvar1:I))
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.Trie:getRawOffset:ICI" title="int getRawOffset(int, char)">
+sun.text.normalizer.Trie.getRawOffset
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+return $irvar0:I
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+if ($bcvar1:I &gt;= 65536) goto 10
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getBMPOffset(char)">
+this:java.lang.Object.getBMPOffset
+</span>
+</span>
+<span>
+(I2C($bcvar1:I))
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.Trie:getBMPOffset:CI" title="int getBMPOffset(char)">
+sun.text.normalizer.Trie.getBMPOffset
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+return $irvar0:I
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+if ($bcvar1:I &gt; 1114111) goto 16
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../sun/text/normalizer/UTF16.html">
+sun.text.normalizer.UTF16
+</a>
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="char getLeadSurrogate(int)">
+sun.text.normalizer.UTF16.getLeadSurrogate
+</span>
+</span>
+<span>
+($bcvar1:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/UTF16.html#sun.text.normalizer.UTF16:getLeadSurrogate:IC" title="char getLeadSurrogate(int)">
+sun.text.normalizer.UTF16.getLeadSurrogate
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getSurrogateOffset(char, char)">
+this:java.lang.Object.getSurrogateOffset
+</span>
+</span>
+<span>
+($irvar0:C, I2C(And($bcvar1:I,1023)))
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/CharTrie.html#sun.text.normalizer.CharTrie:getSurrogateOffset:CCI" title="int getSurrogateOffset(char, char)">
+sun.text.normalizer.CharTrie.getSurrogateOffset
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/text/normalizer/IntTrie.html#sun.text.normalizer.IntTrie:getSurrogateOffset:CCI" title="int getSurrogateOffset(char, char)">
+sun.text.normalizer.IntTrie.getSurrogateOffset
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+return $irvar1:I
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+return -1
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.Trie:&lt;init&gt;:java.io.InputStreamsun.text.normalizer.Trie$DataManipulatevoid" href="#">
+
+</a>
+<div class="method_signature">
+protected 
+<span class="methodname clickable" onclick="showInfoList(this)">
+Trie
+</span>
+(
+<a href="../../../java/io/InputStream.html">
+java.io.InputStream
+</a>
+ $bcvar1
+, 
+<a href="../../../sun/text/normalizer/Trie$DataManipulate.html">
+sun.text.normalizer.Trie$DataManipulate
+</a>
+ $bcvar2
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/CharTrie.html#sun.text.normalizer.CharTrie:&lt;init&gt;:java.io.InputStreamsun.text.normalizer.Trie$DataManipulatevoid" title="void &lt;init&gt;(java.io.InputStream, sun.text.normalizer.Trie$DataManipulate)">
+sun.text.normalizer.CharTrie.&lt;init&gt;(java.io.InputStream, sun.text.normalizer.Trie$DataManipulate)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/text/normalizer/IntTrie.html#sun.text.normalizer.IntTrie:&lt;init&gt;:java.io.InputStreamsun.text.normalizer.Trie$DataManipulatevoid" title="void &lt;init&gt;(java.io.InputStream, sun.text.normalizer.Trie$DataManipulate)">
+sun.text.normalizer.IntTrie.&lt;init&gt;(java.io.InputStream, sun.text.normalizer.Trie$DataManipulate)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Object.html#java.lang.Object:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/io/DataInputStream.html">
+java.io.DataInputStream
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$bcvar3 := new
+</span>
+<span>
+<a href="../../../java/io/DataInputStream.html">
+java.io.DataInputStream
+</a>
+</span>
+<span>
+($bcvar1:java.lang.Object)
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+notnull $bcvar3:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+$bcvar4 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int readInt()">
+$bcvar3:java.lang.Object.readInt
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/io/DataInputStream.html#java.io.DataInputStream:readInt:I" title="int readInt()">
+java.io.DataInputStream.readInt
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+notnull $bcvar3:java.lang.Object
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int readInt()">
+$bcvar3:java.lang.Object.readInt
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/io/DataInputStream.html#java.io.DataInputStream:readInt:I" title="int readInt()">
+java.io.DataInputStream.readInt
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.Trie:m_options_:I">
+this:java.lang.Object.m_options_
+</a>
+</span>
+<span>
+:= $irvar0:I
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+$irvar0 := this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool checkHeader(int)">
+sun.text.normalizer.Trie.checkHeader
+</span>
+</span>
+<span>
+($bcvar4:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.Trie:checkHeader:IZ" title="bool checkHeader(int)">
+sun.text.normalizer.Trie.checkHeader
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+if ($irvar0:Z != 0) goto 17
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+<span>
+(&apos;ICU data file error: Trie header authentication failed, please check if you have the most updated ICU data file&apos;)
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+notnull $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+throw $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+if ($bcvar2:java.lang.Object == null) goto 21
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.Trie:m_dataManipulate_:sun.text.normalizer.Trie$DataManipulate">
+this:java.lang.Object.m_dataManipulate_
+</a>
+</span>
+<span>
+:= $bcvar2:java.lang.Object
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+goto 25
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../sun/text/normalizer/Trie$DefaultGetFoldingOffset.html">
+sun.text.normalizer.Trie$DefaultGetFoldingOffset
+</a>
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../sun/text/normalizer/Trie$DefaultGetFoldingOffset.html">
+sun.text.normalizer.Trie$DefaultGetFoldingOffset
+</a>
+</span>
+<span>
+(null)
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.Trie:m_dataManipulate_:sun.text.normalizer.Trie$DataManipulate">
+this:java.lang.Object.m_dataManipulate_
+</a>
+</span>
+<span>
+:= $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+$T0_86 := this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+if (And(this:java.lang.Object.m_options_,512) == 0) goto 31
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+$T0_87 := 1
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+$T1_87 := this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+goto 33
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+$T0_87 := 0
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+$T1_87 := $T0_86:java.lang.Object
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+notnull $T1_87:java.lang.Object
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.Trie:m_isLatin1Linear_:Z">
+$T1_87:java.lang.Object.m_isLatin1Linear_
+</a>
+</span>
+<span>
+:= $T0_87:I
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+notnull $bcvar3:java.lang.Object
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int readInt()">
+$bcvar3:java.lang.Object.readInt
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/io/DataInputStream.html#java.io.DataInputStream:readInt:I" title="int readInt()">
+java.io.DataInputStream.readInt
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.Trie:m_dataOffset_:I">
+this:java.lang.Object.m_dataOffset_
+</a>
+</span>
+<span>
+:= $irvar0:I
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+notnull $bcvar3:java.lang.Object
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int readInt()">
+$bcvar3:java.lang.Object.readInt
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/io/DataInputStream.html#java.io.DataInputStream:readInt:I" title="int readInt()">
+java.io.DataInputStream.readInt
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.Trie:m_dataLength_:I">
+this:java.lang.Object.m_dataLength_
+</a>
+</span>
+<span>
+:= $irvar0:I
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void unserialize(java.io.InputStream)">
+this:java.lang.Object.unserialize
+</span>
+</span>
+<span>
+($bcvar1:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/IntTrie.html#sun.text.normalizer.IntTrie:unserialize:java.io.InputStreamvoid" title="void unserialize(java.io.InputStream)">
+sun.text.normalizer.IntTrie.unserialize
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/text/normalizer/CharTrie.html#sun.text.normalizer.CharTrie:unserialize:java.io.InputStreamvoid" title="void unserialize(java.io.InputStream)">
+sun.text.normalizer.CharTrie.unserialize
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.Trie:checkHeader:IZ" href="#">
+
+</a>
+<div class="method_signature">
+private final 
+bool
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+checkHeader
+</span>
+(
+int
+ $bcvar1
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.Trie:&lt;init&gt;:java.io.InputStreamsun.text.normalizer.Trie$DataManipulatevoid" title="void &lt;init&gt;(java.io.InputStream, sun.text.normalizer.Trie$DataManipulate)">
+sun.text.normalizer.Trie.&lt;init&gt;(java.io.InputStream, sun.text.normalizer.Trie$DataManipulate)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+if ($bcvar1:I == 1416784229) goto 2
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+return 0
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+if (And(this:java.lang.Object.m_options_,15) != 5) goto 6
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+if (And(IShr(this:java.lang.Object.m_options_,4),15) == 2) goto 7
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+return 0
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+return 1
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.Trie:getLeadOffset:CI" href="#">
+
+</a>
+<div class="method_signature">
+protected final 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getLeadOffset
+</span>
+(
+char
+ $bcvar1
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/CharTrie.html#sun.text.normalizer.CharTrie:getLeadValue:CC" title="char getLeadValue(char)">
+sun.text.normalizer.CharTrie.getLeadValue(char)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/text/normalizer/IntTrie.html#sun.text.normalizer.IntTrie:getLeadValue:CI" title="int getLeadValue(char)">
+sun.text.normalizer.IntTrie.getLeadValue(char)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getRawOffset(int, char)">
+this:java.lang.Object.getRawOffset
+</span>
+</span>
+<span>
+(0, $bcvar1:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.Trie:getRawOffset:ICI" title="int getRawOffset(int, char)">
+sun.text.normalizer.Trie.getRawOffset
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return $irvar0:I
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.Trie:getInitialValue:I" href="#">
+
+</a>
+<div class="method_signature">
+protected abstract 
+int
+ 
+<span>
+getInitialValue
+</span>
+(
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.Trie:getBMPOffset:CI" href="#">
+
+</a>
+<div class="method_signature">
+protected final 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getBMPOffset
+</span>
+(
+char
+ $bcvar1
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.Trie:getCodePointOffset:II" title="int getCodePointOffset(int)">
+sun.text.normalizer.Trie.getCodePointOffset(int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+if ($bcvar1:I &lt; 55296) goto 6
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+if ($bcvar1:I &gt; 56319) goto 6
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getRawOffset(int, char)">
+this:java.lang.Object.getRawOffset
+</span>
+</span>
+<span>
+(320, $bcvar1:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.Trie:getRawOffset:ICI" title="int getRawOffset(int, char)">
+sun.text.normalizer.Trie.getRawOffset
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+$T0_29 := $irvar0:I
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+goto 9
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+$irvar0 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getRawOffset(int, char)">
+this:java.lang.Object.getRawOffset
+</span>
+</span>
+<span>
+(0, $bcvar1:I)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.Trie:getRawOffset:ICI" title="int getRawOffset(int, char)">
+sun.text.normalizer.Trie.getRawOffset
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+$T0_29 := $irvar0:I
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+return $T0_29:I
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.Trie:isCharTrie:Z" href="#">
+
+</a>
+<div class="method_signature">
+protected final 
+bool
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+isCharTrie
+</span>
+(
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/CharTrie.html#sun.text.normalizer.CharTrie:&lt;init&gt;:java.io.InputStreamsun.text.normalizer.Trie$DataManipulatevoid" title="void &lt;init&gt;(java.io.InputStream, sun.text.normalizer.Trie$DataManipulate)">
+sun.text.normalizer.CharTrie.&lt;init&gt;(java.io.InputStream, sun.text.normalizer.Trie$DataManipulate)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+if (And(this:java.lang.Object.m_options_,256) != 0) goto 4
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$T0_16 := 1
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+goto 5
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+$T0_16 := 0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+return $T0_16:I
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.Trie:getValue:II" href="#">
+
+</a>
+<div class="method_signature">
+protected abstract 
+int
+ 
+<span>
+getValue
+</span>
+(
+int
+ 0
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.Trie:isIntTrie:Z" href="#">
+
+</a>
+<div class="method_signature">
+protected final 
+bool
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+isIntTrie
+</span>
+(
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/IntTrie.html#sun.text.normalizer.IntTrie:&lt;init&gt;:java.io.InputStreamsun.text.normalizer.Trie$DataManipulatevoid" title="void &lt;init&gt;(java.io.InputStream, sun.text.normalizer.Trie$DataManipulate)">
+sun.text.normalizer.IntTrie.&lt;init&gt;(java.io.InputStream, sun.text.normalizer.Trie$DataManipulate)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+if (And(this:java.lang.Object.m_options_,256) == 0) goto 4
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+$T0_16 := 1
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+goto 5
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+$T0_16 := 0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+return $T0_16:I
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.Trie:getRawOffset:ICI" href="#">
+
+</a>
+<div class="method_signature">
+protected final 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getRawOffset
+</span>
+(
+int
+ $bcvar1
+, 
+char
+ $bcvar2
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/CharTrie.html#sun.text.normalizer.CharTrie:getSurrogateOffset:CCI" title="int getSurrogateOffset(char, char)">
+sun.text.normalizer.CharTrie.getSurrogateOffset(char, char)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#sun.text.normalizer.Trie:getLeadOffset:CI" title="int getLeadOffset(char)">
+sun.text.normalizer.Trie.getLeadOffset(char)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/text/normalizer/IntTrie.html#sun.text.normalizer.IntTrie:getSurrogateOffset:CCI" title="int getSurrogateOffset(char, char)">
+sun.text.normalizer.IntTrie.getSurrogateOffset(char, char)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/text/normalizer/IntTrie.html#sun.text.normalizer.IntTrie:getTrailValue:ICI" title="int getTrailValue(int, char)">
+sun.text.normalizer.IntTrie.getTrailValue(int, char)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#sun.text.normalizer.Trie:getCodePointOffset:II" title="int getCodePointOffset(int)">
+sun.text.normalizer.Trie.getCodePointOffset(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#sun.text.normalizer.Trie:getBMPOffset:CI" title="int getBMPOffset(char)">
+sun.text.normalizer.Trie.getBMPOffset(char)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.m_index_
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+checkbound this:java.lang.Object.m_index_[$bcvar1:I+IShr($bcvar2:I,5)]
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+return (IShl(this:java.lang.Object.m_index_[$bcvar1:I+IShr($bcvar2:I,5)]:C,2)+And($bcvar2:I,31))
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.Trie:getSurrogateOffset:CCI" href="#">
+
+</a>
+<div class="method_signature">
+protected abstract 
+int
+ 
+<span>
+getSurrogateOffset
+</span>
+(
+char
+ 0
+, 
+char
+ 1
+)
+;
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.Trie:&lt;init&gt;:C.-Isun.text.normalizer.Trie$DataManipulatevoid" href="#">
+
+</a>
+<div class="method_signature">
+protected 
+<span class="methodname clickable" onclick="showInfoList(this)">
+Trie
+</span>
+(
+char[]
+ $bcvar1
+, 
+int
+ $bcvar2
+, 
+<a href="../../../sun/text/normalizer/Trie$DataManipulate.html">
+sun.text.normalizer.Trie$DataManipulate
+</a>
+ $bcvar3
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/CharTrie.html#sun.text.normalizer.CharTrie:&lt;init&gt;:IIsun.text.normalizer.Trie$DataManipulatevoid" title="void &lt;init&gt;(int, int, sun.text.normalizer.Trie$DataManipulate)">
+sun.text.normalizer.CharTrie.&lt;init&gt;(int, int, sun.text.normalizer.Trie$DataManipulate)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Object.html#java.lang.Object:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.Trie:m_options_:I">
+this:java.lang.Object.m_options_
+</a>
+</span>
+<span>
+:= $bcvar2:I
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+if ($bcvar3:java.lang.Object == null) goto 8
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.Trie:m_dataManipulate_:sun.text.normalizer.Trie$DataManipulate">
+this:java.lang.Object.m_dataManipulate_
+</a>
+</span>
+<span>
+:= $bcvar3:java.lang.Object
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+goto 12
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../../sun/text/normalizer/Trie$DefaultGetFoldingOffset.html">
+sun.text.normalizer.Trie$DefaultGetFoldingOffset
+</a>
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../../sun/text/normalizer/Trie$DefaultGetFoldingOffset.html">
+sun.text.normalizer.Trie$DefaultGetFoldingOffset
+</a>
+</span>
+<span>
+(null)
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.Trie:m_dataManipulate_:sun.text.normalizer.Trie$DataManipulate">
+this:java.lang.Object.m_dataManipulate_
+</a>
+</span>
+<span>
+:= $irvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+$T0_49 := this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+if (And(this:java.lang.Object.m_options_,512) == 0) goto 18
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+$T0_50 := 1
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+$T1_50 := this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+goto 20
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+$T0_50 := 0
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+$T1_50 := $T0_49:java.lang.Object
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+notnull $T1_50:java.lang.Object
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.Trie:m_isLatin1Linear_:Z">
+$T1_50:java.lang.Object.m_isLatin1Linear_
+</a>
+</span>
+<span>
+:= $T0_50:I
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.Trie:m_index_:C.-">
+this:java.lang.Object.m_index_
+</a>
+</span>
+<span>
+:= $bcvar1:java.lang.Object
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object.m_index_
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+<a href="#sun.text.normalizer.Trie:m_dataOffset_:I">
+this:java.lang.Object.m_dataOffset_
+</a>
+</span>
+<span>
+:= this:java.lang.Object.m_index_.length
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+</div>
+</body>
+</html>

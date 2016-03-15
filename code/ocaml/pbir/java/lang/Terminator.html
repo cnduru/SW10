@@ -1,0 +1,547 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>
+java.lang.Terminator
+</title>
+<link rel="StyleSheet" href="../../style.css" type="text/css" media="all" />
+<script type="text/javascript" src="../../actions.js">
+</script>
+</head>
+<body>
+<div class="class">
+<a name="java.lang.Terminator" href="#">
+
+</a>
+<div class="classname">
+Class java.lang.Terminator
+</div>
+<div class="field">
+<a name="java.lang.Terminator:handler:sun.misc.SignalHandler" href="#">
+
+</a>
+<span class="field_signature">
+private static  
+<a href="../../sun/misc/SignalHandler.html">
+sun.misc.SignalHandler
+</a>
+ handler;
+</span>
+</div>
+<div class="method">
+<a name="java.lang.Terminator:&lt;clinit&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<span>
+clinit
+</span>
+{};
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="Terminator.html">
+java.lang.Terminator
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+<a href="#java.lang.Terminator:handler:sun.misc.SignalHandler">
+java.lang.Terminator.handler
+</a>
+</span>
+<span>
+:= null
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Terminator:setup:void" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+setup
+</span>
+(
+)
+;
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/System.html#java.lang.System:initializeSystemClass:void" title="void initializeSystemClass()">
+java.lang.System.initializeSystemClass()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="Terminator.html">
+java.lang.Terminator
+</a>
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+if (java.lang.Terminator.handler == null) goto 3
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../java/lang/Terminator$1.html">
+java.lang.Terminator$1
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+$bcvar0 := new
+</span>
+<span>
+<a href="../../java/lang/Terminator$1.html">
+java.lang.Terminator$1
+</a>
+</span>
+<span>
+()
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="Terminator.html">
+java.lang.Terminator
+</a>
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+<a href="#java.lang.Terminator:handler:sun.misc.SignalHandler">
+java.lang.Terminator.handler
+</a>
+</span>
+<span>
+:= $bcvar0:java.lang.Object
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../sun/misc/Signal.html">
+sun.misc.Signal
+</a>
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../sun/misc/Signal.html">
+sun.misc.Signal
+</a>
+</span>
+<span>
+(&apos;HUP&apos;)
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../sun/misc/Signal.html">
+sun.misc.Signal
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="sun.misc.SignalHandler handle(sun.misc.Signal, sun.misc.SignalHandler)">
+sun.misc.Signal.handle
+</span>
+</span>
+<span>
+($irvar0:java.lang.Object, $bcvar0:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/misc/Signal.html#sun.misc.Signal:handle:sun.misc.Signalsun.misc.SignalHandlersun.misc.SignalHandler" title="sun.misc.SignalHandler handle(sun.misc.Signal, sun.misc.SignalHandler)">
+sun.misc.Signal.handle
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+nop
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+goto 14
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+$bcvar1 := CatchVar36:java.lang.Object
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../sun/misc/Signal.html">
+sun.misc.Signal
+</a>
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../sun/misc/Signal.html">
+sun.misc.Signal
+</a>
+</span>
+<span>
+(&apos;INT&apos;)
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../sun/misc/Signal.html">
+sun.misc.Signal
+</a>
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="sun.misc.SignalHandler handle(sun.misc.Signal, sun.misc.SignalHandler)">
+sun.misc.Signal.handle
+</span>
+</span>
+<span>
+($irvar0:java.lang.Object, $bcvar0:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/misc/Signal.html#sun.misc.Signal:handle:sun.misc.Signalsun.misc.SignalHandlersun.misc.SignalHandler" title="sun.misc.SignalHandler handle(sun.misc.Signal, sun.misc.SignalHandler)">
+sun.misc.Signal.handle
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+nop
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+goto 21
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+$bcvar1 := CatchVar54:java.lang.Object
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../sun/misc/Signal.html">
+sun.misc.Signal
+</a>
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+$irvar0 := new
+</span>
+<span>
+<a href="../../sun/misc/Signal.html">
+sun.misc.Signal
+</a>
+</span>
+<span>
+(&apos;TERM&apos;)
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+mayinit
+</span>
+<span>
+<a href="../../sun/misc/Signal.html">
+sun.misc.Signal
+</a>
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+$irvar1 :=
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="sun.misc.SignalHandler handle(sun.misc.Signal, sun.misc.SignalHandler)">
+sun.misc.Signal.handle
+</span>
+</span>
+<span>
+($irvar0:java.lang.Object, $bcvar0:java.lang.Object)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/misc/Signal.html#sun.misc.Signal:handle:sun.misc.Signalsun.misc.SignalHandlersun.misc.SignalHandler" title="sun.misc.SignalHandler handle(sun.misc.Signal, sun.misc.SignalHandler)">
+sun.misc.Signal.handle
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+nop
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+goto 28
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+$bcvar1 := CatchVar72:java.lang.Object
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 7; try end: 12: catch start: 13; catched type: java.lang.IllegalArgumentException.
+</span>
+</li>
+<li>
+<span>
+try start: 14; try end: 19: catch start: 20; catched type: java.lang.IllegalArgumentException.
+</span>
+</li>
+<li>
+<span>
+try start: 21; try end: 26: catch start: 27; catched type: java.lang.IllegalArgumentException.
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
+<a name="java.lang.Terminator:&lt;init&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+ 
+<span>
+Terminator
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+notnull this:java.lang.Object
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+this:java.lang.Object.
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+()
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Terminator:teardown:void" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+void
+ 
+<span>
+teardown
+</span>
+(
+)
+;
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+</div>
+</body>
+</html>

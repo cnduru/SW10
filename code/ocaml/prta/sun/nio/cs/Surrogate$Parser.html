@@ -1,0 +1,2954 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>
+sun.nio.cs.Surrogate$Parser
+</title>
+<link rel="StyleSheet" href="../../../style.css" type="text/css" media="all" />
+<script type="text/javascript" src="../../../actions.js">
+</script>
+</head>
+<body>
+<div class="class">
+<a name="sun.nio.cs.Surrogate$Parser" href="#">
+
+</a>
+<div class="classname">
+Class sun.nio.cs.Surrogate$Parser
+</div>
+<ul class="annot">
+<li>
+Instantiated
+</li>
+</ul>
+<div class="field">
+<a name="sun.nio.cs.Surrogate$Parser:$assertionsDisabled:Z" href="#">
+
+</a>
+<span class="field_signature">
+ static final 
+bool
+ $assertionsDisabled;
+</span>
+</div>
+<div class="field">
+<a name="sun.nio.cs.Surrogate$Parser:isPair:Z" href="#">
+
+</a>
+<span class="field_signature">
+private  
+bool
+ isPair;
+</span>
+</div>
+<div class="field">
+<a name="sun.nio.cs.Surrogate$Parser:error:java.nio.charset.CoderResult" href="#">
+
+</a>
+<span class="field_signature">
+private  
+<a href="../../../java/nio/charset/CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+ error;
+</span>
+</div>
+<div class="field">
+<a name="sun.nio.cs.Surrogate$Parser:character:I" href="#">
+
+</a>
+<span class="field_signature">
+private  
+int
+ character;
+</span>
+</div>
+<div class="method">
+<a name="sun.nio.cs.Surrogate$Parser:&lt;clinit&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<span>
+clinit
+</span>
+{};
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+ldc class Lsun/nio/cs/Surrogate;
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool desiredAssertionStatus()">
+java.lang.Class.desiredAssertionStatus
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Class.html#java.lang.Class:desiredAssertionStatus:Z" title="bool desiredAssertionStatus()">
+java.lang.Class.desiredAssertionStatus
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+ifne 7
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:$assertionsDisabled:Z">
+sun.nio.cs.Surrogate$Parser.$assertionsDisabled
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+bool
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.nio.cs.Surrogate$Parser:error:java.nio.charset.CoderResult" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../../java/nio/charset/CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+error
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/nio/cs/US_ASCII$Encoder.html#sun.nio.cs.US_ASCII$Encoder:encodeBufferLoop:java.nio.CharBufferjava.nio.ByteBufferjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult encodeBufferLoop(java.nio.CharBuffer, java.nio.ByteBuffer)">
+sun.nio.cs.US_ASCII$Encoder.encodeBufferLoop(java.nio.CharBuffer, java.nio.ByteBuffer)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/nio/cs/US_ASCII$Encoder.html#sun.nio.cs.US_ASCII$Encoder:encodeArrayLoop:java.nio.CharBufferjava.nio.ByteBufferjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult encodeArrayLoop(java.nio.CharBuffer, java.nio.ByteBuffer)">
+sun.nio.cs.US_ASCII$Encoder.encodeArrayLoop(java.nio.CharBuffer, java.nio.ByteBuffer)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:$assertionsDisabled:Z">
+sun.nio.cs.Surrogate$Parser.$assertionsDisabled
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+bool
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+ifne 18
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:error:java.nio.charset.CoderResult">
+sun.nio.cs.Surrogate$Parser.error
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+ifnonnull 11
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../java/lang/AssertionError.html">
+java.lang.AssertionError
+</a>
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.AssertionError.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/AssertionError.html#java.lang.AssertionError:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.AssertionError.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:error:java.nio.charset.CoderResult">
+sun.nio.cs.Surrogate$Parser.error
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.nio.cs.Surrogate$Parser:isPair:Z" href="#">
+
+</a>
+<div class="method_signature">
+public 
+bool
+ 
+<span>
+isPair
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:$assertionsDisabled:Z">
+sun.nio.cs.Surrogate$Parser.$assertionsDisabled
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+bool
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+ifne 18
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:error:java.nio.charset.CoderResult">
+sun.nio.cs.Surrogate$Parser.error
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+ifnull 11
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../java/lang/AssertionError.html">
+java.lang.AssertionError
+</a>
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.AssertionError.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/AssertionError.html#java.lang.AssertionError:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.AssertionError.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:isPair:Z">
+sun.nio.cs.Surrogate$Parser.isPair
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+bool
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.nio.cs.Surrogate$Parser:&lt;init&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<span class="methodname clickable" onclick="showInfoList(this)">
+Surrogate$Parser
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/nio/cs/US_ASCII$Encoder.html#sun.nio.cs.US_ASCII$Encoder:&lt;init&gt;:java.nio.charset.Charsetvoid" title="void &lt;init&gt;(java.nio.charset.Charset)">
+sun.nio.cs.US_ASCII$Encoder.&lt;init&gt;(java.nio.charset.Charset)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Object.html#java.lang.Object:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult.html#java.nio.charset.CoderResult:UNDERFLOW:java.nio.charset.CoderResult">
+java.nio.charset.CoderResult.UNDERFLOW
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:error:java.nio.charset.CoderResult">
+sun.nio.cs.Surrogate$Parser.error
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.nio.cs.Surrogate$Parser:parse:CC.-III" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+parse
+</span>
+(
+char
+ 1
+, 
+char[]
+ 2
+, 
+int
+ 3
+, 
+int
+ 4
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/nio/cs/US_ASCII$Encoder.html#sun.nio.cs.US_ASCII$Encoder:encodeArrayLoop:java.nio.CharBufferjava.nio.ByteBufferjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult encodeArrayLoop(java.nio.CharBuffer, java.nio.ByteBuffer)">
+sun.nio.cs.US_ASCII$Encoder.encodeArrayLoop(java.nio.CharBuffer, java.nio.ByteBuffer)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:$assertionsDisabled:Z">
+sun.nio.cs.Surrogate$Parser.$assertionsDisabled
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+bool
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+ifne 18
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+caload
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+ifcmpeq 11
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../java/lang/AssertionError.html">
+java.lang.AssertionError
+</a>
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.AssertionError.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/AssertionError.html#java.lang.AssertionError:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.AssertionError.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isHighSurrogate(char)">
+java.lang.Character.isHighSurrogate
+</span>
+</span>
+<span>
+(
+char
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Character.html#java.lang.Character:isHighSurrogate:CZ" title="bool isHighSurrogate(char)">
+java.lang.Character.isHighSurrogate
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+ifeq 70
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+iload  4
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+iconst 2
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+ifcmpge 12
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult.html#java.nio.charset.CoderResult:UNDERFLOW:java.nio.charset.CoderResult">
+java.nio.charset.CoderResult.UNDERFLOW
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:error:java.nio.charset.CoderResult">
+sun.nio.cs.Surrogate$Parser.error
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+iconst -1
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+caload
+</span>
+</div>
+</li>
+<li value="50">
+<div class="instruction">
+<span>
+istore  5
+</span>
+</div>
+</li>
+<li value="52">
+<div class="instruction">
+<span>
+iload  5
+</span>
+</div>
+</li>
+<li value="54">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isLowSurrogate(char)">
+java.lang.Character.isLowSurrogate
+</span>
+</span>
+<span>
+(
+char
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Character.html#java.lang.Character:isLowSurrogate:CZ" title="bool isLowSurrogate(char)">
+java.lang.Character.isLowSurrogate
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="57">
+<div class="instruction">
+<span>
+ifeq 28
+</span>
+</div>
+</li>
+<li value="60">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="61">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="62">
+<div class="instruction">
+<span>
+iload  5
+</span>
+</div>
+</li>
+<li value="64">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int toCodePoint(char, char)">
+java.lang.Character.toCodePoint
+</span>
+</span>
+<span>
+(
+char
+, 
+char
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Character.html#java.lang.Character:toCodePoint:CCI" title="int toCodePoint(char, char)">
+java.lang.Character.toCodePoint
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="67">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:character:I">
+sun.nio.cs.Surrogate$Parser.character
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="70">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="71">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="72">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:isPair:Z">
+sun.nio.cs.Surrogate$Parser.isPair
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+bool
+</span>
+</div>
+</li>
+<li value="75">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="76">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="77">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:error:java.nio.charset.CoderResult">
+sun.nio.cs.Surrogate$Parser.error
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+</span>
+</div>
+</li>
+<li value="80">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="81">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:character:I">
+sun.nio.cs.Surrogate$Parser.character
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="84">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="85">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="86">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="87">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.charset.CoderResult malformedForLength(int)">
+java.nio.charset.CoderResult.malformedForLength
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/nio/charset/CoderResult.html#java.nio.charset.CoderResult:malformedForLength:Ijava.nio.charset.CoderResult" title="java.nio.charset.CoderResult malformedForLength(int)">
+java.nio.charset.CoderResult.malformedForLength
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="90">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:error:java.nio.charset.CoderResult">
+sun.nio.cs.Surrogate$Parser.error
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+</span>
+</div>
+</li>
+<li value="93">
+<div class="instruction">
+<span>
+iconst -1
+</span>
+</div>
+</li>
+<li value="94">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="95">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="96">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isLowSurrogate(char)">
+java.lang.Character.isLowSurrogate
+</span>
+</span>
+<span>
+(
+char
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Character.html#java.lang.Character:isLowSurrogate:CZ" title="bool isLowSurrogate(char)">
+java.lang.Character.isLowSurrogate
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="99">
+<div class="instruction">
+<span>
+ifeq 13
+</span>
+</div>
+</li>
+<li value="102">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="103">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="104">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.charset.CoderResult malformedForLength(int)">
+java.nio.charset.CoderResult.malformedForLength
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/nio/charset/CoderResult.html#java.nio.charset.CoderResult:malformedForLength:Ijava.nio.charset.CoderResult" title="java.nio.charset.CoderResult malformedForLength(int)">
+java.nio.charset.CoderResult.malformedForLength
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="107">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:error:java.nio.charset.CoderResult">
+sun.nio.cs.Surrogate$Parser.error
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+</span>
+</div>
+</li>
+<li value="110">
+<div class="instruction">
+<span>
+iconst -1
+</span>
+</div>
+</li>
+<li value="111">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="112">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="113">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="114">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:character:I">
+sun.nio.cs.Surrogate$Parser.character
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="117">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="118">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="119">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:isPair:Z">
+sun.nio.cs.Surrogate$Parser.isPair
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+bool
+</span>
+</div>
+</li>
+<li value="122">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="123">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="124">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:error:java.nio.charset.CoderResult">
+sun.nio.cs.Surrogate$Parser.error
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+</span>
+</div>
+</li>
+<li value="127">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="128">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:character:I">
+sun.nio.cs.Surrogate$Parser.character
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="131">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.nio.cs.Surrogate$Parser:unmappableResult:java.nio.charset.CoderResult" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../../java/nio/charset/CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+unmappableResult
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/nio/cs/US_ASCII$Encoder.html#sun.nio.cs.US_ASCII$Encoder:encodeBufferLoop:java.nio.CharBufferjava.nio.ByteBufferjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult encodeBufferLoop(java.nio.CharBuffer, java.nio.ByteBuffer)">
+sun.nio.cs.US_ASCII$Encoder.encodeBufferLoop(java.nio.CharBuffer, java.nio.ByteBuffer)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/nio/cs/US_ASCII$Encoder.html#sun.nio.cs.US_ASCII$Encoder:encodeArrayLoop:java.nio.CharBufferjava.nio.ByteBufferjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult encodeArrayLoop(java.nio.CharBuffer, java.nio.ByteBuffer)">
+sun.nio.cs.US_ASCII$Encoder.encodeArrayLoop(java.nio.CharBuffer, java.nio.ByteBuffer)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:$assertionsDisabled:Z">
+sun.nio.cs.Surrogate$Parser.$assertionsDisabled
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+bool
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+ifne 18
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:error:java.nio.charset.CoderResult">
+sun.nio.cs.Surrogate$Parser.error
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+ifnull 11
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../java/lang/AssertionError.html">
+java.lang.AssertionError
+</a>
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.AssertionError.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/AssertionError.html#java.lang.AssertionError:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.AssertionError.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:isPair:Z">
+sun.nio.cs.Surrogate$Parser.isPair
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+bool
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+ifeq 7
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+iconst 2
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.charset.CoderResult unmappableForLength(int)">
+java.nio.charset.CoderResult.unmappableForLength
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/nio/charset/CoderResult.html#java.nio.charset.CoderResult:unmappableForLength:Ijava.nio.charset.CoderResult" title="java.nio.charset.CoderResult unmappableForLength(int)">
+java.nio.charset.CoderResult.unmappableForLength
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.nio.cs.Surrogate$Parser:increment:I" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span>
+increment
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:$assertionsDisabled:Z">
+sun.nio.cs.Surrogate$Parser.$assertionsDisabled
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+bool
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+ifne 18
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:error:java.nio.charset.CoderResult">
+sun.nio.cs.Surrogate$Parser.error
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+ifnull 11
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../java/lang/AssertionError.html">
+java.lang.AssertionError
+</a>
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.AssertionError.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/AssertionError.html#java.lang.AssertionError:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.AssertionError.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:isPair:Z">
+sun.nio.cs.Surrogate$Parser.isPair
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+bool
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+ifeq 7
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+iconst 2
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.nio.cs.Surrogate$Parser:character:I" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span>
+character
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:$assertionsDisabled:Z">
+sun.nio.cs.Surrogate$Parser.$assertionsDisabled
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+bool
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+ifne 18
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:error:java.nio.charset.CoderResult">
+sun.nio.cs.Surrogate$Parser.error
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+ifnull 11
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../java/lang/AssertionError.html">
+java.lang.AssertionError
+</a>
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.AssertionError.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/AssertionError.html#java.lang.AssertionError:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.AssertionError.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:character:I">
+sun.nio.cs.Surrogate$Parser.character
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.nio.cs.Surrogate$Parser:parse:Cjava.nio.CharBufferI" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+parse
+</span>
+(
+char
+ 1
+, 
+<a href="../../../java/nio/CharBuffer.html">
+java.nio.CharBuffer
+</a>
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/nio/cs/US_ASCII$Encoder.html#sun.nio.cs.US_ASCII$Encoder:encodeBufferLoop:java.nio.CharBufferjava.nio.ByteBufferjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult encodeBufferLoop(java.nio.CharBuffer, java.nio.ByteBuffer)">
+sun.nio.cs.US_ASCII$Encoder.encodeBufferLoop(java.nio.CharBuffer, java.nio.ByteBuffer)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isHighSurrogate(char)">
+java.lang.Character.isHighSurrogate
+</span>
+</span>
+<span>
+(
+char
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Character.html#java.lang.Character:isHighSurrogate:CZ" title="bool isHighSurrogate(char)">
+java.lang.Character.isHighSurrogate
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ifeq 65
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool hasRemaining()">
+java.nio.CharBuffer.hasRemaining
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/nio/Buffer.html#java.nio.Buffer:hasRemaining:Z" title="bool hasRemaining()">
+java.nio.Buffer.hasRemaining
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+ifne 12
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult.html#java.nio.charset.CoderResult:UNDERFLOW:java.nio.charset.CoderResult">
+java.nio.charset.CoderResult.UNDERFLOW
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:error:java.nio.charset.CoderResult">
+sun.nio.cs.Surrogate$Parser.error
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+iconst -1
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+char
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="char get()">
+java.nio.CharBuffer.get
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/nio/HeapCharBuffer.html#java.nio.HeapCharBuffer:get:C" title="char get()">
+java.nio.HeapCharBuffer.get
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+istore  3
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isLowSurrogate(char)">
+java.lang.Character.isLowSurrogate
+</span>
+</span>
+<span>
+(
+char
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Character.html#java.lang.Character:isLowSurrogate:CZ" title="bool isLowSurrogate(char)">
+java.lang.Character.isLowSurrogate
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+ifeq 27
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int toCodePoint(char, char)">
+java.lang.Character.toCodePoint
+</span>
+</span>
+<span>
+(
+char
+, 
+char
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Character.html#java.lang.Character:toCodePoint:CCI" title="int toCodePoint(char, char)">
+java.lang.Character.toCodePoint
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:character:I">
+sun.nio.cs.Surrogate$Parser.character
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:isPair:Z">
+sun.nio.cs.Surrogate$Parser.isPair
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+bool
+</span>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="50">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="51">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:error:java.nio.charset.CoderResult">
+sun.nio.cs.Surrogate$Parser.error
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+</span>
+</div>
+</li>
+<li value="54">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="55">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:character:I">
+sun.nio.cs.Surrogate$Parser.character
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="58">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="59">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="60">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="61">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.charset.CoderResult malformedForLength(int)">
+java.nio.charset.CoderResult.malformedForLength
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/nio/charset/CoderResult.html#java.nio.charset.CoderResult:malformedForLength:Ijava.nio.charset.CoderResult" title="java.nio.charset.CoderResult malformedForLength(int)">
+java.nio.charset.CoderResult.malformedForLength
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="64">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:error:java.nio.charset.CoderResult">
+sun.nio.cs.Surrogate$Parser.error
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+</span>
+</div>
+</li>
+<li value="67">
+<div class="instruction">
+<span>
+iconst -1
+</span>
+</div>
+</li>
+<li value="68">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="69">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="70">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isLowSurrogate(char)">
+java.lang.Character.isLowSurrogate
+</span>
+</span>
+<span>
+(
+char
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Character.html#java.lang.Character:isLowSurrogate:CZ" title="bool isLowSurrogate(char)">
+java.lang.Character.isLowSurrogate
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="73">
+<div class="instruction">
+<span>
+ifeq 13
+</span>
+</div>
+</li>
+<li value="76">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="77">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="78">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.charset.CoderResult malformedForLength(int)">
+java.nio.charset.CoderResult.malformedForLength
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/nio/charset/CoderResult.html#java.nio.charset.CoderResult:malformedForLength:Ijava.nio.charset.CoderResult" title="java.nio.charset.CoderResult malformedForLength(int)">
+java.nio.charset.CoderResult.malformedForLength
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="81">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:error:java.nio.charset.CoderResult">
+sun.nio.cs.Surrogate$Parser.error
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+</span>
+</div>
+</li>
+<li value="84">
+<div class="instruction">
+<span>
+iconst -1
+</span>
+</div>
+</li>
+<li value="85">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="86">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="87">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="88">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:character:I">
+sun.nio.cs.Surrogate$Parser.character
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="91">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="92">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="93">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:isPair:Z">
+sun.nio.cs.Surrogate$Parser.isPair
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+bool
+</span>
+</div>
+</li>
+<li value="96">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="97">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="98">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:error:java.nio.charset.CoderResult">
+sun.nio.cs.Surrogate$Parser.error
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+</span>
+</div>
+</li>
+<li value="101">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="102">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate$Parser:character:I">
+sun.nio.cs.Surrogate$Parser.character
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="105">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+</div>
+</body>
+</html>
