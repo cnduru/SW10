@@ -53,6 +53,912 @@ int[]
 </span>
 </div>
 <div class="method">
+<a name="java.util.regex.Pattern$BnM:optimize:java.util.regex.Pattern$Nodejava.util.regex.Pattern$Node" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<a href="../../../java/util/regex/Pattern$Node.html">
+java.util.regex.Pattern$Node
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+optimize
+</span>
+(
+<a href="../../../java/util/regex/Pattern$Node.html">
+java.util.regex.Pattern$Node
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/regex/Pattern.html#java.util.regex.Pattern:compile:void" title="void compile()">
+java.util.regex.Pattern.compile()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+instanceof 
+</span>
+<span>
+<a href="../../../java/util/regex/Pattern$Slice.html">
+java.util.regex.Pattern$Slice
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ifne 5
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="../../../java/util/regex/Pattern$Slice.html">
+java.util.regex.Pattern$Slice
+</a>
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../../java/util/regex/Pattern$SliceNode.html#java.util.regex.Pattern$SliceNode:buffer:I.-">
+java.util.regex.Pattern$SliceNode.buffer
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int[]
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+astore  1
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+istore  2
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+iconst 4
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+ifcmpge 5
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+sipush 128
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+newarray 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+astore  6
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+newarray 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+astore  7
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+istore  3
+</span>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+ifcmpge 21
+</span>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+aload  6
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="50">
+<div class="instruction">
+<span>
+iaload
+</span>
+</div>
+</li>
+<li value="51">
+<div class="instruction">
+<span>
+bipush 127
+</span>
+</div>
+</li>
+<li value="53">
+<div class="instruction">
+<span>
+iand
+</span>
+</div>
+</li>
+<li value="54">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="55">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="57">
+<div class="instruction">
+<span>
+iastore
+</span>
+</div>
+</li>
+<li value="58">
+<div class="instruction">
+<span>
+iinc 3 1
+</span>
+</div>
+</li>
+<li value="61">
+<div class="instruction">
+<span>
+goto -20
+</span>
+</div>
+</li>
+<li value="64">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="65">
+<div class="instruction">
+<span>
+istore  3
+</span>
+</div>
+</li>
+<li value="66">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="67">
+<div class="instruction">
+<span>
+ifle 64
+</span>
+</div>
+</li>
+<li value="70">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="71">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="72">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="73">
+<div class="instruction">
+<span>
+istore  4
+</span>
+</div>
+</li>
+<li value="75">
+<div class="instruction">
+<span>
+iload  4
+</span>
+</div>
+</li>
+<li value="77">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="78">
+<div class="instruction">
+<span>
+ifcmplt 30
+</span>
+</div>
+</li>
+<li value="81">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="82">
+<div class="instruction">
+<span>
+iload  4
+</span>
+</div>
+</li>
+<li value="84">
+<div class="instruction">
+<span>
+iaload
+</span>
+</div>
+</li>
+<li value="85">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="86">
+<div class="instruction">
+<span>
+iload  4
+</span>
+</div>
+</li>
+<li value="88">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="89">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="90">
+<div class="instruction">
+<span>
+iaload
+</span>
+</div>
+</li>
+<li value="91">
+<div class="instruction">
+<span>
+ifcmpne 34
+</span>
+</div>
+</li>
+<li value="94">
+<div class="instruction">
+<span>
+aload  7
+</span>
+</div>
+</li>
+<li value="96">
+<div class="instruction">
+<span>
+iload  4
+</span>
+</div>
+</li>
+<li value="98">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="99">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="100">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="101">
+<div class="instruction">
+<span>
+iastore
+</span>
+</div>
+</li>
+<li value="102">
+<div class="instruction">
+<span>
+iinc 4 -1
+</span>
+</div>
+</li>
+<li value="105">
+<div class="instruction">
+<span>
+goto -30
+</span>
+</div>
+</li>
+<li value="108">
+<div class="instruction">
+<span>
+iload  4
+</span>
+</div>
+</li>
+<li value="110">
+<div class="instruction">
+<span>
+ifle 15
+</span>
+</div>
+</li>
+<li value="113">
+<div class="instruction">
+<span>
+aload  7
+</span>
+</div>
+</li>
+<li value="115">
+<div class="instruction">
+<span>
+iinc 4 -1
+</span>
+</div>
+</li>
+<li value="118">
+<div class="instruction">
+<span>
+iload  4
+</span>
+</div>
+</li>
+<li value="120">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="121">
+<div class="instruction">
+<span>
+iastore
+</span>
+</div>
+</li>
+<li value="122">
+<div class="instruction">
+<span>
+goto -14
+</span>
+</div>
+</li>
+<li value="125">
+<div class="instruction">
+<span>
+iinc 3 -1
+</span>
+</div>
+</li>
+<li value="128">
+<div class="instruction">
+<span>
+goto -62
+</span>
+</div>
+</li>
+<li value="131">
+<div class="instruction">
+<span>
+aload  7
+</span>
+</div>
+</li>
+<li value="133">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="134">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="135">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="136">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="137">
+<div class="instruction">
+<span>
+iastore
+</span>
+</div>
+</li>
+<li value="138">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="139">
+<div class="instruction">
+<span>
+instanceof 
+</span>
+<span>
+<a href="../../../java/util/regex/Pattern$SliceS.html">
+java.util.regex.Pattern$SliceS
+</a>
+</span>
+</div>
+</li>
+<li value="142">
+<div class="instruction">
+<span>
+ifeq 20
+</span>
+</div>
+</li>
+<li value="145">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../java/util/regex/Pattern$BnMS.html">
+java.util.regex.Pattern$BnMS
+</a>
+</span>
+</div>
+</li>
+<li value="148">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="149">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="150">
+<div class="instruction">
+<span>
+aload  6
+</span>
+</div>
+</li>
+<li value="152">
+<div class="instruction">
+<span>
+aload  7
+</span>
+</div>
+</li>
+<li value="154">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="155">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../../java/util/regex/Pattern$Node.html#java.util.regex.Pattern$Node:next:java.util.regex.Pattern$Node">
+java.util.regex.Pattern$Node.next
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/util/regex/Pattern$Node.html">
+java.util.regex.Pattern$Node
+</a>
+</span>
+</div>
+</li>
+<li value="158">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(int[], int[], int[], java.util.regex.Pattern$Node)">
+java.util.regex.Pattern$BnMS.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+int[]
+, 
+int[]
+, 
+int[]
+, 
+<a href="../../../java/util/regex/Pattern$Node.html">
+java.util.regex.Pattern$Node
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/regex/Pattern$BnMS.html#java.util.regex.Pattern$BnMS:&lt;init&gt;:I.-I.-I.-java.util.regex.Pattern$Nodevoid" title="void &lt;init&gt;(int[], int[], int[], java.util.regex.Pattern$Node)">
+java.util.regex.Pattern$BnMS.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="161">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+<li value="162">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="Pattern$BnM.html">
+java.util.regex.Pattern$BnM
+</a>
+</span>
+</div>
+</li>
+<li value="165">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="166">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="167">
+<div class="instruction">
+<span>
+aload  6
+</span>
+</div>
+</li>
+<li value="169">
+<div class="instruction">
+<span>
+aload  7
+</span>
+</div>
+</li>
+<li value="171">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="172">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../../java/util/regex/Pattern$Node.html#java.util.regex.Pattern$Node:next:java.util.regex.Pattern$Node">
+java.util.regex.Pattern$Node.next
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/util/regex/Pattern$Node.html">
+java.util.regex.Pattern$Node
+</a>
+</span>
+</div>
+</li>
+<li value="175">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(int[], int[], int[], java.util.regex.Pattern$Node)">
+java.util.regex.Pattern$BnM.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+int[]
+, 
+int[]
+, 
+int[]
+, 
+<a href="../../../java/util/regex/Pattern$Node.html">
+java.util.regex.Pattern$Node
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.regex.Pattern$BnM:&lt;init&gt;:I.-I.-I.-java.util.regex.Pattern$Nodevoid" title="void &lt;init&gt;(int[], int[], int[], java.util.regex.Pattern$Node)">
+java.util.regex.Pattern$BnM.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="178">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
 <a name="java.util.regex.Pattern$BnM:study:java.util.regex.Pattern$TreeInfoZ" href="#">
 
 </a>
@@ -489,6 +1395,233 @@ java.util.regex.Pattern$BnM.study
 <div class="instruction">
 <span>
 ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.regex.Pattern$BnM:&lt;init&gt;:I.-I.-I.-java.util.regex.Pattern$Nodevoid" href="#">
+
+</a>
+<div class="method_signature">
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+Pattern$BnM
+</span>
+(
+int[]
+ 1
+, 
+int[]
+ 2
+, 
+int[]
+ 3
+, 
+<a href="../../../java/util/regex/Pattern$Node.html">
+java.util.regex.Pattern$Node
+</a>
+ 4
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/regex/Pattern$BnMS.html#java.util.regex.Pattern$BnMS:&lt;init&gt;:I.-I.-I.-java.util.regex.Pattern$Nodevoid" title="void &lt;init&gt;(int[], int[], int[], java.util.regex.Pattern$Node)">
+java.util.regex.Pattern$BnMS.&lt;init&gt;(int[], int[], int[], java.util.regex.Pattern$Node)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.util.regex.Pattern$BnM:optimize:java.util.regex.Pattern$Nodejava.util.regex.Pattern$Node" title="java.util.regex.Pattern$Node optimize(java.util.regex.Pattern$Node)">
+java.util.regex.Pattern$BnM.optimize(java.util.regex.Pattern$Node)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.util.regex.Pattern$Node.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/regex/Pattern$Node.html#java.util.regex.Pattern$Node:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.util.regex.Pattern$Node.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.util.regex.Pattern$BnM:buffer:I.-">
+java.util.regex.Pattern$BnM.buffer
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int[]
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.util.regex.Pattern$BnM:lastOcc:I.-">
+java.util.regex.Pattern$BnM.lastOcc
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int[]
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.util.regex.Pattern$BnM:optoSft:I.-">
+java.util.regex.Pattern$BnM.optoSft
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int[]
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+aload  4
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="../../../java/util/regex/Pattern$Node.html#java.util.regex.Pattern$Node:next:java.util.regex.Pattern$Node">
+java.util.regex.Pattern$Node.next
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/util/regex/Pattern$Node.html">
+java.util.regex.Pattern$Node
+</a>
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+return
 </span>
 </div>
 </li>
@@ -1980,1139 +3113,6 @@ iconst 0
 <div class="instruction">
 <span>
 ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.regex.Pattern$BnM:&lt;init&gt;:I.-I.-I.-java.util.regex.Pattern$Nodevoid" href="#">
-
-</a>
-<div class="method_signature">
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-Pattern$BnM
-</span>
-(
-int[]
- 1
-, 
-int[]
- 2
-, 
-int[]
- 3
-, 
-<a href="../../../java/util/regex/Pattern$Node.html">
-java.util.regex.Pattern$Node
-</a>
- 4
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/util/regex/Pattern$BnMS.html#java.util.regex.Pattern$BnMS:&lt;init&gt;:I.-I.-I.-java.util.regex.Pattern$Nodevoid" title="void &lt;init&gt;(int[], int[], int[], java.util.regex.Pattern$Node)">
-java.util.regex.Pattern$BnMS.&lt;init&gt;(int[], int[], int[], java.util.regex.Pattern$Node)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.util.regex.Pattern$BnM:optimize:java.util.regex.Pattern$Nodejava.util.regex.Pattern$Node" title="java.util.regex.Pattern$Node optimize(java.util.regex.Pattern$Node)">
-java.util.regex.Pattern$BnM.optimize(java.util.regex.Pattern$Node)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.util.regex.Pattern$Node.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/util/regex/Pattern$Node.html#java.util.regex.Pattern$Node:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.util.regex.Pattern$Node.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.util.regex.Pattern$BnM:buffer:I.-">
-java.util.regex.Pattern$BnM.buffer
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int[]
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.util.regex.Pattern$BnM:lastOcc:I.-">
-java.util.regex.Pattern$BnM.lastOcc
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int[]
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.util.regex.Pattern$BnM:optoSft:I.-">
-java.util.regex.Pattern$BnM.optoSft
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int[]
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-aload  4
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="../../../java/util/regex/Pattern$Node.html#java.util.regex.Pattern$Node:next:java.util.regex.Pattern$Node">
-java.util.regex.Pattern$Node.next
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/util/regex/Pattern$Node.html">
-java.util.regex.Pattern$Node
-</a>
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.regex.Pattern$BnM:optimize:java.util.regex.Pattern$Nodejava.util.regex.Pattern$Node" href="#">
-
-</a>
-<div class="method_signature">
- static 
-<a href="../../../java/util/regex/Pattern$Node.html">
-java.util.regex.Pattern$Node
-</a>
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-optimize
-</span>
-(
-<a href="../../../java/util/regex/Pattern$Node.html">
-java.util.regex.Pattern$Node
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/util/regex/Pattern.html#java.util.regex.Pattern:compile:void" title="void compile()">
-java.util.regex.Pattern.compile()
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-instanceof 
-</span>
-<span>
-<a href="../../../java/util/regex/Pattern$Slice.html">
-java.util.regex.Pattern$Slice
-</a>
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ifne 5
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-checkcast 
-</span>
-<span>
-<a href="../../../java/util/regex/Pattern$Slice.html">
-java.util.regex.Pattern$Slice
-</a>
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../../java/util/regex/Pattern$SliceNode.html#java.util.regex.Pattern$SliceNode:buffer:I.-">
-java.util.regex.Pattern$SliceNode.buffer
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int[]
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-astore  1
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-arraylength
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-istore  2
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-iconst 4
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-ifcmpge 5
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-sipush 128
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-newarray 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="32">
-<div class="instruction">
-<span>
-astore  6
-</span>
-</div>
-</li>
-<li value="34">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-newarray 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="37">
-<div class="instruction">
-<span>
-astore  7
-</span>
-</div>
-</li>
-<li value="39">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="40">
-<div class="instruction">
-<span>
-istore  3
-</span>
-</div>
-</li>
-<li value="41">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="42">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="43">
-<div class="instruction">
-<span>
-ifcmpge 21
-</span>
-</div>
-</li>
-<li value="46">
-<div class="instruction">
-<span>
-aload  6
-</span>
-</div>
-</li>
-<li value="48">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="49">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="50">
-<div class="instruction">
-<span>
-iaload
-</span>
-</div>
-</li>
-<li value="51">
-<div class="instruction">
-<span>
-bipush 127
-</span>
-</div>
-</li>
-<li value="53">
-<div class="instruction">
-<span>
-iand
-</span>
-</div>
-</li>
-<li value="54">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="55">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="56">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="57">
-<div class="instruction">
-<span>
-iastore
-</span>
-</div>
-</li>
-<li value="58">
-<div class="instruction">
-<span>
-iinc 3 1
-</span>
-</div>
-</li>
-<li value="61">
-<div class="instruction">
-<span>
-goto -20
-</span>
-</div>
-</li>
-<li value="64">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="65">
-<div class="instruction">
-<span>
-istore  3
-</span>
-</div>
-</li>
-<li value="66">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="67">
-<div class="instruction">
-<span>
-ifle 64
-</span>
-</div>
-</li>
-<li value="70">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="71">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="72">
-<div class="instruction">
-<span>
-isub
-</span>
-</div>
-</li>
-<li value="73">
-<div class="instruction">
-<span>
-istore  4
-</span>
-</div>
-</li>
-<li value="75">
-<div class="instruction">
-<span>
-iload  4
-</span>
-</div>
-</li>
-<li value="77">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="78">
-<div class="instruction">
-<span>
-ifcmplt 30
-</span>
-</div>
-</li>
-<li value="81">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="82">
-<div class="instruction">
-<span>
-iload  4
-</span>
-</div>
-</li>
-<li value="84">
-<div class="instruction">
-<span>
-iaload
-</span>
-</div>
-</li>
-<li value="85">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="86">
-<div class="instruction">
-<span>
-iload  4
-</span>
-</div>
-</li>
-<li value="88">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="89">
-<div class="instruction">
-<span>
-isub
-</span>
-</div>
-</li>
-<li value="90">
-<div class="instruction">
-<span>
-iaload
-</span>
-</div>
-</li>
-<li value="91">
-<div class="instruction">
-<span>
-ifcmpne 34
-</span>
-</div>
-</li>
-<li value="94">
-<div class="instruction">
-<span>
-aload  7
-</span>
-</div>
-</li>
-<li value="96">
-<div class="instruction">
-<span>
-iload  4
-</span>
-</div>
-</li>
-<li value="98">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="99">
-<div class="instruction">
-<span>
-isub
-</span>
-</div>
-</li>
-<li value="100">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="101">
-<div class="instruction">
-<span>
-iastore
-</span>
-</div>
-</li>
-<li value="102">
-<div class="instruction">
-<span>
-iinc 4 -1
-</span>
-</div>
-</li>
-<li value="105">
-<div class="instruction">
-<span>
-goto -30
-</span>
-</div>
-</li>
-<li value="108">
-<div class="instruction">
-<span>
-iload  4
-</span>
-</div>
-</li>
-<li value="110">
-<div class="instruction">
-<span>
-ifle 15
-</span>
-</div>
-</li>
-<li value="113">
-<div class="instruction">
-<span>
-aload  7
-</span>
-</div>
-</li>
-<li value="115">
-<div class="instruction">
-<span>
-iinc 4 -1
-</span>
-</div>
-</li>
-<li value="118">
-<div class="instruction">
-<span>
-iload  4
-</span>
-</div>
-</li>
-<li value="120">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="121">
-<div class="instruction">
-<span>
-iastore
-</span>
-</div>
-</li>
-<li value="122">
-<div class="instruction">
-<span>
-goto -14
-</span>
-</div>
-</li>
-<li value="125">
-<div class="instruction">
-<span>
-iinc 3 -1
-</span>
-</div>
-</li>
-<li value="128">
-<div class="instruction">
-<span>
-goto -62
-</span>
-</div>
-</li>
-<li value="131">
-<div class="instruction">
-<span>
-aload  7
-</span>
-</div>
-</li>
-<li value="133">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="134">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="135">
-<div class="instruction">
-<span>
-isub
-</span>
-</div>
-</li>
-<li value="136">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="137">
-<div class="instruction">
-<span>
-iastore
-</span>
-</div>
-</li>
-<li value="138">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="139">
-<div class="instruction">
-<span>
-instanceof 
-</span>
-<span>
-<a href="../../../java/util/regex/Pattern$SliceS.html">
-java.util.regex.Pattern$SliceS
-</a>
-</span>
-</div>
-</li>
-<li value="142">
-<div class="instruction">
-<span>
-ifeq 20
-</span>
-</div>
-</li>
-<li value="145">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../../java/util/regex/Pattern$BnMS.html">
-java.util.regex.Pattern$BnMS
-</a>
-</span>
-</div>
-</li>
-<li value="148">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="149">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="150">
-<div class="instruction">
-<span>
-aload  6
-</span>
-</div>
-</li>
-<li value="152">
-<div class="instruction">
-<span>
-aload  7
-</span>
-</div>
-</li>
-<li value="154">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="155">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../../java/util/regex/Pattern$Node.html#java.util.regex.Pattern$Node:next:java.util.regex.Pattern$Node">
-java.util.regex.Pattern$Node.next
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/util/regex/Pattern$Node.html">
-java.util.regex.Pattern$Node
-</a>
-</span>
-</div>
-</li>
-<li value="158">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(int[], int[], int[], java.util.regex.Pattern$Node)">
-java.util.regex.Pattern$BnMS.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-int[]
-, 
-int[]
-, 
-int[]
-, 
-<a href="../../../java/util/regex/Pattern$Node.html">
-java.util.regex.Pattern$Node
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/util/regex/Pattern$BnMS.html#java.util.regex.Pattern$BnMS:&lt;init&gt;:I.-I.-I.-java.util.regex.Pattern$Nodevoid" title="void &lt;init&gt;(int[], int[], int[], java.util.regex.Pattern$Node)">
-java.util.regex.Pattern$BnMS.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="161">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-<li value="162">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="Pattern$BnM.html">
-java.util.regex.Pattern$BnM
-</a>
-</span>
-</div>
-</li>
-<li value="165">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="166">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="167">
-<div class="instruction">
-<span>
-aload  6
-</span>
-</div>
-</li>
-<li value="169">
-<div class="instruction">
-<span>
-aload  7
-</span>
-</div>
-</li>
-<li value="171">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="172">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../../java/util/regex/Pattern$Node.html#java.util.regex.Pattern$Node:next:java.util.regex.Pattern$Node">
-java.util.regex.Pattern$Node.next
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/util/regex/Pattern$Node.html">
-java.util.regex.Pattern$Node
-</a>
-</span>
-</div>
-</li>
-<li value="175">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(int[], int[], int[], java.util.regex.Pattern$Node)">
-java.util.regex.Pattern$BnM.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-int[]
-, 
-int[]
-, 
-int[]
-, 
-<a href="../../../java/util/regex/Pattern$Node.html">
-java.util.regex.Pattern$Node
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.regex.Pattern$BnM:&lt;init&gt;:I.-I.-I.-java.util.regex.Pattern$Nodevoid" title="void &lt;init&gt;(int[], int[], int[], java.util.regex.Pattern$Node)">
-java.util.regex.Pattern$BnM.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="178">
-<div class="instruction">
-<span>
-areturn
 </span>
 </div>
 </li>

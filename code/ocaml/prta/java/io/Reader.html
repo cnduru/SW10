@@ -55,7 +55,7 @@ int
 </span>
 </div>
 <div class="method">
-<a name="java.io.Reader:mark:Ivoid" href="#">
+<a name="java.io.Reader:reset:void" href="#">
 
 </a>
 <div class="method_signature">
@@ -63,11 +63,9 @@ public
 void
  
 <span>
-mark
+reset
 </span>
 (
-int
- 1
 )
 ;
 <ul class="annot">
@@ -102,7 +100,7 @@ dup
 <li value="4">
 <div class="instruction">
 <span>
-ldc string &apos;mark() not supported&apos;
+ldc string &apos;reset() not supported&apos;
 </span>
 </div>
 </li>
@@ -139,541 +137,6 @@ No reachable result.
 <div class="instruction">
 <span>
 athrow
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.io.Reader:read:C.-III" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-int
- 
-<span>
-read
-</span>
-(
-char[]
- 0
-, 
-int
- 1
-, 
-int
- 2
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.io.Reader:markSupported:Z" href="#">
-
-</a>
-<div class="method_signature">
-public 
-bool
- 
-<span>
-markSupported
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.io.Reader:read:C.-I" href="#">
-
-</a>
-<div class="method_signature">
-public 
-int
- 
-<span>
-read
-</span>
-(
-char[]
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-arraylength
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int read(char[], int, int)">
-java.io.Reader.read
-</span>
-</span>
-<span>
-(
-char[]
-, 
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.io.Reader:&lt;init&gt;:void" href="#">
-
-</a>
-<div class="method_signature">
-protected 
-<span>
-Reader
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.Object.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-aconstnull
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.io.Reader:skipBuffer:C.-">
-java.io.Reader.skipBuffer
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-char[]
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.io.Reader:lock:java.lang.Object">
-java.io.Reader.lock
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.io.Reader:close:void" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-void
- 
-<span>
-close
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.io.Reader:&lt;init&gt;:java.lang.Objectvoid" href="#">
-
-</a>
-<div class="method_signature">
-protected 
-<span>
-Reader
-</span>
-(
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.Object.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-aconstnull
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.io.Reader:skipBuffer:C.-">
-java.io.Reader.skipBuffer
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-char[]
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-ifnonnull 11
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/NullPointerException.html">
-java.lang.NullPointerException
-</a>
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.NullPointerException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.io.Reader:lock:java.lang.Object">
-java.io.Reader.lock
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-return
 </span>
 </div>
 </li>
@@ -1792,6 +1255,162 @@ ireturn
 </ol>
 </div>
 <div class="method">
+<a name="java.io.Reader:&lt;init&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+protected 
+<span>
+Reader
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.io.Reader:skipBuffer:C.-">
+java.io.Reader.skipBuffer
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+char[]
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.io.Reader:lock:java.lang.Object">
+java.io.Reader.lock
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.Reader:close:void" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+void
+ 
+<span>
+close
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
 <a name="java.io.Reader:ready:Z" href="#">
 
 </a>
@@ -1834,7 +1453,209 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.io.Reader:reset:void" href="#">
+<a name="java.io.Reader:&lt;init&gt;:java.lang.Objectvoid" href="#">
+
+</a>
+<div class="method_signature">
+protected 
+<span>
+Reader
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.io.Reader:skipBuffer:C.-">
+java.io.Reader.skipBuffer
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+char[]
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+ifnonnull 11
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/NullPointerException.html">
+java.lang.NullPointerException
+</a>
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.NullPointerException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.io.Reader:lock:java.lang.Object">
+java.io.Reader.lock
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.Reader:mark:Ivoid" href="#">
 
 </a>
 <div class="method_signature">
@@ -1842,9 +1663,11 @@ public
 void
  
 <span>
-reset
+mark
 </span>
 (
+int
+ 1
 )
 ;
 <ul class="annot">
@@ -1879,7 +1702,7 @@ dup
 <li value="4">
 <div class="instruction">
 <span>
-ldc string &apos;reset() not supported&apos;
+ldc string &apos;mark() not supported&apos;
 </span>
 </div>
 </li>
@@ -1916,6 +1739,183 @@ No reachable result.
 <div class="instruction">
 <span>
 athrow
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.Reader:read:C.-III" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+int
+ 
+<span>
+read
+</span>
+(
+char[]
+ 0
+, 
+int
+ 1
+, 
+int
+ 2
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.Reader:markSupported:Z" href="#">
+
+</a>
+<div class="method_signature">
+public 
+bool
+ 
+<span>
+markSupported
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.Reader:read:C.-I" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span>
+read
+</span>
+(
+char[]
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int read(char[], int, int)">
+java.io.Reader.read
+</span>
+</span>
+<span>
+(
+char[]
+, 
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+ireturn
 </span>
 </div>
 </li>

@@ -70,3 +70,5 @@ let simple_info =
     JPrintHtml.p_method = p_method;
     JPrintHtml.p_pp = p_pp };;
 
+let output = "./prta"
+let () = JPrintHtml.JCodePrinter.print_program ~info:simple_info prta output;;

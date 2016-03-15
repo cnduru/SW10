@@ -271,19 +271,123 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.ThreadLocal:initialValue:java.lang.Object" href="#">
+<a name="java.lang.ThreadLocal:nextHashCode:I" href="#">
 
 </a>
 <div class="method_signature">
-protected 
-<a href="../../java/lang/Object.html">
-java.lang.Object
+private static 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+nextHashCode
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.lang.ThreadLocal:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.ThreadLocal.&lt;init&gt;()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.lang.ThreadLocal:nextHashCode:java.util.concurrent.atomic.AtomicInteger">
+java.lang.ThreadLocal.nextHashCode
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/util/concurrent/atomic/AtomicInteger.html">
+java.util.concurrent.atomic.AtomicInteger
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+iconst 1640531527
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getAndAdd(int)">
+java.util.concurrent.atomic.AtomicInteger.getAndAdd
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/concurrent/atomic/AtomicInteger.html#java.util.concurrent.atomic.AtomicInteger:getAndAdd:II" title="int getAndAdd(int)">
+java.util.concurrent.atomic.AtomicInteger.getAndAdd
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.ThreadLocal:getMap:java.lang.Threadjava.lang.ThreadLocal$ThreadLocalMap" href="#">
+
+</a>
+<div class="method_signature">
+ 
+<a href="../../java/lang/ThreadLocal$ThreadLocalMap.html">
+java.lang.ThreadLocal$ThreadLocalMap
 </a>
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-initialValue
+getMap
 </span>
 (
+<a href="../../java/lang/Thread.html">
+java.lang.Thread
+</a>
+ 1
 )
 ;
 <ul class="annot">
@@ -302,317 +406,54 @@ java.lang.ThreadLocal.setInitialValue()
 </a>
 </div>
 </li>
+<li>
+<div>
+<a href="#java.lang.ThreadLocal:set:java.lang.Objectvoid" title="void set(java.lang.Object)">
+java.lang.ThreadLocal.set(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.lang.ThreadLocal:get:java.lang.Object" title="java.lang.Object get()">
+java.lang.ThreadLocal.get()
+</a>
+</div>
+</li>
 </ul>
 </div>
 <ol class="code">
 <li value="0">
 <div class="instruction">
 <span>
-aconstnull
+aload  1
 </span>
 </div>
 </li>
 <li value="1">
 <div class="instruction">
 <span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.ThreadLocal:set:java.lang.Objectvoid" href="#">
-
-</a>
-<div class="method_signature">
-public 
-void
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-set
-</span>
-(
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/io/FileInputStream.html#java.io.FileInputStream:finalize:void" title="void finalize()">
-java.io.FileInputStream.finalize()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/StringCoding.html#java.lang.StringCoding:set:java.lang.ThreadLocaljava.lang.Objectvoid" title="void set(java.lang.ThreadLocal, java.lang.Object)">
-java.lang.StringCoding.set(java.lang.ThreadLocal, java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/io/FileOutputStream.html#java.io.FileOutputStream:finalize:void" title="void finalize()">
-java.io.FileOutputStream.finalize()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/nio/charset/Charset.html#java.nio.charset.Charset:lookupViaProviders:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset lookupViaProviders(java.lang.String)">
-java.nio.charset.Charset.lookupViaProviders(java.lang.String)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-invokestatic 
+getfield 
 </span>
 <span>
-<a href="../../java/lang/Thread.html">
-java.lang.Thread
+<a href="../../java/lang/Thread.html#java.lang.Thread:threadLocals:java.lang.ThreadLocal$ThreadLocalMap">
+java.lang.Thread.threadLocals
 </a>
 </span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Thread currentThread()">
-java.lang.Thread.currentThread
-</span>
+<span>
+ : 
 </span>
 <span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/Thread.html#java.lang.Thread:currentThread:java.lang.Thread" title="java.lang.Thread currentThread()">
-java.lang.Thread.currentThread
+<a href="../../java/lang/ThreadLocal$ThreadLocalMap.html">
+java.lang.ThreadLocal$ThreadLocalMap
 </a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-astore  2
 </span>
 </div>
 </li>
 <li value="4">
 <div class="instruction">
 <span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/ThreadLocal$ThreadLocalMap.html">
-java.lang.ThreadLocal$ThreadLocalMap
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.ThreadLocal$ThreadLocalMap getMap(java.lang.Thread)">
-java.lang.ThreadLocal.getMap
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/Thread.html">
-java.lang.Thread
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.lang.ThreadLocal:getMap:java.lang.Threadjava.lang.ThreadLocal$ThreadLocalMap" title="java.lang.ThreadLocal$ThreadLocalMap getMap(java.lang.Thread)">
-java.lang.ThreadLocal.getMap
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-astore  3
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-ifnull 12
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void access$100(java.lang.ThreadLocal$ThreadLocalMap, java.lang.ThreadLocal, java.lang.Object)">
-java.lang.ThreadLocal$ThreadLocalMap.access$100
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/ThreadLocal$ThreadLocalMap.html">
-java.lang.ThreadLocal$ThreadLocalMap
-</a>
-, 
-<a href="ThreadLocal.html">
-java.lang.ThreadLocal
-</a>
-, 
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/ThreadLocal$ThreadLocalMap.html#java.lang.ThreadLocal$ThreadLocalMap:access$100:java.lang.ThreadLocal$ThreadLocalMapjava.lang.ThreadLocaljava.lang.Objectvoid" title="void access$100(java.lang.ThreadLocal$ThreadLocalMap, java.lang.ThreadLocal, java.lang.Object)">
-java.lang.ThreadLocal$ThreadLocalMap.access$100
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-goto 9
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void createMap(java.lang.Thread, java.lang.Object)">
-java.lang.ThreadLocal.createMap
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/Thread.html">
-java.lang.Thread
-</a>
-, 
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.lang.ThreadLocal:createMap:java.lang.Threadjava.lang.Objectvoid" title="void createMap(java.lang.Thread, java.lang.Object)">
-java.lang.ThreadLocal.createMap
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-return
+areturn
 </span>
 </div>
 </li>
@@ -889,269 +730,6 @@ java.lang.UnsupportedOperationException.&lt;init&gt;
 <div class="instruction">
 <span>
 athrow
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.ThreadLocal:createMap:java.lang.Threadjava.lang.Objectvoid" href="#">
-
-</a>
-<div class="method_signature">
- 
-void
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-createMap
-</span>
-(
-<a href="../../java/lang/Thread.html">
-java.lang.Thread
-</a>
- 1
-, 
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
- 2
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.lang.ThreadLocal:setInitialValue:java.lang.Object" title="java.lang.Object setInitialValue()">
-java.lang.ThreadLocal.setInitialValue()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.lang.ThreadLocal:set:java.lang.Objectvoid" title="void set(java.lang.Object)">
-java.lang.ThreadLocal.set(java.lang.Object)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/ThreadLocal$ThreadLocalMap.html">
-java.lang.ThreadLocal$ThreadLocalMap
-</a>
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.ThreadLocal, java.lang.Object)">
-java.lang.ThreadLocal$ThreadLocalMap.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="ThreadLocal.html">
-java.lang.ThreadLocal
-</a>
-, 
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/ThreadLocal$ThreadLocalMap.html#java.lang.ThreadLocal$ThreadLocalMap:&lt;init&gt;:java.lang.ThreadLocaljava.lang.Objectvoid" title="void &lt;init&gt;(java.lang.ThreadLocal, java.lang.Object)">
-java.lang.ThreadLocal$ThreadLocalMap.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="../../java/lang/Thread.html#java.lang.Thread:threadLocals:java.lang.ThreadLocal$ThreadLocalMap">
-java.lang.Thread.threadLocals
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/ThreadLocal$ThreadLocalMap.html">
-java.lang.ThreadLocal$ThreadLocalMap
-</a>
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.ThreadLocal:access$400:java.lang.ThreadLocalI" href="#">
-
-</a>
-<div class="method_signature">
- static 
-int
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-access$400
-</span>
-(
-<a href="ThreadLocal.html">
-java.lang.ThreadLocal
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/ThreadLocal$ThreadLocalMap.html#java.lang.ThreadLocal$ThreadLocalMap:set:java.lang.ThreadLocaljava.lang.Objectvoid" title="void set(java.lang.ThreadLocal, java.lang.Object)">
-java.lang.ThreadLocal$ThreadLocalMap.set(java.lang.ThreadLocal, java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/ThreadLocal$ThreadLocalMap.html#java.lang.ThreadLocal$ThreadLocalMap:&lt;init&gt;:java.lang.ThreadLocaljava.lang.Objectvoid" title="void &lt;init&gt;(java.lang.ThreadLocal, java.lang.Object)">
-java.lang.ThreadLocal$ThreadLocalMap.&lt;init&gt;(java.lang.ThreadLocal, java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/ThreadLocal$ThreadLocalMap.html#java.lang.ThreadLocal$ThreadLocalMap:getEntry:java.lang.ThreadLocaljava.lang.ThreadLocal$ThreadLocalMap$Entry" title="java.lang.ThreadLocal$ThreadLocalMap$Entry getEntry(java.lang.ThreadLocal)">
-java.lang.ThreadLocal$ThreadLocalMap.getEntry(java.lang.ThreadLocal)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/ThreadLocal$ThreadLocalMap.html#java.lang.ThreadLocal$ThreadLocalMap:resize:void" title="void resize()">
-java.lang.ThreadLocal$ThreadLocalMap.resize()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/ThreadLocal$ThreadLocalMap.html#java.lang.ThreadLocal$ThreadLocalMap:&lt;init&gt;:java.lang.ThreadLocal$ThreadLocalMapvoid" title="void &lt;init&gt;(java.lang.ThreadLocal$ThreadLocalMap)">
-java.lang.ThreadLocal$ThreadLocalMap.&lt;init&gt;(java.lang.ThreadLocal$ThreadLocalMap)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/ThreadLocal$ThreadLocalMap.html#java.lang.ThreadLocal$ThreadLocalMap:expungeStaleEntry:II" title="int expungeStaleEntry(int)">
-java.lang.ThreadLocal$ThreadLocalMap.expungeStaleEntry(int)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.lang.ThreadLocal:threadLocalHashCode:I">
-java.lang.ThreadLocal.threadLocalHashCode
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ireturn
 </span>
 </div>
 </li>
@@ -1505,6 +1083,464 @@ aload  1
 <div class="instruction">
 <span>
 areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.ThreadLocal:access$400:java.lang.ThreadLocalI" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+access$400
+</span>
+(
+<a href="ThreadLocal.html">
+java.lang.ThreadLocal
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/ThreadLocal$ThreadLocalMap.html#java.lang.ThreadLocal$ThreadLocalMap:set:java.lang.ThreadLocaljava.lang.Objectvoid" title="void set(java.lang.ThreadLocal, java.lang.Object)">
+java.lang.ThreadLocal$ThreadLocalMap.set(java.lang.ThreadLocal, java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/ThreadLocal$ThreadLocalMap.html#java.lang.ThreadLocal$ThreadLocalMap:&lt;init&gt;:java.lang.ThreadLocaljava.lang.Objectvoid" title="void &lt;init&gt;(java.lang.ThreadLocal, java.lang.Object)">
+java.lang.ThreadLocal$ThreadLocalMap.&lt;init&gt;(java.lang.ThreadLocal, java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/ThreadLocal$ThreadLocalMap.html#java.lang.ThreadLocal$ThreadLocalMap:getEntry:java.lang.ThreadLocaljava.lang.ThreadLocal$ThreadLocalMap$Entry" title="java.lang.ThreadLocal$ThreadLocalMap$Entry getEntry(java.lang.ThreadLocal)">
+java.lang.ThreadLocal$ThreadLocalMap.getEntry(java.lang.ThreadLocal)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/ThreadLocal$ThreadLocalMap.html#java.lang.ThreadLocal$ThreadLocalMap:resize:void" title="void resize()">
+java.lang.ThreadLocal$ThreadLocalMap.resize()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/ThreadLocal$ThreadLocalMap.html#java.lang.ThreadLocal$ThreadLocalMap:&lt;init&gt;:java.lang.ThreadLocal$ThreadLocalMapvoid" title="void &lt;init&gt;(java.lang.ThreadLocal$ThreadLocalMap)">
+java.lang.ThreadLocal$ThreadLocalMap.&lt;init&gt;(java.lang.ThreadLocal$ThreadLocalMap)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/ThreadLocal$ThreadLocalMap.html#java.lang.ThreadLocal$ThreadLocalMap:expungeStaleEntry:II" title="int expungeStaleEntry(int)">
+java.lang.ThreadLocal$ThreadLocalMap.expungeStaleEntry(int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.ThreadLocal:threadLocalHashCode:I">
+java.lang.ThreadLocal.threadLocalHashCode
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.ThreadLocal:initialValue:java.lang.Object" href="#">
+
+</a>
+<div class="method_signature">
+protected 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+initialValue
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.lang.ThreadLocal:setInitialValue:java.lang.Object" title="java.lang.Object setInitialValue()">
+java.lang.ThreadLocal.setInitialValue()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.ThreadLocal:set:java.lang.Objectvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+set
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/io/FileInputStream.html#java.io.FileInputStream:finalize:void" title="void finalize()">
+java.io.FileInputStream.finalize()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/StringCoding.html#java.lang.StringCoding:set:java.lang.ThreadLocaljava.lang.Objectvoid" title="void set(java.lang.ThreadLocal, java.lang.Object)">
+java.lang.StringCoding.set(java.lang.ThreadLocal, java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/FileOutputStream.html#java.io.FileOutputStream:finalize:void" title="void finalize()">
+java.io.FileOutputStream.finalize()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/nio/charset/Charset.html#java.nio.charset.Charset:lookupViaProviders:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset lookupViaProviders(java.lang.String)">
+java.nio.charset.Charset.lookupViaProviders(java.lang.String)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/lang/Thread.html">
+java.lang.Thread
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Thread currentThread()">
+java.lang.Thread.currentThread
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Thread.html#java.lang.Thread:currentThread:java.lang.Thread" title="java.lang.Thread currentThread()">
+java.lang.Thread.currentThread
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+astore  2
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/ThreadLocal$ThreadLocalMap.html">
+java.lang.ThreadLocal$ThreadLocalMap
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.ThreadLocal$ThreadLocalMap getMap(java.lang.Thread)">
+java.lang.ThreadLocal.getMap
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Thread.html">
+java.lang.Thread
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.lang.ThreadLocal:getMap:java.lang.Threadjava.lang.ThreadLocal$ThreadLocalMap" title="java.lang.ThreadLocal$ThreadLocalMap getMap(java.lang.Thread)">
+java.lang.ThreadLocal.getMap
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+astore  3
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+ifnull 12
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void access$100(java.lang.ThreadLocal$ThreadLocalMap, java.lang.ThreadLocal, java.lang.Object)">
+java.lang.ThreadLocal$ThreadLocalMap.access$100
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/ThreadLocal$ThreadLocalMap.html">
+java.lang.ThreadLocal$ThreadLocalMap
+</a>
+, 
+<a href="ThreadLocal.html">
+java.lang.ThreadLocal
+</a>
+, 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/ThreadLocal$ThreadLocalMap.html#java.lang.ThreadLocal$ThreadLocalMap:access$100:java.lang.ThreadLocal$ThreadLocalMapjava.lang.ThreadLocaljava.lang.Objectvoid" title="void access$100(java.lang.ThreadLocal$ThreadLocalMap, java.lang.ThreadLocal, java.lang.Object)">
+java.lang.ThreadLocal$ThreadLocalMap.access$100
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+goto 9
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void createMap(java.lang.Thread, java.lang.Object)">
+java.lang.ThreadLocal.createMap
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Thread.html">
+java.lang.Thread
+</a>
+, 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.lang.ThreadLocal:createMap:java.lang.Threadjava.lang.Objectvoid" title="void createMap(java.lang.Thread, java.lang.Object)">
+java.lang.ThreadLocal.createMap
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+return
 </span>
 </div>
 </li>
@@ -2043,23 +2079,26 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.ThreadLocal:getMap:java.lang.Threadjava.lang.ThreadLocal$ThreadLocalMap" href="#">
+<a name="java.lang.ThreadLocal:createMap:java.lang.Threadjava.lang.Objectvoid" href="#">
 
 </a>
 <div class="method_signature">
  
-<a href="../../java/lang/ThreadLocal$ThreadLocalMap.html">
-java.lang.ThreadLocal$ThreadLocalMap
-</a>
+void
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-getMap
+createMap
 </span>
 (
 <a href="../../java/lang/Thread.html">
 java.lang.Thread
 </a>
  1
+, 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 2
 )
 ;
 <ul class="annot">
@@ -2085,13 +2124,6 @@ java.lang.ThreadLocal.set(java.lang.Object)
 </a>
 </div>
 </li>
-<li>
-<div>
-<a href="#java.lang.ThreadLocal:get:java.lang.Object" title="java.lang.Object get()">
-java.lang.ThreadLocal.get()
-</a>
-</div>
-</li>
 </ul>
 </div>
 <ol class="code">
@@ -2105,7 +2137,75 @@ aload  1
 <li value="1">
 <div class="instruction">
 <span>
-getfield 
+new 
+</span>
+<span>
+<a href="../../java/lang/ThreadLocal$ThreadLocalMap.html">
+java.lang.ThreadLocal$ThreadLocalMap
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.ThreadLocal, java.lang.Object)">
+java.lang.ThreadLocal$ThreadLocalMap.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="ThreadLocal.html">
+java.lang.ThreadLocal
+</a>
+, 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/ThreadLocal$ThreadLocalMap.html#java.lang.ThreadLocal$ThreadLocalMap:&lt;init&gt;:java.lang.ThreadLocaljava.lang.Objectvoid" title="void &lt;init&gt;(java.lang.ThreadLocal, java.lang.Object)">
+java.lang.ThreadLocal$ThreadLocalMap.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+putfield 
 </span>
 <span>
 <a href="../../java/lang/Thread.html#java.lang.Thread:threadLocals:java.lang.ThreadLocal$ThreadLocalMap">
@@ -2122,110 +2222,10 @@ java.lang.ThreadLocal$ThreadLocalMap
 </span>
 </div>
 </li>
-<li value="4">
+<li value="13">
 <div class="instruction">
 <span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.ThreadLocal:nextHashCode:I" href="#">
-
-</a>
-<div class="method_signature">
-private static 
-int
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-nextHashCode
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.lang.ThreadLocal:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.lang.ThreadLocal.&lt;init&gt;()
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.lang.ThreadLocal:nextHashCode:java.util.concurrent.atomic.AtomicInteger">
-java.lang.ThreadLocal.nextHashCode
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/util/concurrent/atomic/AtomicInteger.html">
-java.util.concurrent.atomic.AtomicInteger
-</a>
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-iconst 1640531527
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int getAndAdd(int)">
-java.util.concurrent.atomic.AtomicInteger.getAndAdd
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/util/concurrent/atomic/AtomicInteger.html#java.util.concurrent.atomic.AtomicInteger:getAndAdd:II" title="int getAndAdd(int)">
-java.util.concurrent.atomic.AtomicInteger.getAndAdd
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-ireturn
+return
 </span>
 </div>
 </li>

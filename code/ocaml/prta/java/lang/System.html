@@ -301,19 +301,19 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.System:checkKey:java.lang.Stringvoid" href="#">
+<a name="java.lang.System:setSecurityManager0:java.lang.SecurityManagervoid" href="#">
 
 </a>
 <div class="method_signature">
-private static 
+private static synchronized 
 void
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-checkKey
+setSecurityManager0
 </span>
 (
-<a href="../../java/lang/String.html">
-java.lang.String
+<a href="../../java/lang/SecurityManager.html">
+java.lang.SecurityManager
 </a>
  0
 )
@@ -329,255 +329,10 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="#java.lang.System:setProperty:java.lang.Stringjava.lang.Stringjava.lang.String" title="java.lang.String setProperty(java.lang.String, java.lang.String)">
-java.lang.System.setProperty(java.lang.String, java.lang.String)
+<a href="#java.lang.System:setSecurityManager:java.lang.SecurityManagervoid" title="void setSecurityManager(java.lang.SecurityManager)">
+java.lang.System.setSecurityManager(java.lang.SecurityManager)
 </a>
 </div>
-</li>
-<li>
-<div>
-<a href="#java.lang.System:getProperty:java.lang.Stringjava.lang.String" title="java.lang.String getProperty(java.lang.String)">
-java.lang.System.getProperty(java.lang.String)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.lang.System:getProperty:java.lang.Stringjava.lang.Stringjava.lang.String" title="java.lang.String getProperty(java.lang.String, java.lang.String)">
-java.lang.System.getProperty(java.lang.String, java.lang.String)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-ifnonnull 13
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/NullPointerException.html">
-java.lang.NullPointerException
-</a>
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-ldc string &apos;key can&apos;t be null&apos;
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.lang.NullPointerException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/NullPointerException.html#java.lang.NullPointerException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
-java.lang.NullPointerException.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-ldc string &apos;&apos;
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool equals(java.lang.Object)">
-java.lang.String.equals
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/String.html#java.lang.String:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.lang.String.equals
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-ifeq 13
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/IllegalArgumentException.html">
-java.lang.IllegalArgumentException
-</a>
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-ldc string &apos;key can&apos;t be empty&apos;
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.lang.IllegalArgumentException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/IllegalArgumentException.html#java.lang.IllegalArgumentException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
-java.lang.IllegalArgumentException.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="32">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="33">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.System:getProperties:java.util.Properties" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-<a href="../../java/util/Properties.html">
-java.util.Properties
-</a>
- 
-<span>
-getProperties
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
 </li>
 </ul>
 </div>
@@ -615,32 +370,89 @@ java.lang.System.getSecurityManager
 <li value="3">
 <div class="instruction">
 <span>
-astore  0
+astore  1
 </span>
 </div>
 </li>
 <li value="4">
 <div class="instruction">
 <span>
-aload  0
+aload  1
 </span>
 </div>
 </li>
 <li value="5">
 <div class="instruction">
 <span>
-ifnull 7
+ifnull 16
 </span>
 </div>
 </li>
 <li value="8">
 <div class="instruction">
 <span>
-aload  0
+aload  1
 </span>
 </div>
 </li>
 <li value="9">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/RuntimePermission.html">
+java.lang.RuntimePermission
+</a>
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+ldc string &apos;setSecurityManager&apos;
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.lang.RuntimePermission.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/RuntimePermission.html#java.lang.RuntimePermission:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
+java.lang.RuntimePermission.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="18">
 <div class="instruction">
 <span>
 invokevirtual 
@@ -649,8 +461,62 @@ invokevirtual
 void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void checkPropertiesAccess()">
-java.lang.SecurityManager.checkPropertiesAccess
+<span title="void checkPermission(java.security.Permission)">
+java.lang.SecurityManager.checkPermission
+</span>
+</span>
+<span>
+(
+<a href="../../java/security/Permission.html">
+java.security.Permission
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/SecurityManager.html#java.lang.SecurityManager:checkPermission:java.security.Permissionvoid" title="void checkPermission(java.security.Permission)">
+java.lang.SecurityManager.checkPermission
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+ifnull 25
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Class getClass()">
+java.lang.Object.getClass
 </span>
 </span>
 <span>
@@ -660,36 +526,179 @@ java.lang.SecurityManager.checkPropertiesAccess
 <ul class="clickable">
 <li>
 <div>
-No reachable result.
+<a href="../../java/lang/Object.html#java.lang.Object:getClass:java.lang.Class" title="java.lang.Class getClass()">
+java.lang.Object.getClass
+</a>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="12">
+<li value="29">
 <div class="instruction">
 <span>
-getstatic 
+invokevirtual 
 </span>
 <span>
-<a href="#java.lang.System:props:java.util.Properties">
-java.lang.System.props
+<a href="../../java/lang/ClassLoader.html">
+java.lang.ClassLoader
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.ClassLoader getClassLoader()">
+java.lang.Class.getClassLoader
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Class.html#java.lang.Class:getClassLoader:java.lang.ClassLoader" title="java.lang.ClassLoader getClassLoader()">
+java.lang.Class.getClassLoader
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+ifnull 15
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/System$1.html">
+java.lang.System$1
+</a>
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.SecurityManager)">
+java.lang.System$1.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/SecurityManager.html">
+java.lang.SecurityManager
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/System$1.html#java.lang.System$1:&lt;init&gt;:java.lang.SecurityManagervoid" title="void &lt;init&gt;(java.lang.SecurityManager)">
+java.lang.System$1.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object doPrivileged(java.security.PrivilegedAction)">
+java.security.AccessController.doPrivileged
+</span>
+</span>
+<span>
+(
+<a href="../../java/security/PrivilegedAction.html">
+java.security.PrivilegedAction
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/security/AccessController.html#java.security.AccessController:doPrivileged:java.security.PrivilegedActionjava.lang.Object" title="java.lang.Object doPrivileged(java.security.PrivilegedAction)">
+java.security.AccessController.doPrivileged
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+pop
+</span>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#java.lang.System:security:java.lang.SecurityManager">
+java.lang.System.security
 </a>
 </span>
 <span>
  : 
 </span>
 <span>
-<a href="../../java/util/Properties.html">
-java.util.Properties
+<a href="../../java/lang/SecurityManager.html">
+java.lang.SecurityManager
 </a>
 </span>
 </div>
 </li>
-<li value="15">
+<li value="51">
 <div class="instruction">
 <span>
-areturn
+return
 </span>
 </div>
 </li>
@@ -698,19 +707,174 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.System:inheritedChannel:java.nio.channels.Channel" href="#">
+<a name="java.lang.System:setSecurityManager:java.lang.SecurityManagervoid" href="#">
 
 </a>
 <div class="method_signature">
 public static 
-<a href="../../java/nio/channels/Channel.html">
-java.nio.channels.Channel
-</a>
+void
  
-<span>
-inheritedChannel
+<span class="methodname clickable" onclick="showInfoList(this)">
+setSecurityManager
 </span>
 (
+<a href="../../java/lang/SecurityManager.html">
+java.lang.SecurityManager
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/misc/Launcher.html#sun.misc.Launcher:&lt;init&gt;:void" title="void &lt;init&gt;()">
+sun.misc.Launcher.&lt;init&gt;()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+ldc string &apos;java.lang&apos;
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void checkPackageAccess(java.lang.String)">
+java.lang.SecurityManager.checkPackageAccess
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/SecurityManager.html#java.lang.SecurityManager:checkPackageAccess:java.lang.Stringvoid" title="void checkPackageAccess(java.lang.String)">
+java.lang.SecurityManager.checkPackageAccess
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+astore  1
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void setSecurityManager0(java.lang.SecurityManager)">
+java.lang.System.setSecurityManager0
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/SecurityManager.html">
+java.lang.SecurityManager
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.lang.System:setSecurityManager0:java.lang.SecurityManagervoid" title="void setSecurityManager0(java.lang.SecurityManager)">
+java.lang.System.setSecurityManager0
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 0; try end: 6: catch start: 9; catched type: java.lang.Exception.
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
+<a name="java.lang.System:runFinalizersOnExit:Zvoid" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+void
+ 
+<span>
+runFinalizersOnExit
+</span>
+(
+bool
+ 0
 )
 ;
 <ul class="annot">
@@ -729,11 +893,13 @@ Not parsed
 invokestatic 
 </span>
 <span>
-java.nio.channels.spi.SelectorProvider
+<a href="../../java/lang/Runtime.html">
+java.lang.Runtime
+</a>
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.nio.channels.spi.SelectorProvider provider()">
-java.nio.channels.spi.SelectorProvider.provider
+<span title="java.lang.Runtime getRuntime()">
+java.lang.Runtime.getRuntime
 </span>
 </span>
 <span>
@@ -743,7 +909,9 @@ java.nio.channels.spi.SelectorProvider.provider
 <ul class="clickable">
 <li>
 <div>
-No reachable result.
+<a href="../../java/lang/Runtime.html#java.lang.Runtime:getRuntime:java.lang.Runtime" title="java.lang.Runtime getRuntime()">
+java.lang.Runtime.getRuntime
+</a>
 </div>
 </li>
 </ul>
@@ -752,20 +920,33 @@ No reachable result.
 <li value="3">
 <div class="instruction">
 <span>
-invokevirtual 
+pop
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokestatic 
 </span>
 <span>
-<a href="../../java/nio/channels/Channel.html">
-java.nio.channels.Channel
-</a>
+void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.nio.channels.Channel inheritedChannel()">
-java.nio.channels.spi.SelectorProvider.inheritedChannel
+<span title="void runFinalizersOnExit(bool)">
+java.lang.Runtime.runFinalizersOnExit
 </span>
 </span>
 <span>
 (
+bool
 )
 </span>
 <ul class="clickable">
@@ -777,10 +958,10 @@ No reachable result.
 </ul>
 </div>
 </li>
-<li value="6">
+<li value="8">
 <div class="instruction">
 <span>
-areturn
+return
 </span>
 </div>
 </li>
@@ -888,7 +1069,7 @@ java.util.GregorianCalendar.&lt;init&gt;(java.util.TimeZone, java.util.Locale)
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.System:clearProperty:java.lang.Stringjava.lang.String" href="#">
+<a name="java.lang.System:setProperty:java.lang.Stringjava.lang.Stringjava.lang.String" href="#">
 
 </a>
 <div class="method_signature">
@@ -897,14 +1078,19 @@ public static
 java.lang.String
 </a>
  
-<span>
-clearProperty
+<span class="methodname clickable" onclick="showInfoList(this)">
+setProperty
 </span>
 (
 <a href="../../java/lang/String.html">
 java.lang.String
 </a>
  0
+, 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 1
 )
 ;
 <ul class="annot">
@@ -912,7 +1098,16 @@ java.lang.String
 Concrete Method 
 </li>
 <li>
-Not parsed
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/misc/Version.html#sun.misc.Version:init:void" title="void init()">
+sun.misc.Version.init()
+</a>
+</div>
 </li>
 </ul>
 </div>
@@ -988,14 +1183,14 @@ java.lang.System.getSecurityManager
 <li value="7">
 <div class="instruction">
 <span>
-astore  1
+astore  2
 </span>
 </div>
 </li>
 <li value="8">
 <div class="instruction">
 <span>
-aload  1
+aload  2
 </span>
 </div>
 </li>
@@ -1009,7 +1204,7 @@ ifnull 17
 <li value="12">
 <div class="instruction">
 <span>
-aload  1
+aload  2
 </span>
 </div>
 </li>
@@ -1142,6 +1337,13 @@ aload  0
 <li value="30">
 <div class="instruction">
 <span>
+aload  1
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
 invokevirtual 
 </span>
 <span>
@@ -1150,29 +1352,33 @@ java.lang.Object
 </a>
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Object remove(java.lang.Object)">
-java.util.Properties.remove
+<span title="java.lang.Object setProperty(java.lang.String, java.lang.String)">
+java.util.Properties.setProperty
 </span>
 </span>
 <span>
 (
-<a href="../../java/lang/Object.html">
-java.lang.Object
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+, 
+<a href="../../java/lang/String.html">
+java.lang.String
 </a>
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/util/Hashtable.html#java.util.Hashtable:remove:java.lang.Objectjava.lang.Object" title="java.lang.Object remove(java.lang.Object)">
-java.util.Hashtable.remove
+<a href="../../java/util/Properties.html#java.util.Properties:setProperty:java.lang.Stringjava.lang.Stringjava.lang.Object" title="java.lang.Object setProperty(java.lang.String, java.lang.String)">
+java.util.Properties.setProperty
 </a>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="33">
+<li value="34">
 <div class="instruction">
 <span>
 checkcast 
@@ -1184,7 +1390,7 @@ java.lang.String
 </span>
 </div>
 </li>
-<li value="36">
+<li value="37">
 <div class="instruction">
 <span>
 areturn
@@ -1196,23 +1402,19 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.System:getenv:java.lang.Stringjava.lang.String" href="#">
+<a name="java.lang.System:getenv:java.util.Map" href="#">
 
 </a>
 <div class="method_signature">
 public static 
-<a href="../../java/lang/String.html">
-java.lang.String
+<a href="../../java/util/Map.html">
+java.util.Map
 </a>
  
 <span>
 getenv
 </span>
 (
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- 0
 )
 ;
 <ul class="annot">
@@ -1258,28 +1460,28 @@ java.lang.System.getSecurityManager
 <li value="3">
 <div class="instruction">
 <span>
-astore  1
+astore  0
 </span>
 </div>
 </li>
 <li value="4">
 <div class="instruction">
 <span>
-aload  1
+aload  0
 </span>
 </div>
 </li>
 <li value="5">
 <div class="instruction">
 <span>
-ifnull 33
+ifnull 16
 </span>
 </div>
 </li>
 <li value="8">
 <div class="instruction">
 <span>
-aload  1
+aload  0
 </span>
 </div>
 </li>
@@ -1305,159 +1507,11 @@ dup
 <li value="13">
 <div class="instruction">
 <span>
-new 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
+ldc string &apos;getenv.*&apos;
 </span>
 </div>
 </li>
-<li value="16">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.StringBuilder.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-ldc string &apos;getenv.&apos;
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.StringBuilder append(java.lang.String)">
-java.lang.StringBuilder.append
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
-java.lang.StringBuilder.append
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.StringBuilder append(java.lang.String)">
-java.lang.StringBuilder.append
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
-java.lang.StringBuilder.append
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.String toString()">
-java.lang.StringBuilder.toString
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:toString:java.lang.String" title="java.lang.String toString()">
-java.lang.StringBuilder.toString
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="32">
+<li value="15">
 <div class="instruction">
 <span>
 invokespecial 
@@ -1488,7 +1542,7 @@ java.lang.RuntimePermission.&lt;init&gt;
 </ul>
 </div>
 </li>
-<li value="35">
+<li value="18">
 <div class="instruction">
 <span>
 invokevirtual 
@@ -1519,33 +1573,23 @@ java.lang.SecurityManager.checkPermission
 </ul>
 </div>
 </li>
-<li value="38">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="39">
+<li value="21">
 <div class="instruction">
 <span>
 invokestatic 
 </span>
 <span>
-<a href="../../java/lang/String.html">
-java.lang.String
+<a href="../../java/util/Map.html">
+java.util.Map
 </a>
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.String getenv(java.lang.String)">
+<span title="java.util.Map getenv()">
 java.lang.ProcessEnvironment.getenv
 </span>
 </span>
 <span>
 (
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
 )
 </span>
 <ul class="clickable">
@@ -1557,7 +1601,7 @@ No reachable result.
 </ul>
 </div>
 </li>
-<li value="42">
+<li value="24">
 <div class="instruction">
 <span>
 areturn
@@ -1569,21 +1613,19 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.System:setIn:java.io.InputStreamvoid" href="#">
+<a name="java.lang.System:console:java.io.Console" href="#">
 
 </a>
 <div class="method_signature">
 public static 
-void
+<a href="../../java/io/Console.html">
+java.io.Console
+</a>
  
 <span>
-setIn
+console
 </span>
 (
-<a href="../../java/io/InputStream.html">
-java.io.InputStream
-</a>
- 0
 )
 ;
 <ul class="annot">
@@ -1599,14 +1641,71 @@ Not parsed
 <li value="0">
 <div class="instruction">
 <span>
+getstatic 
+</span>
+<span>
+<a href="#java.lang.System:cons:java.io.Console">
+java.lang.System.cons
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/io/Console.html">
+java.io.Console
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+ifnonnull 30
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+ldc class Ljava/lang/System;
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+astore  0
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+monitorenter
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
 invokestatic 
 </span>
 <span>
-void
+<a href="../../sun/misc/JavaIOAccess.html">
+sun.misc.JavaIOAccess
+</a>
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void checkIO()">
-java.lang.System.checkIO
+<span title="sun.misc.JavaIOAccess getJavaIOAccess()">
+sun.misc.SharedSecrets.getJavaIOAccess
 </span>
 </span>
 <span>
@@ -1622,54 +1721,155 @@ No reachable result.
 </ul>
 </div>
 </li>
-<li value="3">
+<li value="15">
+<div class="instruction">
+<span>
+invokeinterface 
+</span>
+<span>
+<a href="../../java/io/Console.html">
+java.io.Console
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.io.Console console()">
+sun.misc.JavaIOAccess.console
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#java.lang.System:cons:java.io.Console">
+java.lang.System.cons
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/io/Console.html">
+java.io.Console
+</a>
+</span>
+</div>
+</li>
+<li value="23">
 <div class="instruction">
 <span>
 aload  0
 </span>
 </div>
 </li>
-<li value="4">
+<li value="24">
 <div class="instruction">
 <span>
-invokestatic 
+monitorexit
 </span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void setIn0(java.io.InputStream)">
-java.lang.System.setIn0
-</span>
-</span>
-<span>
-(
-<a href="../../java/io/InputStream.html">
-java.io.InputStream
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.lang.System:setIn0:java.io.InputStreamvoid" title="void setIn0(java.io.InputStream)">
-java.lang.System.setIn0
-</a>
 </div>
 </li>
-</ul>
-</div>
-</li>
-<li value="7">
+<li value="25">
 <div class="instruction">
 <span>
-return
+goto 8
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+astore  1
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+monitorexit
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.lang.System:cons:java.io.Console">
+java.lang.System.cons
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/io/Console.html">
+java.io.Console
+</a>
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+areturn
 </span>
 </div>
 </li>
 </ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
 <ol>
+<li>
+<span>
+try start: 12; try end: 25: catch start: 28; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 28; try end: 31: catch start: 28; catched type: None (finally block).
+</span>
+</li>
 </ol>
+</span>
 </div>
 <div class="method">
 <a name="java.lang.System:getSecurityManager:java.lang.SecurityManager" href="#">
@@ -2213,21 +2413,17 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.System:setIn0:java.io.InputStreamvoid" href="#">
+<a name="java.lang.System:setJavaLangAccess:void" href="#">
 
 </a>
 <div class="method_signature">
-private static native 
+private static 
 void
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-setIn0
+setJavaLangAccess
 </span>
 (
-<a href="../../java/io/InputStream.html">
-java.io.InputStream
-</a>
- 0
 )
 ;
 <ul class="annot">
@@ -2248,26 +2444,110 @@ java.lang.System.initializeSystemClass()
 </li>
 </ul>
 </div>
-
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/System$2.html">
+java.lang.System$2
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.System$2.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/System$2.html#java.lang.System$2:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.System$2.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void setJavaLangAccess(sun.misc.JavaLangAccess)">
+sun.misc.SharedSecrets.setJavaLangAccess
+</span>
+</span>
+<span>
+(
+<a href="../../sun/misc/JavaLangAccess.html">
+sun.misc.JavaLangAccess
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/misc/SharedSecrets.html#sun.misc.SharedSecrets:setJavaLangAccess:sun.misc.JavaLangAccessvoid" title="void setJavaLangAccess(sun.misc.JavaLangAccess)">
+sun.misc.SharedSecrets.setJavaLangAccess
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
 <ol>
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.System:initProperties:java.util.Propertiesjava.util.Properties" href="#">
+<a name="java.lang.System:loadLibrary:java.lang.Stringvoid" href="#">
 
 </a>
 <div class="method_signature">
-private static native 
-<a href="../../java/util/Properties.html">
-java.util.Properties
-</a>
+public static 
+void
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-initProperties
+loadLibrary
 </span>
 (
-<a href="../../java/util/Properties.html">
-java.util.Properties
+<a href="../../java/lang/String.html">
+java.lang.String
 </a>
  0
 )
@@ -2290,7 +2570,117 @@ java.lang.System.initializeSystemClass()
 </li>
 </ul>
 </div>
-
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/lang/Runtime.html">
+java.lang.Runtime
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Runtime getRuntime()">
+java.lang.Runtime.getRuntime
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Runtime.html#java.lang.Runtime:getRuntime:java.lang.Runtime" title="java.lang.Runtime getRuntime()">
+java.lang.Runtime.getRuntime
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Class getCallerClass()">
+sun.reflect.Reflection.getCallerClass
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/reflect/Reflection.html#sun.reflect.Reflection:getCallerClass:java.lang.Class" title="java.lang.Class getCallerClass()">
+sun.reflect.Reflection.getCallerClass
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void loadLibrary0(java.lang.Class, java.lang.String)">
+java.lang.Runtime.loadLibrary0
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+, 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Runtime.html#java.lang.Runtime:loadLibrary0:java.lang.Classjava.lang.Stringvoid" title="void loadLibrary0(java.lang.Class, java.lang.String)">
+java.lang.Runtime.loadLibrary0
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
 <ol>
 </ol>
 </div>
@@ -2555,21 +2945,19 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.System:setProperties:java.util.Propertiesvoid" href="#">
+<a name="java.lang.System:lineSeparator:java.lang.String" href="#">
 
 </a>
 <div class="method_signature">
 public static 
-void
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
  
-<span>
-setProperties
+<span class="methodname clickable" onclick="showInfoList(this)">
+lineSeparator
 </span>
 (
-<a href="../../java/util/Properties.html">
-java.util.Properties
-</a>
- 0
 )
 ;
 <ul class="annot">
@@ -2577,7 +2965,16 @@ java.util.Properties
 Concrete Method 
 </li>
 <li>
-Not parsed
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/Formatter$FormatSpecifier.html#java.util.Formatter$FormatSpecifier:print:java.lang.Objectjava.util.Localevoid" title="void print(java.lang.Object, java.util.Locale)">
+java.util.Formatter$FormatSpecifier.print(java.lang.Object, java.util.Locale)
+</a>
+</div>
 </li>
 </ul>
 </div>
@@ -2585,233 +2982,27 @@ Not parsed
 <li value="0">
 <div class="instruction">
 <span>
-invokestatic 
+getstatic 
 </span>
 <span>
-<a href="../../java/lang/SecurityManager.html">
-java.lang.SecurityManager
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.SecurityManager getSecurityManager()">
-java.lang.System.getSecurityManager
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.lang.System:getSecurityManager:java.lang.SecurityManager" title="java.lang.SecurityManager getSecurityManager()">
-java.lang.System.getSecurityManager
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-astore  1
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-ifnull 7
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void checkPropertiesAccess()">
-java.lang.SecurityManager.checkPropertiesAccess
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-ifnonnull 16
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/util/Properties.html">
-java.util.Properties
-</a>
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.util.Properties.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/util/Properties.html#java.util.Properties:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.util.Properties.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-astore  0
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../java/util/Properties.html">
-java.util.Properties
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.util.Properties initProperties(java.util.Properties)">
-java.lang.System.initProperties
-</span>
-</span>
-<span>
-(
-<a href="../../java/util/Properties.html">
-java.util.Properties
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.lang.System:initProperties:java.util.Propertiesjava.util.Properties" title="java.util.Properties initProperties(java.util.Properties)">
-java.lang.System.initProperties
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="28">
-<div class="instruction">
-<span>
-pop
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-putstatic 
-</span>
-<span>
-<a href="#java.lang.System:props:java.util.Properties">
-java.lang.System.props
+<a href="#java.lang.System:lineSeparator:java.lang.String">
+java.lang.System.lineSeparator
 </a>
 </span>
 <span>
  : 
 </span>
 <span>
-<a href="../../java/util/Properties.html">
-java.util.Properties
+<a href="../../java/lang/String.html">
+java.lang.String
 </a>
 </span>
 </div>
 </li>
-<li value="33">
+<li value="3">
 <div class="instruction">
 <span>
-return
+areturn
 </span>
 </div>
 </li>
@@ -2875,187 +3066,6 @@ No reachable result.
 </div>
 </li>
 <li value="4">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.System:checkIO:void" href="#">
-
-</a>
-<div class="method_signature">
-private static 
-void
- 
-<span>
-checkIO
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../java/lang/SecurityManager.html">
-java.lang.SecurityManager
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.SecurityManager getSecurityManager()">
-java.lang.System.getSecurityManager
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.lang.System:getSecurityManager:java.lang.SecurityManager" title="java.lang.SecurityManager getSecurityManager()">
-java.lang.System.getSecurityManager
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-astore  0
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-ifnull 16
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/RuntimePermission.html">
-java.lang.RuntimePermission
-</a>
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-ldc string &apos;setIO&apos;
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.lang.RuntimePermission.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/RuntimePermission.html#java.lang.RuntimePermission:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
-java.lang.RuntimePermission.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void checkPermission(java.security.Permission)">
-java.lang.SecurityManager.checkPermission
-</span>
-</span>
-<span>
-(
-<a href="../../java/security/Permission.html">
-java.security.Permission
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/SecurityManager.html#java.lang.SecurityManager:checkPermission:java.security.Permissionvoid" title="void checkPermission(java.security.Permission)">
-java.lang.SecurityManager.checkPermission
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="21">
 <div class="instruction">
 <span>
 return
@@ -3156,7 +3166,7 @@ java.util.IdentityHashMap.hashCode()
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.System:runFinalization:void" href="#">
+<a name="java.lang.System:gc:void" href="#">
 
 </a>
 <div class="method_signature">
@@ -3164,7 +3174,7 @@ public static
 void
  
 <span>
-runFinalization
+gc
 </span>
 (
 )
@@ -3218,8 +3228,8 @@ invokevirtual
 void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void runFinalization()">
-java.lang.Runtime.runFinalization
+<span title="void gc()">
+java.lang.Runtime.gc
 </span>
 </span>
 <span>
@@ -3247,7 +3257,7 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.System:setErr:java.io.PrintStreamvoid" href="#">
+<a name="java.lang.System:setOut:java.io.PrintStreamvoid" href="#">
 
 </a>
 <div class="method_signature">
@@ -3255,7 +3265,7 @@ public static
 void
  
 <span>
-setErr
+setOut
 </span>
 (
 <a href="../../java/io/PrintStream.html">
@@ -3316,8 +3326,8 @@ invokestatic
 void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void setErr0(java.io.PrintStream)">
-java.lang.System.setErr0
+<span title="void setOut0(java.io.PrintStream)">
+java.lang.System.setOut0
 </span>
 </span>
 <span>
@@ -3330,8 +3340,8 @@ java.io.PrintStream
 <ul class="clickable">
 <li>
 <div>
-<a href="#java.lang.System:setErr0:java.io.PrintStreamvoid" title="void setErr0(java.io.PrintStream)">
-java.lang.System.setErr0
+<a href="#java.lang.System:setOut0:java.io.PrintStreamvoid" title="void setOut0(java.io.PrintStream)">
+java.lang.System.setOut0
 </a>
 </div>
 </li>
@@ -3350,7 +3360,7 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.System:setOut0:java.io.PrintStreamvoid" href="#">
+<a name="java.lang.System:setErr0:java.io.PrintStreamvoid" href="#">
 
 </a>
 <div class="method_signature">
@@ -3358,7 +3368,7 @@ private static native
 void
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-setOut0
+setErr0
 </span>
 (
 <a href="../../java/io/PrintStream.html">
@@ -3390,15 +3400,15 @@ java.lang.System.initializeSystemClass()
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.System:loadLibrary:java.lang.Stringvoid" href="#">
+<a name="java.lang.System:checkKey:java.lang.Stringvoid" href="#">
 
 </a>
 <div class="method_signature">
-public static 
+private static 
 void
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-loadLibrary
+checkKey
 </span>
 (
 <a href="../../java/lang/String.html">
@@ -3418,8 +3428,22 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="#java.lang.System:initializeSystemClass:void" title="void initializeSystemClass()">
-java.lang.System.initializeSystemClass()
+<a href="#java.lang.System:setProperty:java.lang.Stringjava.lang.Stringjava.lang.String" title="java.lang.String setProperty(java.lang.String, java.lang.String)">
+java.lang.System.setProperty(java.lang.String, java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.lang.System:getProperty:java.lang.Stringjava.lang.String" title="java.lang.String getProperty(java.lang.String)">
+java.lang.System.getProperty(java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.lang.System:getProperty:java.lang.Stringjava.lang.Stringjava.lang.String" title="java.lang.String getProperty(java.lang.String, java.lang.String)">
+java.lang.System.getProperty(java.lang.String, java.lang.String)
 </a>
 </div>
 </li>
@@ -3429,89 +3453,58 @@ java.lang.System.initializeSystemClass()
 <li value="0">
 <div class="instruction">
 <span>
-invokestatic 
-</span>
-<span>
-<a href="../../java/lang/Runtime.html">
-java.lang.Runtime
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Runtime getRuntime()">
-java.lang.Runtime.getRuntime
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/Runtime.html#java.lang.Runtime:getRuntime:java.lang.Runtime" title="java.lang.Runtime getRuntime()">
-java.lang.Runtime.getRuntime
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../java/lang/Class.html">
-java.lang.Class
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Class getCallerClass()">
-sun.reflect.Reflection.getCallerClass
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../sun/reflect/Reflection.html#sun.reflect.Reflection:getCallerClass:java.lang.Class" title="java.lang.Class getCallerClass()">
-sun.reflect.Reflection.getCallerClass
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
 aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+ifnonnull 13
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/NullPointerException.html">
+java.lang.NullPointerException
+</a>
 </span>
 </div>
 </li>
 <li value="7">
 <div class="instruction">
 <span>
-invokevirtual 
+dup
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+ldc string &apos;key can&apos;t be null&apos;
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+invokespecial 
 </span>
 <span>
 void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void loadLibrary0(java.lang.Class, java.lang.String)">
-java.lang.Runtime.loadLibrary0
+<span title="void &lt;init&gt;(java.lang.String)">
+java.lang.NullPointerException.&lt;init&gt;
 </span>
 </span>
 <span>
 (
-<a href="../../java/lang/Class.html">
-java.lang.Class
-</a>
-, 
 <a href="../../java/lang/String.html">
 java.lang.String
 </a>
@@ -3520,15 +3513,138 @@ java.lang.String
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/lang/Runtime.html#java.lang.Runtime:loadLibrary0:java.lang.Classjava.lang.Stringvoid" title="void loadLibrary0(java.lang.Class, java.lang.String)">
-java.lang.Runtime.loadLibrary0
+<a href="../../java/lang/NullPointerException.html#java.lang.NullPointerException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
+java.lang.NullPointerException.&lt;init&gt;
 </a>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="10">
+<li value="13">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+ldc string &apos;&apos;
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool equals(java.lang.Object)">
+java.lang.String.equals
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/String.html#java.lang.String:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.lang.String.equals
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+ifeq 13
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+ldc string &apos;key can&apos;t be empty&apos;
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.lang.IllegalArgumentException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/IllegalArgumentException.html#java.lang.IllegalArgumentException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
+java.lang.IllegalArgumentException.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="33">
 <div class="instruction">
 <span>
 return
@@ -3582,17 +3698,17 @@ java.lang.ClassLoader.loadLibrary(java.lang.Class, java.lang.String, bool)
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.System:lineSeparator:java.lang.String" href="#">
+<a name="java.lang.System:getProperties:java.util.Properties" href="#">
 
 </a>
 <div class="method_signature">
 public static 
-<a href="../../java/lang/String.html">
-java.lang.String
+<a href="../../java/util/Properties.html">
+java.util.Properties
 </a>
  
-<span class="methodname clickable" onclick="showInfoList(this)">
-lineSeparator
+<span>
+getProperties
 </span>
 (
 )
@@ -3602,16 +3718,7 @@ lineSeparator
 Concrete Method 
 </li>
 <li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/util/Formatter$FormatSpecifier.html#java.util.Formatter$FormatSpecifier:print:java.lang.Objectjava.util.Localevoid" title="void print(java.lang.Object, java.util.Locale)">
-java.util.Formatter$FormatSpecifier.print(java.lang.Object, java.util.Locale)
-</a>
-</div>
+Not parsed
 </li>
 </ul>
 </div>
@@ -3619,24 +3726,108 @@ java.util.Formatter$FormatSpecifier.print(java.lang.Object, java.util.Locale)
 <li value="0">
 <div class="instruction">
 <span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/lang/SecurityManager.html">
+java.lang.SecurityManager
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.SecurityManager getSecurityManager()">
+java.lang.System.getSecurityManager
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.lang.System:getSecurityManager:java.lang.SecurityManager" title="java.lang.SecurityManager getSecurityManager()">
+java.lang.System.getSecurityManager
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+astore  0
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+ifnull 7
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void checkPropertiesAccess()">
+java.lang.SecurityManager.checkPropertiesAccess
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
 getstatic 
 </span>
 <span>
-<a href="#java.lang.System:lineSeparator:java.lang.String">
-java.lang.System.lineSeparator
+<a href="#java.lang.System:props:java.util.Properties">
+java.lang.System.props
 </a>
 </span>
 <span>
  : 
 </span>
 <span>
-<a href="../../java/lang/String.html">
-java.lang.String
+<a href="../../java/util/Properties.html">
+java.util.Properties
 </a>
 </span>
 </div>
 </li>
-<li value="3">
+<li value="15">
 <div class="instruction">
 <span>
 areturn
@@ -4860,6 +5051,97 @@ return
 </ol>
 </div>
 <div class="method">
+<a name="java.lang.System:inheritedChannel:java.nio.channels.Channel" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="../../java/nio/channels/Channel.html">
+java.nio.channels.Channel
+</a>
+ 
+<span>
+inheritedChannel
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+java.nio.channels.spi.SelectorProvider
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.channels.spi.SelectorProvider provider()">
+java.nio.channels.spi.SelectorProvider.provider
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/nio/channels/Channel.html">
+java.nio.channels.Channel
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.channels.Channel inheritedChannel()">
+java.nio.channels.spi.SelectorProvider.inheritedChannel
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
 <a name="java.lang.System:nanoTime:J" href="#">
 
 </a>
@@ -4910,110 +5192,21 @@ sun.misc.Hashing.randomHashSeed(java.lang.Object)
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.System:gc:void" href="#">
+<a name="java.lang.System:clearProperty:java.lang.Stringjava.lang.String" href="#">
 
 </a>
 <div class="method_signature">
 public static 
-void
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
  
 <span>
-gc
+clearProperty
 </span>
 (
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../java/lang/Runtime.html">
-java.lang.Runtime
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Runtime getRuntime()">
-java.lang.Runtime.getRuntime
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/Runtime.html#java.lang.Runtime:getRuntime:java.lang.Runtime" title="java.lang.Runtime getRuntime()">
-java.lang.Runtime.getRuntime
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void gc()">
-java.lang.Runtime.gc
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.System:setOut:java.io.PrintStreamvoid" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-void
- 
-<span>
-setOut
-</span>
-(
-<a href="../../java/io/PrintStream.html">
-java.io.PrintStream
+<a href="../../java/lang/String.html">
+java.lang.String
 </a>
  0
 )
@@ -5024,277 +5217,6 @@ Concrete Method
 </li>
 <li>
 Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void checkIO()">
-java.lang.System.checkIO
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void setOut0(java.io.PrintStream)">
-java.lang.System.setOut0
-</span>
-</span>
-<span>
-(
-<a href="../../java/io/PrintStream.html">
-java.io.PrintStream
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.lang.System:setOut0:java.io.PrintStreamvoid" title="void setOut0(java.io.PrintStream)">
-java.lang.System.setOut0
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.System:exit:Ivoid" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-void
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-exit
-</span>
-(
-int
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../sun/security/util/Debug.html#sun.security.util.Debug:Help:void" title="void Help()">
-sun.security.util.Debug.Help()
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../java/lang/Runtime.html">
-java.lang.Runtime
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Runtime getRuntime()">
-java.lang.Runtime.getRuntime
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/Runtime.html#java.lang.Runtime:getRuntime:java.lang.Runtime" title="java.lang.Runtime getRuntime()">
-java.lang.Runtime.getRuntime
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void exit(int)">
-java.lang.Runtime.exit
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/Runtime.html#java.lang.Runtime:exit:Ivoid" title="void exit(int)">
-java.lang.Runtime.exit
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.System:setErr0:java.io.PrintStreamvoid" href="#">
-
-</a>
-<div class="method_signature">
-private static native 
-void
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-setErr0
-</span>
-(
-<a href="../../java/io/PrintStream.html">
-java.io.PrintStream
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.lang.System:initializeSystemClass:void" title="void initializeSystemClass()">
-java.lang.System.initializeSystemClass()
-</a>
-</div>
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.System:setProperty:java.lang.Stringjava.lang.Stringjava.lang.String" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-setProperty
-</span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- 0
-, 
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../sun/misc/Version.html#sun.misc.Version:init:void" title="void init()">
-sun.misc.Version.init()
-</a>
-</div>
 </li>
 </ul>
 </div>
@@ -5370,14 +5292,14 @@ java.lang.System.getSecurityManager
 <li value="7">
 <div class="instruction">
 <span>
-astore  2
+astore  1
 </span>
 </div>
 </li>
 <li value="8">
 <div class="instruction">
 <span>
-aload  2
+aload  1
 </span>
 </div>
 </li>
@@ -5391,7 +5313,7 @@ ifnull 17
 <li value="12">
 <div class="instruction">
 <span>
-aload  2
+aload  1
 </span>
 </div>
 </li>
@@ -5524,13 +5446,6 @@ aload  0
 <li value="30">
 <div class="instruction">
 <span>
-aload  1
-</span>
-</div>
-</li>
-<li value="31">
-<div class="instruction">
-<span>
 invokevirtual 
 </span>
 <span>
@@ -5539,33 +5454,29 @@ java.lang.Object
 </a>
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Object setProperty(java.lang.String, java.lang.String)">
-java.util.Properties.setProperty
+<span title="java.lang.Object remove(java.lang.Object)">
+java.util.Properties.remove
 </span>
 </span>
 <span>
 (
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-, 
-<a href="../../java/lang/String.html">
-java.lang.String
+<a href="../../java/lang/Object.html">
+java.lang.Object
 </a>
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/util/Properties.html#java.util.Properties:setProperty:java.lang.Stringjava.lang.Stringjava.lang.Object" title="java.lang.Object setProperty(java.lang.String, java.lang.String)">
-java.util.Properties.setProperty
+<a href="../../java/util/Hashtable.html#java.util.Hashtable:remove:java.lang.Objectjava.lang.Object" title="java.lang.Object remove(java.lang.Object)">
+java.util.Hashtable.remove
 </a>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="34">
+<li value="33">
 <div class="instruction">
 <span>
 checkcast 
@@ -5577,7 +5488,7 @@ java.lang.String
 </span>
 </div>
 </li>
-<li value="37">
+<li value="36">
 <div class="instruction">
 <span>
 areturn
@@ -5589,17 +5500,986 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.System:getenv:java.util.Map" href="#">
+<a name="java.lang.System:getenv:java.lang.Stringjava.lang.String" href="#">
 
 </a>
 <div class="method_signature">
 public static 
-<a href="../../java/util/Map.html">
-java.util.Map
+<a href="../../java/lang/String.html">
+java.lang.String
 </a>
  
 <span>
 getenv
+</span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/lang/SecurityManager.html">
+java.lang.SecurityManager
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.SecurityManager getSecurityManager()">
+java.lang.System.getSecurityManager
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.lang.System:getSecurityManager:java.lang.SecurityManager" title="java.lang.SecurityManager getSecurityManager()">
+java.lang.System.getSecurityManager
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+astore  1
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+ifnull 33
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/RuntimePermission.html">
+java.lang.RuntimePermission
+</a>
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.StringBuilder.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+ldc string &apos;getenv.&apos;
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toString()">
+java.lang.StringBuilder.toString
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:toString:java.lang.String" title="java.lang.String toString()">
+java.lang.StringBuilder.toString
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.lang.RuntimePermission.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/RuntimePermission.html#java.lang.RuntimePermission:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
+java.lang.RuntimePermission.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void checkPermission(java.security.Permission)">
+java.lang.SecurityManager.checkPermission
+</span>
+</span>
+<span>
+(
+<a href="../../java/security/Permission.html">
+java.security.Permission
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/SecurityManager.html#java.lang.SecurityManager:checkPermission:java.security.Permissionvoid" title="void checkPermission(java.security.Permission)">
+java.lang.SecurityManager.checkPermission
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String getenv(java.lang.String)">
+java.lang.ProcessEnvironment.getenv
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.System:setIn:java.io.InputStreamvoid" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+void
+ 
+<span>
+setIn
+</span>
+(
+<a href="../../java/io/InputStream.html">
+java.io.InputStream
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void checkIO()">
+java.lang.System.checkIO
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void setIn0(java.io.InputStream)">
+java.lang.System.setIn0
+</span>
+</span>
+<span>
+(
+<a href="../../java/io/InputStream.html">
+java.io.InputStream
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.lang.System:setIn0:java.io.InputStreamvoid" title="void setIn0(java.io.InputStream)">
+java.lang.System.setIn0
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.System:exit:Ivoid" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+exit
+</span>
+(
+int
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/security/util/Debug.html#sun.security.util.Debug:Help:void" title="void Help()">
+sun.security.util.Debug.Help()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/lang/Runtime.html">
+java.lang.Runtime
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Runtime getRuntime()">
+java.lang.Runtime.getRuntime
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Runtime.html#java.lang.Runtime:getRuntime:java.lang.Runtime" title="java.lang.Runtime getRuntime()">
+java.lang.Runtime.getRuntime
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void exit(int)">
+java.lang.Runtime.exit
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Runtime.html#java.lang.Runtime:exit:Ivoid" title="void exit(int)">
+java.lang.Runtime.exit
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.System:setIn0:java.io.InputStreamvoid" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+setIn0
+</span>
+(
+<a href="../../java/io/InputStream.html">
+java.io.InputStream
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.lang.System:initializeSystemClass:void" title="void initializeSystemClass()">
+java.lang.System.initializeSystemClass()
+</a>
+</div>
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.System:initProperties:java.util.Propertiesjava.util.Properties" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+<a href="../../java/util/Properties.html">
+java.util.Properties
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+initProperties
+</span>
+(
+<a href="../../java/util/Properties.html">
+java.util.Properties
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.lang.System:initializeSystemClass:void" title="void initializeSystemClass()">
+java.lang.System.initializeSystemClass()
+</a>
+</div>
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.System:setProperties:java.util.Propertiesvoid" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+void
+ 
+<span>
+setProperties
+</span>
+(
+<a href="../../java/util/Properties.html">
+java.util.Properties
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/lang/SecurityManager.html">
+java.lang.SecurityManager
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.SecurityManager getSecurityManager()">
+java.lang.System.getSecurityManager
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.lang.System:getSecurityManager:java.lang.SecurityManager" title="java.lang.SecurityManager getSecurityManager()">
+java.lang.System.getSecurityManager
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+astore  1
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+ifnull 7
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void checkPropertiesAccess()">
+java.lang.SecurityManager.checkPropertiesAccess
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+ifnonnull 16
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/util/Properties.html">
+java.util.Properties
+</a>
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.util.Properties.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/Properties.html#java.util.Properties:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.util.Properties.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+astore  0
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/util/Properties.html">
+java.util.Properties
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.util.Properties initProperties(java.util.Properties)">
+java.lang.System.initProperties
+</span>
+</span>
+<span>
+(
+<a href="../../java/util/Properties.html">
+java.util.Properties
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.lang.System:initProperties:java.util.Propertiesjava.util.Properties" title="java.util.Properties initProperties(java.util.Properties)">
+java.lang.System.initProperties
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+pop
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#java.lang.System:props:java.util.Properties">
+java.lang.System.props
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/util/Properties.html">
+java.util.Properties
+</a>
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.System:registerNatives:void" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+registerNatives
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.lang.System:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.lang.System.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.System:checkIO:void" href="#">
+
+</a>
+<div class="method_signature">
+private static 
+void
+ 
+<span>
+checkIO
 </span>
 (
 )
@@ -5694,7 +6574,7 @@ dup
 <li value="13">
 <div class="instruction">
 <span>
-ldc string &apos;getenv.*&apos;
+ldc string &apos;setIO&apos;
 </span>
 </div>
 </li>
@@ -5761,451 +6641,6 @@ java.lang.SecurityManager.checkPermission
 </div>
 </li>
 <li value="21">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../java/util/Map.html">
-java.util.Map
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.util.Map getenv()">
-java.lang.ProcessEnvironment.getenv
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.System:registerNatives:void" href="#">
-
-</a>
-<div class="method_signature">
-private static native 
-void
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-registerNatives
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.lang.System:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
-java.lang.System.&lt;clinit&gt;()
-</a>
-</div>
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.System:console:java.io.Console" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-<a href="../../java/io/Console.html">
-java.io.Console
-</a>
- 
-<span>
-console
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.lang.System:cons:java.io.Console">
-java.lang.System.cons
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/io/Console.html">
-java.io.Console
-</a>
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-ifnonnull 30
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-ldc class Ljava/lang/System;
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-astore  0
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-monitorenter
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../sun/misc/JavaIOAccess.html">
-sun.misc.JavaIOAccess
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="sun.misc.JavaIOAccess getJavaIOAccess()">
-sun.misc.SharedSecrets.getJavaIOAccess
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-invokeinterface 
-</span>
-<span>
-<a href="../../java/io/Console.html">
-java.io.Console
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.io.Console console()">
-sun.misc.JavaIOAccess.console
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-putstatic 
-</span>
-<span>
-<a href="#java.lang.System:cons:java.io.Console">
-java.lang.System.cons
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/io/Console.html">
-java.io.Console
-</a>
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-monitorexit
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-goto 8
-</span>
-</div>
-</li>
-<li value="28">
-<div class="instruction">
-<span>
-astore  1
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-monitorexit
-</span>
-</div>
-</li>
-<li value="31">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="32">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="33">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.lang.System:cons:java.io.Console">
-java.lang.System.cons
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/io/Console.html">
-java.io.Console
-</a>
-</span>
-</div>
-</li>
-<li value="36">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<span title="Exceptions">
-<h3>
-Exceptions handling:
-</h3>
-<ol>
-<li>
-<span>
-try start: 12; try end: 25: catch start: 28; catched type: None (finally block).
-</span>
-</li>
-<li>
-<span>
-try start: 28; try end: 31: catch start: 28; catched type: None (finally block).
-</span>
-</li>
-</ol>
-</span>
-</div>
-<div class="method">
-<a name="java.lang.System:setJavaLangAccess:void" href="#">
-
-</a>
-<div class="method_signature">
-private static 
-void
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-setJavaLangAccess
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.lang.System:initializeSystemClass:void" title="void initializeSystemClass()">
-java.lang.System.initializeSystemClass()
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/System$2.html">
-java.lang.System$2
-</a>
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.System$2.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/System$2.html#java.lang.System$2:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.lang.System$2.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void setJavaLangAccess(sun.misc.JavaLangAccess)">
-sun.misc.SharedSecrets.setJavaLangAccess
-</span>
-</span>
-<span>
-(
-<a href="../../sun/misc/JavaLangAccess.html">
-sun.misc.JavaLangAccess
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../sun/misc/SharedSecrets.html#sun.misc.SharedSecrets:setJavaLangAccess:sun.misc.JavaLangAccessvoid" title="void setJavaLangAccess(sun.misc.JavaLangAccess)">
-sun.misc.SharedSecrets.setJavaLangAccess
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="10">
 <div class="instruction">
 <span>
 return
@@ -6886,7 +7321,7 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.System:runFinalizersOnExit:Zvoid" href="#">
+<a name="java.lang.System:runFinalization:void" href="#">
 
 </a>
 <div class="method_signature">
@@ -6894,11 +7329,9 @@ public static
 void
  
 <span>
-runFinalizersOnExit
+runFinalization
 </span>
 (
-bool
- 0
 )
 ;
 <ul class="annot">
@@ -6944,33 +7377,18 @@ java.lang.Runtime.getRuntime
 <li value="3">
 <div class="instruction">
 <span>
-pop
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-invokestatic 
+invokevirtual 
 </span>
 <span>
 void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void runFinalizersOnExit(bool)">
-java.lang.Runtime.runFinalizersOnExit
+<span title="void runFinalization()">
+java.lang.Runtime.runFinalization
 </span>
 </span>
 <span>
 (
-bool
 )
 </span>
 <ul class="clickable">
@@ -6982,7 +7400,7 @@ No reachable result.
 </ul>
 </div>
 </li>
-<li value="8">
+<li value="6">
 <div class="instruction">
 <span>
 return
@@ -6994,19 +7412,19 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.System:setSecurityManager:java.lang.SecurityManagervoid" href="#">
+<a name="java.lang.System:setErr:java.io.PrintStreamvoid" href="#">
 
 </a>
 <div class="method_signature">
 public static 
 void
  
-<span class="methodname clickable" onclick="showInfoList(this)">
-setSecurityManager
+<span>
+setErr
 </span>
 (
-<a href="../../java/lang/SecurityManager.html">
-java.lang.SecurityManager
+<a href="../../java/io/PrintStream.html">
+java.io.PrintStream
 </a>
  0
 )
@@ -7016,171 +7434,7 @@ java.lang.SecurityManager
 Concrete Method 
 </li>
 <li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../sun/misc/Launcher.html#sun.misc.Launcher:&lt;init&gt;:void" title="void &lt;init&gt;()">
-sun.misc.Launcher.&lt;init&gt;()
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-ldc string &apos;java.lang&apos;
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void checkPackageAccess(java.lang.String)">
-java.lang.SecurityManager.checkPackageAccess
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/SecurityManager.html#java.lang.SecurityManager:checkPackageAccess:java.lang.Stringvoid" title="void checkPackageAccess(java.lang.String)">
-java.lang.SecurityManager.checkPackageAccess
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-astore  1
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void setSecurityManager0(java.lang.SecurityManager)">
-java.lang.System.setSecurityManager0
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/SecurityManager.html">
-java.lang.SecurityManager
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.lang.System:setSecurityManager0:java.lang.SecurityManagervoid" title="void setSecurityManager0(java.lang.SecurityManager)">
-java.lang.System.setSecurityManager0
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<span title="Exceptions">
-<h3>
-Exceptions handling:
-</h3>
-<ol>
-<li>
-<span>
-try start: 0; try end: 6: catch start: 9; catched type: java.lang.Exception.
-</span>
-</li>
-</ol>
-</span>
-</div>
-<div class="method">
-<a name="java.lang.System:setSecurityManager0:java.lang.SecurityManagervoid" href="#">
-
-</a>
-<div class="method_signature">
-private static synchronized 
-void
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-setSecurityManager0
-</span>
-(
-<a href="../../java/lang/SecurityManager.html">
-java.lang.SecurityManager
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.lang.System:setSecurityManager:java.lang.SecurityManagervoid" title="void setSecurityManager(java.lang.SecurityManager)">
-java.lang.System.setSecurityManager(java.lang.SecurityManager)
-</a>
-</div>
+Not parsed
 </li>
 </ul>
 </div>
@@ -7191,13 +7445,11 @@ java.lang.System.setSecurityManager(java.lang.SecurityManager)
 invokestatic 
 </span>
 <span>
-<a href="../../java/lang/SecurityManager.html">
-java.lang.SecurityManager
-</a>
+void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.SecurityManager getSecurityManager()">
-java.lang.System.getSecurityManager
+<span title="void checkIO()">
+java.lang.System.checkIO
 </span>
 </span>
 <span>
@@ -7207,9 +7459,7 @@ java.lang.System.getSecurityManager
 <ul class="clickable">
 <li>
 <div>
-<a href="#java.lang.System:getSecurityManager:java.lang.SecurityManager" title="java.lang.SecurityManager getSecurityManager()">
-java.lang.System.getSecurityManager
-</a>
+No reachable result.
 </div>
 </li>
 </ul>
@@ -7218,332 +7468,42 @@ java.lang.System.getSecurityManager
 <li value="3">
 <div class="instruction">
 <span>
-astore  1
+aload  0
 </span>
 </div>
 </li>
 <li value="4">
 <div class="instruction">
 <span>
-aload  1
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-ifnull 16
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/RuntimePermission.html">
-java.lang.RuntimePermission
-</a>
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-ldc string &apos;setSecurityManager&apos;
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.lang.RuntimePermission.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/RuntimePermission.html#java.lang.RuntimePermission:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
-java.lang.RuntimePermission.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void checkPermission(java.security.Permission)">
-java.lang.SecurityManager.checkPermission
-</span>
-</span>
-<span>
-(
-<a href="../../java/security/Permission.html">
-java.security.Permission
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/SecurityManager.html#java.lang.SecurityManager:checkPermission:java.security.Permissionvoid" title="void checkPermission(java.security.Permission)">
-java.lang.SecurityManager.checkPermission
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-ifnull 25
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/Class.html">
-java.lang.Class
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Class getClass()">
-java.lang.Object.getClass
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/Object.html#java.lang.Object:getClass:java.lang.Class" title="java.lang.Class getClass()">
-java.lang.Object.getClass
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/ClassLoader.html">
-java.lang.ClassLoader
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.ClassLoader getClassLoader()">
-java.lang.Class.getClassLoader
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/Class.html#java.lang.Class:getClassLoader:java.lang.ClassLoader" title="java.lang.ClassLoader getClassLoader()">
-java.lang.Class.getClassLoader
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="32">
-<div class="instruction">
-<span>
-ifnull 15
-</span>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/System$1.html">
-java.lang.System$1
-</a>
-</span>
-</div>
-</li>
-<li value="38">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="39">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="40">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.SecurityManager)">
-java.lang.System$1.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/SecurityManager.html">
-java.lang.SecurityManager
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/System$1.html#java.lang.System$1:&lt;init&gt;:java.lang.SecurityManagervoid" title="void &lt;init&gt;(java.lang.SecurityManager)">
-java.lang.System$1.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="43">
-<div class="instruction">
-<span>
 invokestatic 
 </span>
 <span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
+void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Object doPrivileged(java.security.PrivilegedAction)">
-java.security.AccessController.doPrivileged
+<span title="void setErr0(java.io.PrintStream)">
+java.lang.System.setErr0
 </span>
 </span>
 <span>
 (
-<a href="../../java/security/PrivilegedAction.html">
-java.security.PrivilegedAction
+<a href="../../java/io/PrintStream.html">
+java.io.PrintStream
 </a>
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/security/AccessController.html#java.security.AccessController:doPrivileged:java.security.PrivilegedActionjava.lang.Object" title="java.lang.Object doPrivileged(java.security.PrivilegedAction)">
-java.security.AccessController.doPrivileged
+<a href="#java.lang.System:setErr0:java.io.PrintStreamvoid" title="void setErr0(java.io.PrintStream)">
+java.lang.System.setErr0
 </a>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="46">
-<div class="instruction">
-<span>
-pop
-</span>
-</div>
-</li>
-<li value="47">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="48">
-<div class="instruction">
-<span>
-putstatic 
-</span>
-<span>
-<a href="#java.lang.System:security:java.lang.SecurityManager">
-java.lang.System.security
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/SecurityManager.html">
-java.lang.SecurityManager
-</a>
-</span>
-</div>
-</li>
-<li value="51">
+<li value="7">
 <div class="instruction">
 <span>
 return
@@ -7551,6 +7511,46 @@ return
 </div>
 </li>
 </ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.System:setOut0:java.io.PrintStreamvoid" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+setOut0
+</span>
+(
+<a href="../../java/io/PrintStream.html">
+java.io.PrintStream
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.lang.System:initializeSystemClass:void" title="void initializeSystemClass()">
+java.lang.System.initializeSystemClass()
+</a>
+</div>
+</li>
+</ul>
+</div>
+
 <ol>
 </ol>
 </div>

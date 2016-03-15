@@ -382,7 +382,7 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.nio.charset.Charset:lookupExtendedCharset:java.lang.Stringjava.nio.charset.Charset" href="#">
+<a name="java.nio.charset.Charset:lookup2:java.lang.Stringjava.nio.charset.Charset" href="#">
 
 </a>
 <div class="method_signature">
@@ -392,7 +392,7 @@ java.nio.charset.Charset
 </a>
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-lookupExtendedCharset
+lookup2
 </span>
 (
 <a href="../../../java/lang/String.html">
@@ -412,8 +412,8 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="#java.nio.charset.Charset:lookup2:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset lookup2(java.lang.String)">
-java.nio.charset.Charset.lookup2(java.lang.String)
+<a href="#java.nio.charset.Charset:lookup:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset lookup(java.lang.String)">
+java.nio.charset.Charset.lookup(java.lang.String)
 </a>
 </div>
 </li>
@@ -426,8 +426,226 @@ java.nio.charset.Charset.lookup2(java.lang.String)
 getstatic 
 </span>
 <span>
-<a href="../../../java/nio/charset/Charset$ExtendedProviderHolder.html#java.nio.charset.Charset$ExtendedProviderHolder:extendedProvider:java.nio.charset.spi.CharsetProvider">
-java.nio.charset.Charset$ExtendedProviderHolder.extendedProvider
+<a href="#java.nio.charset.Charset:cache2:java.lang.Object.-">
+java.nio.charset.Charset.cache2
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+astore  1
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+ifnull 30
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+aaload
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool equals(java.lang.Object)">
+java.lang.String.equals
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/String.html#java.lang.String:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.lang.String.equals
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+ifeq 20
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.nio.charset.Charset:cache1:java.lang.Object.-">
+java.nio.charset.Charset.cache1
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#java.nio.charset.Charset:cache2:java.lang.Object.-">
+java.nio.charset.Charset.cache2
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#java.nio.charset.Charset:cache1:java.lang.Object.-">
+java.nio.charset.Charset.cache1
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+aaload
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="Charset.html">
+java.nio.charset.Charset
+</a>
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.nio.charset.Charset:standardProvider:java.nio.charset.spi.CharsetProvider">
+java.nio.charset.Charset.standardProvider
 </a>
 </span>
 <span>
@@ -440,42 +658,14 @@ java.nio.charset.spi.CharsetProvider
 </span>
 </div>
 </li>
-<li value="3">
-<div class="instruction">
-<span>
-astore  1
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-ifnull 11
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="9">
+<li value="38">
 <div class="instruction">
 <span>
 aload  0
 </span>
 </div>
 </li>
-<li value="10">
+<li value="39">
 <div class="instruction">
 <span>
 invokevirtual 
@@ -508,21 +698,258 @@ sun.nio.cs.FastCharsetProvider.charsetForName
 </ul>
 </div>
 </li>
-<li value="13">
+<li value="42">
 <div class="instruction">
 <span>
-goto 4
+dup
 </span>
 </div>
 </li>
-<li value="16">
+<li value="43">
+<div class="instruction">
+<span>
+astore  2
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+ifnonnull 21
+</span>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="Charset.html">
+java.nio.charset.Charset
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.charset.Charset lookupExtendedCharset(java.lang.String)">
+java.nio.charset.Charset.lookupExtendedCharset
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.charset.Charset:lookupExtendedCharset:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset lookupExtendedCharset(java.lang.String)">
+java.nio.charset.Charset.lookupExtendedCharset
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="51">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="52">
+<div class="instruction">
+<span>
+astore  2
+</span>
+</div>
+</li>
+<li value="53">
+<div class="instruction">
+<span>
+ifnonnull 12
+</span>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="57">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="Charset.html">
+java.nio.charset.Charset
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.charset.Charset lookupViaProviders(java.lang.String)">
+java.nio.charset.Charset.lookupViaProviders
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.charset.Charset:lookupViaProviders:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset lookupViaProviders(java.lang.String)">
+java.nio.charset.Charset.lookupViaProviders
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="60">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="61">
+<div class="instruction">
+<span>
+astore  2
+</span>
+</div>
+</li>
+<li value="62">
+<div class="instruction">
+<span>
+ifnull 10
+</span>
+</div>
+</li>
+<li value="65">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="66">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="67">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void cache(java.lang.String, java.nio.charset.Charset)">
+java.nio.charset.Charset.cache
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+, 
+<a href="Charset.html">
+java.nio.charset.Charset
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.charset.Charset:cache:java.lang.Stringjava.nio.charset.Charsetvoid" title="void cache(java.lang.String, java.nio.charset.Charset)">
+java.nio.charset.Charset.cache
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="70">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="71">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+<li value="72">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="73">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void checkName(java.lang.String)">
+java.nio.charset.Charset.checkName
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.charset.Charset:checkName:java.lang.Stringvoid" title="void checkName(java.lang.String)">
+java.nio.charset.Charset.checkName
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="76">
 <div class="instruction">
 <span>
 aconstnull
 </span>
 </div>
 </li>
-<li value="17">
+<li value="77">
 <div class="instruction">
 <span>
 areturn
@@ -534,172 +961,21 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.nio.charset.Charset:contains:java.nio.charset.CharsetZ" href="#">
+<a name="java.nio.charset.Charset:displayName:java.util.Localejava.lang.String" href="#">
 
 </a>
 <div class="method_signature">
-public abstract 
-bool
- 
-<span>
-contains
-</span>
-(
-<a href="Charset.html">
-java.nio.charset.Charset
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.charset.Charset:isSupported:java.lang.StringZ" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-bool
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-isSupported
-</span>
-(
+public 
 <a href="../../../java/lang/String.html">
 java.lang.String
 </a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/lang/StringCoding.html#java.lang.StringCoding:lookupCharset:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset lookupCharset(java.lang.String)">
-java.lang.StringCoding.lookupCharset(java.lang.String)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:forOutputStreamWriter:java.io.OutputStreamjava.lang.Objectjava.lang.Stringsun.nio.cs.StreamEncoder" title="sun.nio.cs.StreamEncoder forOutputStreamWriter(java.io.OutputStream, java.lang.Object, java.lang.String)">
-sun.nio.cs.StreamEncoder.forOutputStreamWriter(java.io.OutputStream, java.lang.Object, java.lang.String)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="Charset.html">
-java.nio.charset.Charset
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.nio.charset.Charset lookup(java.lang.String)">
-java.nio.charset.Charset.lookup
-</span>
-</span>
-<span>
-(
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.charset.Charset:lookup:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset lookup(java.lang.String)">
-java.nio.charset.Charset.lookup
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ifnull 7
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.charset.Charset:decode:java.nio.ByteBufferjava.nio.CharBuffer" href="#">
-
-</a>
-<div class="method_signature">
-public final 
-<a href="../../../java/nio/CharBuffer.html">
-java.nio.CharBuffer
-</a>
  
 <span>
-decode
+displayName
 </span>
 (
-<a href="../../../java/nio/ByteBuffer.html">
-java.nio.ByteBuffer
+<a href="../../../java/util/Locale.html">
+java.util.Locale
 </a>
  1
 )
@@ -724,347 +1000,55 @@ aload  0
 <li value="1">
 <div class="instruction">
 <span>
-invokestatic 
+getfield 
 </span>
 <span>
-<a href="../../../java/nio/charset/CharsetDecoder.html">
-java.nio.charset.CharsetDecoder
+<a href="#java.nio.charset.Charset:name:java.lang.String">
+java.nio.charset.Charset.name
 </a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.nio.charset.CharsetDecoder decoderFor(java.lang.Object)">
-sun.nio.cs.ThreadLocalCoders.decoderFor
-</span>
 </span>
 <span>
-(
-<a href="../../../java/lang/Object.html">
-java.lang.Object
-</a>
-)
+ : 
 </span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
 </div>
 </li>
 <li value="4">
 <div class="instruction">
 <span>
-getstatic 
-</span>
-<span>
-<a href="../../../java/nio/charset/CodingErrorAction.html#java.nio.charset.CodingErrorAction:REPLACE:java.nio.charset.CodingErrorAction">
-java.nio.charset.CodingErrorAction.REPLACE
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/nio/charset/CodingErrorAction.html">
-java.nio.charset.CodingErrorAction
-</a>
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../../java/nio/charset/CharsetDecoder.html">
-java.nio.charset.CharsetDecoder
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.nio.charset.CharsetDecoder onMalformedInput(java.nio.charset.CodingErrorAction)">
-java.nio.charset.CharsetDecoder.onMalformedInput
-</span>
-</span>
-<span>
-(
-<a href="../../../java/nio/charset/CodingErrorAction.html">
-java.nio.charset.CodingErrorAction
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/nio/charset/CharsetDecoder.html#java.nio.charset.CharsetDecoder:onMalformedInput:java.nio.charset.CodingErrorActionjava.nio.charset.CharsetDecoder" title="java.nio.charset.CharsetDecoder onMalformedInput(java.nio.charset.CodingErrorAction)">
-java.nio.charset.CharsetDecoder.onMalformedInput
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="../../../java/nio/charset/CodingErrorAction.html#java.nio.charset.CodingErrorAction:REPLACE:java.nio.charset.CodingErrorAction">
-java.nio.charset.CodingErrorAction.REPLACE
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/nio/charset/CodingErrorAction.html">
-java.nio.charset.CodingErrorAction
-</a>
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../../java/nio/charset/CharsetDecoder.html">
-java.nio.charset.CharsetDecoder
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.nio.charset.CharsetDecoder onUnmappableCharacter(java.nio.charset.CodingErrorAction)">
-java.nio.charset.CharsetDecoder.onUnmappableCharacter
-</span>
-</span>
-<span>
-(
-<a href="../../../java/nio/charset/CodingErrorAction.html">
-java.nio.charset.CodingErrorAction
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/nio/charset/CharsetDecoder.html#java.nio.charset.CharsetDecoder:onUnmappableCharacter:java.nio.charset.CodingErrorActionjava.nio.charset.CharsetDecoder" title="java.nio.charset.CharsetDecoder onUnmappableCharacter(java.nio.charset.CodingErrorAction)">
-java.nio.charset.CharsetDecoder.onUnmappableCharacter
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../../java/nio/CharBuffer.html">
-java.nio.CharBuffer
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.nio.CharBuffer decode(java.nio.ByteBuffer)">
-java.nio.charset.CharsetDecoder.decode
-</span>
-</span>
-<span>
-(
-<a href="../../../java/nio/ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
 areturn
 </span>
 </div>
 </li>
-<li value="21">
-<div class="instruction">
-<span>
-astore  2
-</span>
+</ol>
+<ol>
+</ol>
 </div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../../java/lang/Error.html">
-java.lang.Error
+<div class="method">
+<a name="java.nio.charset.Charset:put:java.util.Iteratorjava.util.Mapvoid" href="#">
+
 </a>
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
+<div class="method_signature">
+private static 
 void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.Throwable)">
-java.lang.Error.&lt;init&gt;
-</span>
-</span>
+ 
 <span>
+put
+</span>
 (
-<a href="../../../java/lang/Throwable.html">
-java.lang.Throwable
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-</ol>
-<span title="Exceptions">
-<h3>
-Exceptions handling:
-</h3>
-<ol>
-<li>
-<span>
-try start: 0; try end: 20: catch start: 21; catched type: java.nio.charset.CharacterCodingException.
-</span>
-</li>
-</ol>
-</span>
-</div>
-<div class="method">
-<a name="java.nio.charset.Charset:access$000:java.util.Iterator" href="#">
-
-</a>
-<div class="method_signature">
- static 
 <a href="../../../java/util/Iterator.html">
 java.util.Iterator
 </a>
- 
-<span>
-access$000
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../../java/util/Iterator.html">
-java.util.Iterator
+ 0
+, 
+<a href="../../../java/util/Map.html">
+java.util.Map
 </a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.util.Iterator providers()">
-java.nio.charset.Charset.providers
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.charset.Charset:aliases:java.util.Set" href="#">
-
-</a>
-<div class="method_signature">
-public final 
-<a href="../../../java/util/Set.html">
-java.util.Set
-</a>
- 
-<span>
-aliases
-</span>
-(
+ 1
 )
 ;
 <ul class="annot">
@@ -1087,261 +1071,485 @@ aload  0
 <li value="1">
 <div class="instruction">
 <span>
-getfield 
+invokeinterface 
 </span>
 <span>
-<a href="#java.nio.charset.Charset:aliasSet:java.util.Set">
-java.nio.charset.Charset.aliasSet
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool hasNext()">
+java.util.Iterator.hasNext
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/AbstractMap$2$1.html#java.util.AbstractMap$2$1:hasNext:Z" title="bool hasNext()">
+java.util.AbstractMap$2$1.hasNext
 </a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/util/Set.html">
-java.util.Set
-</a>
-</span>
 </div>
 </li>
-<li value="4">
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap$HashIterator.html#java.util.concurrent.ConcurrentHashMap$HashIterator:hasNext:Z" title="bool hasNext()">
+java.util.concurrent.ConcurrentHashMap$HashIterator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/IdentityHashMap$IdentityHashMapIterator.html#java.util.IdentityHashMap$IdentityHashMapIterator:hasNext:Z" title="bool hasNext()">
+java.util.IdentityHashMap$IdentityHashMapIterator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$UnmodifiableCollection$1.html#java.util.Collections$UnmodifiableCollection$1:hasNext:Z" title="bool hasNext()">
+java.util.Collections$UnmodifiableCollection$1.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$UnmodifiableList$1.html#java.util.Collections$UnmodifiableList$1:hasNext:Z" title="bool hasNext()">
+java.util.Collections$UnmodifiableList$1.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/LinkedList$ListItr.html#java.util.LinkedList$ListItr:hasNext:Z" title="bool hasNext()">
+java.util.LinkedList$ListItr.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/WeakHashMap$HashIterator.html#java.util.WeakHashMap$HashIterator:hasNext:Z" title="bool hasNext()">
+java.util.WeakHashMap$HashIterator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/ArrayList$Itr.html#java.util.ArrayList$Itr:hasNext:Z" title="bool hasNext()">
+java.util.ArrayList$Itr.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$EmptyIterator.html#java.util.Collections$EmptyIterator:hasNext:Z" title="bool hasNext()">
+java.util.Collections$EmptyIterator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/PreHashedMap$2$1.html#sun.util.PreHashedMap$2$1:hasNext:Z" title="bool hasNext()">
+sun.util.PreHashedMap$2$1.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Vector$Itr.html#java.util.Vector$Itr:hasNext:Z" title="bool hasNext()">
+java.util.Vector$Itr.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/LinkedHashMap$LinkedHashIterator.html#java.util.LinkedHashMap$LinkedHashIterator:hasNext:Z" title="bool hasNext()">
+java.util.LinkedHashMap$LinkedHashIterator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable$Enumerator.html#java.util.Hashtable$Enumerator:hasNext:Z" title="bool hasNext()">
+java.util.Hashtable$Enumerator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/ArrayList$SubList$1.html#java.util.ArrayList$SubList$1:hasNext:Z" title="bool hasNext()">
+java.util.ArrayList$SubList$1.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/PreHashedMap$1$1.html#sun.util.PreHashedMap$1$1:hasNext:Z" title="bool hasNext()">
+sun.util.PreHashedMap$1$1.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap$HashIterator.html#java.util.HashMap$HashIterator:hasNext:Z" title="bool hasNext()">
+java.util.HashMap$HashIterator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeMap$PrivateEntryIterator.html#java.util.TreeMap$PrivateEntryIterator:hasNext:Z" title="bool hasNext()">
+java.util.TreeMap$PrivateEntryIterator.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$1.html#java.util.Collections$1:hasNext:Z" title="bool hasNext()">
+java.util.Collections$1.hasNext
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractList$Itr.html#java.util.AbstractList$Itr:hasNext:Z" title="bool hasNext()">
+java.util.AbstractList$Itr.hasNext
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="6">
 <div class="instruction">
 <span>
-ifnull 8
+ifeq 41
 </span>
 </div>
 </li>
-<li value="7">
+<li value="9">
 <div class="instruction">
 <span>
 aload  0
 </span>
 </div>
 </li>
-<li value="8">
+<li value="10">
 <div class="instruction">
 <span>
-getfield 
+invokeinterface 
 </span>
 <span>
-<a href="#java.nio.charset.Charset:aliasSet:java.util.Set">
-java.nio.charset.Charset.aliasSet
+<a href="../../../java/lang/Object.html">
+java.lang.Object
 </a>
 </span>
-<span>
- : 
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object next()">
+java.util.Iterator.next
+</span>
 </span>
 <span>
-<a href="../../../java/util/Set.html">
-java.util.Set
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/LinkedHashMap$EntryIterator.html#java.util.LinkedHashMap$EntryIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.LinkedHashMap$EntryIterator.next
 </a>
-</span>
 </div>
 </li>
-<li value="11">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.nio.charset.Charset:aliases:java.lang.String.-">
-java.nio.charset.Charset.aliases
+<li>
+<div>
+<a href="../../../java/util/LinkedHashMap$ValueIterator.html#java.util.LinkedHashMap$ValueIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.LinkedHashMap$ValueIterator.next
 </a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/lang/String.html">
-java.lang.String
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$1.html#java.util.Collections$1:next:java.lang.Object" title="java.lang.Object next()">
+java.util.Collections$1.next
 </a>
-[]
-</span>
 </div>
 </li>
-<li value="16">
-<div class="instruction">
-<span>
-arraylength
-</span>
+<li>
+<div>
+<a href="../../../java/util/AbstractList$Itr.html#java.util.AbstractList$Itr:next:java.lang.Object" title="java.lang.Object next()">
+java.util.AbstractList$Itr.next
+</a>
 </div>
 </li>
-<li value="17">
+<li>
+<div>
+<a href="../../../java/util/WeakHashMap$ValueIterator.html#java.util.WeakHashMap$ValueIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.WeakHashMap$ValueIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeMap$KeyIterator.html#java.util.TreeMap$KeyIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.TreeMap$KeyIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap$ValueIterator.html#java.util.concurrent.ConcurrentHashMap$ValueIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.concurrent.ConcurrentHashMap$ValueIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap$EntryIterator.html#java.util.concurrent.ConcurrentHashMap$EntryIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.concurrent.ConcurrentHashMap$EntryIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable$Enumerator.html#java.util.Hashtable$Enumerator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.Hashtable$Enumerator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap$EntryIterator.html#java.util.HashMap$EntryIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.HashMap$EntryIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/ArrayList$SubList$1.html#java.util.ArrayList$SubList$1:next:java.lang.Object" title="java.lang.Object next()">
+java.util.ArrayList$SubList$1.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap$KeyIterator.html#java.util.HashMap$KeyIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.HashMap$KeyIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/IdentityHashMap$ValueIterator.html#java.util.IdentityHashMap$ValueIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.IdentityHashMap$ValueIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/PreHashedMap$2$1.html#sun.util.PreHashedMap$2$1:next:java.lang.Object" title="java.lang.Object next()">
+sun.util.PreHashedMap$2$1.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Vector$Itr.html#java.util.Vector$Itr:next:java.lang.Object" title="java.lang.Object next()">
+java.util.Vector$Itr.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/PreHashedMap$1$1.html#sun.util.PreHashedMap$1$1:next:java.lang.Object" title="java.lang.Object next()">
+sun.util.PreHashedMap$1$1.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap$KeyIterator.html#java.util.concurrent.ConcurrentHashMap$KeyIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.concurrent.ConcurrentHashMap$KeyIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractMap$2$1.html#java.util.AbstractMap$2$1:next:java.lang.Object" title="java.lang.Object next()">
+java.util.AbstractMap$2$1.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/IdentityHashMap$KeyIterator.html#java.util.IdentityHashMap$KeyIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.IdentityHashMap$KeyIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$UnmodifiableCollection$1.html#java.util.Collections$UnmodifiableCollection$1:next:java.lang.Object" title="java.lang.Object next()">
+java.util.Collections$UnmodifiableCollection$1.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeMap$ValueIterator.html#java.util.TreeMap$ValueIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.TreeMap$ValueIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/IdentityHashMap$EntryIterator.html#java.util.IdentityHashMap$EntryIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.IdentityHashMap$EntryIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeMap$EntryIterator.html#java.util.TreeMap$EntryIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.TreeMap$EntryIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$UnmodifiableList$1.html#java.util.Collections$UnmodifiableList$1:next:java.lang.Object" title="java.lang.Object next()">
+java.util.Collections$UnmodifiableList$1.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/WeakHashMap$EntryIterator.html#java.util.WeakHashMap$EntryIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.WeakHashMap$EntryIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap$ValueIterator.html#java.util.HashMap$ValueIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.HashMap$ValueIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/WeakHashMap$KeyIterator.html#java.util.WeakHashMap$KeyIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.WeakHashMap$KeyIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/LinkedList$ListItr.html#java.util.LinkedList$ListItr:next:java.lang.Object" title="java.lang.Object next()">
+java.util.LinkedList$ListItr.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/ArrayList$Itr.html#java.util.ArrayList$Itr:next:java.lang.Object" title="java.lang.Object next()">
+java.util.ArrayList$Itr.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/LinkedHashMap$KeyIterator.html#java.util.LinkedHashMap$KeyIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.LinkedHashMap$KeyIterator.next
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$EmptyIterator.html#java.util.Collections$EmptyIterator:next:java.lang.Object" title="java.lang.Object next()">
+java.util.Collections$EmptyIterator.next
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="15">
 <div class="instruction">
 <span>
-istore  1
+checkcast 
+</span>
+<span>
+<a href="Charset.html">
+java.nio.charset.Charset
+</a>
 </span>
 </div>
 </li>
 <li value="18">
 <div class="instruction">
 <span>
-new 
-</span>
-<span>
-<a href="../../../java/util/HashSet.html">
-java.util.HashSet
-</a>
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(int)">
-java.util.HashSet.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
 astore  2
 </span>
 </div>
 </li>
-<li value="27">
+<li value="19">
 <div class="instruction">
 <span>
-iconst 0
+aload  1
 </span>
 </div>
 </li>
-<li value="28">
-<div class="instruction">
-<span>
-istore  3
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="31">
-<div class="instruction">
-<span>
-ifcmpge 20
-</span>
-</div>
-</li>
-<li value="34">
+<li value="20">
 <div class="instruction">
 <span>
 aload  2
 </span>
 </div>
 </li>
-<li value="35">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="36">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.nio.charset.Charset:aliases:java.lang.String.-">
-java.nio.charset.Charset.aliases
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-[]
-</span>
-</div>
-</li>
-<li value="39">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="40">
-<div class="instruction">
-<span>
-aaload
-</span>
-</div>
-</li>
-<li value="41">
+<li value="21">
 <div class="instruction">
 <span>
 invokevirtual 
 </span>
 <span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String name()">
+java.nio.charset.Charset.name
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.charset.Charset:name:java.lang.String" title="java.lang.String name()">
+java.nio.charset.Charset.name
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+invokeinterface 
+</span>
+<span>
 bool
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool add(java.lang.Object)">
-java.util.HashSet.add
+<span title="bool containsKey(java.lang.Object)">
+java.util.Map.containsKey
 </span>
 </span>
 <span>
@@ -1354,83 +1562,447 @@ java.lang.Object
 <ul class="clickable">
 <li>
 <div>
-<a href="../../../java/util/HashSet.html#java.util.HashSet:add:java.lang.ObjectZ" title="bool add(java.lang.Object)">
-java.util.HashSet.add
+<a href="../../../java/util/HashMap.html#java.util.HashMap:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
+java.util.HashMap.containsKey
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$SingletonMap.html#java.util.Collections$SingletonMap:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
+java.util.Collections$SingletonMap.containsKey
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/IdentityHashMap.html#java.util.IdentityHashMap:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
+java.util.IdentityHashMap.containsKey
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap.containsKey
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$EmptyMap.html#java.util.Collections$EmptyMap:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
+java.util.Collections$EmptyMap.containsKey
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeMap.html#java.util.TreeMap:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
+java.util.TreeMap.containsKey
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable.html#java.util.Hashtable:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
+java.util.Hashtable.containsKey
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/WeakHashMap.html#java.util.WeakHashMap:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
+java.util.WeakHashMap.containsKey
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractMap.html#java.util.AbstractMap:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
+java.util.AbstractMap.containsKey
 </a>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="44">
+<li value="29">
 <div class="instruction">
 <span>
-pop
+ifne 15
 </span>
 </div>
 </li>
-<li value="45">
+<li value="32">
 <div class="instruction">
 <span>
-iinc 3 1
+aload  1
 </span>
 </div>
 </li>
-<li value="48">
-<div class="instruction">
-<span>
-goto -19
-</span>
-</div>
-</li>
-<li value="51">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="52">
+<li value="33">
 <div class="instruction">
 <span>
 aload  2
 </span>
 </div>
 </li>
-<li value="53">
+<li value="34">
 <div class="instruction">
 <span>
-invokestatic 
+invokevirtual 
 </span>
 <span>
-<a href="../../../java/util/Set.html">
-java.util.Set
+<a href="../../../java/lang/String.html">
+java.lang.String
 </a>
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.util.Set unmodifiableSet(java.util.Set)">
-java.util.Collections.unmodifiableSet
+<span title="java.lang.String name()">
+java.nio.charset.Charset.name
 </span>
 </span>
 <span>
 (
-<a href="../../../java/util/Set.html">
-java.util.Set
-</a>
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="../../../java/util/Collections.html#java.util.Collections:unmodifiableSet:java.util.Setjava.util.Set" title="java.util.Set unmodifiableSet(java.util.Set)">
-java.util.Collections.unmodifiableSet
+<a href="#java.nio.charset.Charset:name:java.lang.String" title="java.lang.String name()">
+java.nio.charset.Charset.name
 </a>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="56">
+<li value="37">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+invokeinterface 
+</span>
+<span>
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.Map.put
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/util/PreHashedMap.html#sun.util.PreHashedMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+sun.util.PreHashedMap.put
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable.html#java.util.Hashtable:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.Hashtable.put
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap.html#java.util.HashMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.HashMap.put
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap.put
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/WeakHashMap.html#java.util.WeakHashMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.WeakHashMap.put
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeMap.html#java.util.TreeMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.TreeMap.put
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractMap.html#java.util.AbstractMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.AbstractMap.put
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/IdentityHashMap.html#java.util.IdentityHashMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.IdentityHashMap.put
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+pop
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+goto -44
+</span>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.charset.Charset:encode:java.lang.Stringjava.nio.ByteBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+<a href="../../../java/nio/ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+ 
+<span>
+encode
+</span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../../java/nio/CharBuffer.html">
+java.nio.CharBuffer
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.CharBuffer wrap(java.lang.CharSequence)">
+java.nio.CharBuffer.wrap
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/CharSequence.html">
+java.lang.CharSequence
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../../java/nio/ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.ByteBuffer encode(java.nio.CharBuffer)">
+java.nio.charset.Charset.encode
+</span>
+</span>
+<span>
+(
+<a href="../../../java/nio/CharBuffer.html">
+java.nio.CharBuffer
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.charset.Charset:&lt;init&gt;:java.lang.Stringjava.lang.String.-void" href="#">
+
+</a>
+<div class="method_signature">
+protected 
+<span class="methodname clickable" onclick="showInfoList(this)">
+Charset
+</span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 1
+, 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+[]
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/nio/cs/US_ASCII.html#sun.nio.cs.US_ASCII:&lt;init&gt;:void" title="void &lt;init&gt;()">
+sun.nio.cs.US_ASCII.&lt;init&gt;()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Object.html#java.lang.Object:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="6">
 <div class="instruction">
 <span>
 putfield 
@@ -1450,37 +2022,279 @@ java.util.Set
 </span>
 </div>
 </li>
-<li value="59">
+<li value="9">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void checkName(java.lang.String)">
+java.nio.charset.Charset.checkName
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.charset.Charset:checkName:java.lang.Stringvoid" title="void checkName(java.lang.String)">
+java.nio.charset.Charset.checkName
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+ifnonnull 10
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+anewarray 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+astore  3
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+istore  4
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+iload  4
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+ifcmpge 16
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+iload  4
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+aaload
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void checkName(java.lang.String)">
+java.nio.charset.Charset.checkName
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.charset.Charset:checkName:java.lang.Stringvoid" title="void checkName(java.lang.String)">
+java.nio.charset.Charset.checkName
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+iinc 4 1
+</span>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+goto -17
+</span>
+</div>
+</li>
+<li value="49">
 <div class="instruction">
 <span>
 aload  0
 </span>
 </div>
 </li>
-<li value="60">
+<li value="50">
 <div class="instruction">
 <span>
-getfield 
+aload  1
+</span>
+</div>
+</li>
+<li value="51">
+<div class="instruction">
+<span>
+putfield 
 </span>
 <span>
-<a href="#java.nio.charset.Charset:aliasSet:java.util.Set">
-java.nio.charset.Charset.aliasSet
+<a href="#java.nio.charset.Charset:name:java.lang.String">
+java.nio.charset.Charset.name
 </a>
 </span>
 <span>
  : 
 </span>
 <span>
-<a href="../../../java/util/Set.html">
-java.util.Set
+<a href="../../../java/lang/String.html">
+java.lang.String
 </a>
 </span>
 </div>
 </li>
-<li value="63">
+<li value="54">
 <div class="instruction">
 <span>
-areturn
+aload  0
+</span>
+</div>
+</li>
+<li value="55">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.nio.charset.Charset:aliases:java.lang.String.-">
+java.nio.charset.Charset.aliases
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+[]
+</span>
+</div>
+</li>
+<li value="59">
+<div class="instruction">
+<span>
+return
 </span>
 </div>
 </li>
@@ -1597,827 +2411,19 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.nio.charset.Charset:providers:java.util.Iterator" href="#">
+<a name="java.nio.charset.Charset:compareTo:java.nio.charset.CharsetI" href="#">
 
 </a>
 <div class="method_signature">
-private static 
-<a href="../../../java/util/Iterator.html">
-java.util.Iterator
-</a>
- 
-<span>
-providers
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-java.nio.charset.Charset$1
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.nio.charset.Charset$1.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.charset.Charset:cache:java.lang.Stringjava.nio.charset.Charsetvoid" href="#">
-
-</a>
-<div class="method_signature">
-private static 
-void
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-cache
-</span>
-(
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
- 0
-, 
-<a href="Charset.html">
-java.nio.charset.Charset
-</a>
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.charset.Charset:lookup2:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset lookup2(java.lang.String)">
-java.nio.charset.Charset.lookup2(java.lang.String)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.nio.charset.Charset:cache1:java.lang.Object.-">
-java.nio.charset.Charset.cache1
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/lang/Object.html">
-java.lang.Object
-</a>
-[]
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-putstatic 
-</span>
-<span>
-<a href="#java.nio.charset.Charset:cache2:java.lang.Object.-">
-java.nio.charset.Charset.cache2
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/lang/Object.html">
-java.lang.Object
-</a>
-[]
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-iconst 2
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-anewarray 
-</span>
-<span>
-<a href="../../../java/lang/Object.html">
-java.lang.Object
-</a>
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-aastore
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-aastore
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-putstatic 
-</span>
-<span>
-<a href="#java.nio.charset.Charset:cache1:java.lang.Object.-">
-java.nio.charset.Charset.cache1
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/lang/Object.html">
-java.lang.Object
-</a>
-[]
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.charset.Charset:canEncode:Z" href="#">
-
-</a>
-<div class="method_signature">
-public 
-bool
- 
-<span>
-canEncode
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.charset.Charset:newEncoder:java.nio.charset.CharsetEncoder" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-<a href="../../../java/nio/charset/CharsetEncoder.html">
-java.nio.charset.CharsetEncoder
-</a>
- 
-<span>
-newEncoder
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.charset.Charset:availableCharsets:java.util.SortedMap" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-<a href="../../../java/util/SortedMap.html">
-java.util.SortedMap
-</a>
- 
-<span>
-availableCharsets
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-java.nio.charset.Charset$3
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.nio.charset.Charset$3.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../../java/lang/Object.html">
-java.lang.Object
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Object doPrivileged(java.security.PrivilegedAction)">
-java.security.AccessController.doPrivileged
-</span>
-</span>
-<span>
-(
-<a href="../../../java/security/PrivilegedAction.html">
-java.security.PrivilegedAction
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/security/AccessController.html#java.security.AccessController:doPrivileged:java.security.PrivilegedActionjava.lang.Object" title="java.lang.Object doPrivileged(java.security.PrivilegedAction)">
-java.security.AccessController.doPrivileged
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-checkcast 
-</span>
-<span>
-<a href="../../../java/util/SortedMap.html">
-java.util.SortedMap
-</a>
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.charset.Charset:atBugLevel:java.lang.StringZ" href="#">
-
-</a>
-<div class="method_signature">
- static 
-bool
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-atBugLevel
-</span>
-(
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.charset.Charset:checkName:java.lang.Stringvoid" title="void checkName(java.lang.String)">
-java.nio.charset.Charset.checkName(java.lang.String)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/nio/charset/CharsetDecoder.html#java.nio.charset.CharsetDecoder:&lt;init&gt;:java.nio.charset.CharsetFFjava.lang.Stringvoid" title="void &lt;init&gt;(java.nio.charset.Charset, float, float, java.lang.String)">
-java.nio.charset.CharsetDecoder.&lt;init&gt;(java.nio.charset.Charset, float, float, java.lang.String)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/nio/charset/CharsetEncoder.html#java.nio.charset.CharsetEncoder:&lt;init&gt;:java.nio.charset.CharsetFFB.-void" title="void &lt;init&gt;(java.nio.charset.Charset, float, float, byte[])">
-java.nio.charset.CharsetEncoder.&lt;init&gt;(java.nio.charset.Charset, float, float, byte[])
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.nio.charset.Charset:bugLevel:java.lang.String">
-java.nio.charset.Charset.bugLevel
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-astore  1
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-ifnonnull 33
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool isBooted()">
-sun.misc.VM.isBooted
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../sun/misc/VM.html#sun.misc.VM:isBooted:Z" title="bool isBooted()">
-sun.misc.VM.isBooted
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-ifne 5
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../../sun/security/action/GetPropertyAction.html">
-sun.security.action.GetPropertyAction
-</a>
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-ldc string &apos;sun.nio.cs.bugLevel&apos;
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-ldc string &apos;&apos;
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String, java.lang.String)">
-sun.security.action.GetPropertyAction.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-, 
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../sun/security/action/GetPropertyAction.html#sun.security.action.GetPropertyAction:&lt;init&gt;:java.lang.Stringjava.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String, java.lang.String)">
-sun.security.action.GetPropertyAction.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../../java/lang/Object.html">
-java.lang.Object
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Object doPrivileged(java.security.PrivilegedAction)">
-java.security.AccessController.doPrivileged
-</span>
-</span>
-<span>
-(
-<a href="../../../java/security/PrivilegedAction.html">
-java.security.PrivilegedAction
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/security/AccessController.html#java.security.AccessController:doPrivileged:java.security.PrivilegedActionjava.lang.Object" title="java.lang.Object doPrivileged(java.security.PrivilegedAction)">
-java.security.AccessController.doPrivileged
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-checkcast 
-</span>
-<span>
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-</div>
-</li>
-<li value="33">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="34">
-<div class="instruction">
-<span>
-astore  1
-</span>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-putstatic 
-</span>
-<span>
-<a href="#java.nio.charset.Charset:bugLevel:java.lang.String">
-java.nio.charset.Charset.bugLevel
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-</div>
-</li>
-<li value="38">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="39">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="40">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool equals(java.lang.Object)">
-java.lang.String.equals
-</span>
-</span>
-<span>
-(
-<a href="../../../java/lang/Object.html">
-java.lang.Object
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/lang/String.html#java.lang.String:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.lang.String.equals
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="43">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.charset.Charset:compareTo:java.lang.ObjectI" href="#">
-
-</a>
-<div class="method_signature">
-public 
+public final 
 int
  
 <span class="methodname clickable" onclick="showInfoList(this)">
 compareTo
 </span>
 (
-<a href="../../../java/lang/Object.html">
-java.lang.Object
+<a href="Charset.html">
+java.nio.charset.Charset
 </a>
  1
 )
@@ -2433,22 +2439,8 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../../java/util/TreeMap.html#java.util.TreeMap:compare:java.lang.Objectjava.lang.ObjectI" title="int compare(java.lang.Object, java.lang.Object)">
-java.util.TreeMap.compare(java.lang.Object, java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/TreeMap.html#java.util.TreeMap:getEntry:java.lang.Objectjava.util.TreeMap$Entry" title="java.util.TreeMap$Entry getEntry(java.lang.Object)">
-java.util.TreeMap.getEntry(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/TreeMap.html#java.util.TreeMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
-java.util.TreeMap.put(java.lang.Object, java.lang.Object)
+<a href="#java.nio.charset.Charset:compareTo:java.lang.ObjectI" title="int compareTo(java.lang.Object)">
+java.nio.charset.Charset.compareTo(java.lang.Object)
 </a>
 </div>
 </li>
@@ -2463,852 +2455,6 @@ aload  0
 </div>
 </li>
 <li value="1">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-checkcast 
-</span>
-<span>
-<a href="Charset.html">
-java.nio.charset.Charset
-</a>
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int compareTo(java.nio.charset.Charset)">
-java.nio.charset.Charset.compareTo
-</span>
-</span>
-<span>
-(
-<a href="Charset.html">
-java.nio.charset.Charset
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.charset.Charset:compareTo:java.nio.charset.CharsetI" title="int compareTo(java.nio.charset.Charset)">
-java.nio.charset.Charset.compareTo
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.charset.Charset:access$200:java.util.Iteratorjava.util.Mapvoid" href="#">
-
-</a>
-<div class="method_signature">
- static 
-void
- 
-<span>
-access$200
-</span>
-(
-<a href="../../../java/util/Iterator.html">
-java.util.Iterator
-</a>
- 0
-, 
-<a href="../../../java/util/Map.html">
-java.util.Map
-</a>
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void put(java.util.Iterator, java.util.Map)">
-java.nio.charset.Charset.put
-</span>
-</span>
-<span>
-(
-<a href="../../../java/util/Iterator.html">
-java.util.Iterator
-</a>
-, 
-<a href="../../../java/util/Map.html">
-java.util.Map
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.charset.Charset:isRegistered:Z" href="#">
-
-</a>
-<div class="method_signature">
-public final 
-bool
- 
-<span>
-isRegistered
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.nio.charset.Charset:name:java.lang.String">
-java.nio.charset.Charset.name
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ldc string &apos;X-&apos;
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool startsWith(java.lang.String)">
-java.lang.String.startsWith
-</span>
-</span>
-<span>
-(
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/lang/String.html#java.lang.String:startsWith:java.lang.StringZ" title="bool startsWith(java.lang.String)">
-java.lang.String.startsWith
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-ifne 19
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.nio.charset.Charset:name:java.lang.String">
-java.nio.charset.Charset.name
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-ldc string &apos;x-&apos;
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool startsWith(java.lang.String)">
-java.lang.String.startsWith
-</span>
-</span>
-<span>
-(
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/lang/String.html#java.lang.String:startsWith:java.lang.StringZ" title="bool startsWith(java.lang.String)">
-java.lang.String.startsWith
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-ifne 7
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="28">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.charset.Charset:equals:java.lang.ObjectZ" href="#">
-
-</a>
-<div class="method_signature">
-public final 
-bool
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-equals
-</span>
-(
-<a href="../../../java/lang/Object.html">
-java.lang.Object
-</a>
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/util/Vector.html#java.util.Vector:indexOf:java.lang.ObjectII" title="int indexOf(java.lang.Object, int)">
-java.util.Vector.indexOf(java.lang.Object, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/concurrent/ConcurrentHashMap$Segment.html#java.util.concurrent.ConcurrentHashMap$Segment:scanAndLock:java.lang.ObjectIvoid" title="void scanAndLock(java.lang.Object, int)">
-java.util.concurrent.ConcurrentHashMap$Segment.scanAndLock(java.lang.Object, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Calendar.html#java.util.Calendar:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.Calendar.equals(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/ArrayList.html#java.util.ArrayList:indexOf:java.lang.ObjectI" title="int indexOf(java.lang.Object)">
-java.util.ArrayList.indexOf(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Arrays.html#java.util.Arrays:deepEquals0:java.lang.Objectjava.lang.ObjectZ" title="bool deepEquals0(java.lang.Object, java.lang.Object)">
-java.util.Arrays.deepEquals0(java.lang.Object, java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Hashtable$Entry.html#java.util.Hashtable$Entry:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.Hashtable$Entry.equals(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/AbstractMap.html#java.util.AbstractMap:containsValue:java.lang.ObjectZ" title="bool containsValue(java.lang.Object)">
-java.util.AbstractMap.containsValue(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Hashtable.html#java.util.Hashtable:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
-java.util.Hashtable.put(java.lang.Object, java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/HashMap.html#java.util.HashMap:putForCreate:java.lang.Objectjava.lang.Objectvoid" title="void putForCreate(java.lang.Object, java.lang.Object)">
-java.util.HashMap.putForCreate(java.lang.Object, java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../sun/util/PreHashedMap.html#sun.util.PreHashedMap:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
-sun.util.PreHashedMap.get(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.text.RuleBasedBreakIterator.equals(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/WeakHashMap$Entry.html#java.util.WeakHashMap$Entry:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.WeakHashMap$Entry.equals(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/AbstractCollection.html#java.util.AbstractCollection:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.AbstractCollection.contains(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/AbstractMap.html#java.util.AbstractMap:remove:java.lang.Objectjava.lang.Object" title="java.lang.Object remove(java.lang.Object)">
-java.util.AbstractMap.remove(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/LinkedList.html#java.util.LinkedList:indexOf:java.lang.ObjectI" title="int indexOf(java.lang.Object)">
-java.util.LinkedList.indexOf(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/AbstractMap.html#java.util.AbstractMap:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.AbstractMap.equals(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Hashtable.html#java.util.Hashtable:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
-java.util.Hashtable.get(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/HashMap$Entry.html#java.util.HashMap$Entry:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.HashMap$Entry.equals(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/HashMap.html#java.util.HashMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
-java.util.HashMap.put(java.lang.Object, java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
-java.util.concurrent.ConcurrentHashMap.containsKey(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/AbstractCollection.html#java.util.AbstractCollection:remove:java.lang.ObjectZ" title="bool remove(java.lang.Object)">
-java.util.AbstractCollection.remove(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/WeakHashMap.html#java.util.WeakHashMap:containsValue:java.lang.ObjectZ" title="bool containsValue(java.lang.Object)">
-java.util.WeakHashMap.containsValue(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/HashMap.html#java.util.HashMap:removeEntryForKey:java.lang.Objectjava.util.HashMap$Entry" title="java.util.HashMap$Entry removeEntryForKey(java.lang.Object)">
-java.util.HashMap.removeEntryForKey(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/TreeMap.html#java.util.TreeMap:valEquals:java.lang.Objectjava.lang.ObjectZ" title="bool valEquals(java.lang.Object, java.lang.Object)">
-java.util.TreeMap.valEquals(java.lang.Object, java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/LinkedHashMap.html#java.util.LinkedHashMap:containsValue:java.lang.ObjectZ" title="bool containsValue(java.lang.Object)">
-java.util.LinkedHashMap.containsValue(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Arrays$ArrayList.html#java.util.Arrays$ArrayList:indexOf:java.lang.ObjectI" title="int indexOf(java.lang.Object)">
-java.util.Arrays$ArrayList.indexOf(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/AbstractMap.html#java.util.AbstractMap:eq:java.lang.Objectjava.lang.ObjectZ" title="bool eq(java.lang.Object, java.lang.Object)">
-java.util.AbstractMap.eq(java.lang.Object, java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/security/AccessControlContext.html#java.security.AccessControlContext:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.security.AccessControlContext.equals(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/WeakHashMap.html#java.util.WeakHashMap:eq:java.lang.Objectjava.lang.ObjectZ" title="bool eq(java.lang.Object, java.lang.Object)">
-java.util.WeakHashMap.eq(java.lang.Object, java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Hashtable.html#java.util.Hashtable:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
-java.util.Hashtable.containsKey(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/HashMap.html#java.util.HashMap:getEntry:java.lang.Objectjava.util.HashMap$Entry" title="java.util.HashMap$Entry getEntry(java.lang.Object)">
-java.util.HashMap.getEntry(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
-java.util.concurrent.ConcurrentHashMap.get(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/concurrent/ConcurrentHashMap$Segment.html#java.util.concurrent.ConcurrentHashMap$Segment:remove:java.lang.ObjectIjava.lang.Objectjava.lang.Object" title="java.lang.Object remove(java.lang.Object, int, java.lang.Object)">
-java.util.concurrent.ConcurrentHashMap$Segment.remove(java.lang.Object, int, java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Collections.html#java.util.Collections:eq:java.lang.Objectjava.lang.ObjectZ" title="bool eq(java.lang.Object, java.lang.Object)">
-java.util.Collections.eq(java.lang.Object, java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/AbstractMap.html#java.util.AbstractMap:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
-java.util.AbstractMap.containsKey(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Hashtable.html#java.util.Hashtable:remove:java.lang.Objectjava.lang.Object" title="java.lang.Object remove(java.lang.Object)">
-java.util.Hashtable.remove(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../sun/util/PreHashedMap.html#sun.util.PreHashedMap:put:java.lang.Stringjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.String, java.lang.Object)">
-sun.util.PreHashedMap.put(java.lang.String, java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Arrays.html#java.util.Arrays:equals:java.lang.Object.-java.lang.Object.-Z" title="bool equals(java.lang.Object[], java.lang.Object[])">
-java.util.Arrays.equals(java.lang.Object[], java.lang.Object[])
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/concurrent/ConcurrentHashMap$Segment.html#java.util.concurrent.ConcurrentHashMap$Segment:put:java.lang.ObjectIjava.lang.ObjectZjava.lang.Object" title="java.lang.Object put(java.lang.Object, int, java.lang.Object, bool)">
-java.util.concurrent.ConcurrentHashMap$Segment.put(java.lang.Object, int, java.lang.Object, bool)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/HashMap.html#java.util.HashMap:containsValue:java.lang.ObjectZ" title="bool containsValue(java.lang.Object)">
-java.util.HashMap.containsValue(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/concurrent/ConcurrentHashMap$EntrySet.html#java.util.concurrent.ConcurrentHashMap$EntrySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.concurrent.ConcurrentHashMap$EntrySet.contains(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:containsValue:java.lang.ObjectZ" title="bool containsValue(java.lang.Object)">
-java.util.concurrent.ConcurrentHashMap.containsValue(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/AbstractList.html#java.util.AbstractList:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.AbstractList.equals(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../sun/util/PreHashedMap$2$1$1.html#sun.util.PreHashedMap$2$1$1:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-sun.util.PreHashedMap$2$1$1.equals(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/security/AccessControlContext.html#java.security.AccessControlContext:containsAllPDs:java.security.AccessControlContextZ" title="bool containsAllPDs(java.security.AccessControlContext)">
-java.security.AccessControlContext.containsAllPDs(java.security.AccessControlContext)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/concurrent/ConcurrentHashMap$Segment.html#java.util.concurrent.ConcurrentHashMap$Segment:scanAndLockForPut:java.lang.ObjectIjava.lang.Objectjava.util.concurrent.ConcurrentHashMap$HashEntry" title="java.util.concurrent.ConcurrentHashMap$HashEntry scanAndLockForPut(java.lang.Object, int, java.lang.Object)">
-java.util.concurrent.ConcurrentHashMap$Segment.scanAndLockForPut(java.lang.Object, int, java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Hashtable.html#java.util.Hashtable:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.Hashtable.equals(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../sun/util/calendar/CalendarDate.html#sun.util.calendar.CalendarDate:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-sun.util.calendar.CalendarDate.equals(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Hashtable.html#java.util.Hashtable:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.Hashtable.contains(java.lang.Object)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-instanceof 
-</span>
-<span>
-<a href="Charset.html">
-java.nio.charset.Charset
-</a>
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ifne 5
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-ifacmpne 5
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.nio.charset.Charset:name:java.lang.String">
-java.nio.charset.Charset.name
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-checkcast 
-</span>
-<span>
-<a href="Charset.html">
-java.nio.charset.Charset
-</a>
-</span>
-</div>
-</li>
-<li value="24">
 <div class="instruction">
 <span>
 invokevirtual 
@@ -3338,347 +2484,54 @@ java.nio.charset.Charset.name
 </ul>
 </div>
 </li>
-<li value="27">
+<li value="4">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="5">
 <div class="instruction">
 <span>
 invokevirtual 
 </span>
 <span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool equals(java.lang.Object)">
-java.lang.String.equals
-</span>
-</span>
-<span>
-(
-<a href="../../../java/lang/Object.html">
-java.lang.Object
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/lang/String.html#java.lang.String:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.lang.String.equals
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.charset.Charset:lookup:java.lang.Stringjava.nio.charset.Charset" href="#">
-
-</a>
-<div class="method_signature">
-private static 
-<a href="Charset.html">
-java.nio.charset.Charset
-</a>
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-lookup
-</span>
-(
 <a href="../../../java/lang/String.html">
 java.lang.String
 </a>
- 0
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String name()">
+java.nio.charset.Charset.name
+</span>
+</span>
+<span>
+(
 )
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
+</span>
 <ul class="clickable">
 <li>
 <div>
-<a href="#java.nio.charset.Charset:forName:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset forName(java.lang.String)">
-java.nio.charset.Charset.forName(java.lang.String)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.nio.charset.Charset:defaultCharset:java.nio.charset.Charset" title="java.nio.charset.Charset defaultCharset()">
-java.nio.charset.Charset.defaultCharset()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.nio.charset.Charset:isSupported:java.lang.StringZ" title="bool isSupported(java.lang.String)">
-java.nio.charset.Charset.isSupported(java.lang.String)
+<a href="#java.nio.charset.Charset:name:java.lang.String" title="java.lang.String name()">
+java.nio.charset.Charset.name
 </a>
 </div>
 </li>
 </ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-ifnonnull 13
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../../java/lang/IllegalArgumentException.html">
-java.lang.IllegalArgumentException
-</a>
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-dup
-</span>
 </div>
 </li>
 <li value="8">
 <div class="instruction">
 <span>
-ldc string &apos;Null charset name&apos;
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.lang.IllegalArgumentException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/lang/IllegalArgumentException.html#java.lang.IllegalArgumentException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
-java.lang.IllegalArgumentException.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.nio.charset.Charset:cache1:java.lang.Object.-">
-java.nio.charset.Charset.cache1
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/lang/Object.html">
-java.lang.Object
-</a>
-[]
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-astore  1
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-ifnull 20
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-aaload
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
 invokevirtual 
 </span>
 <span>
-bool
+int
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool equals(java.lang.Object)">
-java.lang.String.equals
-</span>
-</span>
-<span>
-(
-<a href="../../../java/lang/Object.html">
-java.lang.Object
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/lang/String.html#java.lang.String:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.lang.String.equals
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-ifeq 10
-</span>
-</div>
-</li>
-<li value="32">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="33">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="34">
-<div class="instruction">
-<span>
-aaload
-</span>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-checkcast 
-</span>
-<span>
-<a href="Charset.html">
-java.nio.charset.Charset
-</a>
-</span>
-</div>
-</li>
-<li value="38">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-<li value="39">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="40">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="Charset.html">
-java.nio.charset.Charset
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.nio.charset.Charset lookup2(java.lang.String)">
-java.nio.charset.Charset.lookup2
+<span title="int compareToIgnoreCase(java.lang.String)">
+java.lang.String.compareToIgnoreCase
 </span>
 </span>
 <span>
@@ -3691,18 +2544,18 @@ java.lang.String
 <ul class="clickable">
 <li>
 <div>
-<a href="#java.nio.charset.Charset:lookup2:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset lookup2(java.lang.String)">
-java.nio.charset.Charset.lookup2
+<a href="../../../java/lang/String.html#java.lang.String:compareToIgnoreCase:java.lang.StringI" title="int compareToIgnoreCase(java.lang.String)">
+java.lang.String.compareToIgnoreCase
 </a>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="43">
+<li value="11">
 <div class="instruction">
 <span>
-areturn
+ireturn
 </span>
 </div>
 </li>
@@ -5442,6 +4295,125 @@ return
 </ol>
 </div>
 <div class="method">
+<a name="java.nio.charset.Charset:compareTo:java.lang.ObjectI" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+compareTo
+</span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/TreeMap.html#java.util.TreeMap:compare:java.lang.Objectjava.lang.ObjectI" title="int compare(java.lang.Object, java.lang.Object)">
+java.util.TreeMap.compare(java.lang.Object, java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeMap.html#java.util.TreeMap:getEntry:java.lang.Objectjava.util.TreeMap$Entry" title="java.util.TreeMap$Entry getEntry(java.lang.Object)">
+java.util.TreeMap.getEntry(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeMap.html#java.util.TreeMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.TreeMap.put(java.lang.Object, java.lang.Object)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="Charset.html">
+java.nio.charset.Charset
+</a>
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int compareTo(java.nio.charset.Charset)">
+java.nio.charset.Charset.compareTo
+</span>
+</span>
+<span>
+(
+<a href="Charset.html">
+java.nio.charset.Charset
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.charset.Charset:compareTo:java.nio.charset.CharsetI" title="int compareTo(java.nio.charset.Charset)">
+java.nio.charset.Charset.compareTo
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
 <a name="java.nio.charset.Charset:access$100:java.nio.charset.spi.CharsetProvider" href="#">
 
 </a>
@@ -5549,152 +4521,6 @@ java.nio.charset.Charset.name
 java.lang.String
 </a>
 </span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.charset.Charset:toString:java.lang.String" href="#">
-
-</a>
-<div class="method_signature">
-public final 
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-toString
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/util/Formatter.html#java.util.Formatter:toString:java.lang.String" title="java.lang.String toString()">
-java.util.Formatter.toString()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/lang/String.html#java.lang.String:valueOf:java.lang.Objectjava.lang.String" title="java.lang.String valueOf(java.lang.Object)">
-java.lang.String.valueOf(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Hashtable$Entry.html#java.util.Hashtable$Entry:toString:java.lang.String" title="java.lang.String toString()">
-java.util.Hashtable$Entry.toString()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Collections$SetFromMap.html#java.util.Collections$SetFromMap:toString:java.lang.String" title="java.lang.String toString()">
-java.util.Collections$SetFromMap.toString()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Formatter$FormatSpecifier.html#java.util.Formatter$FormatSpecifier:printString:java.lang.Objectjava.util.Localevoid" title="void printString(java.lang.Object, java.util.Locale)">
-java.util.Formatter$FormatSpecifier.printString(java.lang.Object, java.util.Locale)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../sun/text/normalizer/UnicodeSet.html#sun.text.normalizer.UnicodeSet:syntaxError:sun.text.normalizer.RuleCharacterIteratorjava.lang.Stringvoid" title="void syntaxError(sun.text.normalizer.RuleCharacterIterator, java.lang.String)">
-sun.text.normalizer.UnicodeSet.syntaxError(sun.text.normalizer.RuleCharacterIterator, java.lang.String)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Hashtable.html#java.util.Hashtable:toString:java.lang.String" title="java.lang.String toString()">
-java.util.Hashtable.toString()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Collections$SynchronizedCollection.html#java.util.Collections$SynchronizedCollection:toString:java.lang.String" title="java.lang.String toString()">
-java.util.Collections$SynchronizedCollection.toString()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Objects.html#java.util.Objects:toString:java.lang.Objectjava.lang.Stringjava.lang.String" title="java.lang.String toString(java.lang.Object, java.lang.String)">
-java.util.Objects.toString(java.lang.Object, java.lang.String)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Collections$UnmodifiableCollection.html#java.util.Collections$UnmodifiableCollection:toString:java.lang.String" title="java.lang.String toString()">
-java.util.Collections$UnmodifiableCollection.toString()
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.String name()">
-java.nio.charset.Charset.name
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.charset.Charset:name:java.lang.String" title="java.lang.String name()">
-java.nio.charset.Charset.name
-</a>
-</div>
-</li>
-</ul>
 </div>
 </li>
 <li value="4">
@@ -5897,6 +4723,572 @@ java.nio.charset.UnsupportedCharsetException.&lt;init&gt;
 <div class="instruction">
 <span>
 athrow
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.charset.Charset:equals:java.lang.ObjectZ" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+bool
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+equals
+</span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/Vector.html#java.util.Vector:indexOf:java.lang.ObjectII" title="int indexOf(java.lang.Object, int)">
+java.util.Vector.indexOf(java.lang.Object, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap$Segment.html#java.util.concurrent.ConcurrentHashMap$Segment:scanAndLock:java.lang.ObjectIvoid" title="void scanAndLock(java.lang.Object, int)">
+java.util.concurrent.ConcurrentHashMap$Segment.scanAndLock(java.lang.Object, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Calendar.html#java.util.Calendar:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.Calendar.equals(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/ArrayList.html#java.util.ArrayList:indexOf:java.lang.ObjectI" title="int indexOf(java.lang.Object)">
+java.util.ArrayList.indexOf(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Arrays.html#java.util.Arrays:deepEquals0:java.lang.Objectjava.lang.ObjectZ" title="bool deepEquals0(java.lang.Object, java.lang.Object)">
+java.util.Arrays.deepEquals0(java.lang.Object, java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable$Entry.html#java.util.Hashtable$Entry:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.Hashtable$Entry.equals(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractMap.html#java.util.AbstractMap:containsValue:java.lang.ObjectZ" title="bool containsValue(java.lang.Object)">
+java.util.AbstractMap.containsValue(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable.html#java.util.Hashtable:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.Hashtable.put(java.lang.Object, java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap.html#java.util.HashMap:putForCreate:java.lang.Objectjava.lang.Objectvoid" title="void putForCreate(java.lang.Object, java.lang.Object)">
+java.util.HashMap.putForCreate(java.lang.Object, java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/PreHashedMap.html#sun.util.PreHashedMap:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
+sun.util.PreHashedMap.get(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.text.RuleBasedBreakIterator.equals(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/WeakHashMap$Entry.html#java.util.WeakHashMap$Entry:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.WeakHashMap$Entry.equals(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractCollection.html#java.util.AbstractCollection:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.AbstractCollection.contains(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractMap.html#java.util.AbstractMap:remove:java.lang.Objectjava.lang.Object" title="java.lang.Object remove(java.lang.Object)">
+java.util.AbstractMap.remove(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/LinkedList.html#java.util.LinkedList:indexOf:java.lang.ObjectI" title="int indexOf(java.lang.Object)">
+java.util.LinkedList.indexOf(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractMap.html#java.util.AbstractMap:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.AbstractMap.equals(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable.html#java.util.Hashtable:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
+java.util.Hashtable.get(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap$Entry.html#java.util.HashMap$Entry:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.HashMap$Entry.equals(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap.html#java.util.HashMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.HashMap.put(java.lang.Object, java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap.containsKey(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractCollection.html#java.util.AbstractCollection:remove:java.lang.ObjectZ" title="bool remove(java.lang.Object)">
+java.util.AbstractCollection.remove(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/WeakHashMap.html#java.util.WeakHashMap:containsValue:java.lang.ObjectZ" title="bool containsValue(java.lang.Object)">
+java.util.WeakHashMap.containsValue(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap.html#java.util.HashMap:removeEntryForKey:java.lang.Objectjava.util.HashMap$Entry" title="java.util.HashMap$Entry removeEntryForKey(java.lang.Object)">
+java.util.HashMap.removeEntryForKey(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/TreeMap.html#java.util.TreeMap:valEquals:java.lang.Objectjava.lang.ObjectZ" title="bool valEquals(java.lang.Object, java.lang.Object)">
+java.util.TreeMap.valEquals(java.lang.Object, java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/LinkedHashMap.html#java.util.LinkedHashMap:containsValue:java.lang.ObjectZ" title="bool containsValue(java.lang.Object)">
+java.util.LinkedHashMap.containsValue(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Arrays$ArrayList.html#java.util.Arrays$ArrayList:indexOf:java.lang.ObjectI" title="int indexOf(java.lang.Object)">
+java.util.Arrays$ArrayList.indexOf(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractMap.html#java.util.AbstractMap:eq:java.lang.Objectjava.lang.ObjectZ" title="bool eq(java.lang.Object, java.lang.Object)">
+java.util.AbstractMap.eq(java.lang.Object, java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/security/AccessControlContext.html#java.security.AccessControlContext:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.security.AccessControlContext.equals(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/WeakHashMap.html#java.util.WeakHashMap:eq:java.lang.Objectjava.lang.ObjectZ" title="bool eq(java.lang.Object, java.lang.Object)">
+java.util.WeakHashMap.eq(java.lang.Object, java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable.html#java.util.Hashtable:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
+java.util.Hashtable.containsKey(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap.html#java.util.HashMap:getEntry:java.lang.Objectjava.util.HashMap$Entry" title="java.util.HashMap$Entry getEntry(java.lang.Object)">
+java.util.HashMap.getEntry(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap.get(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap$Segment.html#java.util.concurrent.ConcurrentHashMap$Segment:remove:java.lang.ObjectIjava.lang.Objectjava.lang.Object" title="java.lang.Object remove(java.lang.Object, int, java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap$Segment.remove(java.lang.Object, int, java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections.html#java.util.Collections:eq:java.lang.Objectjava.lang.ObjectZ" title="bool eq(java.lang.Object, java.lang.Object)">
+java.util.Collections.eq(java.lang.Object, java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractMap.html#java.util.AbstractMap:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
+java.util.AbstractMap.containsKey(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable.html#java.util.Hashtable:remove:java.lang.Objectjava.lang.Object" title="java.lang.Object remove(java.lang.Object)">
+java.util.Hashtable.remove(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/PreHashedMap.html#sun.util.PreHashedMap:put:java.lang.Stringjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.String, java.lang.Object)">
+sun.util.PreHashedMap.put(java.lang.String, java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Arrays.html#java.util.Arrays:equals:java.lang.Object.-java.lang.Object.-Z" title="bool equals(java.lang.Object[], java.lang.Object[])">
+java.util.Arrays.equals(java.lang.Object[], java.lang.Object[])
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap$Segment.html#java.util.concurrent.ConcurrentHashMap$Segment:put:java.lang.ObjectIjava.lang.ObjectZjava.lang.Object" title="java.lang.Object put(java.lang.Object, int, java.lang.Object, bool)">
+java.util.concurrent.ConcurrentHashMap$Segment.put(java.lang.Object, int, java.lang.Object, bool)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/HashMap.html#java.util.HashMap:containsValue:java.lang.ObjectZ" title="bool containsValue(java.lang.Object)">
+java.util.HashMap.containsValue(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap$EntrySet.html#java.util.concurrent.ConcurrentHashMap$EntrySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap$EntrySet.contains(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:containsValue:java.lang.ObjectZ" title="bool containsValue(java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap.containsValue(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/AbstractList.html#java.util.AbstractList:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.AbstractList.equals(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/PreHashedMap$2$1$1.html#sun.util.PreHashedMap$2$1$1:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+sun.util.PreHashedMap$2$1$1.equals(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/security/AccessControlContext.html#java.security.AccessControlContext:containsAllPDs:java.security.AccessControlContextZ" title="bool containsAllPDs(java.security.AccessControlContext)">
+java.security.AccessControlContext.containsAllPDs(java.security.AccessControlContext)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap$Segment.html#java.util.concurrent.ConcurrentHashMap$Segment:scanAndLockForPut:java.lang.ObjectIjava.lang.Objectjava.util.concurrent.ConcurrentHashMap$HashEntry" title="java.util.concurrent.ConcurrentHashMap$HashEntry scanAndLockForPut(java.lang.Object, int, java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap$Segment.scanAndLockForPut(java.lang.Object, int, java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable.html#java.util.Hashtable:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.Hashtable.equals(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/util/calendar/CalendarDate.html#sun.util.calendar.CalendarDate:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+sun.util.calendar.CalendarDate.equals(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable.html#java.util.Hashtable:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.Hashtable.contains(java.lang.Object)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+instanceof 
+</span>
+<span>
+<a href="Charset.html">
+java.nio.charset.Charset
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ifne 5
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+ifacmpne 5
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.nio.charset.Charset:name:java.lang.String">
+java.nio.charset.Charset.name
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="Charset.html">
+java.nio.charset.Charset
+</a>
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String name()">
+java.nio.charset.Charset.name
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.charset.Charset:name:java.lang.String" title="java.lang.String name()">
+java.nio.charset.Charset.name
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool equals(java.lang.Object)">
+java.lang.String.equals
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/String.html#java.lang.String:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.lang.String.equals
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+ireturn
 </span>
 </div>
 </li>
@@ -6207,24 +5599,324 @@ try start: 0; try end: 20: catch start: 21; catched type: java.nio.charset.Chara
 </span>
 </div>
 <div class="method">
-<a name="java.nio.charset.Charset:put:java.util.Iteratorjava.util.Mapvoid" href="#">
+<a name="java.nio.charset.Charset:lookupExtendedCharset:java.lang.Stringjava.nio.charset.Charset" href="#">
 
 </a>
 <div class="method_signature">
 private static 
-void
+<a href="Charset.html">
+java.nio.charset.Charset
+</a>
  
-<span>
-put
+<span class="methodname clickable" onclick="showInfoList(this)">
+lookupExtendedCharset
 </span>
 (
-<a href="../../../java/util/Iterator.html">
-java.util.Iterator
+<a href="../../../java/lang/String.html">
+java.lang.String
 </a>
  0
-, 
-<a href="../../../java/util/Map.html">
-java.util.Map
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.charset.Charset:lookup2:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset lookup2(java.lang.String)">
+java.nio.charset.Charset.lookup2(java.lang.String)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="../../../java/nio/charset/Charset$ExtendedProviderHolder.html#java.nio.charset.Charset$ExtendedProviderHolder:extendedProvider:java.nio.charset.spi.CharsetProvider">
+java.nio.charset.Charset$ExtendedProviderHolder.extendedProvider
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/nio/charset/spi/CharsetProvider.html">
+java.nio.charset.spi.CharsetProvider
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+astore  1
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+ifnull 11
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="Charset.html">
+java.nio.charset.Charset
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.charset.Charset charsetForName(java.lang.String)">
+java.nio.charset.spi.CharsetProvider.charsetForName
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/nio/cs/FastCharsetProvider.html#sun.nio.cs.FastCharsetProvider:charsetForName:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset charsetForName(java.lang.String)">
+sun.nio.cs.FastCharsetProvider.charsetForName
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.charset.Charset:contains:java.nio.charset.CharsetZ" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+bool
+ 
+<span>
+contains
+</span>
+(
+<a href="Charset.html">
+java.nio.charset.Charset
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.charset.Charset:isSupported:java.lang.StringZ" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+bool
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+isSupported
+</span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/StringCoding.html#java.lang.StringCoding:lookupCharset:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset lookupCharset(java.lang.String)">
+java.lang.StringCoding.lookupCharset(java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:forOutputStreamWriter:java.io.OutputStreamjava.lang.Objectjava.lang.Stringsun.nio.cs.StreamEncoder" title="sun.nio.cs.StreamEncoder forOutputStreamWriter(java.io.OutputStream, java.lang.Object, java.lang.String)">
+sun.nio.cs.StreamEncoder.forOutputStreamWriter(java.io.OutputStream, java.lang.Object, java.lang.String)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="Charset.html">
+java.nio.charset.Charset
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.charset.Charset lookup(java.lang.String)">
+java.nio.charset.Charset.lookup
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.charset.Charset:lookup:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset lookup(java.lang.String)">
+java.nio.charset.Charset.lookup
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ifnull 7
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.charset.Charset:decode:java.nio.ByteBufferjava.nio.CharBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+<a href="../../../java/nio/CharBuffer.html">
+java.nio.CharBuffer
+</a>
+ 
+<span>
+decode
+</span>
+(
+<a href="../../../java/nio/ByteBuffer.html">
+java.nio.ByteBuffer
 </a>
  1
 )
@@ -6249,585 +5941,878 @@ aload  0
 <li value="1">
 <div class="instruction">
 <span>
-invokeinterface 
+invokestatic 
 </span>
 <span>
-bool
+<a href="../../../java/nio/charset/CharsetDecoder.html">
+java.nio.charset.CharsetDecoder
+</a>
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool hasNext()">
-java.util.Iterator.hasNext
+<span title="java.nio.charset.CharsetDecoder decoderFor(java.lang.Object)">
+sun.nio.cs.ThreadLocalCoders.decoderFor
 </span>
 </span>
 <span>
 (
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="../../../java/util/AbstractMap$2$1.html#java.util.AbstractMap$2$1:hasNext:Z" title="bool hasNext()">
-java.util.AbstractMap$2$1.hasNext
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/concurrent/ConcurrentHashMap$HashIterator.html#java.util.concurrent.ConcurrentHashMap$HashIterator:hasNext:Z" title="bool hasNext()">
-java.util.concurrent.ConcurrentHashMap$HashIterator.hasNext
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/IdentityHashMap$IdentityHashMapIterator.html#java.util.IdentityHashMap$IdentityHashMapIterator:hasNext:Z" title="bool hasNext()">
-java.util.IdentityHashMap$IdentityHashMapIterator.hasNext
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Collections$UnmodifiableCollection$1.html#java.util.Collections$UnmodifiableCollection$1:hasNext:Z" title="bool hasNext()">
-java.util.Collections$UnmodifiableCollection$1.hasNext
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Collections$UnmodifiableList$1.html#java.util.Collections$UnmodifiableList$1:hasNext:Z" title="bool hasNext()">
-java.util.Collections$UnmodifiableList$1.hasNext
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/LinkedList$ListItr.html#java.util.LinkedList$ListItr:hasNext:Z" title="bool hasNext()">
-java.util.LinkedList$ListItr.hasNext
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/WeakHashMap$HashIterator.html#java.util.WeakHashMap$HashIterator:hasNext:Z" title="bool hasNext()">
-java.util.WeakHashMap$HashIterator.hasNext
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/ArrayList$Itr.html#java.util.ArrayList$Itr:hasNext:Z" title="bool hasNext()">
-java.util.ArrayList$Itr.hasNext
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Collections$EmptyIterator.html#java.util.Collections$EmptyIterator:hasNext:Z" title="bool hasNext()">
-java.util.Collections$EmptyIterator.hasNext
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../sun/util/PreHashedMap$2$1.html#sun.util.PreHashedMap$2$1:hasNext:Z" title="bool hasNext()">
-sun.util.PreHashedMap$2$1.hasNext
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Vector$Itr.html#java.util.Vector$Itr:hasNext:Z" title="bool hasNext()">
-java.util.Vector$Itr.hasNext
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/LinkedHashMap$LinkedHashIterator.html#java.util.LinkedHashMap$LinkedHashIterator:hasNext:Z" title="bool hasNext()">
-java.util.LinkedHashMap$LinkedHashIterator.hasNext
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Hashtable$Enumerator.html#java.util.Hashtable$Enumerator:hasNext:Z" title="bool hasNext()">
-java.util.Hashtable$Enumerator.hasNext
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/ArrayList$SubList$1.html#java.util.ArrayList$SubList$1:hasNext:Z" title="bool hasNext()">
-java.util.ArrayList$SubList$1.hasNext
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../sun/util/PreHashedMap$1$1.html#sun.util.PreHashedMap$1$1:hasNext:Z" title="bool hasNext()">
-sun.util.PreHashedMap$1$1.hasNext
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/HashMap$HashIterator.html#java.util.HashMap$HashIterator:hasNext:Z" title="bool hasNext()">
-java.util.HashMap$HashIterator.hasNext
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/TreeMap$PrivateEntryIterator.html#java.util.TreeMap$PrivateEntryIterator:hasNext:Z" title="bool hasNext()">
-java.util.TreeMap$PrivateEntryIterator.hasNext
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Collections$1.html#java.util.Collections$1:hasNext:Z" title="bool hasNext()">
-java.util.Collections$1.hasNext
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/AbstractList$Itr.html#java.util.AbstractList$Itr:hasNext:Z" title="bool hasNext()">
-java.util.AbstractList$Itr.hasNext
-</a>
+No reachable result.
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="6">
+<li value="4">
 <div class="instruction">
 <span>
-ifeq 41
+getstatic 
+</span>
+<span>
+<a href="../../../java/nio/charset/CodingErrorAction.html#java.nio.charset.CodingErrorAction:REPLACE:java.nio.charset.CodingErrorAction">
+java.nio.charset.CodingErrorAction.REPLACE
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/nio/charset/CodingErrorAction.html">
+java.nio.charset.CodingErrorAction
+</a>
 </span>
 </div>
 </li>
-<li value="9">
+<li value="7">
 <div class="instruction">
 <span>
-aload  0
+invokevirtual 
 </span>
+<span>
+<a href="../../../java/nio/charset/CharsetDecoder.html">
+java.nio.charset.CharsetDecoder
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.charset.CharsetDecoder onMalformedInput(java.nio.charset.CodingErrorAction)">
+java.nio.charset.CharsetDecoder.onMalformedInput
+</span>
+</span>
+<span>
+(
+<a href="../../../java/nio/charset/CodingErrorAction.html">
+java.nio.charset.CodingErrorAction
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/nio/charset/CharsetDecoder.html#java.nio.charset.CharsetDecoder:onMalformedInput:java.nio.charset.CodingErrorActionjava.nio.charset.CharsetDecoder" title="java.nio.charset.CharsetDecoder onMalformedInput(java.nio.charset.CodingErrorAction)">
+java.nio.charset.CharsetDecoder.onMalformedInput
+</a>
+</div>
+</li>
+</ul>
 </div>
 </li>
 <li value="10">
 <div class="instruction">
 <span>
-invokeinterface 
+getstatic 
 </span>
 <span>
-<a href="../../../java/lang/Object.html">
-java.lang.Object
+<a href="../../../java/nio/charset/CodingErrorAction.html#java.nio.charset.CodingErrorAction:REPLACE:java.nio.charset.CodingErrorAction">
+java.nio.charset.CodingErrorAction.REPLACE
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/nio/charset/CodingErrorAction.html">
+java.nio.charset.CodingErrorAction
+</a>
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../../java/nio/charset/CharsetDecoder.html">
+java.nio.charset.CharsetDecoder
 </a>
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Object next()">
-java.util.Iterator.next
+<span title="java.nio.charset.CharsetDecoder onUnmappableCharacter(java.nio.charset.CodingErrorAction)">
+java.nio.charset.CharsetDecoder.onUnmappableCharacter
 </span>
 </span>
 <span>
 (
+<a href="../../../java/nio/charset/CodingErrorAction.html">
+java.nio.charset.CodingErrorAction
+</a>
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="../../../java/util/LinkedHashMap$EntryIterator.html#java.util.LinkedHashMap$EntryIterator:next:java.lang.Object" title="java.lang.Object next()">
-java.util.LinkedHashMap$EntryIterator.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/LinkedHashMap$ValueIterator.html#java.util.LinkedHashMap$ValueIterator:next:java.lang.Object" title="java.lang.Object next()">
-java.util.LinkedHashMap$ValueIterator.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Collections$1.html#java.util.Collections$1:next:java.lang.Object" title="java.lang.Object next()">
-java.util.Collections$1.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/AbstractList$Itr.html#java.util.AbstractList$Itr:next:java.lang.Object" title="java.lang.Object next()">
-java.util.AbstractList$Itr.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/WeakHashMap$ValueIterator.html#java.util.WeakHashMap$ValueIterator:next:java.lang.Object" title="java.lang.Object next()">
-java.util.WeakHashMap$ValueIterator.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/TreeMap$KeyIterator.html#java.util.TreeMap$KeyIterator:next:java.lang.Object" title="java.lang.Object next()">
-java.util.TreeMap$KeyIterator.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/concurrent/ConcurrentHashMap$ValueIterator.html#java.util.concurrent.ConcurrentHashMap$ValueIterator:next:java.lang.Object" title="java.lang.Object next()">
-java.util.concurrent.ConcurrentHashMap$ValueIterator.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/concurrent/ConcurrentHashMap$EntryIterator.html#java.util.concurrent.ConcurrentHashMap$EntryIterator:next:java.lang.Object" title="java.lang.Object next()">
-java.util.concurrent.ConcurrentHashMap$EntryIterator.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Hashtable$Enumerator.html#java.util.Hashtable$Enumerator:next:java.lang.Object" title="java.lang.Object next()">
-java.util.Hashtable$Enumerator.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/HashMap$EntryIterator.html#java.util.HashMap$EntryIterator:next:java.lang.Object" title="java.lang.Object next()">
-java.util.HashMap$EntryIterator.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/ArrayList$SubList$1.html#java.util.ArrayList$SubList$1:next:java.lang.Object" title="java.lang.Object next()">
-java.util.ArrayList$SubList$1.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/HashMap$KeyIterator.html#java.util.HashMap$KeyIterator:next:java.lang.Object" title="java.lang.Object next()">
-java.util.HashMap$KeyIterator.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/IdentityHashMap$ValueIterator.html#java.util.IdentityHashMap$ValueIterator:next:java.lang.Object" title="java.lang.Object next()">
-java.util.IdentityHashMap$ValueIterator.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../sun/util/PreHashedMap$2$1.html#sun.util.PreHashedMap$2$1:next:java.lang.Object" title="java.lang.Object next()">
-sun.util.PreHashedMap$2$1.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Vector$Itr.html#java.util.Vector$Itr:next:java.lang.Object" title="java.lang.Object next()">
-java.util.Vector$Itr.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../sun/util/PreHashedMap$1$1.html#sun.util.PreHashedMap$1$1:next:java.lang.Object" title="java.lang.Object next()">
-sun.util.PreHashedMap$1$1.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/concurrent/ConcurrentHashMap$KeyIterator.html#java.util.concurrent.ConcurrentHashMap$KeyIterator:next:java.lang.Object" title="java.lang.Object next()">
-java.util.concurrent.ConcurrentHashMap$KeyIterator.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/AbstractMap$2$1.html#java.util.AbstractMap$2$1:next:java.lang.Object" title="java.lang.Object next()">
-java.util.AbstractMap$2$1.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/IdentityHashMap$KeyIterator.html#java.util.IdentityHashMap$KeyIterator:next:java.lang.Object" title="java.lang.Object next()">
-java.util.IdentityHashMap$KeyIterator.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Collections$UnmodifiableCollection$1.html#java.util.Collections$UnmodifiableCollection$1:next:java.lang.Object" title="java.lang.Object next()">
-java.util.Collections$UnmodifiableCollection$1.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/TreeMap$ValueIterator.html#java.util.TreeMap$ValueIterator:next:java.lang.Object" title="java.lang.Object next()">
-java.util.TreeMap$ValueIterator.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/IdentityHashMap$EntryIterator.html#java.util.IdentityHashMap$EntryIterator:next:java.lang.Object" title="java.lang.Object next()">
-java.util.IdentityHashMap$EntryIterator.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/TreeMap$EntryIterator.html#java.util.TreeMap$EntryIterator:next:java.lang.Object" title="java.lang.Object next()">
-java.util.TreeMap$EntryIterator.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Collections$UnmodifiableList$1.html#java.util.Collections$UnmodifiableList$1:next:java.lang.Object" title="java.lang.Object next()">
-java.util.Collections$UnmodifiableList$1.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/WeakHashMap$EntryIterator.html#java.util.WeakHashMap$EntryIterator:next:java.lang.Object" title="java.lang.Object next()">
-java.util.WeakHashMap$EntryIterator.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/HashMap$ValueIterator.html#java.util.HashMap$ValueIterator:next:java.lang.Object" title="java.lang.Object next()">
-java.util.HashMap$ValueIterator.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/WeakHashMap$KeyIterator.html#java.util.WeakHashMap$KeyIterator:next:java.lang.Object" title="java.lang.Object next()">
-java.util.WeakHashMap$KeyIterator.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/LinkedList$ListItr.html#java.util.LinkedList$ListItr:next:java.lang.Object" title="java.lang.Object next()">
-java.util.LinkedList$ListItr.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/ArrayList$Itr.html#java.util.ArrayList$Itr:next:java.lang.Object" title="java.lang.Object next()">
-java.util.ArrayList$Itr.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/LinkedHashMap$KeyIterator.html#java.util.LinkedHashMap$KeyIterator:next:java.lang.Object" title="java.lang.Object next()">
-java.util.LinkedHashMap$KeyIterator.next
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Collections$EmptyIterator.html#java.util.Collections$EmptyIterator:next:java.lang.Object" title="java.lang.Object next()">
-java.util.Collections$EmptyIterator.next
+<a href="../../../java/nio/charset/CharsetDecoder.html#java.nio.charset.CharsetDecoder:onUnmappableCharacter:java.nio.charset.CodingErrorActionjava.nio.charset.CharsetDecoder" title="java.nio.charset.CharsetDecoder onUnmappableCharacter(java.nio.charset.CodingErrorAction)">
+java.nio.charset.CharsetDecoder.onUnmappableCharacter
 </a>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="15">
-<div class="instruction">
-<span>
-checkcast 
-</span>
-<span>
-<a href="Charset.html">
-java.nio.charset.Charset
-</a>
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-astore  2
-</span>
-</div>
-</li>
-<li value="19">
+<li value="16">
 <div class="instruction">
 <span>
 aload  1
 </span>
 </div>
 </li>
+<li value="17">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../../java/nio/CharBuffer.html">
+java.nio.CharBuffer
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.CharBuffer decode(java.nio.ByteBuffer)">
+java.nio.charset.CharsetDecoder.decode
+</span>
+</span>
+<span>
+(
+<a href="../../../java/nio/ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
 <li value="20">
 <div class="instruction">
 <span>
-aload  2
+areturn
 </span>
 </div>
 </li>
 <li value="21">
 <div class="instruction">
 <span>
-invokevirtual 
+astore  2
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../java/lang/Error.html">
+java.lang.Error
+</a>
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.Throwable)">
+java.lang.Error.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/Throwable.html">
+java.lang.Throwable
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 0; try end: 20: catch start: 21; catched type: java.nio.charset.CharacterCodingException.
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
+<a name="java.nio.charset.Charset:access$000:java.util.Iterator" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<a href="../../../java/util/Iterator.html">
+java.util.Iterator
+</a>
+ 
+<span>
+access$000
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../../java/util/Iterator.html">
+java.util.Iterator
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.util.Iterator providers()">
+java.nio.charset.Charset.providers
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.charset.Charset:aliases:java.util.Set" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+<a href="../../../java/util/Set.html">
+java.util.Set
+</a>
+ 
+<span>
+aliases
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.nio.charset.Charset:aliasSet:java.util.Set">
+java.nio.charset.Charset.aliasSet
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/util/Set.html">
+java.util.Set
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ifnull 8
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.nio.charset.Charset:aliasSet:java.util.Set">
+java.nio.charset.Charset.aliasSet
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/util/Set.html">
+java.util.Set
+</a>
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.nio.charset.Charset:aliases:java.lang.String.-">
+java.nio.charset.Charset.aliases
+</a>
+</span>
+<span>
+ : 
 </span>
 <span>
 <a href="../../../java/lang/String.html">
 java.lang.String
 </a>
+[]
 </span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.String name()">
-java.nio.charset.Charset.name
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.charset.Charset:name:java.lang.String" title="java.lang.String name()">
-java.nio.charset.Charset.name
-</a>
 </div>
 </li>
-</ul>
-</div>
-</li>
-<li value="24">
+<li value="16">
 <div class="instruction">
 <span>
-invokeinterface 
+arraylength
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+istore  1
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+new 
 </span>
 <span>
-bool
+<a href="../../../java/util/HashSet.html">
+java.util.HashSet
+</a>
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool containsKey(java.lang.Object)">
-java.util.Map.containsKey
+<span title="void &lt;init&gt;(int)">
+java.util.HashSet.&lt;init&gt;
 </span>
 </span>
 <span>
 (
-<a href="../../../java/lang/Object.html">
-java.lang.Object
-</a>
+int
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="../../../java/util/HashMap.html#java.util.HashMap:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
-java.util.HashMap.containsKey
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Collections$SingletonMap.html#java.util.Collections$SingletonMap:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
-java.util.Collections$SingletonMap.containsKey
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/IdentityHashMap.html#java.util.IdentityHashMap:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
-java.util.IdentityHashMap.containsKey
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
-java.util.concurrent.ConcurrentHashMap.containsKey
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Collections$EmptyMap.html#java.util.Collections$EmptyMap:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
-java.util.Collections$EmptyMap.containsKey
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/TreeMap.html#java.util.TreeMap:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
-java.util.TreeMap.containsKey
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Hashtable.html#java.util.Hashtable:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
-java.util.Hashtable.containsKey
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/WeakHashMap.html#java.util.WeakHashMap:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
-java.util.WeakHashMap.containsKey
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/AbstractMap.html#java.util.AbstractMap:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
-java.util.AbstractMap.containsKey
-</a>
+No reachable result.
 </div>
 </li>
 </ul>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+astore  2
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+istore  3
+</span>
 </div>
 </li>
 <li value="29">
 <div class="instruction">
 <span>
-ifne 15
+iload  3
 </span>
 </div>
 </li>
-<li value="32">
+<li value="30">
 <div class="instruction">
 <span>
-aload  1
+iload  1
 </span>
 </div>
 </li>
-<li value="33">
+<li value="31">
 <div class="instruction">
 <span>
-aload  2
+ifcmpge 20
 </span>
 </div>
 </li>
 <li value="34">
 <div class="instruction">
 <span>
+aload  2
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.nio.charset.Charset:aliases:java.lang.String.-">
+java.nio.charset.Charset.aliases
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+[]
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+aaload
+</span>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool add(java.lang.Object)">
+java.util.HashSet.add
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/HashSet.html#java.util.HashSet:add:java.lang.ObjectZ" title="bool add(java.lang.Object)">
+java.util.HashSet.add
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+pop
+</span>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span>
+iinc 3 1
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+goto -19
+</span>
+</div>
+</li>
+<li value="51">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="52">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="53">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../../java/util/Set.html">
+java.util.Set
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.util.Set unmodifiableSet(java.util.Set)">
+java.util.Collections.unmodifiableSet
+</span>
+</span>
+<span>
+(
+<a href="../../../java/util/Set.html">
+java.util.Set
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/Collections.html#java.util.Collections:unmodifiableSet:java.util.Setjava.util.Set" title="java.util.Set unmodifiableSet(java.util.Set)">
+java.util.Collections.unmodifiableSet
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.nio.charset.Charset:aliasSet:java.util.Set">
+java.nio.charset.Charset.aliasSet
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/util/Set.html">
+java.util.Set
+</a>
+</span>
+</div>
+</li>
+<li value="59">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="60">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.nio.charset.Charset:aliasSet:java.util.Set">
+java.nio.charset.Charset.aliasSet
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/util/Set.html">
+java.util.Set
+</a>
+</span>
+</div>
+</li>
+<li value="63">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.charset.Charset:toString:java.lang.String" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+toString
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/Formatter.html#java.util.Formatter:toString:java.lang.String" title="java.lang.String toString()">
+java.util.Formatter.toString()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/lang/String.html#java.lang.String:valueOf:java.lang.Objectjava.lang.String" title="java.lang.String valueOf(java.lang.Object)">
+java.lang.String.valueOf(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable$Entry.html#java.util.Hashtable$Entry:toString:java.lang.String" title="java.lang.String toString()">
+java.util.Hashtable$Entry.toString()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$SetFromMap.html#java.util.Collections$SetFromMap:toString:java.lang.String" title="java.lang.String toString()">
+java.util.Collections$SetFromMap.toString()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Formatter$FormatSpecifier.html#java.util.Formatter$FormatSpecifier:printString:java.lang.Objectjava.util.Localevoid" title="void printString(java.lang.Object, java.util.Locale)">
+java.util.Formatter$FormatSpecifier.printString(java.lang.Object, java.util.Locale)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/text/normalizer/UnicodeSet.html#sun.text.normalizer.UnicodeSet:syntaxError:sun.text.normalizer.RuleCharacterIteratorjava.lang.Stringvoid" title="void syntaxError(sun.text.normalizer.RuleCharacterIterator, java.lang.String)">
+sun.text.normalizer.UnicodeSet.syntaxError(sun.text.normalizer.RuleCharacterIterator, java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Hashtable.html#java.util.Hashtable:toString:java.lang.String" title="java.lang.String toString()">
+java.util.Hashtable.toString()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$SynchronizedCollection.html#java.util.Collections$SynchronizedCollection:toString:java.lang.String" title="java.lang.String toString()">
+java.util.Collections$SynchronizedCollection.toString()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Objects.html#java.util.Objects:toString:java.lang.Objectjava.lang.Stringjava.lang.String" title="java.lang.String toString(java.lang.Object, java.lang.String)">
+java.util.Objects.toString(java.lang.Object, java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/Collections$UnmodifiableCollection.html#java.util.Collections$UnmodifiableCollection:toString:java.lang.String" title="java.lang.String toString()">
+java.util.Collections$UnmodifiableCollection.toString()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
 invokevirtual 
 </span>
 <span>
@@ -6855,114 +6840,278 @@ java.nio.charset.Charset.name
 </ul>
 </div>
 </li>
-<li value="37">
+<li value="4">
 <div class="instruction">
 <span>
-aload  2
+areturn
 </span>
 </div>
 </li>
-<li value="38">
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.charset.Charset:providers:java.util.Iterator" href="#">
+
+</a>
+<div class="method_signature">
+private static 
+<a href="../../../java/util/Iterator.html">
+java.util.Iterator
+</a>
+ 
+<span>
+providers
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
 <div class="instruction">
 <span>
-invokeinterface 
+new 
 </span>
 <span>
-<a href="../../../java/lang/Object.html">
-java.lang.Object
-</a>
+java.nio.charset.Charset$1
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Object put(java.lang.Object, java.lang.Object)">
-java.util.Map.put
+<span title="void &lt;init&gt;()">
+java.nio.charset.Charset$1.&lt;init&gt;
 </span>
 </span>
 <span>
 (
-<a href="../../../java/lang/Object.html">
-java.lang.Object
-</a>
-, 
-<a href="../../../java/lang/Object.html">
-java.lang.Object
-</a>
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="../../../sun/util/PreHashedMap.html#sun.util.PreHashedMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
-sun.util.PreHashedMap.put
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/Hashtable.html#java.util.Hashtable:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
-java.util.Hashtable.put
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/HashMap.html#java.util.HashMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
-java.util.HashMap.put
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
-java.util.concurrent.ConcurrentHashMap.put
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/WeakHashMap.html#java.util.WeakHashMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
-java.util.WeakHashMap.put
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/TreeMap.html#java.util.TreeMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
-java.util.TreeMap.put
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/AbstractMap.html#java.util.AbstractMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
-java.util.AbstractMap.put
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/IdentityHashMap.html#java.util.IdentityHashMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
-java.util.IdentityHashMap.put
-</a>
+No reachable result.
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="43">
+<li value="7">
 <div class="instruction">
 <span>
-pop
+areturn
 </span>
 </div>
 </li>
-<li value="44">
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.charset.Charset:cache:java.lang.Stringjava.nio.charset.Charsetvoid" href="#">
+
+</a>
+<div class="method_signature">
+private static 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+cache
+</span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 0
+, 
+<a href="Charset.html">
+java.nio.charset.Charset
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.charset.Charset:lookup2:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset lookup2(java.lang.String)">
+java.nio.charset.Charset.lookup2(java.lang.String)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
 <div class="instruction">
 <span>
-goto -44
+getstatic 
+</span>
+<span>
+<a href="#java.nio.charset.Charset:cache1:java.lang.Object.-">
+java.nio.charset.Charset.cache1
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
 </span>
 </div>
 </li>
-<li value="47">
+<li value="3">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#java.nio.charset.Charset:cache2:java.lang.Object.-">
+java.nio.charset.Charset.cache2
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+iconst 2
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+anewarray 
+</span>
+<span>
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+aastore
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+aastore
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#java.nio.charset.Charset:cache1:java.lang.Object.-">
+java.nio.charset.Charset.cache1
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
+</span>
+</div>
+</li>
+<li value="21">
 <div class="instruction">
 <span>
 return
@@ -6974,21 +7123,561 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.nio.charset.Charset:encode:java.lang.Stringjava.nio.ByteBuffer" href="#">
+<a name="java.nio.charset.Charset:canEncode:Z" href="#">
 
 </a>
 <div class="method_signature">
-public final 
-<a href="../../../java/nio/ByteBuffer.html">
-java.nio.ByteBuffer
+public 
+bool
+ 
+<span>
+canEncode
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.charset.Charset:newEncoder:java.nio.charset.CharsetEncoder" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="../../../java/nio/charset/CharsetEncoder.html">
+java.nio.charset.CharsetEncoder
 </a>
  
 <span>
-encode
+newEncoder
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.charset.Charset:availableCharsets:java.util.SortedMap" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="../../../java/util/SortedMap.html">
+java.util.SortedMap
+</a>
+ 
+<span>
+availableCharsets
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+java.nio.charset.Charset$3
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.nio.charset.Charset$3.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object doPrivileged(java.security.PrivilegedAction)">
+java.security.AccessController.doPrivileged
+</span>
+</span>
+<span>
+(
+<a href="../../../java/security/PrivilegedAction.html">
+java.security.PrivilegedAction
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/security/AccessController.html#java.security.AccessController:doPrivileged:java.security.PrivilegedActionjava.lang.Object" title="java.lang.Object doPrivileged(java.security.PrivilegedAction)">
+java.security.AccessController.doPrivileged
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="../../../java/util/SortedMap.html">
+java.util.SortedMap
+</a>
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.charset.Charset:atBugLevel:java.lang.StringZ" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+bool
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+atBugLevel
 </span>
 (
 <a href="../../../java/lang/String.html">
 java.lang.String
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.charset.Charset:checkName:java.lang.Stringvoid" title="void checkName(java.lang.String)">
+java.nio.charset.Charset.checkName(java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/nio/charset/CharsetDecoder.html#java.nio.charset.CharsetDecoder:&lt;init&gt;:java.nio.charset.CharsetFFjava.lang.Stringvoid" title="void &lt;init&gt;(java.nio.charset.Charset, float, float, java.lang.String)">
+java.nio.charset.CharsetDecoder.&lt;init&gt;(java.nio.charset.Charset, float, float, java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/nio/charset/CharsetEncoder.html#java.nio.charset.CharsetEncoder:&lt;init&gt;:java.nio.charset.CharsetFFB.-void" title="void &lt;init&gt;(java.nio.charset.Charset, float, float, byte[])">
+java.nio.charset.CharsetEncoder.&lt;init&gt;(java.nio.charset.Charset, float, float, byte[])
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.nio.charset.Charset:bugLevel:java.lang.String">
+java.nio.charset.Charset.bugLevel
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+astore  1
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+ifnonnull 33
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isBooted()">
+sun.misc.VM.isBooted
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/misc/VM.html#sun.misc.VM:isBooted:Z" title="bool isBooted()">
+sun.misc.VM.isBooted
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+ifne 5
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../sun/security/action/GetPropertyAction.html">
+sun.security.action.GetPropertyAction
+</a>
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+ldc string &apos;sun.nio.cs.bugLevel&apos;
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+ldc string &apos;&apos;
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String, java.lang.String)">
+sun.security.action.GetPropertyAction.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+, 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/security/action/GetPropertyAction.html#sun.security.action.GetPropertyAction:&lt;init&gt;:java.lang.Stringjava.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String, java.lang.String)">
+sun.security.action.GetPropertyAction.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object doPrivileged(java.security.PrivilegedAction)">
+java.security.AccessController.doPrivileged
+</span>
+</span>
+<span>
+(
+<a href="../../../java/security/PrivilegedAction.html">
+java.security.PrivilegedAction
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/security/AccessController.html#java.security.AccessController:doPrivileged:java.security.PrivilegedActionjava.lang.Object" title="java.lang.Object doPrivileged(java.security.PrivilegedAction)">
+java.security.AccessController.doPrivileged
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+astore  1
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#java.nio.charset.Charset:bugLevel:java.lang.String">
+java.nio.charset.Charset.bugLevel
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool equals(java.lang.Object)">
+java.lang.String.equals
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/String.html#java.lang.String:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.lang.String.equals
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.charset.Charset:access$200:java.util.Iteratorjava.util.Mapvoid" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+void
+ 
+<span>
+access$200
+</span>
+(
+<a href="../../../java/util/Iterator.html">
+java.util.Iterator
+</a>
+ 0
+, 
+<a href="../../../java/util/Map.html">
+java.util.Map
 </a>
  1
 )
@@ -7023,453 +7712,34 @@ aload  1
 invokestatic 
 </span>
 <span>
-<a href="../../../java/nio/CharBuffer.html">
-java.nio.CharBuffer
-</a>
+void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.nio.CharBuffer wrap(java.lang.CharSequence)">
-java.nio.CharBuffer.wrap
+<span title="void put(java.util.Iterator, java.util.Map)">
+java.nio.charset.Charset.put
 </span>
 </span>
 <span>
 (
-<a href="../../../java/lang/CharSequence.html">
-java.lang.CharSequence
+<a href="../../../java/util/Iterator.html">
+java.util.Iterator
 </a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../../java/nio/ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.nio.ByteBuffer encode(java.nio.CharBuffer)">
-java.nio.charset.Charset.encode
-</span>
-</span>
-<span>
-(
-<a href="../../../java/nio/CharBuffer.html">
-java.nio.CharBuffer
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.charset.Charset:&lt;init&gt;:java.lang.Stringjava.lang.String.-void" href="#">
-
-</a>
-<div class="method_signature">
-protected 
-<span class="methodname clickable" onclick="showInfoList(this)">
-Charset
-</span>
-(
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
- 1
 , 
-<a href="../../../java/lang/String.html">
-java.lang.String
+<a href="../../../java/util/Map.html">
+java.util.Map
 </a>
-[]
- 2
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../sun/nio/cs/US_ASCII.html#sun.nio.cs.US_ASCII:&lt;init&gt;:void" title="void &lt;init&gt;()">
-sun.nio.cs.US_ASCII.&lt;init&gt;()
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.Object.&lt;init&gt;
-</span>
-</span>
-<span>
-(
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="../../../java/lang/Object.html#java.lang.Object:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.lang.Object.&lt;init&gt;
-</a>
+No reachable result.
 </div>
 </li>
 </ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
 </div>
 </li>
 <li value="5">
-<div class="instruction">
-<span>
-aconstnull
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.nio.charset.Charset:aliasSet:java.util.Set">
-java.nio.charset.Charset.aliasSet
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/util/Set.html">
-java.util.Set
-</a>
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void checkName(java.lang.String)">
-java.nio.charset.Charset.checkName
-</span>
-</span>
-<span>
-(
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.charset.Charset:checkName:java.lang.Stringvoid" title="void checkName(java.lang.String)">
-java.nio.charset.Charset.checkName
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-ifnonnull 10
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-anewarray 
-</span>
-<span>
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-astore  3
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-istore  4
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-iload  4
-</span>
-</div>
-</li>
-<li value="31">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="32">
-<div class="instruction">
-<span>
-arraylength
-</span>
-</div>
-</li>
-<li value="33">
-<div class="instruction">
-<span>
-ifcmpge 16
-</span>
-</div>
-</li>
-<li value="36">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="37">
-<div class="instruction">
-<span>
-iload  4
-</span>
-</div>
-</li>
-<li value="39">
-<div class="instruction">
-<span>
-aaload
-</span>
-</div>
-</li>
-<li value="40">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void checkName(java.lang.String)">
-java.nio.charset.Charset.checkName
-</span>
-</span>
-<span>
-(
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.charset.Charset:checkName:java.lang.Stringvoid" title="void checkName(java.lang.String)">
-java.nio.charset.Charset.checkName
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="43">
-<div class="instruction">
-<span>
-iinc 4 1
-</span>
-</div>
-</li>
-<li value="46">
-<div class="instruction">
-<span>
-goto -17
-</span>
-</div>
-</li>
-<li value="49">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="50">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="51">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.nio.charset.Charset:name:java.lang.String">
-java.nio.charset.Charset.name
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-</div>
-</li>
-<li value="54">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="55">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="56">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.nio.charset.Charset:aliases:java.lang.String.-">
-java.nio.charset.Charset.aliases
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-[]
-</span>
-</div>
-</li>
-<li value="59">
 <div class="instruction">
 <span>
 return
@@ -7481,176 +7751,17 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.nio.charset.Charset:compareTo:java.nio.charset.CharsetI" href="#">
+<a name="java.nio.charset.Charset:isRegistered:Z" href="#">
 
 </a>
 <div class="method_signature">
 public final 
-int
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-compareTo
-</span>
-(
-<a href="Charset.html">
-java.nio.charset.Charset
-</a>
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.charset.Charset:compareTo:java.lang.ObjectI" title="int compareTo(java.lang.Object)">
-java.nio.charset.Charset.compareTo(java.lang.Object)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.String name()">
-java.nio.charset.Charset.name
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.charset.Charset:name:java.lang.String" title="java.lang.String name()">
-java.nio.charset.Charset.name
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.String name()">
-java.nio.charset.Charset.name
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.charset.Charset:name:java.lang.String" title="java.lang.String name()">
-java.nio.charset.Charset.name
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int compareToIgnoreCase(java.lang.String)">
-java.lang.String.compareToIgnoreCase
-</span>
-</span>
-<span>
-(
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/lang/String.html#java.lang.String:compareToIgnoreCase:java.lang.StringI" title="int compareToIgnoreCase(java.lang.String)">
-java.lang.String.compareToIgnoreCase
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.charset.Charset:displayName:java.util.Localejava.lang.String" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
+bool
  
 <span>
-displayName
+isRegistered
 </span>
 (
-<a href="../../../java/util/Locale.html">
-java.util.Locale
-</a>
- 1
 )
 ;
 <ul class="annot">
@@ -7693,7 +7804,145 @@ java.lang.String
 <li value="4">
 <div class="instruction">
 <span>
-areturn
+ldc string &apos;X-&apos;
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool startsWith(java.lang.String)">
+java.lang.String.startsWith
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/String.html#java.lang.String:startsWith:java.lang.StringZ" title="bool startsWith(java.lang.String)">
+java.lang.String.startsWith
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+ifne 19
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.nio.charset.Charset:name:java.lang.String">
+java.nio.charset.Charset.name
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+ldc string &apos;x-&apos;
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool startsWith(java.lang.String)">
+java.lang.String.startsWith
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/String.html#java.lang.String:startsWith:java.lang.StringZ" title="bool startsWith(java.lang.String)">
+java.lang.String.startsWith
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+ifne 7
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+ireturn
 </span>
 </div>
 </li>
@@ -7930,7 +8179,7 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.nio.charset.Charset:lookup2:java.lang.Stringjava.nio.charset.Charset" href="#">
+<a name="java.nio.charset.Charset:lookup:java.lang.Stringjava.nio.charset.Charset" href="#">
 
 </a>
 <div class="method_signature">
@@ -7940,7 +8189,7 @@ java.nio.charset.Charset
 </a>
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-lookup2
+lookup
 </span>
 (
 <a href="../../../java/lang/String.html">
@@ -7960,8 +8209,22 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="#java.nio.charset.Charset:lookup:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset lookup(java.lang.String)">
-java.nio.charset.Charset.lookup(java.lang.String)
+<a href="#java.nio.charset.Charset:forName:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset forName(java.lang.String)">
+java.nio.charset.Charset.forName(java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.nio.charset.Charset:defaultCharset:java.nio.charset.Charset" title="java.nio.charset.Charset defaultCharset()">
+java.nio.charset.Charset.defaultCharset()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.nio.charset.Charset:isSupported:java.lang.StringZ" title="bool isSupported(java.lang.String)">
+java.nio.charset.Charset.isSupported(java.lang.String)
 </a>
 </div>
 </li>
@@ -7971,11 +8234,89 @@ java.nio.charset.Charset.lookup(java.lang.String)
 <li value="0">
 <div class="instruction">
 <span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+ifnonnull 13
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+ldc string &apos;Null charset name&apos;
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.lang.IllegalArgumentException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/IllegalArgumentException.html#java.lang.IllegalArgumentException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
+java.lang.IllegalArgumentException.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
 getstatic 
 </span>
 <span>
-<a href="#java.nio.charset.Charset:cache2:java.lang.Object.-">
-java.nio.charset.Charset.cache2
+<a href="#java.nio.charset.Charset:cache1:java.lang.Object.-">
+java.nio.charset.Charset.cache1
 </a>
 </span>
 <span>
@@ -7989,56 +8330,56 @@ java.lang.Object
 </span>
 </div>
 </li>
-<li value="3">
+<li value="17">
 <div class="instruction">
 <span>
 dup
 </span>
 </div>
 </li>
-<li value="4">
+<li value="18">
 <div class="instruction">
 <span>
 astore  1
 </span>
 </div>
 </li>
-<li value="5">
+<li value="19">
 <div class="instruction">
 <span>
-ifnull 30
+ifnull 20
 </span>
 </div>
 </li>
-<li value="8">
+<li value="22">
 <div class="instruction">
 <span>
 aload  0
 </span>
 </div>
 </li>
-<li value="9">
+<li value="23">
 <div class="instruction">
 <span>
 aload  1
 </span>
 </div>
 </li>
-<li value="10">
+<li value="24">
 <div class="instruction">
 <span>
 iconst 0
 </span>
 </div>
 </li>
-<li value="11">
+<li value="25">
 <div class="instruction">
 <span>
 aaload
 </span>
 </div>
 </li>
-<li value="12">
+<li value="26">
 <div class="instruction">
 <span>
 invokevirtual 
@@ -8069,105 +8410,35 @@ java.lang.String.equals
 </ul>
 </div>
 </li>
-<li value="15">
-<div class="instruction">
-<span>
-ifeq 20
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.nio.charset.Charset:cache1:java.lang.Object.-">
-java.nio.charset.Charset.cache1
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/lang/Object.html">
-java.lang.Object
-</a>
-[]
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-putstatic 
-</span>
-<span>
-<a href="#java.nio.charset.Charset:cache2:java.lang.Object.-">
-java.nio.charset.Charset.cache2
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/lang/Object.html">
-java.lang.Object
-</a>
-[]
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-putstatic 
-</span>
-<span>
-<a href="#java.nio.charset.Charset:cache1:java.lang.Object.-">
-java.nio.charset.Charset.cache1
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/lang/Object.html">
-java.lang.Object
-</a>
-[]
-</span>
-</div>
-</li>
-<li value="28">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
 <li value="29">
+<div class="instruction">
+<span>
+ifeq 10
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="33">
 <div class="instruction">
 <span>
 iconst 1
 </span>
 </div>
 </li>
-<li value="30">
+<li value="34">
 <div class="instruction">
 <span>
 aaload
 </span>
 </div>
 </li>
-<li value="31">
+<li value="35">
 <div class="instruction">
 <span>
 checkcast 
@@ -8179,44 +8450,24 @@ java.nio.charset.Charset
 </span>
 </div>
 </li>
-<li value="34">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.nio.charset.Charset:standardProvider:java.nio.charset.spi.CharsetProvider">
-java.nio.charset.Charset.standardProvider
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/nio/charset/spi/CharsetProvider.html">
-java.nio.charset.spi.CharsetProvider
-</a>
-</span>
-</div>
-</li>
 <li value="38">
 <div class="instruction">
 <span>
-aload  0
+areturn
 </span>
 </div>
 </li>
 <li value="39">
 <div class="instruction">
 <span>
-invokevirtual 
+aload  0
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+invokestatic 
 </span>
 <span>
 <a href="Charset.html">
@@ -8224,8 +8475,8 @@ java.nio.charset.Charset
 </a>
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.nio.charset.Charset charsetForName(java.lang.String)">
-java.nio.charset.spi.CharsetProvider.charsetForName
+<span title="java.nio.charset.Charset lookup2(java.lang.String)">
+java.nio.charset.Charset.lookup2
 </span>
 </span>
 <span>
@@ -8238,266 +8489,15 @@ java.lang.String
 <ul class="clickable">
 <li>
 <div>
-<a href="../../../sun/nio/cs/FastCharsetProvider.html#sun.nio.cs.FastCharsetProvider:charsetForName:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset charsetForName(java.lang.String)">
-sun.nio.cs.FastCharsetProvider.charsetForName
+<a href="#java.nio.charset.Charset:lookup2:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset lookup2(java.lang.String)">
+java.nio.charset.Charset.lookup2
 </a>
 </div>
 </li>
 </ul>
-</div>
-</li>
-<li value="42">
-<div class="instruction">
-<span>
-dup
-</span>
 </div>
 </li>
 <li value="43">
-<div class="instruction">
-<span>
-astore  2
-</span>
-</div>
-</li>
-<li value="44">
-<div class="instruction">
-<span>
-ifnonnull 21
-</span>
-</div>
-</li>
-<li value="47">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="48">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="Charset.html">
-java.nio.charset.Charset
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.nio.charset.Charset lookupExtendedCharset(java.lang.String)">
-java.nio.charset.Charset.lookupExtendedCharset
-</span>
-</span>
-<span>
-(
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.charset.Charset:lookupExtendedCharset:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset lookupExtendedCharset(java.lang.String)">
-java.nio.charset.Charset.lookupExtendedCharset
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="51">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="52">
-<div class="instruction">
-<span>
-astore  2
-</span>
-</div>
-</li>
-<li value="53">
-<div class="instruction">
-<span>
-ifnonnull 12
-</span>
-</div>
-</li>
-<li value="56">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="57">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="Charset.html">
-java.nio.charset.Charset
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.nio.charset.Charset lookupViaProviders(java.lang.String)">
-java.nio.charset.Charset.lookupViaProviders
-</span>
-</span>
-<span>
-(
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.charset.Charset:lookupViaProviders:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset lookupViaProviders(java.lang.String)">
-java.nio.charset.Charset.lookupViaProviders
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="60">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="61">
-<div class="instruction">
-<span>
-astore  2
-</span>
-</div>
-</li>
-<li value="62">
-<div class="instruction">
-<span>
-ifnull 10
-</span>
-</div>
-</li>
-<li value="65">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="66">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="67">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void cache(java.lang.String, java.nio.charset.Charset)">
-java.nio.charset.Charset.cache
-</span>
-</span>
-<span>
-(
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-, 
-<a href="Charset.html">
-java.nio.charset.Charset
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.charset.Charset:cache:java.lang.Stringjava.nio.charset.Charsetvoid" title="void cache(java.lang.String, java.nio.charset.Charset)">
-java.nio.charset.Charset.cache
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="70">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="71">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-<li value="72">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="73">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void checkName(java.lang.String)">
-java.nio.charset.Charset.checkName
-</span>
-</span>
-<span>
-(
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.charset.Charset:checkName:java.lang.Stringvoid" title="void checkName(java.lang.String)">
-java.nio.charset.Charset.checkName
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="76">
-<div class="instruction">
-<span>
-aconstnull
-</span>
-</div>
-</li>
-<li value="77">
 <div class="instruction">
 <span>
 areturn

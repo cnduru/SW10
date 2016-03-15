@@ -7835,6 +7835,207 @@ ireturn
 </ol>
 </div>
 <div class="method">
+<a name="java.util.Arrays:copyOf:I.-II.-" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+int[]
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+copyOf
+</span>
+(
+int[]
+ 0
+, 
+int
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/regex/Pattern.html#java.util.regex.Pattern:RemoveQEQuoting:void" title="void RemoveQEQuoting()">
+java.util.regex.Pattern.RemoveQEQuoting()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+newarray 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+astore  2
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int min(int, int)">
+java.lang.Math.min
+</span>
+</span>
+<span>
+(
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Math.html#java.lang.Math:min:III" title="int min(int, int)">
+java.lang.Math.min
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void arraycopy(java.lang.Object, int, java.lang.Object, int, int)">
+java.lang.System.arraycopy
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+int
+, 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/System.html#java.lang.System:arraycopy:java.lang.ObjectIjava.lang.ObjectIIvoid" title="void arraycopy(java.lang.Object, int, java.lang.Object, int, int)">
+java.lang.System.arraycopy
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
 <a name="java.util.Arrays:equals:B.-B.-Z" href="#">
 
 </a>
@@ -8150,15 +8351,15 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.util.Arrays:swap:java.lang.Object.-IIvoid" href="#">
+<a name="java.util.Arrays:sort:java.lang.Object.-java.util.Comparatorvoid" href="#">
 
 </a>
 <div class="method_signature">
-private static 
+public static 
 void
  
 <span>
-swap
+sort
 </span>
 (
 <a href="../../java/lang/Object.html">
@@ -8167,11 +8368,10 @@ java.lang.Object
 []
  0
 , 
-int
+<a href="../../java/util/Comparator.html">
+java.util.Comparator
+</a>
  1
-, 
-int
- 2
 )
 ;
 <ul class="annot">
@@ -8187,42 +8387,33 @@ Not parsed
 <li value="0">
 <div class="instruction">
 <span>
-aload  0
+invokestatic 
 </span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool access$000()">
+java.util.Arrays$LegacyMergeSort.access$000
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
 </div>
 </li>
-<li value="1">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-aaload
-</span>
+</ul>
 </div>
 </li>
 <li value="3">
 <div class="instruction">
 <span>
-astore  3
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-iload  1
+ifeq 11
 </span>
 </div>
 </li>
@@ -8236,53 +8427,100 @@ aload  0
 <li value="7">
 <div class="instruction">
 <span>
-iload  2
+aload  1
 </span>
 </div>
 </li>
 <li value="8">
 <div class="instruction">
 <span>
-aaload
+invokestatic 
 </span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void legacyMergeSort(java.lang.Object[], java.util.Comparator)">
+java.util.Arrays.legacyMergeSort
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
+, 
+<a href="../../java/util/Comparator.html">
+java.util.Comparator
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
 </div>
 </li>
-<li value="9">
+</ul>
+</div>
+</li>
+<li value="11">
 <div class="instruction">
 <span>
-aastore
+goto 8
 </span>
 </div>
 </li>
-<li value="10">
+<li value="14">
 <div class="instruction">
 <span>
 aload  0
 </span>
 </div>
 </li>
-<li value="11">
+<li value="15">
 <div class="instruction">
 <span>
-iload  2
+aload  1
 </span>
 </div>
 </li>
-<li value="12">
+<li value="16">
 <div class="instruction">
 <span>
-aload  3
+invokestatic 
 </span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
 <span>
-aastore
+void
 </span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void sort(java.lang.Object[], java.util.Comparator)">
+java.util.TimSort.sort
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
+, 
+<a href="../../java/util/Comparator.html">
+java.util.Comparator
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
 </div>
 </li>
-<li value="14">
+</ul>
+</div>
+</li>
+<li value="19">
 <div class="instruction">
 <span>
 return
@@ -10861,6 +11099,188 @@ return
 </ol>
 </div>
 <div class="method">
+<a name="java.util.Arrays:fill:C.-IICvoid" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+void
+ 
+<span>
+fill
+</span>
+(
+char[]
+ 0
+, 
+int
+ 1
+, 
+int
+ 2
+, 
+char
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void rangeCheck(int, int, int)">
+java.util.Arrays.rangeCheck
+</span>
+</span>
+<span>
+(
+int
+, 
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+istore  4
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+iload  4
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+ifcmpge 14
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+iload  4
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+castore
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+iinc 4 1
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+goto -14
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
 <a name="java.util.Arrays:fill:S.-IISvoid" href="#">
 
 </a>
@@ -12319,160 +12739,6 @@ iconst 1
 <div class="instruction">
 <span>
 ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.Arrays:sort:java.lang.Object.-void" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-void
- 
-<span>
-sort
-</span>
-(
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-[]
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool access$000()">
-java.util.Arrays$LegacyMergeSort.access$000
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-ifeq 10
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void legacyMergeSort(java.lang.Object[])">
-java.util.Arrays.legacyMergeSort
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-[]
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-goto 7
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void sort(java.lang.Object[])">
-java.util.ComparableTimSort.sort
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-[]
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-return
 </span>
 </div>
 </li>
@@ -20323,188 +20589,6 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.util.Arrays:fill:C.-IICvoid" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-void
- 
-<span>
-fill
-</span>
-(
-char[]
- 0
-, 
-int
- 1
-, 
-int
- 2
-, 
-char
- 3
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-arraylength
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void rangeCheck(int, int, int)">
-java.util.Arrays.rangeCheck
-</span>
-</span>
-<span>
-(
-int
-, 
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-istore  4
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-iload  4
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-ifcmpge 14
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-iload  4
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-castore
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-iinc 4 1
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-goto -14
-</span>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
 <a name="java.util.Arrays:fill:S.-Svoid" href="#">
 
 </a>
@@ -25817,6 +25901,150 @@ iconst 1
 <div class="instruction">
 <span>
 ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.Arrays:swap:java.lang.Object.-IIvoid" href="#">
+
+</a>
+<div class="method_signature">
+private static 
+void
+ 
+<span>
+swap
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
+ 0
+, 
+int
+ 1
+, 
+int
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+aaload
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+astore  3
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+aaload
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aastore
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+aastore
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+return
 </span>
 </div>
 </li>
@@ -34157,208 +34385,7 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.util.Arrays:copyOf:I.-II.-" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-int[]
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-copyOf
-</span>
-(
-int[]
- 0
-, 
-int
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/util/regex/Pattern.html#java.util.regex.Pattern:RemoveQEQuoting:void" title="void RemoveQEQuoting()">
-java.util.regex.Pattern.RemoveQEQuoting()
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-newarray 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-astore  2
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-arraylength
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int min(int, int)">
-java.lang.Math.min
-</span>
-</span>
-<span>
-(
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/Math.html#java.lang.Math:min:III" title="int min(int, int)">
-java.lang.Math.min
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void arraycopy(java.lang.Object, int, java.lang.Object, int, int)">
-java.lang.System.arraycopy
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-, 
-int
-, 
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-, 
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/System.html#java.lang.System:arraycopy:java.lang.ObjectIjava.lang.ObjectIIvoid" title="void arraycopy(java.lang.Object, int, java.lang.Object, int, int)">
-java.lang.System.arraycopy
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.Arrays:sort:java.lang.Object.-java.util.Comparatorvoid" href="#">
+<a name="java.util.Arrays:sort:java.lang.Object.-void" href="#">
 
 </a>
 <div class="method_signature">
@@ -34374,11 +34401,6 @@ java.lang.Object
 </a>
 []
  0
-, 
-<a href="../../java/util/Comparator.html">
-java.util.Comparator
-</a>
- 1
 )
 ;
 <ul class="annot">
@@ -34420,7 +34442,7 @@ No reachable result.
 <li value="3">
 <div class="instruction">
 <span>
-ifeq 11
+ifeq 10
 </span>
 </div>
 </li>
@@ -34434,20 +34456,13 @@ aload  0
 <li value="7">
 <div class="instruction">
 <span>
-aload  1
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
 invokestatic 
 </span>
 <span>
 void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void legacyMergeSort(java.lang.Object[], java.util.Comparator)">
+<span title="void legacyMergeSort(java.lang.Object[])">
 java.util.Arrays.legacyMergeSort
 </span>
 </span>
@@ -34457,10 +34472,6 @@ java.util.Arrays.legacyMergeSort
 java.lang.Object
 </a>
 []
-, 
-<a href="../../java/util/Comparator.html">
-java.util.Comparator
-</a>
 )
 </span>
 <ul class="clickable">
@@ -34472,28 +34483,21 @@ No reachable result.
 </ul>
 </div>
 </li>
-<li value="11">
+<li value="10">
 <div class="instruction">
 <span>
-goto 8
+goto 7
 </span>
 </div>
 </li>
-<li value="14">
+<li value="13">
 <div class="instruction">
 <span>
 aload  0
 </span>
 </div>
 </li>
-<li value="15">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="16">
+<li value="14">
 <div class="instruction">
 <span>
 invokestatic 
@@ -34502,8 +34506,8 @@ invokestatic
 void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void sort(java.lang.Object[], java.util.Comparator)">
-java.util.TimSort.sort
+<span title="void sort(java.lang.Object[])">
+java.util.ComparableTimSort.sort
 </span>
 </span>
 <span>
@@ -34512,10 +34516,6 @@ java.util.TimSort.sort
 java.lang.Object
 </a>
 []
-, 
-<a href="../../java/util/Comparator.html">
-java.util.Comparator
-</a>
 )
 </span>
 <ul class="clickable">
@@ -34527,7 +34527,7 @@ No reachable result.
 </ul>
 </div>
 </li>
-<li value="19">
+<li value="17">
 <div class="instruction">
 <span>
 return

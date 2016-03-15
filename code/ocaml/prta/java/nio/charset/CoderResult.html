@@ -730,21 +730,17 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.nio.charset.CoderResult:malformedForLength:Ijava.nio.charset.CoderResult" href="#">
+<a name="java.nio.charset.CoderResult:isUnmappable:Z" href="#">
 
 </a>
 <div class="method_signature">
-public static 
-<a href="CoderResult.html">
-java.nio.charset.CoderResult
-</a>
+public 
+bool
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-malformedForLength
+isUnmappable
 </span>
 (
-int
- 0
 )
 ;
 <ul class="annot">
@@ -758,8 +754,119 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../../sun/nio/cs/Surrogate$Parser.html#sun.nio.cs.Surrogate$Parser:parse:CC.-III" title="int parse(char, char[], int, int)">
-sun.nio.cs.Surrogate$Parser.parse(char, char[], int, int)
+<a href="../../../java/nio/charset/CharsetDecoder.html#java.nio.charset.CharsetDecoder:decode:java.nio.ByteBufferjava.nio.CharBufferZjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult decode(java.nio.ByteBuffer, java.nio.CharBuffer, bool)">
+java.nio.charset.CharsetDecoder.decode(java.nio.ByteBuffer, java.nio.CharBuffer, bool)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/nio/charset/CharsetEncoder.html#java.nio.charset.CharsetEncoder:encode:java.nio.CharBufferjava.nio.ByteBufferZjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult encode(java.nio.CharBuffer, java.nio.ByteBuffer, bool)">
+java.nio.charset.CharsetEncoder.encode(java.nio.CharBuffer, java.nio.ByteBuffer, bool)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.nio.charset.CoderResult:type:I">
+java.nio.charset.CoderResult.type
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+iconst 3
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+ifcmpne 7
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.charset.CoderResult:isUnderflow:Z" href="#">
+
+</a>
+<div class="method_signature">
+public 
+bool
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+isUnderflow
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/StringCoding$StringDecoder.html#java.lang.StringCoding$StringDecoder:decode:B.-IIC.-" title="char[] decode(byte[], int, int)">
+java.lang.StringCoding$StringDecoder.decode(byte[], int, int)
 </a>
 </div>
 </li>
@@ -772,8 +879,8 @@ java.nio.charset.CharsetDecoder.decode(java.nio.ByteBuffer, java.nio.CharBuffer,
 </li>
 <li>
 <div>
-<a href="../../../sun/nio/cs/US_ASCII$Decoder.html#sun.nio.cs.US_ASCII$Decoder:decodeArrayLoop:java.nio.ByteBufferjava.nio.CharBufferjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult decodeArrayLoop(java.nio.ByteBuffer, java.nio.CharBuffer)">
-sun.nio.cs.US_ASCII$Decoder.decodeArrayLoop(java.nio.ByteBuffer, java.nio.CharBuffer)
+<a href="../../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:flushLeftoverChar:java.nio.CharBufferZvoid" title="void flushLeftoverChar(java.nio.CharBuffer, bool)">
+sun.nio.cs.StreamEncoder.flushLeftoverChar(java.nio.CharBuffer, bool)
 </a>
 </div>
 </li>
@@ -786,15 +893,29 @@ java.nio.charset.CharsetEncoder.encode(java.nio.CharBuffer, java.nio.ByteBuffer,
 </li>
 <li>
 <div>
-<a href="../../../sun/nio/cs/US_ASCII$Decoder.html#sun.nio.cs.US_ASCII$Decoder:decodeBufferLoop:java.nio.ByteBufferjava.nio.CharBufferjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult decodeBufferLoop(java.nio.ByteBuffer, java.nio.CharBuffer)">
-sun.nio.cs.US_ASCII$Decoder.decodeBufferLoop(java.nio.ByteBuffer, java.nio.CharBuffer)
+<a href="../../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:implClose:void" title="void implClose()">
+sun.nio.cs.StreamEncoder.implClose()
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../../sun/nio/cs/Surrogate$Parser.html#sun.nio.cs.Surrogate$Parser:parse:Cjava.nio.CharBufferI" title="int parse(char, java.nio.CharBuffer)">
-sun.nio.cs.Surrogate$Parser.parse(char, java.nio.CharBuffer)
+<a href="../../../java/nio/charset/CharsetDecoder.html#java.nio.charset.CharsetDecoder:flush:java.nio.CharBufferjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult flush(java.nio.CharBuffer)">
+java.nio.charset.CharsetDecoder.flush(java.nio.CharBuffer)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:implWrite:C.-IIvoid" title="void implWrite(char[], int, int)">
+sun.nio.cs.StreamEncoder.implWrite(char[], int, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/nio/charset/CharsetEncoder.html#java.nio.charset.CharsetEncoder:flush:java.nio.ByteBufferjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult flush(java.nio.ByteBuffer)">
+java.nio.charset.CharsetEncoder.flush(java.nio.ByteBuffer)
 </a>
 </div>
 </li>
@@ -804,69 +925,60 @@ sun.nio.cs.Surrogate$Parser.parse(char, java.nio.CharBuffer)
 <li value="0">
 <div class="instruction">
 <span>
-getstatic 
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
 </span>
 <span>
-<a href="#java.nio.charset.CoderResult:malformedCache:java.nio.charset.CoderResult$Cache">
-java.nio.charset.CoderResult.malformedCache
+<a href="#java.nio.charset.CoderResult:type:I">
+java.nio.charset.CoderResult.type
 </a>
 </span>
 <span>
  : 
 </span>
 <span>
-<a href="../../../java/nio/charset/CoderResult$Cache.html">
-java.nio.charset.CoderResult$Cache
-</a>
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-iload  0
+int
 </span>
 </div>
 </li>
 <li value="4">
 <div class="instruction">
 <span>
-invokestatic 
+ifne 7
 </span>
-<span>
-<a href="CoderResult.html">
-java.nio.charset.CoderResult
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.nio.charset.CoderResult access$200(java.nio.charset.CoderResult$Cache, int)">
-java.nio.charset.CoderResult$Cache.access$200
-</span>
-</span>
-<span>
-(
-<a href="../../../java/nio/charset/CoderResult$Cache.html">
-java.nio.charset.CoderResult$Cache
-</a>
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/nio/charset/CoderResult$Cache.html#java.nio.charset.CoderResult$Cache:access$200:java.nio.charset.CoderResult$CacheIjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult access$200(java.nio.charset.CoderResult$Cache, int)">
-java.nio.charset.CoderResult$Cache.access$200
-</a>
-</div>
-</li>
-</ul>
 </div>
 </li>
 <li value="7">
 <div class="instruction">
 <span>
-areturn
+iconst 1
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+ireturn
 </span>
 </div>
 </li>
@@ -1036,359 +1148,6 @@ int
 </div>
 </li>
 <li value="19">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.charset.CoderResult:isOverflow:Z" href="#">
-
-</a>
-<div class="method_signature">
-public 
-bool
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-isOverflow
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/nio/charset/CharsetDecoder.html#java.nio.charset.CharsetDecoder:decode:java.nio.ByteBufferjava.nio.CharBufferZjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult decode(java.nio.ByteBuffer, java.nio.CharBuffer, bool)">
-java.nio.charset.CharsetDecoder.decode(java.nio.ByteBuffer, java.nio.CharBuffer, bool)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:flushLeftoverChar:java.nio.CharBufferZvoid" title="void flushLeftoverChar(java.nio.CharBuffer, bool)">
-sun.nio.cs.StreamEncoder.flushLeftoverChar(java.nio.CharBuffer, bool)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/nio/charset/CharsetEncoder.html#java.nio.charset.CharsetEncoder:encode:java.nio.CharBufferjava.nio.ByteBufferZjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult encode(java.nio.CharBuffer, java.nio.ByteBuffer, bool)">
-java.nio.charset.CharsetEncoder.encode(java.nio.CharBuffer, java.nio.ByteBuffer, bool)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:implClose:void" title="void implClose()">
-sun.nio.cs.StreamEncoder.implClose()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:implWrite:C.-IIvoid" title="void implWrite(char[], int, int)">
-sun.nio.cs.StreamEncoder.implWrite(char[], int, int)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.nio.charset.CoderResult:type:I">
-java.nio.charset.CoderResult.type
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-ifcmpne 7
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.charset.CoderResult:unmappableForLength:Ijava.nio.charset.CoderResult" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-<a href="CoderResult.html">
-java.nio.charset.CoderResult
-</a>
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-unmappableForLength
-</span>
-(
-int
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../sun/nio/cs/Surrogate$Parser.html#sun.nio.cs.Surrogate$Parser:unmappableResult:java.nio.charset.CoderResult" title="java.nio.charset.CoderResult unmappableResult()">
-sun.nio.cs.Surrogate$Parser.unmappableResult()
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.nio.charset.CoderResult:unmappableCache:java.nio.charset.CoderResult$Cache">
-java.nio.charset.CoderResult.unmappableCache
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/nio/charset/CoderResult$Cache.html">
-java.nio.charset.CoderResult$Cache
-</a>
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="CoderResult.html">
-java.nio.charset.CoderResult
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.nio.charset.CoderResult access$200(java.nio.charset.CoderResult$Cache, int)">
-java.nio.charset.CoderResult$Cache.access$200
-</span>
-</span>
-<span>
-(
-<a href="../../../java/nio/charset/CoderResult$Cache.html">
-java.nio.charset.CoderResult$Cache
-</a>
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/nio/charset/CoderResult$Cache.html#java.nio.charset.CoderResult$Cache:access$200:java.nio.charset.CoderResult$CacheIjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult access$200(java.nio.charset.CoderResult$Cache, int)">
-java.nio.charset.CoderResult$Cache.access$200
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.charset.CoderResult:isMalformed:Z" href="#">
-
-</a>
-<div class="method_signature">
-public 
-bool
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-isMalformed
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/nio/charset/CharsetDecoder.html#java.nio.charset.CharsetDecoder:decode:java.nio.ByteBufferjava.nio.CharBufferZjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult decode(java.nio.ByteBuffer, java.nio.CharBuffer, bool)">
-java.nio.charset.CharsetDecoder.decode(java.nio.ByteBuffer, java.nio.CharBuffer, bool)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/nio/charset/CharsetEncoder.html#java.nio.charset.CharsetEncoder:encode:java.nio.CharBufferjava.nio.ByteBufferZjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult encode(java.nio.CharBuffer, java.nio.ByteBuffer, bool)">
-java.nio.charset.CharsetEncoder.encode(java.nio.CharBuffer, java.nio.ByteBuffer, bool)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.nio.charset.CoderResult:type:I">
-java.nio.charset.CoderResult.type
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-iconst 2
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-ifcmpne 7
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="13">
 <div class="instruction">
 <span>
 ireturn
@@ -1844,6 +1603,116 @@ return
 </ol>
 </div>
 <div class="method">
+<a name="java.nio.charset.CoderResult:unmappableForLength:Ijava.nio.charset.CoderResult" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+unmappableForLength
+</span>
+(
+int
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/nio/cs/Surrogate$Parser.html#sun.nio.cs.Surrogate$Parser:unmappableResult:java.nio.charset.CoderResult" title="java.nio.charset.CoderResult unmappableResult()">
+sun.nio.cs.Surrogate$Parser.unmappableResult()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.nio.charset.CoderResult:unmappableCache:java.nio.charset.CoderResult$Cache">
+java.nio.charset.CoderResult.unmappableCache
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult$Cache.html">
+java.nio.charset.CoderResult$Cache
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.charset.CoderResult access$200(java.nio.charset.CoderResult$Cache, int)">
+java.nio.charset.CoderResult$Cache.access$200
+</span>
+</span>
+<span>
+(
+<a href="../../../java/nio/charset/CoderResult$Cache.html">
+java.nio.charset.CoderResult$Cache
+</a>
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/nio/charset/CoderResult$Cache.html#java.nio.charset.CoderResult$Cache:access$200:java.nio.charset.CoderResult$CacheIjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult access$200(java.nio.charset.CoderResult$Cache, int)">
+java.nio.charset.CoderResult$Cache.access$200
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
 <a name="java.nio.charset.CoderResult:isError:Z" href="#">
 
 </a>
@@ -1954,6 +1823,151 @@ iconst 0
 <div class="instruction">
 <span>
 ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.charset.CoderResult:malformedForLength:Ijava.nio.charset.CoderResult" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+malformedForLength
+</span>
+(
+int
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/nio/cs/Surrogate$Parser.html#sun.nio.cs.Surrogate$Parser:parse:CC.-III" title="int parse(char, char[], int, int)">
+sun.nio.cs.Surrogate$Parser.parse(char, char[], int, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/nio/charset/CharsetDecoder.html#java.nio.charset.CharsetDecoder:decode:java.nio.ByteBufferjava.nio.CharBufferZjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult decode(java.nio.ByteBuffer, java.nio.CharBuffer, bool)">
+java.nio.charset.CharsetDecoder.decode(java.nio.ByteBuffer, java.nio.CharBuffer, bool)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/nio/cs/US_ASCII$Decoder.html#sun.nio.cs.US_ASCII$Decoder:decodeArrayLoop:java.nio.ByteBufferjava.nio.CharBufferjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult decodeArrayLoop(java.nio.ByteBuffer, java.nio.CharBuffer)">
+sun.nio.cs.US_ASCII$Decoder.decodeArrayLoop(java.nio.ByteBuffer, java.nio.CharBuffer)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/nio/charset/CharsetEncoder.html#java.nio.charset.CharsetEncoder:encode:java.nio.CharBufferjava.nio.ByteBufferZjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult encode(java.nio.CharBuffer, java.nio.ByteBuffer, bool)">
+java.nio.charset.CharsetEncoder.encode(java.nio.CharBuffer, java.nio.ByteBuffer, bool)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/nio/cs/US_ASCII$Decoder.html#sun.nio.cs.US_ASCII$Decoder:decodeBufferLoop:java.nio.ByteBufferjava.nio.CharBufferjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult decodeBufferLoop(java.nio.ByteBuffer, java.nio.CharBuffer)">
+sun.nio.cs.US_ASCII$Decoder.decodeBufferLoop(java.nio.ByteBuffer, java.nio.CharBuffer)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/nio/cs/Surrogate$Parser.html#sun.nio.cs.Surrogate$Parser:parse:Cjava.nio.CharBufferI" title="int parse(char, java.nio.CharBuffer)">
+sun.nio.cs.Surrogate$Parser.parse(char, java.nio.CharBuffer)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.nio.charset.CoderResult:malformedCache:java.nio.charset.CoderResult$Cache">
+java.nio.charset.CoderResult.malformedCache
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/nio/charset/CoderResult$Cache.html">
+java.nio.charset.CoderResult$Cache
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="CoderResult.html">
+java.nio.charset.CoderResult
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.charset.CoderResult access$200(java.nio.charset.CoderResult$Cache, int)">
+java.nio.charset.CoderResult$Cache.access$200
+</span>
+</span>
+<span>
+(
+<a href="../../../java/nio/charset/CoderResult$Cache.html">
+java.nio.charset.CoderResult$Cache
+</a>
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/nio/charset/CoderResult$Cache.html#java.nio.charset.CoderResult$Cache:access$200:java.nio.charset.CoderResult$CacheIjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult access$200(java.nio.charset.CoderResult$Cache, int)">
+java.nio.charset.CoderResult$Cache.access$200
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+areturn
 </span>
 </div>
 </li>
@@ -2718,7 +2732,7 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.nio.charset.CoderResult:isUnderflow:Z" href="#">
+<a name="java.nio.charset.CoderResult:isOverflow:Z" href="#">
 
 </a>
 <div class="method_signature">
@@ -2726,7 +2740,7 @@ public
 bool
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-isUnderflow
+isOverflow
 </span>
 (
 )
@@ -2740,13 +2754,6 @@ Parsed
 </li>
 </ul>
 <ul class="clickable">
-<li>
-<div>
-<a href="../../../java/lang/StringCoding$StringDecoder.html#java.lang.StringCoding$StringDecoder:decode:B.-IIC.-" title="char[] decode(byte[], int, int)">
-java.lang.StringCoding$StringDecoder.decode(byte[], int, int)
-</a>
-</div>
-</li>
 <li>
 <div>
 <a href="../../../java/nio/charset/CharsetDecoder.html#java.nio.charset.CharsetDecoder:decode:java.nio.ByteBufferjava.nio.CharBufferZjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult decode(java.nio.ByteBuffer, java.nio.CharBuffer, bool)">
@@ -2777,22 +2784,8 @@ sun.nio.cs.StreamEncoder.implClose()
 </li>
 <li>
 <div>
-<a href="../../../java/nio/charset/CharsetDecoder.html#java.nio.charset.CharsetDecoder:flush:java.nio.CharBufferjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult flush(java.nio.CharBuffer)">
-java.nio.charset.CharsetDecoder.flush(java.nio.CharBuffer)
-</a>
-</div>
-</li>
-<li>
-<div>
 <a href="../../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:implWrite:C.-IIvoid" title="void implWrite(char[], int, int)">
 sun.nio.cs.StreamEncoder.implWrite(char[], int, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/nio/charset/CharsetEncoder.html#java.nio.charset.CharsetEncoder:flush:java.nio.ByteBufferjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult flush(java.nio.ByteBuffer)">
-java.nio.charset.CharsetEncoder.flush(java.nio.ByteBuffer)
 </a>
 </div>
 </li>
@@ -2827,32 +2820,39 @@ int
 <li value="4">
 <div class="instruction">
 <span>
-ifne 7
+iconst 1
 </span>
 </div>
 </li>
-<li value="7">
+<li value="5">
 <div class="instruction">
 <span>
-iconst 1
+ifcmpne 7
 </span>
 </div>
 </li>
 <li value="8">
 <div class="instruction">
 <span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
 goto 4
 </span>
 </div>
 </li>
-<li value="11">
+<li value="12">
 <div class="instruction">
 <span>
 iconst 0
 </span>
 </div>
 </li>
-<li value="12">
+<li value="13">
 <div class="instruction">
 <span>
 ireturn
@@ -2864,7 +2864,7 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.nio.charset.CoderResult:isUnmappable:Z" href="#">
+<a name="java.nio.charset.CoderResult:isMalformed:Z" href="#">
 
 </a>
 <div class="method_signature">
@@ -2872,7 +2872,7 @@ public
 bool
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-isUnmappable
+isMalformed
 </span>
 (
 )
@@ -2931,7 +2931,7 @@ int
 <li value="4">
 <div class="instruction">
 <span>
-iconst 3
+iconst 2
 </span>
 </div>
 </li>

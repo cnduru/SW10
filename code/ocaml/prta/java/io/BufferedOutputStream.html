@@ -43,232 +43,18 @@ int
 </span>
 </div>
 <div class="method">
-<a name="java.io.BufferedOutputStream:&lt;init&gt;:java.io.OutputStreamIvoid" href="#">
+<a name="java.io.BufferedOutputStream:&lt;init&gt;:java.io.OutputStreamvoid" href="#">
 
 </a>
 <div class="method_signature">
 public 
-<span class="methodname clickable" onclick="showInfoList(this)">
+<span>
 BufferedOutputStream
 </span>
 (
 <a href="../../java/io/OutputStream.html">
 java.io.OutputStream
 </a>
- 1
-, 
-int
- 2
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/System.html#java.lang.System:initializeSystemClass:void" title="void initializeSystemClass()">
-java.lang.System.initializeSystemClass()
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.io.OutputStream)">
-java.io.FilterOutputStream.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/io/OutputStream.html">
-java.io.OutputStream
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/io/FilterOutputStream.html#java.io.FilterOutputStream:&lt;init&gt;:java.io.OutputStreamvoid" title="void &lt;init&gt;(java.io.OutputStream)">
-java.io.FilterOutputStream.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-ifgt 13
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/IllegalArgumentException.html">
-java.lang.IllegalArgumentException
-</a>
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-ldc string &apos;Buffer size &lt;= 0&apos;
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.lang.IllegalArgumentException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/IllegalArgumentException.html#java.lang.IllegalArgumentException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
-java.lang.IllegalArgumentException.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-newarray 
-</span>
-<span>
-byte
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.io.BufferedOutputStream:buf:B.-">
-java.io.BufferedOutputStream.buf
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-byte[]
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.io.BufferedOutputStream:write:Ivoid" href="#">
-
-</a>
-<div class="method_signature">
-public synchronized 
-void
- 
-<span>
-write
-</span>
-(
-int
  1
 )
 ;
@@ -292,68 +78,18 @@ aload  0
 <li value="1">
 <div class="instruction">
 <span>
-getfield 
-</span>
-<span>
-<a href="#java.io.BufferedOutputStream:count:I">
-java.io.BufferedOutputStream.count
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
+aload  1
 </span>
 </div>
 </li>
-<li value="4">
+<li value="2">
 <div class="instruction">
 <span>
-aload  0
+sipush 8192
 </span>
 </div>
 </li>
 <li value="5">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.io.BufferedOutputStream:buf:B.-">
-java.io.BufferedOutputStream.buf
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-byte[]
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-arraylength
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-ifcmplt 7
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="13">
 <div class="instruction">
 <span>
 invokespecial 
@@ -362,333 +98,29 @@ invokespecial
 void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void flushBuffer()">
-java.io.BufferedOutputStream.flushBuffer
+<span title="void &lt;init&gt;(java.io.OutputStream, int)">
+java.io.BufferedOutputStream.&lt;init&gt;
 </span>
 </span>
 <span>
 (
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.io.BufferedOutputStream:flushBuffer:void" title="void flushBuffer()">
-java.io.BufferedOutputStream.flushBuffer
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.io.BufferedOutputStream:buf:B.-">
-java.io.BufferedOutputStream.buf
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-byte[]
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.io.BufferedOutputStream:count:I">
-java.io.BufferedOutputStream.count
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-dupX1
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="28">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.io.BufferedOutputStream:count:I">
-java.io.BufferedOutputStream.count
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="31">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="32">
-<div class="instruction">
-<span>
-i2b
-</span>
-</div>
-</li>
-<li value="33">
-<div class="instruction">
-<span>
-bastore
-</span>
-</div>
-</li>
-<li value="34">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.io.BufferedOutputStream:flush:void" href="#">
-
-</a>
-<div class="method_signature">
-public synchronized 
-void
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-flush
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/io/PrintStream.html#java.io.PrintStream:write:B.-IIvoid" title="void write(byte[], int, int)">
-java.io.PrintStream.write(byte[], int, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.io.BufferedOutputStream:flush:void" title="void flush()">
-java.io.BufferedOutputStream.flush()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/io/PrintStream.html#java.io.PrintStream:flush:void" title="void flush()">
-java.io.PrintStream.flush()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/io/PrintStream.html#java.io.PrintStream:write:java.lang.Stringvoid" title="void write(java.lang.String)">
-java.io.PrintStream.write(java.lang.String)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/io/FilterOutputStream.html#java.io.FilterOutputStream:close:void" title="void close()">
-java.io.FilterOutputStream.close()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:implFlush:void" title="void implFlush()">
-sun.nio.cs.StreamEncoder.implFlush()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/io/PrintStream.html#java.io.PrintStream:newLine:void" title="void newLine()">
-java.io.PrintStream.newLine()
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void flushBuffer()">
-java.io.BufferedOutputStream.flushBuffer
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.io.BufferedOutputStream:flushBuffer:void" title="void flushBuffer()">
-java.io.BufferedOutputStream.flushBuffer
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../java/io/FilterOutputStream.html#java.io.FilterOutputStream:out:java.io.OutputStream">
-java.io.FilterOutputStream.out
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
 <a href="../../java/io/OutputStream.html">
 java.io.OutputStream
 </a>
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void flush()">
-java.io.OutputStream.flush
-</span>
-</span>
-<span>
-(
+, 
+int
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="#java.io.BufferedOutputStream:flush:void" title="void flush()">
-java.io.BufferedOutputStream.flush
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/io/PrintStream.html#java.io.PrintStream:flush:void" title="void flush()">
-java.io.PrintStream.flush
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/io/OutputStream.html#java.io.OutputStream:flush:void" title="void flush()">
-java.io.OutputStream.flush
-</a>
+No reachable result.
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="11">
+<li value="8">
 <div class="instruction">
 <span>
 return
@@ -1245,6 +677,196 @@ return
 </ol>
 </div>
 <div class="method">
+<a name="java.io.BufferedOutputStream:flush:void" href="#">
+
+</a>
+<div class="method_signature">
+public synchronized 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+flush
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/io/PrintStream.html#java.io.PrintStream:write:B.-IIvoid" title="void write(byte[], int, int)">
+java.io.PrintStream.write(byte[], int, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.io.BufferedOutputStream:flush:void" title="void flush()">
+java.io.BufferedOutputStream.flush()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/PrintStream.html#java.io.PrintStream:flush:void" title="void flush()">
+java.io.PrintStream.flush()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/PrintStream.html#java.io.PrintStream:write:java.lang.Stringvoid" title="void write(java.lang.String)">
+java.io.PrintStream.write(java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/FilterOutputStream.html#java.io.FilterOutputStream:close:void" title="void close()">
+java.io.FilterOutputStream.close()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:implFlush:void" title="void implFlush()">
+sun.nio.cs.StreamEncoder.implFlush()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/PrintStream.html#java.io.PrintStream:newLine:void" title="void newLine()">
+java.io.PrintStream.newLine()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void flushBuffer()">
+java.io.BufferedOutputStream.flushBuffer
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.io.BufferedOutputStream:flushBuffer:void" title="void flushBuffer()">
+java.io.BufferedOutputStream.flushBuffer
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../java/io/FilterOutputStream.html#java.io.FilterOutputStream:out:java.io.OutputStream">
+java.io.FilterOutputStream.out
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/io/OutputStream.html">
+java.io.OutputStream
+</a>
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void flush()">
+java.io.OutputStream.flush
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.io.BufferedOutputStream:flush:void" title="void flush()">
+java.io.BufferedOutputStream.flush
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/PrintStream.html#java.io.PrintStream:flush:void" title="void flush()">
+java.io.PrintStream.flush
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/OutputStream.html#java.io.OutputStream:flush:void" title="void flush()">
+java.io.OutputStream.flush
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
 <a name="java.io.BufferedOutputStream:flushBuffer:void" href="#">
 
 </a>
@@ -1491,18 +1113,232 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.io.BufferedOutputStream:&lt;init&gt;:java.io.OutputStreamvoid" href="#">
+<a name="java.io.BufferedOutputStream:&lt;init&gt;:java.io.OutputStreamIvoid" href="#">
 
 </a>
 <div class="method_signature">
 public 
-<span>
+<span class="methodname clickable" onclick="showInfoList(this)">
 BufferedOutputStream
 </span>
 (
 <a href="../../java/io/OutputStream.html">
 java.io.OutputStream
 </a>
+ 1
+, 
+int
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/System.html#java.lang.System:initializeSystemClass:void" title="void initializeSystemClass()">
+java.lang.System.initializeSystemClass()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.io.OutputStream)">
+java.io.FilterOutputStream.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/io/OutputStream.html">
+java.io.OutputStream
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/io/FilterOutputStream.html#java.io.FilterOutputStream:&lt;init&gt;:java.io.OutputStreamvoid" title="void &lt;init&gt;(java.io.OutputStream)">
+java.io.FilterOutputStream.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+ifgt 13
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+ldc string &apos;Buffer size &lt;= 0&apos;
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.lang.IllegalArgumentException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/IllegalArgumentException.html#java.lang.IllegalArgumentException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
+java.lang.IllegalArgumentException.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+newarray 
+</span>
+<span>
+byte
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.io.BufferedOutputStream:buf:B.-">
+java.io.BufferedOutputStream.buf
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+byte[]
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.BufferedOutputStream:write:Ivoid" href="#">
+
+</a>
+<div class="method_signature">
+public synchronized 
+void
+ 
+<span>
+write
+</span>
+(
+int
  1
 )
 ;
@@ -1526,18 +1362,68 @@ aload  0
 <li value="1">
 <div class="instruction">
 <span>
-aload  1
+getfield 
+</span>
+<span>
+<a href="#java.io.BufferedOutputStream:count:I">
+java.io.BufferedOutputStream.count
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
 </span>
 </div>
 </li>
-<li value="2">
+<li value="4">
 <div class="instruction">
 <span>
-sipush 8192
+aload  0
 </span>
 </div>
 </li>
 <li value="5">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.BufferedOutputStream:buf:B.-">
+java.io.BufferedOutputStream.buf
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+byte[]
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+ifcmplt 7
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="13">
 <div class="instruction">
 <span>
 invokespecial 
@@ -1546,29 +1432,143 @@ invokespecial
 void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.io.OutputStream, int)">
-java.io.BufferedOutputStream.&lt;init&gt;
+<span title="void flushBuffer()">
+java.io.BufferedOutputStream.flushBuffer
 </span>
 </span>
 <span>
 (
-<a href="../../java/io/OutputStream.html">
-java.io.OutputStream
-</a>
-, 
-int
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-No reachable result.
+<a href="#java.io.BufferedOutputStream:flushBuffer:void" title="void flushBuffer()">
+java.io.BufferedOutputStream.flushBuffer
+</a>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="8">
+<li value="16">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.BufferedOutputStream:buf:B.-">
+java.io.BufferedOutputStream.buf
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+byte[]
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.BufferedOutputStream:count:I">
+java.io.BufferedOutputStream.count
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+dupX1
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.io.BufferedOutputStream:count:I">
+java.io.BufferedOutputStream.count
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+i2b
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+bastore
+</span>
+</div>
+</li>
+<li value="34">
 <div class="instruction">
 <span>
 return

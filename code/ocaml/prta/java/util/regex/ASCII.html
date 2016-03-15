@@ -3833,127 +3833,7 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.util.regex.ASCII:getType:II" href="#">
-
-</a>
-<div class="method_signature">
- static 
-int
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-getType
-</span>
-(
-int
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.regex.ASCII:isType:IIZ" title="bool isType(int, int)">
-java.util.regex.ASCII.isType(int, int)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-bipush -128
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-iand
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ifne 11
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.util.regex.ASCII:ctype:I.-">
-java.util.regex.ASCII.ctype
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int[]
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-iaload
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.regex.ASCII:isAscii:IZ" href="#">
+<a name="java.util.regex.ASCII:isAlnum:IZ" href="#">
 
 </a>
 <div class="method_signature">
@@ -3961,7 +3841,7 @@ ireturn
 bool
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-isAscii
+isAlnum
 </span>
 (
 int
@@ -3984,27 +3864,6 @@ java.util.regex.Pattern.RemoveQEQuoting()
 </a>
 </div>
 </li>
-<li>
-<div>
-<a href="../../../java/util/regex/Pattern.html#java.util.regex.Pattern:newSingle:Ijava.util.regex.Pattern$CharProperty" title="java.util.regex.Pattern$CharProperty newSingle(int)">
-java.util.regex.Pattern.newSingle(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/regex/Pattern$BitClass.html#java.util.regex.Pattern$BitClass:add:IIjava.util.regex.Pattern$BitClass" title="java.util.regex.Pattern$BitClass add(int, int)">
-java.util.regex.Pattern$BitClass.add(int, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/regex/Pattern$3.html#java.util.regex.Pattern$3:isSatisfiedBy:IZ" title="bool isSatisfiedBy(int)">
-java.util.regex.Pattern$3.isSatisfiedBy(int)
-</a>
-</div>
-</li>
 </ul>
 </div>
 <ol class="code">
@@ -4018,46 +3877,42 @@ iload  0
 <li value="1">
 <div class="instruction">
 <span>
-bipush -128
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-iand
+sipush 1792
 </span>
 </div>
 </li>
 <li value="4">
 <div class="instruction">
 <span>
-ifne 7
+invokestatic 
 </span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isType(int, int)">
+java.util.regex.ASCII.isType
+</span>
+</span>
+<span>
+(
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.regex.ASCII:isType:IIZ" title="bool isType(int, int)">
+java.util.regex.ASCII.isType
+</a>
+</div>
+</li>
+</ul>
 </div>
 </li>
 <li value="7">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="12">
 <div class="instruction">
 <span>
 ireturn
@@ -4265,7 +4120,7 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.util.regex.ASCII:isSpace:IZ" href="#">
+<a name="java.util.regex.ASCII:isLower:IZ" href="#">
 
 </a>
 <div class="method_signature">
@@ -4273,7 +4128,7 @@ ireturn
 bool
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-isSpace
+isLower
 </span>
 (
 int
@@ -4291,15 +4146,29 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../../java/util/regex/Pattern.html#java.util.regex.Pattern:peekPastWhitespace:II" title="int peekPastWhitespace(int)">
-java.util.regex.Pattern.peekPastWhitespace(int)
+<a href="../../../java/util/regex/Pattern.html#java.util.regex.Pattern:groupname:Ijava.lang.String" title="java.lang.String groupname(int)">
+java.util.regex.Pattern.groupname(int)
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../../java/util/regex/Pattern.html#java.util.regex.Pattern:parsePastWhitespace:II" title="int parsePastWhitespace(int)">
-java.util.regex.Pattern.parsePastWhitespace(int)
+<a href="../../../java/util/regex/Matcher.html#java.util.regex.Matcher:appendReplacement:java.lang.StringBufferjava.lang.Stringjava.util.regex.Matcher" title="java.util.regex.Matcher appendReplacement(java.lang.StringBuffer, java.lang.String)">
+java.util.regex.Matcher.appendReplacement(java.lang.StringBuffer, java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.util.regex.ASCII:toUpper:II" title="int toUpper(int)">
+java.util.regex.ASCII.toUpper(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/regex/Pattern.html#java.util.regex.Pattern:group0:java.util.regex.Pattern$Node" title="java.util.regex.Pattern$Node group0()">
+java.util.regex.Pattern.group0()
 </a>
 </div>
 </li>
@@ -4316,155 +4185,74 @@ iload  0
 <li value="1">
 <div class="instruction">
 <span>
-sipush 2048
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool isType(int, int)">
-java.util.regex.ASCII.isType
-</span>
-</span>
-<span>
-(
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.regex.ASCII:isType:IIZ" title="bool isType(int, int)">
-java.util.regex.ASCII.isType
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.regex.ASCII:toDigit:II" href="#">
-
-</a>
-<div class="method_signature">
- static 
-int
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-toDigit
-</span>
-(
-int
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/util/regex/Pattern.html#java.util.regex.Pattern:x:I" title="int x()">
-java.util.regex.Pattern.x()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/regex/Pattern.html#java.util.regex.Pattern:uxxxx:I" title="int uxxxx()">
-java.util.regex.Pattern.uxxxx()
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.util.regex.ASCII:ctype:I.-">
-java.util.regex.ASCII.ctype
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int[]
+bipush 97
 </span>
 </div>
 </li>
 <li value="3">
 <div class="instruction">
 <span>
-iload  0
+isub
 </span>
 </div>
 </li>
 <li value="4">
 <div class="instruction">
 <span>
-bipush 127
+bipush 122
 </span>
 </div>
 </li>
 <li value="6">
 <div class="instruction">
 <span>
-iand
+iload  0
 </span>
 </div>
 </li>
 <li value="7">
 <div class="instruction">
 <span>
-iaload
+isub
 </span>
 </div>
 </li>
 <li value="8">
 <div class="instruction">
 <span>
-bipush 63
+ior
 </span>
 </div>
 </li>
-<li value="10">
+<li value="9">
 <div class="instruction">
 <span>
-iand
+iflt 7
 </span>
 </div>
 </li>
-<li value="11">
+<li value="12">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="17">
 <div class="instruction">
 <span>
 ireturn
@@ -4542,7 +4330,7 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.util.regex.ASCII:isHexDigit:IZ" href="#">
+<a name="java.util.regex.ASCII:isDigit:IZ" href="#">
 
 </a>
 <div class="method_signature">
@@ -4550,7 +4338,7 @@ return
 bool
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-isHexDigit
+isDigit
 </span>
 (
 int
@@ -4568,15 +4356,22 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../../java/util/regex/Pattern.html#java.util.regex.Pattern:x:I" title="int x()">
-java.util.regex.Pattern.x()
+<a href="../../../java/util/regex/Pattern.html#java.util.regex.Pattern:groupname:Ijava.lang.String" title="java.lang.String groupname(int)">
+java.util.regex.Pattern.groupname(int)
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../../java/util/regex/Pattern.html#java.util.regex.Pattern:uxxxx:I" title="int uxxxx()">
-java.util.regex.Pattern.uxxxx()
+<a href="../../../java/util/regex/Matcher.html#java.util.regex.Matcher:appendReplacement:java.lang.StringBufferjava.lang.Stringjava.util.regex.Matcher" title="java.util.regex.Matcher appendReplacement(java.lang.StringBuffer, java.lang.String)">
+java.util.regex.Matcher.appendReplacement(java.lang.StringBuffer, java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/regex/Pattern.html#java.util.regex.Pattern:closure:java.util.regex.Pattern$Nodejava.util.regex.Pattern$Node" title="java.util.regex.Pattern$Node closure(java.util.regex.Pattern$Node)">
+java.util.regex.Pattern.closure(java.util.regex.Pattern$Node)
 </a>
 </div>
 </li>
@@ -4593,42 +4388,74 @@ iload  0
 <li value="1">
 <div class="instruction">
 <span>
-iconst 32768
+bipush 48
 </span>
 </div>
 </li>
 <li value="3">
 <div class="instruction">
 <span>
-invokestatic 
+isub
 </span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool isType(int, int)">
-java.util.regex.ASCII.isType
-</span>
-</span>
-<span>
-(
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.regex.ASCII:isType:IIZ" title="bool isType(int, int)">
-java.util.regex.ASCII.isType
-</a>
 </div>
 </li>
-</ul>
+<li value="4">
+<div class="instruction">
+<span>
+bipush 57
+</span>
 </div>
 </li>
 <li value="6">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+ior
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+iflt 7
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="17">
 <div class="instruction">
 <span>
 ireturn
@@ -4825,445 +4652,6 @@ iconst 0
 </div>
 </li>
 <li value="17">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.regex.ASCII:toUpper:II" href="#">
-
-</a>
-<div class="method_signature">
- static 
-int
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-toUpper
-</span>
-(
-int
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/util/regex/Pattern.html#java.util.regex.Pattern:newSingle:Ijava.util.regex.Pattern$CharProperty" title="java.util.regex.Pattern$CharProperty newSingle(int)">
-java.util.regex.Pattern.newSingle(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/regex/Pattern$BitClass.html#java.util.regex.Pattern$BitClass:add:IIjava.util.regex.Pattern$BitClass" title="java.util.regex.Pattern$BitClass add(int, int)">
-java.util.regex.Pattern$BitClass.add(int, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/regex/Pattern$3.html#java.util.regex.Pattern$3:isSatisfiedBy:IZ" title="bool isSatisfiedBy(int)">
-java.util.regex.Pattern$3.isSatisfiedBy(int)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool isLower(int)">
-java.util.regex.ASCII.isLower
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.regex.ASCII:isLower:IZ" title="bool isLower(int)">
-java.util.regex.ASCII.isLower
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ifeq 10
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-bipush 32
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-isub
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.regex.ASCII:isDigit:IZ" href="#">
-
-</a>
-<div class="method_signature">
- static 
-bool
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-isDigit
-</span>
-(
-int
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/util/regex/Pattern.html#java.util.regex.Pattern:groupname:Ijava.lang.String" title="java.lang.String groupname(int)">
-java.util.regex.Pattern.groupname(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/regex/Matcher.html#java.util.regex.Matcher:appendReplacement:java.lang.StringBufferjava.lang.Stringjava.util.regex.Matcher" title="java.util.regex.Matcher appendReplacement(java.lang.StringBuffer, java.lang.String)">
-java.util.regex.Matcher.appendReplacement(java.lang.StringBuffer, java.lang.String)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/regex/Pattern.html#java.util.regex.Pattern:closure:java.util.regex.Pattern$Nodejava.util.regex.Pattern$Node" title="java.util.regex.Pattern$Node closure(java.util.regex.Pattern$Node)">
-java.util.regex.Pattern.closure(java.util.regex.Pattern$Node)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-bipush 48
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-isub
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-bipush 57
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-isub
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-ior
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-iflt 7
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.regex.ASCII:isCntrl:IZ" href="#">
-
-</a>
-<div class="method_signature">
- static 
-bool
- 
-<span>
-isCntrl
-</span>
-(
-int
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-sipush 8192
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool isType(int, int)">
-java.util.regex.ASCII.isType
-</span>
-</span>
-<span>
-(
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.regex.ASCII:isType:IIZ" title="bool isType(int, int)">
-java.util.regex.ASCII.isType
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.regex.ASCII:isGraph:IZ" href="#">
-
-</a>
-<div class="method_signature">
- static 
-bool
- 
-<span>
-isGraph
-</span>
-(
-int
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-sipush 5888
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool isType(int, int)">
-java.util.regex.ASCII.isType
-</span>
-</span>
-<span>
-(
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.regex.ASCII:isType:IIZ" title="bool isType(int, int)">
-java.util.regex.ASCII.isType
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="7">
 <div class="instruction">
 <span>
 ireturn
@@ -5585,6 +4973,617 @@ ireturn
 </ol>
 </div>
 <div class="method">
+<a name="java.util.regex.ASCII:getType:II" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getType
+</span>
+(
+int
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.regex.ASCII:isType:IIZ" title="bool isType(int, int)">
+java.util.regex.ASCII.isType(int, int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+bipush -128
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+iand
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ifne 11
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.util.regex.ASCII:ctype:I.-">
+java.util.regex.ASCII.ctype
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int[]
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+iaload
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.regex.ASCII:isAscii:IZ" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+bool
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+isAscii
+</span>
+(
+int
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/regex/Pattern.html#java.util.regex.Pattern:RemoveQEQuoting:void" title="void RemoveQEQuoting()">
+java.util.regex.Pattern.RemoveQEQuoting()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/regex/Pattern.html#java.util.regex.Pattern:newSingle:Ijava.util.regex.Pattern$CharProperty" title="java.util.regex.Pattern$CharProperty newSingle(int)">
+java.util.regex.Pattern.newSingle(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/regex/Pattern$BitClass.html#java.util.regex.Pattern$BitClass:add:IIjava.util.regex.Pattern$BitClass" title="java.util.regex.Pattern$BitClass add(int, int)">
+java.util.regex.Pattern$BitClass.add(int, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/regex/Pattern$3.html#java.util.regex.Pattern$3:isSatisfiedBy:IZ" title="bool isSatisfiedBy(int)">
+java.util.regex.Pattern$3.isSatisfiedBy(int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+bipush -128
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+iand
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ifne 7
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.regex.ASCII:isCntrl:IZ" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+bool
+ 
+<span>
+isCntrl
+</span>
+(
+int
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+sipush 8192
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isType(int, int)">
+java.util.regex.ASCII.isType
+</span>
+</span>
+<span>
+(
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.regex.ASCII:isType:IIZ" title="bool isType(int, int)">
+java.util.regex.ASCII.isType
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.regex.ASCII:isGraph:IZ" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+bool
+ 
+<span>
+isGraph
+</span>
+(
+int
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+sipush 5888
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isType(int, int)">
+java.util.regex.ASCII.isType
+</span>
+</span>
+<span>
+(
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.regex.ASCII:isType:IIZ" title="bool isType(int, int)">
+java.util.regex.ASCII.isType
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.regex.ASCII:isSpace:IZ" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+bool
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+isSpace
+</span>
+(
+int
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/regex/Pattern.html#java.util.regex.Pattern:peekPastWhitespace:II" title="int peekPastWhitespace(int)">
+java.util.regex.Pattern.peekPastWhitespace(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/regex/Pattern.html#java.util.regex.Pattern:parsePastWhitespace:II" title="int parsePastWhitespace(int)">
+java.util.regex.Pattern.parsePastWhitespace(int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+sipush 2048
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isType(int, int)">
+java.util.regex.ASCII.isType
+</span>
+</span>
+<span>
+(
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.regex.ASCII:isType:IIZ" title="bool isType(int, int)">
+java.util.regex.ASCII.isType
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.regex.ASCII:toDigit:II" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+toDigit
+</span>
+(
+int
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/regex/Pattern.html#java.util.regex.Pattern:x:I" title="int x()">
+java.util.regex.Pattern.x()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/regex/Pattern.html#java.util.regex.Pattern:uxxxx:I" title="int uxxxx()">
+java.util.regex.Pattern.uxxxx()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.util.regex.ASCII:ctype:I.-">
+java.util.regex.ASCII.ctype
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int[]
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+bipush 127
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+iand
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+iaload
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+bipush 63
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+iand
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
 <a name="java.util.regex.ASCII:isType:IIZ" href="#">
 
 </a>
@@ -5733,7 +5732,7 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.util.regex.ASCII:isLower:IZ" href="#">
+<a name="java.util.regex.ASCII:isHexDigit:IZ" href="#">
 
 </a>
 <div class="method_signature">
@@ -5741,7 +5740,7 @@ ireturn
 bool
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-isLower
+isHexDigit
 </span>
 (
 int
@@ -5759,29 +5758,15 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../../java/util/regex/Pattern.html#java.util.regex.Pattern:groupname:Ijava.lang.String" title="java.lang.String groupname(int)">
-java.util.regex.Pattern.groupname(int)
+<a href="../../../java/util/regex/Pattern.html#java.util.regex.Pattern:x:I" title="int x()">
+java.util.regex.Pattern.x()
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../../java/util/regex/Matcher.html#java.util.regex.Matcher:appendReplacement:java.lang.StringBufferjava.lang.Stringjava.util.regex.Matcher" title="java.util.regex.Matcher appendReplacement(java.lang.StringBuffer, java.lang.String)">
-java.util.regex.Matcher.appendReplacement(java.lang.StringBuffer, java.lang.String)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.util.regex.ASCII:toUpper:II" title="int toUpper(int)">
-java.util.regex.ASCII.toUpper(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../java/util/regex/Pattern.html#java.util.regex.Pattern:group0:java.util.regex.Pattern$Node" title="java.util.regex.Pattern$Node group0()">
-java.util.regex.Pattern.group0()
+<a href="../../../java/util/regex/Pattern.html#java.util.regex.Pattern:uxxxx:I" title="int uxxxx()">
+java.util.regex.Pattern.uxxxx()
 </a>
 </div>
 </li>
@@ -5798,74 +5783,42 @@ iload  0
 <li value="1">
 <div class="instruction">
 <span>
-bipush 97
+iconst 32768
 </span>
 </div>
 </li>
 <li value="3">
 <div class="instruction">
 <span>
-isub
+invokestatic 
 </span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isType(int, int)">
+java.util.regex.ASCII.isType
+</span>
+</span>
+<span>
+(
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.regex.ASCII:isType:IIZ" title="bool isType(int, int)">
+java.util.regex.ASCII.isType
+</a>
 </div>
 </li>
-<li value="4">
-<div class="instruction">
-<span>
-bipush 122
-</span>
+</ul>
 </div>
 </li>
 <li value="6">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-isub
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-ior
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-iflt 7
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="17">
 <div class="instruction">
 <span>
 ireturn
@@ -5959,15 +5912,15 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.util.regex.ASCII:isAlnum:IZ" href="#">
+<a name="java.util.regex.ASCII:toUpper:II" href="#">
 
 </a>
 <div class="method_signature">
  static 
-bool
+int
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-isAlnum
+toUpper
 </span>
 (
 int
@@ -5985,8 +5938,22 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../../java/util/regex/Pattern.html#java.util.regex.Pattern:RemoveQEQuoting:void" title="void RemoveQEQuoting()">
-java.util.regex.Pattern.RemoveQEQuoting()
+<a href="../../../java/util/regex/Pattern.html#java.util.regex.Pattern:newSingle:Ijava.util.regex.Pattern$CharProperty" title="java.util.regex.Pattern$CharProperty newSingle(int)">
+java.util.regex.Pattern.newSingle(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/regex/Pattern$BitClass.html#java.util.regex.Pattern$BitClass:add:IIjava.util.regex.Pattern$BitClass" title="java.util.regex.Pattern$BitClass add(int, int)">
+java.util.regex.Pattern$BitClass.add(int, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../java/util/regex/Pattern$3.html#java.util.regex.Pattern$3:isSatisfiedBy:IZ" title="bool isSatisfiedBy(int)">
+java.util.regex.Pattern$3.isSatisfiedBy(int)
 </a>
 </div>
 </li>
@@ -6003,42 +5970,75 @@ iload  0
 <li value="1">
 <div class="instruction">
 <span>
-sipush 1792
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
 invokestatic 
 </span>
 <span>
 bool
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool isType(int, int)">
-java.util.regex.ASCII.isType
+<span title="bool isLower(int)">
+java.util.regex.ASCII.isLower
 </span>
 </span>
 <span>
 (
-int
-, 
 int
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="#java.util.regex.ASCII:isType:IIZ" title="bool isType(int, int)">
-java.util.regex.ASCII.isType
+<a href="#java.util.regex.ASCII:isLower:IZ" title="bool isLower(int)">
+java.util.regex.ASCII.isLower
 </a>
 </div>
 </li>
 </ul>
 </div>
 </li>
+<li value="4">
+<div class="instruction">
+<span>
+ifeq 10
+</span>
+</div>
+</li>
 <li value="7">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+bipush 32
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="15">
 <div class="instruction">
 <span>
 ireturn
