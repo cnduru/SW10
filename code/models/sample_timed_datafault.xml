@@ -178,7 +178,7 @@ clock testClock;</declaration>
 			<source ref="id4"/>
 			<target ref="id3"/>
 			<label kind="guard" x="195" y="1165">t == 1</label>
-			<label kind="assignment" x="195" y="1182">done = true</label>
+			<label kind="assignment" x="195" y="1182">done = true, testClock = 0</label>
 		</transition>
 		<transition>
 			<source ref="id5"/>
@@ -523,6 +523,12 @@ system Process, Process0, Process1, Process2;
 	<queries>
 		<query>
 			<formula>E&lt;&gt; !done &amp;&amp; t == 1
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>sup:Process.testClock
 			</formula>
 			<comment>
 			</comment>
