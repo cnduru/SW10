@@ -36,14 +36,14 @@ broadcast chan ccalc;</declaration>
 		<transition>
 			<source ref="id1"/>
 			<target ref="id0"/>
-			<label kind="guard" x="-136" y="-42">fault == globalClock</label>
-			<label kind="assignment" x="-153" y="0">h[heapHit] ^= 1 &lt;&lt; heapBit</label>
+			<label kind="guard" x="-136" y="-42">faultTime == globalClock</label>
+			<label kind="assignment" x="-153" y="0">h[heapIndex] ^= 1 &lt;&lt; heapBitFlip</label>
 		</transition>
 		<transition>
 			<source ref="id2"/>
 			<target ref="id1"/>
-			<label kind="select" x="-493" y="-42">i:int[0,7], ii:int[0, 1], iii:int[0,7]</label>
-			<label kind="assignment" x="-493" y="-17">faultTime = i, heapIndex = ii, heapBit = iii</label>
+			<label kind="select" x="-493" y="-42">i:int[0,46], ii:int[0, 0], iii:int[0,7]</label>
+			<label kind="assignment" x="-493" y="-17">faultTime = i, heapIndex = ii, heapBitFlip = iii</label>
 		</transition>
 	</template>
 	<template>
@@ -54,7 +54,8 @@ int loc0 = -1;
 int loc1 = -1;
 int op0 = -1;
 int op1 = -1;
-int op2 = -1;</declaration>
+int op2 = -1;
+clock testClock;</declaration>
 		<location id="id3" x="178" y="1216">
 		</location>
 		<location id="id4" x="178" y="1156">
