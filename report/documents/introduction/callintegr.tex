@@ -1,1 +1,22 @@
 \paragraph{Call graph integrity}
+\begin{minipage}{\linewidth}
+\begin{lstlisting}[caption={Caller with call graph integrity implemented. The code is written in \jcl. Note that for simplicity, the numbers in the left side are line numbers and do not denote the program counter values.}, label={lst:dupCall0}]
+...
+5: PUSH 42; 
+6: PUT_STATIC 2;
+7: INVOKE_STATIC 42;
+...
+\end{lstlisting}
+\end{minipage}
+
+\begin{minipage}{\linewidth}
+\begin{lstlisting}[caption={Callee with call graph integrity implemented. The code is written in \jcl. Note that for simplicity, the numbers in the left side are line numbers and do not denote the program counter values.}, label={lst:dupCall0}]
+0: GET_STATIC 2
+1: GET_STATIC 3
+2: IF_CMPEQ 6
+3: <data corruption handling code>
+
+// sensitive code region
+6: ...
+\end{lstlisting}
+\end{minipage}
