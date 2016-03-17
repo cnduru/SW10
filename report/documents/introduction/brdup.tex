@@ -1,1 +1,27 @@
-\paragraph{Branch duplication}
+\paragraph{Code duplication}as described by~\cite[p. 12]{javasec} is a countermeasure which protects against corruption of data at execution time, such as register values. In extension, it can protect against a change in a program's control flow, by duplicating instructions which are used to determine values which affect branching. An example could be some original program, as the one in \cref{lst:dup0}, which loads two values from local variables (line 1-2), and compares them. If the two values are the same, a jump is performed to a code region with sensitive code (line 8-9), which approves a transaction on a credit card.
+
+\begin{lstlisting}[caption={Original program without code duplication implemented. The code is written in \jcl. Note that for simplicity, the numbers in the left side are line numbers and do not denote the program counter values.}, label={lst:dup0}]
+...
+1: LOAD 1;
+2: LOAD 2;
+3: IF_CMPEQ 8;
+4: ...
+8: PUSH 0;
+9: INVOKEVIRTUAL 42;  // acceptTransaction();
+...
+\end{lstlisting}
+
+\begin{lstlisting}[caption={Modified program with code duplication implemented. The code is written in \jcl. Note that for simplicity, the numbers in the left side are line numbers and do not denote the program counter values.}, label={lst:dup0}]
+...
+1: LOAD 1;
+2: LOAD 2;
+3: IF_CMPEQ 8;
+4: ...
+8: LOAD 1;
+9: LOAD 2;
+10: IF_CMPEQ 15;
+...
+15: PUSH 0;
+16: INVOKEVIRTUAL 42;  // acceptTransaction();
+...
+\end{lstlisting}
