@@ -9,11 +9,9 @@ public class Sample{
     }
 
     public static void foo(boolean b, boolean b2){
-        (b ? 
+        (true ? 
             new A() 
-          : (b2 ? 
-            new B() 
-            : new C()
-        )).bar();
+          : new C()
+        ).bar();
     }
 }

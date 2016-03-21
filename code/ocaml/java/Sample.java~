@@ -8,12 +8,10 @@ public class Sample{
         foo(true, false);
     }
 
-    public void foo(boolean b, boolean b2){
+    public static void foo(boolean b, boolean b2){
         (b ? 
             new A() 
-          : (b2 ? 
-            new B() 
-            : new C()
-        )).bar();
+          : new C()
+        ).bar();
     }
 }

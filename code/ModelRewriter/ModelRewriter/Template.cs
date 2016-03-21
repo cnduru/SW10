@@ -101,6 +101,13 @@ void osp_dec(int i){
     }
     osp -= i;
     return;
+}
+
+bool ifcmpme(){
+    if (osp > 1){
+        return os[osp-2] >= os[osp - 1];
+    }
+    return false;
 }";
             initialLocation = locations.First();
         }
@@ -192,7 +199,7 @@ void osp_dec(int i){
                             },
                             new Label
                             { 
-                                content = String.Format("os[osp] = loc{0}, osp_inc(), t = 0", instArg[1]), 
+                                    content = String.Format(" osp_inc(), os[osp - 1] = loc{0}, t = 0", instArg[1]), 
                                 kind = "assignment"
                             }
                         };
@@ -232,7 +239,7 @@ void osp_dec(int i){
                             },
                             new Label
                             { 
-                                    content = String.Format("os[osp] = cp{0}, osp_inc(), t = 0",
+                                    content = String.Format("osp_inc(), os[osp-1] = cp{0}, t = 0",
                                     CP.Add(String.Join(" ", instArg.Skip(1)))), 
                                 kind = "assignment"
                             }
@@ -252,7 +259,7 @@ void osp_dec(int i){
                             },
                             new Label
                             { 
-                                    content = String.Format("os[osp] = {0}, osp_inc(), t = 0", instArg[1]), 
+                                    content = String.Format("osp_inc(), os[osp-1] = {0}, t = 0", instArg[1]), 
                                 kind = "assignment"
                             }
                         };
@@ -267,24 +274,24 @@ void osp_dec(int i){
                         {
                             new Label
                             { 
-                                content = timeGuard + " && os[osp - 2] >= os[osp - 1]", kind = "guard"
+                                    content = timeGuard + " && ifcmpme()", kind = "guard"
                             },
                             new Label
                             { 
                                     content = "osp_dec(2), t = 0", kind = "assignment"
                             }
                         };
-                        transitions.Add(new Transition(loc, PCToLocation(Convert.ToInt32(instArg[1])), labels));
+                        transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + Convert.ToInt32(instArg[1])), labels));
 
                         labels = new List<Label>()
                         {
                             new Label
                             { 
-                                content = timeGuard + " && os[osp - 2] < os[osp - 1]", kind = "guard"
+                                    content = timeGuard + " && !ifcmpme()", kind = "guard"
                             },
                             new Label
                             { 
-                                    content = "osp_dec(2), t = 0", kind = "assignment"
+                                    content = "opstack_fault = osp < 2 ? true : opstack_fault, osp_dec(2), t = 0", kind = "assignment"
                             }
                         };
                         transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 3), labels));
@@ -306,7 +313,7 @@ void osp_dec(int i){
                             },
                             new Label
                             { 
-                                    content = String.Format("os[osp] = cp{0}, osp_inc(), t = 0",
+                                    content = String.Format("osp_inc(), os[osp-1] = cp{0}, t = 0",
                                     CP.Add(String.Join(" ", instArg.Skip(1)))), 
                                 kind = "assignment"
                             }
