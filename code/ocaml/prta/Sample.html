@@ -23,17 +23,20 @@ Not instantiatied
 </li>
 </ul>
 <div class="method">
-<a name="Sample:foo:Zvoid" href="#">
+<a name="Sample:foo:ZZvoid" href="#">
 
 </a>
 <div class="method_signature">
-public 
+public static 
 void
  
-<span>
+<span class="methodname clickable" onclick="showInfoList(this)">
 foo
 </span>
 (
+bool
+ 0
+, 
 bool
  1
 )
@@ -43,7 +46,16 @@ bool
 Concrete Method 
 </li>
 <li>
-Not parsed
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#Sample:main:java.lang.String.-void" title="void main(java.lang.String[])">
+Sample.main(java.lang.String[])
+</a>
+</div>
 </li>
 </ul>
 </div>
@@ -51,7 +63,7 @@ Not parsed
 <li value="0">
 <div class="instruction">
 <span>
-iload  1
+iload  0
 </span>
 </div>
 </li>
@@ -112,11 +124,25 @@ A.&lt;init&gt;
 <li value="11">
 <div class="instruction">
 <span>
-goto 10
+goto 24
 </span>
 </div>
 </li>
 <li value="14">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+ifeq 13
+</span>
+</div>
+</li>
+<li value="18">
 <div class="instruction">
 <span>
 new 
@@ -128,14 +154,14 @@ B
 </span>
 </div>
 </li>
-<li value="17">
+<li value="21">
 <div class="instruction">
 <span>
 dup
 </span>
 </div>
 </li>
-<li value="18">
+<li value="22">
 <div class="instruction">
 <span>
 invokespecial 
@@ -163,7 +189,61 @@ B.&lt;init&gt;
 </ul>
 </div>
 </li>
-<li value="21">
+<li value="25">
+<div class="instruction">
+<span>
+goto 10
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="C.html">
+C
+</a>
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+C.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="C.html#C:&lt;init&gt;:void" title="void &lt;init&gt;()">
+C.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="35">
 <div class="instruction">
 <span>
 invokevirtual 
@@ -190,6 +270,13 @@ B.bar
 </li>
 <li>
 <div>
+<a href="C.html#C:bar:S" title="short bar()">
+C.bar
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="A.html#A:bar:S" title="short bar()">
 A.bar
 </a>
@@ -198,14 +285,14 @@ A.bar
 </ul>
 </div>
 </li>
-<li value="24">
+<li value="38">
 <div class="instruction">
 <span>
 pop
 </span>
 </div>
 </li>
-<li value="25">
+<li value="39">
 <div class="instruction">
 <span>
 return
@@ -573,6 +660,13 @@ B.bar
 </li>
 <li>
 <div>
+<a href="C.html#C:bar:S" title="short bar()">
+C.bar
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="A.html#A:bar:S" title="short bar()">
 A.bar
 </a>
@@ -631,6 +725,51 @@ goto -21
 </div>
 </li>
 <li value="52">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="53">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="54">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void foo(bool, bool)">
+Sample.foo
+</span>
+</span>
+<span>
+(
+bool
+, 
+bool
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#Sample:foo:ZZvoid" title="void foo(bool, bool)">
+Sample.foo
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="57">
 <div class="instruction">
 <span>
 return

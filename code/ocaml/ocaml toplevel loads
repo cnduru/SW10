@@ -72,3 +72,5 @@ let simple_info =
 
 let output = "./prta"
 let () = JPrintHtml.JCodePrinter.print_program ~info:simple_info prta output;;
+
+store_callgraph (get_callgraph prta) "call_graph.txt";;

@@ -2,12 +2,18 @@ public class Sample{
     public static void main(String[] args) {
         A test = args[0] == "a" ? new A() : new B();
         for(short i=0; i<3; i++){
-              test.add(i);
+              test.foo(i);
               test.bar();
         }
+        foo(true, false);
     }
 
-    public void foo(boolean b){
-        (b ? new A() : new B()).bar();
+    public void foo(boolean b, boolean b2){
+        (b ? 
+            new A() 
+          : (b2 ? 
+            new B() 
+            : new C()
+        )).bar();
     }
 }

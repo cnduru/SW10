@@ -5,9 +5,15 @@ public class Sample{
               test.foo(i);
               test.bar();
         }
+        foo(true, false);
     }
 
-    public void foo(boolean b){
-        (b ? new A() : new B()).bar();
+    public static void foo(boolean b, boolean b2){
+        (b ? 
+            new A() 
+          : (b2 ? 
+            new B() 
+            : new C()
+        )).bar();
     }
 }
