@@ -1,12 +1,23 @@
 \section{Program Analysis with Sawja}
+% intro about Sawja
+\ch{should we mention stackless presentations JBir and A3Bir?}
+We use the tool \textit{Sawja} (Static Analysis Workshop for JAva)\cite{sawja}, which relies on \textit{Javalib}, to extract information from Java class files. The tool can analyse Java code\ch{should we write Java or Java Byte code?} and create a call graph, which we then use for rewriting purposes, described in\ch{ref}.\\\\
 
-\begin{lstlisting}[caption=Java sample.,language=Java]
+\cref{javaorig}
+
+% line numbers
+
+% inlining of constant pool
+
+
+
+\begin{lstlisting}[caption=Java sample.,language=Java,label=lst:javaorig]
 public void foo(boolean b){
     (b ? new A() : new B()).bar();
 }
 \end{lstlisting}
 
-\begin{lstlisting}[caption=Sawja sample.,language=Java]
+\begin{lstlisting}[caption=Sawja sample.,language=Java,label=lst:javasawja]
 public void foo ( bool 1 ) ;
 		Concrete Method
     	Not parsed
