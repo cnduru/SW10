@@ -2,7 +2,7 @@
 % intro about Sawja
 \ch{should we mention stackless presentations JBir and A3Bir?}
 We use the tool \textit{Sawja} (Static Analysis Workshop for JAva)\cite{sawja}, which relies on \textit{Javalib} to extract information from Java class files. The tool can analyse Java bytecode\ch{should we write Java or Java card bytecode?} and create a call graph. Information from the graph is then used to provide information for rewriting purposes, specifically the call graph integrity countermeasure, described in \cref{subsec:countermeasures}.\\\\
-\cref{lst:javaorig} shows Java code where two classes are present, \texttt{A} and \texttt{B}. \texttt{B} inherits \texttt{A}, and both implement the method \texttt{bar()}. The implementation of the method that will be called depends on the boolean value \texttt{b}. When the compiled class file of this code is processed for a call graph by \textit{Sawja}, the result is as \cref{lst:callgraph} shows. 
+\cref{lst:javaorig} shows Java code where two classes are present, \texttt{A} and \texttt{B}. \texttt{B} inherits \texttt{A}, and both implement the method \texttt{bar()}. The implementation of the method that will be called depends on the boolean value \texttt{b}. When the compiled class file of this code is processed for a call graph by \textit{Sawja}, the result is as \cref{lst:callgraph} shows. The numbers that are listed just after the method calls, e.g. $40$ are interesting, since they cluster method call targets, which can not always be determined statically. In our case, we can use this to see which methods the call graph integrity countermeasure should be implemented in. If a method is not called, \textit{Sawja} does not include it in the call graph.
 % clustering of possible methods
 In the case with code where it is impossible to tell which method will be called at run-time as in \cref{lst:javaorig}, \textit{Sawja} includes both, as in line 3 and 4.
 
@@ -25,7 +25,7 @@ void Sample.main(java.lang.String[]),40 -> short B.bar()
 
 It is also able to pretty print the bytecode so that it becomes easier to read as in \cref{lst:javasawja}. 
 % inlining of constant pool
-The tool performs an inlining of the constant pool. This is evident in lines 7, 9, 12, 14 and 16. For example in line 7, \texttt{new A} would normally be \texttt{new \#id} where the id would be a method reference stored with identifier \texttt{id} in the constant pool. This inlining makes for a more compact representation of the bytecode.
+The tool performs an inlining of the constant pool. This is evident in lines 7, 9, 12, 14 and 16. For example in line 7, \texttt{new A} would normally be \texttt{new \#id} where the id would be a method reference stored with identifier \texttt{id} in the constant pool. This inlining makes for a more compact representation of the bytecode. Additionally, dead code does not show up in \textit{Sawja}'s output.
 % line numbers
 Note that in the output, the target of a \texttt{goto} is expressed in terms of a relative offset as seen in line 11, and not a concrete program counter as in regular Java bytecode. The instruction in line 11 will jump to the instruction at program counter $21$.
 
