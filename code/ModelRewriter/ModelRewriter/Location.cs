@@ -111,7 +111,6 @@ namespace ModelRewriter
                 y = y,
                 x = -70               
             };
-
         }
     }
 }

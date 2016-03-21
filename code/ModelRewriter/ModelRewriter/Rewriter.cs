@@ -9,8 +9,6 @@ namespace ModelRewriter
 {
     class Rewriter
     {
-        private List<Template> _templates;
-
         public Rewriter(string path)
         {
             UppaalModel uml = new UppaalModel(path);

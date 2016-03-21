@@ -14,6 +14,7 @@ namespace ModelRewriter
 				switch (args [0]) {
 				case "b":
 					new JParser (args[1]);
+                    new Rewriter("new3.xml");
 					break;
 				default:
 					new Rewriter (args [1]);

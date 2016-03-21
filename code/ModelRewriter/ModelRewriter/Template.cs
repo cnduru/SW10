@@ -79,9 +79,29 @@ namespace ModelRewriter
             name = FirstNonKeyword(method.First());
             locations = ResolveLocations(method);
             ResolveCode();
-            localDeclarations = @"int os[10]; 
+            localDeclarations = @"const int os_size = 10;
+int os[os_size]; 
 int osp = 0;
-int loc0 = 0;";
+int loc0 = 0;
+
+
+void osp_inc(){
+    if (osp >= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp < i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}";
             initialLocation = locations.First();
         }
 
@@ -111,7 +131,16 @@ int loc0 = 0;";
                     if (loc.name == "main")
                     {
                         loc.urgent = true;
-                        transitions.Add(new Transition(loc, PCToLocation(0), new List<Label>()));
+                        labels = new List<Label>()
+                            {
+                                new Label
+                                {
+                                    // TODO this should probably be fixed..
+                                    content = String.Format("t = 0", 0), 
+                                    kind = "assignment"
+                                }
+                            };
+                        transitions.Add(new Transition(loc, PCToLocation(0), labels));
                         continue; //clean up later
                     }
 
@@ -129,7 +158,7 @@ int loc0 = 0;";
                         new Label
                         {
                             // TODO this should probably be fixed..
-                            content = String.Format("os[osp] = loc{0}, osp++, t = 0", 0), 
+                            content = String.Format("loc{0} = par{0}, t = 0", 0), 
                             kind = "assignment"
                         }
                     };
@@ -163,7 +192,7 @@ int loc0 = 0;";
                             },
                             new Label
                             { 
-                                content = String.Format("os[osp] = loc{0}, osp++, t = 0", instArg[1]), 
+                                content = String.Format("os[osp] = loc{0}, osp_inc(), t = 0", instArg[1]), 
                                 kind = "assignment"
                             }
                         };
@@ -203,7 +232,7 @@ int loc0 = 0;";
                             },
                             new Label
                             { 
-                                content = String.Format("os[osp] = cp{0}, osp++, t = 0",
+                                    content = String.Format("os[osp] = cp{0}, osp_inc(), t = 0",
                                     CP.Add(String.Join(" ", instArg.Skip(1)))), 
                                 kind = "assignment"
                             }
@@ -223,7 +252,7 @@ int loc0 = 0;";
                             },
                             new Label
                             { 
-                                content = String.Format("os[osp] = {0}, osp++, t = 0", instArg[1]), 
+                                    content = String.Format("os[osp] = {0}, osp_inc(), t = 0", instArg[1]), 
                                 kind = "assignment"
                             }
                         };
@@ -242,7 +271,7 @@ int loc0 = 0;";
                             },
                             new Label
                             { 
-                                content = "osp = osp - 2, t = 0", kind = "assignment"
+                                    content = "osp_dec(2), t = 0", kind = "assignment"
                             }
                         };
                         transitions.Add(new Transition(loc, PCToLocation(Convert.ToInt32(instArg[1])), labels));
@@ -255,7 +284,7 @@ int loc0 = 0;";
                             },
                             new Label
                             { 
-                                content = "osp = osp - 2, t = 0", kind = "assignment"
+                                    content = "osp_dec(2), t = 0", kind = "assignment"
                             }
                         };
                         transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 3), labels));
@@ -277,7 +306,7 @@ int loc0 = 0;";
                             },
                             new Label
                             { 
-                                content = String.Format("os[osp] = cp{0}, osp++, t = 0",
+                                    content = String.Format("os[osp] = cp{0}, osp_inc(), t = 0",
                                     CP.Add(String.Join(" ", instArg.Skip(1)))), 
                                 kind = "assignment"
                             }
@@ -332,7 +361,7 @@ int loc0 = 0;";
             {
                 call.Add(new Label
                     {
-                        content = String.Format("osp = osp - {0}, t = 0", param.Count + (virt ? 1 : 0)), 
+                        content = String.Format("osp_dec({0}), t = 0", param.Count + (virt ? 1 : 0)), 
                         kind = "assignment"
                     });
                 wait.Add(new Label
@@ -344,7 +373,7 @@ int loc0 = 0;";
             {
                 wait.Add(new Label
                     {
-                        content = "t = 0, os[osp] = par0, osp++", kind = "assignment" 
+                        content = "t = 0, os[osp] = par0, osp_inc()", kind = "assignment" 
                     });
             }
             else
