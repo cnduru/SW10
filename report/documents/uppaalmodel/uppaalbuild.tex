@@ -1,4 +1,3 @@
-\chapter{Building a UPPAAL Model}
 \section{Program Representation}
 When translating a program to a UPPAAL of the program. Several representations are possible, depending on what one wants to show. One could for example represent a program merely in terms of program flow if a simulation of a disruption of the program flow is to be shown, e.g an error in the program counter. One could also include the data flow in the program if a simulation of a corruption of a memory value is to be shown. These are just a few examples and many representations can be chosen.\\
 
@@ -112,7 +111,7 @@ Every instruction in the Java bytecode is represented by a location, and has an 
 
 
 \subsection{Opstack complications}
-Under normal execution the value of the operand stack pointer can be known at compile  time \kri{double check, etv find source}. This leaves us with two ways to simulate it, use a operand stack pointer to point at the top element or staticly define the opstack element to be accessed for each instruction.
+Under normal execution the value of the operand stack pointer can be known at compile  time. This leaves us with two ways to simulate it, use a operand stack pointer to point at the top element or staticly define the opstack element to be accessed for each instruction.
 
 Under normal execution there is to difference between the two approaches, but then introducing fault models as PC\_Fault and INST\_Fault it is possible to change the behaviour. This can let the operand stack pointer point to a value an instruction never would access or in the extreme case go out of bounds for the method.
 
