@@ -19,6 +19,7 @@ clock t;
 clock globalClock;
 int faultTime;
 int bitPos;
+bool faultHappened;
 
 broadcast chan cinit;
 broadcast chan ccalc;</declaration>
@@ -59,7 +60,7 @@ broadcast chan ccalc;</declaration>
 			<source ref="id4"/>
 			<target ref="id3"/>
 			<label kind="select" x="-493" y="-42">i:int[0,46], ii:int[0,7]</label>
-			<label kind="assignment" x="-493" y="-17">faultTime = i, bitPos = ii</label>
+			<label kind="assignment" x="-493" y="-17">faultTime = i, bitPos = ii, faultHappened = true</label>
 		</transition>
 	</template>
 	<template>
