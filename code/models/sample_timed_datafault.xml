@@ -190,7 +190,7 @@ clock testClock;</declaration>
 			<source ref="id31"/>
 			<target ref="id31"/>
 			<label kind="guard" x="391" y="-59">faultTime == faultClock</label>
-			<label kind="synchronisation" x="-50" y="-63">f!</label>
+			<label kind="synchronisation" x="391" y="-42">f!</label>
 			<nail x="374" y="-59"/>
 			<nail x="374" y="-42"/>
 		</transition>
@@ -384,7 +384,7 @@ clock testClock;</declaration>
 		<transition>
 			<source ref="id31"/>
 			<target ref="id30"/>
-			<label kind="guard" x="-51" y="-25">t == 1</label>
+			<label kind="guard" x="-51" y="-25">t == 1 &amp;&amp; faultClock &lt; globalClock</label>
 			<label kind="assignment" x="-51" y="-8">op1 = 2, t = 0</label>
 		</transition>
 		<transition>
