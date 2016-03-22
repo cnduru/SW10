@@ -20,7 +20,6 @@ clock globalClock;
 clock faultClock;
 int faultTime;
 int bitPos;
-bool faultHappened;
 
 broadcast chan cinit;
 broadcast chan ccalc;</declaration>
@@ -33,7 +32,6 @@ broadcast chan ccalc;</declaration>
 		<location id="id2" x="25" y="-127">
 		</location>
 		<location id="id3" x="-195" y="-17">
-			<urgent/>
 		</location>
 		<location id="id4" x="-586" y="-17">
 			<urgent/>
@@ -42,20 +40,21 @@ broadcast chan ccalc;</declaration>
 		<transition>
 			<source ref="id3"/>
 			<target ref="id0"/>
-			<label kind="guard" x="51" y="93">faultHappened</label>
-			<label kind="assignment" x="51" y="68">par1 ^= 1 &lt;&lt; bitPos, faultHappened = true</label>
+			<label kind="guard" x="-177" y="0">faultClock == faultTime</label>
+			<label kind="assignment" x="51" y="76">par1 ^= 1 &lt;&lt; bitPos, faultClock = 0</label>
 		</transition>
 		<transition>
 			<source ref="id3"/>
 			<target ref="id1"/>
-			<label kind="guard" x="51" y="8">faultHappened</label>
-			<label kind="assignment" x="51" y="-17">par0 ^= 1 &lt;&lt; bitPos, faultHappened = true</label>
+			<label kind="guard" x="-177" y="-51">faultClock == faultTime</label>
+			<label kind="assignment" x="51" y="-25">par0 ^= 1 &lt;&lt; bitPos, faultClock = 0</label>
 		</transition>
 		<transition>
 			<source ref="id3"/>
 			<target ref="id2"/>
-			<label kind="select" x="51" y="-178">heapIndex:int[0,0]</label>
-			<label kind="assignment" x="51" y="-127">h[heapIndex] ^= 1 &lt;&lt; bitPos, faultHappened = true</label>
+			<label kind="select" x="51" y="-153">heapIndex:int[0,0]</label>
+			<label kind="guard" x="-177" y="-106">faultClock == faultTime</label>
+			<label kind="assignment" x="51" y="-127">h[heapIndex] ^= 1 &lt;&lt; bitPos, faultClock = 0</label>
 		</transition>
 		<transition>
 			<source ref="id4"/>
@@ -188,7 +187,7 @@ clock testClock;</declaration>
 		<transition>
 			<source ref="id31"/>
 			<target ref="id31"/>
-			<label kind="guard" x="391" y="-59">faultTime == globalClock</label>
+			<label kind="guard" x="391" y="-59">faultTime == faultClock</label>
 			<nail x="374" y="-59"/>
 			<nail x="374" y="-42"/>
 		</transition>
@@ -382,7 +381,7 @@ clock testClock;</declaration>
 		<transition>
 			<source ref="id31"/>
 			<target ref="id30"/>
-			<label kind="guard" x="-51" y="-25">t == 1</label>
+			<label kind="guard" x="-51" y="-25">t == 1 &amp;&amp; faultClock != globalClock</label>
 			<label kind="assignment" x="-51" y="-8">op1 = 2, t = 0</label>
 		</transition>
 		<transition>
