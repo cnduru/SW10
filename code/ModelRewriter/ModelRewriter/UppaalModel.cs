@@ -7,6 +7,7 @@ using System.Configuration;
 using System.Collections;
 using System.Text.RegularExpressions;
 using System.Text;
+using System.Linq;
 
 namespace ModelRewriter
 {
@@ -42,11 +43,24 @@ namespace ModelRewriter
 			templates = xh.getTemplates ("useless?");
 		}
 
+        public void parseClass(string jbc){
+            var lines = jbc.Split('\n');
+            var classSig = lines[0];
+            var methods = findMethods(lines.Skip(1));
+
+            foreach (var m in methods)
+            {
+                AddTemplate(m);
+            }
+            updateDec();
+        }
+
         //Sets dec, sys, and queries
         public void updateDec()
         {
             globalDeclarations = @"clock t;
-int H[10];
+const int heap_size = 10;
+int H[heap_size];
 int cp0;
 int cp1;
 int par0;
@@ -168,7 +182,29 @@ system s, s1;";
             templates.Add(faultTemplate);
             Save(path);
         }
-	}
 
+        List<List<string>> findMethods(IEnumerable<string> jbc)
+        {
+            var methods = new List<List<string>>();
+            List<string> curMethod = new List<string>();
+
+            var methodStart = new Regex("^(privat)|(public)");
+            var inst = new Regex("^([0-9]+\\.)"); 
+            foreach(var line in jbc) 
+            {
+                if(methodStart.IsMatch(line)) 
+                {
+                    curMethod = new List<string>();
+                    curMethod.Add(line);
+                    methods.Add(curMethod);
+                }
+                else if(inst.IsMatch(line)) 
+                {
+                    curMethod.Add(line);
+                }
+            }
+            return methods;
+        }
+	}
 }
 
