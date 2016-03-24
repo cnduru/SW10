@@ -35,7 +35,7 @@ namespace ModelRewriter
 		<location id=""id3"" x=""-195"" y=""-17"">
 		</location>
 		<location id=""id4"" x=""-586"" y=""-17"">
-			<urgent/>
+			<committed/>
 		</location>
 		<init ref=""id4""/>
 		<transition>

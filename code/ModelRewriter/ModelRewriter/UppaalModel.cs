@@ -38,15 +38,16 @@ namespace ModelRewriter
 			system = getSystem(nta.Element ("system").Value);
 			queries = nta.Element ("queries").Value;
 
-			var xh = new XMLHandler (xml);
-			templates = xh.getTemplates ("useless?");
+            XMLHandler xlh = new XMLHandler(xml);
+            templates = xlh.getTemplates();//new List<Template>();
 		}
 
         //Sets dec, sys, and queries
         public void updateDec()
         {
             globalDeclarations = @"clock t;
-int H[10];
+const int heap_size = 10;
+int H[heap_size];
 int cp0;
 int cp1;
 int par0;
@@ -166,9 +167,16 @@ system s, s1;";
             // this has to be first or locations from faultTemplate are not added
             XElement faultTemplateXML = XElement.Parse(XMLProvider.getFaultTemplate());
             XMLHandler xhl = new XMLHandler();
+
+            foreach (var te in templates)
+            {
+                te.addFaultTransitions();
+            }
+
             Template faultTemplate = xhl.getTemplatePCFault(faultTemplateXML);
             faultTemplate.locations[1].urgent = true;
             templates.Add(faultTemplate);
+
             Save(path);
         }
 
@@ -178,7 +186,7 @@ system s, s1;";
             XElement dataFaultTemplateXML = XElement.Parse(XMLProvider.getDataFaultTemplate());
             XMLHandler xhl = new XMLHandler();
             Template dataFaultTemplate = xhl.getTemplateDataFault(dataFaultTemplateXML);
-            dataFaultTemplate.locations[2].urgent = true;
+            dataFaultTemplate.locations[2].committed = true;
 
             // todo: generalize this
             globalDeclarations += "\nclock faultClock;\n";
@@ -193,27 +201,28 @@ system s, s1;";
             {
                 foreach (var l in te.locations)
                 {
-                    // create loops on every state
-                    //List<Location> locs = t.locations;
-                    //List<Transition> trans = t.transitions
+                    // create loops on every 
+
+                    // if location is not a part of the original program, skip it
+                    if (l.pc == "None")
+                    {
+                        continue;
+                    }
+
+
                     int lx = 50, lx2 = 90, ly = 100;
 
                     var labels = new List<Label>()
                     {
                         new Label
                         { 
-                            content = "faultTime == faultClock", kind = "guard"
+                            content = "faultTime == faultClock", kind = "guard", x = l.x, y = l.y + 50
                         },
                         new Label
                         { 
                             content = "f!", kind = "synchronisation"
                         }
                    };
-
-                   if (l.pc == "None")
-                   {
-                       continue;
-                   }
 
                    // remember nails
                    Transition faultTrans = new Transition(l, l, labels);
