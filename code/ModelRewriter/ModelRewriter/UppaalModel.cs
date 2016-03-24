@@ -115,8 +115,11 @@ system s, s1;";
             string patternSystem = @"(\w*\s=\s\w*\(\));";//@"(Process\d? = \w*\(\));";
 
             // add fault system
-            loadedSystem.Add("Fault = FaultInj();\n");
-            sb.Append("Fault = FaultInj();\n");
+            // todo: make this a general method
+            //loadedSystem.Add("Fault = FaultInj();\n");
+            //sb.Append("Fault = FaultInj();\n");
+            loadedSystem.Add("Fault = dataFault();\n");
+            sb.Append("Fault = dataFault();\n");
 
             MatchCollection matches = Regex.Matches(stem, patternSystem);
 
@@ -163,9 +166,70 @@ system s, s1;";
             // this has to be first or locations from faultTemplate are not added
             XElement faultTemplateXML = XElement.Parse(XMLProvider.getFaultTemplate());
             XMLHandler xhl = new XMLHandler();
-            Template faultTemplate = xhl.getTemplate(faultTemplateXML);
+            Template faultTemplate = xhl.getTemplatePCFault(faultTemplateXML);
             faultTemplate.locations[1].urgent = true;
             templates.Add(faultTemplate);
+            Save(path);
+        }
+
+
+        public void rewriteDataFault(string path)
+        {
+            XElement dataFaultTemplateXML = XElement.Parse(XMLProvider.getDataFaultTemplate());
+            XMLHandler xhl = new XMLHandler();
+            Template dataFaultTemplate = xhl.getTemplateDataFault(dataFaultTemplateXML);
+            dataFaultTemplate.locations[2].urgent = true;
+
+            // todo: generalize this
+            globalDeclarations += "\nclock faultClock;\n";
+            globalDeclarations += "int faultTime;\n";
+            globalDeclarations += "int bitPos;\n";
+            globalDeclarations += "broadcast chan f;\n";
+
+            templates.Add(dataFaultTemplate);
+
+
+            foreach (var te in templates)
+            {
+                foreach (var l in te.locations)
+                {
+                    // create loops on every state
+                    //List<Location> locs = t.locations;
+                    //List<Transition> trans = t.transitions
+                    int lx = 50, lx2 = 90, ly = 100;
+
+                    var labels = new List<Label>()
+                    {
+                        new Label
+                        { 
+                            content = "faultTime == faultClock", kind = "guard"
+                        },
+                        new Label
+                        { 
+                            content = "f!", kind = "synchronisation"
+                        }
+                   };
+
+                   if (l.pc == "None")
+                   {
+                       continue;
+                   }
+
+                   // remember nails
+                   Transition faultTrans = new Transition(l, l, labels);
+
+                   List<Transition.Nail> nails = new List<Transition.Nail>();
+                   Transition.Nail nail1 = new Transition.Nail { x = l.x - lx, y = l.y - ly };
+                   Transition.Nail nail2 = new Transition.Nail { x = l.x - lx2, y = l.y - ly };
+                   nails.Add(nail1);
+                   nails.Add(nail2);
+                   faultTrans.nails = nails;
+
+                   te.transitions.Add(faultTrans);
+                    
+                }
+            }
+
             Save(path);
         }
 	}
