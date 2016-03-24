@@ -11,8 +11,9 @@ namespace ModelRewriter
     {
         public Rewriter(string path)
         {
-            UppaalModel uml = new UppaalModel(path);
-            //uml.rewritePCFault("testxml.xml");
+            // countermeasure parameter has to fit UPPAAL rewrite mode - e.g. "pc" for PCFault and "data" for DataFault
+            UppaalModel uml = new UppaalModel(path, "data");
+            uml.rewritePCFault("testxml.xml");
             uml.rewriteDataFault("testxml.xml");
         }
     }

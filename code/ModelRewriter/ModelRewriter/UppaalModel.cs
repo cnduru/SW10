@@ -28,14 +28,14 @@ namespace ModelRewriter
             + "<queries></queries></nta>")) { }
 
 		//Create a UPPAAL model from existing file
-		public UppaalModel(string path) : this(XDocument.Load(path)) { }
+		public UppaalModel(string path, string countermeasure = "") : this(XDocument.Load(path), countermeasure) { }
 
 		//Create a UPPAAL model from xml XDocument
-		public UppaalModel(XDocument xml)
+		public UppaalModel(XDocument xml, string countermeasure = "")
 		{
 			var nta =  xml.Element ("nta");
             globalDeclarations = getGlobalDeclarations(nta.Element("declaration").Value);
-			system = getSystem(nta.Element ("system").Value);
+			system = getSystem(nta.Element ("system").Value, countermeasure);
 			queries = nta.Element ("queries").Value;
 
             XMLHandler xlh = new XMLHandler(xml);
@@ -107,7 +107,9 @@ system s, s1;";
             return sb.ToString();
         }
 
-        private string getSystem(string stem)
+        string countermeasure;
+        
+        private string getSystem(string stem, string countermeasure)
         {
             List<string> loadedSystem = new List<string>();
             List<string> loadedProcesses = new List<string>();
@@ -116,11 +118,16 @@ system s, s1;";
             string patternSystem = @"(\w*\s=\s\w*\(\));";//@"(Process\d? = \w*\(\));";
 
             // add fault system
-            // todo: make this a general method
-            //loadedSystem.Add("Fault = FaultInj();\n");
-            //sb.Append("Fault = FaultInj();\n");
-            loadedSystem.Add("Fault = dataFault();\n");
-            sb.Append("Fault = dataFault();\n");
+            if(countermeasure == "pc")
+            {
+                loadedSystem.Add("Fault = FaultInj();\n");
+                sb.Append("Fault = FaultInj();\n");
+            }
+            else if(countermeasure == "data")
+            {
+                loadedSystem.Add("Fault = dataFault();\n");
+                sb.Append("Fault = dataFault();\n");
+            }
 
             MatchCollection matches = Regex.Matches(stem, patternSystem);
 
