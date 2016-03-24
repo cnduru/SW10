@@ -12,8 +12,8 @@ namespace ModelRewriter
         public Rewriter(string path)
         {
             UppaalModel uml = new UppaalModel(path);
-            uml.rewritePCFault("testxml.xml");
-            //uml.rewriteDataFault("testxml.xml");
+            //uml.rewritePCFault("testxml.xml");
+            uml.rewriteDataFault("testxml.xml");
         }
     }
 }

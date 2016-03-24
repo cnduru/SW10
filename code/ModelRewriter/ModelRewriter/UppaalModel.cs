@@ -199,12 +199,18 @@ system s, s1;";
 
             foreach (var te in templates)
             {
+                // ignore fault template
+                if(te.name.Contains("fault") || te.name.Contains("Fault"))
+                {
+                    continue;
+                }
+
                 foreach (var l in te.locations)
                 {
                     // create loops on every 
 
                     // if location is not a part of the original program, skip it
-                    if (l.pc == "None")
+                    if (l.pc == null)
                     {
                         continue;
                     }
