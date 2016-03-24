@@ -164,17 +164,17 @@ system s, s1;";
 
         public void rewritePCFault(string path)
         {
-            // this has to be first or locations from faultTemplate are not added
-            XElement faultTemplateXML = XElement.Parse(XMLProvider.getFaultTemplate());
-            XMLHandler xhl = new XMLHandler();
-
             foreach (var te in templates)
             {
                 te.addFaultTransitions();
             }
 
+            // is this still true??? this has to be first or locations from faultTemplate are not added
+            XElement faultTemplateXML = XElement.Parse(XMLProvider.getFaultTemplate());
+            XMLHandler xhl = new XMLHandler();
+
             Template faultTemplate = xhl.getTemplatePCFault(faultTemplateXML);
-            faultTemplate.locations[1].urgent = true;
+            faultTemplate.locations[1].committed = true;
             templates.Add(faultTemplate);
 
             Save(path);
