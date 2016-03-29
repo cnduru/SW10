@@ -33,10 +33,29 @@ namespace ModelRewriter
 
             foreach (var template in _doc.Descendants("template"))
             {
-                templates.Add(getTemplate(template));            
+                templates.Add(getTemplatePCFault(template));            
             }
 
             return templates;
+        }
+
+        public Template getTemplatePCFault(XElement xel)
+        {
+            Template t = getTemplate(xel);
+            t.addFaultTransitions();
+
+            return t;
+        }
+
+        public Template getTemplateDataFault(XElement xel)
+        {
+            // load template
+            Template t = getTemplate(xel);
+
+           
+
+            
+            return t;
         }
 
         public Template getTemplate(XElement xel)
@@ -75,7 +94,7 @@ namespace ModelRewriter
                     if (match.Success)
                     {
                         l.pc = match.Value.Replace("pc", "");
-                    } 
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -115,7 +134,6 @@ namespace ModelRewriter
             }
 
             t.transitions = transitions;
-            t.addFaultTransitions();
 
             return t;
         }

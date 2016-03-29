@@ -21,7 +21,7 @@ namespace ModelRewriter
         public Location source { get; set; }
         public Location target { get; set; }
         private List<Label> labels = new List<Label>();
-        private List<Nail> nails = new List<Nail>();
+        public List<Nail> nails = new List<Nail>();
         public guards grds = new guards();
         public selections sels = new selections();
         public assignments asms = new assignments();
@@ -81,7 +81,7 @@ namespace ModelRewriter
             }
         }
 
-        struct Nail 
+        public struct Nail 
         {
             public int x;
             public int y;

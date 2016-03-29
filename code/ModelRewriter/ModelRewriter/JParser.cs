@@ -9,63 +9,18 @@ namespace ModelRewriter
 {
 	public class JParser
 	{
-		const string sample = @"Class DubTest 
-public static void main ( java.lang.String [] 0 ) ;
-0.   aload 0
-1.   arraylength
-2.   iconst 1
-3.   ifcmpme 11
-6.   getstatic java.lang.System.out : java.io.PrintStream
-9.   ldc string 'Hello World!'
-11.  invokevirtual void java.io.PrintStream.print ( java.lang.String )
-14.  return
-
-public DubTest ( ) ;  
-0.   aload 0
-1.   invokespecial void java.lang.Object.<init> ( )
-4.   return";
-
-		public JParser(string path)
+        public JParser(IEnumerable<string> path)
 		{
-            parseClass(sample).Save("new3.xml");
-		}
-
-        UppaalModel parseClass(string jbc){
-			var lines = jbc.Split('\n');
-			var classSig = lines[0];
-			var methods = findMethods(lines.Skip(1));
-            var model = new UppaalModel();
-
-            foreach (var m in methods)
+            UppaalModel model = new UppaalModel();
+            foreach (var p in path)
             {
-                model.AddTemplate(m);
+                var name = p.Split(new char[]{'.'}).First();
+                model.parseClass(System.IO.File.ReadAllText(p), name);
             }
-            model.updateDec();
-            return model;
+            model.Save("new3.xml");
 		}
 
-		List<List<string>> findMethods(IEnumerable<string> jbc)
-		{
-			var methods = new List<List<string>>();
-			List<string> curMethod = new List<string>();
-
-			var methodStart = new Regex("^(privat)|(public)");
-			var inst = new Regex("^([0-9]+\\.)"); 
-			foreach(var line in jbc) 
-			{
-				if(methodStart.IsMatch(line)) 
-				{
-					curMethod = new List<string>();
-					curMethod.Add(line);
-					methods.Add(curMethod);
-				}
-				else if(inst.IsMatch(line)) 
-				{
-					curMethod.Add(line);
-				}
-			}
-			return methods;
-		}
+      
 	}
 }
 
