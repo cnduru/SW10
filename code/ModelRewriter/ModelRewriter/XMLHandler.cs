@@ -27,22 +27,10 @@ namespace ModelRewriter
             return (string)_doc.Descendants("declaration").ElementAt(0);
         }
 
-        public List<Template> getTemplates(string path)
-        {
-            List<Template> templates = new List<Template>();
-
-            foreach (var template in _doc.Descendants("template"))
-            {
-                templates.Add(getTemplatePCFault(template));            
-            }
-
-            return templates;
-        }
-
         public Template getTemplatePCFault(XElement xel)
         {
             Template t = getTemplate(xel);
-            t.addFaultTransitions();
+            //t.addFaultTransitions();
 
             return t;
         }
@@ -51,10 +39,19 @@ namespace ModelRewriter
         {
             // load template
             Template t = getTemplate(xel);
-
-           
-
             
+            return t;
+        }
+
+        public List<Template> getTemplates()
+        {
+            List<Template> t = new List<Template>();
+
+            foreach (var template in _doc.Descendants("template"))
+            {
+                t.Add(getTemplate(template));
+            }
+
             return t;
         }
 

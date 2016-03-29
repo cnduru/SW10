@@ -29,18 +29,18 @@ namespace ModelRewriter
             + "<queries></queries></nta>")) { }
 
 		//Create a UPPAAL model from existing file
-		public UppaalModel(string path) : this(XDocument.Load(path)) { }
+		public UppaalModel(string path, string countermeasure = "") : this(XDocument.Load(path), countermeasure) { }
 
 		//Create a UPPAAL model from xml XDocument
-		public UppaalModel(XDocument xml)
+		public UppaalModel(XDocument xml, string countermeasure = "")
 		{
 			var nta =  xml.Element ("nta");
             globalDeclarations = getGlobalDeclarations(nta.Element("declaration").Value);
-			system = getSystem(nta.Element ("system").Value);
+			system = getSystem(nta.Element ("system").Value, countermeasure);
 			queries = nta.Element ("queries").Value;
 
-			var xh = new XMLHandler (xml);
-			templates = xh.getTemplates ("useless?");
+            XMLHandler xlh = new XMLHandler(xml);
+            templates = xlh.getTemplates();//new List<Template>();
 		}
 
         public void parseClass(string jbc, string cls){
@@ -120,7 +120,9 @@ system s, s1;";
             return sb.ToString();
         }
 
-        private string getSystem(string stem)
+        string countermeasure;
+        
+        private string getSystem(string stem, string countermeasure)
         {
             List<string> loadedSystem = new List<string>();
             List<string> loadedProcesses = new List<string>();
@@ -129,11 +131,16 @@ system s, s1;";
             string patternSystem = @"(\w*\s=\s\w*\(\));";//@"(Process\d? = \w*\(\));";
 
             // add fault system
-            // todo: make this a general method
-            //loadedSystem.Add("Fault = FaultInj();\n");
-            //sb.Append("Fault = FaultInj();\n");
-            loadedSystem.Add("Fault = dataFault();\n");
-            sb.Append("Fault = dataFault();\n");
+            if(countermeasure == "pc")
+            {
+                loadedSystem.Add("Fault = FaultInj();\n");
+                sb.Append("Fault = FaultInj();\n");
+            }
+            else if(countermeasure == "data")
+            {
+                loadedSystem.Add("Fault = dataFault();\n");
+                sb.Append("Fault = dataFault();\n");
+            }
 
             MatchCollection matches = Regex.Matches(stem, patternSystem);
 
@@ -177,12 +184,19 @@ system s, s1;";
 
         public void rewritePCFault(string path)
         {
-            // this has to be first or locations from faultTemplate are not added
+            foreach (var te in templates)
+            {
+                te.addFaultTransitions();
+            }
+
+            // is this still true??? this has to be first or locations from faultTemplate are not added
             XElement faultTemplateXML = XElement.Parse(XMLProvider.getFaultTemplate());
             XMLHandler xhl = new XMLHandler();
+
             Template faultTemplate = xhl.getTemplatePCFault(faultTemplateXML);
-            faultTemplate.locations[1].urgent = true;
+            faultTemplate.locations[1].committed = true;
             templates.Add(faultTemplate);
+
             Save(path);
         }
 
@@ -192,7 +206,7 @@ system s, s1;";
             XElement dataFaultTemplateXML = XElement.Parse(XMLProvider.getDataFaultTemplate());
             XMLHandler xhl = new XMLHandler();
             Template dataFaultTemplate = xhl.getTemplateDataFault(dataFaultTemplateXML);
-            dataFaultTemplate.locations[2].urgent = true;
+            dataFaultTemplate.locations[2].committed = true;
 
             // todo: generalize this
             globalDeclarations += "\nclock faultClock;\n";
@@ -205,29 +219,36 @@ system s, s1;";
 
             foreach (var te in templates)
             {
+                // ignore fault template
+                if(te.name.Contains("fault") || te.name.Contains("Fault"))
+                {
+                    continue;
+                }
+
                 foreach (var l in te.locations)
                 {
-                    // create loops on every state
-                    //List<Location> locs = t.locations;
-                    //List<Transition> trans = t.transitions
+                    // create loops on every 
+
+                    // if location is not a part of the original program, skip it
+                    if (l.pc == null)
+                    {
+                        continue;
+                    }
+
+
                     int lx = 50, lx2 = 90, ly = 100;
 
                     var labels = new List<Label>()
                     {
                         new Label
                         { 
-                            content = "faultTime == faultClock", kind = "guard"
+                            content = "faultTime == faultClock", kind = "guard", x = l.x, y = l.y + 50
                         },
                         new Label
                         { 
                             content = "f!", kind = "synchronisation"
                         }
                    };
-
-                   if (l.pc == "None")
-                   {
-                       continue;
-                   }
 
                    // remember nails
                    Transition faultTrans = new Transition(l, l, labels);
