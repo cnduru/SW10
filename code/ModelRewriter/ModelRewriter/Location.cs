@@ -103,8 +103,8 @@ namespace ModelRewriter
 
         private void parseInst(int count, string instLine){
             inst = new Instruction(instLine);
-            name = "pc" + new Regex("^[0-9]+\\. +[a-zA-Z]+").Match(instLine)
-                .ToString().Replace(" ", "").Replace('.', '_');
+            name = "pc" + instLine.Replace("( ", "").Replace(" )", "").Replace("<", "").Replace(">", "")
+                .Replace(",", "").Replace(" ", "_").Replace(".", "_").Replace(":", "_").Replace("__", "_");
             invariant = new Label{
                 content = "t <= " + Constants.instTime, 
                 kind = "invariant", 

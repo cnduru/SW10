@@ -7,6 +7,7 @@ using System.Configuration;
 using System.Collections;
 using System.Text.RegularExpressions;
 using System.Text;
+using System.Linq;
 
 namespace ModelRewriter
 {
@@ -41,6 +42,18 @@ namespace ModelRewriter
             XMLHandler xlh = new XMLHandler(xml);
             templates = xlh.getTemplates();//new List<Template>();
 		}
+
+        public void parseClass(string jbc, string cls){
+            var lines = jbc.Split('\n');
+            var classSig = lines[0];
+            var methods = findMethods(lines.Skip(1));
+
+            foreach (var m in methods)
+            {
+                AddTemplate(m, cls);
+            }
+            updateDec();
+        }
 
         //Sets dec, sys, and queries
         public void updateDec()
@@ -84,9 +97,9 @@ system s, s1;";
 		}
             
         //Adds method templates from jbc
-        public void AddTemplate(List<string> method)
+        public void AddTemplate(List<string> method, string cls)
         {
-            templates.Add(new Template(method));
+            templates.Add(new Template(method, cls));
         }
 
 		//Creates a xml element with a tag and value
@@ -314,7 +327,29 @@ system s, s1;";
             Save(path);
 
         }
-	}
 
+        List<List<string>> findMethods(IEnumerable<string> jbc)
+        {
+            var methods = new List<List<string>>();
+            List<string> curMethod = new List<string>();
+
+            var methodStart = new Regex("^(privat)|(public)");
+            var inst = new Regex("^([0-9]+\\.)"); 
+            foreach(var line in jbc) 
+            {
+                if(methodStart.IsMatch(line)) 
+                {
+                    curMethod = new List<string>();
+                    curMethod.Add(line);
+                    methods.Add(curMethod);
+                }
+                else if(inst.IsMatch(line)) 
+                {
+                    curMethod.Add(line);
+                }
+            }
+            return methods;
+        }
+	}
 }
 

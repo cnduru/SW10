@@ -13,7 +13,7 @@ namespace ModelRewriter
 			if (args.Count () > 1) {
 				switch (args [0]) {
 				case "b":
-					new JParser (args[1]);
+                    new JParser (args.Skip(1));
                     new Rewriter("new3.xml");
 					break;
 				default:
@@ -23,7 +23,6 @@ namespace ModelRewriter
 			} 
 			else 
 			{
-                new JParser("");
                 new Rewriter("new3.xml");//C://Users//Avalon//SW10//code//models//sample.xml");
 			}
         }

@@ -74,9 +74,9 @@ namespace ModelRewriter
             return transitionsList; 
         }
 
-        public Template(List<string> method)
+        public Template(List<string> method, string cls)
         {
-            name = FirstNonKeyword(method.First());
+            name = cls + "_" + FirstNonKeyword(method.First());
             locations = ResolveLocations(method);
             ResolveCode();
             localDeclarations = @"const int os_size = 10;
@@ -203,7 +203,7 @@ bool ifcmpme(){
                                 kind = "assignment"
                             }
                         };
-                        transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 1), labels)); //TODO is +1 allways true?
+                        transitions.Add(new Transition(loc, NextLocation(loc), labels)); //TODO is +1 allways true?
                         break;
 
                     case "arraylength":
@@ -223,7 +223,7 @@ bool ifcmpme(){
                                 content = "os[osp] = H[os[osp]], t = 0", kind = "assignment"
                             }
                         };
-                        transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 1), labels));
+                        transitions.Add(new Transition(loc, NextLocation(loc), labels));
                         break;
 
                     case "getstatic":
@@ -244,7 +244,7 @@ bool ifcmpme(){
                                 kind = "assignment"
                             }
                         };
-                        transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 3), labels));
+                        transitions.Add(new Transition(loc, NextLocation(loc), labels));
                         break;
 
                     case "iconst":
@@ -263,7 +263,7 @@ bool ifcmpme(){
                                 kind = "assignment"
                             }
                         };
-                        transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 1), labels));
+                        transitions.Add(new Transition(loc, NextLocation(loc), labels));
                         break;
 
                     case "ifcmpme":
@@ -294,13 +294,13 @@ bool ifcmpme(){
                                     content = "opstack_fault = osp < 2 ? true : opstack_fault, osp_dec(2), t = 0", kind = "assignment"
                             }
                         };
-                        transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 3), labels));
+                        transitions.Add(new Transition(loc, NextLocation(loc), labels));
                         break;
 
                     case "invokespecial":
                     case "invokevirtual":
                         var waiter = new Location(loc);
-                        transitions.AddRange(Invoke(loc, waiter, PCToLocation(loc.inst.pc + 3), true));
+                        transitions.AddRange(Invoke(loc, waiter, NextLocation(loc), true));
                         newLocs.Add(waiter);
                         break;
 
@@ -318,9 +318,10 @@ bool ifcmpme(){
                                 kind = "assignment"
                             }
                         };
-                        transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + 2), labels));
+                        transitions.Add(new Transition(loc, NextLocation(loc), labels));
                         break;
 
+                    case "ireturn":
                     case "return":
                         labels = new List<Label>()
                         {
@@ -338,7 +339,9 @@ bool ifcmpme(){
                         transitions.Add(new Transition(loc, PCToLocation(-1), labels));
                         break;
                     default:
-                        throw new System.NotImplementedException(instArg[0]);
+                        transitions.Add(new Transition(loc, NextLocation(loc), new List<Label>()));
+                        //throw new System.NotImplementedException(instArg[0]);
+                        break;
                 }
             }
             locations.AddRange(newLocs);
@@ -419,6 +422,20 @@ bool ifcmpme(){
             }
             throw new KeyNotFoundException();
         }
+
+        private Location NextLocation(Location current)
+        {
+            var orderedLocs = locations.OrderBy(x => x.inst.pc).ToList();
+            foreach (var loc in orderedLocs)
+            {
+                if (loc.inst.pc > current.inst.pc)
+                {
+                    return loc;
+                }
+            }
+            throw new KeyNotFoundException();
+        }
+
 
         public XElement getXML()
         {
