@@ -128,6 +128,10 @@ system s, s1;";
                 loadedSystem.Add("Fault = dataFault();\n");
                 sb.Append("Fault = dataFault();\n");
             }
+            else if (countermeasure == "instruction")
+            {
+                // are new additions to the system needed in this case since edges are just added?
+            }
 
             MatchCollection matches = Regex.Matches(stem, patternSystem);
 
@@ -253,6 +257,62 @@ system s, s1;";
             }
 
             Save(path);
+        }
+
+        public void rewriteInstructionFault(string path)
+        {
+            ByteCodeInstructions insts = new ByteCodeInstructions();
+
+            foreach (var tem in templates)
+            {
+                foreach (var loc in tem.locations)
+                {
+                    if(loc.pc == "null")
+                    {
+                        continue;
+                    }
+
+                    // get instruction name and resolve to byte code instruction
+                    int index = loc.name.IndexOf("_");
+                    string inst = loc.name.Substring(loc.name.IndexOf("_") + 1);
+                    BytecodeInstruction bci = insts.instructionToBytecode(inst);
+
+                    if (index != -1 && bci != null)
+                    {
+                        var tempTrans = new List<Transition>();
+
+                        foreach (var edge in tem.transitions)
+                        {
+
+                            if (edge.source.id == loc.id)
+                            {
+                                foreach (var a in bci.relatedInstructions)
+                                {
+                                    var labs = a.getLabels();
+                                    int lx = 50, lx2 = 90, ly = 100;
+
+                                    Transition tt = new Transition(edge.source, edge.target, labs);
+
+                                    List<Transition.Nail> nails = new List<Transition.Nail>();
+                                    Transition.Nail nail1 = new Transition.Nail { x = loc.x - lx, y = loc.y - ly };
+                                    Transition.Nail nail2 = new Transition.Nail { x = loc.x - lx2, y = loc.y - ly };
+                                    nails.Add(nail1);
+                                    nails.Add(nail2);
+                                    tt.nails = nails;
+
+                                    tempTrans.Add(tt);
+                                }
+                            }
+                        }
+
+                        tem.transitions.AddRange(tempTrans);
+                    }
+                }
+            }
+
+
+            Save(path);
+
         }
 	}
 
