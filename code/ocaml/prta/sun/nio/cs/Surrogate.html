@@ -23,13 +23,23 @@ Not instantiatied
 </li>
 </ul>
 <div class="field">
-<a name="sun.nio.cs.Surrogate:MIN:C" href="#">
+<a name="sun.nio.cs.Surrogate:MIN_LOW:C" href="#">
 
 </a>
 <span class="field_signature">
 public static final 
 char
- MIN;
+ MIN_LOW;
+</span>
+</div>
+<div class="field">
+<a name="sun.nio.cs.Surrogate:UCS4_MIN:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ UCS4_MIN;
 </span>
 </div>
 <div class="field">
@@ -53,43 +63,13 @@ char
 </span>
 </div>
 <div class="field">
-<a name="sun.nio.cs.Surrogate:MIN_LOW:C" href="#">
+<a name="sun.nio.cs.Surrogate:MIN:C" href="#">
 
 </a>
 <span class="field_signature">
 public static final 
 char
- MIN_LOW;
-</span>
-</div>
-<div class="field">
-<a name="sun.nio.cs.Surrogate:UCS4_MIN:I" href="#">
-
-</a>
-<span class="field_signature">
-public static final 
-int
- UCS4_MIN;
-</span>
-</div>
-<div class="field">
-<a name="sun.nio.cs.Surrogate:MAX_LOW:C" href="#">
-
-</a>
-<span class="field_signature">
-public static final 
-char
- MAX_LOW;
-</span>
-</div>
-<div class="field">
-<a name="sun.nio.cs.Surrogate:UCS4_MAX:I" href="#">
-
-</a>
-<span class="field_signature">
-public static final 
-int
- UCS4_MAX;
+ MIN;
 </span>
 </div>
 <div class="field">
@@ -110,6 +90,26 @@ char
 public static final 
 char
  MAX;
+</span>
+</div>
+<div class="field">
+<a name="sun.nio.cs.Surrogate:UCS4_MAX:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ UCS4_MAX;
+</span>
+</div>
+<div class="field">
+<a name="sun.nio.cs.Surrogate:MAX_LOW:C" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+char
+ MAX_LOW;
 </span>
 </div>
 <div class="method">
@@ -214,420 +214,6 @@ bool
 </div>
 </li>
 <li value="17">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="sun.nio.cs.Surrogate:is:IZ" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-bool
- 
-<span>
-is
-</span>
-(
-int
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iconst 55296
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-ifcmpgt 13
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-iconst 57343
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-ifcmpgt 7
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="sun.nio.cs.Surrogate:toUCS4:CCI" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-int
- 
-<span>
-toUCS4
-</span>
-(
-char
- 0
-, 
-char
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#sun.nio.cs.Surrogate:$assertionsDisabled:Z">
-sun.nio.cs.Surrogate.$assertionsDisabled
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-bool
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-ifne 25
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool isHighSurrogate(char)">
-java.lang.Character.isHighSurrogate
-</span>
-</span>
-<span>
-(
-char
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/lang/Character.html#java.lang.Character:isHighSurrogate:CZ" title="bool isHighSurrogate(char)">
-java.lang.Character.isHighSurrogate
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-ifeq 10
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool isLowSurrogate(char)">
-java.lang.Character.isLowSurrogate
-</span>
-</span>
-<span>
-(
-char
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/lang/Character.html#java.lang.Character:isLowSurrogate:CZ" title="bool isLowSurrogate(char)">
-java.lang.Character.isLowSurrogate
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-ifne 11
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../../java/lang/AssertionError.html">
-java.lang.AssertionError
-</a>
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.AssertionError.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="28">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int toCodePoint(char, char)">
-java.lang.Character.toCodePoint
-</span>
-</span>
-<span>
-(
-char
-, 
-char
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/lang/Character.html#java.lang.Character:toCodePoint:CCI" title="int toCodePoint(char, char)">
-java.lang.Character.toCodePoint
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="33">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="sun.nio.cs.Surrogate:&lt;init&gt;:void" href="#">
-
-</a>
-<div class="method_signature">
-private 
-<span>
-Surrogate
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.Object.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
 <div class="instruction">
 <span>
 return
@@ -932,7 +518,321 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="sun.nio.cs.Surrogate:neededFor:IZ" href="#">
+<a name="sun.nio.cs.Surrogate:&lt;init&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+private 
+<span>
+Surrogate
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.nio.cs.Surrogate:toUCS4:CCI" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+int
+ 
+<span>
+toUCS4
+</span>
+(
+char
+ 0
+, 
+char
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.nio.cs.Surrogate:$assertionsDisabled:Z">
+sun.nio.cs.Surrogate.$assertionsDisabled
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+bool
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+ifne 25
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isHighSurrogate(char)">
+java.lang.Character.isHighSurrogate
+</span>
+</span>
+<span>
+(
+char
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Character.html#java.lang.Character:isHighSurrogate:CZ" title="bool isHighSurrogate(char)">
+java.lang.Character.isHighSurrogate
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+ifeq 10
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isLowSurrogate(char)">
+java.lang.Character.isLowSurrogate
+</span>
+</span>
+<span>
+(
+char
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Character.html#java.lang.Character:isLowSurrogate:CZ" title="bool isLowSurrogate(char)">
+java.lang.Character.isLowSurrogate
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+ifne 11
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../java/lang/AssertionError.html">
+java.lang.AssertionError
+</a>
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.AssertionError.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int toCodePoint(char, char)">
+java.lang.Character.toCodePoint
+</span>
+</span>
+<span>
+(
+char
+, 
+char
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Character.html#java.lang.Character:toCodePoint:CCI" title="int toCodePoint(char, char)">
+java.lang.Character.toCodePoint
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.nio.cs.Surrogate:is:IZ" href="#">
 
 </a>
 <div class="method_signature">
@@ -940,7 +840,7 @@ public static
 bool
  
 <span>
-neededFor
+is
 </span>
 (
 int
@@ -960,40 +860,67 @@ Not parsed
 <li value="0">
 <div class="instruction">
 <span>
+iconst 55296
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
 iload  0
 </span>
 </div>
 </li>
-<li value="1">
+<li value="3">
 <div class="instruction">
 <span>
-invokestatic 
+ifcmpgt 13
 </span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool isSupplementaryCodePoint(int)">
-java.lang.Character.isSupplementaryCodePoint
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/lang/Character.html#java.lang.Character:isSupplementaryCodePoint:IZ" title="bool isSupplementaryCodePoint(int)">
-java.lang.Character.isSupplementaryCodePoint
-</a>
 </div>
 </li>
-</ul>
+<li value="6">
+<div class="instruction">
+<span>
+iload  0
+</span>
 </div>
 </li>
-<li value="4">
+<li value="7">
+<div class="instruction">
+<span>
+iconst 57343
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+ifcmpgt 7
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="17">
 <div class="instruction">
 <span>
 ireturn
@@ -1287,6 +1214,79 @@ iconst 0
 </div>
 </li>
 <li value="17">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.nio.cs.Surrogate:neededFor:IZ" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+bool
+ 
+<span>
+neededFor
+</span>
+(
+int
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isSupplementaryCodePoint(int)">
+java.lang.Character.isSupplementaryCodePoint
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Character.html#java.lang.Character:isSupplementaryCodePoint:IZ" title="bool isSupplementaryCodePoint(int)">
+java.lang.Character.isSupplementaryCodePoint
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
 <div class="instruction">
 <span>
 ireturn

@@ -23,18 +23,6 @@ Not instantiatied
 </li>
 </ul>
 <div class="field">
-<a name="java.io.SerialCallbackContext:thread:java.lang.Thread" href="#">
-
-</a>
-<span class="field_signature">
-private  
-<a href="../../java/lang/Thread.html">
-java.lang.Thread
-</a>
- thread;
-</span>
-</div>
-<div class="field">
 <a name="java.io.SerialCallbackContext:obj:java.lang.Object" href="#">
 
 </a>
@@ -44,6 +32,18 @@ private final
 java.lang.Object
 </a>
  obj;
+</span>
+</div>
+<div class="field">
+<a name="java.io.SerialCallbackContext:thread:java.lang.Thread" href="#">
+
+</a>
+<span class="field_signature">
+private  
+<a href="../../java/lang/Thread.html">
+java.lang.Thread
+</a>
+ thread;
 </span>
 </div>
 <div class="field">
@@ -59,15 +59,15 @@ java.io.ObjectStreamClass
 </span>
 </div>
 <div class="method">
-<a name="java.io.SerialCallbackContext:checkAndSetUsed:void" href="#">
+<a name="java.io.SerialCallbackContext:setUsed:void" href="#">
 
 </a>
 <div class="method_signature">
-private 
+public 
 void
  
 <span>
-checkAndSetUsed
+setUsed
 </span>
 (
 )
@@ -92,135 +92,11 @@ aload  0
 <li value="1">
 <div class="instruction">
 <span>
-getfield 
-</span>
-<span>
-<a href="#java.io.SerialCallbackContext:thread:java.lang.Thread">
-java.io.SerialCallbackContext.thread
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/Thread.html">
-java.lang.Thread
-</a>
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../java/lang/Thread.html">
-java.lang.Thread
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Thread currentThread()">
-java.lang.Thread.currentThread
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/Thread.html#java.lang.Thread:currentThread:java.lang.Thread" title="java.lang.Thread currentThread()">
-java.lang.Thread.currentThread
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-ifacmpeq 13
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-java.io.NotActiveException
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-ldc string &apos;not in readObject invocation or fields already read&apos;
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.io.NotActiveException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
 aconstnull
 </span>
 </div>
 </li>
-<li value="22">
+<li value="2">
 <div class="instruction">
 <span>
 putfield 
@@ -240,7 +116,7 @@ java.lang.Thread
 </span>
 </div>
 </li>
-<li value="25">
+<li value="5">
 <div class="instruction">
 <span>
 return
@@ -349,15 +225,17 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.io.SerialCallbackContext:setUsed:void" href="#">
+<a name="java.io.SerialCallbackContext:getDesc:java.io.ObjectStreamClass" href="#">
 
 </a>
 <div class="method_signature">
 public 
-void
+<a href="../../java/io/ObjectStreamClass.html">
+java.io.ObjectStreamClass
+</a>
  
 <span>
-setUsed
+getDesc
 </span>
 (
 )
@@ -382,34 +260,27 @@ aload  0
 <li value="1">
 <div class="instruction">
 <span>
-aconstnull
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-putfield 
+getfield 
 </span>
 <span>
-<a href="#java.io.SerialCallbackContext:thread:java.lang.Thread">
-java.io.SerialCallbackContext.thread
+<a href="#java.io.SerialCallbackContext:desc:java.io.ObjectStreamClass">
+java.io.SerialCallbackContext.desc
 </a>
 </span>
 <span>
  : 
 </span>
 <span>
-<a href="../../java/lang/Thread.html">
-java.lang.Thread
+<a href="../../java/io/ObjectStreamClass.html">
+java.io.ObjectStreamClass
 </a>
 </span>
 </div>
 </li>
-<li value="5">
+<li value="4">
 <div class="instruction">
 <span>
-return
+areturn
 </span>
 </div>
 </li>
@@ -618,17 +489,15 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.io.SerialCallbackContext:getDesc:java.io.ObjectStreamClass" href="#">
+<a name="java.io.SerialCallbackContext:checkAndSetUsed:void" href="#">
 
 </a>
 <div class="method_signature">
-public 
-<a href="../../java/io/ObjectStreamClass.html">
-java.io.ObjectStreamClass
-</a>
+private 
+void
  
 <span>
-getDesc
+checkAndSetUsed
 </span>
 (
 )
@@ -656,16 +525,16 @@ aload  0
 getfield 
 </span>
 <span>
-<a href="#java.io.SerialCallbackContext:desc:java.io.ObjectStreamClass">
-java.io.SerialCallbackContext.desc
+<a href="#java.io.SerialCallbackContext:thread:java.lang.Thread">
+java.io.SerialCallbackContext.thread
 </a>
 </span>
 <span>
  : 
 </span>
 <span>
-<a href="../../java/io/ObjectStreamClass.html">
-java.io.ObjectStreamClass
+<a href="../../java/lang/Thread.html">
+java.lang.Thread
 </a>
 </span>
 </div>
@@ -673,7 +542,138 @@ java.io.ObjectStreamClass
 <li value="4">
 <div class="instruction">
 <span>
-areturn
+invokestatic 
+</span>
+<span>
+<a href="../../java/lang/Thread.html">
+java.lang.Thread
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Thread currentThread()">
+java.lang.Thread.currentThread
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Thread.html#java.lang.Thread:currentThread:java.lang.Thread" title="java.lang.Thread currentThread()">
+java.lang.Thread.currentThread
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+ifacmpeq 13
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+java.io.NotActiveException
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+ldc string &apos;not in readObject invocation or fields already read&apos;
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.io.NotActiveException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.io.SerialCallbackContext:thread:java.lang.Thread">
+java.io.SerialCallbackContext.thread
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/Thread.html">
+java.lang.Thread
+</a>
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+return
 </span>
 </div>
 </li>

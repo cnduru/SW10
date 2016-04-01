@@ -23,53 +23,6 @@ Not instantiatied
 </li>
 </ul>
 <div class="field">
-<a name="java.net.NetworkInterface:bindings:java.net.InterfaceAddress.-" href="#">
-
-</a>
-<span class="field_signature">
-private  
-<a href="../../java/net/InterfaceAddress.html">
-java.net.InterfaceAddress
-</a>
-[]
- bindings;
-</span>
-</div>
-<div class="field">
-<a name="java.net.NetworkInterface:defaultIndex:I" href="#">
-
-</a>
-<span class="field_signature">
-private static final 
-int
- defaultIndex;
-</span>
-</div>
-<div class="field">
-<a name="java.net.NetworkInterface:displayName:java.lang.String" href="#">
-
-</a>
-<span class="field_signature">
-private  
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- displayName;
-</span>
-</div>
-<div class="field">
-<a name="java.net.NetworkInterface:parent:java.net.NetworkInterface" href="#">
-
-</a>
-<span class="field_signature">
-private  
-<a href="NetworkInterface.html">
-java.net.NetworkInterface
-</a>
- parent;
-</span>
-</div>
-<div class="field">
 <a name="java.net.NetworkInterface:addrs:java.net.InetAddress.-" href="#">
 
 </a>
@@ -116,6 +69,52 @@ bool
 </span>
 </div>
 <div class="field">
+<a name="java.net.NetworkInterface:defaultInterface:java.net.NetworkInterface" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+<a href="NetworkInterface.html">
+java.net.NetworkInterface
+</a>
+ defaultInterface;
+</span>
+</div>
+<div class="field">
+<a name="java.net.NetworkInterface:displayName:java.lang.String" href="#">
+
+</a>
+<span class="field_signature">
+private  
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ displayName;
+</span>
+</div>
+<div class="field">
+<a name="java.net.NetworkInterface:parent:java.net.NetworkInterface" href="#">
+
+</a>
+<span class="field_signature">
+private  
+<a href="NetworkInterface.html">
+java.net.NetworkInterface
+</a>
+ parent;
+</span>
+</div>
+<div class="field">
+<a name="java.net.NetworkInterface:defaultIndex:I" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+int
+ defaultIndex;
+</span>
+</div>
+<div class="field">
 <a name="java.net.NetworkInterface:name:java.lang.String" href="#">
 
 </a>
@@ -128,15 +127,16 @@ java.lang.String
 </span>
 </div>
 <div class="field">
-<a name="java.net.NetworkInterface:defaultInterface:java.net.NetworkInterface" href="#">
+<a name="java.net.NetworkInterface:bindings:java.net.InterfaceAddress.-" href="#">
 
 </a>
 <span class="field_signature">
-private static final 
-<a href="NetworkInterface.html">
-java.net.NetworkInterface
+private  
+<a href="../../java/net/InterfaceAddress.html">
+java.net.InterfaceAddress
 </a>
- defaultInterface;
+[]
+ bindings;
 </span>
 </div>
 <div class="method">
@@ -469,17 +469,200 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.net.NetworkInterface:getSubInterfaces:java.util.Enumeration" href="#">
+<a name="java.net.NetworkInterface:getByIndex:Ijava.net.NetworkInterface" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="NetworkInterface.html">
+java.net.NetworkInterface
+</a>
+ 
+<span>
+getByIndex
+</span>
+(
+int
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+ifge 13
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+ldc string &apos;Interface index can&apos;t be negative&apos;
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.lang.IllegalArgumentException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="NetworkInterface.html">
+java.net.NetworkInterface
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.net.NetworkInterface getByIndex0(int)">
+java.net.NetworkInterface.getByIndex0
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.net.NetworkInterface:getMTU0:java.lang.StringII" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+int
+ 
+<span>
+getMTU0
+</span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 0
+, 
+int
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.net.NetworkInterface:isVirtual:Z" href="#">
 
 </a>
 <div class="method_signature">
 public 
-<a href="../../java/util/Enumeration.html">
-java.util.Enumeration
-</a>
+bool
  
 <span>
-getSubInterfaces
+isVirtual
 </span>
 (
 )
@@ -497,17 +680,129 @@ Not parsed
 <li value="0">
 <div class="instruction">
 <span>
-new 
-</span>
-<span>
-java.net.NetworkInterface$1subIFs
+aload  0
 </span>
 </div>
 </li>
-<li value="3">
+<li value="1">
 <div class="instruction">
 <span>
-dup
+getfield 
+</span>
+<span>
+<a href="#java.net.NetworkInterface:virtual:Z">
+java.net.NetworkInterface.virtual
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+bool
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.net.NetworkInterface:getByName0:java.lang.Stringjava.net.NetworkInterface" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+<a href="NetworkInterface.html">
+java.net.NetworkInterface
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getByName0
+</span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.net.NetworkInterface:getByName:java.lang.Stringjava.net.NetworkInterface" title="java.net.NetworkInterface getByName(java.lang.String)">
+java.net.NetworkInterface.getByName(java.lang.String)
+</a>
+</div>
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.net.NetworkInterface:isPointToPoint:Z" href="#">
+
+</a>
+<div class="method_signature">
+public 
+bool
+ 
+<span>
+isPointToPoint
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.net.NetworkInterface:name:java.lang.String">
+java.net.NetworkInterface.name
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
 </span>
 </div>
 </li>
@@ -521,21 +816,41 @@ aload  0
 <li value="5">
 <div class="instruction">
 <span>
-invokespecial 
+getfield 
 </span>
 <span>
-void
+<a href="#java.net.NetworkInterface:index:I">
+java.net.NetworkInterface.index
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+bool
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.net.NetworkInterface)">
-java.net.NetworkInterface$1subIFs.&lt;init&gt;
+<span title="bool isP2P0(java.lang.String, int)">
+java.net.NetworkInterface.isP2P0
 </span>
 </span>
 <span>
 (
-<a href="NetworkInterface.html">
-java.net.NetworkInterface
+<a href="../../java/lang/String.html">
+java.lang.String
 </a>
+, 
+int
 )
 </span>
 <ul class="clickable">
@@ -547,10 +862,10 @@ No reachable result.
 </ul>
 </div>
 </li>
-<li value="8">
+<li value="11">
 <div class="instruction">
 <span>
-areturn
+ireturn
 </span>
 </div>
 </li>
@@ -559,17 +874,17 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.net.NetworkInterface:getDefault:java.net.NetworkInterface" href="#">
+<a name="java.net.NetworkInterface:getNetworkInterfaces:java.util.Enumeration" href="#">
 
 </a>
 <div class="method_signature">
- static 
-<a href="NetworkInterface.html">
-java.net.NetworkInterface
+public static 
+<a href="../../java/util/Enumeration.html">
+java.util.Enumeration
 </a>
  
 <span>
-getDefault
+getNetworkInterfaces
 </span>
 (
 )
@@ -587,11 +902,256 @@ Not parsed
 <li value="0">
 <div class="instruction">
 <span>
-getstatic 
+invokestatic 
 </span>
 <span>
-<a href="#java.net.NetworkInterface:defaultInterface:java.net.NetworkInterface">
-java.net.NetworkInterface.defaultInterface
+<a href="NetworkInterface.html">
+java.net.NetworkInterface
+</a>
+[]
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.net.NetworkInterface[] getAll()">
+java.net.NetworkInterface.getAll
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+astore  0
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+ifnonnull 5
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+java.net.NetworkInterface$1
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.net.NetworkInterface[])">
+java.net.NetworkInterface$1.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="NetworkInterface.html">
+java.net.NetworkInterface
+</a>
+[]
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.net.NetworkInterface:supportsMulticast0:java.lang.StringIZ" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+bool
+ 
+<span>
+supportsMulticast0
+</span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 0
+, 
+int
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.net.NetworkInterface:&lt;init&gt;:java.lang.StringIjava.net.InetAddress.-void" href="#">
+
+</a>
+<div class="method_signature">
+ 
+<span>
+NetworkInterface
+</span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 1
+, 
+int
+ 2
+, 
+<a href="../../java/net/InetAddress.html">
+java.net.InetAddress
+</a>
+[]
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.net.NetworkInterface:parent:java.net.NetworkInterface">
+java.net.NetworkInterface.parent
 </a>
 </span>
 <span>
@@ -604,7 +1164,494 @@ java.net.NetworkInterface
 </span>
 </div>
 </li>
-<li value="3">
+<li value="9">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.net.NetworkInterface:virtual:Z">
+java.net.NetworkInterface.virtual
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+bool
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.net.NetworkInterface:name:java.lang.String">
+java.net.NetworkInterface.name
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.net.NetworkInterface:index:I">
+java.net.NetworkInterface.index
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.net.NetworkInterface:addrs:java.net.InetAddress.-">
+java.net.NetworkInterface.addrs
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/net/InetAddress.html">
+java.net.InetAddress
+</a>
+[]
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.net.NetworkInterface:isUp:Z" href="#">
+
+</a>
+<div class="method_signature">
+public 
+bool
+ 
+<span>
+isUp
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.net.NetworkInterface:name:java.lang.String">
+java.net.NetworkInterface.name
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.net.NetworkInterface:index:I">
+java.net.NetworkInterface.index
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isUp0(java.lang.String, int)">
+java.net.NetworkInterface.isUp0
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.net.NetworkInterface:&lt;init&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+ 
+<span>
+NetworkInterface
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.net.NetworkInterface:parent:java.net.NetworkInterface">
+java.net.NetworkInterface.parent
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="NetworkInterface.html">
+java.net.NetworkInterface
+</a>
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.net.NetworkInterface:virtual:Z">
+java.net.NetworkInterface.virtual
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+bool
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.net.NetworkInterface:isP2P0:java.lang.StringIZ" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+bool
+ 
+<span>
+isP2P0
+</span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 0
+, 
+int
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.net.NetworkInterface:access$100:java.net.NetworkInterfacejava.net.NetworkInterface.-" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<a href="NetworkInterface.html">
+java.net.NetworkInterface
+</a>
+[]
+ 
+<span>
+access$100
+</span>
+(
+<a href="NetworkInterface.html">
+java.net.NetworkInterface
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.net.NetworkInterface:childs:java.net.NetworkInterface.-">
+java.net.NetworkInterface.childs
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="NetworkInterface.html">
+java.net.NetworkInterface
+</a>
+[]
+</span>
+</div>
+</li>
+<li value="4">
 <div class="instruction">
 <span>
 areturn
@@ -866,15 +1913,15 @@ java.util.concurrent.ConcurrentHashMap$HashIterator.hasMoreElements
 </li>
 <li>
 <div>
-<a href="../../java/util/StringTokenizer.html#java.util.StringTokenizer:hasMoreElements:Z" title="bool hasMoreElements()">
-java.util.StringTokenizer.hasMoreElements
+<a href="../../java/security/PermissionsEnumerator.html#java.security.PermissionsEnumerator:hasMoreElements:Z" title="bool hasMoreElements()">
+java.security.PermissionsEnumerator.hasMoreElements
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/security/PermissionsEnumerator.html#java.security.PermissionsEnumerator:hasMoreElements:Z" title="bool hasMoreElements()">
-java.security.PermissionsEnumerator.hasMoreElements
+<a href="../../java/util/StringTokenizer.html#java.util.StringTokenizer:hasMoreElements:Z" title="bool hasMoreElements()">
+java.util.StringTokenizer.hasMoreElements
 </a>
 </div>
 </li>
@@ -1344,954 +2391,6 @@ Not parsed
 </ol>
 </div>
 <div class="method">
-<a name="java.net.NetworkInterface:isUp:Z" href="#">
-
-</a>
-<div class="method_signature">
-public 
-bool
- 
-<span>
-isUp
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.net.NetworkInterface:name:java.lang.String">
-java.net.NetworkInterface.name
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.net.NetworkInterface:index:I">
-java.net.NetworkInterface.index
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool isUp0(java.lang.String, int)">
-java.net.NetworkInterface.isUp0
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.net.NetworkInterface:isP2P0:java.lang.StringIZ" href="#">
-
-</a>
-<div class="method_signature">
-private static native 
-bool
- 
-<span>
-isP2P0
-</span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- 0
-, 
-int
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.net.NetworkInterface:access$100:java.net.NetworkInterfacejava.net.NetworkInterface.-" href="#">
-
-</a>
-<div class="method_signature">
- static 
-<a href="NetworkInterface.html">
-java.net.NetworkInterface
-</a>
-[]
- 
-<span>
-access$100
-</span>
-(
-<a href="NetworkInterface.html">
-java.net.NetworkInterface
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.net.NetworkInterface:childs:java.net.NetworkInterface.-">
-java.net.NetworkInterface.childs
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="NetworkInterface.html">
-java.net.NetworkInterface
-</a>
-[]
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.net.NetworkInterface:getByIndex:Ijava.net.NetworkInterface" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-<a href="NetworkInterface.html">
-java.net.NetworkInterface
-</a>
- 
-<span>
-getByIndex
-</span>
-(
-int
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-ifge 13
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/IllegalArgumentException.html">
-java.lang.IllegalArgumentException
-</a>
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-ldc string &apos;Interface index can&apos;t be negative&apos;
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.lang.IllegalArgumentException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="NetworkInterface.html">
-java.net.NetworkInterface
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.net.NetworkInterface getByIndex0(int)">
-java.net.NetworkInterface.getByIndex0
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.net.NetworkInterface:&lt;init&gt;:void" href="#">
-
-</a>
-<div class="method_signature">
- 
-<span>
-NetworkInterface
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.Object.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-aconstnull
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.net.NetworkInterface:parent:java.net.NetworkInterface">
-java.net.NetworkInterface.parent
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="NetworkInterface.html">
-java.net.NetworkInterface
-</a>
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.net.NetworkInterface:virtual:Z">
-java.net.NetworkInterface.virtual
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-bool
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.net.NetworkInterface:getMTU0:java.lang.StringII" href="#">
-
-</a>
-<div class="method_signature">
-private static native 
-int
- 
-<span>
-getMTU0
-</span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- 0
-, 
-int
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.net.NetworkInterface:isVirtual:Z" href="#">
-
-</a>
-<div class="method_signature">
-public 
-bool
- 
-<span>
-isVirtual
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.net.NetworkInterface:virtual:Z">
-java.net.NetworkInterface.virtual
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-bool
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.net.NetworkInterface:getByName0:java.lang.Stringjava.net.NetworkInterface" href="#">
-
-</a>
-<div class="method_signature">
-private static native 
-<a href="NetworkInterface.html">
-java.net.NetworkInterface
-</a>
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-getByName0
-</span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.net.NetworkInterface:getByName:java.lang.Stringjava.net.NetworkInterface" title="java.net.NetworkInterface getByName(java.lang.String)">
-java.net.NetworkInterface.getByName(java.lang.String)
-</a>
-</div>
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.net.NetworkInterface:isPointToPoint:Z" href="#">
-
-</a>
-<div class="method_signature">
-public 
-bool
- 
-<span>
-isPointToPoint
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.net.NetworkInterface:name:java.lang.String">
-java.net.NetworkInterface.name
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.net.NetworkInterface:index:I">
-java.net.NetworkInterface.index
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool isP2P0(java.lang.String, int)">
-java.net.NetworkInterface.isP2P0
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.net.NetworkInterface:getNetworkInterfaces:java.util.Enumeration" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-<a href="../../java/util/Enumeration.html">
-java.util.Enumeration
-</a>
- 
-<span>
-getNetworkInterfaces
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="NetworkInterface.html">
-java.net.NetworkInterface
-</a>
-[]
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.net.NetworkInterface[] getAll()">
-java.net.NetworkInterface.getAll
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-astore  0
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-ifnonnull 5
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-aconstnull
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-java.net.NetworkInterface$1
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.net.NetworkInterface[])">
-java.net.NetworkInterface$1.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="NetworkInterface.html">
-java.net.NetworkInterface
-</a>
-[]
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.net.NetworkInterface:supportsMulticast0:java.lang.StringIZ" href="#">
-
-</a>
-<div class="method_signature">
-private static native 
-bool
- 
-<span>
-supportsMulticast0
-</span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- 0
-, 
-int
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
 <a name="java.net.NetworkInterface:init:void" href="#">
 
 </a>
@@ -2324,6 +2423,63 @@ java.net.NetworkInterface.&lt;clinit&gt;()
 </ul>
 </div>
 
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.net.NetworkInterface:getDefault:java.net.NetworkInterface" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<a href="NetworkInterface.html">
+java.net.NetworkInterface
+</a>
+ 
+<span>
+getDefault
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.net.NetworkInterface:defaultInterface:java.net.NetworkInterface">
+java.net.NetworkInterface.defaultInterface
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="NetworkInterface.html">
+java.net.NetworkInterface
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
 <ol>
 </ol>
 </div>
@@ -3191,28 +3347,113 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.net.NetworkInterface:&lt;init&gt;:java.lang.StringIjava.net.InetAddress.-void" href="#">
+<a name="java.net.NetworkInterface:getSubInterfaces:java.util.Enumeration" href="#">
 
 </a>
 <div class="method_signature">
+public 
+<a href="../../java/util/Enumeration.html">
+java.util.Enumeration
+</a>
  
 <span>
-NetworkInterface
+getSubInterfaces
 </span>
 (
-<a href="../../java/lang/String.html">
-java.lang.String
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+java.net.NetworkInterface$1subIFs
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.net.NetworkInterface)">
+java.net.NetworkInterface$1subIFs.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="NetworkInterface.html">
+java.net.NetworkInterface
 </a>
- 1
-, 
-int
- 2
-, 
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.net.NetworkInterface:getByInetAddress:java.net.InetAddressjava.net.NetworkInterface" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="NetworkInterface.html">
+java.net.NetworkInterface
+</a>
+ 
+<span>
+getByInetAddress
+</span>
+(
 <a href="../../java/net/InetAddress.html">
 java.net.InetAddress
 </a>
-[]
- 3
+ 0
 )
 ;
 <ul class="annot">
@@ -3235,6 +3476,32 @@ aload  0
 <li value="1">
 <div class="instruction">
 <span>
+ifnonnull 11
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/NullPointerException.html">
+java.lang.NullPointerException
+</a>
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
 invokespecial 
 </span>
 <span>
@@ -3242,7 +3509,7 @@ void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
 <span title="void &lt;init&gt;()">
-java.lang.Object.&lt;init&gt;
+java.lang.NullPointerException.&lt;init&gt;
 </span>
 </span>
 <span>
@@ -3252,109 +3519,44 @@ java.lang.Object.&lt;init&gt;
 <ul class="clickable">
 <li>
 <div>
-No reachable result.
+<a href="../../java/lang/NullPointerException.html#java.lang.NullPointerException:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.NullPointerException.&lt;init&gt;
+</a>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-aconstnull
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.net.NetworkInterface:parent:java.net.NetworkInterface">
-java.net.NetworkInterface.parent
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="NetworkInterface.html">
-java.net.NetworkInterface
-</a>
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
 <li value="11">
 <div class="instruction">
 <span>
-putfield 
-</span>
-<span>
-<a href="#java.net.NetworkInterface:virtual:Z">
-java.net.NetworkInterface.virtual
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-bool
+athrow
 </span>
 </div>
 </li>
-<li value="14">
+<li value="12">
 <div class="instruction">
 <span>
 aload  0
 </span>
 </div>
 </li>
-<li value="15">
+<li value="13">
 <div class="instruction">
 <span>
-aload  1
+instanceof 
+</span>
+<span>
+<a href="../../java/net/Inet4Address.html">
+java.net.Inet4Address
+</a>
 </span>
 </div>
 </li>
 <li value="16">
 <div class="instruction">
 <span>
-putfield 
-</span>
-<span>
-<a href="#java.net.NetworkInterface:name:java.lang.String">
-java.net.NetworkInterface.name
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
+ifne 20
 </span>
 </div>
 </li>
@@ -3368,46 +3570,209 @@ aload  0
 <li value="20">
 <div class="instruction">
 <span>
-iload  2
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-putfield 
+instanceof 
 </span>
 <span>
-<a href="#java.net.NetworkInterface:index:I">
-java.net.NetworkInterface.index
+<a href="../../java/net/Inet6Address.html">
+java.net.Inet6Address
 </a>
 </span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
 </div>
 </li>
-<li value="24">
+<li value="23">
 <div class="instruction">
 <span>
-aload  0
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-aload  3
+ifne 13
 </span>
 </div>
 </li>
 <li value="26">
 <div class="instruction">
 <span>
-putfield 
+new 
+</span>
+<span>
+<a href="../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+ldc string &apos;invalid address type&apos;
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.lang.IllegalArgumentException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="NetworkInterface.html">
+java.net.NetworkInterface
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.net.NetworkInterface getByInetAddress0(java.net.InetAddress)">
+java.net.NetworkInterface.getByInetAddress0
+</span>
+</span>
+<span>
+(
+<a href="../../java/net/InetAddress.html">
+java.net.InetAddress
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.net.NetworkInterface:isLoopback0:java.lang.StringIZ" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+bool
+ 
+<span>
+isLoopback0
+</span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 0
+, 
+int
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.net.NetworkInterface:access$000:java.net.NetworkInterfacejava.net.InetAddress.-" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<a href="../../java/net/InetAddress.html">
+java.net.InetAddress
+</a>
+[]
+ 
+<span>
+access$000
+</span>
+(
+<a href="NetworkInterface.html">
+java.net.NetworkInterface
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
 </span>
 <span>
 <a href="#java.net.NetworkInterface:addrs:java.net.InetAddress.-">
@@ -3425,252 +3790,10 @@ java.net.InetAddress
 </span>
 </div>
 </li>
-<li value="29">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.net.NetworkInterface:getParent:java.net.NetworkInterface" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<a href="NetworkInterface.html">
-java.net.NetworkInterface
-</a>
- 
-<span>
-getParent
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.net.NetworkInterface:parent:java.net.NetworkInterface">
-java.net.NetworkInterface.parent
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="NetworkInterface.html">
-java.net.NetworkInterface
-</a>
-</span>
-</div>
-</li>
 <li value="4">
 <div class="instruction">
 <span>
 areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.net.NetworkInterface:getIndex:I" href="#">
-
-</a>
-<div class="method_signature">
-public 
-int
- 
-<span>
-getIndex
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.net.NetworkInterface:index:I">
-java.net.NetworkInterface.index
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.net.NetworkInterface:getMTU:I" href="#">
-
-</a>
-<div class="method_signature">
-public 
-int
- 
-<span>
-getMTU
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.net.NetworkInterface:name:java.lang.String">
-java.net.NetworkInterface.name
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.net.NetworkInterface:index:I">
-java.net.NetworkInterface.index
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int getMTU0(java.lang.String, int)">
-java.net.NetworkInterface.getMTU0
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-ireturn
 </span>
 </div>
 </li>
@@ -3743,7 +3866,7 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.net.NetworkInterface:getByIndex0:Ijava.net.NetworkInterface" href="#">
+<a name="java.net.NetworkInterface:getByInetAddress0:java.net.InetAddressjava.net.NetworkInterface" href="#">
 
 </a>
 <div class="method_signature">
@@ -3753,10 +3876,12 @@ java.net.NetworkInterface
 </a>
  
 <span>
-getByIndex0
+getByInetAddress0
 </span>
 (
-int
+<a href="../../java/net/InetAddress.html">
+java.net.InetAddress
+</a>
  0
 )
 ;
@@ -3924,7 +4049,7 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.net.NetworkInterface:isLoopback:Z" href="#">
+<a name="java.net.NetworkInterface:supportsMulticast:Z" href="#">
 
 </a>
 <div class="method_signature">
@@ -3932,7 +4057,7 @@ public
 bool
  
 <span>
-isLoopback
+supportsMulticast
 </span>
 (
 )
@@ -4008,8 +4133,8 @@ invokestatic
 bool
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool isLoopback0(java.lang.String, int)">
-java.net.NetworkInterface.isLoopback0
+<span title="bool supportsMulticast0(java.lang.String, int)">
+java.net.NetworkInterface.supportsMulticast0
 </span>
 </span>
 <span>
@@ -4042,19 +4167,23 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.net.NetworkInterface:getInetAddresses:java.util.Enumeration" href="#">
+<a name="java.net.NetworkInterface:getByName:java.lang.Stringjava.net.NetworkInterface" href="#">
 
 </a>
 <div class="method_signature">
-public 
-<a href="../../java/util/Enumeration.html">
-java.util.Enumeration
+public static 
+<a href="NetworkInterface.html">
+java.net.NetworkInterface
 </a>
  
-<span>
-getInetAddresses
+<span class="methodname clickable" onclick="showInfoList(this)">
+getByName
 </span>
 (
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 0
 )
 ;
 <ul class="annot">
@@ -4062,7 +4191,16 @@ getInetAddresses
 Concrete Method 
 </li>
 <li>
-Not parsed
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/net/Inet6Address.html#java.net.Inet6Address:initstr:java.lang.StringB.-java.lang.Stringvoid" title="void initstr(java.lang.String, byte[], java.lang.String)">
+java.net.Inet6Address.initstr(java.lang.String, byte[], java.lang.String)
+</a>
+</div>
 </li>
 </ul>
 </div>
@@ -4070,28 +4208,37 @@ Not parsed
 <li value="0">
 <div class="instruction">
 <span>
-new 
-</span>
-<span>
-java.net.NetworkInterface$1checkedAddresses
+aload  0
 </span>
 </div>
 </li>
-<li value="3">
+<li value="1">
 <div class="instruction">
 <span>
-dup
+ifnonnull 11
 </span>
 </div>
 </li>
 <li value="4">
 <div class="instruction">
 <span>
-aload  0
+new 
+</span>
+<span>
+<a href="../../java/lang/NullPointerException.html">
+java.lang.NullPointerException
+</a>
 </span>
 </div>
 </li>
-<li value="5">
+<li value="7">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="8">
 <div class="instruction">
 <span>
 invokespecial 
@@ -4100,27 +4247,73 @@ invokespecial
 void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.net.NetworkInterface)">
-java.net.NetworkInterface$1checkedAddresses.&lt;init&gt;
+<span title="void &lt;init&gt;()">
+java.lang.NullPointerException.&lt;init&gt;
 </span>
 </span>
 <span>
 (
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/NullPointerException.html#java.lang.NullPointerException:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.NullPointerException.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
 <a href="NetworkInterface.html">
 java.net.NetworkInterface
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.net.NetworkInterface getByName0(java.lang.String)">
+java.net.NetworkInterface.getByName0
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
 </a>
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-No reachable result.
+<a href="#java.net.NetworkInterface:getByName0:java.lang.Stringjava.net.NetworkInterface" title="java.net.NetworkInterface getByName0(java.lang.String)">
+java.net.NetworkInterface.getByName0
+</a>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="8">
+<li value="16">
 <div class="instruction">
 <span>
 areturn
@@ -4132,24 +4325,27 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.net.NetworkInterface:isUp0:java.lang.StringIZ" href="#">
+<a name="java.net.NetworkInterface:getMacAddr0:B.-java.lang.StringIB.-" href="#">
 
 </a>
 <div class="method_signature">
 private static native 
-bool
+byte[]
  
 <span>
-isUp0
+getMacAddr0
 </span>
 (
+byte[]
+ 0
+, 
 <a href="../../java/lang/String.html">
 java.lang.String
 </a>
- 0
+ 1
 , 
 int
- 1
+ 2
 )
 ;
 <ul class="annot">
@@ -4750,855 +4946,6 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.net.NetworkInterface:getByInetAddress:java.net.InetAddressjava.net.NetworkInterface" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-<a href="NetworkInterface.html">
-java.net.NetworkInterface
-</a>
- 
-<span>
-getByInetAddress
-</span>
-(
-<a href="../../java/net/InetAddress.html">
-java.net.InetAddress
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-ifnonnull 11
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/NullPointerException.html">
-java.lang.NullPointerException
-</a>
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.NullPointerException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/NullPointerException.html#java.lang.NullPointerException:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.lang.NullPointerException.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-instanceof 
-</span>
-<span>
-<a href="../../java/net/Inet4Address.html">
-java.net.Inet4Address
-</a>
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-ifne 20
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-instanceof 
-</span>
-<span>
-<a href="../../java/net/Inet6Address.html">
-java.net.Inet6Address
-</a>
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-ifne 13
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/IllegalArgumentException.html">
-java.lang.IllegalArgumentException
-</a>
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-ldc string &apos;invalid address type&apos;
-</span>
-</div>
-</li>
-<li value="32">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.lang.IllegalArgumentException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="36">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="37">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="NetworkInterface.html">
-java.net.NetworkInterface
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.net.NetworkInterface getByInetAddress0(java.net.InetAddress)">
-java.net.NetworkInterface.getByInetAddress0
-</span>
-</span>
-<span>
-(
-<a href="../../java/net/InetAddress.html">
-java.net.InetAddress
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="40">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.net.NetworkInterface:isLoopback0:java.lang.StringIZ" href="#">
-
-</a>
-<div class="method_signature">
-private static native 
-bool
- 
-<span>
-isLoopback0
-</span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- 0
-, 
-int
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.net.NetworkInterface:access$000:java.net.NetworkInterfacejava.net.InetAddress.-" href="#">
-
-</a>
-<div class="method_signature">
- static 
-<a href="../../java/net/InetAddress.html">
-java.net.InetAddress
-</a>
-[]
- 
-<span>
-access$000
-</span>
-(
-<a href="NetworkInterface.html">
-java.net.NetworkInterface
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.net.NetworkInterface:addrs:java.net.InetAddress.-">
-java.net.NetworkInterface.addrs
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/net/InetAddress.html">
-java.net.InetAddress
-</a>
-[]
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.net.NetworkInterface:getByInetAddress0:java.net.InetAddressjava.net.NetworkInterface" href="#">
-
-</a>
-<div class="method_signature">
-private static native 
-<a href="NetworkInterface.html">
-java.net.NetworkInterface
-</a>
- 
-<span>
-getByInetAddress0
-</span>
-(
-<a href="../../java/net/InetAddress.html">
-java.net.InetAddress
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.net.NetworkInterface:supportsMulticast:Z" href="#">
-
-</a>
-<div class="method_signature">
-public 
-bool
- 
-<span>
-supportsMulticast
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.net.NetworkInterface:name:java.lang.String">
-java.net.NetworkInterface.name
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.net.NetworkInterface:index:I">
-java.net.NetworkInterface.index
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool supportsMulticast0(java.lang.String, int)">
-java.net.NetworkInterface.supportsMulticast0
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.net.NetworkInterface:getByName:java.lang.Stringjava.net.NetworkInterface" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-<a href="NetworkInterface.html">
-java.net.NetworkInterface
-</a>
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-getByName
-</span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/net/Inet6Address.html#java.net.Inet6Address:initstr:java.lang.StringB.-java.lang.Stringvoid" title="void initstr(java.lang.String, byte[], java.lang.String)">
-java.net.Inet6Address.initstr(java.lang.String, byte[], java.lang.String)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-ifnonnull 11
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/NullPointerException.html">
-java.lang.NullPointerException
-</a>
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.NullPointerException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/NullPointerException.html#java.lang.NullPointerException:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.lang.NullPointerException.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="NetworkInterface.html">
-java.net.NetworkInterface
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.net.NetworkInterface getByName0(java.lang.String)">
-java.net.NetworkInterface.getByName0
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.net.NetworkInterface:getByName0:java.lang.Stringjava.net.NetworkInterface" title="java.net.NetworkInterface getByName0(java.lang.String)">
-java.net.NetworkInterface.getByName0
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.net.NetworkInterface:getMacAddr0:B.-java.lang.StringIB.-" href="#">
-
-</a>
-<div class="method_signature">
-private static native 
-byte[]
- 
-<span>
-getMacAddr0
-</span>
-(
-byte[]
- 0
-, 
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- 1
-, 
-int
- 2
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.net.NetworkInterface:hashCode:I" href="#">
-
-</a>
-<div class="method_signature">
-public 
-int
- 
-<span>
-hashCode
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.net.NetworkInterface:name:java.lang.String">
-java.net.NetworkInterface.name
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ifnonnull 7
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-goto 10
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.net.NetworkInterface:name:java.lang.String">
-java.net.NetworkInterface.name
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int hashCode()">
-java.lang.String.hashCode
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/String.html#java.lang.String:hashCode:I" title="int hashCode()">
-java.lang.String.hashCode
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
 <a name="java.net.NetworkInterface:getInterfaceAddresses:java.util.List" href="#">
 
 </a>
@@ -6024,15 +5371,15 @@ java.lang.Object
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/util/Vector.html#java.util.Vector:add:java.lang.ObjectZ" title="bool add(java.lang.Object)">
-java.util.Vector.add
+<a href="../../java/util/LinkedList.html#java.util.LinkedList:add:java.lang.ObjectZ" title="bool add(java.lang.Object)">
+java.util.LinkedList.add
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/util/Collections$UnmodifiableCollection.html#java.util.Collections$UnmodifiableCollection:add:java.lang.ObjectZ" title="bool add(java.lang.Object)">
-java.util.Collections$UnmodifiableCollection.add
+<a href="../../java/util/Vector.html#java.util.Vector:add:java.lang.ObjectZ" title="bool add(java.lang.Object)">
+java.util.Vector.add
 </a>
 </div>
 </li>
@@ -6045,8 +5392,8 @@ java.util.AbstractList.add
 </li>
 <li>
 <div>
-<a href="../../java/util/LinkedList.html#java.util.LinkedList:add:java.lang.ObjectZ" title="bool add(java.lang.Object)">
-java.util.LinkedList.add
+<a href="../../java/util/Collections$UnmodifiableCollection.html#java.util.Collections$UnmodifiableCollection:add:java.lang.ObjectZ" title="bool add(java.lang.Object)">
+java.util.Collections$UnmodifiableCollection.add
 </a>
 </div>
 </li>
@@ -6122,6 +5469,659 @@ try start: 24; try end: 58: catch start: 61; catched type: java.lang.SecurityExc
 </li>
 </ol>
 </span>
+</div>
+<div class="method">
+<a name="java.net.NetworkInterface:isLoopback:Z" href="#">
+
+</a>
+<div class="method_signature">
+public 
+bool
+ 
+<span>
+isLoopback
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.net.NetworkInterface:name:java.lang.String">
+java.net.NetworkInterface.name
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.net.NetworkInterface:index:I">
+java.net.NetworkInterface.index
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isLoopback0(java.lang.String, int)">
+java.net.NetworkInterface.isLoopback0
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.net.NetworkInterface:getInetAddresses:java.util.Enumeration" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/util/Enumeration.html">
+java.util.Enumeration
+</a>
+ 
+<span>
+getInetAddresses
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+java.net.NetworkInterface$1checkedAddresses
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.net.NetworkInterface)">
+java.net.NetworkInterface$1checkedAddresses.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="NetworkInterface.html">
+java.net.NetworkInterface
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.net.NetworkInterface:isUp0:java.lang.StringIZ" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+bool
+ 
+<span>
+isUp0
+</span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 0
+, 
+int
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.net.NetworkInterface:getMTU:I" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span>
+getMTU
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.net.NetworkInterface:name:java.lang.String">
+java.net.NetworkInterface.name
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.net.NetworkInterface:index:I">
+java.net.NetworkInterface.index
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getMTU0(java.lang.String, int)">
+java.net.NetworkInterface.getMTU0
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.net.NetworkInterface:getByIndex0:Ijava.net.NetworkInterface" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+<a href="NetworkInterface.html">
+java.net.NetworkInterface
+</a>
+ 
+<span>
+getByIndex0
+</span>
+(
+int
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.net.NetworkInterface:getIndex:I" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span>
+getIndex
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.net.NetworkInterface:index:I">
+java.net.NetworkInterface.index
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.net.NetworkInterface:hashCode:I" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span>
+hashCode
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.net.NetworkInterface:name:java.lang.String">
+java.net.NetworkInterface.name
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ifnonnull 7
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+goto 10
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.net.NetworkInterface:name:java.lang.String">
+java.net.NetworkInterface.name
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int hashCode()">
+java.lang.String.hashCode
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/String.html#java.lang.String:hashCode:I" title="int hashCode()">
+java.lang.String.hashCode
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.net.NetworkInterface:getParent:java.net.NetworkInterface" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="NetworkInterface.html">
+java.net.NetworkInterface
+</a>
+ 
+<span>
+getParent
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.net.NetworkInterface:parent:java.net.NetworkInterface">
+java.net.NetworkInterface.parent
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="NetworkInterface.html">
+java.net.NetworkInterface
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
 </div>
 </div>
 </body>

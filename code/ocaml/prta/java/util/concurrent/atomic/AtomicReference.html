@@ -23,6 +23,16 @@ Instantiated
 </li>
 </ul>
 <div class="field">
+<a name="java.util.concurrent.atomic.AtomicReference:valueOffset:J" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+long
+ valueOffset;
+</span>
+</div>
+<div class="field">
 <a name="java.util.concurrent.atomic.AtomicReference:unsafe:sun.misc.Unsafe" href="#">
 
 </a>
@@ -32,16 +42,6 @@ private static final
 sun.misc.Unsafe
 </a>
  unsafe;
-</span>
-</div>
-<div class="field">
-<a name="java.util.concurrent.atomic.AtomicReference:valueOffset:J" href="#">
-
-</a>
-<span class="field_signature">
-private static final 
-long
- valueOffset;
 </span>
 </div>
 <div class="field">
@@ -352,6 +352,202 @@ try start: 6; try end: 23: catch start: 26; catched type: java.lang.Exception.
 </span>
 </div>
 <div class="method">
+<a name="java.util.concurrent.atomic.AtomicReference:lazySet:java.lang.Objectvoid" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+void
+ 
+<span>
+lazySet
+</span>
+(
+<a href="../../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.util.concurrent.atomic.AtomicReference:unsafe:sun.misc.Unsafe">
+java.util.concurrent.atomic.AtomicReference.unsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../../sun/misc/Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.util.concurrent.atomic.AtomicReference:valueOffset:J">
+java.util.concurrent.atomic.AtomicReference.valueOffset
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+long
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void putOrderedObject(java.lang.Object, long, java.lang.Object)">
+sun.misc.Unsafe.putOrderedObject
+</span>
+</span>
+<span>
+(
+<a href="../../../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+long
+, 
+<a href="../../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../../sun/misc/Unsafe.html#sun.misc.Unsafe:putOrderedObject:java.lang.ObjectJjava.lang.Objectvoid" title="void putOrderedObject(java.lang.Object, long, java.lang.Object)">
+sun.misc.Unsafe.putOrderedObject
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.concurrent.atomic.AtomicReference:&lt;init&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<span>
+AtomicReference
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../../java/lang/Object.html#java.lang.Object:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
 <a name="java.util.concurrent.atomic.AtomicReference:getAndSet:java.lang.Objectjava.lang.Object" href="#">
 
 </a>
@@ -512,275 +708,6 @@ goto -16
 </ol>
 </div>
 <div class="method">
-<a name="java.util.concurrent.atomic.AtomicReference:&lt;init&gt;:void" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<span>
-AtomicReference
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.Object.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../../java/lang/Object.html#java.lang.Object:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.lang.Object.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.concurrent.atomic.AtomicReference:lazySet:java.lang.Objectvoid" href="#">
-
-</a>
-<div class="method_signature">
-public final 
-void
- 
-<span>
-lazySet
-</span>
-(
-<a href="../../../../java/lang/Object.html">
-java.lang.Object
-</a>
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.util.concurrent.atomic.AtomicReference:unsafe:sun.misc.Unsafe">
-java.util.concurrent.atomic.AtomicReference.unsafe
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../../sun/misc/Unsafe.html">
-sun.misc.Unsafe
-</a>
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.util.concurrent.atomic.AtomicReference:valueOffset:J">
-java.util.concurrent.atomic.AtomicReference.valueOffset
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-long
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void putOrderedObject(java.lang.Object, long, java.lang.Object)">
-sun.misc.Unsafe.putOrderedObject
-</span>
-</span>
-<span>
-(
-<a href="../../../../java/lang/Object.html">
-java.lang.Object
-</a>
-, 
-long
-, 
-<a href="../../../../java/lang/Object.html">
-java.lang.Object
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../../sun/misc/Unsafe.html#sun.misc.Unsafe:putOrderedObject:java.lang.ObjectJjava.lang.Objectvoid" title="void putOrderedObject(java.lang.Object, long, java.lang.Object)">
-sun.misc.Unsafe.putOrderedObject
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.concurrent.atomic.AtomicReference:set:java.lang.Objectvoid" href="#">
-
-</a>
-<div class="method_signature">
-public final 
-void
- 
-<span>
-set
-</span>
-(
-<a href="../../../../java/lang/Object.html">
-java.lang.Object
-</a>
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.util.concurrent.atomic.AtomicReference:value:java.lang.Object">
-java.util.concurrent.atomic.AtomicReference.value
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../../java/lang/Object.html">
-java.lang.Object
-</a>
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
 <a name="java.util.concurrent.atomic.AtomicReference:&lt;init&gt;:java.lang.Objectvoid" href="#">
 
 </a>
@@ -896,7 +823,7 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.util.concurrent.atomic.AtomicReference:compareAndSet:java.lang.Objectjava.lang.ObjectZ" href="#">
+<a name="java.util.concurrent.atomic.AtomicReference:weakCompareAndSet:java.lang.Objectjava.lang.ObjectZ" href="#">
 
 </a>
 <div class="method_signature">
@@ -904,7 +831,7 @@ public final
 bool
  
 <span>
-compareAndSet
+weakCompareAndSet
 </span>
 (
 <a href="../../../../java/lang/Object.html">
@@ -1040,6 +967,79 @@ ireturn
 </ol>
 </div>
 <div class="method">
+<a name="java.util.concurrent.atomic.AtomicReference:set:java.lang.Objectvoid" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+void
+ 
+<span>
+set
+</span>
+(
+<a href="../../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.util.concurrent.atomic.AtomicReference:value:java.lang.Object">
+java.util.concurrent.atomic.AtomicReference.value
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
 <a name="java.util.concurrent.atomic.AtomicReference:toString:java.lang.String" href="#">
 
 </a>
@@ -1066,8 +1066,8 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../../../java/util/Collections$UnmodifiableCollection.html#java.util.Collections$UnmodifiableCollection:toString:java.lang.String" title="java.lang.String toString()">
-java.util.Collections$UnmodifiableCollection.toString()
+<a href="../../../../java/util/Collections$SynchronizedCollection.html#java.util.Collections$SynchronizedCollection:toString:java.lang.String" title="java.lang.String toString()">
+java.util.Collections$SynchronizedCollection.toString()
 </a>
 </div>
 </li>
@@ -1080,15 +1080,8 @@ java.lang.String.valueOf(java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../../../sun/text/normalizer/UnicodeSet.html#sun.text.normalizer.UnicodeSet:syntaxError:sun.text.normalizer.RuleCharacterIteratorjava.lang.Stringvoid" title="void syntaxError(sun.text.normalizer.RuleCharacterIterator, java.lang.String)">
-sun.text.normalizer.UnicodeSet.syntaxError(sun.text.normalizer.RuleCharacterIterator, java.lang.String)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../../java/util/Collections$SynchronizedCollection.html#java.util.Collections$SynchronizedCollection:toString:java.lang.String" title="java.lang.String toString()">
-java.util.Collections$SynchronizedCollection.toString()
+<a href="../../../../java/util/Collections$UnmodifiableCollection.html#java.util.Collections$UnmodifiableCollection:toString:java.lang.String" title="java.lang.String toString()">
+java.util.Collections$UnmodifiableCollection.toString()
 </a>
 </div>
 </li>
@@ -1101,8 +1094,8 @@ java.util.Hashtable$Entry.toString()
 </li>
 <li>
 <div>
-<a href="../../../../java/util/Formatter.html#java.util.Formatter:toString:java.lang.String" title="java.lang.String toString()">
-java.util.Formatter.toString()
+<a href="../../../../sun/text/normalizer/UnicodeSet.html#sun.text.normalizer.UnicodeSet:syntaxError:sun.text.normalizer.RuleCharacterIteratorjava.lang.Stringvoid" title="void syntaxError(sun.text.normalizer.RuleCharacterIterator, java.lang.String)">
+sun.text.normalizer.UnicodeSet.syntaxError(sun.text.normalizer.RuleCharacterIterator, java.lang.String)
 </a>
 </div>
 </li>
@@ -1117,6 +1110,13 @@ java.util.Hashtable.toString()
 <div>
 <a href="../../../../java/util/Objects.html#java.util.Objects:toString:java.lang.Objectjava.lang.Stringjava.lang.String" title="java.lang.String toString(java.lang.Object, java.lang.String)">
 java.util.Objects.toString(java.lang.Object, java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../../java/util/Formatter.html#java.util.Formatter:toString:java.lang.String" title="java.lang.String toString()">
+java.util.Formatter.toString()
 </a>
 </div>
 </li>
@@ -1299,7 +1299,7 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.util.concurrent.atomic.AtomicReference:weakCompareAndSet:java.lang.Objectjava.lang.ObjectZ" href="#">
+<a name="java.util.concurrent.atomic.AtomicReference:compareAndSet:java.lang.Objectjava.lang.ObjectZ" href="#">
 
 </a>
 <div class="method_signature">
@@ -1307,7 +1307,7 @@ public final
 bool
  
 <span>
-weakCompareAndSet
+compareAndSet
 </span>
 (
 <a href="../../../../java/lang/Object.html">

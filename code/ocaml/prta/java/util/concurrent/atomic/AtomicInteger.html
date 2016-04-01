@@ -23,6 +23,16 @@ Instantiated
 </li>
 </ul>
 <div class="field">
+<a name="java.util.concurrent.atomic.AtomicInteger:valueOffset:J" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+long
+ valueOffset;
+</span>
+</div>
+<div class="field">
 <a name="java.util.concurrent.atomic.AtomicInteger:unsafe:sun.misc.Unsafe" href="#">
 
 </a>
@@ -32,16 +42,6 @@ private static final
 sun.misc.Unsafe
 </a>
  unsafe;
-</span>
-</div>
-<div class="field">
-<a name="java.util.concurrent.atomic.AtomicInteger:valueOffset:J" href="#">
-
-</a>
-<span class="field_signature">
-private static final 
-long
- valueOffset;
 </span>
 </div>
 <div class="field">
@@ -350,88 +350,17 @@ try start: 6; try end: 23: catch start: 26; catched type: java.lang.Exception.
 </span>
 </div>
 <div class="method">
-<a name="java.util.concurrent.atomic.AtomicInteger:set:Ivoid" href="#">
+<a name="java.util.concurrent.atomic.AtomicInteger:doubleValue:D" href="#">
 
 </a>
 <div class="method_signature">
-public final 
-void
+public 
+double
  
 <span>
-set
+doubleValue
 </span>
 (
-int
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.util.concurrent.atomic.AtomicInteger:value:I">
-java.util.concurrent.atomic.AtomicInteger.value
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.concurrent.atomic.AtomicInteger:addAndGet:II" href="#">
-
-</a>
-<div class="method_signature">
-public final 
-int
- 
-<span>
-addAndGet
-</span>
-(
-int
- 1
 )
 ;
 <ul class="annot">
@@ -482,115 +411,14 @@ java.util.concurrent.atomic.AtomicInteger.get
 <li value="4">
 <div class="instruction">
 <span>
-istore  2
+i2d
 </span>
 </div>
 </li>
 <li value="5">
 <div class="instruction">
 <span>
-iload  2
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-istore  3
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool compareAndSet(int, int)">
-java.util.concurrent.atomic.AtomicInteger.compareAndSet
-</span>
-</span>
-<span>
-(
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.concurrent.atomic.AtomicInteger:compareAndSet:IIZ" title="bool compareAndSet(int, int)">
-java.util.concurrent.atomic.AtomicInteger.compareAndSet
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-ifeq 5
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-goto -20
+dreturn
 </span>
 </div>
 </li>
@@ -599,15 +427,310 @@ goto -20
 </ol>
 </div>
 <div class="method">
-<a name="java.util.concurrent.atomic.AtomicInteger:getAndIncrement:I" href="#">
+<a name="java.util.concurrent.atomic.AtomicInteger:weakCompareAndSet:IIZ" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+bool
+ 
+<span>
+weakCompareAndSet
+</span>
+(
+int
+ 1
+, 
+int
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.util.concurrent.atomic.AtomicInteger:unsafe:sun.misc.Unsafe">
+java.util.concurrent.atomic.AtomicInteger.unsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../../sun/misc/Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.util.concurrent.atomic.AtomicInteger:valueOffset:J">
+java.util.concurrent.atomic.AtomicInteger.valueOffset
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+long
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool compareAndSwapInt(java.lang.Object, long, int, int)">
+sun.misc.Unsafe.compareAndSwapInt
+</span>
+</span>
+<span>
+(
+<a href="../../../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+long
+, 
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../../sun/misc/Unsafe.html#sun.misc.Unsafe:compareAndSwapInt:java.lang.ObjectJIIZ" title="bool compareAndSwapInt(java.lang.Object, long, int, int)">
+sun.misc.Unsafe.compareAndSwapInt
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.concurrent.atomic.AtomicInteger:compareAndSet:IIZ" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+bool
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+compareAndSet
+</span>
+(
+int
+ 1
+, 
+int
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.concurrent.atomic.AtomicInteger:getAndAdd:II" title="int getAndAdd(int)">
+java.util.concurrent.atomic.AtomicInteger.getAndAdd(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.util.concurrent.atomic.AtomicInteger:decrementAndGet:I" title="int decrementAndGet()">
+java.util.concurrent.atomic.AtomicInteger.decrementAndGet()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.util.concurrent.atomic.AtomicInteger:incrementAndGet:I" title="int incrementAndGet()">
+java.util.concurrent.atomic.AtomicInteger.incrementAndGet()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.util.concurrent.atomic.AtomicInteger:unsafe:sun.misc.Unsafe">
+java.util.concurrent.atomic.AtomicInteger.unsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../../sun/misc/Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.util.concurrent.atomic.AtomicInteger:valueOffset:J">
+java.util.concurrent.atomic.AtomicInteger.valueOffset
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+long
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool compareAndSwapInt(java.lang.Object, long, int, int)">
+sun.misc.Unsafe.compareAndSwapInt
+</span>
+</span>
+<span>
+(
+<a href="../../../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+long
+, 
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../../sun/misc/Unsafe.html#sun.misc.Unsafe:compareAndSwapInt:java.lang.ObjectJIIZ" title="bool compareAndSwapInt(java.lang.Object, long, int, int)">
+sun.misc.Unsafe.compareAndSwapInt
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.concurrent.atomic.AtomicInteger:decrementAndGet:I" href="#">
 
 </a>
 <div class="method_signature">
 public final 
 int
  
-<span>
-getAndIncrement
+<span class="methodname clickable" onclick="showInfoList(this)">
+decrementAndGet
 </span>
 (
 )
@@ -617,7 +740,16 @@ getAndIncrement
 Concrete Method 
 </li>
 <li>
-Not parsed
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../../java/io/FileDescriptor.html#java.io.FileDescriptor:decrementAndGetUseCount:I" title="int decrementAndGetUseCount()">
+java.io.FileDescriptor.decrementAndGetUseCount()
+</a>
+</div>
 </li>
 </ul>
 </div>
@@ -681,7 +813,7 @@ iconst 1
 <li value="7">
 <div class="instruction">
 <span>
-iadd
+isub
 </span>
 </div>
 </li>
@@ -754,7 +886,7 @@ ifeq 5
 <li value="18">
 <div class="instruction">
 <span>
-iload  1
+iload  2
 </span>
 </div>
 </li>
@@ -879,158 +1011,6 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.util.concurrent.atomic.AtomicInteger:getAndSet:II" href="#">
-
-</a>
-<div class="method_signature">
-public final 
-int
- 
-<span>
-getAndSet
-</span>
-(
-int
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int get()">
-java.util.concurrent.atomic.AtomicInteger.get
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.concurrent.atomic.AtomicInteger:get:I" title="int get()">
-java.util.concurrent.atomic.AtomicInteger.get
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-istore  2
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool compareAndSet(int, int)">
-java.util.concurrent.atomic.AtomicInteger.compareAndSet
-</span>
-</span>
-<span>
-(
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.concurrent.atomic.AtomicInteger:compareAndSet:IIZ" title="bool compareAndSet(int, int)">
-java.util.concurrent.atomic.AtomicInteger.compareAndSet
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-ifeq 5
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-goto -16
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
 <a name="java.util.concurrent.atomic.AtomicInteger:intValue:I" href="#">
 
 </a>
@@ -1123,15 +1103,15 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../../../java/io/FileDescriptor.html#java.io.FileDescriptor:&lt;init&gt;:Ivoid" title="void &lt;init&gt;(int)">
-java.io.FileDescriptor.&lt;init&gt;(int)
+<a href="../../../../java/lang/ThreadLocal.html#java.lang.ThreadLocal:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.lang.ThreadLocal.&lt;clinit&gt;()
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../../../java/lang/ThreadLocal.html#java.lang.ThreadLocal:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
-java.lang.ThreadLocal.&lt;clinit&gt;()
+<a href="../../../../java/io/FileDescriptor.html#java.io.FileDescriptor:&lt;init&gt;:Ivoid" title="void &lt;init&gt;(int)">
+java.io.FileDescriptor.&lt;init&gt;(int)
 </a>
 </div>
 </li>
@@ -1185,15 +1165,15 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.util.concurrent.atomic.AtomicInteger:floatValue:F" href="#">
+<a name="java.util.concurrent.atomic.AtomicInteger:getAndDecrement:I" href="#">
 
 </a>
 <div class="method_signature">
-public 
-float
+public final 
+int
  
 <span>
-floatValue
+getAndDecrement
 </span>
 (
 )
@@ -1204,92 +1184,6 @@ Concrete Method
 </li>
 <li>
 Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int get()">
-java.util.concurrent.atomic.AtomicInteger.get
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.concurrent.atomic.AtomicInteger:get:I" title="int get()">
-java.util.concurrent.atomic.AtomicInteger.get
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-i2f
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-freturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.concurrent.atomic.AtomicInteger:incrementAndGet:I" href="#">
-
-</a>
-<div class="method_signature">
-public final 
-int
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-incrementAndGet
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../../java/io/FileDescriptor.html#java.io.FileDescriptor:incrementAndGetUseCount:I" title="int incrementAndGetUseCount()">
-java.io.FileDescriptor.incrementAndGetUseCount()
-</a>
-</div>
 </li>
 </ul>
 </div>
@@ -1353,7 +1247,7 @@ iconst 1
 <li value="7">
 <div class="instruction">
 <span>
-iadd
+isub
 </span>
 </div>
 </li>
@@ -1426,196 +1320,7 @@ ifeq 5
 <li value="18">
 <div class="instruction">
 <span>
-iload  2
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-goto -20
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.concurrent.atomic.AtomicInteger:getAndAdd:II" href="#">
-
-</a>
-<div class="method_signature">
-public final 
-int
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-getAndAdd
-</span>
-(
-int
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../../java/lang/ThreadLocal.html#java.lang.ThreadLocal:nextHashCode:I" title="int nextHashCode()">
-java.lang.ThreadLocal.nextHashCode()
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int get()">
-java.util.concurrent.atomic.AtomicInteger.get
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.concurrent.atomic.AtomicInteger:get:I" title="int get()">
-java.util.concurrent.atomic.AtomicInteger.get
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-istore  2
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
 iload  1
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-istore  3
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool compareAndSet(int, int)">
-java.util.concurrent.atomic.AtomicInteger.compareAndSet
-</span>
-</span>
-<span>
-(
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.concurrent.atomic.AtomicInteger:compareAndSet:IIZ" title="bool compareAndSet(int, int)">
-java.util.concurrent.atomic.AtomicInteger.compareAndSet
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-ifeq 5
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-iload  2
 </span>
 </div>
 </li>
@@ -1837,7 +1542,7 @@ lreturn
 </ol>
 </div>
 <div class="method">
-<a name="java.util.concurrent.atomic.AtomicInteger:getAndDecrement:I" href="#">
+<a name="java.util.concurrent.atomic.AtomicInteger:getAndIncrement:I" href="#">
 
 </a>
 <div class="method_signature">
@@ -1845,7 +1550,7 @@ public final
 int
  
 <span>
-getAndDecrement
+getAndIncrement
 </span>
 (
 )
@@ -1919,7 +1624,7 @@ iconst 1
 <li value="7">
 <div class="instruction">
 <span>
-isub
+iadd
 </span>
 </div>
 </li>
@@ -2015,6 +1720,75 @@ goto -20
 </ol>
 </div>
 <div class="method">
+<a name="java.util.concurrent.atomic.AtomicInteger:set:Ivoid" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+void
+ 
+<span>
+set
+</span>
+(
+int
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.util.concurrent.atomic.AtomicInteger:value:I">
+java.util.concurrent.atomic.AtomicInteger.value
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
 <a name="java.util.concurrent.atomic.AtomicInteger:toString:java.lang.String" href="#">
 
 </a>
@@ -2041,8 +1815,8 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../../../java/util/Collections$UnmodifiableCollection.html#java.util.Collections$UnmodifiableCollection:toString:java.lang.String" title="java.lang.String toString()">
-java.util.Collections$UnmodifiableCollection.toString()
+<a href="../../../../java/util/Collections$SynchronizedCollection.html#java.util.Collections$SynchronizedCollection:toString:java.lang.String" title="java.lang.String toString()">
+java.util.Collections$SynchronizedCollection.toString()
 </a>
 </div>
 </li>
@@ -2055,15 +1829,8 @@ java.lang.String.valueOf(java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../../../sun/text/normalizer/UnicodeSet.html#sun.text.normalizer.UnicodeSet:syntaxError:sun.text.normalizer.RuleCharacterIteratorjava.lang.Stringvoid" title="void syntaxError(sun.text.normalizer.RuleCharacterIterator, java.lang.String)">
-sun.text.normalizer.UnicodeSet.syntaxError(sun.text.normalizer.RuleCharacterIterator, java.lang.String)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../../java/util/Collections$SynchronizedCollection.html#java.util.Collections$SynchronizedCollection:toString:java.lang.String" title="java.lang.String toString()">
-java.util.Collections$SynchronizedCollection.toString()
+<a href="../../../../java/util/Collections$UnmodifiableCollection.html#java.util.Collections$UnmodifiableCollection:toString:java.lang.String" title="java.lang.String toString()">
+java.util.Collections$UnmodifiableCollection.toString()
 </a>
 </div>
 </li>
@@ -2076,8 +1843,8 @@ java.util.Hashtable$Entry.toString()
 </li>
 <li>
 <div>
-<a href="../../../../java/util/Formatter.html#java.util.Formatter:toString:java.lang.String" title="java.lang.String toString()">
-java.util.Formatter.toString()
+<a href="../../../../sun/text/normalizer/UnicodeSet.html#sun.text.normalizer.UnicodeSet:syntaxError:sun.text.normalizer.RuleCharacterIteratorjava.lang.Stringvoid" title="void syntaxError(sun.text.normalizer.RuleCharacterIterator, java.lang.String)">
+sun.text.normalizer.UnicodeSet.syntaxError(sun.text.normalizer.RuleCharacterIterator, java.lang.String)
 </a>
 </div>
 </li>
@@ -2092,6 +1859,13 @@ java.util.Hashtable.toString()
 <div>
 <a href="../../../../java/util/Objects.html#java.util.Objects:toString:java.lang.Objectjava.lang.Stringjava.lang.String" title="java.lang.String toString(java.lang.Object, java.lang.String)">
 java.util.Objects.toString(java.lang.Object, java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../../java/util/Formatter.html#java.util.Formatter:toString:java.lang.String" title="java.lang.String toString()">
+java.util.Formatter.toString()
 </a>
 </div>
 </li>
@@ -2190,153 +1964,19 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.util.concurrent.atomic.AtomicInteger:weakCompareAndSet:IIZ" href="#">
+<a name="java.util.concurrent.atomic.AtomicInteger:addAndGet:II" href="#">
 
 </a>
 <div class="method_signature">
 public final 
-bool
+int
  
 <span>
-weakCompareAndSet
+addAndGet
 </span>
 (
 int
  1
-, 
-int
- 2
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.util.concurrent.atomic.AtomicInteger:unsafe:sun.misc.Unsafe">
-java.util.concurrent.atomic.AtomicInteger.unsafe
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../../sun/misc/Unsafe.html">
-sun.misc.Unsafe
-</a>
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.util.concurrent.atomic.AtomicInteger:valueOffset:J">
-java.util.concurrent.atomic.AtomicInteger.valueOffset
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-long
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool compareAndSwapInt(java.lang.Object, long, int, int)">
-sun.misc.Unsafe.compareAndSwapInt
-</span>
-</span>
-<span>
-(
-<a href="../../../../java/lang/Object.html">
-java.lang.Object
-</a>
-, 
-long
-, 
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../../sun/misc/Unsafe.html#sun.misc.Unsafe:compareAndSwapInt:java.lang.ObjectJIIZ" title="bool compareAndSwapInt(java.lang.Object, long, int, int)">
-sun.misc.Unsafe.compareAndSwapInt
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.concurrent.atomic.AtomicInteger:doubleValue:D" href="#">
-
-</a>
-<div class="method_signature">
-public 
-double
- 
-<span>
-doubleValue
-</span>
-(
 )
 ;
 <ul class="annot">
@@ -2387,14 +2027,115 @@ java.util.concurrent.atomic.AtomicInteger.get
 <li value="4">
 <div class="instruction">
 <span>
-i2d
+istore  2
 </span>
 </div>
 </li>
 <li value="5">
 <div class="instruction">
 <span>
-dreturn
+iload  2
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+istore  3
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool compareAndSet(int, int)">
+java.util.concurrent.atomic.AtomicInteger.compareAndSet
+</span>
+</span>
+<span>
+(
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.concurrent.atomic.AtomicInteger:compareAndSet:IIZ" title="bool compareAndSet(int, int)">
+java.util.concurrent.atomic.AtomicInteger.compareAndSet
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+ifeq 5
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+goto -20
 </span>
 </div>
 </li>
@@ -2403,7 +2144,7 @@ dreturn
 </ol>
 </div>
 <div class="method">
-<a name="java.util.concurrent.atomic.AtomicInteger:decrementAndGet:I" href="#">
+<a name="java.util.concurrent.atomic.AtomicInteger:getAndAdd:II" href="#">
 
 </a>
 <div class="method_signature">
@@ -2411,7 +2152,196 @@ public final
 int
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-decrementAndGet
+getAndAdd
+</span>
+(
+int
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../../java/lang/ThreadLocal.html#java.lang.ThreadLocal:nextHashCode:I" title="int nextHashCode()">
+java.lang.ThreadLocal.nextHashCode()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int get()">
+java.util.concurrent.atomic.AtomicInteger.get
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.concurrent.atomic.AtomicInteger:get:I" title="int get()">
+java.util.concurrent.atomic.AtomicInteger.get
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+istore  2
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+istore  3
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool compareAndSet(int, int)">
+java.util.concurrent.atomic.AtomicInteger.compareAndSet
+</span>
+</span>
+<span>
+(
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.concurrent.atomic.AtomicInteger:compareAndSet:IIZ" title="bool compareAndSet(int, int)">
+java.util.concurrent.atomic.AtomicInteger.compareAndSet
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+ifeq 5
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+goto -20
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.concurrent.atomic.AtomicInteger:incrementAndGet:I" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+incrementAndGet
 </span>
 (
 )
@@ -2427,8 +2357,8 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../../../java/io/FileDescriptor.html#java.io.FileDescriptor:decrementAndGetUseCount:I" title="int decrementAndGetUseCount()">
-java.io.FileDescriptor.decrementAndGetUseCount()
+<a href="../../../../java/io/FileDescriptor.html#java.io.FileDescriptor:incrementAndGetUseCount:I" title="int incrementAndGetUseCount()">
+java.io.FileDescriptor.incrementAndGetUseCount()
 </a>
 </div>
 </li>
@@ -2494,7 +2424,7 @@ iconst 1
 <li value="7">
 <div class="instruction">
 <span>
-isub
+iadd
 </span>
 </div>
 </li>
@@ -2582,6 +2512,158 @@ ireturn
 <div class="instruction">
 <span>
 goto -20
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.concurrent.atomic.AtomicInteger:getAndSet:II" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+int
+ 
+<span>
+getAndSet
+</span>
+(
+int
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int get()">
+java.util.concurrent.atomic.AtomicInteger.get
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.concurrent.atomic.AtomicInteger:get:I" title="int get()">
+java.util.concurrent.atomic.AtomicInteger.get
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+istore  2
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool compareAndSet(int, int)">
+java.util.concurrent.atomic.AtomicInteger.compareAndSet
+</span>
+</span>
+<span>
+(
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.concurrent.atomic.AtomicInteger:compareAndSet:IIZ" title="bool compareAndSet(int, int)">
+java.util.concurrent.atomic.AtomicInteger.compareAndSet
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+ifeq 5
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+goto -16
 </span>
 </div>
 </li>
@@ -2680,22 +2762,17 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.util.concurrent.atomic.AtomicInteger:compareAndSet:IIZ" href="#">
+<a name="java.util.concurrent.atomic.AtomicInteger:floatValue:F" href="#">
 
 </a>
 <div class="method_signature">
-public final 
-bool
+public 
+float
  
-<span class="methodname clickable" onclick="showInfoList(this)">
-compareAndSet
+<span>
+floatValue
 </span>
 (
-int
- 1
-, 
-int
- 2
 )
 ;
 <ul class="annot">
@@ -2703,30 +2780,7 @@ int
 Concrete Method 
 </li>
 <li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.concurrent.atomic.AtomicInteger:getAndAdd:II" title="int getAndAdd(int)">
-java.util.concurrent.atomic.AtomicInteger.getAndAdd(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.util.concurrent.atomic.AtomicInteger:decrementAndGet:I" title="int decrementAndGet()">
-java.util.concurrent.atomic.AtomicInteger.decrementAndGet()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.util.concurrent.atomic.AtomicInteger:incrementAndGet:I" title="int incrementAndGet()">
-java.util.concurrent.atomic.AtomicInteger.incrementAndGet()
-</a>
-</div>
+Not parsed
 </li>
 </ul>
 </div>
@@ -2734,103 +2788,49 @@ java.util.concurrent.atomic.AtomicInteger.incrementAndGet()
 <li value="0">
 <div class="instruction">
 <span>
-getstatic 
-</span>
-<span>
-<a href="#java.util.concurrent.atomic.AtomicInteger:unsafe:sun.misc.Unsafe">
-java.util.concurrent.atomic.AtomicInteger.unsafe
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../../sun/misc/Unsafe.html">
-sun.misc.Unsafe
-</a>
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
 aload  0
 </span>
 </div>
 </li>
-<li value="4">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.util.concurrent.atomic.AtomicInteger:valueOffset:J">
-java.util.concurrent.atomic.AtomicInteger.valueOffset
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-long
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="9">
+<li value="1">
 <div class="instruction">
 <span>
 invokevirtual 
 </span>
 <span>
-bool
+int
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool compareAndSwapInt(java.lang.Object, long, int, int)">
-sun.misc.Unsafe.compareAndSwapInt
+<span title="int get()">
+java.util.concurrent.atomic.AtomicInteger.get
 </span>
 </span>
 <span>
 (
-<a href="../../../../java/lang/Object.html">
-java.lang.Object
-</a>
-, 
-long
-, 
-int
-, 
-int
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="../../../../sun/misc/Unsafe.html#sun.misc.Unsafe:compareAndSwapInt:java.lang.ObjectJIIZ" title="bool compareAndSwapInt(java.lang.Object, long, int, int)">
-sun.misc.Unsafe.compareAndSwapInt
+<a href="#java.util.concurrent.atomic.AtomicInteger:get:I" title="int get()">
+java.util.concurrent.atomic.AtomicInteger.get
 </a>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="12">
+<li value="4">
 <div class="instruction">
 <span>
-ireturn
+i2f
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+freturn
 </span>
 </div>
 </li>

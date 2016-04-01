@@ -1,17 +1,17 @@
 public class Sample{
+    public A a;
+    public A b;
+
     public static void main(String[] args) {
-        A test = args[0] == "a" ? new A() : new B();
-        for(short i=0; i<3; i++){
-              test.foo(i);
-              test.bar();
-        }
-        foo(true, false);
+        Sample s = new Sample();
     }
 
-    public static void foo(boolean b, boolean b2){
-        (true ? 
-            new A() 
-          : new C()
-        ).bar();
+    Sample(){
+        install();
+    }
+    //may add paramenters later
+    private void install(){
+        a = new A();
+        b = new B();
     }
 }
