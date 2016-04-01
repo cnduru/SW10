@@ -23,6 +23,7 @@ namespace ModelRewriter
 			} 
 			else 
 			{
+                //new JParser(new List<string>() { "Sample.txt", "A.txt", "B.txt" });
                 new Rewriter("new3.xml");//C://Users//Avalon//SW10//code//models//sample.xml");
 			}
         }

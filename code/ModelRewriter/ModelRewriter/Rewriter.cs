@@ -13,9 +13,9 @@ namespace ModelRewriter
         {
             // countermeasure parameter has to fit UPPAAL rewrite mode - e.g. "pc" for PCFault and "data" for DataFault
             // should we handle Uppaal model generation without faults?
-            UppaalModel uml = new UppaalModel(path, "pc");
-            uml.rewritePCFault("testxml.xml");
-            //uml.rewriteDataFault("testxml.xml");
+            UppaalModel uml = new UppaalModel(path, "data");
+            //uml.rewritePCFault("testxml.xml");
+            uml.rewriteDataFault("testxml.xml");
             //uml.rewriteInstructionFault("instructionRewrite.xml");
         }
     }

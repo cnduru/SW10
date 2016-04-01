@@ -231,41 +231,26 @@ system s, s1;";
 
                 foreach (var l in te.locations)
                 {
-                    // create loops on every 
-
                     // if location is not a part of the original program, skip it
                     if (l.pc == null)
                     {
                         continue;
                     }
 
-
-                    int lx = 50, lx2 = 90, ly = 100;
-
-                    var labels = new List<Label>()
+                    foreach (var l2 in te.locations)
                     {
-                        new Label
-                        { 
-                            content = "faultTime == faultClock", kind = "guard", x = l.x, y = l.y + 50
-                        },
-                        new Label
-                        { 
-                            content = "f!", kind = "synchronisation"
+                        if(l.id != l2.id)
+                        {
+                            foreach (var edge in te.transitions)
+                            {
+                                if(edge.source.id == l.id && edge.target.id == l2.id)
+                                {
+                                    edge.grds.content += " && faultClock < faultTime";
+                                }
+                            } 
                         }
-                   };
+                    }
 
-                   // remember nails
-                   Transition faultTrans = new Transition(l, l, labels);
-
-                   List<Transition.Nail> nails = new List<Transition.Nail>();
-                   Transition.Nail nail1 = new Transition.Nail { x = l.x - lx, y = l.y - ly };
-                   Transition.Nail nail2 = new Transition.Nail { x = l.x - lx2, y = l.y - ly };
-                   nails.Add(nail1);
-                   nails.Add(nail2);
-                   faultTrans.nails = nails;
-
-                   te.transitions.Add(faultTrans);
-                    
                 }
             }
 

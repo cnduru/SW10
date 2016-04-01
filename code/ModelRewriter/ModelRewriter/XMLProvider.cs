@@ -43,7 +43,6 @@ namespace ModelRewriter
 			<target ref=""id2""/>
 			<label kind=""select"" x=""51"" y=""-153"">heapIndex:int[0,heap_size - 1]</label>
 			<label kind=""guard"" x=""-177"" y=""-106"">faultClock == faultTime</label>
-			<label kind=""synchronisation"" x=""-177"" y=""-89"">f?</label>
 			<label kind=""assignment"" x=""51"" y=""-127"">H[heapIndex] ^= 1 &lt;&lt; bitPos, faultClock = 0</label>
 		</transition>
 		<transition>
