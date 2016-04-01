@@ -17,6 +17,7 @@ namespace ModelRewriter
                 var name = p.Split(new char[]{'.'}).First();
                 model.parseClass(System.IO.File.ReadAllText(p), name);
             }
+            model.updateDec(); 
             model.Save("new3.xml");
 		}
 

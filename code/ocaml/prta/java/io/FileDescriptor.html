@@ -23,19 +23,7 @@ Instantiated
 </li>
 </ul>
 <div class="field">
-<a name="java.io.FileDescriptor:useCount:java.util.concurrent.atomic.AtomicInteger" href="#">
-
-</a>
-<span class="field_signature">
-private  
-<a href="../../java/util/concurrent/atomic/AtomicInteger.html">
-java.util.concurrent.atomic.AtomicInteger
-</a>
- useCount;
-</span>
-</div>
-<div class="field">
-<a name="java.io.FileDescriptor:in:java.io.FileDescriptor" href="#">
+<a name="java.io.FileDescriptor:out:java.io.FileDescriptor" href="#">
 
 </a>
 <span class="field_signature">
@@ -43,7 +31,7 @@ public static final
 <a href="FileDescriptor.html">
 java.io.FileDescriptor
 </a>
- in;
+ out;
 </span>
 </div>
 <div class="field">
@@ -69,7 +57,7 @@ java.io.FileDescriptor
 </span>
 </div>
 <div class="field">
-<a name="java.io.FileDescriptor:out:java.io.FileDescriptor" href="#">
+<a name="java.io.FileDescriptor:in:java.io.FileDescriptor" href="#">
 
 </a>
 <span class="field_signature">
@@ -77,7 +65,19 @@ public static final
 <a href="FileDescriptor.html">
 java.io.FileDescriptor
 </a>
- out;
+ in;
+</span>
+</div>
+<div class="field">
+<a name="java.io.FileDescriptor:useCount:java.util.concurrent.atomic.AtomicInteger" href="#">
+
+</a>
+<span class="field_signature">
+private  
+<a href="../../java/util/concurrent/atomic/AtomicInteger.html">
+java.util.concurrent.atomic.AtomicInteger
+</a>
+ useCount;
 </span>
 </div>
 <div class="method">
@@ -443,7 +443,7 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.io.FileDescriptor:access$000:java.io.FileDescriptorI" href="#">
+<a name="java.io.FileDescriptor:access$002:java.io.FileDescriptorII" href="#">
 
 </a>
 <div class="method_signature">
@@ -451,13 +451,16 @@ return
 int
  
 <span>
-access$000
+access$002
 </span>
 (
 <a href="FileDescriptor.html">
 java.io.FileDescriptor
 </a>
  0
+, 
+int
+ 1
 )
 ;
 <ul class="annot">
@@ -480,7 +483,21 @@ aload  0
 <li value="1">
 <div class="instruction">
 <span>
-getfield 
+iload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+dupX1
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+putfield 
 </span>
 <span>
 <a href="#java.io.FileDescriptor:fd:I">
@@ -495,7 +512,7 @@ int
 </span>
 </div>
 </li>
-<li value="4">
+<li value="6">
 <div class="instruction">
 <span>
 ireturn
@@ -503,139 +520,6 @@ ireturn
 </div>
 </li>
 </ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.io.FileDescriptor:incrementAndGetUseCount:I" href="#">
-
-</a>
-<div class="method_signature">
- 
-int
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-incrementAndGetUseCount
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/io/FileOutputStream.html#java.io.FileOutputStream:&lt;init&gt;:java.io.FileDescriptorvoid" title="void &lt;init&gt;(java.io.FileDescriptor)">
-java.io.FileOutputStream.&lt;init&gt;(java.io.FileDescriptor)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/io/FileInputStream.html#java.io.FileInputStream:&lt;init&gt;:java.io.FileDescriptorvoid" title="void &lt;init&gt;(java.io.FileDescriptor)">
-java.io.FileInputStream.&lt;init&gt;(java.io.FileDescriptor)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.io.FileDescriptor:useCount:java.util.concurrent.atomic.AtomicInteger">
-java.io.FileDescriptor.useCount
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/util/concurrent/atomic/AtomicInteger.html">
-java.util.concurrent.atomic.AtomicInteger
-</a>
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int incrementAndGet()">
-java.util.concurrent.atomic.AtomicInteger.incrementAndGet
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/util/concurrent/atomic/AtomicInteger.html#java.util.concurrent.atomic.AtomicInteger:incrementAndGet:I" title="int incrementAndGet()">
-java.util.concurrent.atomic.AtomicInteger.incrementAndGet
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.io.FileDescriptor:sync:void" href="#">
-
-</a>
-<div class="method_signature">
-public native 
-void
- 
-<span>
-sync
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-
 <ol>
 </ol>
 </div>
@@ -718,180 +602,6 @@ aload  0
 <div class="instruction">
 <span>
 iload  1
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.io.FileDescriptor:fd:I">
-java.io.FileDescriptor.fd
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/util/concurrent/atomic/AtomicInteger.html">
-java.util.concurrent.atomic.AtomicInteger
-</a>
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.util.concurrent.atomic.AtomicInteger.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/util/concurrent/atomic/AtomicInteger.html#java.util.concurrent.atomic.AtomicInteger:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.util.concurrent.atomic.AtomicInteger.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.io.FileDescriptor:useCount:java.util.concurrent.atomic.AtomicInteger">
-java.io.FileDescriptor.useCount
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/util/concurrent/atomic/AtomicInteger.html">
-java.util.concurrent.atomic.AtomicInteger
-</a>
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.io.FileDescriptor:&lt;init&gt;:void" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<span>
-FileDescriptor
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.Object.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/Object.html#java.lang.Object:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.lang.Object.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-iconst -1
 </span>
 </div>
 </li>
@@ -1094,24 +804,15 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.io.FileDescriptor:access$002:java.io.FileDescriptorII" href="#">
+<a name="java.io.FileDescriptor:&lt;init&gt;:void" href="#">
 
 </a>
 <div class="method_signature">
- static 
-int
- 
+public 
 <span>
-access$002
+FileDescriptor
 </span>
 (
-<a href="FileDescriptor.html">
-java.io.FileDescriptor
-</a>
- 0
-, 
-int
- 1
 )
 ;
 <ul class="annot">
@@ -1134,18 +835,46 @@ aload  0
 <li value="1">
 <div class="instruction">
 <span>
-iload  1
+invokespecial 
 </span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Object.html#java.lang.Object:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</a>
 </div>
 </li>
-<li value="2">
+</ul>
+</div>
+</li>
+<li value="4">
 <div class="instruction">
 <span>
-dupX1
+aload  0
 </span>
 </div>
 </li>
-<li value="3">
+<li value="5">
+<div class="instruction">
+<span>
+iconst -1
+</span>
+</div>
+</li>
+<li value="6">
 <div class="instruction">
 <span>
 putfield 
@@ -1163,7 +892,187 @@ int
 </span>
 </div>
 </li>
-<li value="6">
+<li value="9">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/util/concurrent/atomic/AtomicInteger.html">
+java.util.concurrent.atomic.AtomicInteger
+</a>
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.util.concurrent.atomic.AtomicInteger.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/concurrent/atomic/AtomicInteger.html#java.util.concurrent.atomic.AtomicInteger:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.util.concurrent.atomic.AtomicInteger.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.io.FileDescriptor:useCount:java.util.concurrent.atomic.AtomicInteger">
+java.io.FileDescriptor.useCount
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/util/concurrent/atomic/AtomicInteger.html">
+java.util.concurrent.atomic.AtomicInteger
+</a>
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.FileDescriptor:incrementAndGetUseCount:I" href="#">
+
+</a>
+<div class="method_signature">
+ 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+incrementAndGetUseCount
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/io/FileOutputStream.html#java.io.FileOutputStream:&lt;init&gt;:java.io.FileDescriptorvoid" title="void &lt;init&gt;(java.io.FileDescriptor)">
+java.io.FileOutputStream.&lt;init&gt;(java.io.FileDescriptor)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/FileInputStream.html#java.io.FileInputStream:&lt;init&gt;:java.io.FileDescriptorvoid" title="void &lt;init&gt;(java.io.FileDescriptor)">
+java.io.FileInputStream.&lt;init&gt;(java.io.FileDescriptor)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.FileDescriptor:useCount:java.util.concurrent.atomic.AtomicInteger">
+java.io.FileDescriptor.useCount
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/util/concurrent/atomic/AtomicInteger.html">
+java.util.concurrent.atomic.AtomicInteger
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int incrementAndGet()">
+java.util.concurrent.atomic.AtomicInteger.incrementAndGet
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/concurrent/atomic/AtomicInteger.html#java.util.concurrent.atomic.AtomicInteger:incrementAndGet:I" title="int incrementAndGet()">
+java.util.concurrent.atomic.AtomicInteger.incrementAndGet
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
 <div class="instruction">
 <span>
 ireturn
@@ -1281,6 +1190,70 @@ ireturn
 </ol>
 </div>
 <div class="method">
+<a name="java.io.FileDescriptor:access$000:java.io.FileDescriptorI" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+int
+ 
+<span>
+access$000
+</span>
+(
+<a href="FileDescriptor.html">
+java.io.FileDescriptor
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.FileDescriptor:fd:I">
+java.io.FileDescriptor.fd
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
 <a name="java.io.FileDescriptor:initIDs:void" href="#">
 
 </a>
@@ -1309,6 +1282,33 @@ Parsed
 java.io.FileDescriptor.&lt;clinit&gt;()
 </a>
 </div>
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.FileDescriptor:sync:void" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+sync
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
 </li>
 </ul>
 </div>

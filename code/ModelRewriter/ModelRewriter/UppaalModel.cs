@@ -8,6 +8,7 @@ using System.Collections;
 using System.Text.RegularExpressions;
 using System.Text;
 using System.Linq;
+using System.IO;
 
 namespace ModelRewriter
 {
@@ -22,6 +23,12 @@ namespace ModelRewriter
 		List<Template> templates;
 		string system;
 		string queries;
+
+
+        //List<List<string>> fields = new List<List<string>>();
+        Dictionary<string, List<string>> fields = 
+            new Dictionary<string, List<string>>();
+        //var fields = new Dictionary<string, List<string>();
 
 		//Create a minimal UPPAAL model
 		public UppaalModel() : this(XDocument.Parse(header + @"<nta>"
@@ -47,17 +54,18 @@ namespace ModelRewriter
             var lines = jbc.Split('\n');
             var classSig = lines[0];
             var methods = findMethods(lines.Skip(1));
+            fields[cls] = findFields(lines.Skip(1));
 
             foreach (var m in methods)
             {
                 AddTemplate(m, cls);
             }
-            updateDec();
         }
 
         //Sets dec, sys, and queries
         public void updateDec()
         {
+            int heapsize = getHeapsize();
             globalDeclarations = @"clock t;
 const int heap_size = 10;
 int H[heap_size];
@@ -67,7 +75,19 @@ int par0;
 broadcast chan mainc;
 broadcast chan DubTestc;
 bool done = false;
-bool opstack_fault = false;";
+bool opstack_fault = false;
+
+";
+                        /*foreach (var kvp in fields)
+            {
+                foreach (var f in kvp.Value)
+                {
+                    
+                }
+            }*/
+
+
+
             system = @"s = main();
 s1 = DubTest();
 system s, s1;";
@@ -318,22 +338,51 @@ system s, s1;";
             var methods = new List<List<string>>();
             List<string> curMethod = new List<string>();
 
-            var methodStart = new Regex("^(privat)|(public)");
+            var methodStart = new Regex("^(privat)|(public).+\\(");
             var inst = new Regex("^([0-9]+\\.)"); 
             foreach(var line in jbc) 
             {
-                if(methodStart.IsMatch(line)) 
+                if (methodStart.IsMatch(line))
                 {
                     curMethod = new List<string>();
                     curMethod.Add(line);
                     methods.Add(curMethod);
                 }
-                else if(inst.IsMatch(line)) 
+                else if (inst.IsMatch(line))
                 {
                     curMethod.Add(line);
                 }
             }
             return methods;
+        }
+
+        List<string> findFields(IEnumerable<string> jbc)
+        {
+            var fields = new List<string>();
+            var methodStart = new Regex("^(privat)|(public).+\\(");
+            var field = new Regex("^(privat)|(public)");
+            foreach (var line in jbc)
+            {
+                if (!methodStart.IsMatch(line) && field.IsMatch(line))
+                {
+                    fields.Add(line);
+                }
+            }
+            return fields;
+        }
+
+        private int getHeapsize()
+        {
+            foreach (var template in templates)
+            {
+                if (template.name.Contains("Install"))
+                {
+                    //var cln = template.name.Split("_")[0];
+
+                };
+
+            }
+            return 0;
         }
 	}
 }

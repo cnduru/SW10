@@ -23,13 +23,13 @@ Instantiated
 </li>
 </ul>
 <div class="field">
-<a name="java.math.BigDecimal$StringBuilderHelper:DIGIT_ONES:C.-" href="#">
+<a name="java.math.BigDecimal$StringBuilderHelper:cmpCharArray:C.-" href="#">
 
 </a>
 <span class="field_signature">
- static final 
+ final 
 char[]
- DIGIT_ONES;
+ cmpCharArray;
 </span>
 </div>
 <div class="field">
@@ -43,13 +43,23 @@ bool
 </span>
 </div>
 <div class="field">
-<a name="java.math.BigDecimal$StringBuilderHelper:cmpCharArray:C.-" href="#">
+<a name="java.math.BigDecimal$StringBuilderHelper:DIGIT_ONES:C.-" href="#">
 
 </a>
 <span class="field_signature">
- final 
+ static final 
 char[]
- cmpCharArray;
+ DIGIT_ONES;
+</span>
+</div>
+<div class="field">
+<a name="java.math.BigDecimal$StringBuilderHelper:DIGIT_TENS:C.-" href="#">
+
+</a>
+<span class="field_signature">
+ static final 
+char[]
+ DIGIT_TENS;
 </span>
 </div>
 <div class="field">
@@ -62,16 +72,6 @@ char[]
 java.lang.StringBuilder
 </a>
  sb;
-</span>
-</div>
-<div class="field">
-<a name="java.math.BigDecimal$StringBuilderHelper:DIGIT_TENS:C.-" href="#">
-
-</a>
-<span class="field_signature">
- static final 
-char[]
- DIGIT_TENS;
 </span>
 </div>
 <div class="method">
@@ -5857,6 +5857,199 @@ return
 </ol>
 </div>
 <div class="method">
+<a name="java.math.BigDecimal$StringBuilderHelper:&lt;init&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+BigDecimal$StringBuilderHelper
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/math/BigDecimal$1.html#java.math.BigDecimal$1:initialValue:java.math.BigDecimal$StringBuilderHelper" title="java.math.BigDecimal$StringBuilderHelper initialValue()">
+java.math.BigDecimal$1.initialValue()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Object.html#java.lang.Object:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.StringBuilder.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.StringBuilder.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.math.BigDecimal$StringBuilderHelper:sb:java.lang.StringBuilder">
+java.math.BigDecimal$StringBuilderHelper.sb
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+bipush 19
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+newarray 
+</span>
+<span>
+char
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.math.BigDecimal$StringBuilderHelper:cmpCharArray:C.-">
+java.math.BigDecimal$StringBuilderHelper.cmpCharArray
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+char[]
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
 <a name="java.math.BigDecimal$StringBuilderHelper:putIntCompact:JI" href="#">
 
 </a>
@@ -6804,13 +6997,15 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.math.BigDecimal$StringBuilderHelper:&lt;init&gt;:void" href="#">
+<a name="java.math.BigDecimal$StringBuilderHelper:getCompactCharArray:C.-" href="#">
 
 </a>
 <div class="method_signature">
  
+char[]
+ 
 <span class="methodname clickable" onclick="showInfoList(this)">
-BigDecimal$StringBuilderHelper
+getCompactCharArray
 </span>
 (
 )
@@ -6826,8 +7021,8 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/math/BigDecimal$1.html#java.math.BigDecimal$1:initialValue:java.math.BigDecimal$StringBuilderHelper" title="java.math.BigDecimal$StringBuilderHelper initialValue()">
-java.math.BigDecimal$1.initialValue()
+<a href="../../java/math/BigDecimal.html#java.math.BigDecimal:layoutChars:Zjava.lang.String" title="java.lang.String layoutChars(bool)">
+java.math.BigDecimal.layoutChars(bool)
 </a>
 </div>
 </li>
@@ -6844,133 +7039,7 @@ aload  0
 <li value="1">
 <div class="instruction">
 <span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.Object.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/Object.html#java.lang.Object:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.lang.Object.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.StringBuilder.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.lang.StringBuilder.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.math.BigDecimal$StringBuilderHelper:sb:java.lang.StringBuilder">
-java.math.BigDecimal$StringBuilderHelper.sb
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-bipush 19
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-newarray 
-</span>
-<span>
-char
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-putfield 
+getfield 
 </span>
 <span>
 <a href="#java.math.BigDecimal$StringBuilderHelper:cmpCharArray:C.-">
@@ -6985,10 +7054,10 @@ char[]
 </span>
 </div>
 </li>
-<li value="23">
+<li value="4">
 <div class="instruction">
 <span>
-return
+areturn
 </span>
 </div>
 </li>
@@ -7122,75 +7191,6 @@ java.lang.StringBuilder
 </div>
 </li>
 <li value="12">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.math.BigDecimal$StringBuilderHelper:getCompactCharArray:C.-" href="#">
-
-</a>
-<div class="method_signature">
- 
-char[]
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-getCompactCharArray
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/math/BigDecimal.html#java.math.BigDecimal:layoutChars:Zjava.lang.String" title="java.lang.String layoutChars(bool)">
-java.math.BigDecimal.layoutChars(bool)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.math.BigDecimal$StringBuilderHelper:cmpCharArray:C.-">
-java.math.BigDecimal$StringBuilderHelper.cmpCharArray
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-char[]
-</span>
-</div>
-</li>
-<li value="4">
 <div class="instruction">
 <span>
 areturn

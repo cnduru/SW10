@@ -1,11 +1,12 @@
 public class B extends A{
 
-    public short bar(){
-        reduce();
-        return value;
+    public A a;
+
+    B(){
+        a = new A();
     }
 
-    private void reduce(){
-        value /= 2;
+    public int foo(){
+        return 3;
     }
 }

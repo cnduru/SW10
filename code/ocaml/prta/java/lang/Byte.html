@@ -23,26 +23,6 @@ Not instantiatied
 </li>
 </ul>
 <div class="field">
-<a name="java.lang.Byte:MAX_VALUE:B" href="#">
-
-</a>
-<span class="field_signature">
-public static final 
-byte
- MAX_VALUE;
-</span>
-</div>
-<div class="field">
-<a name="java.lang.Byte:SIZE:I" href="#">
-
-</a>
-<span class="field_signature">
-public static final 
-int
- SIZE;
-</span>
-</div>
-<div class="field">
 <a name="java.lang.Byte:MIN_VALUE:B" href="#">
 
 </a>
@@ -50,6 +30,16 @@ int
 public static final 
 byte
  MIN_VALUE;
+</span>
+</div>
+<div class="field">
+<a name="java.lang.Byte:value:B" href="#">
+
+</a>
+<span class="field_signature">
+private final 
+byte
+ value;
 </span>
 </div>
 <div class="field">
@@ -63,13 +53,23 @@ long
 </span>
 </div>
 <div class="field">
-<a name="java.lang.Byte:value:B" href="#">
+<a name="java.lang.Byte:SIZE:I" href="#">
 
 </a>
 <span class="field_signature">
-private final 
+public static final 
+int
+ SIZE;
+</span>
+</div>
+<div class="field">
+<a name="java.lang.Byte:MAX_VALUE:B" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
 byte
- value;
+ MAX_VALUE;
 </span>
 </div>
 <div class="field">
@@ -176,26 +176,17 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.Byte:valueOf:java.lang.StringIjava.lang.Byte" href="#">
+<a name="java.lang.Byte:doubleValue:D" href="#">
 
 </a>
 <div class="method_signature">
-public static 
-<a href="Byte.html">
-java.lang.Byte
-</a>
+public 
+double
  
 <span>
-valueOf
+doubleValue
 </span>
 (
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- 0
-, 
-int
- 1
 )
 ;
 <ul class="annot">
@@ -218,11 +209,82 @@ aload  0
 <li value="1">
 <div class="instruction">
 <span>
-iload  1
+getfield 
+</span>
+<span>
+<a href="#java.lang.Byte:value:B">
+java.lang.Byte.value
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+byte
 </span>
 </div>
 </li>
-<li value="2">
+<li value="4">
+<div class="instruction">
+<span>
+i2d
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+dreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Byte:parseByte:java.lang.StringB" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+byte
+ 
+<span>
+parseByte
+</span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+bipush 10
+</span>
+</div>
+</li>
+<li value="3">
 <div class="instruction">
 <span>
 invokestatic 
@@ -253,39 +315,80 @@ No reachable result.
 </ul>
 </div>
 </li>
-<li value="5">
+<li value="6">
 <div class="instruction">
 <span>
-invokestatic 
+ireturn
 </span>
-<span>
-<a href="Byte.html">
-java.lang.Byte
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Byte:compare:BBI" href="#">
+
 </a>
+<div class="method_signature">
+public static 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+compare
 </span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Byte valueOf(byte)">
-java.lang.Byte.valueOf
-</span>
-</span>
-<span>
 (
 byte
+ 0
+, 
+byte
+ 1
 )
-</span>
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
 <ul class="clickable">
 <li>
 <div>
-No reachable result.
+<a href="../../java/nio/ByteBuffer.html#java.nio.ByteBuffer:compare:BBI" title="int compare(byte, byte)">
+java.nio.ByteBuffer.compare(byte, byte)
+</a>
 </div>
 </li>
 </ul>
 </div>
-</li>
-<li value="8">
+<ol class="code">
+<li value="0">
 <div class="instruction">
 <span>
-areturn
+iload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+ireturn
 </span>
 </div>
 </li>
@@ -426,6 +529,253 @@ byte
 <div class="instruction">
 <span>
 return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Byte:compareTo:java.lang.ByteI" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span>
+compareTo
+</span>
+(
+<a href="Byte.html">
+java.lang.Byte
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.Byte:value:B">
+java.lang.Byte.value
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+byte
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.Byte:value:B">
+java.lang.Byte.value
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+byte
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int compare(byte, byte)">
+java.lang.Byte.compare
+</span>
+</span>
+<span>
+(
+byte
+, 
+byte
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.lang.Byte:compare:BBI" title="int compare(byte, byte)">
+java.lang.Byte.compare
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Byte:intValue:I" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span>
+intValue
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.Byte:value:B">
+java.lang.Byte.value
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+byte
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Byte:shortValue:S" href="#">
+
+</a>
+<div class="method_signature">
+public 
+short
+ 
+<span>
+shortValue
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.Byte:value:B">
+java.lang.Byte.value
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+byte
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+i2s
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+ireturn
 </span>
 </div>
 </li>
@@ -921,277 +1271,6 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.Byte:byteValue:B" href="#">
-
-</a>
-<div class="method_signature">
-public 
-byte
- 
-<span>
-byteValue
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.lang.Byte:value:B">
-java.lang.Byte.value
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-byte
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Byte:intValue:I" href="#">
-
-</a>
-<div class="method_signature">
-public 
-int
- 
-<span>
-intValue
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.lang.Byte:value:B">
-java.lang.Byte.value
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-byte
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Byte:parseByte:java.lang.StringB" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-byte
- 
-<span>
-parseByte
-</span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-bipush 10
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-byte
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="byte parseByte(java.lang.String, int)">
-java.lang.Byte.parseByte
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Byte:floatValue:F" href="#">
-
-</a>
-<div class="method_signature">
-public 
-float
- 
-<span>
-floatValue
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.lang.Byte:value:B">
-java.lang.Byte.value
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-byte
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-i2f
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-freturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
 <a name="java.lang.Byte:compareTo:java.lang.ObjectI" href="#">
 
 </a>
@@ -1286,20 +1365,25 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.Byte:compareTo:java.lang.ByteI" href="#">
+<a name="java.lang.Byte:valueOf:java.lang.StringIjava.lang.Byte" href="#">
 
 </a>
 <div class="method_signature">
-public 
-int
- 
-<span>
-compareTo
-</span>
-(
+public static 
 <a href="Byte.html">
 java.lang.Byte
 </a>
+ 
+<span>
+valueOf
+</span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 0
+, 
+int
  1
 )
 ;
@@ -1323,81 +1407,74 @@ aload  0
 <li value="1">
 <div class="instruction">
 <span>
-getfield 
-</span>
-<span>
-<a href="#java.lang.Byte:value:B">
-java.lang.Byte.value
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-byte
+iload  1
 </span>
 </div>
 </li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.lang.Byte:value:B">
-java.lang.Byte.value
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-byte
-</span>
-</div>
-</li>
-<li value="8">
+<li value="2">
 <div class="instruction">
 <span>
 invokestatic 
 </span>
 <span>
-int
+byte
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int compare(byte, byte)">
-java.lang.Byte.compare
+<span title="byte parseByte(java.lang.String, int)">
+java.lang.Byte.parseByte
 </span>
 </span>
 <span>
 (
-byte
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
 , 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="Byte.html">
+java.lang.Byte
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Byte valueOf(byte)">
+java.lang.Byte.valueOf
+</span>
+</span>
+<span>
+(
 byte
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="#java.lang.Byte:compare:BBI" title="int compare(byte, byte)">
-java.lang.Byte.compare
-</a>
+No reachable result.
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="11">
+<li value="8">
 <div class="instruction">
 <span>
-ireturn
+areturn
 </span>
 </div>
 </li>
@@ -1583,90 +1660,6 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.Byte:toString:Bjava.lang.String" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- 
-<span>
-toString
-</span>
-(
-byte
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-bipush 10
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.String toString(int, int)">
-java.lang.Integer.toString
-</span>
-</span>
-<span>
-(
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
 <a name="java.lang.Byte:longValue:J" href="#">
 
 </a>
@@ -1734,103 +1727,15 @@ lreturn
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.Byte:valueOf:Bjava.lang.Byte" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-<a href="Byte.html">
-java.lang.Byte
-</a>
- 
-<span>
-valueOf
-</span>
-(
-byte
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-java.lang.Byte$ByteCache.cache
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="Byte.html">
-java.lang.Byte
-</a>
-[]
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-sipush 128
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-aaload
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Byte:toString:java.lang.String" href="#">
+<a name="java.lang.Byte:byteValue:B" href="#">
 
 </a>
 <div class="method_signature">
 public 
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
+byte
  
 <span>
-toString
+byteValue
 </span>
 (
 )
@@ -1871,204 +1776,6 @@ byte
 </div>
 </li>
 <li value="4">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.String toString(int)">
-java.lang.Integer.toString
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/Integer.html#java.lang.Integer:toString:Ijava.lang.String" title="java.lang.String toString(int)">
-java.lang.Integer.toString
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Byte:&lt;init&gt;:Bvoid" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<span>
-Byte
-</span>
-(
-byte
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.Number.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.lang.Byte:value:B">
-java.lang.Byte.value
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-byte
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Byte:shortValue:S" href="#">
-
-</a>
-<div class="method_signature">
-public 
-short
- 
-<span>
-shortValue
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.lang.Byte:value:B">
-java.lang.Byte.value
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-byte
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-i2s
-</span>
-</div>
-</li>
-<li value="5">
 <div class="instruction">
 <span>
 ireturn
@@ -2160,73 +1867,6 @@ No reachable result.
 <div class="instruction">
 <span>
 areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Byte:doubleValue:D" href="#">
-
-</a>
-<div class="method_signature">
-public 
-double
- 
-<span>
-doubleValue
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.lang.Byte:value:B">
-java.lang.Byte.value
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-byte
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-i2d
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-dreturn
 </span>
 </div>
 </li>
@@ -2675,20 +2315,194 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.Byte:compare:BBI" href="#">
+<a name="java.lang.Byte:toString:java.lang.String" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span>
+toString
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.Byte:value:B">
+java.lang.Byte.value
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+byte
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toString(int)">
+java.lang.Integer.toString
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Integer.html#java.lang.Integer:toString:Ijava.lang.String" title="java.lang.String toString(int)">
+java.lang.Integer.toString
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Byte:valueOf:Bjava.lang.Byte" href="#">
 
 </a>
 <div class="method_signature">
 public static 
-int
+<a href="Byte.html">
+java.lang.Byte
+</a>
  
-<span class="methodname clickable" onclick="showInfoList(this)">
-compare
+<span>
+valueOf
 </span>
 (
 byte
  0
-, 
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+java.lang.Byte$ByteCache.cache
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Byte.html">
+java.lang.Byte
+</a>
+[]
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+sipush 128
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+aaload
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Byte:&lt;init&gt;:Bvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<span>
+Byte
+</span>
+(
 byte
  1
 )
@@ -2698,16 +2512,111 @@ byte
 Concrete Method 
 </li>
 <li>
-Parsed
+Not parsed
 </li>
 </ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Number.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/nio/ByteBuffer.html#java.nio.ByteBuffer:compare:BBI" title="int compare(byte, byte)">
-java.nio.ByteBuffer.compare(byte, byte)
-</a>
+No reachable result.
 </div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.lang.Byte:value:B">
+java.lang.Byte.value
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+byte
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Byte:toString:Bjava.lang.String" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span>
+toString
+</span>
+(
+byte
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
 </li>
 </ul>
 </div>
@@ -2722,21 +2631,112 @@ iload  0
 <li value="1">
 <div class="instruction">
 <span>
-iload  1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-isub
+bipush 10
 </span>
 </div>
 </li>
 <li value="3">
 <div class="instruction">
 <span>
-ireturn
+invokestatic 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toString(int, int)">
+java.lang.Integer.toString
+</span>
+</span>
+<span>
+(
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Byte:floatValue:F" href="#">
+
+</a>
+<div class="method_signature">
+public 
+float
+ 
+<span>
+floatValue
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.Byte:value:B">
+java.lang.Byte.value
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+byte
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+i2f
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+freturn
 </span>
 </div>
 </li>

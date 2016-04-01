@@ -75,17 +75,35 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="sun.text.normalizer.NormalizerBase$Mode:getPrevBoundary:sun.text.normalizer.NormalizerBase$IsPrevBoundary" href="#">
+<a name="sun.text.normalizer.NormalizerBase$Mode:quickCheck:C.-IIZsun.text.normalizer.UnicodeSetsun.text.normalizer.NormalizerBase$QuickCheckResult" href="#">
 
 </a>
 <div class="method_signature">
 protected 
-sun.text.normalizer.NormalizerBase$IsPrevBoundary
+<a href="../../../sun/text/normalizer/NormalizerBase$QuickCheckResult.html">
+sun.text.normalizer.NormalizerBase$QuickCheckResult
+</a>
  
 <span>
-getPrevBoundary
+quickCheck
 </span>
 (
+char[]
+ 1
+, 
+int
+ 2
+, 
+int
+ 3
+, 
+bool
+ 4
+, 
+<a href="../../../sun/text/normalizer/UnicodeSet.html">
+sun.text.normalizer.UnicodeSet
+</a>
+ 5
 )
 ;
 <ul class="annot">
@@ -101,14 +119,188 @@ Not parsed
 <li value="0">
 <div class="instruction">
 <span>
-aconstnull
+iload  4
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+ifeq 7
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="../../../sun/text/normalizer/NormalizerBase.html#sun.text.normalizer.NormalizerBase:MAYBE:sun.text.normalizer.NormalizerBase$QuickCheckResult">
+sun.text.normalizer.NormalizerBase.MAYBE
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../sun/text/normalizer/NormalizerBase$QuickCheckResult.html">
+sun.text.normalizer.NormalizerBase$QuickCheckResult
+</a>
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="../../../sun/text/normalizer/NormalizerBase.html#sun.text.normalizer.NormalizerBase:NO:sun.text.normalizer.NormalizerBase$QuickCheckResult">
+sun.text.normalizer.NormalizerBase.NO
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../sun/text/normalizer/NormalizerBase$QuickCheckResult.html">
+sun.text.normalizer.NormalizerBase$QuickCheckResult
+</a>
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.NormalizerBase$Mode:&lt;init&gt;:Isun.text.normalizer.NormalizerBase$1void" href="#">
+
+</a>
+<div class="method_signature">
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+NormalizerBase$Mode
+</span>
+(
+int
+ 1
+, 
+<a href="../../../sun/text/normalizer/NormalizerBase$1.html">
+sun.text.normalizer.NormalizerBase$1
+</a>
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/NormalizerBase$NFDMode.html#sun.text.normalizer.NormalizerBase$NFDMode:&lt;init&gt;:Ivoid" title="void &lt;init&gt;(int)">
+sun.text.normalizer.NormalizerBase$NFDMode.&lt;init&gt;(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/text/normalizer/NormalizerBase.html#sun.text.normalizer.NormalizerBase:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+sun.text.normalizer.NormalizerBase.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/text/normalizer/NormalizerBase$NFCMode.html#sun.text.normalizer.NormalizerBase$NFCMode:&lt;init&gt;:Ivoid" title="void &lt;init&gt;(int)">
+sun.text.normalizer.NormalizerBase$NFCMode.&lt;init&gt;(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/text/normalizer/NormalizerBase$NFKDMode.html#sun.text.normalizer.NormalizerBase$NFKDMode:&lt;init&gt;:Ivoid" title="void &lt;init&gt;(int)">
+sun.text.normalizer.NormalizerBase$NFKDMode.&lt;init&gt;(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/text/normalizer/NormalizerBase$NFKCMode.html#sun.text.normalizer.NormalizerBase$NFKCMode:&lt;init&gt;:Ivoid" title="void &lt;init&gt;(int)">
+sun.text.normalizer.NormalizerBase$NFKCMode.&lt;init&gt;(int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
 </span>
 </div>
 </li>
 <li value="1">
 <div class="instruction">
 <span>
-areturn
+iload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(int)">
+sun.text.normalizer.NormalizerBase$Mode.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.NormalizerBase$Mode:&lt;init&gt;:Ivoid" title="void &lt;init&gt;(int)">
+sun.text.normalizer.NormalizerBase$Mode.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+return
 </span>
 </div>
 </li>
@@ -272,35 +464,17 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="sun.text.normalizer.NormalizerBase$Mode:quickCheck:C.-IIZsun.text.normalizer.UnicodeSetsun.text.normalizer.NormalizerBase$QuickCheckResult" href="#">
+<a name="sun.text.normalizer.NormalizerBase$Mode:getPrevBoundary:sun.text.normalizer.NormalizerBase$IsPrevBoundary" href="#">
 
 </a>
 <div class="method_signature">
 protected 
-<a href="../../../sun/text/normalizer/NormalizerBase$QuickCheckResult.html">
-sun.text.normalizer.NormalizerBase$QuickCheckResult
-</a>
+sun.text.normalizer.NormalizerBase$IsPrevBoundary
  
 <span>
-quickCheck
+getPrevBoundary
 </span>
 (
-char[]
- 1
-, 
-int
- 2
-, 
-int
- 3
-, 
-bool
- 4
-, 
-<a href="../../../sun/text/normalizer/UnicodeSet.html">
-sun.text.normalizer.UnicodeSet
-</a>
- 5
 )
 ;
 <ul class="annot">
@@ -316,188 +490,14 @@ Not parsed
 <li value="0">
 <div class="instruction">
 <span>
-iload  4
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-ifeq 7
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="../../../sun/text/normalizer/NormalizerBase.html#sun.text.normalizer.NormalizerBase:MAYBE:sun.text.normalizer.NormalizerBase$QuickCheckResult">
-sun.text.normalizer.NormalizerBase.MAYBE
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../sun/text/normalizer/NormalizerBase$QuickCheckResult.html">
-sun.text.normalizer.NormalizerBase$QuickCheckResult
-</a>
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="../../../sun/text/normalizer/NormalizerBase.html#sun.text.normalizer.NormalizerBase:NO:sun.text.normalizer.NormalizerBase$QuickCheckResult">
-sun.text.normalizer.NormalizerBase.NO
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../sun/text/normalizer/NormalizerBase$QuickCheckResult.html">
-sun.text.normalizer.NormalizerBase$QuickCheckResult
-</a>
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="sun.text.normalizer.NormalizerBase$Mode:&lt;init&gt;:Isun.text.normalizer.NormalizerBase$1void" href="#">
-
-</a>
-<div class="method_signature">
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-NormalizerBase$Mode
-</span>
-(
-int
- 1
-, 
-<a href="../../../sun/text/normalizer/NormalizerBase$1.html">
-sun.text.normalizer.NormalizerBase$1
-</a>
- 2
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../sun/text/normalizer/NormalizerBase$NFKCMode.html#sun.text.normalizer.NormalizerBase$NFKCMode:&lt;init&gt;:Ivoid" title="void &lt;init&gt;(int)">
-sun.text.normalizer.NormalizerBase$NFKCMode.&lt;init&gt;(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../sun/text/normalizer/NormalizerBase$NFKDMode.html#sun.text.normalizer.NormalizerBase$NFKDMode:&lt;init&gt;:Ivoid" title="void &lt;init&gt;(int)">
-sun.text.normalizer.NormalizerBase$NFKDMode.&lt;init&gt;(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../sun/text/normalizer/NormalizerBase$NFDMode.html#sun.text.normalizer.NormalizerBase$NFDMode:&lt;init&gt;:Ivoid" title="void &lt;init&gt;(int)">
-sun.text.normalizer.NormalizerBase$NFDMode.&lt;init&gt;(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../sun/text/normalizer/NormalizerBase.html#sun.text.normalizer.NormalizerBase:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
-sun.text.normalizer.NormalizerBase.&lt;clinit&gt;()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../sun/text/normalizer/NormalizerBase$NFCMode.html#sun.text.normalizer.NormalizerBase$NFCMode:&lt;init&gt;:Ivoid" title="void &lt;init&gt;(int)">
-sun.text.normalizer.NormalizerBase$NFCMode.&lt;init&gt;(int)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
+aconstnull
 </span>
 </div>
 </li>
 <li value="1">
 <div class="instruction">
 <span>
-iload  1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(int)">
-sun.text.normalizer.NormalizerBase$Mode.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#sun.text.normalizer.NormalizerBase$Mode:&lt;init&gt;:Ivoid" title="void &lt;init&gt;(int)">
-sun.text.normalizer.NormalizerBase$Mode.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-return
+areturn
 </span>
 </div>
 </li>
@@ -506,26 +506,17 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="sun.text.normalizer.NormalizerBase$Mode:normalize:java.lang.StringIjava.lang.String" href="#">
+<a name="sun.text.normalizer.NormalizerBase$Mode:getMinC:I" href="#">
 
 </a>
 <div class="method_signature">
 protected 
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
+int
  
-<span class="methodname clickable" onclick="showInfoList(this)">
-normalize
+<span>
+getMinC
 </span>
 (
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
- 1
-, 
-int
- 2
 )
 ;
 <ul class="annot">
@@ -533,16 +524,7 @@ int
 Concrete Method 
 </li>
 <li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../sun/text/normalizer/NormalizerBase.html#sun.text.normalizer.NormalizerBase:normalize:java.lang.Stringjava.text.Normalizer$FormIjava.lang.String" title="java.lang.String normalize(java.lang.String, java.text.Normalizer$Form, int)">
-sun.text.normalizer.NormalizerBase.normalize(java.lang.String, java.text.Normalizer$Form, int)
-</a>
-</div>
+Not parsed
 </li>
 </ul>
 </div>
@@ -550,7 +532,49 @@ sun.text.normalizer.NormalizerBase.normalize(java.lang.String, java.text.Normali
 <li value="0">
 <div class="instruction">
 <span>
-aload  1
+iconst -1
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.NormalizerBase$Mode:getNextBoundary:sun.text.normalizer.NormalizerBase$IsNextBoundary" href="#">
+
+</a>
+<div class="method_signature">
+protected 
+sun.text.normalizer.NormalizerBase$IsNextBoundary
+ 
+<span>
+getNextBoundary
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aconstnull
 </span>
 </div>
 </li>
@@ -980,17 +1004,26 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="sun.text.normalizer.NormalizerBase$Mode:getMinC:I" href="#">
+<a name="sun.text.normalizer.NormalizerBase$Mode:normalize:java.lang.StringIjava.lang.String" href="#">
 
 </a>
 <div class="method_signature">
 protected 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+normalize
+</span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 1
+, 
 int
- 
-<span>
-getMinC
-</span>
-(
+ 2
 )
 ;
 <ul class="annot">
@@ -998,49 +1031,16 @@ getMinC
 Concrete Method 
 </li>
 <li>
-Not parsed
+Parsed
 </li>
 </ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iconst -1
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="sun.text.normalizer.NormalizerBase$Mode:getNextBoundary:sun.text.normalizer.NormalizerBase$IsNextBoundary" href="#">
-
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/NormalizerBase.html#sun.text.normalizer.NormalizerBase:normalize:java.lang.Stringjava.text.Normalizer$FormIjava.lang.String" title="java.lang.String normalize(java.lang.String, java.text.Normalizer$Form, int)">
+sun.text.normalizer.NormalizerBase.normalize(java.lang.String, java.text.Normalizer$Form, int)
 </a>
-<div class="method_signature">
-protected 
-sun.text.normalizer.NormalizerBase$IsNextBoundary
- 
-<span>
-getNextBoundary
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
+</div>
 </li>
 </ul>
 </div>
@@ -1048,7 +1048,7 @@ Not parsed
 <li value="0">
 <div class="instruction">
 <span>
-aconstnull
+aload  1
 </span>
 </div>
 </li>

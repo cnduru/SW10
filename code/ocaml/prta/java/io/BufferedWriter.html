@@ -23,6 +23,18 @@ Instantiated
 </li>
 </ul>
 <div class="field">
+<a name="java.io.BufferedWriter:lineSeparator:java.lang.String" href="#">
+
+</a>
+<span class="field_signature">
+private  
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ lineSeparator;
+</span>
+</div>
+<div class="field">
 <a name="java.io.BufferedWriter:nChars:I" href="#">
 
 </a>
@@ -30,6 +42,18 @@ Instantiated
 private  
 int
  nChars;
+</span>
+</div>
+<div class="field">
+<a name="java.io.BufferedWriter:out:java.io.Writer" href="#">
+
+</a>
+<span class="field_signature">
+private  
+<a href="../../java/io/Writer.html">
+java.io.Writer
+</a>
+ out;
 </span>
 </div>
 <div class="field">
@@ -50,30 +74,6 @@ char[]
 private static  
 int
  defaultCharBufferSize;
-</span>
-</div>
-<div class="field">
-<a name="java.io.BufferedWriter:out:java.io.Writer" href="#">
-
-</a>
-<span class="field_signature">
-private  
-<a href="../../java/io/Writer.html">
-java.io.Writer
-</a>
- out;
-</span>
-</div>
-<div class="field">
-<a name="java.io.BufferedWriter:lineSeparator:java.lang.String" href="#">
-
-</a>
-<span class="field_signature">
-private  
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- lineSeparator;
 </span>
 </div>
 <div class="field">
@@ -132,6 +132,1730 @@ int
 </div>
 </li>
 <li value="6">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.BufferedWriter:flushBuffer:void" href="#">
+
+</a>
+<div class="method_signature">
+ 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+flushBuffer
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.io.BufferedWriter:write:Ivoid" title="void write(int)">
+java.io.BufferedWriter.write(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.io.BufferedWriter:close:void" title="void close()">
+java.io.BufferedWriter.close()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/PrintStream.html#java.io.PrintStream:newLine:void" title="void newLine()">
+java.io.PrintStream.newLine()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.io.BufferedWriter:write:C.-IIvoid" title="void write(char[], int, int)">
+java.io.BufferedWriter.write(char[], int, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.io.BufferedWriter:flush:void" title="void flush()">
+java.io.BufferedWriter.flush()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/PrintStream.html#java.io.PrintStream:write:java.lang.Stringvoid" title="void write(java.lang.String)">
+java.io.PrintStream.write(java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.io.BufferedWriter:write:java.lang.StringIIvoid" title="void write(java.lang.String, int, int)">
+java.io.BufferedWriter.write(java.lang.String, int, int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../java/io/Writer.html#java.io.Writer:lock:java.lang.Object">
+java.io.Writer.lock
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+astore  1
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+monitorenter
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void ensureOpen()">
+java.io.BufferedWriter.ensureOpen
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.io.BufferedWriter:ensureOpen:void" title="void ensureOpen()">
+java.io.BufferedWriter.ensureOpen
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.BufferedWriter:nextChar:I">
+java.io.BufferedWriter.nextChar
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+ifne 6
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+monitorexit
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.BufferedWriter:out:java.io.Writer">
+java.io.BufferedWriter.out
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/io/Writer.html">
+java.io.Writer
+</a>
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.BufferedWriter:cb:C.-">
+java.io.BufferedWriter.cb
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+char[]
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.BufferedWriter:nextChar:I">
+java.io.BufferedWriter.nextChar
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void write(char[], int, int)">
+java.io.Writer.write
+</span>
+</span>
+<span>
+(
+char[]
+, 
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/io/StringWriter.html#java.io.StringWriter:write:C.-IIvoid" title="void write(char[], int, int)">
+java.io.StringWriter.write
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.io.BufferedWriter:write:C.-IIvoid" title="void write(char[], int, int)">
+java.io.BufferedWriter.write
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/PrintWriter.html#java.io.PrintWriter:write:C.-IIvoid" title="void write(char[], int, int)">
+java.io.PrintWriter.write
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:write:C.-IIvoid" title="void write(char[], int, int)">
+sun.nio.cs.StreamEncoder.write
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/OutputStreamWriter.html#java.io.OutputStreamWriter:write:C.-IIvoid" title="void write(char[], int, int)">
+java.io.OutputStreamWriter.write
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.io.BufferedWriter:nextChar:I">
+java.io.BufferedWriter.nextChar
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+monitorexit
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+goto 8
+</span>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+astore  2
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+monitorexit
+</span>
+</div>
+</li>
+<li value="50">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="51">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="52">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 7; try end: 20: catch start: 47; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 21; try end: 44: catch start: 47; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 47; try end: 50: catch start: 47; catched type: None (finally block).
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
+<a name="java.io.BufferedWriter:write:C.-IIvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+write
+</span>
+(
+char[]
+ 1
+, 
+int
+ 2
+, 
+int
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.io.BufferedWriter:write:C.-IIvoid" title="void write(char[], int, int)">
+java.io.BufferedWriter.write(char[], int, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/PrintWriter.html#java.io.PrintWriter:write:C.-IIvoid" title="void write(char[], int, int)">
+java.io.PrintWriter.write(char[], int, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.io.BufferedWriter:flushBuffer:void" title="void flushBuffer()">
+java.io.BufferedWriter.flushBuffer()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../java/io/Writer.html#java.io.Writer:lock:java.lang.Object">
+java.io.Writer.lock
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+astore  4
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+monitorenter
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void ensureOpen()">
+java.io.BufferedWriter.ensureOpen
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.io.BufferedWriter:ensureOpen:void" title="void ensureOpen()">
+java.io.BufferedWriter.ensureOpen
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+iflt 27
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+ifcmpgt 21
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+iflt 17
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+ifcmpgt 9
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+ifge 11
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/IndexOutOfBoundsException.html">
+java.lang.IndexOutOfBoundsException
+</a>
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.IndexOutOfBoundsException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/IndexOutOfBoundsException.html#java.lang.IndexOutOfBoundsException:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.IndexOutOfBoundsException.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+ifne 7
+</span>
+</div>
+</li>
+<li value="52">
+<div class="instruction">
+<span>
+aload  4
+</span>
+</div>
+</li>
+<li value="54">
+<div class="instruction">
+<span>
+monitorexit
+</span>
+</div>
+</li>
+<li value="55">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="57">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="58">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.BufferedWriter:nChars:I">
+java.io.BufferedWriter.nChars
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="61">
+<div class="instruction">
+<span>
+ifcmplt 21
+</span>
+</div>
+</li>
+<li value="64">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="65">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void flushBuffer()">
+java.io.BufferedWriter.flushBuffer
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.io.BufferedWriter:flushBuffer:void" title="void flushBuffer()">
+java.io.BufferedWriter.flushBuffer
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="68">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="69">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.BufferedWriter:out:java.io.Writer">
+java.io.BufferedWriter.out
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/io/Writer.html">
+java.io.Writer
+</a>
+</span>
+</div>
+</li>
+<li value="72">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="73">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="74">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="75">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void write(char[], int, int)">
+java.io.Writer.write
+</span>
+</span>
+<span>
+(
+char[]
+, 
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/io/StringWriter.html#java.io.StringWriter:write:C.-IIvoid" title="void write(char[], int, int)">
+java.io.StringWriter.write
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.io.BufferedWriter:write:C.-IIvoid" title="void write(char[], int, int)">
+java.io.BufferedWriter.write
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/PrintWriter.html#java.io.PrintWriter:write:C.-IIvoid" title="void write(char[], int, int)">
+java.io.PrintWriter.write
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:write:C.-IIvoid" title="void write(char[], int, int)">
+sun.nio.cs.StreamEncoder.write
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/OutputStreamWriter.html#java.io.OutputStreamWriter:write:C.-IIvoid" title="void write(char[], int, int)">
+java.io.OutputStreamWriter.write
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="78">
+<div class="instruction">
+<span>
+aload  4
+</span>
+</div>
+</li>
+<li value="80">
+<div class="instruction">
+<span>
+monitorexit
+</span>
+</div>
+</li>
+<li value="81">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+<li value="82">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="83">
+<div class="instruction">
+<span>
+istore  5
+</span>
+</div>
+</li>
+<li value="85">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="86">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="87">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="88">
+<div class="instruction">
+<span>
+istore  6
+</span>
+</div>
+</li>
+<li value="90">
+<div class="instruction">
+<span>
+iload  5
+</span>
+</div>
+</li>
+<li value="92">
+<div class="instruction">
+<span>
+iload  6
+</span>
+</div>
+</li>
+<li value="94">
+<div class="instruction">
+<span>
+ifcmpge 75
+</span>
+</div>
+</li>
+<li value="97">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="98">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="99">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.BufferedWriter:nChars:I">
+java.io.BufferedWriter.nChars
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="102">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="103">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.BufferedWriter:nextChar:I">
+java.io.BufferedWriter.nextChar
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="106">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="107">
+<div class="instruction">
+<span>
+iload  6
+</span>
+</div>
+</li>
+<li value="109">
+<div class="instruction">
+<span>
+iload  5
+</span>
+</div>
+</li>
+<li value="111">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="112">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int min(int, int)">
+java.io.BufferedWriter.min
+</span>
+</span>
+<span>
+(
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.io.BufferedWriter:min:III" title="int min(int, int)">
+java.io.BufferedWriter.min
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="115">
+<div class="instruction">
+<span>
+istore  7
+</span>
+</div>
+</li>
+<li value="117">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="118">
+<div class="instruction">
+<span>
+iload  5
+</span>
+</div>
+</li>
+<li value="120">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="121">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.BufferedWriter:cb:C.-">
+java.io.BufferedWriter.cb
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+char[]
+</span>
+</div>
+</li>
+<li value="124">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="125">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.BufferedWriter:nextChar:I">
+java.io.BufferedWriter.nextChar
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="128">
+<div class="instruction">
+<span>
+iload  7
+</span>
+</div>
+</li>
+<li value="130">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void arraycopy(java.lang.Object, int, java.lang.Object, int, int)">
+java.lang.System.arraycopy
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+int
+, 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/System.html#java.lang.System:arraycopy:java.lang.ObjectIjava.lang.ObjectIIvoid" title="void arraycopy(java.lang.Object, int, java.lang.Object, int, int)">
+java.lang.System.arraycopy
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="133">
+<div class="instruction">
+<span>
+iload  5
+</span>
+</div>
+</li>
+<li value="135">
+<div class="instruction">
+<span>
+iload  7
+</span>
+</div>
+</li>
+<li value="137">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="138">
+<div class="instruction">
+<span>
+istore  5
+</span>
+</div>
+</li>
+<li value="140">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="141">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="142">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.BufferedWriter:nextChar:I">
+java.io.BufferedWriter.nextChar
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="145">
+<div class="instruction">
+<span>
+iload  7
+</span>
+</div>
+</li>
+<li value="147">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="148">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.io.BufferedWriter:nextChar:I">
+java.io.BufferedWriter.nextChar
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="151">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="152">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.BufferedWriter:nextChar:I">
+java.io.BufferedWriter.nextChar
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="155">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="156">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.BufferedWriter:nChars:I">
+java.io.BufferedWriter.nChars
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="159">
+<div class="instruction">
+<span>
+ifcmplt 7
+</span>
+</div>
+</li>
+<li value="162">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="163">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void flushBuffer()">
+java.io.BufferedWriter.flushBuffer
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.io.BufferedWriter:flushBuffer:void" title="void flushBuffer()">
+java.io.BufferedWriter.flushBuffer
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="166">
+<div class="instruction">
+<span>
+goto -76
+</span>
+</div>
+</li>
+<li value="169">
+<div class="instruction">
+<span>
+aload  4
+</span>
+</div>
+</li>
+<li value="171">
+<div class="instruction">
+<span>
+monitorexit
+</span>
+</div>
+</li>
+<li value="172">
+<div class="instruction">
+<span>
+goto 11
+</span>
+</div>
+</li>
+<li value="175">
+<div class="instruction">
+<span>
+astore  8
+</span>
+</div>
+</li>
+<li value="177">
+<div class="instruction">
+<span>
+aload  4
+</span>
+</div>
+</li>
+<li value="179">
+<div class="instruction">
+<span>
+monitorexit
+</span>
+</div>
+</li>
+<li value="180">
+<div class="instruction">
+<span>
+aload  8
+</span>
+</div>
+</li>
+<li value="182">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="183">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 8; try end: 55: catch start: 175; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 56; try end: 81: catch start: 175; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 82; try end: 172: catch start: 175; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 175; try end: 180: catch start: 175; catched type: None (finally block).
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
+<a name="java.io.BufferedWriter:&lt;init&gt;:java.io.Writervoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<span class="methodname clickable" onclick="showInfoList(this)">
+BufferedWriter
+</span>
+(
+<a href="../../java/io/Writer.html">
+java.io.Writer
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/io/PrintStream.html#java.io.PrintStream:&lt;init&gt;:Zjava.io.OutputStreamvoid" title="void &lt;init&gt;(bool, java.io.OutputStream)">
+java.io.PrintStream.&lt;init&gt;(bool, java.io.OutputStream)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.io.BufferedWriter:defaultCharBufferSize:I">
+java.io.BufferedWriter.defaultCharBufferSize
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.io.Writer, int)">
+java.io.BufferedWriter.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/io/Writer.html">
+java.io.Writer
+</a>
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.io.BufferedWriter:&lt;init&gt;:java.io.WriterIvoid" title="void &lt;init&gt;(java.io.Writer, int)">
+java.io.BufferedWriter.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
 <div class="instruction">
 <span>
 return
@@ -855,117 +2579,6 @@ try start: 108; try end: 113: catch start: 108; catched type: None (finally bloc
 </span>
 </div>
 <div class="method">
-<a name="java.io.BufferedWriter:&lt;init&gt;:java.io.Writervoid" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<span class="methodname clickable" onclick="showInfoList(this)">
-BufferedWriter
-</span>
-(
-<a href="../../java/io/Writer.html">
-java.io.Writer
-</a>
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/io/PrintStream.html#java.io.PrintStream:&lt;init&gt;:Zjava.io.OutputStreamvoid" title="void &lt;init&gt;(bool, java.io.OutputStream)">
-java.io.PrintStream.&lt;init&gt;(bool, java.io.OutputStream)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.io.BufferedWriter:defaultCharBufferSize:I">
-java.io.BufferedWriter.defaultCharBufferSize
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.io.Writer, int)">
-java.io.BufferedWriter.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/io/Writer.html">
-java.io.Writer
-</a>
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.io.BufferedWriter:&lt;init&gt;:java.io.WriterIvoid" title="void &lt;init&gt;(java.io.Writer, int)">
-java.io.BufferedWriter.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
 <a name="java.io.BufferedWriter:close:void" href="#">
 
 </a>
@@ -990,15 +2603,15 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/io/PrintStream.html#java.io.PrintStream:close:void" title="void close()">
-java.io.PrintStream.close()
+<a href="#java.io.BufferedWriter:close:void" title="void close()">
+java.io.BufferedWriter.close()
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="#java.io.BufferedWriter:close:void" title="void close()">
-java.io.BufferedWriter.close()
+<a href="../../java/io/PrintStream.html#java.io.PrintStream:close:void" title="void close()">
+java.io.PrintStream.close()
 </a>
 </div>
 </li>
@@ -1197,6 +2810,13 @@ java.io.Writer.close
 <ul class="clickable">
 <li>
 <div>
+<a href="../../java/io/OutputStreamWriter.html#java.io.OutputStreamWriter:close:void" title="void close()">
+java.io.OutputStreamWriter.close
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="#java.io.BufferedWriter:close:void" title="void close()">
 java.io.BufferedWriter.close
 </a>
@@ -1211,8 +2831,8 @@ java.io.PrintWriter.close
 </li>
 <li>
 <div>
-<a href="../../java/io/OutputStreamWriter.html#java.io.OutputStreamWriter:close:void" title="void close()">
-java.io.OutputStreamWriter.close
+<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:close:void" title="void close()">
+sun.nio.cs.StreamEncoder.close
 </a>
 </div>
 </li>
@@ -1220,13 +2840,6 @@ java.io.OutputStreamWriter.close
 <div>
 <a href="../../java/io/StringWriter.html#java.io.StringWriter:close:void" title="void close()">
 java.io.StringWriter.close
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:close:void" title="void close()">
-sun.nio.cs.StreamEncoder.close
 </a>
 </div>
 </li>
@@ -1360,6 +2973,13 @@ java.io.Writer.close
 <ul class="clickable">
 <li>
 <div>
+<a href="../../java/io/OutputStreamWriter.html#java.io.OutputStreamWriter:close:void" title="void close()">
+java.io.OutputStreamWriter.close
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="#java.io.BufferedWriter:close:void" title="void close()">
 java.io.BufferedWriter.close
 </a>
@@ -1374,8 +2994,8 @@ java.io.PrintWriter.close
 </li>
 <li>
 <div>
-<a href="../../java/io/OutputStreamWriter.html#java.io.OutputStreamWriter:close:void" title="void close()">
-java.io.OutputStreamWriter.close
+<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:close:void" title="void close()">
+sun.nio.cs.StreamEncoder.close
 </a>
 </div>
 </li>
@@ -1383,13 +3003,6 @@ java.io.OutputStreamWriter.close
 <div>
 <a href="../../java/io/StringWriter.html#java.io.StringWriter:close:void" title="void close()">
 java.io.StringWriter.close
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:close:void" title="void close()">
-sun.nio.cs.StreamEncoder.close
 </a>
 </div>
 </li>
@@ -1574,422 +3187,6 @@ try start: 66; try end: 69: catch start: 66; catched type: None (finally block).
 </span>
 </div>
 <div class="method">
-<a name="java.io.BufferedWriter:write:Ivoid" href="#">
-
-</a>
-<div class="method_signature">
-public 
-void
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-write
-</span>
-(
-int
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/io/PrintWriter.html#java.io.PrintWriter:write:Ivoid" title="void write(int)">
-java.io.PrintWriter.write(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/io/Writer.html#java.io.Writer:append:Cjava.io.Writer" title="java.io.Writer append(char)">
-java.io.Writer.append(char)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../java/io/Writer.html#java.io.Writer:lock:java.lang.Object">
-java.io.Writer.lock
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-astore  2
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-monitorenter
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void ensureOpen()">
-java.io.BufferedWriter.ensureOpen
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.io.BufferedWriter:ensureOpen:void" title="void ensureOpen()">
-java.io.BufferedWriter.ensureOpen
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.io.BufferedWriter:nextChar:I">
-java.io.BufferedWriter.nextChar
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.io.BufferedWriter:nChars:I">
-java.io.BufferedWriter.nChars
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-ifcmplt 7
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void flushBuffer()">
-java.io.BufferedWriter.flushBuffer
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.io.BufferedWriter:flushBuffer:void" title="void flushBuffer()">
-java.io.BufferedWriter.flushBuffer
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.io.BufferedWriter:cb:C.-">
-java.io.BufferedWriter.cb
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-char[]
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="31">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="32">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.io.BufferedWriter:nextChar:I">
-java.io.BufferedWriter.nextChar
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-dupX1
-</span>
-</div>
-</li>
-<li value="36">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="37">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="38">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.io.BufferedWriter:nextChar:I">
-java.io.BufferedWriter.nextChar
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="41">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="42">
-<div class="instruction">
-<span>
-i2c
-</span>
-</div>
-</li>
-<li value="43">
-<div class="instruction">
-<span>
-castore
-</span>
-</div>
-</li>
-<li value="44">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="45">
-<div class="instruction">
-<span>
-monitorexit
-</span>
-</div>
-</li>
-<li value="46">
-<div class="instruction">
-<span>
-goto 8
-</span>
-</div>
-</li>
-<li value="49">
-<div class="instruction">
-<span>
-astore  3
-</span>
-</div>
-</li>
-<li value="50">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="51">
-<div class="instruction">
-<span>
-monitorexit
-</span>
-</div>
-</li>
-<li value="52">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="53">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="54">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<span title="Exceptions">
-<h3>
-Exceptions handling:
-</h3>
-<ol>
-<li>
-<span>
-try start: 7; try end: 46: catch start: 49; catched type: None (finally block).
-</span>
-</li>
-<li>
-<span>
-try start: 49; try end: 52: catch start: 49; catched type: None (finally block).
-</span>
-</li>
-</ol>
-</span>
-</div>
-<div class="method">
 <a name="java.io.BufferedWriter:flush:void" href="#">
 
 </a>
@@ -2166,13 +3363,6 @@ java.io.Writer.flush
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/io/OutputStreamWriter.html#java.io.OutputStreamWriter:flush:void" title="void flush()">
-java.io.OutputStreamWriter.flush
-</a>
-</div>
-</li>
-<li>
-<div>
 <a href="../../java/io/StringWriter.html#java.io.StringWriter:flush:void" title="void flush()">
 java.io.StringWriter.flush
 </a>
@@ -2180,8 +3370,8 @@ java.io.StringWriter.flush
 </li>
 <li>
 <div>
-<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:flush:void" title="void flush()">
-sun.nio.cs.StreamEncoder.flush
+<a href="../../java/io/OutputStreamWriter.html#java.io.OutputStreamWriter:flush:void" title="void flush()">
+java.io.OutputStreamWriter.flush
 </a>
 </div>
 </li>
@@ -2196,6 +3386,13 @@ java.io.BufferedWriter.flush
 <div>
 <a href="../../java/io/PrintWriter.html#java.io.PrintWriter:flush:void" title="void flush()">
 java.io.PrintWriter.flush
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:flush:void" title="void flush()">
+sun.nio.cs.StreamEncoder.flush
 </a>
 </div>
 </li>
@@ -2283,6 +3480,267 @@ try start: 23; try end: 26: catch start: 23; catched type: None (finally block).
 </li>
 </ol>
 </span>
+</div>
+<div class="method">
+<a name="java.io.BufferedWriter:ensureOpen:void" href="#">
+
+</a>
+<div class="method_signature">
+private 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+ensureOpen
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.io.BufferedWriter:write:Ivoid" title="void write(int)">
+java.io.BufferedWriter.write(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.io.BufferedWriter:write:C.-IIvoid" title="void write(char[], int, int)">
+java.io.BufferedWriter.write(char[], int, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.io.BufferedWriter:flushBuffer:void" title="void flushBuffer()">
+java.io.BufferedWriter.flushBuffer()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.io.BufferedWriter:write:java.lang.StringIIvoid" title="void write(java.lang.String, int, int)">
+java.io.BufferedWriter.write(java.lang.String, int, int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.BufferedWriter:out:java.io.Writer">
+java.io.BufferedWriter.out
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/io/Writer.html">
+java.io.Writer
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ifnonnull 13
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/io/IOException.html">
+java.io.IOException
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+ldc string &apos;Stream closed&apos;
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.io.IOException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/io/IOException.html#java.io.IOException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
+java.io.IOException.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.BufferedWriter:min:III" href="#">
+
+</a>
+<div class="method_signature">
+private 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+min
+</span>
+(
+int
+ 1
+, 
+int
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.io.BufferedWriter:write:C.-IIvoid" title="void write(char[], int, int)">
+java.io.BufferedWriter.write(char[], int, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.io.BufferedWriter:write:java.lang.StringIIvoid" title="void write(java.lang.String, int, int)">
+java.io.BufferedWriter.write(java.lang.String, int, int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+ifcmpge 5
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
 </div>
 <div class="method">
 <a name="java.io.BufferedWriter:&lt;init&gt;:java.io.WriterIvoid" href="#">
@@ -2726,267 +4184,6 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.io.BufferedWriter:min:III" href="#">
-
-</a>
-<div class="method_signature">
-private 
-int
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-min
-</span>
-(
-int
- 1
-, 
-int
- 2
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.io.BufferedWriter:write:C.-IIvoid" title="void write(char[], int, int)">
-java.io.BufferedWriter.write(char[], int, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.io.BufferedWriter:write:java.lang.StringIIvoid" title="void write(java.lang.String, int, int)">
-java.io.BufferedWriter.write(java.lang.String, int, int)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-ifcmpge 5
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.io.BufferedWriter:ensureOpen:void" href="#">
-
-</a>
-<div class="method_signature">
-private 
-void
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-ensureOpen
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.io.BufferedWriter:write:Ivoid" title="void write(int)">
-java.io.BufferedWriter.write(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.io.BufferedWriter:write:C.-IIvoid" title="void write(char[], int, int)">
-java.io.BufferedWriter.write(char[], int, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.io.BufferedWriter:write:java.lang.StringIIvoid" title="void write(java.lang.String, int, int)">
-java.io.BufferedWriter.write(java.lang.String, int, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.io.BufferedWriter:flushBuffer:void" title="void flushBuffer()">
-java.io.BufferedWriter.flushBuffer()
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.io.BufferedWriter:out:java.io.Writer">
-java.io.BufferedWriter.out
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/io/Writer.html">
-java.io.Writer
-</a>
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ifnonnull 13
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/io/IOException.html">
-java.io.IOException
-</a>
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-ldc string &apos;Stream closed&apos;
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.io.IOException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/io/IOException.html#java.io.IOException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
-java.io.IOException.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
 <a name="java.io.BufferedWriter:newLine:void" href="#">
 
 </a>
@@ -3096,17 +4293,19 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.io.BufferedWriter:flushBuffer:void" href="#">
+<a name="java.io.BufferedWriter:write:Ivoid" href="#">
 
 </a>
 <div class="method_signature">
- 
+public 
 void
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-flushBuffer
+write
 </span>
 (
+int
+ 1
 )
 ;
 <ul class="annot">
@@ -3120,50 +4319,15 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="#java.io.BufferedWriter:write:Ivoid" title="void write(int)">
-java.io.BufferedWriter.write(int)
+<a href="../../java/io/Writer.html#java.io.Writer:append:Cjava.io.Writer" title="java.io.Writer append(char)">
+java.io.Writer.append(char)
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/io/PrintStream.html#java.io.PrintStream:newLine:void" title="void newLine()">
-java.io.PrintStream.newLine()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.io.BufferedWriter:write:C.-IIvoid" title="void write(char[], int, int)">
-java.io.BufferedWriter.write(char[], int, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.io.BufferedWriter:close:void" title="void close()">
-java.io.BufferedWriter.close()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.io.BufferedWriter:flush:void" title="void flush()">
-java.io.BufferedWriter.flush()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.io.BufferedWriter:write:java.lang.StringIIvoid" title="void write(java.lang.String, int, int)">
-java.io.BufferedWriter.write(java.lang.String, int, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/io/PrintStream.html#java.io.PrintStream:write:java.lang.Stringvoid" title="void write(java.lang.String)">
-java.io.PrintStream.write(java.lang.String)
+<a href="../../java/io/PrintWriter.html#java.io.PrintWriter:write:Ivoid" title="void write(int)">
+java.io.PrintWriter.write(int)
 </a>
 </div>
 </li>
@@ -3207,7 +4371,7 @@ dup
 <li value="5">
 <div class="instruction">
 <span>
-astore  1
+astore  2
 </span>
 </div>
 </li>
@@ -3281,66 +4445,78 @@ int
 <li value="15">
 <div class="instruction">
 <span>
-ifne 6
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-monitorexit
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
 aload  0
 </span>
 </div>
 </li>
-<li value="22">
+<li value="16">
 <div class="instruction">
 <span>
 getfield 
 </span>
 <span>
-<a href="#java.io.BufferedWriter:out:java.io.Writer">
-java.io.BufferedWriter.out
+<a href="#java.io.BufferedWriter:nChars:I">
+java.io.BufferedWriter.nChars
 </a>
 </span>
 <span>
  : 
 </span>
 <span>
-<a href="../../java/io/Writer.html">
-java.io.Writer
-</a>
+int
 </span>
 </div>
 </li>
-<li value="25">
+<li value="19">
+<div class="instruction">
+<span>
+ifcmplt 7
+</span>
+</div>
+</li>
+<li value="22">
 <div class="instruction">
 <span>
 aload  0
 </span>
 </div>
 </li>
+<li value="23">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void flushBuffer()">
+java.io.BufferedWriter.flushBuffer
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.io.BufferedWriter:flushBuffer:void" title="void flushBuffer()">
+java.io.BufferedWriter.flushBuffer
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
 <li value="26">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="27">
 <div class="instruction">
 <span>
 getfield 
@@ -3358,13 +4534,6 @@ char[]
 </span>
 </div>
 </li>
-<li value="29">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
 <li value="30">
 <div class="instruction">
 <span>
@@ -3373,6 +4542,13 @@ aload  0
 </div>
 </li>
 <li value="31">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="32">
 <div class="instruction">
 <span>
 getfield 
@@ -3390,82 +4566,28 @@ int
 </span>
 </div>
 </li>
-<li value="34">
+<li value="35">
 <div class="instruction">
 <span>
-invokevirtual 
+dupX1
 </span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
 <span>
-void
+iconst 1
 </span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void write(char[], int, int)">
-java.io.Writer.write
-</span>
-</span>
-<span>
-(
-char[]
-, 
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/io/StringWriter.html#java.io.StringWriter:write:C.-IIvoid" title="void write(char[], int, int)">
-java.io.StringWriter.write
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.io.BufferedWriter:write:C.-IIvoid" title="void write(char[], int, int)">
-java.io.BufferedWriter.write
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:write:C.-IIvoid" title="void write(char[], int, int)">
-sun.nio.cs.StreamEncoder.write
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/io/OutputStreamWriter.html#java.io.OutputStreamWriter:write:C.-IIvoid" title="void write(char[], int, int)">
-java.io.OutputStreamWriter.write
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/io/PrintWriter.html#java.io.PrintWriter:write:C.-IIvoid" title="void write(char[], int, int)">
-java.io.PrintWriter.write
-</a>
-</div>
-</li>
-</ul>
 </div>
 </li>
 <li value="37">
 <div class="instruction">
 <span>
-aload  0
+iadd
 </span>
 </div>
 </li>
 <li value="38">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="39">
 <div class="instruction">
 <span>
 putfield 
@@ -3483,45 +4605,52 @@ int
 </span>
 </div>
 </li>
+<li value="41">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
 <li value="42">
 <div class="instruction">
 <span>
-aload  1
+i2c
 </span>
 </div>
 </li>
 <li value="43">
 <div class="instruction">
 <span>
-monitorexit
+castore
 </span>
 </div>
 </li>
 <li value="44">
 <div class="instruction">
 <span>
+aload  2
+</span>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span>
+monitorexit
+</span>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
 goto 8
-</span>
-</div>
-</li>
-<li value="47">
-<div class="instruction">
-<span>
-astore  2
-</span>
-</div>
-</li>
-<li value="48">
-<div class="instruction">
-<span>
-aload  1
 </span>
 </div>
 </li>
 <li value="49">
 <div class="instruction">
 <span>
-monitorexit
+astore  3
 </span>
 </div>
 </li>
@@ -3535,1146 +4664,27 @@ aload  2
 <li value="51">
 <div class="instruction">
 <span>
-athrow
+monitorexit
 </span>
 </div>
 </li>
 <li value="52">
 <div class="instruction">
 <span>
-return
+aload  3
 </span>
 </div>
 </li>
-</ol>
-<span title="Exceptions">
-<h3>
-Exceptions handling:
-</h3>
-<ol>
-<li>
-<span>
-try start: 7; try end: 20: catch start: 47; catched type: None (finally block).
-</span>
-</li>
-<li>
-<span>
-try start: 21; try end: 44: catch start: 47; catched type: None (finally block).
-</span>
-</li>
-<li>
-<span>
-try start: 47; try end: 50: catch start: 47; catched type: None (finally block).
-</span>
-</li>
-</ol>
-</span>
-</div>
-<div class="method">
-<a name="java.io.BufferedWriter:write:C.-IIvoid" href="#">
-
-</a>
-<div class="method_signature">
-public 
-void
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-write
-</span>
-(
-char[]
- 1
-, 
-int
- 2
-, 
-int
- 3
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.io.BufferedWriter:write:C.-IIvoid" title="void write(char[], int, int)">
-java.io.BufferedWriter.write(char[], int, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/io/PrintWriter.html#java.io.PrintWriter:write:C.-IIvoid" title="void write(char[], int, int)">
-java.io.PrintWriter.write(char[], int, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.io.BufferedWriter:flushBuffer:void" title="void flushBuffer()">
-java.io.BufferedWriter.flushBuffer()
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../java/io/Writer.html#java.io.Writer:lock:java.lang.Object">
-java.io.Writer.lock
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-astore  4
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-monitorenter
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void ensureOpen()">
-java.io.BufferedWriter.ensureOpen
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.io.BufferedWriter:ensureOpen:void" title="void ensureOpen()">
-java.io.BufferedWriter.ensureOpen
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-iflt 27
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-arraylength
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-ifcmpgt 21
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-iflt 17
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="28">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-arraylength
-</span>
-</div>
-</li>
-<li value="31">
-<div class="instruction">
-<span>
-ifcmpgt 9
-</span>
-</div>
-</li>
-<li value="34">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="36">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="37">
-<div class="instruction">
-<span>
-ifge 11
-</span>
-</div>
-</li>
-<li value="40">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/IndexOutOfBoundsException.html">
-java.lang.IndexOutOfBoundsException
-</a>
-</span>
-</div>
-</li>
-<li value="43">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="44">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.IndexOutOfBoundsException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/IndexOutOfBoundsException.html#java.lang.IndexOutOfBoundsException:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.lang.IndexOutOfBoundsException.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="47">
+<li value="53">
 <div class="instruction">
 <span>
 athrow
-</span>
-</div>
-</li>
-<li value="48">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="49">
-<div class="instruction">
-<span>
-ifne 7
-</span>
-</div>
-</li>
-<li value="52">
-<div class="instruction">
-<span>
-aload  4
 </span>
 </div>
 </li>
 <li value="54">
 <div class="instruction">
 <span>
-monitorexit
-</span>
-</div>
-</li>
-<li value="55">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-<li value="56">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="57">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="58">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.io.BufferedWriter:nChars:I">
-java.io.BufferedWriter.nChars
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="61">
-<div class="instruction">
-<span>
-ifcmplt 21
-</span>
-</div>
-</li>
-<li value="64">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="65">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void flushBuffer()">
-java.io.BufferedWriter.flushBuffer
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.io.BufferedWriter:flushBuffer:void" title="void flushBuffer()">
-java.io.BufferedWriter.flushBuffer
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="68">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="69">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.io.BufferedWriter:out:java.io.Writer">
-java.io.BufferedWriter.out
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/io/Writer.html">
-java.io.Writer
-</a>
-</span>
-</div>
-</li>
-<li value="72">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="73">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="74">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="75">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void write(char[], int, int)">
-java.io.Writer.write
-</span>
-</span>
-<span>
-(
-char[]
-, 
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/io/StringWriter.html#java.io.StringWriter:write:C.-IIvoid" title="void write(char[], int, int)">
-java.io.StringWriter.write
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.io.BufferedWriter:write:C.-IIvoid" title="void write(char[], int, int)">
-java.io.BufferedWriter.write
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:write:C.-IIvoid" title="void write(char[], int, int)">
-sun.nio.cs.StreamEncoder.write
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/io/OutputStreamWriter.html#java.io.OutputStreamWriter:write:C.-IIvoid" title="void write(char[], int, int)">
-java.io.OutputStreamWriter.write
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/io/PrintWriter.html#java.io.PrintWriter:write:C.-IIvoid" title="void write(char[], int, int)">
-java.io.PrintWriter.write
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="78">
-<div class="instruction">
-<span>
-aload  4
-</span>
-</div>
-</li>
-<li value="80">
-<div class="instruction">
-<span>
-monitorexit
-</span>
-</div>
-</li>
-<li value="81">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-<li value="82">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="83">
-<div class="instruction">
-<span>
-istore  5
-</span>
-</div>
-</li>
-<li value="85">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="86">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="87">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="88">
-<div class="instruction">
-<span>
-istore  6
-</span>
-</div>
-</li>
-<li value="90">
-<div class="instruction">
-<span>
-iload  5
-</span>
-</div>
-</li>
-<li value="92">
-<div class="instruction">
-<span>
-iload  6
-</span>
-</div>
-</li>
-<li value="94">
-<div class="instruction">
-<span>
-ifcmpge 75
-</span>
-</div>
-</li>
-<li value="97">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="98">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="99">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.io.BufferedWriter:nChars:I">
-java.io.BufferedWriter.nChars
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="102">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="103">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.io.BufferedWriter:nextChar:I">
-java.io.BufferedWriter.nextChar
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="106">
-<div class="instruction">
-<span>
-isub
-</span>
-</div>
-</li>
-<li value="107">
-<div class="instruction">
-<span>
-iload  6
-</span>
-</div>
-</li>
-<li value="109">
-<div class="instruction">
-<span>
-iload  5
-</span>
-</div>
-</li>
-<li value="111">
-<div class="instruction">
-<span>
-isub
-</span>
-</div>
-</li>
-<li value="112">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int min(int, int)">
-java.io.BufferedWriter.min
-</span>
-</span>
-<span>
-(
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.io.BufferedWriter:min:III" title="int min(int, int)">
-java.io.BufferedWriter.min
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="115">
-<div class="instruction">
-<span>
-istore  7
-</span>
-</div>
-</li>
-<li value="117">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="118">
-<div class="instruction">
-<span>
-iload  5
-</span>
-</div>
-</li>
-<li value="120">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="121">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.io.BufferedWriter:cb:C.-">
-java.io.BufferedWriter.cb
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-char[]
-</span>
-</div>
-</li>
-<li value="124">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="125">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.io.BufferedWriter:nextChar:I">
-java.io.BufferedWriter.nextChar
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="128">
-<div class="instruction">
-<span>
-iload  7
-</span>
-</div>
-</li>
-<li value="130">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void arraycopy(java.lang.Object, int, java.lang.Object, int, int)">
-java.lang.System.arraycopy
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-, 
-int
-, 
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-, 
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/System.html#java.lang.System:arraycopy:java.lang.ObjectIjava.lang.ObjectIIvoid" title="void arraycopy(java.lang.Object, int, java.lang.Object, int, int)">
-java.lang.System.arraycopy
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="133">
-<div class="instruction">
-<span>
-iload  5
-</span>
-</div>
-</li>
-<li value="135">
-<div class="instruction">
-<span>
-iload  7
-</span>
-</div>
-</li>
-<li value="137">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="138">
-<div class="instruction">
-<span>
-istore  5
-</span>
-</div>
-</li>
-<li value="140">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="141">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="142">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.io.BufferedWriter:nextChar:I">
-java.io.BufferedWriter.nextChar
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="145">
-<div class="instruction">
-<span>
-iload  7
-</span>
-</div>
-</li>
-<li value="147">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="148">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.io.BufferedWriter:nextChar:I">
-java.io.BufferedWriter.nextChar
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="151">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="152">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.io.BufferedWriter:nextChar:I">
-java.io.BufferedWriter.nextChar
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="155">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="156">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.io.BufferedWriter:nChars:I">
-java.io.BufferedWriter.nChars
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="159">
-<div class="instruction">
-<span>
-ifcmplt 7
-</span>
-</div>
-</li>
-<li value="162">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="163">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void flushBuffer()">
-java.io.BufferedWriter.flushBuffer
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.io.BufferedWriter:flushBuffer:void" title="void flushBuffer()">
-java.io.BufferedWriter.flushBuffer
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="166">
-<div class="instruction">
-<span>
-goto -76
-</span>
-</div>
-</li>
-<li value="169">
-<div class="instruction">
-<span>
-aload  4
-</span>
-</div>
-</li>
-<li value="171">
-<div class="instruction">
-<span>
-monitorexit
-</span>
-</div>
-</li>
-<li value="172">
-<div class="instruction">
-<span>
-goto 11
-</span>
-</div>
-</li>
-<li value="175">
-<div class="instruction">
-<span>
-astore  8
-</span>
-</div>
-</li>
-<li value="177">
-<div class="instruction">
-<span>
-aload  4
-</span>
-</div>
-</li>
-<li value="179">
-<div class="instruction">
-<span>
-monitorexit
-</span>
-</div>
-</li>
-<li value="180">
-<div class="instruction">
-<span>
-aload  8
-</span>
-</div>
-</li>
-<li value="182">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="183">
-<div class="instruction">
-<span>
 return
 </span>
 </div>
@@ -4687,22 +4697,12 @@ Exceptions handling:
 <ol>
 <li>
 <span>
-try start: 8; try end: 55: catch start: 175; catched type: None (finally block).
+try start: 7; try end: 46: catch start: 49; catched type: None (finally block).
 </span>
 </li>
 <li>
 <span>
-try start: 56; try end: 81: catch start: 175; catched type: None (finally block).
-</span>
-</li>
-<li>
-<span>
-try start: 82; try end: 172: catch start: 175; catched type: None (finally block).
-</span>
-</li>
-<li>
-<span>
-try start: 175; try end: 180: catch start: 175; catched type: None (finally block).
+try start: 49; try end: 52: catch start: 49; catched type: None (finally block).
 </span>
 </li>
 </ol>

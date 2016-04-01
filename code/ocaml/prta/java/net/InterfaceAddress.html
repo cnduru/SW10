@@ -23,13 +23,15 @@ Not instantiatied
 </li>
 </ul>
 <div class="field">
-<a name="java.net.InterfaceAddress:maskLength:S" href="#">
+<a name="java.net.InterfaceAddress:broadcast:java.net.Inet4Address" href="#">
 
 </a>
 <span class="field_signature">
 private  
-short
- maskLength;
+<a href="../../java/net/Inet4Address.html">
+java.net.Inet4Address
+</a>
+ broadcast;
 </span>
 </div>
 <div class="field">
@@ -45,16 +47,74 @@ java.net.InetAddress
 </span>
 </div>
 <div class="field">
-<a name="java.net.InterfaceAddress:broadcast:java.net.Inet4Address" href="#">
+<a name="java.net.InterfaceAddress:maskLength:S" href="#">
 
 </a>
 <span class="field_signature">
 private  
-<a href="../../java/net/Inet4Address.html">
-java.net.Inet4Address
-</a>
- broadcast;
+short
+ maskLength;
 </span>
+</div>
+<div class="method">
+<a name="java.net.InterfaceAddress:getNetworkPrefixLength:S" href="#">
+
+</a>
+<div class="method_signature">
+public 
+short
+ 
+<span>
+getNetworkPrefixLength
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.net.InterfaceAddress:maskLength:S">
+java.net.InterfaceAddress.maskLength
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+short
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
 </div>
 <div class="method">
 <a name="java.net.InterfaceAddress:&lt;init&gt;:void" href="#">
@@ -279,66 +339,6 @@ java.net.InetAddress
 <div class="instruction">
 <span>
 areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.net.InterfaceAddress:getNetworkPrefixLength:S" href="#">
-
-</a>
-<div class="method_signature">
-public 
-short
- 
-<span>
-getNetworkPrefixLength
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.net.InterfaceAddress:maskLength:S">
-java.net.InterfaceAddress.maskLength
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-short
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ireturn
 </span>
 </div>
 </li>
@@ -897,70 +897,6 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.net.InterfaceAddress:getBroadcast:java.net.InetAddress" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<a href="../../java/net/InetAddress.html">
-java.net.InetAddress
-</a>
- 
-<span>
-getBroadcast
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.net.InterfaceAddress:broadcast:java.net.Inet4Address">
-java.net.InterfaceAddress.broadcast
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/net/Inet4Address.html">
-java.net.Inet4Address
-</a>
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
 <a name="java.net.InterfaceAddress:toString:java.lang.String" href="#">
 
 </a>
@@ -1358,6 +1294,70 @@ java.lang.StringBuilder.toString
 </div>
 </li>
 <li value="46">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.net.InterfaceAddress:getBroadcast:java.net.InetAddress" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/net/InetAddress.html">
+java.net.InetAddress
+</a>
+ 
+<span>
+getBroadcast
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.net.InterfaceAddress:broadcast:java.net.Inet4Address">
+java.net.InterfaceAddress.broadcast
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/net/Inet4Address.html">
+java.net.Inet4Address
+</a>
+</span>
+</div>
+</li>
+<li value="4">
 <div class="instruction">
 <span>
 areturn

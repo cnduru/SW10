@@ -35,7 +35,113 @@ sun.nio.cs.StreamEncoder
 </span>
 </div>
 <div class="method">
-<a name="java.io.OutputStreamWriter:write:java.lang.StringIIvoid" href="#">
+<a name="java.io.OutputStreamWriter:flushBuffer:void" href="#">
+
+</a>
+<div class="method_signature">
+ 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+flushBuffer
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/io/PrintStream.html#java.io.PrintStream:newLine:void" title="void newLine()">
+java.io.PrintStream.newLine()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/PrintStream.html#java.io.PrintStream:write:java.lang.Stringvoid" title="void write(java.lang.String)">
+java.io.PrintStream.write(java.lang.String)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.OutputStreamWriter:se:sun.nio.cs.StreamEncoder">
+java.io.OutputStreamWriter.se
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../sun/nio/cs/StreamEncoder.html">
+sun.nio.cs.StreamEncoder
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void flushBuffer()">
+sun.nio.cs.StreamEncoder.flushBuffer
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:flushBuffer:void" title="void flushBuffer()">
+sun.nio.cs.StreamEncoder.flushBuffer
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.OutputStreamWriter:write:C.-IIvoid" href="#">
 
 </a>
 <div class="method_signature">
@@ -46,9 +152,7 @@ void
 write
 </span>
 (
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
+char[]
  1
 , 
 int
@@ -69,15 +173,22 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/io/Writer.html#java.io.Writer:write:java.lang.Stringvoid" title="void write(java.lang.String)">
-java.io.Writer.write(java.lang.String)
+<a href="../../java/io/BufferedWriter.html#java.io.BufferedWriter:write:C.-IIvoid" title="void write(char[], int, int)">
+java.io.BufferedWriter.write(char[], int, int)
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/io/PrintWriter.html#java.io.PrintWriter:write:java.lang.StringIIvoid" title="void write(java.lang.String, int, int)">
-java.io.PrintWriter.write(java.lang.String, int, int)
+<a href="../../java/io/PrintWriter.html#java.io.PrintWriter:write:C.-IIvoid" title="void write(char[], int, int)">
+java.io.PrintWriter.write(char[], int, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/BufferedWriter.html#java.io.BufferedWriter:flushBuffer:void" title="void flushBuffer()">
+java.io.BufferedWriter.flushBuffer()
 </a>
 </div>
 </li>
@@ -141,15 +252,13 @@ invokevirtual
 void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void write(java.lang.String, int, int)">
+<span title="void write(char[], int, int)">
 sun.nio.cs.StreamEncoder.write
 </span>
 </span>
 <span>
 (
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
+char[]
 , 
 int
 , 
@@ -159,7 +268,7 @@ int
 <ul class="clickable">
 <li>
 <div>
-<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:write:java.lang.StringIIvoid" title="void write(java.lang.String, int, int)">
+<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:write:C.-IIvoid" title="void write(char[], int, int)">
 sun.nio.cs.StreamEncoder.write
 </a>
 </div>
@@ -429,19 +538,27 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.io.OutputStreamWriter:getEncoding:java.lang.String" href="#">
+<a name="java.io.OutputStreamWriter:write:java.lang.StringIIvoid" href="#">
 
 </a>
 <div class="method_signature">
 public 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+write
+</span>
+(
 <a href="../../java/lang/String.html">
 java.lang.String
 </a>
- 
-<span>
-getEncoding
-</span>
-(
+ 1
+, 
+int
+ 2
+, 
+int
+ 3
 )
 ;
 <ul class="annot">
@@ -449,7 +566,23 @@ getEncoding
 Concrete Method 
 </li>
 <li>
-Not parsed
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/io/Writer.html#java.io.Writer:write:java.lang.Stringvoid" title="void write(java.lang.String)">
+java.io.Writer.write(java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/PrintWriter.html#java.io.PrintWriter:write:java.lang.StringIIvoid" title="void write(java.lang.String, int, int)">
+java.io.PrintWriter.write(java.lang.String, int, int)
+</a>
+</div>
 </li>
 </ul>
 </div>
@@ -484,169 +617,35 @@ sun.nio.cs.StreamEncoder
 <li value="4">
 <div class="instruction">
 <span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.String getEncoding()">
-sun.nio.cs.StreamEncoder.getEncoding
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.io.OutputStreamWriter:&lt;init&gt;:java.io.OutputStreamjava.nio.charset.Charsetvoid" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<span>
-OutputStreamWriter
-</span>
-(
-<a href="../../java/io/OutputStream.html">
-java.io.OutputStream
-</a>
- 1
-, 
-<a href="../../java/nio/charset/Charset.html">
-java.nio.charset.Charset
-</a>
- 2
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
 aload  1
 </span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.Object)">
-java.io.Writer.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/io/Writer.html#java.io.Writer:&lt;init&gt;:java.lang.Objectvoid" title="void &lt;init&gt;(java.lang.Object)">
-java.io.Writer.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
 </div>
 </li>
 <li value="5">
 <div class="instruction">
 <span>
-aload  2
+iload  2
 </span>
 </div>
 </li>
 <li value="6">
 <div class="instruction">
 <span>
-ifnonnull 13
+iload  3
 </span>
 </div>
 </li>
-<li value="9">
+<li value="7">
 <div class="instruction">
 <span>
-new 
-</span>
-<span>
-<a href="../../java/lang/NullPointerException.html">
-java.lang.NullPointerException
-</a>
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-ldc string &apos;charset&apos;
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-invokespecial 
+invokevirtual 
 </span>
 <span>
 void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.lang.NullPointerException.&lt;init&gt;
+<span title="void write(java.lang.String, int, int)">
+sun.nio.cs.StreamEncoder.write
 </span>
 </span>
 <span>
@@ -654,112 +653,24 @@ java.lang.NullPointerException.&lt;init&gt;
 <a href="../../java/lang/String.html">
 java.lang.String
 </a>
+, 
+int
+, 
+int
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-No reachable result.
+<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:write:java.lang.StringIIvoid" title="void write(java.lang.String, int, int)">
+sun.nio.cs.StreamEncoder.write
+</a>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="18">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../sun/nio/cs/StreamEncoder.html">
-sun.nio.cs.StreamEncoder
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="sun.nio.cs.StreamEncoder forOutputStreamWriter(java.io.OutputStream, java.lang.Object, java.nio.charset.Charset)">
-sun.nio.cs.StreamEncoder.forOutputStreamWriter
-</span>
-</span>
-<span>
-(
-<a href="../../java/io/OutputStream.html">
-java.io.OutputStream
-</a>
-, 
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-, 
-<a href="../../java/nio/charset/Charset.html">
-java.nio.charset.Charset
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.io.OutputStreamWriter:se:sun.nio.cs.StreamEncoder">
-java.io.OutputStreamWriter.se
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../sun/nio/cs/StreamEncoder.html">
-sun.nio.cs.StreamEncoder
-</a>
-</span>
-</div>
-</li>
-<li value="29">
+<li value="10">
 <div class="instruction">
 <span>
 return
@@ -1129,122 +1040,6 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.io.OutputStreamWriter:write:Ivoid" href="#">
-
-</a>
-<div class="method_signature">
-public 
-void
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-write
-</span>
-(
-int
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/io/PrintWriter.html#java.io.PrintWriter:write:Ivoid" title="void write(int)">
-java.io.PrintWriter.write(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/io/Writer.html#java.io.Writer:append:Cjava.io.Writer" title="java.io.Writer append(char)">
-java.io.Writer.append(char)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.io.OutputStreamWriter:se:sun.nio.cs.StreamEncoder">
-java.io.OutputStreamWriter.se
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../sun/nio/cs/StreamEncoder.html">
-sun.nio.cs.StreamEncoder
-</a>
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void write(int)">
-sun.nio.cs.StreamEncoder.write
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:write:Ivoid" title="void write(int)">
-sun.nio.cs.StreamEncoder.write
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
 <a name="java.io.OutputStreamWriter:flush:void" href="#">
 
 </a>
@@ -1350,6 +1145,348 @@ sun.nio.cs.StreamEncoder.flush
 <div class="instruction">
 <span>
 return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.OutputStreamWriter:&lt;init&gt;:java.io.OutputStreamjava.nio.charset.Charsetvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<span>
+OutputStreamWriter
+</span>
+(
+<a href="../../java/io/OutputStream.html">
+java.io.OutputStream
+</a>
+ 1
+, 
+<a href="../../java/nio/charset/Charset.html">
+java.nio.charset.Charset
+</a>
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.Object)">
+java.io.Writer.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/io/Writer.html#java.io.Writer:&lt;init&gt;:java.lang.Objectvoid" title="void &lt;init&gt;(java.lang.Object)">
+java.io.Writer.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+ifnonnull 13
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/NullPointerException.html">
+java.lang.NullPointerException
+</a>
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+ldc string &apos;charset&apos;
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.lang.NullPointerException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../sun/nio/cs/StreamEncoder.html">
+sun.nio.cs.StreamEncoder
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="sun.nio.cs.StreamEncoder forOutputStreamWriter(java.io.OutputStream, java.lang.Object, java.nio.charset.Charset)">
+sun.nio.cs.StreamEncoder.forOutputStreamWriter
+</span>
+</span>
+<span>
+(
+<a href="../../java/io/OutputStream.html">
+java.io.OutputStream
+</a>
+, 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+<a href="../../java/nio/charset/Charset.html">
+java.nio.charset.Charset
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.io.OutputStreamWriter:se:sun.nio.cs.StreamEncoder">
+java.io.OutputStreamWriter.se
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../sun/nio/cs/StreamEncoder.html">
+sun.nio.cs.StreamEncoder
+</a>
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.OutputStreamWriter:getEncoding:java.lang.String" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span>
+getEncoding
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.OutputStreamWriter:se:sun.nio.cs.StreamEncoder">
+java.io.OutputStreamWriter.se
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../sun/nio/cs/StreamEncoder.html">
+sun.nio.cs.StreamEncoder
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String getEncoding()">
+sun.nio.cs.StreamEncoder.getEncoding
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+areturn
 </span>
 </div>
 </li>
@@ -1638,113 +1775,7 @@ try start: 5; try end: 18: catch start: 21; catched type: java.io.UnsupportedEnc
 </span>
 </div>
 <div class="method">
-<a name="java.io.OutputStreamWriter:flushBuffer:void" href="#">
-
-</a>
-<div class="method_signature">
- 
-void
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-flushBuffer
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/io/PrintStream.html#java.io.PrintStream:newLine:void" title="void newLine()">
-java.io.PrintStream.newLine()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/io/PrintStream.html#java.io.PrintStream:write:java.lang.Stringvoid" title="void write(java.lang.String)">
-java.io.PrintStream.write(java.lang.String)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.io.OutputStreamWriter:se:sun.nio.cs.StreamEncoder">
-java.io.OutputStreamWriter.se
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../sun/nio/cs/StreamEncoder.html">
-sun.nio.cs.StreamEncoder
-</a>
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void flushBuffer()">
-sun.nio.cs.StreamEncoder.flushBuffer
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:flushBuffer:void" title="void flushBuffer()">
-sun.nio.cs.StreamEncoder.flushBuffer
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.io.OutputStreamWriter:write:C.-IIvoid" href="#">
+<a name="java.io.OutputStreamWriter:write:Ivoid" href="#">
 
 </a>
 <div class="method_signature">
@@ -1755,14 +1786,8 @@ void
 write
 </span>
 (
-char[]
+int
  1
-, 
-int
- 2
-, 
-int
- 3
 )
 ;
 <ul class="annot">
@@ -1776,22 +1801,15 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/io/BufferedWriter.html#java.io.BufferedWriter:write:C.-IIvoid" title="void write(char[], int, int)">
-java.io.BufferedWriter.write(char[], int, int)
+<a href="../../java/io/Writer.html#java.io.Writer:append:Cjava.io.Writer" title="java.io.Writer append(char)">
+java.io.Writer.append(char)
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/io/PrintWriter.html#java.io.PrintWriter:write:C.-IIvoid" title="void write(char[], int, int)">
-java.io.PrintWriter.write(char[], int, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/io/BufferedWriter.html#java.io.BufferedWriter:flushBuffer:void" title="void flushBuffer()">
-java.io.BufferedWriter.flushBuffer()
+<a href="../../java/io/PrintWriter.html#java.io.PrintWriter:write:Ivoid" title="void write(int)">
+java.io.PrintWriter.write(int)
 </a>
 </div>
 </li>
@@ -1828,25 +1846,11 @@ sun.nio.cs.StreamEncoder
 <li value="4">
 <div class="instruction">
 <span>
-aload  1
+iload  1
 </span>
 </div>
 </li>
 <li value="5">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="7">
 <div class="instruction">
 <span>
 invokevirtual 
@@ -1855,23 +1859,19 @@ invokevirtual
 void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void write(char[], int, int)">
+<span title="void write(int)">
 sun.nio.cs.StreamEncoder.write
 </span>
 </span>
 <span>
 (
-char[]
-, 
-int
-, 
 int
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:write:C.-IIvoid" title="void write(char[], int, int)">
+<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:write:Ivoid" title="void write(int)">
 sun.nio.cs.StreamEncoder.write
 </a>
 </div>
@@ -1879,7 +1879,7 @@ sun.nio.cs.StreamEncoder.write
 </ul>
 </div>
 </li>
-<li value="10">
+<li value="8">
 <div class="instruction">
 <span>
 return

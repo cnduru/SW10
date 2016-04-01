@@ -23,15 +23,27 @@ Instantiated
 </li>
 </ul>
 <div class="field">
-<a name="java.lang.reflect.WeakCache:refQueue:java.lang.ref.ReferenceQueue" href="#">
+<a name="java.lang.reflect.WeakCache:reverseMap:java.util.concurrent.ConcurrentMap" href="#">
 
 </a>
 <span class="field_signature">
 private final 
-<a href="../../../java/lang/ref/ReferenceQueue.html">
-java.lang.ref.ReferenceQueue
+<a href="../../../java/util/concurrent/ConcurrentMap.html">
+java.util.concurrent.ConcurrentMap
 </a>
- refQueue;
+ reverseMap;
+</span>
+</div>
+<div class="field">
+<a name="java.lang.reflect.WeakCache:subKeyFactory:java.lang.reflect.WeakCache$BiFunction" href="#">
+
+</a>
+<span class="field_signature">
+private final 
+<a href="../../../java/lang/reflect/WeakCache$BiFunction.html">
+java.lang.reflect.WeakCache$BiFunction
+</a>
+ subKeyFactory;
 </span>
 </div>
 <div class="field">
@@ -47,18 +59,6 @@ java.lang.reflect.WeakCache$BiFunction
 </span>
 </div>
 <div class="field">
-<a name="java.lang.reflect.WeakCache:reverseMap:java.util.concurrent.ConcurrentMap" href="#">
-
-</a>
-<span class="field_signature">
-private final 
-<a href="../../../java/util/concurrent/ConcurrentMap.html">
-java.util.concurrent.ConcurrentMap
-</a>
- reverseMap;
-</span>
-</div>
-<div class="field">
 <a name="java.lang.reflect.WeakCache:map:java.util.concurrent.ConcurrentMap" href="#">
 
 </a>
@@ -71,16 +71,84 @@ java.util.concurrent.ConcurrentMap
 </span>
 </div>
 <div class="field">
-<a name="java.lang.reflect.WeakCache:subKeyFactory:java.lang.reflect.WeakCache$BiFunction" href="#">
+<a name="java.lang.reflect.WeakCache:refQueue:java.lang.ref.ReferenceQueue" href="#">
 
 </a>
 <span class="field_signature">
 private final 
+<a href="../../../java/lang/ref/ReferenceQueue.html">
+java.lang.ref.ReferenceQueue
+</a>
+ refQueue;
+</span>
+</div>
+<div class="method">
+<a name="java.lang.reflect.WeakCache:access$000:java.lang.reflect.WeakCachejava.lang.reflect.WeakCache$BiFunction" href="#">
+
+</a>
+<div class="method_signature">
+ static 
 <a href="../../../java/lang/reflect/WeakCache$BiFunction.html">
 java.lang.reflect.WeakCache$BiFunction
 </a>
- subKeyFactory;
+ 
+<span>
+access$000
 </span>
+(
+<a href="WeakCache.html">
+java.lang.reflect.WeakCache
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.reflect.WeakCache:valueFactory:java.lang.reflect.WeakCache$BiFunction">
+java.lang.reflect.WeakCache.valueFactory
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/lang/reflect/WeakCache$BiFunction.html">
+java.lang.reflect.WeakCache$BiFunction
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
 </div>
 <div class="method">
 <a name="java.lang.reflect.WeakCache:get:java.lang.Objectjava.lang.Objectjava.lang.Object" href="#">
@@ -1251,74 +1319,6 @@ goto -113
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.reflect.WeakCache:access$100:java.lang.reflect.WeakCachejava.util.concurrent.ConcurrentMap" href="#">
-
-</a>
-<div class="method_signature">
- static 
-<a href="../../../java/util/concurrent/ConcurrentMap.html">
-java.util.concurrent.ConcurrentMap
-</a>
- 
-<span>
-access$100
-</span>
-(
-<a href="WeakCache.html">
-java.lang.reflect.WeakCache
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.lang.reflect.WeakCache:reverseMap:java.util.concurrent.ConcurrentMap">
-java.lang.reflect.WeakCache.reverseMap
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/util/concurrent/ConcurrentMap.html">
-java.util.concurrent.ConcurrentMap
-</a>
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
 <a name="java.lang.reflect.WeakCache:size:I" href="#">
 
 </a>
@@ -1681,309 +1681,6 @@ java.util.concurrent.ConcurrentHashMap.containsKey
 <div class="instruction">
 <span>
 ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.reflect.WeakCache:expungeStaleEntries:void" href="#">
-
-</a>
-<div class="method_signature">
-private 
-void
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-expungeStaleEntries
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.lang.reflect.WeakCache:containsValue:java.lang.ObjectZ" title="bool containsValue(java.lang.Object)">
-java.lang.reflect.WeakCache.containsValue(java.lang.Object)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.lang.reflect.WeakCache:refQueue:java.lang.ref.ReferenceQueue">
-java.lang.reflect.WeakCache.refQueue
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/lang/ref/ReferenceQueue.html">
-java.lang.ref.ReferenceQueue
-</a>
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../../java/lang/ref/Reference.html">
-java.lang.ref.Reference
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.ref.Reference poll()">
-java.lang.ref.ReferenceQueue.poll
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/lang/ref/ReferenceQueue.html#java.lang.ref.ReferenceQueue:poll:java.lang.ref.Reference" title="java.lang.ref.Reference poll()">
-java.lang.ref.ReferenceQueue.poll
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-checkcast 
-</span>
-<span>
-<a href="../../../java/lang/reflect/WeakCache$CacheKey.html">
-java.lang.reflect.WeakCache$CacheKey
-</a>
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-astore  1
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-ifnull 18
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.lang.reflect.WeakCache:map:java.util.concurrent.ConcurrentMap">
-java.lang.reflect.WeakCache.map
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/util/concurrent/ConcurrentMap.html">
-java.util.concurrent.ConcurrentMap
-</a>
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.lang.reflect.WeakCache:reverseMap:java.util.concurrent.ConcurrentMap">
-java.lang.reflect.WeakCache.reverseMap
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/util/concurrent/ConcurrentMap.html">
-java.util.concurrent.ConcurrentMap
-</a>
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void expungeFrom(java.util.concurrent.ConcurrentMap, java.util.concurrent.ConcurrentMap)">
-java.lang.reflect.WeakCache$CacheKey.expungeFrom
-</span>
-</span>
-<span>
-(
-<a href="../../../java/util/concurrent/ConcurrentMap.html">
-java.util.concurrent.ConcurrentMap
-</a>
-, 
-<a href="../../../java/util/concurrent/ConcurrentMap.html">
-java.util.concurrent.ConcurrentMap
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-goto -27
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.reflect.WeakCache:access$000:java.lang.reflect.WeakCachejava.lang.reflect.WeakCache$BiFunction" href="#">
-
-</a>
-<div class="method_signature">
- static 
-<a href="../../../java/lang/reflect/WeakCache$BiFunction.html">
-java.lang.reflect.WeakCache$BiFunction
-</a>
- 
-<span>
-access$000
-</span>
-(
-<a href="WeakCache.html">
-java.lang.reflect.WeakCache
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.lang.reflect.WeakCache:valueFactory:java.lang.reflect.WeakCache$BiFunction">
-java.lang.reflect.WeakCache.valueFactory
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/lang/reflect/WeakCache$BiFunction.html">
-java.lang.reflect.WeakCache$BiFunction
-</a>
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-areturn
 </span>
 </div>
 </li>
@@ -2450,6 +2147,309 @@ java.lang.reflect.WeakCache$BiFunction
 <div class="instruction">
 <span>
 return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.reflect.WeakCache:expungeStaleEntries:void" href="#">
+
+</a>
+<div class="method_signature">
+private 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+expungeStaleEntries
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.lang.reflect.WeakCache:containsValue:java.lang.ObjectZ" title="bool containsValue(java.lang.Object)">
+java.lang.reflect.WeakCache.containsValue(java.lang.Object)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.reflect.WeakCache:refQueue:java.lang.ref.ReferenceQueue">
+java.lang.reflect.WeakCache.refQueue
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/lang/ref/ReferenceQueue.html">
+java.lang.ref.ReferenceQueue
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../../java/lang/ref/Reference.html">
+java.lang.ref.Reference
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.ref.Reference poll()">
+java.lang.ref.ReferenceQueue.poll
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/ref/ReferenceQueue.html#java.lang.ref.ReferenceQueue:poll:java.lang.ref.Reference" title="java.lang.ref.Reference poll()">
+java.lang.ref.ReferenceQueue.poll
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="../../../java/lang/reflect/WeakCache$CacheKey.html">
+java.lang.reflect.WeakCache$CacheKey
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+astore  1
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+ifnull 18
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.reflect.WeakCache:map:java.util.concurrent.ConcurrentMap">
+java.lang.reflect.WeakCache.map
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/util/concurrent/ConcurrentMap.html">
+java.util.concurrent.ConcurrentMap
+</a>
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.reflect.WeakCache:reverseMap:java.util.concurrent.ConcurrentMap">
+java.lang.reflect.WeakCache.reverseMap
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/util/concurrent/ConcurrentMap.html">
+java.util.concurrent.ConcurrentMap
+</a>
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void expungeFrom(java.util.concurrent.ConcurrentMap, java.util.concurrent.ConcurrentMap)">
+java.lang.reflect.WeakCache$CacheKey.expungeFrom
+</span>
+</span>
+<span>
+(
+<a href="../../../java/util/concurrent/ConcurrentMap.html">
+java.util.concurrent.ConcurrentMap
+</a>
+, 
+<a href="../../../java/util/concurrent/ConcurrentMap.html">
+java.util.concurrent.ConcurrentMap
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+goto -27
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.reflect.WeakCache:access$100:java.lang.reflect.WeakCachejava.util.concurrent.ConcurrentMap" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<a href="../../../java/util/concurrent/ConcurrentMap.html">
+java.util.concurrent.ConcurrentMap
+</a>
+ 
+<span>
+access$100
+</span>
+(
+<a href="WeakCache.html">
+java.lang.reflect.WeakCache
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.reflect.WeakCache:reverseMap:java.util.concurrent.ConcurrentMap">
+java.lang.reflect.WeakCache.reverseMap
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/util/concurrent/ConcurrentMap.html">
+java.util.concurrent.ConcurrentMap
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+areturn
 </span>
 </div>
 </li>
