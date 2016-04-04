@@ -46,7 +46,8 @@ namespace ModelRewriter
                 {
                     new Label
                     { 
-                        content = "osp_inc(), os[osp] = loc0", kind = "assignment", x = 50, y = -50
+                        //content = "osp++, os[osp] = loc0", kind = "assignment", x = 50, y = -50
+                        content = "osp++", kind = "assignment", x = 50, y = -50
                     },
                     new Label
                     { 
@@ -99,7 +100,8 @@ namespace ModelRewriter
                 {
                     new Label
                     { 
-                        content = string.Format("osp_inc(), os[osp] = loc{0}", index), kind = "assignment", x = 50, y = -50
+                        //content = string.Format("osp++, os[osp] = loc{0}", index), kind = "assignment", x = 50, y = -50
+                        content = string.Format("osp++", index), kind = "assignment", x = 50, y = -50
                     },
                     new Label
                     { 
@@ -113,7 +115,8 @@ namespace ModelRewriter
                 {
                     new Label
                     { 
-                        content = "osp++, os[osp] = loc0", kind = "assignment", x = 50, y = -50
+                        //content = "osp++, os[osp] = loc0", kind = "assignment", x = 50, y = -50
+                        content = "osp++", kind = "assignment", x = 50, y = -50
                     },
                     new Label
                     { 
@@ -127,7 +130,8 @@ namespace ModelRewriter
                 {
                     new Label
                     { 
-                        content = "os[osp] = 0, osp--", kind = "assignment", x = 50, y = -50
+                        //content = "os[osp] = 0, osp--", kind = "assignment", x = 50, y = -50
+                        content = "osp--", kind = "assignment", x = 50, y = -50
                     },
                     new Label
                     { 
