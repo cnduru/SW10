@@ -27,12 +27,12 @@ namespace ModelRewriter
 
             foreach (var item in instructions)
             {
-                foreach (var rel in item.relatedInstructions)
+                var rel = item.relatedInstruction;
+
+                if (resolveMnemonic(rel.hex) != null)
                 {
-                    if (resolveMnemonic(rel.hex) != null)
-                    {
-                        rel.mnemonic = resolveMnemonic(rel.hex);
-                    }
+                    rel.mnemonic = resolveMnemonic(rel.hex);
+                    Console.WriteLine(string.Format("{0} -> {1}", item.mnemonic, rel.mnemonic));
                 }
             }
         }
@@ -69,6 +69,20 @@ namespace ModelRewriter
                     return "getstatic_s";
                 case "7E":
                     return "getstatic_i";
+                case "8":
+                    return "sconst_5";
+                case "1D":
+                    return "sload_1";
+                case "9A":
+                    return "iflt_w";
+                case "73":
+                    return "stableswitch";
+                case "74":
+                    return "itableswitch";
+                case "75":
+                    return "slookupswitch";
+                case "76":
+                    return "ilookupswitch";
                 case "iconst":
                     return null;
                 case "ifcmpme":
@@ -81,8 +95,6 @@ namespace ModelRewriter
                     throw new System.NotImplementedException(opcode);
                 case "return":
                     return "7A";
-                case "1D":
-                    return "sload_1";
                 case "14":
                     return "iipush";
                 default:

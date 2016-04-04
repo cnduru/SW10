@@ -9,7 +9,8 @@ namespace ModelRewriter
     class BytecodeInstruction
     {
         public string dec, mnemonic, hex;
-        public List<BytecodeInstruction> relatedInstructions = new List<BytecodeInstruction>();
+        //public List<BytecodeInstruction> relatedInstructions = new List<BytecodeInstruction>();
+        public BytecodeInstruction relatedInstruction;
 
         public BytecodeInstruction(string hexi, string mnem = "")
         {
@@ -20,13 +21,9 @@ namespace ModelRewriter
 
         public void generateRelatedInstructions()
         {
-            // 8 bits for a single byte
-            for (int i = 0; i < 7; i++)
-            {
-                var instDec = Convert.ToInt32(dec) ^ Convert.ToInt32(Math.Pow(2, i));
-                var bc = new BytecodeInstruction(decToHex(instDec.ToString()), "");
-                relatedInstructions.Add(bc);
-            }
+            // flip 2nd bit
+            var instDec = Convert.ToInt32(dec) ^ Convert.ToInt32(Math.Pow(2, 3));
+            relatedInstruction = new BytecodeInstruction(decToHex(instDec.ToString()), "");
         }
 
         private string decToHex(string dec)
@@ -93,7 +90,24 @@ namespace ModelRewriter
             else if (mnemonic == "ldc")
             {
             }
-            else if (mnemonic == "sload_1")
+            else if (mnemonic.Contains("sload_"))
+            {
+                // get index
+                string index = mnemonic.Substring(mnemonic.IndexOf("_") + 1);
+
+                labels = new List<Label>()
+                {
+                    new Label
+                    { 
+                        content = string.Format("osp_inc(), os[osp] = loc{0}", index), kind = "assignment", x = 50, y = -50
+                    },
+                    new Label
+                    { 
+                        content = string.Format("modified to: sload_{0}", index), kind = "comments", x = 100, y = -70
+                    }
+                };
+            }
+            else if (mnemonic == "sconst_5")
             {
                 labels = new List<Label>()
                 {

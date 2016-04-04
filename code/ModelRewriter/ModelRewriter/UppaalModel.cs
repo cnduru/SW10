@@ -304,22 +304,21 @@ system s, s1;";
 
                             if (edge.source.id == loc.id)
                             {
-                                foreach (var a in bci.relatedInstructions)
-                                {
-                                    var labs = a.getLabels();
-                                    int lx = 50, lx2 = 90, ly = 100;
+                                var a = bci.relatedInstruction;
 
-                                    Transition tt = new Transition(edge.source, edge.target, labs);
+                                var labs = a.getLabels();
+                                int lx = 50, lx2 = 90, ly = 100;
 
-                                    List<Transition.Nail> nails = new List<Transition.Nail>();
-                                    Transition.Nail nail1 = new Transition.Nail { x = loc.x - lx, y = loc.y - ly };
-                                    Transition.Nail nail2 = new Transition.Nail { x = loc.x - lx2, y = loc.y - ly };
-                                    nails.Add(nail1);
-                                    nails.Add(nail2);
-                                    tt.nails = nails;
+                                Transition tt = new Transition(edge.source, edge.target, labs);
 
-                                    tempTrans.Add(tt);
-                                }
+                                List<Transition.Nail> nails = new List<Transition.Nail>();
+                                Transition.Nail nail1 = new Transition.Nail { x = loc.x - lx, y = loc.y - ly };
+                                Transition.Nail nail2 = new Transition.Nail { x = loc.x - lx2, y = loc.y - ly };
+                                nails.Add(nail1);
+                                nails.Add(nail2);
+                                tt.nails = nails;
+
+                                tempTrans.Add(tt);
                             }
                         }
 
