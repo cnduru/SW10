@@ -107,17 +107,31 @@ namespace ModelRewriter
                     }
                 };
             }
-            else if (mnemonic == "sconst_5")
+            else if (mnemonic == "sconst_5") // fix this one to make general
             {
                 labels = new List<Label>()
                 {
                     new Label
                     { 
-                        content = "osp_inc(), os[osp] = loc0", kind = "assignment", x = 50, y = -50
+                        content = "osp++, os[osp] = loc0", kind = "assignment", x = 50, y = -50
                     },
                     new Label
                     { 
                         content = "modified to: sload_1", kind = "comments", x = 100, y = -70
+                    }
+                };
+            }
+            else if (mnemonic == "iflt_w")
+            {
+                labels = new List<Label>()
+                {
+                    new Label
+                    { 
+                        content = "os[osp] = 0, osp--", kind = "assignment", x = 50, y = -50
+                    },
+                    new Label
+                    { 
+                        content = "modified to: ifltw", kind = "comments", x = 100, y = -70
                     }
                 };
             }
