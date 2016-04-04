@@ -21,6 +21,11 @@ namespace ModelRewriter
             instructions.Add(new BytecodeInstruction("7D", resolveMnemonic("7D")));
             instructions.Add(new BytecodeInstruction("7E", resolveMnemonic("7E")));
             instructions.Add(new BytecodeInstruction("7EE", resolveMnemonic("7EE"))); // test value
+            instructions.Add(new BytecodeInstruction("8F", resolveMnemonic("8F")));
+            instructions.Add(new BytecodeInstruction("83", resolveMnemonic("83")));
+            instructions.Add(new BytecodeInstruction("8B", resolveMnemonic("8B")));
+
+
 
             instructions.ForEach(e => e.generateRelatedInstructions());
             instructions.ForEach(e => e.mnemonic = resolveMnemonic(e.hex));
@@ -89,8 +94,12 @@ namespace ModelRewriter
                     throw new System.NotImplementedException(opcode);
                 case "invokespecial":
                     return "8C";
-                case "invokevirtual":
-                    return "8B";
+                case "83":
+                    return "getfield_a";
+                case "8F":
+                    return "new";
+                case "8B":
+                    return "invokevirtual";
                 case "ldc":
                     throw new System.NotImplementedException(opcode);
                 case "return":

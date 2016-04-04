@@ -21,7 +21,7 @@ namespace ModelRewriter
 
         public void generateRelatedInstructions()
         {
-            // flip 2nd bit
+            // flip 3rd bit
             var instDec = Convert.ToInt32(dec) ^ Convert.ToInt32(Math.Pow(2, 3));
             relatedInstruction = new BytecodeInstruction(decToHex(instDec.ToString()), "");
         }
@@ -58,10 +58,10 @@ namespace ModelRewriter
             else if (mnemonic == "nop")
             {
             }
-            else if (mnemonic == "aload")
+            else if (mnemonic == "arraylength")
             {
             }
-            else if (mnemonic == "arraylength")
+            else if (mnemonic == "getstatic")
             {
             }
             else if (mnemonic == "getstatic_a")
@@ -136,6 +136,76 @@ namespace ModelRewriter
                     new Label
                     { 
                         content = "modified to: ifltw", kind = "comments", x = 100, y = -70
+                    }
+                };
+            }
+            else if (mnemonic == "stableswitch")
+            {
+                labels = new List<Label>()
+                {
+                    new Label
+                    { 
+                        //content = "os[osp] = 0, osp--", kind = "assignment", x = 50, y = -50
+                        content = "osp--", kind = "assignment", x = 50, y = -50
+                    },
+                    new Label
+                    { 
+                        content = "modified to: stableswitch", kind = "comments", x = 100, y = -70
+                    }
+                };
+            }
+            else if (mnemonic == "itableswitch")
+            {
+                labels = new List<Label>()
+                {
+                    new Label
+                    { 
+                        //content = "os[osp] = 0, osp--", kind = "assignment", x = 50, y = -50
+                        content = "osp--", kind = "assignment", x = 50, y = -50
+                    },
+                    new Label
+                    { 
+                        content = "modified to: itableswitch", kind = "comments", x = 100, y = -70
+                    }
+                };
+            }
+            else if (mnemonic == "slookupswitch")
+            {
+                labels = new List<Label>()
+                {
+                    new Label
+                    { 
+                        //content = "os[osp] = 0, osp--", kind = "assignment", x = 50, y = -50
+                        content = "osp--", kind = "assignment", x = 50, y = -50
+                    },
+                    new Label
+                    { 
+                        content = "modified to: slookupswitch", kind = "comments", x = 100, y = -70
+                    }
+                };
+            }
+            else if (mnemonic == "ilookupswitch")
+            {
+                labels = new List<Label>()
+                {
+                    new Label
+                    { 
+                        //content = "os[osp] = 0, osp--", kind = "assignment", x = 50, y = -50
+                        content = "osp--", kind = "assignment", x = 50, y = -50
+                    },
+                    new Label
+                    { 
+                        content = "modified to: ilookupswitch", kind = "comments", x = 100, y = -70
+                    }
+                };
+            }
+            else if (mnemonic == "getfield_a")
+            {
+                labels = new List<Label>()
+                {
+                    new Label
+                    { 
+                        content = "modified to: getfield_a", kind = "comments", x = 100, y = -70
                     }
                 };
             }
