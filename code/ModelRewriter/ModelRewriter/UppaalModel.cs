@@ -294,7 +294,8 @@ system s, s1;";
                     int index = loc.name.IndexOf("_");
                     string inst = loc.name.Replace("__", "_");//.Substring(loc.name.IndexOf("_") + 1);
                     inst = Regex.Replace(inst, @"pc\d*_", "");
-                    inst = Regex.Replace(inst, @"_\d*", "");
+                    inst = inst.Replace("\n", "");
+                    //inst = Regex.Replace(inst, @"_\d*", "");
 
                     BytecodeInstruction bci = insts.instructionToBytecode(inst);
 
