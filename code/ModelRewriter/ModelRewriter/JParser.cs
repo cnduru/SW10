@@ -15,6 +15,7 @@ namespace ModelRewriter
             foreach (var p in path)
             {
                 var name = p.Split(new char[]{'.'}).First();
+                //var jClass = new JClass(name, p);
                 model.parseClass(System.IO.File.ReadAllText(p), name);
             }
             model.updateDec(); 
