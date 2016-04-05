@@ -16,18 +16,17 @@ Sample ( ) ;
 5.  invokespecial void Sample.install ( )
 8.  return
 
-public static int foo ( bool 0 , bool 1 ) ;
+public static int foo ( int 0) ;
 
     Concrete Method
     Parsed
 
 0.  iload 0
-1.  iload 1
-2.  ifcmpeq 7
-5.  iconst 1
-6.  goto 4
-9.  iconst 2
-10. ireturn
+1.  ifeq 7
+4.  iconst 1
+5.  goto 4
+8.  iconst 2
+9.  ireturn
 
 public static void main ( java.lang.String [] 0 ) ;
 

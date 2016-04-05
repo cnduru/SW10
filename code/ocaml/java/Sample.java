@@ -4,7 +4,7 @@ public class Sample{
 
     public static void main(String[] args) {
         Sample s = new Sample();
-        foo(true, false);
+        foo(3);
     }
 
     Sample(){
@@ -16,8 +16,7 @@ public class Sample{
         b = new B();
     }
 
-    public static int foo(boolean b, boolean b2){
-        return b != b2 ? 1 : 2;
-        
+    public static int foo(int i){
+        return i != 0 ? 1 : 2;
     }
 }

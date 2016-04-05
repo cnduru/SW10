@@ -19,7 +19,7 @@ Class Sample
 </div>
 <ul class="annot">
 <li>
-Instantiated
+Sample Instantiated
 </li>
 </ul>
 <div class="field">
@@ -159,7 +159,7 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="Sample:foo:ZZI" href="#">
+<a name="Sample:foo:II" href="#">
 
 </a>
 <div class="method_signature">
@@ -170,11 +170,8 @@ int
 foo
 </span>
 (
-bool
+int
  0
-, 
-bool
- 1
 )
 ;
 <ul class="annot">
@@ -206,39 +203,32 @@ iload  0
 <li value="1">
 <div class="instruction">
 <span>
-iload  1
+ifeq 7
 </span>
 </div>
 </li>
-<li value="2">
-<div class="instruction">
-<span>
-ifcmpeq 7
-</span>
-</div>
-</li>
-<li value="5">
+<li value="4">
 <div class="instruction">
 <span>
 iconst 1
 </span>
 </div>
 </li>
-<li value="6">
+<li value="5">
 <div class="instruction">
 <span>
 goto 4
 </span>
 </div>
 </li>
-<li value="9">
+<li value="8">
 <div class="instruction">
 <span>
 iconst 2
 </span>
 </div>
 </li>
-<li value="10">
+<li value="9">
 <div class="instruction">
 <span>
 ireturn
@@ -335,18 +325,11 @@ astore  1
 <li value="8">
 <div class="instruction">
 <span>
-iconst 1
+iconst 3
 </span>
 </div>
 </li>
 <li value="9">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="10">
 <div class="instruction">
 <span>
 invokestatic 
@@ -355,21 +338,19 @@ invokestatic
 int
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int foo(bool, bool)">
+<span title="int foo(int)">
 Sample.foo
 </span>
 </span>
 <span>
 (
-bool
-, 
-bool
+int
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="#Sample:foo:ZZI" title="int foo(bool, bool)">
+<a href="#Sample:foo:II" title="int foo(int)">
 Sample.foo
 </a>
 </div>
@@ -377,14 +358,14 @@ Sample.foo
 </ul>
 </div>
 </li>
-<li value="13">
+<li value="12">
 <div class="instruction">
 <span>
 pop
 </span>
 </div>
 </li>
-<li value="14">
+<li value="13">
 <div class="instruction">
 <span>
 return
