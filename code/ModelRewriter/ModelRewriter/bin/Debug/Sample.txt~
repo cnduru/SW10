@@ -1,0 +1,46 @@
+ Class Sample
+
+    Instantiated
+
+public A b;
+public A a;
+public Sample ( ) ;
+
+    Concrete Method
+    Parsed
+
+0.  aload 0
+1.  invokespecial void java.lang.Object.<init> ( )
+4.  aload 0
+5.  invokespecial void Sample.install ( )
+8.  return
+
+private void Install ( ) ;
+
+    Concrete Method
+    Parsed
+
+0.  aload 0
+1.  new A
+4.  dup
+5.  invokespecial void A.<init> ( )
+8.  putfield Sample.a : A
+11. aload 0
+12. new B
+15. dup
+16. invokespecial void B.<init> ( )
+19. putfield Sample.b : A
+22. return
+
+public static void main ( java.lang.String [] 0 ) ;
+
+    Concrete Method
+    Parsed
+
+0.  new Sample
+3.  dup
+4.  invokespecial void Sample.<init> ( )
+7.  astore 1
+8.  return
+
+

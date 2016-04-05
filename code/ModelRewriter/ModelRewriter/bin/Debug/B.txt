@@ -1,0 +1,28 @@
+ Class B
+
+    Instantiated
+
+public A a;
+public B ( ) ;
+
+    Concrete Method
+    Parsed
+
+0.  aload 0
+1.  invokespecial void A.<init> ( )
+4.  aload 0
+5.  new A
+8.  dup
+9.  invokespecial void A.<init> ( )
+12. putfield B.a : A
+15. return
+
+public int foo ( ) ;
+
+    Concrete Method
+    Not parsed
+
+0.  iconst 3
+1.  ireturn
+
+

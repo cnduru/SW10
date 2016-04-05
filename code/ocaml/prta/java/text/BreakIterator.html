@@ -157,28 +157,23 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.text.BreakIterator:getBundle:java.lang.Stringjava.util.Localejava.util.ResourceBundle" href="#">
+<a name="java.text.BreakIterator:getWordInstance:java.util.Localejava.text.BreakIterator" href="#">
 
 </a>
 <div class="method_signature">
-private static 
-<a href="../../java/util/ResourceBundle.html">
-java.util.ResourceBundle
+public static 
+<a href="BreakIterator.html">
+java.text.BreakIterator
 </a>
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-getBundle
+getWordInstance
 </span>
 (
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- 0
-, 
 <a href="../../java/util/Locale.html">
 java.util.Locale
 </a>
- 1
+ 0
 )
 ;
 <ul class="annot">
@@ -192,8 +187,8 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="#java.text.BreakIterator:createBreakInstance:java.util.LocaleIjava.lang.Stringjava.lang.Stringjava.text.BreakIterator" title="java.text.BreakIterator createBreakInstance(java.util.Locale, int, java.lang.String, java.lang.String)">
-java.text.BreakIterator.createBreakInstance(java.util.Locale, int, java.lang.String, java.lang.String)
+<a href="../../java/lang/ConditionalSpecialCasing.html#java.lang.ConditionalSpecialCasing:isFinalCased:java.lang.StringIjava.util.LocaleZ" title="bool isFinalCased(java.lang.String, int, java.util.Locale)">
+java.lang.ConditionalSpecialCasing.isFinalCased(java.lang.String, int, java.util.Locale)
 </a>
 </div>
 </li>
@@ -203,65 +198,68 @@ java.text.BreakIterator.createBreakInstance(java.util.Locale, int, java.lang.Str
 <li value="0">
 <div class="instruction">
 <span>
-new 
-</span>
-<span>
-<a href="../../java/text/BreakIterator$1.html">
-java.text.BreakIterator$1
-</a>
+aload  0
 </span>
 </div>
 </li>
-<li value="3">
+<li value="1">
 <div class="instruction">
 <span>
-dup
+iconst 1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+ldc string &apos;WordData&apos;
 </span>
 </div>
 </li>
 <li value="4">
 <div class="instruction">
 <span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-aload  1
+ldc string &apos;WordDictionary&apos;
 </span>
 </div>
 </li>
 <li value="6">
 <div class="instruction">
 <span>
-invokespecial 
+invokestatic 
 </span>
 <span>
-void
+<a href="BreakIterator.html">
+java.text.BreakIterator
+</a>
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String, java.util.Locale)">
-java.text.BreakIterator$1.&lt;init&gt;
+<span title="java.text.BreakIterator getBreakInstance(java.util.Locale, int, java.lang.String, java.lang.String)">
+java.text.BreakIterator.getBreakInstance
 </span>
 </span>
 <span>
 (
+<a href="../../java/util/Locale.html">
+java.util.Locale
+</a>
+, 
+int
+, 
 <a href="../../java/lang/String.html">
 java.lang.String
 </a>
 , 
-<a href="../../java/util/Locale.html">
-java.util.Locale
+<a href="../../java/lang/String.html">
+java.lang.String
 </a>
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/text/BreakIterator$1.html#java.text.BreakIterator$1:&lt;init&gt;:java.lang.Stringjava.util.Localevoid" title="void &lt;init&gt;(java.lang.String, java.util.Locale)">
-java.text.BreakIterator$1.&lt;init&gt;
+<a href="#java.text.BreakIterator:getBreakInstance:java.util.LocaleIjava.lang.Stringjava.lang.Stringjava.text.BreakIterator" title="java.text.BreakIterator getBreakInstance(java.util.Locale, int, java.lang.String, java.lang.String)">
+java.text.BreakIterator.getBreakInstance
 </a>
 </div>
 </li>
@@ -269,51 +267,6 @@ java.text.BreakIterator$1.&lt;init&gt;
 </div>
 </li>
 <li value="9">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Object doPrivileged(java.security.PrivilegedAction)">
-java.security.AccessController.doPrivileged
-</span>
-</span>
-<span>
-(
-<a href="../../java/security/PrivilegedAction.html">
-java.security.PrivilegedAction
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/security/AccessController.html#java.security.AccessController:doPrivileged:java.security.PrivilegedActionjava.lang.Object" title="java.lang.Object doPrivileged(java.security.PrivilegedAction)">
-java.security.AccessController.doPrivileged
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-checkcast 
-</span>
-<span>
-<a href="../../java/util/ResourceBundle.html">
-java.util.ResourceBundle
-</a>
-</span>
-</div>
-</li>
-<li value="15">
 <div class="instruction">
 <span>
 areturn
@@ -325,7 +278,7 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.text.BreakIterator:getLineInstance:java.text.BreakIterator" href="#">
+<a name="java.text.BreakIterator:getSentenceInstance:java.util.Localejava.text.BreakIterator" href="#">
 
 </a>
 <div class="method_signature">
@@ -335,7 +288,119 @@ java.text.BreakIterator
 </a>
  
 <span>
-getLineInstance
+getSentenceInstance
+</span>
+(
+<a href="../../java/util/Locale.html">
+java.util.Locale
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+iconst 3
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+ldc string &apos;SentenceData&apos;
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ldc string &apos;SentenceDictionary&apos;
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="BreakIterator.html">
+java.text.BreakIterator
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.text.BreakIterator getBreakInstance(java.util.Locale, int, java.lang.String, java.lang.String)">
+java.text.BreakIterator.getBreakInstance
+</span>
+</span>
+<span>
+(
+<a href="../../java/util/Locale.html">
+java.util.Locale
+</a>
+, 
+int
+, 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+, 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.text.BreakIterator:getBreakInstance:java.util.LocaleIjava.lang.Stringjava.lang.Stringjava.text.BreakIterator" title="java.text.BreakIterator getBreakInstance(java.util.Locale, int, java.lang.String, java.lang.String)">
+java.text.BreakIterator.getBreakInstance
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.BreakIterator:getWordInstance:java.text.BreakIterator" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="BreakIterator.html">
+java.text.BreakIterator
+</a>
+ 
+<span>
+getWordInstance
 </span>
 (
 )
@@ -391,8 +456,8 @@ java.text.BreakIterator
 </a>
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.text.BreakIterator getLineInstance(java.util.Locale)">
-java.text.BreakIterator.getLineInstance
+<span title="java.text.BreakIterator getWordInstance(java.util.Locale)">
+java.text.BreakIterator.getWordInstance
 </span>
 </span>
 <span>
@@ -405,7 +470,9 @@ java.util.Locale
 <ul class="clickable">
 <li>
 <div>
-No reachable result.
+<a href="#java.text.BreakIterator:getWordInstance:java.util.Localejava.text.BreakIterator" title="java.text.BreakIterator getWordInstance(java.util.Locale)">
+java.text.BreakIterator.getWordInstance
+</a>
 </div>
 </li>
 </ul>
@@ -423,20 +490,18 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.text.BreakIterator:setText:java.text.CharacterIteratorvoid" href="#">
+<a name="java.text.BreakIterator:following:II" href="#">
 
 </a>
 <div class="method_signature">
 public abstract 
-void
+int
  
 <span>
-setText
+following
 </span>
 (
-<a href="../../java/text/CharacterIterator.html">
-java.text.CharacterIterator
-</a>
+int
  0
 )
 ;
@@ -451,196 +516,39 @@ Abstract Method
 </ol>
 </div>
 <div class="method">
-<a name="java.text.BreakIterator:preceding:II" href="#">
+<a name="java.text.BreakIterator:last:I" href="#">
 
 </a>
 <div class="method_signature">
-public 
+public abstract 
 int
  
 <span>
-preceding
+last
 </span>
 (
-int
- 1
 )
 ;
 <ul class="annot">
 <li>
-Concrete Method 
-</li>
-<li>
-Not parsed
+Abstract Method
 </li>
 </ul>
 </div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int following(int)">
-java.text.BreakIterator.following
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-istore  2
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-ifcmplt 16
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-iconst -1
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-ifcmpeq 11
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int previous()">
-java.text.BreakIterator.previous
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-istore  2
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-goto -15
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
+
 <ol>
 </ol>
 </div>
 <div class="method">
-<a name="java.text.BreakIterator:getInt:B.-II" href="#">
+<a name="java.text.BreakIterator:getLong:B.-IJ" href="#">
 
 </a>
 <div class="method_signature">
  static 
-int
+long
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-getInt
+getLong
 </span>
 (
 byte[]
@@ -663,20 +571,6 @@ Parsed
 <div>
 <a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:readTables:java.lang.Stringvoid" title="void readTables(java.lang.String)">
 java.text.RuleBasedBreakIterator.readTables(java.lang.String)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:readFile:java.lang.StringB.-" title="byte[] readFile(java.lang.String)">
-java.text.RuleBasedBreakIterator.readFile(java.lang.String)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/BreakDictionary.html#java.text.BreakDictionary:readDictionaryFile:java.lang.Stringvoid" title="void readDictionaryFile(java.lang.String)">
-java.text.BreakDictionary.readDictionaryFile(java.lang.String)
 </a>
 </div>
 </li>
@@ -721,182 +615,172 @@ iand
 <li value="7">
 <div class="instruction">
 <span>
-istore  2
+i2l
 </span>
 </div>
 </li>
 <li value="8">
 <div class="instruction">
 <span>
-iconst 1
+lstore  2
 </span>
 </div>
 </li>
 <li value="9">
 <div class="instruction">
 <span>
-istore  3
+iconst 1
 </span>
 </div>
 </li>
 <li value="10">
 <div class="instruction">
 <span>
-iload  3
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-iconst 4
+istore  4
 </span>
 </div>
 </li>
 <li value="12">
 <div class="instruction">
 <span>
-ifcmpge 24
+iload  4
 </span>
 </div>
 </li>
-<li value="15">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="16">
+<li value="14">
 <div class="instruction">
 <span>
 bipush 8
 </span>
 </div>
 </li>
-<li value="18">
+<li value="16">
 <div class="instruction">
 <span>
-ishl
+ifcmpge 26
 </span>
 </div>
 </li>
 <li value="19">
 <div class="instruction">
 <span>
-aload  0
+lload  2
 </span>
 </div>
 </li>
 <li value="20">
 <div class="instruction">
 <span>
-iload  1
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-iload  3
+bipush 8
 </span>
 </div>
 </li>
 <li value="22">
 <div class="instruction">
 <span>
-iadd
+lshl
 </span>
 </div>
 </li>
 <li value="23">
 <div class="instruction">
 <span>
-baload
+aload  0
 </span>
 </div>
 </li>
 <li value="24">
 <div class="instruction">
 <span>
-sipush 255
+iload  1
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+iload  4
 </span>
 </div>
 </li>
 <li value="27">
 <div class="instruction">
 <span>
-iand
+iadd
 </span>
 </div>
 </li>
 <li value="28">
 <div class="instruction">
 <span>
-ior
+baload
 </span>
 </div>
 </li>
 <li value="29">
 <div class="instruction">
 <span>
-istore  2
+sipush 255
 </span>
 </div>
 </li>
-<li value="30">
+<li value="32">
 <div class="instruction">
 <span>
-iinc 3 1
+iand
 </span>
 </div>
 </li>
 <li value="33">
 <div class="instruction">
 <span>
-goto -23
+i2l
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+lor
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+lstore  2
 </span>
 </div>
 </li>
 <li value="36">
 <div class="instruction">
 <span>
-iload  2
+iinc 4 1
 </span>
 </div>
 </li>
-<li value="37">
+<li value="39">
 <div class="instruction">
 <span>
-ireturn
+goto -27
 </span>
 </div>
 </li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.text.BreakIterator:previous:I" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-int
- 
+<li value="42">
+<div class="instruction">
 <span>
-previous
+lload  2
 </span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
 </div>
-
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+lreturn
+</span>
+</div>
+</li>
+</ol>
 <ol>
 </ol>
 </div>
@@ -967,1151 +851,6 @@ java.lang.Object.&lt;init&gt;
 </div>
 </li>
 <li value="4">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.text.BreakIterator:first:I" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-int
- 
-<span>
-first
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.text.BreakIterator:getBreakInstance:java.util.LocaleIjava.lang.Stringjava.lang.Stringjava.text.BreakIterator" href="#">
-
-</a>
-<div class="method_signature">
-private static 
-<a href="BreakIterator.html">
-java.text.BreakIterator
-</a>
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-getBreakInstance
-</span>
-(
-<a href="../../java/util/Locale.html">
-java.util.Locale
-</a>
- 0
-, 
-int
- 1
-, 
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- 2
-, 
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- 3
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.text.BreakIterator:getWordInstance:java.util.Localejava.text.BreakIterator" title="java.text.BreakIterator getWordInstance(java.util.Locale)">
-java.text.BreakIterator.getWordInstance(java.util.Locale)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.text.BreakIterator:iterCache:java.lang.ref.SoftReference.-">
-java.text.BreakIterator.iterCache
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/ref/SoftReference.html">
-java.lang.ref.SoftReference
-</a>
-[]
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aaload
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-ifnull 39
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.text.BreakIterator:iterCache:java.lang.ref.SoftReference.-">
-java.text.BreakIterator.iterCache
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/ref/SoftReference.html">
-java.lang.ref.SoftReference
-</a>
-[]
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-aaload
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Object get()">
-java.lang.ref.SoftReference.get
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/ref/SoftReference.html#java.lang.ref.SoftReference:get:java.lang.Object" title="java.lang.Object get()">
-java.lang.ref.SoftReference.get
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-checkcast 
-</span>
-<span>
-<a href="../../java/text/BreakIterator$BreakIteratorCache.html">
-java.text.BreakIterator$BreakIteratorCache
-</a>
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-astore  4
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-aload  4
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-ifnull 21
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-aload  4
-</span>
-</div>
-</li>
-<li value="28">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/util/Locale.html">
-java.util.Locale
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.util.Locale getLocale()">
-java.text.BreakIterator$BreakIteratorCache.getLocale
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/text/BreakIterator$BreakIteratorCache.html#java.text.BreakIterator$BreakIteratorCache:getLocale:java.util.Locale" title="java.util.Locale getLocale()">
-java.text.BreakIterator$BreakIteratorCache.getLocale
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="31">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="32">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool equals(java.lang.Object)">
-java.util.Locale.equals
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/util/Locale.html#java.util.Locale:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.Locale.equals
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-ifeq 9
-</span>
-</div>
-</li>
-<li value="38">
-<div class="instruction">
-<span>
-aload  4
-</span>
-</div>
-</li>
-<li value="40">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="BreakIterator.html">
-java.text.BreakIterator
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.text.BreakIterator createBreakInstance()">
-java.text.BreakIterator$BreakIteratorCache.createBreakInstance
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/text/BreakIterator$BreakIteratorCache.html#java.text.BreakIterator$BreakIteratorCache:createBreakInstance:java.text.BreakIterator" title="java.text.BreakIterator createBreakInstance()">
-java.text.BreakIterator$BreakIteratorCache.createBreakInstance
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="43">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-<li value="44">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="45">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="46">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="47">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="48">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="BreakIterator.html">
-java.text.BreakIterator
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.text.BreakIterator createBreakInstance(java.util.Locale, int, java.lang.String, java.lang.String)">
-java.text.BreakIterator.createBreakInstance
-</span>
-</span>
-<span>
-(
-<a href="../../java/util/Locale.html">
-java.util.Locale
-</a>
-, 
-int
-, 
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-, 
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.text.BreakIterator:createBreakInstance:java.util.LocaleIjava.lang.Stringjava.lang.Stringjava.text.BreakIterator" title="java.text.BreakIterator createBreakInstance(java.util.Locale, int, java.lang.String, java.lang.String)">
-java.text.BreakIterator.createBreakInstance
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="51">
-<div class="instruction">
-<span>
-astore  4
-</span>
-</div>
-</li>
-<li value="53">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/text/BreakIterator$BreakIteratorCache.html">
-java.text.BreakIterator$BreakIteratorCache
-</a>
-</span>
-</div>
-</li>
-<li value="56">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="57">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="58">
-<div class="instruction">
-<span>
-aload  4
-</span>
-</div>
-</li>
-<li value="60">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.util.Locale, java.text.BreakIterator)">
-java.text.BreakIterator$BreakIteratorCache.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/util/Locale.html">
-java.util.Locale
-</a>
-, 
-<a href="BreakIterator.html">
-java.text.BreakIterator
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/text/BreakIterator$BreakIteratorCache.html#java.text.BreakIterator$BreakIteratorCache:&lt;init&gt;:java.util.Localejava.text.BreakIteratorvoid" title="void &lt;init&gt;(java.util.Locale, java.text.BreakIterator)">
-java.text.BreakIterator$BreakIteratorCache.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="63">
-<div class="instruction">
-<span>
-astore  5
-</span>
-</div>
-</li>
-<li value="65">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.text.BreakIterator:iterCache:java.lang.ref.SoftReference.-">
-java.text.BreakIterator.iterCache
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/ref/SoftReference.html">
-java.lang.ref.SoftReference
-</a>
-[]
-</span>
-</div>
-</li>
-<li value="68">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="69">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/ref/SoftReference.html">
-java.lang.ref.SoftReference
-</a>
-</span>
-</div>
-</li>
-<li value="72">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="73">
-<div class="instruction">
-<span>
-aload  5
-</span>
-</div>
-</li>
-<li value="75">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.Object)">
-java.lang.ref.SoftReference.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/ref/SoftReference.html#java.lang.ref.SoftReference:&lt;init&gt;:java.lang.Objectvoid" title="void &lt;init&gt;(java.lang.Object)">
-java.lang.ref.SoftReference.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="78">
-<div class="instruction">
-<span>
-aastore
-</span>
-</div>
-</li>
-<li value="79">
-<div class="instruction">
-<span>
-aload  4
-</span>
-</div>
-</li>
-<li value="81">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.text.BreakIterator:getSentenceInstance:java.text.BreakIterator" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-<a href="BreakIterator.html">
-java.text.BreakIterator
-</a>
- 
-<span>
-getSentenceInstance
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../java/util/Locale.html">
-java.util.Locale
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.util.Locale getDefault()">
-java.util.Locale.getDefault
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/util/Locale.html#java.util.Locale:getDefault:java.util.Locale" title="java.util.Locale getDefault()">
-java.util.Locale.getDefault
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="BreakIterator.html">
-java.text.BreakIterator
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.text.BreakIterator getSentenceInstance(java.util.Locale)">
-java.text.BreakIterator.getSentenceInstance
-</span>
-</span>
-<span>
-(
-<a href="../../java/util/Locale.html">
-java.util.Locale
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.text.BreakIterator:clone:java.lang.Object" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-clone
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:clone:java.lang.Object" title="java.lang.Object clone()">
-java.text.RuleBasedBreakIterator.clone()
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Object clone()">
-java.lang.Object.clone
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/Object.html#java.lang.Object:clone:java.lang.Object" title="java.lang.Object clone()">
-java.lang.Object.clone
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-astore  1
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/InternalError.html">
-java.lang.InternalError
-</a>
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.InternalError.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/InternalError.html#java.lang.InternalError:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.lang.InternalError.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-</ol>
-<span title="Exceptions">
-<h3>
-Exceptions handling:
-</h3>
-<ol>
-<li>
-<span>
-try start: 0; try end: 4: catch start: 5; catched type: java.lang.CloneNotSupportedException.
-</span>
-</li>
-</ol>
-</span>
-</div>
-<div class="method">
-<a name="java.text.BreakIterator:getLineInstance:java.util.Localejava.text.BreakIterator" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-<a href="BreakIterator.html">
-java.text.BreakIterator
-</a>
- 
-<span>
-getLineInstance
-</span>
-(
-<a href="../../java/util/Locale.html">
-java.util.Locale
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-iconst 2
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-ldc string &apos;LineData&apos;
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ldc string &apos;LineDictionary&apos;
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="BreakIterator.html">
-java.text.BreakIterator
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.text.BreakIterator getBreakInstance(java.util.Locale, int, java.lang.String, java.lang.String)">
-java.text.BreakIterator.getBreakInstance
-</span>
-</span>
-<span>
-(
-<a href="../../java/util/Locale.html">
-java.util.Locale
-</a>
-, 
-int
-, 
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-, 
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.text.BreakIterator:getBreakInstance:java.util.LocaleIjava.lang.Stringjava.lang.Stringjava.text.BreakIterator" title="java.text.BreakIterator getBreakInstance(java.util.Locale, int, java.lang.String, java.lang.String)">
-java.text.BreakIterator.getBreakInstance
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.text.BreakIterator:getText:java.text.CharacterIterator" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-<a href="../../java/text/CharacterIterator.html">
-java.text.CharacterIterator
-</a>
- 
-<span>
-getText
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.text.BreakIterator:setText:java.lang.Stringvoid" href="#">
-
-</a>
-<div class="method_signature">
-public 
-void
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-setText
-</span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/ConditionalSpecialCasing.html#java.lang.ConditionalSpecialCasing:isFinalCased:java.lang.StringIjava.util.LocaleZ" title="bool isFinalCased(java.lang.String, int, java.util.Locale)">
-java.lang.ConditionalSpecialCasing.isFinalCased(java.lang.String, int, java.util.Locale)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/text/StringCharacterIterator.html">
-java.text.StringCharacterIterator
-</a>
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.text.StringCharacterIterator.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/text/StringCharacterIterator.html#java.text.StringCharacterIterator:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
-java.text.StringCharacterIterator.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void setText(java.text.CharacterIterator)">
-java.text.BreakIterator.setText
-</span>
-</span>
-<span>
-(
-<a href="../../java/text/CharacterIterator.html">
-java.text.CharacterIterator
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:setText:java.text.CharacterIteratorvoid" title="void setText(java.text.CharacterIterator)">
-java.text.RuleBasedBreakIterator.setText
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/DictionaryBasedBreakIterator.html#java.text.DictionaryBasedBreakIterator:setText:java.text.CharacterIteratorvoid" title="void setText(java.text.CharacterIterator)">
-java.text.DictionaryBasedBreakIterator.setText
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="12">
 <div class="instruction">
 <span>
 return
@@ -3478,6 +2217,160 @@ areturn
 </ol>
 </div>
 <div class="method">
+<a name="java.text.BreakIterator:clone:java.lang.Object" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+clone
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:clone:java.lang.Object" title="java.lang.Object clone()">
+java.text.RuleBasedBreakIterator.clone()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object clone()">
+java.lang.Object.clone
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Object.html#java.lang.Object:clone:java.lang.Object" title="java.lang.Object clone()">
+java.lang.Object.clone
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+astore  1
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/InternalError.html">
+java.lang.InternalError
+</a>
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.InternalError.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/InternalError.html#java.lang.InternalError:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.InternalError.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 0; try end: 4: catch start: 5; catched type: java.lang.CloneNotSupportedException.
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
 <a name="java.text.BreakIterator:getCharacterInstance:java.util.Localejava.text.BreakIterator" href="#">
 
 </a>
@@ -3880,127 +2773,6 @@ Abstract Method
 </ol>
 </div>
 <div class="method">
-<a name="java.text.BreakIterator:getAvailableLocales:java.util.Locale.-" href="#">
-
-</a>
-<div class="method_signature">
-public static synchronized 
-<a href="../../java/util/Locale.html">
-java.util.Locale
-</a>
-[]
- 
-<span>
-getAvailableLocales
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-ldc class Ljava/text/spi/BreakIteratorProvider;
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../sun/util/LocaleServiceProviderPool.html">
-sun.util.LocaleServiceProviderPool
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="sun.util.LocaleServiceProviderPool getPool(java.lang.Class)">
-sun.util.LocaleServiceProviderPool.getPool
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/Class.html">
-java.lang.Class
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../sun/util/LocaleServiceProviderPool.html#sun.util.LocaleServiceProviderPool:getPool:java.lang.Classsun.util.LocaleServiceProviderPool" title="sun.util.LocaleServiceProviderPool getPool(java.lang.Class)">
-sun.util.LocaleServiceProviderPool.getPool
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-astore  0
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/util/Locale.html">
-java.util.Locale
-</a>
-[]
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.util.Locale[] getAvailableLocales()">
-sun.util.LocaleServiceProviderPool.getAvailableLocales
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
 <a name="java.text.BreakIterator:getShort:B.-IS" href="#">
 
 </a>
@@ -4030,15 +2802,15 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:readTables:java.lang.Stringvoid" title="void readTables(java.lang.String)">
-java.text.RuleBasedBreakIterator.readTables(java.lang.String)
+<a href="../../java/text/BreakDictionary.html#java.text.BreakDictionary:readDictionaryFile:java.lang.Stringvoid" title="void readDictionaryFile(java.lang.String)">
+java.text.BreakDictionary.readDictionaryFile(java.lang.String)
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/text/BreakDictionary.html#java.text.BreakDictionary:readDictionaryFile:java.lang.Stringvoid" title="void readDictionaryFile(java.lang.String)">
-java.text.BreakDictionary.readDictionaryFile(java.lang.String)
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:readTables:java.lang.Stringvoid" title="void readTables(java.lang.String)">
+java.text.RuleBasedBreakIterator.readTables(java.lang.String)
 </a>
 </div>
 </li>
@@ -4204,71 +2976,27 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.text.BreakIterator:following:II" href="#">
+<a name="java.text.BreakIterator:getBundle:java.lang.Stringjava.util.Localejava.util.ResourceBundle" href="#">
 
 </a>
 <div class="method_signature">
-public abstract 
-int
- 
-<span>
-following
-</span>
-(
-int
- 0
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.text.BreakIterator:last:I" href="#">
-
+private static 
+<a href="../../java/util/ResourceBundle.html">
+java.util.ResourceBundle
 </a>
-<div class="method_signature">
-public abstract 
-int
- 
-<span>
-last
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.text.BreakIterator:getLong:B.-IJ" href="#">
-
-</a>
-<div class="method_signature">
- static 
-long
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-getLong
+getBundle
 </span>
 (
-byte[]
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
  0
 , 
-int
+<a href="../../java/util/Locale.html">
+java.util.Locale
+</a>
  1
 )
 ;
@@ -4283,8 +3011,8 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:readTables:java.lang.Stringvoid" title="void readTables(java.lang.String)">
-java.text.RuleBasedBreakIterator.readTables(java.lang.String)
+<a href="#java.text.BreakIterator:createBreakInstance:java.util.LocaleIjava.lang.Stringjava.lang.Stringjava.text.BreakIterator" title="java.text.BreakIterator createBreakInstance(java.util.Locale, int, java.lang.String, java.lang.String)">
+java.text.BreakIterator.createBreakInstance(java.util.Locale, int, java.lang.String, java.lang.String)
 </a>
 </div>
 </li>
@@ -4294,305 +3022,65 @@ java.text.RuleBasedBreakIterator.readTables(java.lang.String)
 <li value="0">
 <div class="instruction">
 <span>
-aload  0
+new 
 </span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
 <span>
-iload  1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-baload
+<a href="../../java/text/BreakIterator$1.html">
+java.text.BreakIterator$1
+</a>
 </span>
 </div>
 </li>
 <li value="3">
 <div class="instruction">
 <span>
-sipush 255
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-iand
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-i2l
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-lstore  2
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-istore  4
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-iload  4
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-bipush 8
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-ifcmpge 26
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-lload  2
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-bipush 8
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-lshl
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-iload  4
-</span>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="28">
-<div class="instruction">
-<span>
-baload
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-sipush 255
-</span>
-</div>
-</li>
-<li value="32">
-<div class="instruction">
-<span>
-iand
-</span>
-</div>
-</li>
-<li value="33">
-<div class="instruction">
-<span>
-i2l
-</span>
-</div>
-</li>
-<li value="34">
-<div class="instruction">
-<span>
-lor
-</span>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-lstore  2
-</span>
-</div>
-</li>
-<li value="36">
-<div class="instruction">
-<span>
-iinc 4 1
-</span>
-</div>
-</li>
-<li value="39">
-<div class="instruction">
-<span>
-goto -27
-</span>
-</div>
-</li>
-<li value="42">
-<div class="instruction">
-<span>
-lload  2
-</span>
-</div>
-</li>
-<li value="43">
-<div class="instruction">
-<span>
-lreturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.text.BreakIterator:getSentenceInstance:java.util.Localejava.text.BreakIterator" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-<a href="BreakIterator.html">
-java.text.BreakIterator
-</a>
- 
-<span>
-getSentenceInstance
-</span>
-(
-<a href="../../java/util/Locale.html">
-java.util.Locale
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-iconst 3
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-ldc string &apos;SentenceData&apos;
+dup
 </span>
 </div>
 </li>
 <li value="4">
 <div class="instruction">
 <span>
-ldc string &apos;SentenceDictionary&apos;
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aload  1
 </span>
 </div>
 </li>
 <li value="6">
 <div class="instruction">
 <span>
-invokestatic 
+invokespecial 
 </span>
 <span>
-<a href="BreakIterator.html">
-java.text.BreakIterator
-</a>
+void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.text.BreakIterator getBreakInstance(java.util.Locale, int, java.lang.String, java.lang.String)">
-java.text.BreakIterator.getBreakInstance
+<span title="void &lt;init&gt;(java.lang.String, java.util.Locale)">
+java.text.BreakIterator$1.&lt;init&gt;
 </span>
 </span>
 <span>
 (
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+, 
 <a href="../../java/util/Locale.html">
 java.util.Locale
-</a>
-, 
-int
-, 
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-, 
-<a href="../../java/lang/String.html">
-java.lang.String
 </a>
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="#java.text.BreakIterator:getBreakInstance:java.util.LocaleIjava.lang.Stringjava.lang.Stringjava.text.BreakIterator" title="java.text.BreakIterator getBreakInstance(java.util.Locale, int, java.lang.String, java.lang.String)">
-java.text.BreakIterator.getBreakInstance
+<a href="../../java/text/BreakIterator$1.html#java.text.BreakIterator$1:&lt;init&gt;:java.lang.Stringjava.util.Localevoid" title="void &lt;init&gt;(java.lang.String, java.util.Locale)">
+java.text.BreakIterator$1.&lt;init&gt;
 </a>
 </div>
 </li>
@@ -4600,6 +3088,51 @@ java.text.BreakIterator.getBreakInstance
 </div>
 </li>
 <li value="9">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object doPrivileged(java.security.PrivilegedAction)">
+java.security.AccessController.doPrivileged
+</span>
+</span>
+<span>
+(
+<a href="../../java/security/PrivilegedAction.html">
+java.security.PrivilegedAction
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/security/AccessController.html#java.security.AccessController:doPrivileged:java.security.PrivilegedActionjava.lang.Object" title="java.lang.Object doPrivileged(java.security.PrivilegedAction)">
+java.security.AccessController.doPrivileged
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="../../java/util/ResourceBundle.html">
+java.util.ResourceBundle
+</a>
+</span>
+</div>
+</li>
+<li value="15">
 <div class="instruction">
 <span>
 areturn
@@ -4611,7 +3144,7 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.text.BreakIterator:getWordInstance:java.text.BreakIterator" href="#">
+<a name="java.text.BreakIterator:getLineInstance:java.text.BreakIterator" href="#">
 
 </a>
 <div class="method_signature">
@@ -4621,7 +3154,7 @@ java.text.BreakIterator
 </a>
  
 <span>
-getWordInstance
+getLineInstance
 </span>
 (
 )
@@ -4677,8 +3210,8 @@ java.text.BreakIterator
 </a>
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.text.BreakIterator getWordInstance(java.util.Locale)">
-java.text.BreakIterator.getWordInstance
+<span title="java.text.BreakIterator getLineInstance(java.util.Locale)">
+java.text.BreakIterator.getLineInstance
 </span>
 </span>
 <span>
@@ -4691,9 +3224,7 @@ java.util.Locale
 <ul class="clickable">
 <li>
 <div>
-<a href="#java.text.BreakIterator:getWordInstance:java.util.Localejava.text.BreakIterator" title="java.text.BreakIterator getWordInstance(java.util.Locale)">
-java.text.BreakIterator.getWordInstance
-</a>
+No reachable result.
 </div>
 </li>
 </ul>
@@ -4711,23 +3242,352 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.text.BreakIterator:getWordInstance:java.util.Localejava.text.BreakIterator" href="#">
+<a name="java.text.BreakIterator:setText:java.text.CharacterIteratorvoid" href="#">
 
 </a>
 <div class="method_signature">
-public static 
-<a href="BreakIterator.html">
-java.text.BreakIterator
-</a>
+public abstract 
+void
  
-<span class="methodname clickable" onclick="showInfoList(this)">
-getWordInstance
+<span>
+setText
 </span>
 (
+<a href="../../java/text/CharacterIterator.html">
+java.text.CharacterIterator
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.BreakIterator:preceding:II" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span>
+preceding
+</span>
+(
+int
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int following(int)">
+java.text.BreakIterator.following
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+istore  2
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+ifcmplt 16
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+iconst -1
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+ifcmpeq 11
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int previous()">
+java.text.BreakIterator.previous
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+istore  2
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+goto -15
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.BreakIterator:getAvailableLocales:java.util.Locale.-" href="#">
+
+</a>
+<div class="method_signature">
+public static synchronized 
 <a href="../../java/util/Locale.html">
 java.util.Locale
 </a>
+[]
+ 
+<span>
+getAvailableLocales
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+ldc class Ljava/text/spi/BreakIteratorProvider;
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../sun/util/LocaleServiceProviderPool.html">
+sun.util.LocaleServiceProviderPool
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="sun.util.LocaleServiceProviderPool getPool(java.lang.Class)">
+sun.util.LocaleServiceProviderPool.getPool
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/util/LocaleServiceProviderPool.html#sun.util.LocaleServiceProviderPool:getPool:java.lang.Classsun.util.LocaleServiceProviderPool" title="sun.util.LocaleServiceProviderPool getPool(java.lang.Class)">
+sun.util.LocaleServiceProviderPool.getPool
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+astore  0
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/util/Locale.html">
+java.util.Locale
+</a>
+[]
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.util.Locale[] getAvailableLocales()">
+sun.util.LocaleServiceProviderPool.getAvailableLocales
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.BreakIterator:getInt:B.-II" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getInt
+</span>
+(
+byte[]
  0
+, 
+int
+ 1
 )
 ;
 <ul class="annot">
@@ -4741,8 +3601,22 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/lang/ConditionalSpecialCasing.html#java.lang.ConditionalSpecialCasing:isFinalCased:java.lang.StringIjava.util.LocaleZ" title="bool isFinalCased(java.lang.String, int, java.util.Locale)">
-java.lang.ConditionalSpecialCasing.isFinalCased(java.lang.String, int, java.util.Locale)
+<a href="../../java/text/BreakDictionary.html#java.text.BreakDictionary:readDictionaryFile:java.lang.Stringvoid" title="void readDictionaryFile(java.lang.String)">
+java.text.BreakDictionary.readDictionaryFile(java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:readFile:java.lang.StringB.-" title="byte[] readFile(java.lang.String)">
+java.text.RuleBasedBreakIterator.readFile(java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:readTables:java.lang.Stringvoid" title="void readTables(java.lang.String)">
+java.text.RuleBasedBreakIterator.readTables(java.lang.String)
 </a>
 </div>
 </li>
@@ -4759,21 +3633,971 @@ aload  0
 <li value="1">
 <div class="instruction">
 <span>
-iconst 1
+iload  1
 </span>
 </div>
 </li>
 <li value="2">
 <div class="instruction">
 <span>
-ldc string &apos;WordData&apos;
+baload
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+sipush 255
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+iand
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+istore  2
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+istore  3
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+iconst 4
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+ifcmpge 24
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+bipush 8
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+ishl
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+baload
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+sipush 255
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+iand
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+ior
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+istore  2
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+iinc 3 1
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+goto -23
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.BreakIterator:previous:I" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+int
+ 
+<span>
+previous
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.BreakIterator:first:I" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+int
+ 
+<span>
+first
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.BreakIterator:getBreakInstance:java.util.LocaleIjava.lang.Stringjava.lang.Stringjava.text.BreakIterator" href="#">
+
+</a>
+<div class="method_signature">
+private static 
+<a href="BreakIterator.html">
+java.text.BreakIterator
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getBreakInstance
+</span>
+(
+<a href="../../java/util/Locale.html">
+java.util.Locale
+</a>
+ 0
+, 
+int
+ 1
+, 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 2
+, 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.text.BreakIterator:getWordInstance:java.util.Localejava.text.BreakIterator" title="java.text.BreakIterator getWordInstance(java.util.Locale)">
+java.text.BreakIterator.getWordInstance(java.util.Locale)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.text.BreakIterator:iterCache:java.lang.ref.SoftReference.-">
+java.text.BreakIterator.iterCache
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/ref/SoftReference.html">
+java.lang.ref.SoftReference
+</a>
+[]
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+iload  1
 </span>
 </div>
 </li>
 <li value="4">
 <div class="instruction">
 <span>
-ldc string &apos;WordDictionary&apos;
+aaload
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+ifnull 39
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.text.BreakIterator:iterCache:java.lang.ref.SoftReference.-">
+java.text.BreakIterator.iterCache
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/ref/SoftReference.html">
+java.lang.ref.SoftReference
+</a>
+[]
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+aaload
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object get()">
+java.lang.ref.SoftReference.get
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/ref/SoftReference.html#java.lang.ref.SoftReference:get:java.lang.Object" title="java.lang.Object get()">
+java.lang.ref.SoftReference.get
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="../../java/text/BreakIterator$BreakIteratorCache.html">
+java.text.BreakIterator$BreakIteratorCache
+</a>
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+astore  4
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+aload  4
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+ifnull 21
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+aload  4
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/util/Locale.html">
+java.util.Locale
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.util.Locale getLocale()">
+java.text.BreakIterator$BreakIteratorCache.getLocale
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/BreakIterator$BreakIteratorCache.html#java.text.BreakIterator$BreakIteratorCache:getLocale:java.util.Locale" title="java.util.Locale getLocale()">
+java.text.BreakIterator$BreakIteratorCache.getLocale
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool equals(java.lang.Object)">
+java.util.Locale.equals
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/Locale.html#java.util.Locale:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.Locale.equals
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+ifeq 9
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+aload  4
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="BreakIterator.html">
+java.text.BreakIterator
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.text.BreakIterator createBreakInstance()">
+java.text.BreakIterator$BreakIteratorCache.createBreakInstance
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/BreakIterator$BreakIteratorCache.html#java.text.BreakIterator$BreakIteratorCache:createBreakInstance:java.text.BreakIterator" title="java.text.BreakIterator createBreakInstance()">
+java.text.BreakIterator$BreakIteratorCache.createBreakInstance
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="BreakIterator.html">
+java.text.BreakIterator
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.text.BreakIterator createBreakInstance(java.util.Locale, int, java.lang.String, java.lang.String)">
+java.text.BreakIterator.createBreakInstance
+</span>
+</span>
+<span>
+(
+<a href="../../java/util/Locale.html">
+java.util.Locale
+</a>
+, 
+int
+, 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+, 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.text.BreakIterator:createBreakInstance:java.util.LocaleIjava.lang.Stringjava.lang.Stringjava.text.BreakIterator" title="java.text.BreakIterator createBreakInstance(java.util.Locale, int, java.lang.String, java.lang.String)">
+java.text.BreakIterator.createBreakInstance
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="51">
+<div class="instruction">
+<span>
+astore  4
+</span>
+</div>
+</li>
+<li value="53">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/text/BreakIterator$BreakIteratorCache.html">
+java.text.BreakIterator$BreakIteratorCache
+</a>
+</span>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="57">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="58">
+<div class="instruction">
+<span>
+aload  4
+</span>
+</div>
+</li>
+<li value="60">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.util.Locale, java.text.BreakIterator)">
+java.text.BreakIterator$BreakIteratorCache.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/util/Locale.html">
+java.util.Locale
+</a>
+, 
+<a href="BreakIterator.html">
+java.text.BreakIterator
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/BreakIterator$BreakIteratorCache.html#java.text.BreakIterator$BreakIteratorCache:&lt;init&gt;:java.util.Localejava.text.BreakIteratorvoid" title="void &lt;init&gt;(java.util.Locale, java.text.BreakIterator)">
+java.text.BreakIterator$BreakIteratorCache.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="63">
+<div class="instruction">
+<span>
+astore  5
+</span>
+</div>
+</li>
+<li value="65">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.text.BreakIterator:iterCache:java.lang.ref.SoftReference.-">
+java.text.BreakIterator.iterCache
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/ref/SoftReference.html">
+java.lang.ref.SoftReference
+</a>
+[]
+</span>
+</div>
+</li>
+<li value="68">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="69">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/ref/SoftReference.html">
+java.lang.ref.SoftReference
+</a>
+</span>
+</div>
+</li>
+<li value="72">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="73">
+<div class="instruction">
+<span>
+aload  5
+</span>
+</div>
+</li>
+<li value="75">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.Object)">
+java.lang.ref.SoftReference.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/ref/SoftReference.html#java.lang.ref.SoftReference:&lt;init&gt;:java.lang.Objectvoid" title="void &lt;init&gt;(java.lang.Object)">
+java.lang.ref.SoftReference.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="78">
+<div class="instruction">
+<span>
+aastore
+</span>
+</div>
+</li>
+<li value="79">
+<div class="instruction">
+<span>
+aload  4
+</span>
+</div>
+</li>
+<li value="81">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.BreakIterator:getSentenceInstance:java.text.BreakIterator" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="BreakIterator.html">
+java.text.BreakIterator
+</a>
+ 
+<span>
+getSentenceInstance
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/util/Locale.html">
+java.util.Locale
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.util.Locale getDefault()">
+java.util.Locale.getDefault
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/Locale.html#java.util.Locale:getDefault:java.util.Locale" title="java.util.Locale getDefault()">
+java.util.Locale.getDefault
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="BreakIterator.html">
+java.text.BreakIterator
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.text.BreakIterator getSentenceInstance(java.util.Locale)">
+java.text.BreakIterator.getSentenceInstance
+</span>
+</span>
+<span>
+(
+<a href="../../java/util/Locale.html">
+java.util.Locale
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.BreakIterator:getLineInstance:java.util.Localejava.text.BreakIterator" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="BreakIterator.html">
+java.text.BreakIterator
+</a>
+ 
+<span>
+getLineInstance
+</span>
+(
+<a href="../../java/util/Locale.html">
+java.util.Locale
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+iconst 2
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+ldc string &apos;LineData&apos;
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ldc string &apos;LineDictionary&apos;
 </span>
 </div>
 </li>
@@ -4824,6 +4648,182 @@ java.text.BreakIterator.getBreakInstance
 <div class="instruction">
 <span>
 areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.BreakIterator:getText:java.text.CharacterIterator" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="../../java/text/CharacterIterator.html">
+java.text.CharacterIterator
+</a>
+ 
+<span>
+getText
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.BreakIterator:setText:java.lang.Stringvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+setText
+</span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/ConditionalSpecialCasing.html#java.lang.ConditionalSpecialCasing:isFinalCased:java.lang.StringIjava.util.LocaleZ" title="bool isFinalCased(java.lang.String, int, java.util.Locale)">
+java.lang.ConditionalSpecialCasing.isFinalCased(java.lang.String, int, java.util.Locale)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/text/StringCharacterIterator.html">
+java.text.StringCharacterIterator
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.text.StringCharacterIterator.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/StringCharacterIterator.html#java.text.StringCharacterIterator:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
+java.text.StringCharacterIterator.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void setText(java.text.CharacterIterator)">
+java.text.BreakIterator.setText
+</span>
+</span>
+<span>
+(
+<a href="../../java/text/CharacterIterator.html">
+java.text.CharacterIterator
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/DictionaryBasedBreakIterator.html#java.text.DictionaryBasedBreakIterator:setText:java.text.CharacterIteratorvoid" title="void setText(java.text.CharacterIterator)">
+java.text.DictionaryBasedBreakIterator.setText
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:setText:java.text.CharacterIteratorvoid" title="void setText(java.text.CharacterIterator)">
+java.text.RuleBasedBreakIterator.setText
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+return
 </span>
 </div>
 </li>

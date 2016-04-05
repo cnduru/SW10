@@ -236,15 +236,15 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.Float:doubleValue:D" href="#">
+<a name="java.lang.Float:floatValue:F" href="#">
 
 </a>
 <div class="method_signature">
 public 
-double
+float
  
 <span>
-doubleValue
+floatValue
 </span>
 (
 )
@@ -287,14 +287,7 @@ float
 <li value="4">
 <div class="instruction">
 <span>
-f2d
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-dreturn
+freturn
 </span>
 </div>
 </li>
@@ -412,17 +405,21 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.Float:isNaN:Z" href="#">
+<a name="java.lang.Float:parseFloat:java.lang.StringF" href="#">
 
 </a>
 <div class="method_signature">
-public 
-bool
+public static 
+float
  
 <span>
-isNaN
+parseFloat
 </span>
 (
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 0
 )
 ;
 <ul class="annot">
@@ -445,45 +442,55 @@ aload  0
 <li value="1">
 <div class="instruction">
 <span>
-getfield 
-</span>
-<span>
-<a href="#java.lang.Float:value:F">
-java.lang.Float.value
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-float
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
 invokestatic 
 </span>
 <span>
-bool
+<a href="../../sun/misc/FloatingDecimal.html">
+sun.misc.FloatingDecimal
+</a>
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool isNaN(float)">
-java.lang.Float.isNaN
+<span title="sun.misc.FloatingDecimal readJavaFormatString(java.lang.String)">
+sun.misc.FloatingDecimal.readJavaFormatString
 </span>
 </span>
 <span>
 (
-float
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="#java.lang.Float:isNaN:FZ" title="bool isNaN(float)">
-java.lang.Float.isNaN
-</a>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+float
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="float floatValue()">
+sun.misc.FloatingDecimal.floatValue
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
 </div>
 </li>
 </ul>
@@ -492,7 +499,7 @@ java.lang.Float.isNaN
 <li value="7">
 <div class="instruction">
 <span>
-ireturn
+freturn
 </span>
 </div>
 </li>
@@ -628,6 +635,1571 @@ No reachable result.
 <div class="instruction">
 <span>
 return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Float:isInfinite:FZ" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+bool
+ 
+<span>
+isInfinite
+</span>
+(
+float
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+fload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+fconst inf
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+fcmpl
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ifeq 10
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+fload  0
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+fconst -inf
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+fcmpl
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+ifne 7
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Float:toHexString:Fjava.lang.String" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span>
+toHexString
+</span>
+(
+float
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+fload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+float
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="float abs(float)">
+java.lang.Math.abs
+</span>
+</span>
+<span>
+(
+float
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+fconst 1.17549435082e-38
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+fcmpg
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+ifge 30
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+fload  0
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+fconst 0.
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+fcmpl
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+ifeq 24
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+fload  0
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+f2d
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+sipush -896
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+double
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="double scalb(double, int)">
+sun.misc.FpUtils.scalb
+</span>
+</span>
+<span>
+(
+double
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/misc/FpUtils.html#sun.misc.FpUtils:scalb:DID" title="double scalb(double, int)">
+sun.misc.FpUtils.scalb
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toHexString(double)">
+java.lang.Double.toHexString
+</span>
+</span>
+<span>
+(
+double
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Double.html#java.lang.Double:toHexString:Djava.lang.String" title="java.lang.String toHexString(double)">
+java.lang.Double.toHexString
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+astore  1
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+ldc string &apos;p-1022$&apos;
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+ldc string &apos;p-126&apos;
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String replaceFirst(java.lang.String, java.lang.String)">
+java.lang.String.replaceFirst
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+, 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/String.html#java.lang.String:replaceFirst:java.lang.Stringjava.lang.Stringjava.lang.String" title="java.lang.String replaceFirst(java.lang.String, java.lang.String)">
+java.lang.String.replaceFirst
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+fload  0
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+f2d
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toHexString(double)">
+java.lang.Double.toHexString
+</span>
+</span>
+<span>
+(
+double
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Double.html#java.lang.Double:toHexString:Djava.lang.String" title="java.lang.String toHexString(double)">
+java.lang.Double.toHexString
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Float:&lt;init&gt;:Dvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<span>
+Float
+</span>
+(
+double
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Number.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+dload  1
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+d2f
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.lang.Float:value:F">
+java.lang.Float.value
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+float
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Float:intValue:I" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span>
+intValue
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.Float:value:F">
+java.lang.Float.value
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+float
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+f2i
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Float:byteValue:B" href="#">
+
+</a>
+<div class="method_signature">
+public 
+byte
+ 
+<span>
+byteValue
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.Float:value:F">
+java.lang.Float.value
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+float
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+f2i
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+i2b
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Float:compareTo:java.lang.ObjectI" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span>
+compareTo
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="Float.html">
+java.lang.Float
+</a>
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int compareTo(java.lang.Float)">
+java.lang.Float.compareTo
+</span>
+</span>
+<span>
+(
+<a href="Float.html">
+java.lang.Float
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Float:isInfinite:Z" href="#">
+
+</a>
+<div class="method_signature">
+public 
+bool
+ 
+<span>
+isInfinite
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.Float:value:F">
+java.lang.Float.value
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+float
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isInfinite(float)">
+java.lang.Float.isInfinite
+</span>
+</span>
+<span>
+(
+float
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Float:equals:java.lang.ObjectZ" href="#">
+
+</a>
+<div class="method_signature">
+public 
+bool
+ 
+<span>
+equals
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+instanceof 
+</span>
+<span>
+<a href="Float.html">
+java.lang.Float
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ifeq 27
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="Float.html">
+java.lang.Float
+</a>
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.Float:value:F">
+java.lang.Float.value
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+float
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int floatToIntBits(float)">
+java.lang.Float.floatToIntBits
+</span>
+</span>
+<span>
+(
+float
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.lang.Float:floatToIntBits:FI" title="int floatToIntBits(float)">
+java.lang.Float.floatToIntBits
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.Float:value:F">
+java.lang.Float.value
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+float
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int floatToIntBits(float)">
+java.lang.Float.floatToIntBits
+</span>
+</span>
+<span>
+(
+float
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.lang.Float:floatToIntBits:FI" title="int floatToIntBits(float)">
+java.lang.Float.floatToIntBits
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+ifcmpne 7
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Float:toString:Fjava.lang.String" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span>
+toString
+</span>
+(
+float
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../sun/misc/FloatingDecimal.html">
+sun.misc.FloatingDecimal
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+fload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(float)">
+sun.misc.FloatingDecimal.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+float
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toJavaFormatString()">
+sun.misc.FloatingDecimal.toJavaFormatString
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/misc/FloatingDecimal.html#sun.misc.FloatingDecimal:toJavaFormatString:java.lang.String" title="java.lang.String toJavaFormatString()">
+sun.misc.FloatingDecimal.toJavaFormatString
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Float:compareTo:java.lang.FloatI" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span>
+compareTo
+</span>
+(
+<a href="Float.html">
+java.lang.Float
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.Float:value:F">
+java.lang.Float.value
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+float
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.Float:value:F">
+java.lang.Float.value
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+float
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int compare(float, float)">
+java.lang.Float.compare
+</span>
+</span>
+<span>
+(
+float
+, 
+float
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Float:doubleValue:D" href="#">
+
+</a>
+<div class="method_signature">
+public 
+double
+ 
+<span>
+doubleValue
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.Float:value:F">
+java.lang.Float.value
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+float
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+f2d
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+dreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Float:isNaN:Z" href="#">
+
+</a>
+<div class="method_signature">
+public 
+bool
+ 
+<span>
+isNaN
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.Float:value:F">
+java.lang.Float.value
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+float
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isNaN(float)">
+java.lang.Float.isNaN
+</span>
+</span>
+<span>
+(
+float
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.lang.Float:isNaN:FZ" title="bool isNaN(float)">
+java.lang.Float.isNaN
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Float:toString:java.lang.String" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span>
+toString
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.Float:value:F">
+java.lang.Float.value
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+float
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toString(float)">
+java.lang.Float.toString
+</span>
+</span>
+<span>
+(
+float
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+areturn
 </span>
 </div>
 </li>
@@ -1115,73 +2687,6 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.Float:intValue:I" href="#">
-
-</a>
-<div class="method_signature">
-public 
-int
- 
-<span>
-intValue
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.lang.Float:value:F">
-java.lang.Float.value
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-float
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-f2i
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
 <a name="java.lang.Float:shortValue:S" href="#">
 
 </a>
@@ -1282,6 +2787,13 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
+<a href="../../java/util/Arrays.html#java.util.Arrays:equals:F.-F.-Z" title="bool equals(float[], float[])">
+java.util.Arrays.equals(float[], float[])
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../java/lang/Math.html#java.lang.Math:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
 java.lang.Math.&lt;clinit&gt;()
 </a>
@@ -1298,13 +2810,6 @@ sun.misc.FloatingDecimal.&lt;init&gt;(float)
 <div>
 <a href="../../java/lang/Math.html#java.lang.Math:min:FFF" title="float min(float, float)">
 java.lang.Math.min(float, float)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Arrays.html#java.util.Arrays:equals:F.-F.-Z" title="bool equals(float[], float[])">
-java.util.Arrays.equals(float[], float[])
 </a>
 </div>
 </li>
@@ -1495,100 +3000,6 @@ java.lang.Float.floatToIntBits(float)
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.Float:compareTo:java.lang.ObjectI" href="#">
-
-</a>
-<div class="method_signature">
-public 
-int
- 
-<span>
-compareTo
-</span>
-(
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-checkcast 
-</span>
-<span>
-<a href="Float.html">
-java.lang.Float
-</a>
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int compareTo(java.lang.Float)">
-java.lang.Float.compareTo
-</span>
-</span>
-<span>
-(
-<a href="Float.html">
-java.lang.Float
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
 <a name="java.lang.Float:intBitsToFloat:IF" href="#">
 
 </a>
@@ -1614,219 +3025,6 @@ Not parsed
 </ul>
 </div>
 
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Float:equals:java.lang.ObjectZ" href="#">
-
-</a>
-<div class="method_signature">
-public 
-bool
- 
-<span>
-equals
-</span>
-(
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-instanceof 
-</span>
-<span>
-<a href="Float.html">
-java.lang.Float
-</a>
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ifeq 27
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-checkcast 
-</span>
-<span>
-<a href="Float.html">
-java.lang.Float
-</a>
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.lang.Float:value:F">
-java.lang.Float.value
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-float
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int floatToIntBits(float)">
-java.lang.Float.floatToIntBits
-</span>
-</span>
-<span>
-(
-float
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.lang.Float:floatToIntBits:FI" title="int floatToIntBits(float)">
-java.lang.Float.floatToIntBits
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.lang.Float:value:F">
-java.lang.Float.value
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-float
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int floatToIntBits(float)">
-java.lang.Float.floatToIntBits
-</span>
-</span>
-<span>
-(
-float
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.lang.Float:floatToIntBits:FI" title="int floatToIntBits(float)">
-java.lang.Float.floatToIntBits
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-ifcmpne 7
-</span>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="28">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="31">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="32">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
 <ol>
 </ol>
 </div>
@@ -1898,21 +3096,17 @@ lreturn
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.Float:toString:Fjava.lang.String" href="#">
+<a name="java.lang.Float:hashCode:I" href="#">
 
 </a>
 <div class="method_signature">
-public static 
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
+public 
+int
  
 <span>
-toString
+hashCode
 </span>
 (
-float
- 0
 )
 ;
 <ul class="annot">
@@ -1928,40 +3122,39 @@ Not parsed
 <li value="0">
 <div class="instruction">
 <span>
-new 
-</span>
-<span>
-<a href="../../sun/misc/FloatingDecimal.html">
-sun.misc.FloatingDecimal
-</a>
+aload  0
 </span>
 </div>
 </li>
-<li value="3">
+<li value="1">
 <div class="instruction">
 <span>
-dup
+getfield 
+</span>
+<span>
+<a href="#java.lang.Float:value:F">
+java.lang.Float.value
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+float
 </span>
 </div>
 </li>
 <li value="4">
 <div class="instruction">
 <span>
-fload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-invokespecial 
+invokestatic 
 </span>
 <span>
-void
+int
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(float)">
-sun.misc.FloatingDecimal.&lt;init&gt;
+<span title="int floatToIntBits(float)">
+java.lang.Float.floatToIntBits
 </span>
 </span>
 <span>
@@ -1972,46 +3165,18 @@ float
 <ul class="clickable">
 <li>
 <div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.String toJavaFormatString()">
-sun.misc.FloatingDecimal.toJavaFormatString
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../sun/misc/FloatingDecimal.html#sun.misc.FloatingDecimal:toJavaFormatString:java.lang.String" title="java.lang.String toJavaFormatString()">
-sun.misc.FloatingDecimal.toJavaFormatString
+<a href="#java.lang.Float:floatToIntBits:FI" title="int floatToIntBits(float)">
+java.lang.Float.floatToIntBits
 </a>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="11">
+<li value="7">
 <div class="instruction">
 <span>
-areturn
+ireturn
 </span>
 </div>
 </li>
@@ -2163,1171 +3328,6 @@ No reachable result.
 <div class="instruction">
 <span>
 areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Float:toHexString:Fjava.lang.String" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- 
-<span>
-toHexString
-</span>
-(
-float
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-fload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-float
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="float abs(float)">
-java.lang.Math.abs
-</span>
-</span>
-<span>
-(
-float
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-fconst 1.17549435082e-38
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-fcmpg
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-ifge 30
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-fload  0
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-fconst 0.
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-fcmpl
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-ifeq 24
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-fload  0
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-f2d
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-sipush -896
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-double
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="double scalb(double, int)">
-sun.misc.FpUtils.scalb
-</span>
-</span>
-<span>
-(
-double
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../sun/misc/FpUtils.html#sun.misc.FpUtils:scalb:DID" title="double scalb(double, int)">
-sun.misc.FpUtils.scalb
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.String toHexString(double)">
-java.lang.Double.toHexString
-</span>
-</span>
-<span>
-(
-double
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/Double.html#java.lang.Double:toHexString:Djava.lang.String" title="java.lang.String toHexString(double)">
-java.lang.Double.toHexString
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-astore  1
-</span>
-</div>
-</li>
-<li value="28">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-ldc string &apos;p-1022$&apos;
-</span>
-</div>
-</li>
-<li value="31">
-<div class="instruction">
-<span>
-ldc string &apos;p-126&apos;
-</span>
-</div>
-</li>
-<li value="33">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.String replaceFirst(java.lang.String, java.lang.String)">
-java.lang.String.replaceFirst
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-, 
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/String.html#java.lang.String:replaceFirst:java.lang.Stringjava.lang.Stringjava.lang.String" title="java.lang.String replaceFirst(java.lang.String, java.lang.String)">
-java.lang.String.replaceFirst
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="36">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-<li value="37">
-<div class="instruction">
-<span>
-fload  0
-</span>
-</div>
-</li>
-<li value="38">
-<div class="instruction">
-<span>
-f2d
-</span>
-</div>
-</li>
-<li value="39">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.String toHexString(double)">
-java.lang.Double.toHexString
-</span>
-</span>
-<span>
-(
-double
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/Double.html#java.lang.Double:toHexString:Djava.lang.String" title="java.lang.String toHexString(double)">
-java.lang.Double.toHexString
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="42">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Float:&lt;init&gt;:Dvoid" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<span>
-Float
-</span>
-(
-double
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.Number.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-dload  1
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-d2f
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.lang.Float:value:F">
-java.lang.Float.value
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-float
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Float:byteValue:B" href="#">
-
-</a>
-<div class="method_signature">
-public 
-byte
- 
-<span>
-byteValue
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.lang.Float:value:F">
-java.lang.Float.value
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-float
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-f2i
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-i2b
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Float:isInfinite:Z" href="#">
-
-</a>
-<div class="method_signature">
-public 
-bool
- 
-<span>
-isInfinite
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.lang.Float:value:F">
-java.lang.Float.value
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-float
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool isInfinite(float)">
-java.lang.Float.isInfinite
-</span>
-</span>
-<span>
-(
-float
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Float:toString:java.lang.String" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- 
-<span>
-toString
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.lang.Float:value:F">
-java.lang.Float.value
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-float
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.String toString(float)">
-java.lang.Float.toString
-</span>
-</span>
-<span>
-(
-float
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Float:compareTo:java.lang.FloatI" href="#">
-
-</a>
-<div class="method_signature">
-public 
-int
- 
-<span>
-compareTo
-</span>
-(
-<a href="Float.html">
-java.lang.Float
-</a>
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.lang.Float:value:F">
-java.lang.Float.value
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-float
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.lang.Float:value:F">
-java.lang.Float.value
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-float
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int compare(float, float)">
-java.lang.Float.compare
-</span>
-</span>
-<span>
-(
-float
-, 
-float
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Float:parseFloat:java.lang.StringF" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-float
- 
-<span>
-parseFloat
-</span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../sun/misc/FloatingDecimal.html">
-sun.misc.FloatingDecimal
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="sun.misc.FloatingDecimal readJavaFormatString(java.lang.String)">
-sun.misc.FloatingDecimal.readJavaFormatString
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-float
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="float floatValue()">
-sun.misc.FloatingDecimal.floatValue
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-freturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Float:isInfinite:FZ" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-bool
- 
-<span>
-isInfinite
-</span>
-(
-float
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-fload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-fconst inf
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-fcmpl
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ifeq 10
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-fload  0
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-fconst -inf
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-fcmpl
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-ifne 7
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Float:floatValue:F" href="#">
-
-</a>
-<div class="method_signature">
-public 
-float
- 
-<span>
-floatValue
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.lang.Float:value:F">
-java.lang.Float.value
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-float
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-freturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Float:hashCode:I" href="#">
-
-</a>
-<div class="method_signature">
-public 
-int
- 
-<span>
-hashCode
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.lang.Float:value:F">
-java.lang.Float.value
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-float
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int floatToIntBits(float)">
-java.lang.Float.floatToIntBits
-</span>
-</span>
-<span>
-(
-float
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.lang.Float:floatToIntBits:FI" title="int floatToIntBits(float)">
-java.lang.Float.floatToIntBits
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-ireturn
 </span>
 </div>
 </li>

@@ -1,0 +1,64 @@
+
+Class Sample
+
+    Instantiated
+
+public A b;
+public A a;
+Sample ( ) ;
+
+    Concrete Method
+    Parsed
+
+0.  aload 0
+1.  invokespecial void java.lang.Object.<init> ( )
+4.  aload 0
+5.  invokespecial void Sample.install ( )
+8.  return
+
+public static int foo ( bool 0 , bool 1 ) ;
+
+    Concrete Method
+    Parsed
+
+0.  iload 0
+1.  iload 1
+2.  ifcmpeq 7
+5.  iconst 1
+6.  goto 4
+9.  iconst 2
+10. ireturn
+
+public static void main ( java.lang.String [] 0 ) ;
+
+    Concrete Method
+    Parsed
+
+0.  new Sample
+1.  dup
+4.  invokespecial void Sample.<init> ( )
+7.  astore 1
+8.  iconst 1
+9.  iconst 0
+10. invokestatic int Sample.foo ( bool , bool )
+13. pop
+14. return
+
+private void install ( ) ;
+
+    Concrete Method
+    Parsed
+
+0.  aload 0
+1.  new A
+4.  dup
+5.  invokespecial void A.<init> ( )
+8.  putfield Sample.a : A
+11. aload 0
+12. new B
+15. dup
+16. invokespecial void B.<init> ( )
+19. putfield Sample.b : A
+22. return
+
+

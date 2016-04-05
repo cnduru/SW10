@@ -47,26 +47,17 @@ java.lang.String
 </span>
 </div>
 <div class="method">
-<a name="java.util.Formatter$FixedString:print:java.lang.Objectjava.util.Localevoid" href="#">
+<a name="java.util.Formatter$FixedString:index:I" href="#">
 
 </a>
 <div class="method_signature">
 public 
-void
+int
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-print
+index
 </span>
 (
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
- 1
-, 
-<a href="../../java/util/Locale.html">
-java.util.Locale
-</a>
- 2
 )
 ;
 <ul class="annot">
@@ -91,176 +82,14 @@ java.util.Formatter.format(java.util.Locale, java.lang.String, java.lang.Object[
 <li value="0">
 <div class="instruction">
 <span>
-aload  0
+bipush -2
 </span>
 </div>
 </li>
-<li value="1">
+<li value="2">
 <div class="instruction">
 <span>
-getfield 
-</span>
-<span>
-<a href="#java.util.Formatter$FixedString:this$0:java.util.Formatter">
-java.util.Formatter$FixedString.this$0
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/util/Formatter.html">
-java.util.Formatter
-</a>
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../java/lang/Appendable.html">
-java.lang.Appendable
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Appendable access$000(java.util.Formatter)">
-java.util.Formatter.access$000
-</span>
-</span>
-<span>
-(
-<a href="../../java/util/Formatter.html">
-java.util.Formatter
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/util/Formatter.html#java.util.Formatter:access$000:java.util.Formatterjava.lang.Appendable" title="java.lang.Appendable access$000(java.util.Formatter)">
-java.util.Formatter.access$000
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.util.Formatter$FixedString:s:java.lang.String">
-java.util.Formatter$FixedString.s
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-invokeinterface 
-</span>
-<span>
-<a href="../../java/lang/Appendable.html">
-java.lang.Appendable
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Appendable append(java.lang.CharSequence)">
-java.lang.Appendable.append
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/CharSequence.html">
-java.lang.CharSequence
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuffer.html#java.lang.StringBuffer:append:java.lang.CharSequencejava.lang.Appendable" title="java.lang.Appendable append(java.lang.CharSequence)">
-java.lang.StringBuffer.append
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.CharSequencejava.lang.Appendable" title="java.lang.Appendable append(java.lang.CharSequence)">
-java.lang.StringBuilder.append
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:append:java.lang.CharSequencejava.lang.Appendable" title="java.lang.Appendable append(java.lang.CharSequence)">
-java.nio.CharBuffer.append
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/io/Writer.html#java.io.Writer:append:java.lang.CharSequencejava.lang.Appendable" title="java.lang.Appendable append(java.lang.CharSequence)">
-java.io.Writer.append
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/io/StringWriter.html#java.io.StringWriter:append:java.lang.CharSequencejava.lang.Appendable" title="java.lang.Appendable append(java.lang.CharSequence)">
-java.io.StringWriter.append
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/io/PrintStream.html#java.io.PrintStream:append:java.lang.CharSequencejava.lang.Appendable" title="java.lang.Appendable append(java.lang.CharSequence)">
-java.io.PrintStream.append
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/io/PrintWriter.html#java.io.PrintWriter:append:java.lang.CharSequencejava.lang.Appendable" title="java.lang.Appendable append(java.lang.CharSequence)">
-java.io.PrintWriter.append
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-pop
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-return
+ireturn
 </span>
 </div>
 </li>
@@ -423,6 +252,228 @@ return
 </ol>
 </div>
 <div class="method">
+<a name="java.util.Formatter$FixedString:print:java.lang.Objectjava.util.Localevoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+print
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+, 
+<a href="../../java/util/Locale.html">
+java.util.Locale
+</a>
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/Formatter.html#java.util.Formatter:format:java.util.Localejava.lang.Stringjava.lang.Object.-java.util.Formatter" title="java.util.Formatter format(java.util.Locale, java.lang.String, java.lang.Object[])">
+java.util.Formatter.format(java.util.Locale, java.lang.String, java.lang.Object[])
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.util.Formatter$FixedString:this$0:java.util.Formatter">
+java.util.Formatter$FixedString.this$0
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/util/Formatter.html">
+java.util.Formatter
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/lang/Appendable.html">
+java.lang.Appendable
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Appendable access$000(java.util.Formatter)">
+java.util.Formatter.access$000
+</span>
+</span>
+<span>
+(
+<a href="../../java/util/Formatter.html">
+java.util.Formatter
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/Formatter.html#java.util.Formatter:access$000:java.util.Formatterjava.lang.Appendable" title="java.lang.Appendable access$000(java.util.Formatter)">
+java.util.Formatter.access$000
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.util.Formatter$FixedString:s:java.lang.String">
+java.util.Formatter$FixedString.s
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+invokeinterface 
+</span>
+<span>
+<a href="../../java/lang/Appendable.html">
+java.lang.Appendable
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Appendable append(java.lang.CharSequence)">
+java.lang.Appendable.append
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/CharSequence.html">
+java.lang.CharSequence
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/io/PrintWriter.html#java.io.PrintWriter:append:java.lang.CharSequencejava.lang.Appendable" title="java.lang.Appendable append(java.lang.CharSequence)">
+java.io.PrintWriter.append
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/PrintStream.html#java.io.PrintStream:append:java.lang.CharSequencejava.lang.Appendable" title="java.lang.Appendable append(java.lang.CharSequence)">
+java.io.PrintStream.append
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/Writer.html#java.io.Writer:append:java.lang.CharSequencejava.lang.Appendable" title="java.lang.Appendable append(java.lang.CharSequence)">
+java.io.Writer.append
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/StringWriter.html#java.io.StringWriter:append:java.lang.CharSequencejava.lang.Appendable" title="java.lang.Appendable append(java.lang.CharSequence)">
+java.io.StringWriter.append
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/StringBuffer.html#java.lang.StringBuffer:append:java.lang.CharSequencejava.lang.Appendable" title="java.lang.Appendable append(java.lang.CharSequence)">
+java.lang.StringBuffer.append
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.CharSequencejava.lang.Appendable" title="java.lang.Appendable append(java.lang.CharSequence)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:append:java.lang.CharSequencejava.lang.Appendable" title="java.lang.Appendable append(java.lang.CharSequence)">
+java.nio.CharBuffer.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+pop
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
 <a name="java.util.Formatter$FixedString:toString:java.lang.String" href="#">
 
 </a>
@@ -449,13 +500,6 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/util/Collections$SynchronizedCollection.html#java.util.Collections$SynchronizedCollection:toString:java.lang.String" title="java.lang.String toString()">
-java.util.Collections$SynchronizedCollection.toString()
-</a>
-</div>
-</li>
-<li>
-<div>
 <a href="../../java/lang/String.html#java.lang.String:valueOf:java.lang.Objectjava.lang.String" title="java.lang.String valueOf(java.lang.Object)">
 java.lang.String.valueOf(java.lang.Object)
 </a>
@@ -463,8 +507,8 @@ java.lang.String.valueOf(java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../java/util/Collections$UnmodifiableCollection.html#java.util.Collections$UnmodifiableCollection:toString:java.lang.String" title="java.lang.String toString()">
-java.util.Collections$UnmodifiableCollection.toString()
+<a href="../../java/util/Formatter.html#java.util.Formatter:format:java.util.Localejava.lang.Stringjava.lang.Object.-java.util.Formatter" title="java.util.Formatter format(java.util.Locale, java.lang.String, java.lang.Object[])">
+java.util.Formatter.format(java.util.Locale, java.lang.String, java.lang.Object[])
 </a>
 </div>
 </li>
@@ -477,8 +521,8 @@ java.util.Hashtable$Entry.toString()
 </li>
 <li>
 <div>
-<a href="../../sun/text/normalizer/UnicodeSet.html#sun.text.normalizer.UnicodeSet:syntaxError:sun.text.normalizer.RuleCharacterIteratorjava.lang.Stringvoid" title="void syntaxError(sun.text.normalizer.RuleCharacterIterator, java.lang.String)">
-sun.text.normalizer.UnicodeSet.syntaxError(sun.text.normalizer.RuleCharacterIterator, java.lang.String)
+<a href="../../java/util/Formatter.html#java.util.Formatter:toString:java.lang.String" title="java.lang.String toString()">
+java.util.Formatter.toString()
 </a>
 </div>
 </li>
@@ -491,6 +535,13 @@ java.util.Hashtable.toString()
 </li>
 <li>
 <div>
+<a href="../../java/util/Collections$SynchronizedCollection.html#java.util.Collections$SynchronizedCollection:toString:java.lang.String" title="java.lang.String toString()">
+java.util.Collections$SynchronizedCollection.toString()
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../java/util/Objects.html#java.util.Objects:toString:java.lang.Objectjava.lang.Stringjava.lang.String" title="java.lang.String toString(java.lang.Object, java.lang.String)">
 java.util.Objects.toString(java.lang.Object, java.lang.String)
 </a>
@@ -498,8 +549,8 @@ java.util.Objects.toString(java.lang.Object, java.lang.String)
 </li>
 <li>
 <div>
-<a href="../../java/util/Formatter.html#java.util.Formatter:toString:java.lang.String" title="java.lang.String toString()">
-java.util.Formatter.toString()
+<a href="../../java/util/Collections$UnmodifiableCollection.html#java.util.Collections$UnmodifiableCollection:toString:java.lang.String" title="java.lang.String toString()">
+java.util.Collections$UnmodifiableCollection.toString()
 </a>
 </div>
 </li>
@@ -519,8 +570,8 @@ java.util.Formatter$FormatSpecifier.printString(java.lang.Object, java.util.Loca
 </li>
 <li>
 <div>
-<a href="../../java/util/Formatter.html#java.util.Formatter:format:java.util.Localejava.lang.Stringjava.lang.Object.-java.util.Formatter" title="java.util.Formatter format(java.util.Locale, java.lang.String, java.lang.Object[])">
-java.util.Formatter.format(java.util.Locale, java.lang.String, java.lang.Object[])
+<a href="../../sun/text/normalizer/UnicodeSet.html#sun.text.normalizer.UnicodeSet:syntaxError:sun.text.normalizer.RuleCharacterIteratorjava.lang.Stringvoid" title="void syntaxError(sun.text.normalizer.RuleCharacterIterator, java.lang.String)">
+sun.text.normalizer.UnicodeSet.syntaxError(sun.text.normalizer.RuleCharacterIterator, java.lang.String)
 </a>
 </div>
 </li>
@@ -558,57 +609,6 @@ java.lang.String
 <div class="instruction">
 <span>
 areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.Formatter$FixedString:index:I" href="#">
-
-</a>
-<div class="method_signature">
-public 
-int
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-index
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/util/Formatter.html#java.util.Formatter:format:java.util.Localejava.lang.Stringjava.lang.Object.-java.util.Formatter" title="java.util.Formatter format(java.util.Locale, java.lang.String, java.lang.Object[])">
-java.util.Formatter.format(java.util.Locale, java.lang.String, java.lang.Object[])
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-bipush -2
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-ireturn
 </span>
 </div>
 </li>

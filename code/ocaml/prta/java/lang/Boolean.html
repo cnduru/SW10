@@ -320,17 +320,15 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.Boolean:valueOf:java.lang.Stringjava.lang.Boolean" href="#">
+<a name="java.lang.Boolean:parseBoolean:java.lang.StringZ" href="#">
 
 </a>
 <div class="method_signature">
 public static 
-<a href="Boolean.html">
-java.lang.Boolean
-</a>
+bool
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-valueOf
+parseBoolean
 </span>
 (
 <a href="../../java/lang/String.html">
@@ -399,61 +397,7 @@ java.lang.Boolean.toBoolean
 <li value="4">
 <div class="instruction">
 <span>
-ifeq 9
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.lang.Boolean:TRUE:java.lang.Boolean">
-java.lang.Boolean.TRUE
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="Boolean.html">
-java.lang.Boolean
-</a>
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-goto 6
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.lang.Boolean:FALSE:java.lang.Boolean">
-java.lang.Boolean.FALSE
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="Boolean.html">
-java.lang.Boolean
-</a>
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-areturn
+ireturn
 </span>
 </div>
 </li>
@@ -462,21 +406,21 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.Boolean:toBoolean:java.lang.StringZ" href="#">
+<a name="java.lang.Boolean:compareTo:java.lang.BooleanI" href="#">
 
 </a>
 <div class="method_signature">
-private static 
-bool
+public 
+int
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-toBoolean
+compareTo
 </span>
 (
-<a href="../../java/lang/String.html">
-java.lang.String
+<a href="Boolean.html">
+java.lang.Boolean
 </a>
- 0
+ 1
 )
 ;
 <ul class="annot">
@@ -490,15 +434,8 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="#java.lang.Boolean:parseBoolean:java.lang.StringZ" title="bool parseBoolean(java.lang.String)">
-java.lang.Boolean.parseBoolean(java.lang.String)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.lang.Boolean:valueOf:java.lang.Stringjava.lang.Boolean" title="java.lang.Boolean valueOf(java.lang.String)">
-java.lang.Boolean.valueOf(java.lang.String)
+<a href="#java.lang.Boolean:compareTo:java.lang.ObjectI" title="int compareTo(java.lang.Object)">
+java.lang.Boolean.compareTo(java.lang.Object)
 </a>
 </div>
 </li>
@@ -515,84 +452,78 @@ aload  0
 <li value="1">
 <div class="instruction">
 <span>
-ifnull 16
+getfield 
+</span>
+<span>
+<a href="#java.lang.Boolean:value:Z">
+java.lang.Boolean.value
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+bool
 </span>
 </div>
 </li>
 <li value="4">
 <div class="instruction">
 <span>
-aload  0
+aload  1
 </span>
 </div>
 </li>
 <li value="5">
 <div class="instruction">
 <span>
-ldc string &apos;true&apos;
+getfield 
 </span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
 <span>
-invokevirtual 
+<a href="#java.lang.Boolean:value:Z">
+java.lang.Boolean.value
+</a>
+</span>
+<span>
+ : 
 </span>
 <span>
 bool
 </span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+int
+</span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool equalsIgnoreCase(java.lang.String)">
-java.lang.String.equalsIgnoreCase
+<span title="int compare(bool, bool)">
+java.lang.Boolean.compare
 </span>
 </span>
 <span>
 (
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
+bool
+, 
+bool
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/lang/String.html#java.lang.String:equalsIgnoreCase:java.lang.StringZ" title="bool equalsIgnoreCase(java.lang.String)">
-java.lang.String.equalsIgnoreCase
+<a href="#java.lang.Boolean:compare:ZZI" title="int compare(bool, bool)">
+java.lang.Boolean.compare
 </a>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="10">
-<div class="instruction">
-<span>
-ifeq 7
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="18">
+<li value="11">
 <div class="instruction">
 <span>
 ireturn
@@ -739,22 +670,8 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../sun/misc/VM.html#sun.misc.VM:saveAndRemoveProperties:java.util.Propertiesvoid" title="void saveAndRemoveProperties(java.util.Properties)">
-sun.misc.VM.saveAndRemoveProperties(java.util.Properties)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/io/FileInputStream.html#java.io.FileInputStream:isRunningFinalize:Z" title="bool isRunningFinalize()">
-java.io.FileInputStream.isRunningFinalize()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/io/FileOutputStream.html#java.io.FileOutputStream:isRunningFinalize:Z" title="bool isRunningFinalize()">
-java.io.FileOutputStream.isRunningFinalize()
+<a href="#java.lang.Boolean:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.lang.Boolean.equals(java.lang.Object)
 </a>
 </div>
 </li>
@@ -762,20 +679,6 @@ java.io.FileOutputStream.isRunningFinalize()
 <div>
 <a href="../../java/net/SocketPermission.html#java.net.SocketPermission:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
 java.net.SocketPermission.&lt;clinit&gt;()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/Thread.html#java.lang.Thread:isCCLOverridden:java.lang.ClassZ" title="bool isCCLOverridden(java.lang.Class)">
-java.lang.Thread.isCCLOverridden(java.lang.Class)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/net/InetAddress.html#java.net.InetAddress:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
-java.net.InetAddress.&lt;clinit&gt;()
 </a>
 </div>
 </li>
@@ -795,8 +698,36 @@ sun.util.logging.PlatformLogger.&lt;clinit&gt;()
 </li>
 <li>
 <div>
-<a href="#java.lang.Boolean:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.lang.Boolean.equals(java.lang.Object)
+<a href="../../java/lang/Thread.html#java.lang.Thread:isCCLOverridden:java.lang.ClassZ" title="bool isCCLOverridden(java.lang.Class)">
+java.lang.Thread.isCCLOverridden(java.lang.Class)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/net/InetAddress.html#java.net.InetAddress:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.net.InetAddress.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/misc/VM.html#sun.misc.VM:saveAndRemoveProperties:java.util.Propertiesvoid" title="void saveAndRemoveProperties(java.util.Properties)">
+sun.misc.VM.saveAndRemoveProperties(java.util.Properties)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/FileInputStream.html#java.io.FileInputStream:isRunningFinalize:Z" title="bool isRunningFinalize()">
+java.io.FileInputStream.isRunningFinalize()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/FileOutputStream.html#java.io.FileOutputStream:isRunningFinalize:Z" title="bool isRunningFinalize()">
+java.io.FileOutputStream.isRunningFinalize()
 </a>
 </div>
 </li>
@@ -847,20 +778,20 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.Boolean:getBoolean:java.lang.StringZ" href="#">
+<a name="java.lang.Boolean:toString:Zjava.lang.String" href="#">
 
 </a>
 <div class="method_signature">
 public static 
-bool
- 
-<span>
-getBoolean
-</span>
-(
 <a href="../../java/lang/String.html">
 java.lang.String
 </a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+toString
+</span>
+(
+bool
  0
 )
 ;
@@ -869,7 +800,16 @@ java.lang.String
 Concrete Method 
 </li>
 <li>
-Not parsed
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/Formatter$FormatSpecifier.html#java.util.Formatter$FormatSpecifier:printBoolean:java.lang.Objectvoid" title="void printBoolean(java.lang.Object)">
+java.util.Formatter$FormatSpecifier.printBoolean(java.lang.Object)
+</a>
+</div>
 </li>
 </ul>
 </div>
@@ -877,155 +817,48 @@ Not parsed
 <li value="0">
 <div class="instruction">
 <span>
-iconst 0
+iload  0
 </span>
 </div>
 </li>
 <li value="1">
 <div class="instruction">
 <span>
-istore  1
+ifeq 8
 </span>
 </div>
 </li>
-<li value="2">
+<li value="4">
 <div class="instruction">
 <span>
-aload  0
+ldc string &apos;true&apos;
 </span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.String getProperty(java.lang.String)">
-java.lang.System.getProperty
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/System.html#java.lang.System:getProperty:java.lang.Stringjava.lang.String" title="java.lang.String getProperty(java.lang.String)">
-java.lang.System.getProperty
-</a>
-</div>
-</li>
-</ul>
 </div>
 </li>
 <li value="6">
 <div class="instruction">
 <span>
-invokestatic 
+goto 5
 </span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool toBoolean(java.lang.String)">
-java.lang.Boolean.toBoolean
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.lang.Boolean:toBoolean:java.lang.StringZ" title="bool toBoolean(java.lang.String)">
-java.lang.Boolean.toBoolean
-</a>
-</div>
-</li>
-</ul>
 </div>
 </li>
 <li value="9">
 <div class="instruction">
 <span>
-istore  1
+ldc string &apos;false&apos;
 </span>
 </div>
 </li>
-<li value="10">
+<li value="11">
 <div class="instruction">
 <span>
-goto 8
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-astore  2
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-astore  2
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-ireturn
+areturn
 </span>
 </div>
 </li>
 </ol>
-<span title="Exceptions">
-<h3>
-Exceptions handling:
-</h3>
 <ol>
-<li>
-<span>
-try start: 2; try end: 10: catch start: 13; catched type: java.lang.IllegalArgumentException.
-</span>
-</li>
-<li>
-<span>
-try start: 2; try end: 10: catch start: 17; catched type: java.lang.NullPointerException.
-</span>
-</li>
 </ol>
-</span>
 </div>
 <div class="method">
 <a name="java.lang.Boolean:compareTo:java.lang.ObjectI" href="#">
@@ -1147,125 +980,6 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.Boolean:compare:ZZI" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-int
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-compare
-</span>
-(
-bool
- 0
-, 
-bool
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.lang.Boolean:compareTo:java.lang.BooleanI" title="int compareTo(java.lang.Boolean)">
-java.lang.Boolean.compareTo(java.lang.Boolean)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-ifcmpne 7
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-goto 12
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-ifeq 7
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-iconst -1
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
 <a name="java.lang.Boolean:equals:java.lang.ObjectZ" href="#">
 
 </a>
@@ -1308,6 +1022,13 @@ java.util.concurrent.ConcurrentHashMap$Segment.scanAndLock(java.lang.Object, int
 </li>
 <li>
 <div>
+<a href="../../java/util/Arrays.html#java.util.Arrays:deepEquals0:java.lang.Objectjava.lang.ObjectZ" title="bool deepEquals0(java.lang.Object, java.lang.Object)">
+java.util.Arrays.deepEquals0(java.lang.Object, java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../java/util/Hashtable$Entry.html#java.util.Hashtable$Entry:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
 java.util.Hashtable$Entry.equals(java.lang.Object)
 </a>
@@ -1336,22 +1057,22 @@ java.util.HashMap.putForCreate(java.lang.Object, java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../sun/util/PreHashedMap.html#sun.util.PreHashedMap:put:java.lang.Stringjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.String, java.lang.Object)">
-sun.util.PreHashedMap.put(java.lang.String, java.lang.Object)
+<a href="../../sun/util/PreHashedMap.html#sun.util.PreHashedMap:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
+sun.util.PreHashedMap.get(java.lang.Object)
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/util/Arrays.html#java.util.Arrays:equals:java.lang.Object.-java.lang.Object.-Z" title="bool equals(java.lang.Object[], java.lang.Object[])">
-java.util.Arrays.equals(java.lang.Object[], java.lang.Object[])
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.text.RuleBasedBreakIterator.equals(java.lang.Object)
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/util/Collections.html#java.util.Collections:eq:java.lang.Objectjava.lang.ObjectZ" title="bool eq(java.lang.Object, java.lang.Object)">
-java.util.Collections.eq(java.lang.Object, java.lang.Object)
+<a href="../../java/util/ArrayList.html#java.util.ArrayList:indexOf:java.lang.ObjectI" title="int indexOf(java.lang.Object)">
+java.util.ArrayList.indexOf(java.lang.Object)
 </a>
 </div>
 </li>
@@ -1378,15 +1099,15 @@ java.util.AbstractMap.remove(java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../java/util/AbstractMap.html#java.util.AbstractMap:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.AbstractMap.equals(java.lang.Object)
+<a href="../../java/util/LinkedList.html#java.util.LinkedList:indexOf:java.lang.ObjectI" title="int indexOf(java.lang.Object)">
+java.util.LinkedList.indexOf(java.lang.Object)
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/util/concurrent/ConcurrentHashMap$EntrySet.html#java.util.concurrent.ConcurrentHashMap$EntrySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.concurrent.ConcurrentHashMap$EntrySet.contains(java.lang.Object)
+<a href="../../java/util/AbstractMap.html#java.util.AbstractMap:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.AbstractMap.equals(java.lang.Object)
 </a>
 </div>
 </li>
@@ -1434,13 +1155,6 @@ java.util.WeakHashMap.containsValue(java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../sun/util/PreHashedMap$2$1$1.html#sun.util.PreHashedMap$2$1$1:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-sun.util.PreHashedMap$2$1$1.equals(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
 <a href="../../java/util/HashMap.html#java.util.HashMap:removeEntryForKey:java.lang.Objectjava.util.HashMap$Entry" title="java.util.HashMap$Entry removeEntryForKey(java.lang.Object)">
 java.util.HashMap.removeEntryForKey(java.lang.Object)
 </a>
@@ -1448,8 +1162,22 @@ java.util.HashMap.removeEntryForKey(java.lang.Object)
 </li>
 <li>
 <div>
+<a href="../../java/util/TreeMap.html#java.util.TreeMap:valEquals:java.lang.Objectjava.lang.ObjectZ" title="bool valEquals(java.lang.Object, java.lang.Object)">
+java.util.TreeMap.valEquals(java.lang.Object, java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../java/util/LinkedHashMap.html#java.util.LinkedHashMap:containsValue:java.lang.ObjectZ" title="bool containsValue(java.lang.Object)">
 java.util.LinkedHashMap.containsValue(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Arrays$ArrayList.html#java.util.Arrays$ArrayList:indexOf:java.lang.ObjectI" title="int indexOf(java.lang.Object)">
+java.util.Arrays$ArrayList.indexOf(java.lang.Object)
 </a>
 </div>
 </li>
@@ -1504,13 +1232,6 @@ java.util.concurrent.ConcurrentHashMap$Segment.remove(java.lang.Object, int, jav
 </li>
 <li>
 <div>
-<a href="../../java/util/TreeMap.html#java.util.TreeMap:valEquals:java.lang.Objectjava.lang.ObjectZ" title="bool valEquals(java.lang.Object, java.lang.Object)">
-java.util.TreeMap.valEquals(java.lang.Object, java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
 <a href="../../java/util/AbstractMap.html#java.util.AbstractMap:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
 java.util.AbstractMap.containsKey(java.lang.Object)
 </a>
@@ -1518,15 +1239,29 @@ java.util.AbstractMap.containsKey(java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../java/util/Arrays$ArrayList.html#java.util.Arrays$ArrayList:indexOf:java.lang.ObjectI" title="int indexOf(java.lang.Object)">
-java.util.Arrays$ArrayList.indexOf(java.lang.Object)
+<a href="../../java/util/Hashtable.html#java.util.Hashtable:remove:java.lang.Objectjava.lang.Object" title="java.lang.Object remove(java.lang.Object)">
+java.util.Hashtable.remove(java.lang.Object)
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/util/Hashtable.html#java.util.Hashtable:remove:java.lang.Objectjava.lang.Object" title="java.lang.Object remove(java.lang.Object)">
-java.util.Hashtable.remove(java.lang.Object)
+<a href="../../sun/util/PreHashedMap.html#sun.util.PreHashedMap:put:java.lang.Stringjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.String, java.lang.Object)">
+sun.util.PreHashedMap.put(java.lang.String, java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Arrays.html#java.util.Arrays:equals:java.lang.Object.-java.lang.Object.-Z" title="bool equals(java.lang.Object[], java.lang.Object[])">
+java.util.Arrays.equals(java.lang.Object[], java.lang.Object[])
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Collections.html#java.util.Collections:eq:java.lang.Objectjava.lang.ObjectZ" title="bool eq(java.lang.Object, java.lang.Object)">
+java.util.Collections.eq(java.lang.Object, java.lang.Object)
 </a>
 </div>
 </li>
@@ -1546,8 +1281,8 @@ java.util.HashMap.containsValue(java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../sun/util/PreHashedMap.html#sun.util.PreHashedMap:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
-sun.util.PreHashedMap.get(java.lang.Object)
+<a href="../../java/util/concurrent/ConcurrentHashMap$EntrySet.html#java.util.concurrent.ConcurrentHashMap$EntrySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap$EntrySet.contains(java.lang.Object)
 </a>
 </div>
 </li>
@@ -1567,22 +1302,8 @@ java.util.AbstractList.equals(java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.text.RuleBasedBreakIterator.equals(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/ArrayList.html#java.util.ArrayList:indexOf:java.lang.ObjectI" title="int indexOf(java.lang.Object)">
-java.util.ArrayList.indexOf(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/LinkedList.html#java.util.LinkedList:indexOf:java.lang.ObjectI" title="int indexOf(java.lang.Object)">
-java.util.LinkedList.indexOf(java.lang.Object)
+<a href="../../sun/util/PreHashedMap$2$1$1.html#sun.util.PreHashedMap$2$1$1:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+sun.util.PreHashedMap$2$1$1.equals(java.lang.Object)
 </a>
 </div>
 </li>
@@ -1590,13 +1311,6 @@ java.util.LinkedList.indexOf(java.lang.Object)
 <div>
 <a href="../../java/util/Calendar.html#java.util.Calendar:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
 java.util.Calendar.equals(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Arrays.html#java.util.Arrays:deepEquals0:java.lang.Objectjava.lang.ObjectZ" title="bool deepEquals0(java.lang.Object, java.lang.Object)">
-java.util.Arrays.deepEquals0(java.lang.Object, java.lang.Object)
 </a>
 </div>
 </li>
@@ -1901,20 +1615,22 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.Boolean:toString:Zjava.lang.String" href="#">
+<a name="java.lang.Boolean:valueOf:java.lang.Stringjava.lang.Boolean" href="#">
 
 </a>
 <div class="method_signature">
 public static 
-<a href="../../java/lang/String.html">
-java.lang.String
+<a href="Boolean.html">
+java.lang.Boolean
 </a>
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-toString
+valueOf
 </span>
 (
-bool
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
  0
 )
 ;
@@ -1929,8 +1645,8 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/util/Formatter$FormatSpecifier.html#java.util.Formatter$FormatSpecifier:printBoolean:java.lang.Objectvoid" title="void printBoolean(java.lang.Object)">
-java.util.Formatter$FormatSpecifier.printBoolean(java.lang.Object)
+<a href="../../sun/misc/VM.html#sun.misc.VM:saveAndRemoveProperties:java.util.Propertiesvoid" title="void saveAndRemoveProperties(java.util.Properties)">
+sun.misc.VM.saveAndRemoveProperties(java.util.Properties)
 </a>
 </div>
 </li>
@@ -1940,42 +1656,241 @@ java.util.Formatter$FormatSpecifier.printBoolean(java.lang.Object)
 <li value="0">
 <div class="instruction">
 <span>
-iload  0
+aload  0
 </span>
 </div>
 </li>
 <li value="1">
 <div class="instruction">
 <span>
-ifeq 8
+invokestatic 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool toBoolean(java.lang.String)">
+java.lang.Boolean.toBoolean
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.lang.Boolean:toBoolean:java.lang.StringZ" title="bool toBoolean(java.lang.String)">
+java.lang.Boolean.toBoolean
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ifeq 9
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.lang.Boolean:TRUE:java.lang.Boolean">
+java.lang.Boolean.TRUE
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Boolean.html">
+java.lang.Boolean
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+goto 6
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.lang.Boolean:FALSE:java.lang.Boolean">
+java.lang.Boolean.FALSE
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Boolean.html">
+java.lang.Boolean
+</a>
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Boolean:toBoolean:java.lang.StringZ" href="#">
+
+</a>
+<div class="method_signature">
+private static 
+bool
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+toBoolean
+</span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.lang.Boolean:valueOf:java.lang.Stringjava.lang.Boolean" title="java.lang.Boolean valueOf(java.lang.String)">
+java.lang.Boolean.valueOf(java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.lang.Boolean:parseBoolean:java.lang.StringZ" title="bool parseBoolean(java.lang.String)">
+java.lang.Boolean.parseBoolean(java.lang.String)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+ifnull 16
 </span>
 </div>
 </li>
 <li value="4">
 <div class="instruction">
 <span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
 ldc string &apos;true&apos;
 </span>
 </div>
 </li>
-<li value="6">
+<li value="7">
 <div class="instruction">
 <span>
-goto 5
+invokevirtual 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool equalsIgnoreCase(java.lang.String)">
+java.lang.String.equalsIgnoreCase
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/String.html#java.lang.String:equalsIgnoreCase:java.lang.StringZ" title="bool equalsIgnoreCase(java.lang.String)">
+java.lang.String.equalsIgnoreCase
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+ifeq 7
 </span>
 </div>
 </li>
-<li value="9">
+<li value="13">
 <div class="instruction">
 <span>
-ldc string &apos;false&apos;
+iconst 1
 </span>
 </div>
 </li>
-<li value="11">
+<li value="14">
 <div class="instruction">
 <span>
-areturn
+goto 4
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+ireturn
 </span>
 </div>
 </li>
@@ -2119,22 +2034,8 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/util/Collections$SynchronizedCollection.html#java.util.Collections$SynchronizedCollection:toString:java.lang.String" title="java.lang.String toString()">
-java.util.Collections$SynchronizedCollection.toString()
-</a>
-</div>
-</li>
-<li>
-<div>
 <a href="../../java/lang/String.html#java.lang.String:valueOf:java.lang.Objectjava.lang.String" title="java.lang.String valueOf(java.lang.Object)">
 java.lang.String.valueOf(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Collections$UnmodifiableCollection.html#java.util.Collections$UnmodifiableCollection:toString:java.lang.String" title="java.lang.String toString()">
-java.util.Collections$UnmodifiableCollection.toString()
 </a>
 </div>
 </li>
@@ -2147,15 +2048,15 @@ java.util.Hashtable$Entry.toString()
 </li>
 <li>
 <div>
-<a href="../../java/util/Formatter$FormatSpecifier.html#java.util.Formatter$FormatSpecifier:printBoolean:java.lang.Objectvoid" title="void printBoolean(java.lang.Object)">
-java.util.Formatter$FormatSpecifier.printBoolean(java.lang.Object)
+<a href="../../java/util/Formatter.html#java.util.Formatter:toString:java.lang.String" title="java.lang.String toString()">
+java.util.Formatter.toString()
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../sun/text/normalizer/UnicodeSet.html#sun.text.normalizer.UnicodeSet:syntaxError:sun.text.normalizer.RuleCharacterIteratorjava.lang.Stringvoid" title="void syntaxError(sun.text.normalizer.RuleCharacterIterator, java.lang.String)">
-sun.text.normalizer.UnicodeSet.syntaxError(sun.text.normalizer.RuleCharacterIterator, java.lang.String)
+<a href="../../java/util/Formatter$FormatSpecifier.html#java.util.Formatter$FormatSpecifier:printBoolean:java.lang.Objectvoid" title="void printBoolean(java.lang.Object)">
+java.util.Formatter$FormatSpecifier.printBoolean(java.lang.Object)
 </a>
 </div>
 </li>
@@ -2168,6 +2069,13 @@ java.util.Hashtable.toString()
 </li>
 <li>
 <div>
+<a href="../../java/util/Collections$SynchronizedCollection.html#java.util.Collections$SynchronizedCollection:toString:java.lang.String" title="java.lang.String toString()">
+java.util.Collections$SynchronizedCollection.toString()
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../java/util/Objects.html#java.util.Objects:toString:java.lang.Objectjava.lang.Stringjava.lang.String" title="java.lang.String toString(java.lang.Object, java.lang.String)">
 java.util.Objects.toString(java.lang.Object, java.lang.String)
 </a>
@@ -2175,8 +2083,8 @@ java.util.Objects.toString(java.lang.Object, java.lang.String)
 </li>
 <li>
 <div>
-<a href="../../java/util/Formatter.html#java.util.Formatter:toString:java.lang.String" title="java.lang.String toString()">
-java.util.Formatter.toString()
+<a href="../../java/util/Collections$UnmodifiableCollection.html#java.util.Collections$UnmodifiableCollection:toString:java.lang.String" title="java.lang.String toString()">
+java.util.Collections$UnmodifiableCollection.toString()
 </a>
 </div>
 </li>
@@ -2191,6 +2099,13 @@ java.util.Collections$SetFromMap.toString()
 <div>
 <a href="../../java/util/Formatter$FormatSpecifier.html#java.util.Formatter$FormatSpecifier:printString:java.lang.Objectjava.util.Localevoid" title="void printString(java.lang.Object, java.util.Locale)">
 java.util.Formatter$FormatSpecifier.printString(java.lang.Object, java.util.Locale)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/text/normalizer/UnicodeSet.html#sun.text.normalizer.UnicodeSet:syntaxError:sun.text.normalizer.RuleCharacterIteratorjava.lang.Stringvoid" title="void syntaxError(sun.text.normalizer.RuleCharacterIterator, java.lang.String)">
+sun.text.normalizer.UnicodeSet.syntaxError(sun.text.normalizer.RuleCharacterIterator, java.lang.String)
 </a>
 </div>
 </li>
@@ -2262,15 +2177,15 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.Boolean:parseBoolean:java.lang.StringZ" href="#">
+<a name="java.lang.Boolean:getBoolean:java.lang.StringZ" href="#">
 
 </a>
 <div class="method_signature">
 public static 
 bool
  
-<span class="methodname clickable" onclick="showInfoList(this)">
-parseBoolean
+<span>
+getBoolean
 </span>
 (
 <a href="../../java/lang/String.html">
@@ -2284,16 +2199,7 @@ java.lang.String
 Concrete Method 
 </li>
 <li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../sun/misc/VM.html#sun.misc.VM:saveAndRemoveProperties:java.util.Propertiesvoid" title="void saveAndRemoveProperties(java.util.Properties)">
-sun.misc.VM.saveAndRemoveProperties(java.util.Properties)
-</a>
-</div>
+Not parsed
 </li>
 </ul>
 </div>
@@ -2301,11 +2207,58 @@ sun.misc.VM.saveAndRemoveProperties(java.util.Properties)
 <li value="0">
 <div class="instruction">
 <span>
-aload  0
+iconst 0
 </span>
 </div>
 </li>
 <li value="1">
+<div class="instruction">
+<span>
+istore  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String getProperty(java.lang.String)">
+java.lang.System.getProperty
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/System.html#java.lang.System:getProperty:java.lang.Stringjava.lang.String" title="java.lang.String getProperty(java.lang.String)">
+java.lang.System.getProperty
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="6">
 <div class="instruction">
 <span>
 invokestatic 
@@ -2336,7 +2289,49 @@ java.lang.Boolean.toBoolean
 </ul>
 </div>
 </li>
-<li value="4">
+<li value="9">
+<div class="instruction">
+<span>
+istore  1
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+goto 8
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+astore  2
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+astore  2
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="19">
 <div class="instruction">
 <span>
 ireturn
@@ -2344,24 +2339,40 @@ ireturn
 </div>
 </li>
 </ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
 <ol>
+<li>
+<span>
+try start: 2; try end: 10: catch start: 13; catched type: java.lang.IllegalArgumentException.
+</span>
+</li>
+<li>
+<span>
+try start: 2; try end: 10: catch start: 17; catched type: java.lang.NullPointerException.
+</span>
+</li>
 </ol>
+</span>
 </div>
 <div class="method">
-<a name="java.lang.Boolean:compareTo:java.lang.BooleanI" href="#">
+<a name="java.lang.Boolean:compare:ZZI" href="#">
 
 </a>
 <div class="method_signature">
-public 
+public static 
 int
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-compareTo
+compare
 </span>
 (
-<a href="Boolean.html">
-java.lang.Boolean
-</a>
+bool
+ 0
+, 
+bool
  1
 )
 ;
@@ -2376,8 +2387,8 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="#java.lang.Boolean:compareTo:java.lang.ObjectI" title="int compareTo(java.lang.Object)">
-java.lang.Boolean.compareTo(java.lang.Object)
+<a href="#java.lang.Boolean:compareTo:java.lang.BooleanI" title="int compareTo(java.lang.Boolean)">
+java.lang.Boolean.compareTo(java.lang.Boolean)
 </a>
 </div>
 </li>
@@ -2387,85 +2398,74 @@ java.lang.Boolean.compareTo(java.lang.Object)
 <li value="0">
 <div class="instruction">
 <span>
-aload  0
+iload  0
 </span>
 </div>
 </li>
 <li value="1">
 <div class="instruction">
 <span>
-getfield 
-</span>
-<span>
-<a href="#java.lang.Boolean:value:Z">
-java.lang.Boolean.value
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-bool
+iload  1
 </span>
 </div>
 </li>
-<li value="4">
+<li value="2">
 <div class="instruction">
 <span>
-aload  1
+ifcmpne 7
 </span>
 </div>
 </li>
 <li value="5">
 <div class="instruction">
 <span>
-getfield 
-</span>
-<span>
-<a href="#java.lang.Boolean:value:Z">
-java.lang.Boolean.value
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-bool
+iconst 0
 </span>
 </div>
 </li>
-<li value="8">
+<li value="6">
 <div class="instruction">
 <span>
-invokestatic 
+goto 12
 </span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int compare(bool, bool)">
-java.lang.Boolean.compare
-</span>
-</span>
-<span>
-(
-bool
-, 
-bool
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.lang.Boolean:compare:ZZI" title="int compare(bool, bool)">
-java.lang.Boolean.compare
-</a>
 </div>
 </li>
-</ul>
+<li value="9">
+<div class="instruction">
+<span>
+iload  0
+</span>
 </div>
 </li>
-<li value="11">
+<li value="10">
+<div class="instruction">
+<span>
+ifeq 7
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+iconst -1
+</span>
+</div>
+</li>
+<li value="18">
 <div class="instruction">
 <span>
 ireturn
@@ -2508,6 +2508,13 @@ sun.util.calendar.CalendarDate.hashCode()
 </li>
 <li>
 <div>
+<a href="../../java/util/AbstractMap$SimpleEntry.html#java.util.AbstractMap$SimpleEntry:hashCode:I" title="int hashCode()">
+java.util.AbstractMap$SimpleEntry.hashCode()
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../java/util/Calendar.html#java.util.Calendar:hashCode:I" title="int hashCode()">
 java.util.Calendar.hashCode()
 </a>
@@ -2522,15 +2529,15 @@ java.security.AccessControlContext.hashCode()
 </li>
 <li>
 <div>
-<a href="../../java/util/AbstractList.html#java.util.AbstractList:hashCode:I" title="int hashCode()">
-java.util.AbstractList.hashCode()
+<a href="../../sun/util/PreHashedMap.html#sun.util.PreHashedMap:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
+sun.util.PreHashedMap.get(java.lang.Object)
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/util/TreeMap$Entry.html#java.util.TreeMap$Entry:hashCode:I" title="int hashCode()">
-java.util.TreeMap$Entry.hashCode()
+<a href="../../java/util/AbstractList.html#java.util.AbstractList:hashCode:I" title="int hashCode()">
+java.util.AbstractList.hashCode()
 </a>
 </div>
 </li>
@@ -2543,8 +2550,8 @@ java.util.WeakHashMap.hash(java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../java/util/AbstractMap$SimpleImmutableEntry.html#java.util.AbstractMap$SimpleImmutableEntry:hashCode:I" title="int hashCode()">
-java.util.AbstractMap$SimpleImmutableEntry.hashCode()
+<a href="../../sun/util/PreHashedMap$2$1$1.html#sun.util.PreHashedMap$2$1$1:hashCode:I" title="int hashCode()">
+sun.util.PreHashedMap$2$1$1.hashCode()
 </a>
 </div>
 </li>
@@ -2552,6 +2559,13 @@ java.util.AbstractMap$SimpleImmutableEntry.hashCode()
 <div>
 <a href="../../java/util/HashMap.html#java.util.HashMap:hash:java.lang.ObjectI" title="int hash(java.lang.Object)">
 java.util.HashMap.hash(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/AbstractSet.html#java.util.AbstractSet:hashCode:I" title="int hashCode()">
+java.util.AbstractSet.hashCode()
 </a>
 </div>
 </li>
@@ -2571,20 +2585,6 @@ java.util.Hashtable.hash(java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../sun/util/PreHashedMap$2$1$1.html#sun.util.PreHashedMap$2$1$1:hashCode:I" title="int hashCode()">
-sun.util.PreHashedMap$2$1$1.hashCode()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/AbstractSet.html#java.util.AbstractSet:hashCode:I" title="int hashCode()">
-java.util.AbstractSet.hashCode()
-</a>
-</div>
-</li>
-<li>
-<div>
 <a href="../../java/lang/Object.html#java.lang.Object:toString:java.lang.String" title="java.lang.String toString()">
 java.lang.Object.toString()
 </a>
@@ -2599,6 +2599,13 @@ java.util.concurrent.ConcurrentHashMap.hash(java.lang.Object)
 </li>
 <li>
 <div>
+<a href="../../java/util/TreeMap$Entry.html#java.util.TreeMap$Entry:hashCode:I" title="int hashCode()">
+java.util.TreeMap$Entry.hashCode()
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../java/util/WeakHashMap$Entry.html#java.util.WeakHashMap$Entry:hashCode:I" title="int hashCode()">
 java.util.WeakHashMap$Entry.hashCode()
 </a>
@@ -2606,15 +2613,8 @@ java.util.WeakHashMap$Entry.hashCode()
 </li>
 <li>
 <div>
-<a href="../../sun/util/PreHashedMap.html#sun.util.PreHashedMap:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
-sun.util.PreHashedMap.get(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/AbstractMap$SimpleEntry.html#java.util.AbstractMap$SimpleEntry:hashCode:I" title="int hashCode()">
-java.util.AbstractMap$SimpleEntry.hashCode()
+<a href="../../java/util/AbstractMap$SimpleImmutableEntry.html#java.util.AbstractMap$SimpleImmutableEntry:hashCode:I" title="int hashCode()">
+java.util.AbstractMap$SimpleImmutableEntry.hashCode()
 </a>
 </div>
 </li>

@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC "-//Uppaal Team//DTD Flat System 1.1//EN" "http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd"[]>
+<nta>
+  <declaration>// Place global declarations here.
+
+int counter = -1;
+int h[1];
+const int obj0 = 0;
+const int obj1 = 0;
+
+bool runInit = false;
+bool runCalc = false;
+
+int par0 = -1;
+int par1 = -1;
+
+bool done = false;
+
+int faultAt = 0;
+</declaration>
+  <template>
+    <name>FaultInj</name>
+    <location id="id0" x="-17" y="-85"></location>
+    <location id="id1" x="-144" y="-85">
+      <committed />
+    </location>
+    <init ref="id1" />
+    <transition>
+      <source ref="id1" />
+      <target ref="id0" />
+      <label kind="select" x="-110" y="-127">i:int[0,7]</label>
+      <label kind="assignment" x="-110" y="-68">faultAt = i</label>
+    </transition>
+  </template>
+  <template>
+    <name x="5" y="5">Test</name>
+    <declaration>// Place local declarations here.
+
+int loc0 = -1;
+int loc1 = -1;
+int op0 = -1;
+int op1 = -1;
+int op2 = -1;</declaration>
+    <location id="id0" x="119" y="986"></location>
+    <location id="id1" x="119" y="918">
+      <name x="8" y="910">XLII_RETURN</name>
+      <urgent />
+    </location>
+    <location id="id2" x="119" y="867">
+      <name x="42" y="858">XLI_POP</name>
+      <urgent />
+    </location>
+    <location id="id3" x="119" y="816">
+      <name x="42" y="807">XL_ADD</name>
+      <urgent />
+    </location>
+    <location id="id4" x="119" y="765">
+      <name x="-34" y="756">XXXVIII_GETFIELD</name>
+      <urgent />
+    </location>
+    <location id="id5" x="119" y="714">
+      <name x="8" y="705">XXXVI_LOAD</name>
+      <urgent />
+    </location>
+    <location id="id6" x="178" y="680">
+      <name x="119" y="672">calc</name>
+      <urgent />
+    </location>
+    <location id="id7" x="180" y="569">
+      <name x="119" y="561">Init</name>
+      <urgent />
+    </location>
+    <location id="id8" x="119" y="646">
+      <name x="-51" y="637">XXXIV_INVOKESTATIC</name>
+      <urgent />
+    </location>
+    <location id="id9" x="119" y="595">
+      <name x="17" y="586">XXXII_LOAD</name>
+      <urgent />
+    </location>
+    <location id="id10" x="119" y="544">
+      <name x="-42" y="535">XXX_INVOKEVIRTUAL</name>
+      <urgent />
+    </location>
+    <location id="id11" x="119" y="493">
+      <name x="17" y="484">XXVIII_PUSH</name>
+      <urgent />
+    </location>
+    <location id="id12" x="119" y="442">
+      <name x="17" y="433">XXVI_STORE</name>
+      <urgent />
+    </location>
+    <location id="id13" x="119" y="391">
+      <name x="34" y="382">XXV_DUP</name>
+      <urgent />
+    </location>
+    <location id="id14" x="119" y="340">
+      <name x="34" y="331">XXIII_NEW</name>
+      <urgent />
+    </location>
+    <location id="id15" x="119" y="289">
+      <name x="42" y="280">XXII_POP</name>
+      <urgent />
+    </location>
+    <location id="id16" x="-68" y="442">
+      <name x="-161" y="433">XX_GOTO</name>
+      <urgent />
+    </location>
+    <location id="id17" x="-68" y="391">
+      <name x="-204" y="382">XVIII_PUTSTATIC</name>
+      <urgent />
+    </location>
+    <location id="id18" x="-68" y="340">
+      <name x="-153" y="331">XVII_ADD</name>
+      <urgent />
+    </location>
+    <location id="id19" x="-68" y="289">
+      <name x="-153" y="280">XV_PUSH</name>
+      <urgent />
+    </location>
+    <location id="id20" x="-68" y="238">
+      <name x="-178" y="229">XIII_IF_CMPEQ</name>
+      <urgent />
+    </location>
+    <location id="id21" x="-68" y="187">
+      <name x="-144" y="178">XI_PUSH</name>
+      <urgent />
+    </location>
+    <location id="id22" x="-68" y="136">
+      <name x="-136" y="127">X_DUP</name>
+      <urgent />
+    </location>
+    <location id="id23" x="-68" y="85">
+      <name x="-195" y="76">VIII_GETSTATIC</name>
+      <urgent />
+    </location>
+    <location id="id24" x="-68" y="42">
+      <name x="-187" y="34">VI_PUTSTATIC</name>
+      <urgent />
+    </location>
+    <location id="id25" x="-68" y="-8">
+      <name x="-144" y="-17">V_ADD</name>
+      <urgent />
+    </location>
+    <location id="id26" x="-68" y="-51">
+      <name x="-153" y="-59">III_PUSH</name>
+      <urgent />
+    </location>
+    <location id="id27" x="-68" y="-93">
+      <name x="-144" y="-102">I_PUSH</name>
+      <urgent />
+    </location>
+    <init ref="id27" />
+    <transition>
+      <source ref="id1" />
+      <target ref="id0" />
+      <label kind="assignment" x="127" y="943">done = true</label>
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id1" />
+    </transition>
+    <transition>
+      <source ref="id3" />
+      <target ref="id2" />
+      <label kind="assignment" x="136" y="833">op0 = op0 + op1</label>
+    </transition>
+    <transition>
+      <source ref="id4" />
+      <target ref="id3" />
+      <label kind="assignment" x="136" y="782">op1 = h[op1+0]</label>
+    </transition>
+    <transition>
+      <source ref="id5" />
+      <target ref="id4" />
+      <label kind="assignment" x="136" y="731">op1 = loc1</label>
+    </transition>
+    <transition>
+      <source ref="id6" />
+      <target ref="id6" />
+      <label kind="guard" x="229" y="672">runCalc</label>
+      <nail x="221" y="663" />
+      <nail x="221" y="697" />
+    </transition>
+    <transition>
+      <source ref="id6" />
+      <target ref="id5" />
+      <label kind="guard" x="153" y="697">!runCalc</label>
+      <label kind="assignment" x="153" y="714">op0 = par0</label>
+    </transition>
+    <transition>
+      <source ref="id8" />
+      <target ref="id6" />
+      <label kind="assignment" x="153" y="646">runCalc = true, par0 = op0</label>
+    </transition>
+    <transition>
+      <source ref="id7" />
+      <target ref="id7" />
+      <label kind="guard" x="238" y="561">runInit</label>
+      <nail x="229" y="552" />
+      <nail x="229" y="586" />
+    </transition>
+    <transition>
+      <source ref="id7" />
+      <target ref="id9" />
+      <label kind="guard" x="153" y="586">!runInit</label>
+    </transition>
+    <transition>
+      <source ref="id10" />
+      <target ref="id7" />
+      <label kind="assignment" x="153" y="535">runInit = true, par0 = op0, par1 = op1</label>
+    </transition>
+    <transition>
+      <source ref="id9" />
+      <target ref="id8" />
+      <label kind="assignment" x="136" y="612">op0 = loc1</label>
+    </transition>
+    <transition>
+      <source ref="id11" />
+      <target ref="id10" />
+      <label kind="assignment" x="136" y="510">op1 = 16</label>
+    </transition>
+    <transition>
+      <source ref="id12" />
+      <target ref="id11" />
+      <label kind="assignment" x="136" y="459">loc1 = op1</label>
+    </transition>
+    <transition>
+      <source ref="id13" />
+      <target ref="id12" />
+      <label kind="assignment" x="136" y="408">op1 = op0</label>
+    </transition>
+    <transition>
+      <source ref="id14" />
+      <target ref="id13" />
+      <label kind="assignment" x="136" y="357">op0 = obj0</label>
+    </transition>
+    <transition>
+      <source ref="id15" />
+      <target ref="id14" />
+    </transition>
+    <transition>
+      <source ref="id16" />
+      <target ref="id23" />
+      <nail x="-110" y="476" />
+      <nail x="-170" y="476" />
+      <nail x="-212" y="416" />
+      <nail x="-212" y="127" />
+    </transition>
+    <transition>
+      <source ref="id20" />
+      <target ref="id15" />
+      <label kind="guard" x="43" y="212">op1 == op2</label>
+      <nail x="102" y="238" />
+      <nail x="119" y="255" />
+    </transition>
+    <transition>
+      <source ref="id17" />
+      <target ref="id16" />
+      <label kind="assignment" x="-51" y="408">counter = op0</label>
+    </transition>
+    <transition>
+      <source ref="id18" />
+      <target ref="id17" />
+      <label kind="assignment" x="-51" y="357">op0 = op0 + op1</label>
+    </transition>
+    <transition>
+      <source ref="id19" />
+      <target ref="id18" />
+      <label kind="assignment" x="-51" y="306">op1 = 1</label>
+    </transition>
+    <transition>
+      <source ref="id20" />
+      <target ref="id19" />
+      <label kind="guard" x="-59" y="255">op1 != op2</label>
+    </transition>
+    <transition>
+      <source ref="id21" />
+      <target ref="id20" />
+      <label kind="assignment" x="-51" y="204">op2 = 8</label>
+    </transition>
+    <transition>
+      <source ref="id22" />
+      <target ref="id21" />
+      <label kind="assignment" x="-51" y="153">op1 = op0</label>
+    </transition>
+    <transition>
+      <source ref="id23" />
+      <target ref="id22" />
+      <label kind="assignment" x="-51" y="102">op0 = counter</label>
+    </transition>
+    <transition>
+      <source ref="id24" />
+      <target ref="id23" />
+      <label kind="assignment" x="-51" y="51">counter = op0</label>
+    </transition>
+    <transition>
+      <source ref="id25" />
+      <target ref="id24" />
+      <label kind="assignment" x="-51" y="8">op0 = op0 + op1</label>
+    </transition>
+    <transition>
+      <source ref="id26" />
+      <target ref="id25" />
+      <label kind="assignment" x="-51" y="-34">op1 = 2</label>
+    </transition>
+    <transition>
+      <source ref="id27" />
+      <target ref="id26" />
+      <label kind="assignment" x="-51" y="-76">op0 = 5</label>
+    </transition>
+  </template>
+  <template>
+    <name>Calc</name>
+    <declaration>int loc0 = -1;
+int op0 = -1;
+int op1 = -1;</declaration>
+    <location id="id28" x="-153" y="-34">
+      <name x="-255" y="-43">VI_RETURN</name>
+      <urgent />
+    </location>
+    <location id="id29" x="-153" y="-85">
+      <name x="-238" y="-93">IV_PUSH</name>
+      <urgent />
+    </location>
+    <location id="id30" x="-153" y="-136">
+      <name x="-229" y="-144">II_LOAD</name>
+      <urgent />
+    </location>
+    <location id="id31" x="-153" y="-272">
+      <urgent />
+    </location>
+    <location id="id32" x="-153" y="-187">
+      <name x="-221" y="-196">I_NOP</name>
+      <urgent />
+    </location>
+    <init ref="id31" />
+    <transition>
+      <source ref="id29" />
+      <target ref="id28" />
+      <label kind="assignment" x="-136" y="-68">op1 = 4</label>
+    </transition>
+    <transition>
+      <source ref="id30" />
+      <target ref="id29" />
+      <label kind="assignment" x="-136" y="-119">op0 = loc0</label>
+    </transition>
+    <transition>
+      <source ref="id28" />
+      <target ref="id31" />
+      <label kind="assignment" x="-314" y="-314">runCalc = false,
+par0 = op1</label>
+      <nail x="-178" y="-9" />
+      <nail x="-255" y="-9" />
+      <nail x="-272" y="-26" />
+      <nail x="-272" y="-255" />
+      <nail x="-255" y="-272" />
+    </transition>
+    <transition>
+      <source ref="id31" />
+      <target ref="id31" />
+      <label kind="guard" x="-178" y="-340">!runCalc</label>
+      <nail x="-170" y="-306" />
+      <nail x="-136" y="-306" />
+    </transition>
+    <transition>
+      <source ref="id32" />
+      <target ref="id30" />
+    </transition>
+    <transition>
+      <source ref="id31" />
+      <target ref="id32" />
+      <label kind="guard" x="-136" y="-255">runCalc</label>
+      <label kind="assignment" x="-136" y="-238">loc0 = par0</label>
+    </transition>
+  </template>
+  <template>
+    <name>Init</name>
+    <declaration>int loc0 = -1;
+int loc1 = -1;
+int op0 = -1;
+int op1 = -1;</declaration>
+    <location id="id33" x="-255" y="-25">
+      <name x="-357" y="-34">VII_RETURN</name>
+      <urgent />
+    </location>
+    <location id="id34" x="-255" y="-76">
+      <name x="-359" y="-85">V_PUTFIELD</name>
+      <urgent />
+    </location>
+    <location id="id35" x="-255" y="-127">
+      <name x="-331" y="-135">III_LOAD</name>
+      <urgent />
+    </location>
+    <location id="id36" x="-255" y="-178">
+      <name x="-323" y="-187">I_LOAD</name>
+      <urgent />
+    </location>
+    <location id="id37" x="-255" y="-263">
+      <urgent />
+    </location>
+    <init ref="id37" />
+    <transition>
+      <source ref="id36" />
+      <target ref="id35" />
+      <nail x="100" y="100" />
+    </transition>
+    <transition>
+      <source ref="id36" />
+      <target ref="id34" />
+      <nail x="100" y="100" />
+    </transition>
+    <transition>
+      <source ref="id35" />
+      <target ref="id36" />
+      <nail x="100" y="100" />
+    </transition>
+    <transition>
+      <source ref="id35" />
+      <target ref="id33" />
+      <nail x="100" y="100" />
+    </transition>
+    <transition>
+      <source ref="id34" />
+      <target ref="id36" />
+      <nail x="100" y="100" />
+    </transition>
+    <transition>
+      <source ref="id34" />
+      <target ref="id33" />
+      <nail x="100" y="100" />
+    </transition>
+    <transition>
+      <source ref="id33" />
+      <target ref="id35" />
+      <nail x="100" y="100" />
+    </transition>
+    <transition>
+      <source ref="id33" />
+      <target ref="id34" />
+      <nail x="100" y="100" />
+    </transition>
+    <transition>
+      <source ref="id34" />
+      <target ref="id33" />
+      <label kind="assignment" x="-238" y="-59">h[op0+0] = op1</label>
+    </transition>
+    <transition>
+      <source ref="id35" />
+      <target ref="id34" />
+      <label kind="assignment" x="-238" y="-110">op1 = loc1</label>
+    </transition>
+    <transition>
+      <source ref="id33" />
+      <target ref="id37" />
+      <label kind="assignment" x="-399" y="-289">runInit = false</label>
+      <nail x="-280" y="0" />
+      <nail x="-357" y="0" />
+      <nail x="-374" y="-17" />
+      <nail x="-374" y="-246" />
+      <nail x="-357" y="-263" />
+    </transition>
+    <transition>
+      <source ref="id37" />
+      <target ref="id37" />
+      <label kind="guard" x="-280" y="-331">!runInit</label>
+      <nail x="-272" y="-297" />
+      <nail x="-238" y="-297" />
+    </transition>
+    <transition>
+      <source ref="id36" />
+      <target ref="id35" />
+      <label kind="assignment" x="-238" y="-161">op0  = loc0</label>
+    </transition>
+    <transition>
+      <source ref="id37" />
+      <target ref="id36" />
+      <label kind="guard" x="-238" y="-246">runInit</label>
+      <label kind="assignment" x="-238" y="-229">loc0 = par0, 
+loc1 = par1</label>
+    </transition>
+  </template>
+  <system>// Place template instantiations here.
+Fault = FaultInj();
+Process = Test();
+Process0 = Init();
+Process1 = Calc();
+// List one or more processes to be composed into a system.
+system  Fault,Process, Process0, Process1;
+    </system>
+  <queries>
+    <query>
+      <formula>E&lt;&gt; done == 1
+			</formula>
+      <comment></comment>
+    </query>
+    <query>
+      <formula>Pr[&lt;=10] (&lt;&gt; done)
+			</formula>
+      <comment></comment>
+    </query>
+  </queries>
+</nta>

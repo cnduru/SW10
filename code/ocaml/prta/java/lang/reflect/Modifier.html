@@ -456,7 +456,7 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.reflect.Modifier:isTransient:IZ" href="#">
+<a name="java.lang.reflect.Modifier:isSynchronized:IZ" href="#">
 
 </a>
 <div class="method_signature">
@@ -464,7 +464,7 @@ public static
 bool
  
 <span>
-isTransient
+isSynchronized
 </span>
 (
 int
@@ -491,46 +491,46 @@ iload  0
 <li value="1">
 <div class="instruction">
 <span>
-sipush 128
+bipush 32
 </span>
 </div>
 </li>
-<li value="4">
+<li value="3">
 <div class="instruction">
 <span>
 iand
 </span>
 </div>
 </li>
-<li value="5">
+<li value="4">
 <div class="instruction">
 <span>
 ifeq 7
 </span>
 </div>
 </li>
-<li value="8">
+<li value="7">
 <div class="instruction">
 <span>
 iconst 1
 </span>
 </div>
 </li>
-<li value="9">
+<li value="8">
 <div class="instruction">
 <span>
 goto 4
 </span>
 </div>
 </li>
-<li value="12">
+<li value="11">
 <div class="instruction">
 <span>
 iconst 0
 </span>
 </div>
 </li>
-<li value="13">
+<li value="12">
 <div class="instruction">
 <span>
 ireturn
@@ -628,17 +628,19 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.reflect.Modifier:classModifiers:I" href="#">
+<a name="java.lang.reflect.Modifier:isStrict:IZ" href="#">
 
 </a>
 <div class="method_signature">
 public static 
-int
+bool
  
 <span>
-classModifiers
+isStrict
 </span>
 (
+int
+ 0
 )
 ;
 <ul class="annot">
@@ -654,11 +656,148 @@ Not parsed
 <li value="0">
 <div class="instruction">
 <span>
-sipush 3103
+iload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+sipush 2048
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+iand
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+ifeq 7
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.reflect.Modifier:isPrivate:IZ" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+bool
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+isPrivate
+</span>
+(
+int
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/reflect/Reflection.html#sun.reflect.Reflection:verifyMemberAccess:java.lang.Classjava.lang.Classjava.lang.ObjectIZ" title="bool verifyMemberAccess(java.lang.Class, java.lang.Class, java.lang.Object, int)">
+sun.reflect.Reflection.verifyMemberAccess(java.lang.Class, java.lang.Class, java.lang.Object, int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+iconst 2
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+iand
 </span>
 </div>
 </li>
 <li value="3">
+<div class="instruction">
+<span>
+ifeq 7
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="11">
 <div class="instruction">
 <span>
 ireturn
@@ -696,13 +835,6 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../../sun/reflect/misc/ReflectUtil.html#sun.reflect.misc.ReflectUtil:ensureMemberAccess:java.lang.Classjava.lang.Classjava.lang.ObjectIvoid" title="void ensureMemberAccess(java.lang.Class, java.lang.Class, java.lang.Object, int)">
-sun.reflect.misc.ReflectUtil.ensureMemberAccess(java.lang.Class, java.lang.Class, java.lang.Object, int)
-</a>
-</div>
-</li>
-<li>
-<div>
 <a href="../../../sun/reflect/Reflection.html#sun.reflect.Reflection:verifyMemberAccess:java.lang.Classjava.lang.Classjava.lang.ObjectIZ" title="bool verifyMemberAccess(java.lang.Class, java.lang.Class, java.lang.Object, int)">
 sun.reflect.Reflection.verifyMemberAccess(java.lang.Class, java.lang.Class, java.lang.Object, int)
 </a>
@@ -712,6 +844,13 @@ sun.reflect.Reflection.verifyMemberAccess(java.lang.Class, java.lang.Class, java
 <div>
 <a href="../../../java/util/concurrent/atomic/AtomicReferenceFieldUpdater$AtomicReferenceFieldUpdaterImpl.html#java.util.concurrent.atomic.AtomicReferenceFieldUpdater$AtomicReferenceFieldUpdaterImpl:&lt;init&gt;:java.lang.Classjava.lang.Classjava.lang.Stringjava.lang.Classvoid" title="void &lt;init&gt;(java.lang.Class, java.lang.Class, java.lang.String, java.lang.Class)">
 java.util.concurrent.atomic.AtomicReferenceFieldUpdater$AtomicReferenceFieldUpdaterImpl.&lt;init&gt;(java.lang.Class, java.lang.Class, java.lang.String, java.lang.Class)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/reflect/misc/ReflectUtil.html#sun.reflect.misc.ReflectUtil:ensureMemberAccess:java.lang.Classjava.lang.Classjava.lang.ObjectIvoid" title="void ensureMemberAccess(java.lang.Class, java.lang.Class, java.lang.Object, int)">
+sun.reflect.misc.ReflectUtil.ensureMemberAccess(java.lang.Class, java.lang.Class, java.lang.Object, int)
 </a>
 </div>
 </li>
@@ -768,286 +907,6 @@ iconst 0
 </div>
 </li>
 <li value="11">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.reflect.Modifier:isInterface:IZ" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-bool
- 
-<span>
-isInterface
-</span>
-(
-int
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-sipush 512
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-iand
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-ifeq 7
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.reflect.Modifier:&lt;init&gt;:void" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<span>
-Modifier
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.Object.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.reflect.Modifier:fieldModifiers:I" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-int
- 
-<span>
-fieldModifiers
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-sipush 223
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.reflect.Modifier:isFinal:IZ" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-bool
- 
-<span>
-isFinal
-</span>
-(
-int
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-bipush 16
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-iand
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ifeq 7
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="12">
 <div class="instruction">
 <span>
 ireturn
@@ -1240,6 +1099,242 @@ ireturn
 </ol>
 </div>
 <div class="method">
+<a name="java.lang.reflect.Modifier:&lt;init&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<span>
+Modifier
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.reflect.Modifier:interfaceModifiers:I" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+int
+ 
+<span>
+interfaceModifiers
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+sipush 3087
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.reflect.Modifier:methodModifiers:I" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+int
+ 
+<span>
+methodModifiers
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+sipush 3391
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.reflect.Modifier:isTransient:IZ" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+bool
+ 
+<span>
+isTransient
+</span>
+(
+int
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+sipush 128
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+iand
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+ifeq 7
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
 <a name="java.lang.reflect.Modifier:constructorModifiers:I" href="#">
 
 </a>
@@ -1368,7 +1463,7 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.reflect.Modifier:interfaceModifiers:I" href="#">
+<a name="java.lang.reflect.Modifier:classModifiers:I" href="#">
 
 </a>
 <div class="method_signature">
@@ -1376,7 +1471,7 @@ public static
 int
  
 <span>
-interfaceModifiers
+classModifiers
 </span>
 (
 )
@@ -1394,7 +1489,7 @@ Not parsed
 <li value="0">
 <div class="instruction">
 <span>
-sipush 3087
+sipush 3103
 </span>
 </div>
 </li>
@@ -1436,15 +1531,15 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../../sun/reflect/Reflection.html#sun.reflect.Reflection:verifyMemberAccess:java.lang.Classjava.lang.Classjava.lang.ObjectIZ" title="bool verifyMemberAccess(java.lang.Class, java.lang.Class, java.lang.Object, int)">
-sun.reflect.Reflection.verifyMemberAccess(java.lang.Class, java.lang.Class, java.lang.Object, int)
+<a href="../../../sun/reflect/Reflection.html#sun.reflect.Reflection:quickCheckMemberAccess:java.lang.ClassIZ" title="bool quickCheckMemberAccess(java.lang.Class, int)">
+sun.reflect.Reflection.quickCheckMemberAccess(java.lang.Class, int)
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../../sun/reflect/Reflection.html#sun.reflect.Reflection:quickCheckMemberAccess:java.lang.ClassIZ" title="bool quickCheckMemberAccess(java.lang.Class, int)">
-sun.reflect.Reflection.quickCheckMemberAccess(java.lang.Class, int)
+<a href="../../../sun/reflect/Reflection.html#sun.reflect.Reflection:verifyMemberAccess:java.lang.Classjava.lang.Classjava.lang.ObjectIZ" title="bool verifyMemberAccess(java.lang.Class, java.lang.Class, java.lang.Object, int)">
+sun.reflect.Reflection.verifyMemberAccess(java.lang.Class, java.lang.Class, java.lang.Object, int)
 </a>
 </div>
 </li>
@@ -1512,49 +1607,7 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.reflect.Modifier:methodModifiers:I" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-int
- 
-<span>
-methodModifiers
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-sipush 3391
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.reflect.Modifier:isStrict:IZ" href="#">
+<a name="java.lang.reflect.Modifier:isInterface:IZ" href="#">
 
 </a>
 <div class="method_signature">
@@ -1562,7 +1615,7 @@ public static
 bool
  
 <span>
-isStrict
+isInterface
 </span>
 (
 int
@@ -1589,7 +1642,7 @@ iload  0
 <li value="1">
 <div class="instruction">
 <span>
-sipush 2048
+sipush 512
 </span>
 </div>
 </li>
@@ -1726,19 +1779,17 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.reflect.Modifier:isPrivate:IZ" href="#">
+<a name="java.lang.reflect.Modifier:fieldModifiers:I" href="#">
 
 </a>
 <div class="method_signature">
 public static 
-bool
+int
  
-<span class="methodname clickable" onclick="showInfoList(this)">
-isPrivate
+<span>
+fieldModifiers
 </span>
 (
-int
- 0
 )
 ;
 <ul class="annot">
@@ -1746,16 +1797,7 @@ int
 Concrete Method 
 </li>
 <li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../sun/reflect/Reflection.html#sun.reflect.Reflection:verifyMemberAccess:java.lang.Classjava.lang.Classjava.lang.ObjectIZ" title="bool verifyMemberAccess(java.lang.Class, java.lang.Class, java.lang.Object, int)">
-sun.reflect.Reflection.verifyMemberAccess(java.lang.Class, java.lang.Class, java.lang.Object, int)
-</a>
-</div>
+Not parsed
 </li>
 </ul>
 </div>
@@ -1763,53 +1805,11 @@ sun.reflect.Reflection.verifyMemberAccess(java.lang.Class, java.lang.Class, java
 <li value="0">
 <div class="instruction">
 <span>
-iload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-iconst 2
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-iand
+sipush 223
 </span>
 </div>
 </li>
 <li value="3">
-<div class="instruction">
-<span>
-ifeq 7
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="11">
 <div class="instruction">
 <span>
 ireturn
@@ -3075,7 +3075,7 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.reflect.Modifier:isSynchronized:IZ" href="#">
+<a name="java.lang.reflect.Modifier:isFinal:IZ" href="#">
 
 </a>
 <div class="method_signature">
@@ -3083,7 +3083,7 @@ public static
 bool
  
 <span>
-isSynchronized
+isFinal
 </span>
 (
 int
@@ -3110,7 +3110,7 @@ iload  0
 <li value="1">
 <div class="instruction">
 <span>
-bipush 32
+bipush 16
 </span>
 </div>
 </li>

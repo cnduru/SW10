@@ -4,6 +4,7 @@ public class Sample{
 
     public static void main(String[] args) {
         Sample s = new Sample();
+        foo(true, false);
     }
 
     Sample(){
@@ -13,5 +14,10 @@ public class Sample{
     private void install(){
         a = new A();
         b = new B();
+    }
+
+    public static int foo(boolean b, boolean b2){
+        return b != b2 ? 1 : 2;
+        
     }
 }

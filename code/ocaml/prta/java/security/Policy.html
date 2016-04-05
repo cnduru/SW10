@@ -365,6 +365,4183 @@ return
 </ol>
 </div>
 <div class="method">
+<a name="java.security.Policy:getPolicy:java.security.Policy" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="Policy.html">
+java.security.Policy
+</a>
+ 
+<span>
+getPolicy
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/lang/SecurityManager.html">
+java.lang.SecurityManager
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.SecurityManager getSecurityManager()">
+java.lang.System.getSecurityManager
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/System.html#java.lang.System:getSecurityManager:java.lang.SecurityManager" title="java.lang.SecurityManager getSecurityManager()">
+java.lang.System.getSecurityManager
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+astore  0
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+ifnull 10
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="../../sun/security/util/SecurityConstants.html#sun.security.util.SecurityConstants:GET_POLICY_PERMISSION:java.security.SecurityPermission">
+sun.security.util.SecurityConstants.GET_POLICY_PERMISSION
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/security/SecurityPermission.html">
+java.security.SecurityPermission
+</a>
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void checkPermission(java.security.Permission)">
+java.lang.SecurityManager.checkPermission
+</span>
+</span>
+<span>
+(
+<a href="../../java/security/Permission.html">
+java.security.Permission
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/SecurityManager.html#java.lang.SecurityManager:checkPermission:java.security.Permissionvoid" title="void checkPermission(java.security.Permission)">
+java.lang.SecurityManager.checkPermission
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="Policy.html">
+java.security.Policy
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.security.Policy getPolicyNoCheck()">
+java.security.Policy.getPolicyNoCheck
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.security.Policy:getPermissions:java.security.ProtectionDomainjava.security.PermissionCollection" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/security/PermissionCollection.html">
+java.security.PermissionCollection
+</a>
+ 
+<span>
+getPermissions
+</span>
+(
+<a href="../../java/security/ProtectionDomain.html">
+java.security.ProtectionDomain
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+astore  2
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+ifnonnull 11
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/security/Permissions.html">
+java.security.Permissions
+</a>
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.security.Permissions.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.security.Policy:pdMapping:java.util.WeakHashMap">
+java.security.Policy.pdMapping
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/util/WeakHashMap.html">
+java.util.WeakHashMap
+</a>
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+ifnonnull 7
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void initPolicy(java.security.Policy)">
+java.security.Policy.initPolicy
+</span>
+</span>
+<span>
+(
+<a href="Policy.html">
+java.security.Policy
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.security.Policy:pdMapping:java.util.WeakHashMap">
+java.security.Policy.pdMapping
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/util/WeakHashMap.html">
+java.util.WeakHashMap
+</a>
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+astore  3
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+monitorenter
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.security.Policy:pdMapping:java.util.WeakHashMap">
+java.security.Policy.pdMapping
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/util/WeakHashMap.html">
+java.util.WeakHashMap
+</a>
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../java/security/ProtectionDomain.html#java.security.ProtectionDomain:key:java.security.ProtectionDomain$Key">
+java.security.ProtectionDomain.key
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/security/ProtectionDomain$Key.html">
+java.security.ProtectionDomain$Key
+</a>
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object get(java.lang.Object)">
+java.util.WeakHashMap.get
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/WeakHashMap.html#java.util.WeakHashMap:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
+java.util.WeakHashMap.get
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="../../java/security/PermissionCollection.html">
+java.security.PermissionCollection
+</a>
+</span>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+astore  2
+</span>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+monitorexit
+</span>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+goto 10
+</span>
+</div>
+</li>
+<li value="52">
+<div class="instruction">
+<span>
+astore  4
+</span>
+</div>
+</li>
+<li value="54">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="55">
+<div class="instruction">
+<span>
+monitorexit
+</span>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+aload  4
+</span>
+</div>
+</li>
+<li value="58">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="59">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="60">
+<div class="instruction">
+<span>
+ifnull 65
+</span>
+</div>
+</li>
+<li value="63">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/security/Permissions.html">
+java.security.Permissions
+</a>
+</span>
+</div>
+</li>
+<li value="66">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="67">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.security.Permissions.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="70">
+<div class="instruction">
+<span>
+astore  3
+</span>
+</div>
+</li>
+<li value="71">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="72">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="73">
+<div class="instruction">
+<span>
+astore  4
+</span>
+</div>
+</li>
+<li value="75">
+<div class="instruction">
+<span>
+monitorenter
+</span>
+</div>
+</li>
+<li value="76">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="77">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/util/Enumeration.html">
+java.util.Enumeration
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.util.Enumeration elements()">
+java.security.PermissionCollection.elements
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/security/Permissions.html#java.security.Permissions:elements:java.util.Enumeration" title="java.util.Enumeration elements()">
+java.security.Permissions.elements
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/security/Policy$UnsupportedEmptyCollection.html#java.security.Policy$UnsupportedEmptyCollection:elements:java.util.Enumeration" title="java.util.Enumeration elements()">
+java.security.Policy$UnsupportedEmptyCollection.elements
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="80">
+<div class="instruction">
+<span>
+astore  5
+</span>
+</div>
+</li>
+<li value="82">
+<div class="instruction">
+<span>
+aload  5
+</span>
+</div>
+</li>
+<li value="84">
+<div class="instruction">
+<span>
+invokeinterface 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool hasMoreElements()">
+java.util.Enumeration.hasMoreElements
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/StringTokenizer.html#java.util.StringTokenizer:hasMoreElements:Z" title="bool hasMoreElements()">
+java.util.StringTokenizer.hasMoreElements
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/security/PermissionsEnumerator.html#java.security.PermissionsEnumerator:hasMoreElements:Z" title="bool hasMoreElements()">
+java.security.PermissionsEnumerator.hasMoreElements
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Hashtable$Enumerator.html#java.util.Hashtable$Enumerator:hasMoreElements:Z" title="bool hasMoreElements()">
+java.util.Hashtable$Enumerator.hasMoreElements
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/ConcurrentHashMap$HashIterator.html#java.util.concurrent.ConcurrentHashMap$HashIterator:hasMoreElements:Z" title="bool hasMoreElements()">
+java.util.concurrent.ConcurrentHashMap$HashIterator.hasMoreElements
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="89">
+<div class="instruction">
+<span>
+ifeq 20
+</span>
+</div>
+</li>
+<li value="92">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="93">
+<div class="instruction">
+<span>
+aload  5
+</span>
+</div>
+</li>
+<li value="95">
+<div class="instruction">
+<span>
+invokeinterface 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object nextElement()">
+java.util.Enumeration.nextElement
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/Hashtable$Enumerator.html#java.util.Hashtable$Enumerator:nextElement:java.lang.Object" title="java.lang.Object nextElement()">
+java.util.Hashtable$Enumerator.nextElement
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/ConcurrentHashMap$KeyIterator.html#java.util.concurrent.ConcurrentHashMap$KeyIterator:nextElement:java.lang.Object" title="java.lang.Object nextElement()">
+java.util.concurrent.ConcurrentHashMap$KeyIterator.nextElement
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/StringTokenizer.html#java.util.StringTokenizer:nextElement:java.lang.Object" title="java.lang.Object nextElement()">
+java.util.StringTokenizer.nextElement
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/ConcurrentHashMap$ValueIterator.html#java.util.concurrent.ConcurrentHashMap$ValueIterator:nextElement:java.lang.Object" title="java.lang.Object nextElement()">
+java.util.concurrent.ConcurrentHashMap$ValueIterator.nextElement
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/security/PermissionsEnumerator.html#java.security.PermissionsEnumerator:nextElement:java.lang.Object" title="java.lang.Object nextElement()">
+java.security.PermissionsEnumerator.nextElement
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="100">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="../../java/security/Permission.html">
+java.security.Permission
+</a>
+</span>
+</div>
+</li>
+<li value="103">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void add(java.security.Permission)">
+java.security.Permissions.add
+</span>
+</span>
+<span>
+(
+<a href="../../java/security/Permission.html">
+java.security.Permission
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="106">
+<div class="instruction">
+<span>
+goto -24
+</span>
+</div>
+</li>
+<li value="109">
+<div class="instruction">
+<span>
+aload  4
+</span>
+</div>
+</li>
+<li value="111">
+<div class="instruction">
+<span>
+monitorexit
+</span>
+</div>
+</li>
+<li value="112">
+<div class="instruction">
+<span>
+goto 11
+</span>
+</div>
+</li>
+<li value="115">
+<div class="instruction">
+<span>
+astore  6
+</span>
+</div>
+</li>
+<li value="117">
+<div class="instruction">
+<span>
+aload  4
+</span>
+</div>
+</li>
+<li value="119">
+<div class="instruction">
+<span>
+monitorexit
+</span>
+</div>
+</li>
+<li value="120">
+<div class="instruction">
+<span>
+aload  6
+</span>
+</div>
+</li>
+<li value="122">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="123">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="124">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+<li value="125">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="126">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="127">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/security/CodeSource.html">
+java.security.CodeSource
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.security.CodeSource getCodeSource()">
+java.security.ProtectionDomain.getCodeSource
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="130">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/security/PermissionCollection.html">
+java.security.PermissionCollection
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.security.PermissionCollection getPermissions(java.security.CodeSource)">
+java.security.Policy.getPermissions
+</span>
+</span>
+<span>
+(
+<a href="../../java/security/CodeSource.html">
+java.security.CodeSource
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="133">
+<div class="instruction">
+<span>
+astore  2
+</span>
+</div>
+</li>
+<li value="134">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="135">
+<div class="instruction">
+<span>
+ifnull 10
+</span>
+</div>
+</li>
+<li value="138">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="139">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.security.Policy:UNSUPPORTED_EMPTY_COLLECTION:java.security.PermissionCollection">
+java.security.Policy.UNSUPPORTED_EMPTY_COLLECTION
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/security/PermissionCollection.html">
+java.security.PermissionCollection
+</a>
+</span>
+</div>
+</li>
+<li value="142">
+<div class="instruction">
+<span>
+ifacmpne 11
+</span>
+</div>
+</li>
+<li value="145">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/security/Permissions.html">
+java.security.Permissions
+</a>
+</span>
+</div>
+</li>
+<li value="148">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="149">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.security.Permissions.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="152">
+<div class="instruction">
+<span>
+astore  2
+</span>
+</div>
+</li>
+<li value="153">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="154">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="155">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="156">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/security/PermissionCollection.html">
+java.security.PermissionCollection
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.security.PermissionCollection getPermissions()">
+java.security.ProtectionDomain.getPermissions
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="159">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void addStaticPerms(java.security.PermissionCollection, java.security.PermissionCollection)">
+java.security.Policy.addStaticPerms
+</span>
+</span>
+<span>
+(
+<a href="../../java/security/PermissionCollection.html">
+java.security.PermissionCollection
+</a>
+, 
+<a href="../../java/security/PermissionCollection.html">
+java.security.PermissionCollection
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="162">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="163">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 32; try end: 49: catch start: 52; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 52; try end: 56: catch start: 52; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 76; try end: 112: catch start: 115; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 115; try end: 120: catch start: 115; catched type: None (finally block).
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
+<a name="java.security.Policy:getInstance:java.lang.Stringjava.security.Policy$Parametersjava.security.Providerjava.security.Policy" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="Policy.html">
+java.security.Policy
+</a>
+ 
+<span>
+getInstance
+</span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 0
+, 
+java.security.Policy$Parameters
+ 1
+, 
+<a href="../../java/security/Provider.html">
+java.security.Provider
+</a>
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+ifnonnull 13
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+ldc string &apos;missing provider&apos;
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.lang.IllegalArgumentException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void checkPermission(java.lang.String)">
+java.security.Policy.checkPermission
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+ldc string &apos;Policy&apos;
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+ldc class Ljava/security/PolicySpi;
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+sun.security.jca.GetInstance$Instance
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="sun.security.jca.GetInstance$Instance getInstance(java.lang.String, java.lang.Class, java.lang.String, java.lang.Object, java.security.Provider)">
+sun.security.jca.GetInstance.getInstance
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+, 
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+, 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+, 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+<a href="../../java/security/Provider.html">
+java.security.Provider
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+astore  3
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+java.security.Policy$PolicyDelegate
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+sun.security.jca.GetInstance$Instance.impl
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+java.security.PolicySpi
+</span>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+sun.security.jca.GetInstance$Instance.provider
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/security/Provider.html">
+java.security.Provider
+</a>
+</span>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.security.PolicySpi, java.security.Provider, java.lang.String, java.security.Policy$Parameters, java.security.Policy$1)">
+java.security.Policy$PolicyDelegate.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+java.security.PolicySpi
+, 
+<a href="../../java/security/Provider.html">
+java.security.Provider
+</a>
+, 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+, 
+java.security.Policy$Parameters
+, 
+java.security.Policy$1
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="51">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+<li value="52">
+<div class="instruction">
+<span>
+astore  3
+</span>
+</div>
+</li>
+<li value="53">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="54">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="Policy.html">
+java.security.Policy
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.security.Policy handleException(java.security.NoSuchAlgorithmException)">
+java.security.Policy.handleException
+</span>
+</span>
+<span>
+(
+java.security.NoSuchAlgorithmException
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="57">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 18; try end: 51: catch start: 52; catched type: java.security.NoSuchAlgorithmException.
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
+<a name="java.security.Policy:checkPermission:java.lang.Stringvoid" href="#">
+
+</a>
+<div class="method_signature">
+private static 
+void
+ 
+<span>
+checkPermission
+</span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/lang/SecurityManager.html">
+java.lang.SecurityManager
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.SecurityManager getSecurityManager()">
+java.lang.System.getSecurityManager
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/System.html#java.lang.System:getSecurityManager:java.lang.SecurityManager" title="java.lang.SecurityManager getSecurityManager()">
+java.lang.System.getSecurityManager
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+astore  1
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+ifnull 33
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/security/SecurityPermission.html">
+java.security.SecurityPermission
+</a>
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.StringBuilder.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+ldc string &apos;createPolicy.&apos;
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toString()">
+java.lang.StringBuilder.toString
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:toString:java.lang.String" title="java.lang.String toString()">
+java.lang.StringBuilder.toString
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.security.SecurityPermission.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void checkPermission(java.security.Permission)">
+java.lang.SecurityManager.checkPermission
+</span>
+</span>
+<span>
+(
+<a href="../../java/security/Permission.html">
+java.security.Permission
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/SecurityManager.html#java.lang.SecurityManager:checkPermission:java.security.Permissionvoid" title="void checkPermission(java.security.Permission)">
+java.lang.SecurityManager.checkPermission
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.security.Policy:isSet:Z" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+bool
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+isSet
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/security/AccessControlContext.html#java.security.AccessControlContext:getDebug:sun.security.util.Debug" title="sun.security.util.Debug getDebug()">
+java.security.AccessControlContext.getDebug()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.security.Policy:policy:java.util.concurrent.atomic.AtomicReference">
+java.security.Policy.policy
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/util/concurrent/atomic/AtomicReference.html">
+java.util.concurrent.atomic.AtomicReference
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object get()">
+java.util.concurrent.atomic.AtomicReference.get
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/concurrent/atomic/AtomicReference.html#java.util.concurrent.atomic.AtomicReference:get:java.lang.Object" title="java.lang.Object get()">
+java.util.concurrent.atomic.AtomicReference.get
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="../../java/security/Policy$PolicyInfo.html">
+java.security.Policy$PolicyInfo
+</a>
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+astore  0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../java/security/Policy$PolicyInfo.html#java.security.Policy$PolicyInfo:policy:java.security.Policy">
+java.security.Policy$PolicyInfo.policy
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Policy.html">
+java.security.Policy
+</a>
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+ifnull 15
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../java/security/Policy$PolicyInfo.html#java.security.Policy$PolicyInfo:initialized:Z">
+java.security.Policy$PolicyInfo.initialized
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+bool
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+ifcmpne 7
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.security.Policy:getInstance:java.lang.Stringjava.security.Policy$Parametersjava.security.Policy" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="Policy.html">
+java.security.Policy
+</a>
+ 
+<span>
+getInstance
+</span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 0
+, 
+java.security.Policy$Parameters
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void checkPermission(java.lang.String)">
+java.security.Policy.checkPermission
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ldc string &apos;Policy&apos;
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+ldc class Ljava/security/PolicySpi;
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+sun.security.jca.GetInstance$Instance
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="sun.security.jca.GetInstance$Instance getInstance(java.lang.String, java.lang.Class, java.lang.String, java.lang.Object)">
+sun.security.jca.GetInstance.getInstance
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+, 
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+, 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+, 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+astore  2
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+java.security.Policy$PolicyDelegate
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+sun.security.jca.GetInstance$Instance.impl
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+java.security.PolicySpi
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+sun.security.jca.GetInstance$Instance.provider
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/security/Provider.html">
+java.security.Provider
+</a>
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.security.PolicySpi, java.security.Provider, java.lang.String, java.security.Policy$Parameters, java.security.Policy$1)">
+java.security.Policy$PolicyDelegate.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+java.security.PolicySpi
+, 
+<a href="../../java/security/Provider.html">
+java.security.Provider
+</a>
+, 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+, 
+java.security.Policy$Parameters
+, 
+java.security.Policy$1
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+astore  2
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="Policy.html">
+java.security.Policy
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.security.Policy handleException(java.security.NoSuchAlgorithmException)">
+java.security.Policy.handleException
+</span>
+</span>
+<span>
+(
+java.security.NoSuchAlgorithmException
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 4; try end: 36: catch start: 37; catched type: java.security.NoSuchAlgorithmException.
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
+<a name="java.security.Policy:&lt;init&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<span>
+Policy
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.security.Policy:getProvider:java.security.Provider" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/security/Provider.html">
+java.security.Provider
+</a>
+ 
+<span>
+getProvider
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.security.Policy:getPolicyNoCheck:java.security.Policy" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<a href="Policy.html">
+java.security.Policy
+</a>
+ 
+<span>
+getPolicyNoCheck
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.security.Policy:policy:java.util.concurrent.atomic.AtomicReference">
+java.security.Policy.policy
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/util/concurrent/atomic/AtomicReference.html">
+java.util.concurrent.atomic.AtomicReference
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object get()">
+java.util.concurrent.atomic.AtomicReference.get
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/concurrent/atomic/AtomicReference.html#java.util.concurrent.atomic.AtomicReference:get:java.lang.Object" title="java.lang.Object get()">
+java.util.concurrent.atomic.AtomicReference.get
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="../../java/security/Policy$PolicyInfo.html">
+java.security.Policy$PolicyInfo
+</a>
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+astore  0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../java/security/Policy$PolicyInfo.html#java.security.Policy$PolicyInfo:initialized:Z">
+java.security.Policy$PolicyInfo.initialized
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+bool
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+ifeq 10
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../java/security/Policy$PolicyInfo.html#java.security.Policy$PolicyInfo:policy:java.security.Policy">
+java.security.Policy$PolicyInfo.policy
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Policy.html">
+java.security.Policy
+</a>
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+ifnonnull 183
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+ldc class Ljava/security/Policy;
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+astore  1
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+monitorenter
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.security.Policy:policy:java.util.concurrent.atomic.AtomicReference">
+java.security.Policy.policy
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/util/concurrent/atomic/AtomicReference.html">
+java.util.concurrent.atomic.AtomicReference
+</a>
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object get()">
+java.util.concurrent.atomic.AtomicReference.get
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/concurrent/atomic/AtomicReference.html#java.util.concurrent.atomic.AtomicReference:get:java.lang.Object" title="java.lang.Object get()">
+java.util.concurrent.atomic.AtomicReference.get
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="../../java/security/Policy$PolicyInfo.html">
+java.security.Policy$PolicyInfo
+</a>
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+astore  2
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../java/security/Policy$PolicyInfo.html#java.security.Policy$PolicyInfo:policy:java.security.Policy">
+java.security.Policy$PolicyInfo.policy
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Policy.html">
+java.security.Policy
+</a>
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+ifnonnull 146
+</span>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+java.security.Policy$1
+</span>
+</div>
+</li>
+<li value="50">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="51">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.security.Policy$1.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="54">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object doPrivileged(java.security.PrivilegedAction)">
+java.security.AccessController.doPrivileged
+</span>
+</span>
+<span>
+(
+<a href="../../java/security/PrivilegedAction.html">
+java.security.PrivilegedAction
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/security/AccessController.html#java.security.AccessController:doPrivileged:java.security.PrivilegedActionjava.lang.Object" title="java.lang.Object doPrivileged(java.security.PrivilegedAction)">
+java.security.AccessController.doPrivileged
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="57">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+</div>
+</li>
+<li value="60">
+<div class="instruction">
+<span>
+astore  3
+</span>
+</div>
+</li>
+<li value="61">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="62">
+<div class="instruction">
+<span>
+ifnonnull 6
+</span>
+</div>
+</li>
+<li value="65">
+<div class="instruction">
+<span>
+ldc string &apos;sun.security.provider.PolicyFile&apos;
+</span>
+</div>
+</li>
+<li value="67">
+<div class="instruction">
+<span>
+astore  3
+</span>
+</div>
+</li>
+<li value="68">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/security/Policy$PolicyInfo.html">
+java.security.Policy$PolicyInfo
+</a>
+</span>
+</div>
+</li>
+<li value="71">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="72">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="73">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Class forName(java.lang.String)">
+java.lang.Class.forName
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Class.html#java.lang.Class:forName:java.lang.Stringjava.lang.Class" title="java.lang.Class forName(java.lang.String)">
+java.lang.Class.forName
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="76">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object newInstance()">
+java.lang.Class.newInstance
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Class.html#java.lang.Class:newInstance:java.lang.Object" title="java.lang.Object newInstance()">
+java.lang.Class.newInstance
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="79">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="Policy.html">
+java.security.Policy
+</a>
+</span>
+</div>
+</li>
+<li value="82">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="83">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.security.Policy, bool)">
+java.security.Policy$PolicyInfo.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="Policy.html">
+java.security.Policy
+</a>
+, 
+bool
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/security/Policy$PolicyInfo.html#java.security.Policy$PolicyInfo:&lt;init&gt;:java.security.PolicyZvoid" title="void &lt;init&gt;(java.security.Policy, bool)">
+java.security.Policy$PolicyInfo.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="86">
+<div class="instruction">
+<span>
+astore  2
+</span>
+</div>
+</li>
+<li value="87">
+<div class="instruction">
+<span>
+goto 96
+</span>
+</div>
+</li>
+<li value="90">
+<div class="instruction">
+<span>
+astore  4
+</span>
+</div>
+</li>
+<li value="92">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+sun.security.provider.PolicyFile
+</span>
+</div>
+</li>
+<li value="95">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="96">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+sun.security.provider.PolicyFile.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="99">
+<div class="instruction">
+<span>
+astore  5
+</span>
+</div>
+</li>
+<li value="101">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/security/Policy$PolicyInfo.html">
+java.security.Policy$PolicyInfo
+</a>
+</span>
+</div>
+</li>
+<li value="104">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="105">
+<div class="instruction">
+<span>
+aload  5
+</span>
+</div>
+</li>
+<li value="107">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="108">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.security.Policy, bool)">
+java.security.Policy$PolicyInfo.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="Policy.html">
+java.security.Policy
+</a>
+, 
+bool
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/security/Policy$PolicyInfo.html#java.security.Policy$PolicyInfo:&lt;init&gt;:java.security.PolicyZvoid" title="void &lt;init&gt;(java.security.Policy, bool)">
+java.security.Policy$PolicyInfo.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="111">
+<div class="instruction">
+<span>
+astore  2
+</span>
+</div>
+</li>
+<li value="112">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.security.Policy:policy:java.util.concurrent.atomic.AtomicReference">
+java.security.Policy.policy
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/util/concurrent/atomic/AtomicReference.html">
+java.util.concurrent.atomic.AtomicReference
+</a>
+</span>
+</div>
+</li>
+<li value="115">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="116">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void set(java.lang.Object)">
+java.util.concurrent.atomic.AtomicReference.set
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="119">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="120">
+<div class="instruction">
+<span>
+astore  6
+</span>
+</div>
+</li>
+<li value="122">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+java.security.Policy$2
+</span>
+</div>
+</li>
+<li value="125">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="126">
+<div class="instruction">
+<span>
+aload  6
+</span>
+</div>
+</li>
+<li value="128">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.security.Policy$2.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="131">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object doPrivileged(java.security.PrivilegedAction)">
+java.security.AccessController.doPrivileged
+</span>
+</span>
+<span>
+(
+<a href="../../java/security/PrivilegedAction.html">
+java.security.PrivilegedAction
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/security/AccessController.html#java.security.AccessController:doPrivileged:java.security.PrivilegedActionjava.lang.Object" title="java.lang.Object doPrivileged(java.security.PrivilegedAction)">
+java.security.AccessController.doPrivileged
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="134">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="Policy.html">
+java.security.Policy
+</a>
+</span>
+</div>
+</li>
+<li value="137">
+<div class="instruction">
+<span>
+astore  7
+</span>
+</div>
+</li>
+<li value="139">
+<div class="instruction">
+<span>
+aload  7
+</span>
+</div>
+</li>
+<li value="141">
+<div class="instruction">
+<span>
+ifnull 17
+</span>
+</div>
+</li>
+<li value="144">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/security/Policy$PolicyInfo.html">
+java.security.Policy$PolicyInfo
+</a>
+</span>
+</div>
+</li>
+<li value="147">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="148">
+<div class="instruction">
+<span>
+aload  7
+</span>
+</div>
+</li>
+<li value="150">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="151">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.security.Policy, bool)">
+java.security.Policy$PolicyInfo.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="Policy.html">
+java.security.Policy
+</a>
+, 
+bool
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/security/Policy$PolicyInfo.html#java.security.Policy$PolicyInfo:&lt;init&gt;:java.security.PolicyZvoid" title="void &lt;init&gt;(java.security.Policy, bool)">
+java.security.Policy$PolicyInfo.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="154">
+<div class="instruction">
+<span>
+astore  2
+</span>
+</div>
+</li>
+<li value="155">
+<div class="instruction">
+<span>
+goto 28
+</span>
+</div>
+</li>
+<li value="158">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.security.Policy:debug:sun.security.util.Debug">
+java.security.Policy.debug
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../sun/security/util/Debug.html">
+sun.security.util.Debug
+</a>
+</span>
+</div>
+</li>
+<li value="161">
+<div class="instruction">
+<span>
+ifnull 11
+</span>
+</div>
+</li>
+<li value="164">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.security.Policy:debug:sun.security.util.Debug">
+java.security.Policy.debug
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../sun/security/util/Debug.html">
+sun.security.util.Debug
+</a>
+</span>
+</div>
+</li>
+<li value="167">
+<div class="instruction">
+<span>
+ldc string &apos;using sun.security.provider.PolicyFile&apos;
+</span>
+</div>
+</li>
+<li value="169">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void println(java.lang.String)">
+sun.security.util.Debug.println
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/security/util/Debug.html#sun.security.util.Debug:println:java.lang.Stringvoid" title="void println(java.lang.String)">
+sun.security.util.Debug.println
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="172">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/security/Policy$PolicyInfo.html">
+java.security.Policy$PolicyInfo
+</a>
+</span>
+</div>
+</li>
+<li value="175">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="176">
+<div class="instruction">
+<span>
+aload  5
+</span>
+</div>
+</li>
+<li value="178">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="179">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.security.Policy, bool)">
+java.security.Policy$PolicyInfo.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="Policy.html">
+java.security.Policy
+</a>
+, 
+bool
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/security/Policy$PolicyInfo.html#java.security.Policy$PolicyInfo:&lt;init&gt;:java.security.PolicyZvoid" title="void &lt;init&gt;(java.security.Policy, bool)">
+java.security.Policy$PolicyInfo.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="182">
+<div class="instruction">
+<span>
+astore  2
+</span>
+</div>
+</li>
+<li value="183">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.security.Policy:policy:java.util.concurrent.atomic.AtomicReference">
+java.security.Policy.policy
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/util/concurrent/atomic/AtomicReference.html">
+java.util.concurrent.atomic.AtomicReference
+</a>
+</span>
+</div>
+</li>
+<li value="186">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="187">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void set(java.lang.Object)">
+java.util.concurrent.atomic.AtomicReference.set
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="190">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="191">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../java/security/Policy$PolicyInfo.html#java.security.Policy$PolicyInfo:policy:java.security.Policy">
+java.security.Policy$PolicyInfo.policy
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Policy.html">
+java.security.Policy
+</a>
+</span>
+</div>
+</li>
+<li value="194">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="195">
+<div class="instruction">
+<span>
+monitorexit
+</span>
+</div>
+</li>
+<li value="196">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+<li value="197">
+<div class="instruction">
+<span>
+astore  8
+</span>
+</div>
+</li>
+<li value="199">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="200">
+<div class="instruction">
+<span>
+monitorexit
+</span>
+</div>
+</li>
+<li value="201">
+<div class="instruction">
+<span>
+aload  8
+</span>
+</div>
+</li>
+<li value="203">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="204">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="205">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../java/security/Policy$PolicyInfo.html#java.security.Policy$PolicyInfo:policy:java.security.Policy">
+java.security.Policy$PolicyInfo.policy
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Policy.html">
+java.security.Policy
+</a>
+</span>
+</div>
+</li>
+<li value="208">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 68; try end: 87: catch start: 90; catched type: java.lang.Exception.
+</span>
+</li>
+<li>
+<span>
+try start: 30; try end: 196: catch start: 197; catched type: None (finally block).
+</span>
+</li>
+<li>
+<span>
+try start: 197; try end: 201: catch start: 197; catched type: None (finally block).
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
+<a name="java.security.Policy:refresh:void" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span>
+refresh
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.security.Policy:getPermissions:java.security.CodeSourcejava.security.PermissionCollection" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/security/PermissionCollection.html">
+java.security.PermissionCollection
+</a>
+ 
+<span>
+getPermissions
+</span>
+(
+<a href="../../java/security/CodeSource.html">
+java.security.CodeSource
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.security.Policy:UNSUPPORTED_EMPTY_COLLECTION:java.security.PermissionCollection">
+java.security.Policy.UNSUPPORTED_EMPTY_COLLECTION
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/security/PermissionCollection.html">
+java.security.PermissionCollection
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.security.Policy:getType:java.lang.String" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span>
+getType
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
 <a name="java.security.Policy:setPolicy:java.security.Policyvoid" href="#">
 
 </a>
@@ -1923,213 +6100,6 @@ try start: 127; try end: 132: catch start: 127; catched type: None (finally bloc
 </span>
 </div>
 <div class="method">
-<a name="java.security.Policy:isSet:Z" href="#">
-
-</a>
-<div class="method_signature">
- static 
-bool
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-isSet
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/security/AccessControlContext.html#java.security.AccessControlContext:getDebug:sun.security.util.Debug" title="sun.security.util.Debug getDebug()">
-java.security.AccessControlContext.getDebug()
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.security.Policy:policy:java.util.concurrent.atomic.AtomicReference">
-java.security.Policy.policy
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/util/concurrent/atomic/AtomicReference.html">
-java.util.concurrent.atomic.AtomicReference
-</a>
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Object get()">
-java.util.concurrent.atomic.AtomicReference.get
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/util/concurrent/atomic/AtomicReference.html#java.util.concurrent.atomic.AtomicReference:get:java.lang.Object" title="java.lang.Object get()">
-java.util.concurrent.atomic.AtomicReference.get
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-checkcast 
-</span>
-<span>
-<a href="../../java/security/Policy$PolicyInfo.html">
-java.security.Policy$PolicyInfo
-</a>
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-astore  0
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../java/security/Policy$PolicyInfo.html#java.security.Policy$PolicyInfo:policy:java.security.Policy">
-java.security.Policy$PolicyInfo.policy
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="Policy.html">
-java.security.Policy
-</a>
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-ifnull 15
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../java/security/Policy$PolicyInfo.html#java.security.Policy$PolicyInfo:initialized:Z">
-java.security.Policy$PolicyInfo.initialized
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-bool
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-ifcmpne 7
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
 <a name="java.security.Policy:getInstance:java.lang.Stringjava.security.Policy$Parametersjava.lang.Stringjava.security.Policy" href="#">
 
 </a>
@@ -2615,3157 +6585,6 @@ try start: 25; try end: 58: catch start: 59; catched type: java.security.NoSuchA
 </li>
 </ol>
 </span>
-</div>
-<div class="method">
-<a name="java.security.Policy:&lt;init&gt;:void" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<span>
-Policy
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.Object.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.security.Policy:getProvider:java.security.Provider" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<a href="../../java/security/Provider.html">
-java.security.Provider
-</a>
- 
-<span>
-getProvider
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aconstnull
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.security.Policy:getPolicyNoCheck:java.security.Policy" href="#">
-
-</a>
-<div class="method_signature">
- static 
-<a href="Policy.html">
-java.security.Policy
-</a>
- 
-<span>
-getPolicyNoCheck
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.security.Policy:policy:java.util.concurrent.atomic.AtomicReference">
-java.security.Policy.policy
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/util/concurrent/atomic/AtomicReference.html">
-java.util.concurrent.atomic.AtomicReference
-</a>
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Object get()">
-java.util.concurrent.atomic.AtomicReference.get
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/util/concurrent/atomic/AtomicReference.html#java.util.concurrent.atomic.AtomicReference:get:java.lang.Object" title="java.lang.Object get()">
-java.util.concurrent.atomic.AtomicReference.get
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-checkcast 
-</span>
-<span>
-<a href="../../java/security/Policy$PolicyInfo.html">
-java.security.Policy$PolicyInfo
-</a>
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-astore  0
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../java/security/Policy$PolicyInfo.html#java.security.Policy$PolicyInfo:initialized:Z">
-java.security.Policy$PolicyInfo.initialized
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-bool
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-ifeq 10
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../java/security/Policy$PolicyInfo.html#java.security.Policy$PolicyInfo:policy:java.security.Policy">
-java.security.Policy$PolicyInfo.policy
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="Policy.html">
-java.security.Policy
-</a>
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-ifnonnull 183
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-ldc class Ljava/security/Policy;
-</span>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="28">
-<div class="instruction">
-<span>
-astore  1
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-monitorenter
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.security.Policy:policy:java.util.concurrent.atomic.AtomicReference">
-java.security.Policy.policy
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/util/concurrent/atomic/AtomicReference.html">
-java.util.concurrent.atomic.AtomicReference
-</a>
-</span>
-</div>
-</li>
-<li value="33">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Object get()">
-java.util.concurrent.atomic.AtomicReference.get
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/util/concurrent/atomic/AtomicReference.html#java.util.concurrent.atomic.AtomicReference:get:java.lang.Object" title="java.lang.Object get()">
-java.util.concurrent.atomic.AtomicReference.get
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="36">
-<div class="instruction">
-<span>
-checkcast 
-</span>
-<span>
-<a href="../../java/security/Policy$PolicyInfo.html">
-java.security.Policy$PolicyInfo
-</a>
-</span>
-</div>
-</li>
-<li value="39">
-<div class="instruction">
-<span>
-astore  2
-</span>
-</div>
-</li>
-<li value="40">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="41">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../java/security/Policy$PolicyInfo.html#java.security.Policy$PolicyInfo:policy:java.security.Policy">
-java.security.Policy$PolicyInfo.policy
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="Policy.html">
-java.security.Policy
-</a>
-</span>
-</div>
-</li>
-<li value="44">
-<div class="instruction">
-<span>
-ifnonnull 146
-</span>
-</div>
-</li>
-<li value="47">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-java.security.Policy$1
-</span>
-</div>
-</li>
-<li value="50">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="51">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.security.Policy$1.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="54">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Object doPrivileged(java.security.PrivilegedAction)">
-java.security.AccessController.doPrivileged
-</span>
-</span>
-<span>
-(
-<a href="../../java/security/PrivilegedAction.html">
-java.security.PrivilegedAction
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/security/AccessController.html#java.security.AccessController:doPrivileged:java.security.PrivilegedActionjava.lang.Object" title="java.lang.Object doPrivileged(java.security.PrivilegedAction)">
-java.security.AccessController.doPrivileged
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="57">
-<div class="instruction">
-<span>
-checkcast 
-</span>
-<span>
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-</div>
-</li>
-<li value="60">
-<div class="instruction">
-<span>
-astore  3
-</span>
-</div>
-</li>
-<li value="61">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="62">
-<div class="instruction">
-<span>
-ifnonnull 6
-</span>
-</div>
-</li>
-<li value="65">
-<div class="instruction">
-<span>
-ldc string &apos;sun.security.provider.PolicyFile&apos;
-</span>
-</div>
-</li>
-<li value="67">
-<div class="instruction">
-<span>
-astore  3
-</span>
-</div>
-</li>
-<li value="68">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/security/Policy$PolicyInfo.html">
-java.security.Policy$PolicyInfo
-</a>
-</span>
-</div>
-</li>
-<li value="71">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="72">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="73">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../java/lang/Class.html">
-java.lang.Class
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Class forName(java.lang.String)">
-java.lang.Class.forName
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/Class.html#java.lang.Class:forName:java.lang.Stringjava.lang.Class" title="java.lang.Class forName(java.lang.String)">
-java.lang.Class.forName
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="76">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Object newInstance()">
-java.lang.Class.newInstance
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/Class.html#java.lang.Class:newInstance:java.lang.Object" title="java.lang.Object newInstance()">
-java.lang.Class.newInstance
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="79">
-<div class="instruction">
-<span>
-checkcast 
-</span>
-<span>
-<a href="Policy.html">
-java.security.Policy
-</a>
-</span>
-</div>
-</li>
-<li value="82">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="83">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.security.Policy, bool)">
-java.security.Policy$PolicyInfo.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="Policy.html">
-java.security.Policy
-</a>
-, 
-bool
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/security/Policy$PolicyInfo.html#java.security.Policy$PolicyInfo:&lt;init&gt;:java.security.PolicyZvoid" title="void &lt;init&gt;(java.security.Policy, bool)">
-java.security.Policy$PolicyInfo.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="86">
-<div class="instruction">
-<span>
-astore  2
-</span>
-</div>
-</li>
-<li value="87">
-<div class="instruction">
-<span>
-goto 96
-</span>
-</div>
-</li>
-<li value="90">
-<div class="instruction">
-<span>
-astore  4
-</span>
-</div>
-</li>
-<li value="92">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-sun.security.provider.PolicyFile
-</span>
-</div>
-</li>
-<li value="95">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="96">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-sun.security.provider.PolicyFile.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="99">
-<div class="instruction">
-<span>
-astore  5
-</span>
-</div>
-</li>
-<li value="101">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/security/Policy$PolicyInfo.html">
-java.security.Policy$PolicyInfo
-</a>
-</span>
-</div>
-</li>
-<li value="104">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="105">
-<div class="instruction">
-<span>
-aload  5
-</span>
-</div>
-</li>
-<li value="107">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="108">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.security.Policy, bool)">
-java.security.Policy$PolicyInfo.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="Policy.html">
-java.security.Policy
-</a>
-, 
-bool
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/security/Policy$PolicyInfo.html#java.security.Policy$PolicyInfo:&lt;init&gt;:java.security.PolicyZvoid" title="void &lt;init&gt;(java.security.Policy, bool)">
-java.security.Policy$PolicyInfo.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="111">
-<div class="instruction">
-<span>
-astore  2
-</span>
-</div>
-</li>
-<li value="112">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.security.Policy:policy:java.util.concurrent.atomic.AtomicReference">
-java.security.Policy.policy
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/util/concurrent/atomic/AtomicReference.html">
-java.util.concurrent.atomic.AtomicReference
-</a>
-</span>
-</div>
-</li>
-<li value="115">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="116">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void set(java.lang.Object)">
-java.util.concurrent.atomic.AtomicReference.set
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="119">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="120">
-<div class="instruction">
-<span>
-astore  6
-</span>
-</div>
-</li>
-<li value="122">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-java.security.Policy$2
-</span>
-</div>
-</li>
-<li value="125">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="126">
-<div class="instruction">
-<span>
-aload  6
-</span>
-</div>
-</li>
-<li value="128">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.security.Policy$2.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="131">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Object doPrivileged(java.security.PrivilegedAction)">
-java.security.AccessController.doPrivileged
-</span>
-</span>
-<span>
-(
-<a href="../../java/security/PrivilegedAction.html">
-java.security.PrivilegedAction
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/security/AccessController.html#java.security.AccessController:doPrivileged:java.security.PrivilegedActionjava.lang.Object" title="java.lang.Object doPrivileged(java.security.PrivilegedAction)">
-java.security.AccessController.doPrivileged
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="134">
-<div class="instruction">
-<span>
-checkcast 
-</span>
-<span>
-<a href="Policy.html">
-java.security.Policy
-</a>
-</span>
-</div>
-</li>
-<li value="137">
-<div class="instruction">
-<span>
-astore  7
-</span>
-</div>
-</li>
-<li value="139">
-<div class="instruction">
-<span>
-aload  7
-</span>
-</div>
-</li>
-<li value="141">
-<div class="instruction">
-<span>
-ifnull 17
-</span>
-</div>
-</li>
-<li value="144">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/security/Policy$PolicyInfo.html">
-java.security.Policy$PolicyInfo
-</a>
-</span>
-</div>
-</li>
-<li value="147">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="148">
-<div class="instruction">
-<span>
-aload  7
-</span>
-</div>
-</li>
-<li value="150">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="151">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.security.Policy, bool)">
-java.security.Policy$PolicyInfo.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="Policy.html">
-java.security.Policy
-</a>
-, 
-bool
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/security/Policy$PolicyInfo.html#java.security.Policy$PolicyInfo:&lt;init&gt;:java.security.PolicyZvoid" title="void &lt;init&gt;(java.security.Policy, bool)">
-java.security.Policy$PolicyInfo.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="154">
-<div class="instruction">
-<span>
-astore  2
-</span>
-</div>
-</li>
-<li value="155">
-<div class="instruction">
-<span>
-goto 28
-</span>
-</div>
-</li>
-<li value="158">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.security.Policy:debug:sun.security.util.Debug">
-java.security.Policy.debug
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../sun/security/util/Debug.html">
-sun.security.util.Debug
-</a>
-</span>
-</div>
-</li>
-<li value="161">
-<div class="instruction">
-<span>
-ifnull 11
-</span>
-</div>
-</li>
-<li value="164">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.security.Policy:debug:sun.security.util.Debug">
-java.security.Policy.debug
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../sun/security/util/Debug.html">
-sun.security.util.Debug
-</a>
-</span>
-</div>
-</li>
-<li value="167">
-<div class="instruction">
-<span>
-ldc string &apos;using sun.security.provider.PolicyFile&apos;
-</span>
-</div>
-</li>
-<li value="169">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void println(java.lang.String)">
-sun.security.util.Debug.println
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../sun/security/util/Debug.html#sun.security.util.Debug:println:java.lang.Stringvoid" title="void println(java.lang.String)">
-sun.security.util.Debug.println
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="172">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/security/Policy$PolicyInfo.html">
-java.security.Policy$PolicyInfo
-</a>
-</span>
-</div>
-</li>
-<li value="175">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="176">
-<div class="instruction">
-<span>
-aload  5
-</span>
-</div>
-</li>
-<li value="178">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="179">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.security.Policy, bool)">
-java.security.Policy$PolicyInfo.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="Policy.html">
-java.security.Policy
-</a>
-, 
-bool
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/security/Policy$PolicyInfo.html#java.security.Policy$PolicyInfo:&lt;init&gt;:java.security.PolicyZvoid" title="void &lt;init&gt;(java.security.Policy, bool)">
-java.security.Policy$PolicyInfo.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="182">
-<div class="instruction">
-<span>
-astore  2
-</span>
-</div>
-</li>
-<li value="183">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.security.Policy:policy:java.util.concurrent.atomic.AtomicReference">
-java.security.Policy.policy
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/util/concurrent/atomic/AtomicReference.html">
-java.util.concurrent.atomic.AtomicReference
-</a>
-</span>
-</div>
-</li>
-<li value="186">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="187">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void set(java.lang.Object)">
-java.util.concurrent.atomic.AtomicReference.set
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="190">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="191">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../java/security/Policy$PolicyInfo.html#java.security.Policy$PolicyInfo:policy:java.security.Policy">
-java.security.Policy$PolicyInfo.policy
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="Policy.html">
-java.security.Policy
-</a>
-</span>
-</div>
-</li>
-<li value="194">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="195">
-<div class="instruction">
-<span>
-monitorexit
-</span>
-</div>
-</li>
-<li value="196">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-<li value="197">
-<div class="instruction">
-<span>
-astore  8
-</span>
-</div>
-</li>
-<li value="199">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="200">
-<div class="instruction">
-<span>
-monitorexit
-</span>
-</div>
-</li>
-<li value="201">
-<div class="instruction">
-<span>
-aload  8
-</span>
-</div>
-</li>
-<li value="203">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="204">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="205">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../java/security/Policy$PolicyInfo.html#java.security.Policy$PolicyInfo:policy:java.security.Policy">
-java.security.Policy$PolicyInfo.policy
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="Policy.html">
-java.security.Policy
-</a>
-</span>
-</div>
-</li>
-<li value="208">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<span title="Exceptions">
-<h3>
-Exceptions handling:
-</h3>
-<ol>
-<li>
-<span>
-try start: 68; try end: 87: catch start: 90; catched type: java.lang.Exception.
-</span>
-</li>
-<li>
-<span>
-try start: 30; try end: 196: catch start: 197; catched type: None (finally block).
-</span>
-</li>
-<li>
-<span>
-try start: 197; try end: 201: catch start: 197; catched type: None (finally block).
-</span>
-</li>
-</ol>
-</span>
-</div>
-<div class="method">
-<a name="java.security.Policy:access$000:sun.security.util.Debug" href="#">
-
-</a>
-<div class="method_signature">
- static 
-<a href="../../sun/security/util/Debug.html">
-sun.security.util.Debug
-</a>
- 
-<span>
-access$000
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.security.Policy:debug:sun.security.util.Debug">
-java.security.Policy.debug
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../sun/security/util/Debug.html">
-sun.security.util.Debug
-</a>
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.security.Policy:addStaticPerms:java.security.PermissionCollectionjava.security.PermissionCollectionvoid" href="#">
-
-</a>
-<div class="method_signature">
-private 
-void
- 
-<span>
-addStaticPerms
-</span>
-(
-<a href="../../java/security/PermissionCollection.html">
-java.security.PermissionCollection
-</a>
- 1
-, 
-<a href="../../java/security/PermissionCollection.html">
-java.security.PermissionCollection
-</a>
- 2
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-ifnull 52
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-astore  3
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-monitorenter
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/util/Enumeration.html">
-java.util.Enumeration
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.util.Enumeration elements()">
-java.security.PermissionCollection.elements
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/security/Permissions.html#java.security.Permissions:elements:java.util.Enumeration" title="java.util.Enumeration elements()">
-java.security.Permissions.elements
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/security/Policy$UnsupportedEmptyCollection.html#java.security.Policy$UnsupportedEmptyCollection:elements:java.util.Enumeration" title="java.util.Enumeration elements()">
-java.security.Policy$UnsupportedEmptyCollection.elements
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-astore  4
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-aload  4
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-invokeinterface 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool hasMoreElements()">
-java.util.Enumeration.hasMoreElements
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/util/Hashtable$Enumerator.html#java.util.Hashtable$Enumerator:hasMoreElements:Z" title="bool hasMoreElements()">
-java.util.Hashtable$Enumerator.hasMoreElements
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/concurrent/ConcurrentHashMap$HashIterator.html#java.util.concurrent.ConcurrentHashMap$HashIterator:hasMoreElements:Z" title="bool hasMoreElements()">
-java.util.concurrent.ConcurrentHashMap$HashIterator.hasMoreElements
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/security/PermissionsEnumerator.html#java.security.PermissionsEnumerator:hasMoreElements:Z" title="bool hasMoreElements()">
-java.security.PermissionsEnumerator.hasMoreElements
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/StringTokenizer.html#java.util.StringTokenizer:hasMoreElements:Z" title="bool hasMoreElements()">
-java.util.StringTokenizer.hasMoreElements
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-ifeq 20
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-aload  4
-</span>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-invokeinterface 
-</span>
-<span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Object nextElement()">
-java.util.Enumeration.nextElement
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/util/StringTokenizer.html#java.util.StringTokenizer:nextElement:java.lang.Object" title="java.lang.Object nextElement()">
-java.util.StringTokenizer.nextElement
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/concurrent/ConcurrentHashMap$ValueIterator.html#java.util.concurrent.ConcurrentHashMap$ValueIterator:nextElement:java.lang.Object" title="java.lang.Object nextElement()">
-java.util.concurrent.ConcurrentHashMap$ValueIterator.nextElement
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/security/PermissionsEnumerator.html#java.security.PermissionsEnumerator:nextElement:java.lang.Object" title="java.lang.Object nextElement()">
-java.security.PermissionsEnumerator.nextElement
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/concurrent/ConcurrentHashMap$KeyIterator.html#java.util.concurrent.ConcurrentHashMap$KeyIterator:nextElement:java.lang.Object" title="java.lang.Object nextElement()">
-java.util.concurrent.ConcurrentHashMap$KeyIterator.nextElement
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Hashtable$Enumerator.html#java.util.Hashtable$Enumerator:nextElement:java.lang.Object" title="java.lang.Object nextElement()">
-java.util.Hashtable$Enumerator.nextElement
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="32">
-<div class="instruction">
-<span>
-checkcast 
-</span>
-<span>
-<a href="../../java/security/Permission.html">
-java.security.Permission
-</a>
-</span>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void add(java.security.Permission)">
-java.security.PermissionCollection.add
-</span>
-</span>
-<span>
-(
-<a href="../../java/security/Permission.html">
-java.security.Permission
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="38">
-<div class="instruction">
-<span>
-goto -24
-</span>
-</div>
-</li>
-<li value="41">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="42">
-<div class="instruction">
-<span>
-monitorexit
-</span>
-</div>
-</li>
-<li value="43">
-<div class="instruction">
-<span>
-goto 10
-</span>
-</div>
-</li>
-<li value="46">
-<div class="instruction">
-<span>
-astore  5
-</span>
-</div>
-</li>
-<li value="48">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="49">
-<div class="instruction">
-<span>
-monitorexit
-</span>
-</div>
-</li>
-<li value="50">
-<div class="instruction">
-<span>
-aload  5
-</span>
-</div>
-</li>
-<li value="52">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="53">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<span title="Exceptions">
-<h3>
-Exceptions handling:
-</h3>
-<ol>
-<li>
-<span>
-try start: 8; try end: 43: catch start: 46; catched type: None (finally block).
-</span>
-</li>
-<li>
-<span>
-try start: 46; try end: 50: catch start: 46; catched type: None (finally block).
-</span>
-</li>
-</ol>
-</span>
-</div>
-<div class="method">
-<a name="java.security.Policy:getType:java.lang.String" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- 
-<span>
-getType
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aconstnull
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.security.Policy:getInstance:java.lang.Stringjava.security.Policy$Parametersjava.security.Policy" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-<a href="Policy.html">
-java.security.Policy
-</a>
- 
-<span>
-getInstance
-</span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- 0
-, 
-java.security.Policy$Parameters
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void checkPermission(java.lang.String)">
-java.security.Policy.checkPermission
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ldc string &apos;Policy&apos;
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-ldc class Ljava/security/PolicySpi;
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-sun.security.jca.GetInstance$Instance
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="sun.security.jca.GetInstance$Instance getInstance(java.lang.String, java.lang.Class, java.lang.String, java.lang.Object)">
-sun.security.jca.GetInstance.getInstance
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-, 
-<a href="../../java/lang/Class.html">
-java.lang.Class
-</a>
-, 
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-, 
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-astore  2
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-java.security.Policy$PolicyDelegate
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-sun.security.jca.GetInstance$Instance.impl
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-checkcast 
-</span>
-<span>
-java.security.PolicySpi
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-sun.security.jca.GetInstance$Instance.provider
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/security/Provider.html">
-java.security.Provider
-</a>
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="31">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="32">
-<div class="instruction">
-<span>
-aconstnull
-</span>
-</div>
-</li>
-<li value="33">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.security.PolicySpi, java.security.Provider, java.lang.String, java.security.Policy$Parameters, java.security.Policy$1)">
-java.security.Policy$PolicyDelegate.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-java.security.PolicySpi
-, 
-<a href="../../java/security/Provider.html">
-java.security.Provider
-</a>
-, 
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-, 
-java.security.Policy$Parameters
-, 
-java.security.Policy$1
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="36">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-<li value="37">
-<div class="instruction">
-<span>
-astore  2
-</span>
-</div>
-</li>
-<li value="38">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="39">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="Policy.html">
-java.security.Policy
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.security.Policy handleException(java.security.NoSuchAlgorithmException)">
-java.security.Policy.handleException
-</span>
-</span>
-<span>
-(
-java.security.NoSuchAlgorithmException
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="42">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<span title="Exceptions">
-<h3>
-Exceptions handling:
-</h3>
-<ol>
-<li>
-<span>
-try start: 4; try end: 36: catch start: 37; catched type: java.security.NoSuchAlgorithmException.
-</span>
-</li>
-</ol>
-</span>
-</div>
-<div class="method">
-<a name="java.security.Policy:refresh:void" href="#">
-
-</a>
-<div class="method_signature">
-public 
-void
- 
-<span>
-refresh
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.security.Policy:getPermissions:java.security.CodeSourcejava.security.PermissionCollection" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<a href="../../java/security/PermissionCollection.html">
-java.security.PermissionCollection
-</a>
- 
-<span>
-getPermissions
-</span>
-(
-<a href="../../java/security/CodeSource.html">
-java.security.CodeSource
-</a>
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.security.Policy:UNSUPPORTED_EMPTY_COLLECTION:java.security.PermissionCollection">
-java.security.Policy.UNSUPPORTED_EMPTY_COLLECTION
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/security/PermissionCollection.html">
-java.security.PermissionCollection
-</a>
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.security.Policy:getInstance:java.lang.Stringjava.security.Policy$Parametersjava.security.Providerjava.security.Policy" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-<a href="Policy.html">
-java.security.Policy
-</a>
- 
-<span>
-getInstance
-</span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- 0
-, 
-java.security.Policy$Parameters
- 1
-, 
-<a href="../../java/security/Provider.html">
-java.security.Provider
-</a>
- 2
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-ifnonnull 13
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/IllegalArgumentException.html">
-java.lang.IllegalArgumentException
-</a>
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-ldc string &apos;missing provider&apos;
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.lang.IllegalArgumentException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void checkPermission(java.lang.String)">
-java.security.Policy.checkPermission
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-ldc string &apos;Policy&apos;
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-ldc class Ljava/security/PolicySpi;
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-sun.security.jca.GetInstance$Instance
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="sun.security.jca.GetInstance$Instance getInstance(java.lang.String, java.lang.Class, java.lang.String, java.lang.Object, java.security.Provider)">
-sun.security.jca.GetInstance.getInstance
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-, 
-<a href="../../java/lang/Class.html">
-java.lang.Class
-</a>
-, 
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-, 
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-, 
-<a href="../../java/security/Provider.html">
-java.security.Provider
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-astore  3
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-java.security.Policy$PolicyDelegate
-</span>
-</div>
-</li>
-<li value="33">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="34">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-sun.security.jca.GetInstance$Instance.impl
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-</span>
-</div>
-</li>
-<li value="38">
-<div class="instruction">
-<span>
-checkcast 
-</span>
-<span>
-java.security.PolicySpi
-</span>
-</div>
-</li>
-<li value="41">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="42">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-sun.security.jca.GetInstance$Instance.provider
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/security/Provider.html">
-java.security.Provider
-</a>
-</span>
-</div>
-</li>
-<li value="45">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="46">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="47">
-<div class="instruction">
-<span>
-aconstnull
-</span>
-</div>
-</li>
-<li value="48">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.security.PolicySpi, java.security.Provider, java.lang.String, java.security.Policy$Parameters, java.security.Policy$1)">
-java.security.Policy$PolicyDelegate.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-java.security.PolicySpi
-, 
-<a href="../../java/security/Provider.html">
-java.security.Provider
-</a>
-, 
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-, 
-java.security.Policy$Parameters
-, 
-java.security.Policy$1
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="51">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-<li value="52">
-<div class="instruction">
-<span>
-astore  3
-</span>
-</div>
-</li>
-<li value="53">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="54">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="Policy.html">
-java.security.Policy
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.security.Policy handleException(java.security.NoSuchAlgorithmException)">
-java.security.Policy.handleException
-</span>
-</span>
-<span>
-(
-java.security.NoSuchAlgorithmException
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="57">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<span title="Exceptions">
-<h3>
-Exceptions handling:
-</h3>
-<ol>
-<li>
-<span>
-try start: 18; try end: 51: catch start: 52; catched type: java.security.NoSuchAlgorithmException.
-</span>
-</li>
-</ol>
-</span>
-</div>
-<div class="method">
-<a name="java.security.Policy:checkPermission:java.lang.Stringvoid" href="#">
-
-</a>
-<div class="method_signature">
-private static 
-void
- 
-<span>
-checkPermission
-</span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../java/lang/SecurityManager.html">
-java.lang.SecurityManager
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.SecurityManager getSecurityManager()">
-java.lang.System.getSecurityManager
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/System.html#java.lang.System:getSecurityManager:java.lang.SecurityManager" title="java.lang.SecurityManager getSecurityManager()">
-java.lang.System.getSecurityManager
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-astore  1
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-ifnull 33
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/security/SecurityPermission.html">
-java.security.SecurityPermission
-</a>
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.StringBuilder.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-ldc string &apos;createPolicy.&apos;
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.StringBuilder append(java.lang.String)">
-java.lang.StringBuilder.append
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
-java.lang.StringBuilder.append
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.StringBuilder append(java.lang.String)">
-java.lang.StringBuilder.append
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
-java.lang.StringBuilder.append
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.String toString()">
-java.lang.StringBuilder.toString
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:toString:java.lang.String" title="java.lang.String toString()">
-java.lang.StringBuilder.toString
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="32">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.security.SecurityPermission.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void checkPermission(java.security.Permission)">
-java.lang.SecurityManager.checkPermission
-</span>
-</span>
-<span>
-(
-<a href="../../java/security/Permission.html">
-java.security.Permission
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/SecurityManager.html#java.lang.SecurityManager:checkPermission:java.security.Permissionvoid" title="void checkPermission(java.security.Permission)">
-java.lang.SecurityManager.checkPermission
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="38">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
 </div>
 <div class="method">
 <a name="java.security.Policy:implies:java.security.ProtectionDomainjava.security.PermissionZ" href="#">
@@ -6513,23 +7332,19 @@ try start: 97; try end: 102: catch start: 97; catched type: None (finally block)
 </span>
 </div>
 <div class="method">
-<a name="java.security.Policy:getPermissions:java.security.ProtectionDomainjava.security.PermissionCollection" href="#">
+<a name="java.security.Policy:access$000:sun.security.util.Debug" href="#">
 
 </a>
 <div class="method_signature">
-public 
-<a href="../../java/security/PermissionCollection.html">
-java.security.PermissionCollection
+ static 
+<a href="../../sun/security/util/Debug.html">
+sun.security.util.Debug
 </a>
  
 <span>
-getPermissions
+access$000
 </span>
 (
-<a href="../../java/security/ProtectionDomain.html">
-java.security.ProtectionDomain
-</a>
- 1
 )
 ;
 <ul class="annot">
@@ -6545,465 +7360,117 @@ Not parsed
 <li value="0">
 <div class="instruction">
 <span>
-aconstnull
+getstatic 
 </span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
 <span>
-astore  2
+<a href="#java.security.Policy:debug:sun.security.util.Debug">
+java.security.Policy.debug
+</a>
 </span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
 <span>
-aload  1
+ : 
+</span>
+<span>
+<a href="../../sun/security/util/Debug.html">
+sun.security.util.Debug
+</a>
 </span>
 </div>
 </li>
 <li value="3">
 <div class="instruction">
 <span>
-ifnonnull 11
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.security.Policy:addStaticPerms:java.security.PermissionCollectionjava.security.PermissionCollectionvoid" href="#">
+
+</a>
+<div class="method_signature">
+private 
+void
+ 
+<span>
+addStaticPerms
+</span>
+(
+<a href="../../java/security/PermissionCollection.html">
+java.security.PermissionCollection
+</a>
+ 1
+, 
+<a href="../../java/security/PermissionCollection.html">
+java.security.PermissionCollection
+</a>
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+ifnull 52
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+dup
 </span>
 </div>
 </li>
 <li value="6">
 <div class="instruction">
 <span>
-new 
+astore  3
 </span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
 <span>
-<a href="../../java/security/Permissions.html">
-java.security.Permissions
-</a>
+monitorenter
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+aload  2
 </span>
 </div>
 </li>
 <li value="9">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.security.Permissions.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.security.Policy:pdMapping:java.util.WeakHashMap">
-java.security.Policy.pdMapping
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/util/WeakHashMap.html">
-java.util.WeakHashMap
-</a>
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-ifnonnull 7
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void initPolicy(java.security.Policy)">
-java.security.Policy.initPolicy
-</span>
-</span>
-<span>
-(
-<a href="Policy.html">
-java.security.Policy
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.security.Policy:pdMapping:java.util.WeakHashMap">
-java.security.Policy.pdMapping
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/util/WeakHashMap.html">
-java.util.WeakHashMap
-</a>
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-astore  3
-</span>
-</div>
-</li>
-<li value="31">
-<div class="instruction">
-<span>
-monitorenter
-</span>
-</div>
-</li>
-<li value="32">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="33">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.security.Policy:pdMapping:java.util.WeakHashMap">
-java.security.Policy.pdMapping
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/util/WeakHashMap.html">
-java.util.WeakHashMap
-</a>
-</span>
-</div>
-</li>
-<li value="36">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="37">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../java/security/ProtectionDomain.html#java.security.ProtectionDomain:key:java.security.ProtectionDomain$Key">
-java.security.ProtectionDomain.key
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/security/ProtectionDomain$Key.html">
-java.security.ProtectionDomain$Key
-</a>
-</span>
-</div>
-</li>
-<li value="40">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Object get(java.lang.Object)">
-java.util.WeakHashMap.get
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/util/WeakHashMap.html#java.util.WeakHashMap:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
-java.util.WeakHashMap.get
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="43">
-<div class="instruction">
-<span>
-checkcast 
-</span>
-<span>
-<a href="../../java/security/PermissionCollection.html">
-java.security.PermissionCollection
-</a>
-</span>
-</div>
-</li>
-<li value="46">
-<div class="instruction">
-<span>
-astore  2
-</span>
-</div>
-</li>
-<li value="47">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="48">
-<div class="instruction">
-<span>
-monitorexit
-</span>
-</div>
-</li>
-<li value="49">
-<div class="instruction">
-<span>
-goto 10
-</span>
-</div>
-</li>
-<li value="52">
-<div class="instruction">
-<span>
-astore  4
-</span>
-</div>
-</li>
-<li value="54">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="55">
-<div class="instruction">
-<span>
-monitorexit
-</span>
-</div>
-</li>
-<li value="56">
-<div class="instruction">
-<span>
-aload  4
-</span>
-</div>
-</li>
-<li value="58">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="59">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="60">
-<div class="instruction">
-<span>
-ifnull 65
-</span>
-</div>
-</li>
-<li value="63">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/security/Permissions.html">
-java.security.Permissions
-</a>
-</span>
-</div>
-</li>
-<li value="66">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="67">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.security.Permissions.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="70">
-<div class="instruction">
-<span>
-astore  3
-</span>
-</div>
-</li>
-<li value="71">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="72">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="73">
-<div class="instruction">
-<span>
-astore  4
-</span>
-</div>
-</li>
-<li value="75">
-<div class="instruction">
-<span>
-monitorenter
-</span>
-</div>
-</li>
-<li value="76">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="77">
 <div class="instruction">
 <span>
 invokevirtual 
@@ -7040,21 +7507,21 @@ java.security.Policy$UnsupportedEmptyCollection.elements
 </ul>
 </div>
 </li>
-<li value="80">
+<li value="12">
 <div class="instruction">
 <span>
-astore  5
+astore  4
 </span>
 </div>
 </li>
-<li value="82">
+<li value="14">
 <div class="instruction">
 <span>
-aload  5
+aload  4
 </span>
 </div>
 </li>
-<li value="84">
+<li value="16">
 <div class="instruction">
 <span>
 invokeinterface 
@@ -7074,15 +7541,8 @@ java.util.Enumeration.hasMoreElements
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/util/Hashtable$Enumerator.html#java.util.Hashtable$Enumerator:hasMoreElements:Z" title="bool hasMoreElements()">
-java.util.Hashtable$Enumerator.hasMoreElements
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/concurrent/ConcurrentHashMap$HashIterator.html#java.util.concurrent.ConcurrentHashMap$HashIterator:hasMoreElements:Z" title="bool hasMoreElements()">
-java.util.concurrent.ConcurrentHashMap$HashIterator.hasMoreElements
+<a href="../../java/util/StringTokenizer.html#java.util.StringTokenizer:hasMoreElements:Z" title="bool hasMoreElements()">
+java.util.StringTokenizer.hasMoreElements
 </a>
 </div>
 </li>
@@ -7095,36 +7555,43 @@ java.security.PermissionsEnumerator.hasMoreElements
 </li>
 <li>
 <div>
-<a href="../../java/util/StringTokenizer.html#java.util.StringTokenizer:hasMoreElements:Z" title="bool hasMoreElements()">
-java.util.StringTokenizer.hasMoreElements
+<a href="../../java/util/Hashtable$Enumerator.html#java.util.Hashtable$Enumerator:hasMoreElements:Z" title="bool hasMoreElements()">
+java.util.Hashtable$Enumerator.hasMoreElements
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/ConcurrentHashMap$HashIterator.html#java.util.concurrent.ConcurrentHashMap$HashIterator:hasMoreElements:Z" title="bool hasMoreElements()">
+java.util.concurrent.ConcurrentHashMap$HashIterator.hasMoreElements
 </a>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="89">
+<li value="21">
 <div class="instruction">
 <span>
 ifeq 20
 </span>
 </div>
 </li>
-<li value="92">
+<li value="24">
 <div class="instruction">
 <span>
-aload  3
+aload  1
 </span>
 </div>
 </li>
-<li value="93">
+<li value="25">
 <div class="instruction">
 <span>
-aload  5
+aload  4
 </span>
 </div>
 </li>
-<li value="95">
+<li value="27">
 <div class="instruction">
 <span>
 invokeinterface 
@@ -7146,6 +7613,20 @@ java.util.Enumeration.nextElement
 <ul class="clickable">
 <li>
 <div>
+<a href="../../java/util/Hashtable$Enumerator.html#java.util.Hashtable$Enumerator:nextElement:java.lang.Object" title="java.lang.Object nextElement()">
+java.util.Hashtable$Enumerator.nextElement
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/ConcurrentHashMap$KeyIterator.html#java.util.concurrent.ConcurrentHashMap$KeyIterator:nextElement:java.lang.Object" title="java.lang.Object nextElement()">
+java.util.concurrent.ConcurrentHashMap$KeyIterator.nextElement
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../java/util/StringTokenizer.html#java.util.StringTokenizer:nextElement:java.lang.Object" title="java.lang.Object nextElement()">
 java.util.StringTokenizer.nextElement
 </a>
@@ -7165,24 +7646,10 @@ java.security.PermissionsEnumerator.nextElement
 </a>
 </div>
 </li>
-<li>
-<div>
-<a href="../../java/util/concurrent/ConcurrentHashMap$KeyIterator.html#java.util.concurrent.ConcurrentHashMap$KeyIterator:nextElement:java.lang.Object" title="java.lang.Object nextElement()">
-java.util.concurrent.ConcurrentHashMap$KeyIterator.nextElement
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Hashtable$Enumerator.html#java.util.Hashtable$Enumerator:nextElement:java.lang.Object" title="java.lang.Object nextElement()">
-java.util.Hashtable$Enumerator.nextElement
-</a>
-</div>
-</li>
 </ul>
 </div>
 </li>
-<li value="100">
+<li value="32">
 <div class="instruction">
 <span>
 checkcast 
@@ -7194,7 +7661,7 @@ java.security.Permission
 </span>
 </div>
 </li>
-<li value="103">
+<li value="35">
 <div class="instruction">
 <span>
 invokevirtual 
@@ -7204,7 +7671,7 @@ void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
 <span title="void add(java.security.Permission)">
-java.security.Permissions.add
+java.security.PermissionCollection.add
 </span>
 </span>
 <span>
@@ -7223,356 +7690,73 @@ No reachable result.
 </ul>
 </div>
 </li>
-<li value="106">
+<li value="38">
 <div class="instruction">
 <span>
 goto -24
 </span>
 </div>
 </li>
-<li value="109">
-<div class="instruction">
-<span>
-aload  4
-</span>
-</div>
-</li>
-<li value="111">
-<div class="instruction">
-<span>
-monitorexit
-</span>
-</div>
-</li>
-<li value="112">
-<div class="instruction">
-<span>
-goto 11
-</span>
-</div>
-</li>
-<li value="115">
-<div class="instruction">
-<span>
-astore  6
-</span>
-</div>
-</li>
-<li value="117">
-<div class="instruction">
-<span>
-aload  4
-</span>
-</div>
-</li>
-<li value="119">
-<div class="instruction">
-<span>
-monitorexit
-</span>
-</div>
-</li>
-<li value="120">
-<div class="instruction">
-<span>
-aload  6
-</span>
-</div>
-</li>
-<li value="122">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="123">
+<li value="41">
 <div class="instruction">
 <span>
 aload  3
 </span>
 </div>
 </li>
-<li value="124">
+<li value="42">
 <div class="instruction">
 <span>
-areturn
+monitorexit
 </span>
 </div>
 </li>
-<li value="125">
+<li value="43">
 <div class="instruction">
 <span>
-aload  0
+goto 10
 </span>
 </div>
 </li>
-<li value="126">
+<li value="46">
 <div class="instruction">
 <span>
-aload  1
+astore  5
 </span>
 </div>
 </li>
-<li value="127">
+<li value="48">
 <div class="instruction">
 <span>
-invokevirtual 
+aload  3
 </span>
-<span>
-<a href="../../java/security/CodeSource.html">
-java.security.CodeSource
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.security.CodeSource getCodeSource()">
-java.security.ProtectionDomain.getCodeSource
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
 </div>
 </li>
-</ul>
-</div>
-</li>
-<li value="130">
+<li value="49">
 <div class="instruction">
 <span>
-invokevirtual 
+monitorexit
 </span>
-<span>
-<a href="../../java/security/PermissionCollection.html">
-java.security.PermissionCollection
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.security.PermissionCollection getPermissions(java.security.CodeSource)">
-java.security.Policy.getPermissions
-</span>
-</span>
-<span>
-(
-<a href="../../java/security/CodeSource.html">
-java.security.CodeSource
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
 </div>
 </li>
-</ul>
-</div>
-</li>
-<li value="133">
+<li value="50">
 <div class="instruction">
 <span>
-astore  2
+aload  5
 </span>
 </div>
 </li>
-<li value="134">
+<li value="52">
 <div class="instruction">
 <span>
-aload  2
+athrow
 </span>
 </div>
 </li>
-<li value="135">
+<li value="53">
 <div class="instruction">
 <span>
-ifnull 10
-</span>
-</div>
-</li>
-<li value="138">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="139">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.security.Policy:UNSUPPORTED_EMPTY_COLLECTION:java.security.PermissionCollection">
-java.security.Policy.UNSUPPORTED_EMPTY_COLLECTION
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/security/PermissionCollection.html">
-java.security.PermissionCollection
-</a>
-</span>
-</div>
-</li>
-<li value="142">
-<div class="instruction">
-<span>
-ifacmpne 11
-</span>
-</div>
-</li>
-<li value="145">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/security/Permissions.html">
-java.security.Permissions
-</a>
-</span>
-</div>
-</li>
-<li value="148">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="149">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.security.Permissions.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="152">
-<div class="instruction">
-<span>
-astore  2
-</span>
-</div>
-</li>
-<li value="153">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="154">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="155">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="156">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/security/PermissionCollection.html">
-java.security.PermissionCollection
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.security.PermissionCollection getPermissions()">
-java.security.ProtectionDomain.getPermissions
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="159">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void addStaticPerms(java.security.PermissionCollection, java.security.PermissionCollection)">
-java.security.Policy.addStaticPerms
-</span>
-</span>
-<span>
-(
-<a href="../../java/security/PermissionCollection.html">
-java.security.PermissionCollection
-</a>
-, 
-<a href="../../java/security/PermissionCollection.html">
-java.security.PermissionCollection
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="162">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="163">
-<div class="instruction">
-<span>
-areturn
+return
 </span>
 </div>
 </li>
@@ -7584,200 +7768,16 @@ Exceptions handling:
 <ol>
 <li>
 <span>
-try start: 32; try end: 49: catch start: 52; catched type: None (finally block).
+try start: 8; try end: 43: catch start: 46; catched type: None (finally block).
 </span>
 </li>
 <li>
 <span>
-try start: 52; try end: 56: catch start: 52; catched type: None (finally block).
-</span>
-</li>
-<li>
-<span>
-try start: 76; try end: 112: catch start: 115; catched type: None (finally block).
-</span>
-</li>
-<li>
-<span>
-try start: 115; try end: 120: catch start: 115; catched type: None (finally block).
+try start: 46; try end: 50: catch start: 46; catched type: None (finally block).
 </span>
 </li>
 </ol>
 </span>
-</div>
-<div class="method">
-<a name="java.security.Policy:getPolicy:java.security.Policy" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-<a href="Policy.html">
-java.security.Policy
-</a>
- 
-<span>
-getPolicy
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../java/lang/SecurityManager.html">
-java.lang.SecurityManager
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.SecurityManager getSecurityManager()">
-java.lang.System.getSecurityManager
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/System.html#java.lang.System:getSecurityManager:java.lang.SecurityManager" title="java.lang.SecurityManager getSecurityManager()">
-java.lang.System.getSecurityManager
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-astore  0
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-ifnull 10
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="../../sun/security/util/SecurityConstants.html#sun.security.util.SecurityConstants:GET_POLICY_PERMISSION:java.security.SecurityPermission">
-sun.security.util.SecurityConstants.GET_POLICY_PERMISSION
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/security/SecurityPermission.html">
-java.security.SecurityPermission
-</a>
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void checkPermission(java.security.Permission)">
-java.lang.SecurityManager.checkPermission
-</span>
-</span>
-<span>
-(
-<a href="../../java/security/Permission.html">
-java.security.Permission
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/SecurityManager.html#java.lang.SecurityManager:checkPermission:java.security.Permissionvoid" title="void checkPermission(java.security.Permission)">
-java.lang.SecurityManager.checkPermission
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="Policy.html">
-java.security.Policy
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.security.Policy getPolicyNoCheck()">
-java.security.Policy.getPolicyNoCheck
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
 </div>
 </div>
 </body>

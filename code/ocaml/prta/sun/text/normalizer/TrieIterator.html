@@ -175,7 +175,7 @@ int
 </span>
 </div>
 <div class="method">
-<a name="sun.text.normalizer.TrieIterator:checkTrailBlock:IIZ" href="#">
+<a name="sun.text.normalizer.TrieIterator:checkBlock:IIZ" href="#">
 
 </a>
 <div class="method_signature">
@@ -183,7 +183,7 @@ private final
 bool
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-checkTrailBlock
+checkBlock
 </span>
 (
 int
@@ -204,8 +204,15 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="#sun.text.normalizer.TrieIterator:calculateNextSupplementaryElement:sun.text.normalizer.RangeValueIterator$Elementvoid" title="void calculateNextSupplementaryElement(sun.text.normalizer.RangeValueIterator$Element)">
-sun.text.normalizer.TrieIterator.calculateNextSupplementaryElement(sun.text.normalizer.RangeValueIterator$Element)
+<a href="#sun.text.normalizer.TrieIterator:calculateNextBMPElement:sun.text.normalizer.RangeValueIterator$ElementZ" title="bool calculateNextBMPElement(sun.text.normalizer.RangeValueIterator$Element)">
+sun.text.normalizer.TrieIterator.calculateNextBMPElement(sun.text.normalizer.RangeValueIterator$Element)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#sun.text.normalizer.TrieIterator:checkTrailBlock:IIZ" title="bool checkTrailBlock(int, int)">
+sun.text.normalizer.TrieIterator.checkTrailBlock(int, int)
 </a>
 </div>
 </li>
@@ -222,491 +229,11 @@ aload  0
 <li value="1">
 <div class="instruction">
 <span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextTrailIndexOffset_:I">
-sun.text.normalizer.TrieIterator.m_nextTrailIndexOffset_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-bipush 32
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-ifcmpge 42
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
 aload  0
 </span>
 </div>
 </li>
-<li value="10">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextBlockIndex_:I">
-sun.text.normalizer.TrieIterator.m_nextBlockIndex_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool checkBlock(int, int)">
-sun.text.normalizer.TrieIterator.checkBlock
-</span>
-</span>
-<span>
-(
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#sun.text.normalizer.TrieIterator:checkBlock:IIZ" title="bool checkBlock(int, int)">
-sun.text.normalizer.TrieIterator.checkBlock
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-ifne 5
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextTrailIndexOffset_:I">
-sun.text.normalizer.TrieIterator.m_nextTrailIndexOffset_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="31">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="32">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextTrailIndexOffset_:I">
-sun.text.normalizer.TrieIterator.m_nextTrailIndexOffset_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="36">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="37">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextIndex_:I">
-sun.text.normalizer.TrieIterator.m_nextIndex_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="40">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="41">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="42">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextIndex_:I">
-sun.text.normalizer.TrieIterator.m_nextIndex_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="45">
-<div class="instruction">
-<span>
-goto -45
-</span>
-</div>
-</li>
-<li value="48">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="49">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="sun.text.normalizer.TrieIterator:checkNullNextTrailIndex:Z" href="#">
-
-</a>
-<div class="method_signature">
-private final 
-bool
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-checkNullNextTrailIndex
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#sun.text.normalizer.TrieIterator:calculateNextSupplementaryElement:sun.text.normalizer.RangeValueIterator$Elementvoid" title="void calculateNextSupplementaryElement(sun.text.normalizer.RangeValueIterator$Element)">
-sun.text.normalizer.TrieIterator.calculateNextSupplementaryElement(sun.text.normalizer.RangeValueIterator$Element)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextIndex_:I">
-sun.text.normalizer.TrieIterator.m_nextIndex_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ifgt 104
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
-sun.text.normalizer.TrieIterator.m_nextCodepoint_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-sipush 1023
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
-sun.text.normalizer.TrieIterator.m_nextCodepoint_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
-sun.text.normalizer.TrieIterator.m_nextCodepoint_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-char
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="char getLeadSurrogate(int)">
-sun.text.normalizer.UTF16.getLeadSurrogate
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../sun/text/normalizer/UTF16.html#sun.text.normalizer.UTF16:getLeadSurrogate:IC" title="char getLeadSurrogate(int)">
-sun.text.normalizer.UTF16.getLeadSurrogate
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-istore  1
-</span>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="28">
+<li value="2">
 <div class="instruction">
 <span>
 getfield 
@@ -726,7 +253,7 @@ sun.text.normalizer.Trie
 </span>
 </div>
 </li>
-<li value="31">
+<li value="5">
 <div class="instruction">
 <span>
 getfield 
@@ -744,415 +271,124 @@ char[]
 </span>
 </div>
 </li>
-<li value="34">
+<li value="8">
 <div class="instruction">
 <span>
-iload  1
+aload  0
 </span>
 </div>
 </li>
-<li value="35">
+<li value="9">
 <div class="instruction">
 <span>
-iconst 5
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextIndex_:I">
+sun.text.normalizer.TrieIterator.m_nextIndex_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
 </span>
 </div>
 </li>
-<li value="36">
-<div class="instruction">
-<span>
-ishr
-</span>
-</div>
-</li>
-<li value="37">
+<li value="12">
 <div class="instruction">
 <span>
 caload
 </span>
 </div>
 </li>
-<li value="38">
+<li value="13">
 <div class="instruction">
 <span>
 iconst 2
 </span>
 </div>
 </li>
-<li value="39">
+<li value="14">
 <div class="instruction">
 <span>
 ishl
 </span>
 </div>
 </li>
-<li value="40">
+<li value="15">
 <div class="instruction">
 <span>
-istore  2
+putfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextBlock_:I">
+sun.text.normalizer.TrieIterator.m_nextBlock_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
 </span>
 </div>
 </li>
-<li value="41">
+<li value="18">
 <div class="instruction">
 <span>
 aload  0
 </span>
 </div>
 </li>
-<li value="42">
+<li value="19">
 <div class="instruction">
 <span>
 getfield 
 </span>
 <span>
-<a href="#sun.text.normalizer.TrieIterator:m_trie_:sun.text.normalizer.Trie">
-sun.text.normalizer.TrieIterator.m_trie_
+<a href="#sun.text.normalizer.TrieIterator:m_nextBlock_:I">
+sun.text.normalizer.TrieIterator.m_nextBlock_
 </a>
 </span>
 <span>
  : 
 </span>
 <span>
-<a href="../../../sun/text/normalizer/Trie.html">
-sun.text.normalizer.Trie
-</a>
+int
 </span>
 </div>
 </li>
-<li value="45">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../../sun/text/normalizer/Trie.html#sun.text.normalizer.Trie:m_dataManipulate_:sun.text.normalizer.Trie$DataManipulate">
-sun.text.normalizer.Trie.m_dataManipulate_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../sun/text/normalizer/Trie$DataManipulate.html">
-sun.text.normalizer.Trie$DataManipulate
-</a>
-</span>
-</div>
-</li>
-<li value="48">
-<div class="instruction">
-<span>
-ifnonnull 13
-</span>
-</div>
-</li>
-<li value="51">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../../java/lang/NullPointerException.html">
-java.lang.NullPointerException
-</a>
-</span>
-</div>
-</li>
-<li value="54">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="55">
-<div class="instruction">
-<span>
-ldc string &apos;The field DataManipulate in this Trie is null&apos;
-</span>
-</div>
-</li>
-<li value="57">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.lang.NullPointerException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/lang/NullPointerException.html#java.lang.NullPointerException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
-java.lang.NullPointerException.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="60">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="61">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="62">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="63">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_trie_:sun.text.normalizer.Trie">
-sun.text.normalizer.TrieIterator.m_trie_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../sun/text/normalizer/Trie.html">
-sun.text.normalizer.Trie
-</a>
-</span>
-</div>
-</li>
-<li value="66">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../../sun/text/normalizer/Trie.html#sun.text.normalizer.Trie:m_dataManipulate_:sun.text.normalizer.Trie$DataManipulate">
-sun.text.normalizer.Trie.m_dataManipulate_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../sun/text/normalizer/Trie$DataManipulate.html">
-sun.text.normalizer.Trie$DataManipulate
-</a>
-</span>
-</div>
-</li>
-<li value="69">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="70">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_trie_:sun.text.normalizer.Trie">
-sun.text.normalizer.TrieIterator.m_trie_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../sun/text/normalizer/Trie.html">
-sun.text.normalizer.Trie
-</a>
-</span>
-</div>
-</li>
-<li value="73">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="74">
+<li value="22">
 <div class="instruction">
 <span>
 iload  1
 </span>
 </div>
 </li>
-<li value="75">
+<li value="23">
 <div class="instruction">
 <span>
-bipush 31
+ifcmpne 31
 </span>
 </div>
 </li>
-<li value="77">
-<div class="instruction">
-<span>
-iand
-</span>
-</div>
-</li>
-<li value="78">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="79">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int getValue(int)">
-sun.text.normalizer.Trie.getValue
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../sun/text/normalizer/CharTrie.html#sun.text.normalizer.CharTrie:getValue:II" title="int getValue(int)">
-sun.text.normalizer.CharTrie.getValue
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../sun/text/normalizer/IntTrie.html#sun.text.normalizer.IntTrie:getValue:II" title="int getValue(int)">
-sun.text.normalizer.IntTrie.getValue
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="82">
-<div class="instruction">
-<span>
-invokeinterface 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int getFoldingOffset(int)">
-sun.text.normalizer.Trie$DataManipulate.getFoldingOffset
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../sun/text/normalizer/NormalizerImpl$AuxTrieImpl.html#sun.text.normalizer.NormalizerImpl$AuxTrieImpl:getFoldingOffset:II" title="int getFoldingOffset(int)">
-sun.text.normalizer.NormalizerImpl$AuxTrieImpl.getFoldingOffset
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../sun/text/normalizer/NormalizerImpl$FCDTrieImpl.html#sun.text.normalizer.NormalizerImpl$FCDTrieImpl:getFoldingOffset:II" title="int getFoldingOffset(int)">
-sun.text.normalizer.NormalizerImpl$FCDTrieImpl.getFoldingOffset
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../sun/text/normalizer/Trie$DefaultGetFoldingOffset.html#sun.text.normalizer.Trie$DefaultGetFoldingOffset:getFoldingOffset:II" title="int getFoldingOffset(int)">
-sun.text.normalizer.Trie$DefaultGetFoldingOffset.getFoldingOffset
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../sun/text/normalizer/NormalizerImpl$NormTrieImpl.html#sun.text.normalizer.NormalizerImpl$NormTrieImpl:getFoldingOffset:II" title="int getFoldingOffset(int)">
-sun.text.normalizer.NormalizerImpl$NormTrieImpl.getFoldingOffset
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="87">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextIndex_:I">
-sun.text.normalizer.TrieIterator.m_nextIndex_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="90">
+<li value="26">
 <div class="instruction">
 <span>
 aload  0
 </span>
 </div>
 </li>
-<li value="91">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="92">
+<li value="27">
 <div class="instruction">
 <span>
 getfield 
 </span>
 <span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextIndex_:I">
-sun.text.normalizer.TrieIterator.m_nextIndex_
+<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
+sun.text.normalizer.TrieIterator.m_nextCodepoint_
 </a>
 </span>
 <span>
@@ -1163,153 +399,17 @@ int
 </span>
 </div>
 </li>
-<li value="95">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="96">
-<div class="instruction">
-<span>
-isub
-</span>
-</div>
-</li>
-<li value="97">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextIndex_:I">
-sun.text.normalizer.TrieIterator.m_nextIndex_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="100">
+<li value="30">
 <div class="instruction">
 <span>
 aload  0
 </span>
 </div>
 </li>
-<li value="101">
+<li value="31">
 <div class="instruction">
 <span>
-bipush 32
-</span>
-</div>
-</li>
-<li value="103">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextBlockIndex_:I">
-sun.text.normalizer.TrieIterator.m_nextBlockIndex_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="106">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="107">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-<li value="108">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="109">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="sun.text.normalizer.TrieIterator:reset:void" href="#">
-
-</a>
-<div class="method_signature">
-public final 
-void
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-reset
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#sun.text.normalizer.TrieIterator:&lt;init&gt;:sun.text.normalizer.Trievoid" title="void &lt;init&gt;(sun.text.normalizer.Trie)">
-sun.text.normalizer.TrieIterator.&lt;init&gt;(sun.text.normalizer.Trie)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-putfield 
+getfield 
 </span>
 <span>
 <a href="#sun.text.normalizer.TrieIterator:m_currentCodepoint_:I">
@@ -1324,21 +424,74 @@ int
 </span>
 </div>
 </li>
-<li value="5">
+<li value="34">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+bipush 32
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+ifcmplt 17
+</span>
+</div>
+</li>
+<li value="40">
 <div class="instruction">
 <span>
 aload  0
 </span>
 </div>
 </li>
-<li value="6">
+<li value="41">
 <div class="instruction">
 <span>
-iconst 0
+dup
 </span>
 </div>
 </li>
-<li value="7">
+<li value="42">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
+sun.text.normalizer.TrieIterator.m_nextCodepoint_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span>
+bipush 32
+</span>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="48">
 <div class="instruction">
 <span>
 putfield 
@@ -1356,263 +509,10 @@ int
 </span>
 </div>
 </li>
-<li value="10">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextIndex_:I">
-sun.text.normalizer.TrieIterator.m_nextIndex_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_trie_:sun.text.normalizer.Trie">
-sun.text.normalizer.TrieIterator.m_trie_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../sun/text/normalizer/Trie.html">
-sun.text.normalizer.Trie
-</a>
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../../sun/text/normalizer/Trie.html#sun.text.normalizer.Trie:m_index_:C.-">
-sun.text.normalizer.Trie.m_index_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-char[]
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-caload
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-iconst 2
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-ishl
-</span>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextBlock_:I">
-sun.text.normalizer.TrieIterator.m_nextBlock_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="31">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextBlock_:I">
-sun.text.normalizer.TrieIterator.m_nextBlock_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="34">
-<div class="instruction">
-<span>
-ifne 14
-</span>
-</div>
-</li>
-<li value="37">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="38">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="39">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_initialValue_:I">
-sun.text.normalizer.TrieIterator.m_initialValue_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="42">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextValue_:I">
-sun.text.normalizer.TrieIterator.m_nextValue_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="45">
-<div class="instruction">
-<span>
-goto 22
-</span>
-</div>
-</li>
-<li value="48">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="49">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="50">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
 <li value="51">
 <div class="instruction">
 <span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_trie_:sun.text.normalizer.Trie">
-sun.text.normalizer.TrieIterator.m_trie_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../sun/text/normalizer/Trie.html">
-sun.text.normalizer.Trie
-</a>
+goto 57
 </span>
 </div>
 </li>
@@ -1644,76 +544,32 @@ int
 <li value="58">
 <div class="instruction">
 <span>
-invokevirtual 
+ifne 40
 </span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int getValue(int)">
-sun.text.normalizer.Trie.getValue
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../sun/text/normalizer/CharTrie.html#sun.text.normalizer.CharTrie:getValue:II" title="int getValue(int)">
-sun.text.normalizer.CharTrie.getValue
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../sun/text/normalizer/IntTrie.html#sun.text.normalizer.IntTrie:getValue:II" title="int getValue(int)">
-sun.text.normalizer.IntTrie.getValue
-</a>
-</div>
-</li>
-</ul>
 </div>
 </li>
 <li value="61">
 <div class="instruction">
 <span>
-invokevirtual 
+iload  2
 </span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int extract(int)">
-sun.text.normalizer.TrieIterator.extract
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#sun.text.normalizer.TrieIterator:extract:II" title="int extract(int)">
-sun.text.normalizer.TrieIterator.extract
-</a>
 </div>
 </li>
-</ul>
-</div>
-</li>
-<li value="64">
+<li value="62">
 <div class="instruction">
 <span>
-putfield 
+aload  0
+</span>
+</div>
+</li>
+<li value="63">
+<div class="instruction">
+<span>
+getfield 
 </span>
 <span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextValue_:I">
-sun.text.normalizer.TrieIterator.m_nextValue_
+<a href="#sun.text.normalizer.TrieIterator:m_initialValue_:I">
+sun.text.normalizer.TrieIterator.m_initialValue_
 </a>
 </span>
 <span>
@@ -1724,133 +580,35 @@ int
 </span>
 </div>
 </li>
-<li value="67">
+<li value="66">
 <div class="instruction">
 <span>
-aload  0
-</span>
-</div>
-</li>
-<li value="68">
-<div class="instruction">
-<span>
-iconst 0
+ifcmpeq 18
 </span>
 </div>
 </li>
 <li value="69">
 <div class="instruction">
 <span>
-putfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextBlockIndex_:I">
-sun.text.normalizer.TrieIterator.m_nextBlockIndex_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
+aload  0
 </span>
 </div>
 </li>
-<li value="72">
+<li value="70">
 <div class="instruction">
 <span>
 aload  0
 </span>
 </div>
 </li>
-<li value="73">
-<div class="instruction">
-<span>
-bipush 32
-</span>
-</div>
-</li>
-<li value="75">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextTrailIndexOffset_:I">
-sun.text.normalizer.TrieIterator.m_nextTrailIndexOffset_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="78">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="sun.text.normalizer.TrieIterator:calculateNextBMPElement:sun.text.normalizer.RangeValueIterator$ElementZ" href="#">
-
-</a>
-<div class="method_signature">
-private final 
-bool
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-calculateNextBMPElement
-</span>
-(
-<a href="../../../sun/text/normalizer/RangeValueIterator$Element.html">
-sun.text.normalizer.RangeValueIterator$Element
-</a>
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#sun.text.normalizer.TrieIterator:next:sun.text.normalizer.RangeValueIterator$ElementZ" title="bool next(sun.text.normalizer.RangeValueIterator$Element)">
-sun.text.normalizer.TrieIterator.next(sun.text.normalizer.RangeValueIterator$Element)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
+<li value="71">
 <div class="instruction">
 <span>
 getfield 
 </span>
 <span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextBlock_:I">
-sun.text.normalizer.TrieIterator.m_nextBlock_
+<a href="#sun.text.normalizer.TrieIterator:m_initialValue_:I">
+sun.text.normalizer.TrieIterator.m_initialValue_
 </a>
 </span>
 <span>
@@ -1861,24 +619,10 @@ int
 </span>
 </div>
 </li>
-<li value="4">
+<li value="74">
 <div class="instruction">
 <span>
-istore  2
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-getfield 
+putfield 
 </span>
 <span>
 <a href="#sun.text.normalizer.TrieIterator:m_nextValue_:I">
@@ -1893,174 +637,21 @@ int
 </span>
 </div>
 </li>
-<li value="9">
-<div class="instruction">
-<span>
-istore  3
-</span>
-</div>
-</li>
-<li value="10">
+<li value="77">
 <div class="instruction">
 <span>
 aload  0
 </span>
 </div>
 </li>
-<li value="11">
+<li value="78">
 <div class="instruction">
 <span>
-aload  0
+iconst 0
 </span>
 </div>
 </li>
-<li value="12">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
-sun.text.normalizer.TrieIterator.m_nextCodepoint_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_currentCodepoint_:I">
-sun.text.normalizer.TrieIterator.m_currentCodepoint_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
-sun.text.normalizer.TrieIterator.m_nextCodepoint_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
-sun.text.normalizer.TrieIterator.m_nextCodepoint_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="28">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextBlockIndex_:I">
-sun.text.normalizer.TrieIterator.m_nextBlockIndex_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="33">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="34">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="35">
+<li value="79">
 <div class="instruction">
 <span>
 putfield 
@@ -2078,21 +669,106 @@ int
 </span>
 </div>
 </li>
-<li value="38">
+<li value="82">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="83">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="84">
 <div class="instruction">
 <span>
 aload  0
 </span>
 </div>
 </li>
-<li value="39">
+<li value="85">
 <div class="instruction">
 <span>
-iload  3
+dup
 </span>
 </div>
 </li>
-<li value="40">
+<li value="86">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
+sun.text.normalizer.TrieIterator.m_nextCodepoint_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="89">
+<div class="instruction">
+<span>
+bipush 32
+</span>
+</div>
+</li>
+<li value="91">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="92">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
+sun.text.normalizer.TrieIterator.m_nextCodepoint_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="95">
+<div class="instruction">
+<span>
+goto 13
+</span>
+</div>
+</li>
+<li value="98">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="99">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="100">
 <div class="instruction">
 <span>
 invokespecial 
@@ -2121,770 +797,37 @@ sun.text.normalizer.TrieIterator.checkBlockDetail
 </ul>
 </div>
 </li>
-<li value="43">
+<li value="103">
 <div class="instruction">
 <span>
-ifne 19
-</span>
-</div>
-</li>
-<li value="46">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="47">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="48">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="49">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_currentCodepoint_:I">
-sun.text.normalizer.TrieIterator.m_currentCodepoint_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="52">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="53">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
-sun.text.normalizer.TrieIterator.m_nextCodepoint_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="56">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="57">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void setResult(sun.text.normalizer.RangeValueIterator$Element, int, int, int)">
-sun.text.normalizer.TrieIterator.setResult
-</span>
-</span>
-<span>
-(
-<a href="../../../sun/text/normalizer/RangeValueIterator$Element.html">
-sun.text.normalizer.RangeValueIterator$Element
-</a>
-, 
-int
-, 
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#sun.text.normalizer.TrieIterator:setResult:sun.text.normalizer.RangeValueIterator$ElementIIIvoid" title="void setResult(sun.text.normalizer.RangeValueIterator$Element, int, int, int)">
-sun.text.normalizer.TrieIterator.setResult
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="60">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="61">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-<li value="62">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="63">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
-sun.text.normalizer.TrieIterator.m_nextCodepoint_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="66">
-<div class="instruction">
-<span>
-iconst 65536
-</span>
-</div>
-</li>
-<li value="68">
-<div class="instruction">
-<span>
-ifcmpge 81
-</span>
-</div>
-</li>
-<li value="71">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="72">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="73">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextIndex_:I">
-sun.text.normalizer.TrieIterator.m_nextIndex_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="76">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="77">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="78">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextIndex_:I">
-sun.text.normalizer.TrieIterator.m_nextIndex_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="81">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="82">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
-sun.text.normalizer.TrieIterator.m_nextCodepoint_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="85">
-<div class="instruction">
-<span>
-iconst 55296
-</span>
-</div>
-</li>
-<li value="87">
-<div class="instruction">
-<span>
-ifcmpne 13
-</span>
-</div>
-</li>
-<li value="90">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="91">
-<div class="instruction">
-<span>
-sipush 2048
-</span>
-</div>
-</li>
-<li value="94">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextIndex_:I">
-sun.text.normalizer.TrieIterator.m_nextIndex_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="97">
-<div class="instruction">
-<span>
-goto 22
-</span>
-</div>
-</li>
-<li value="100">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="101">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
-sun.text.normalizer.TrieIterator.m_nextCodepoint_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="104">
-<div class="instruction">
-<span>
-iconst 56320
+ifne 5
 </span>
 </div>
 </li>
 <li value="106">
 <div class="instruction">
 <span>
-ifcmpne 13
+iconst 0
+</span>
+</div>
+</li>
+<li value="107">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="108">
+<div class="instruction">
+<span>
+iconst 1
 </span>
 </div>
 </li>
 <li value="109">
 <div class="instruction">
 <span>
-aload  0
-</span>
-</div>
-</li>
-<li value="110">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="111">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
-sun.text.normalizer.TrieIterator.m_nextCodepoint_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="114">
-<div class="instruction">
-<span>
-iconst 5
-</span>
-</div>
-</li>
-<li value="115">
-<div class="instruction">
-<span>
-ishr
-</span>
-</div>
-</li>
-<li value="116">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextIndex_:I">
-sun.text.normalizer.TrieIterator.m_nextIndex_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="119">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="120">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="121">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextBlockIndex_:I">
-sun.text.normalizer.TrieIterator.m_nextBlockIndex_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="124">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="125">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="126">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="127">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool checkBlock(int, int)">
-sun.text.normalizer.TrieIterator.checkBlock
-</span>
-</span>
-<span>
-(
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#sun.text.normalizer.TrieIterator:checkBlock:IIZ" title="bool checkBlock(int, int)">
-sun.text.normalizer.TrieIterator.checkBlock
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="130">
-<div class="instruction">
-<span>
-ifne -68
-</span>
-</div>
-</li>
-<li value="133">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="134">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="135">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="136">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_currentCodepoint_:I">
-sun.text.normalizer.TrieIterator.m_currentCodepoint_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="139">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="140">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
-sun.text.normalizer.TrieIterator.m_nextCodepoint_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="143">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="144">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void setResult(sun.text.normalizer.RangeValueIterator$Element, int, int, int)">
-sun.text.normalizer.TrieIterator.setResult
-</span>
-</span>
-<span>
-(
-<a href="../../../sun/text/normalizer/RangeValueIterator$Element.html">
-sun.text.normalizer.RangeValueIterator$Element
-</a>
-, 
-int
-, 
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#sun.text.normalizer.TrieIterator:setResult:sun.text.normalizer.RangeValueIterator$ElementIIIvoid" title="void setResult(sun.text.normalizer.RangeValueIterator$Element, int, int, int)">
-sun.text.normalizer.TrieIterator.setResult
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="147">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="148">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-<li value="149">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="150">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="151">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
-sun.text.normalizer.TrieIterator.m_nextCodepoint_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="154">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="155">
-<div class="instruction">
-<span>
-isub
-</span>
-</div>
-</li>
-<li value="156">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
-sun.text.normalizer.TrieIterator.m_nextCodepoint_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="159">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="160">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="161">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextBlockIndex_:I">
-sun.text.normalizer.TrieIterator.m_nextBlockIndex_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="164">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="165">
-<div class="instruction">
-<span>
-isub
-</span>
-</div>
-</li>
-<li value="166">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextBlockIndex_:I">
-sun.text.normalizer.TrieIterator.m_nextBlockIndex_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="169">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="170">
-<div class="instruction">
-<span>
 ireturn
 </span>
 </div>
@@ -2894,370 +837,30 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="sun.text.normalizer.TrieIterator:&lt;init&gt;:sun.text.normalizer.Trievoid" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<span class="methodname clickable" onclick="showInfoList(this)">
-TrieIterator
-</span>
-(
-<a href="../../../sun/text/normalizer/Trie.html">
-sun.text.normalizer.Trie
-</a>
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../sun/text/normalizer/UCharacterProperty.html#sun.text.normalizer.UCharacterProperty:upropsvec_addPropertyStarts:sun.text.normalizer.UnicodeSetvoid" title="void upropsvec_addPropertyStarts(sun.text.normalizer.UnicodeSet)">
-sun.text.normalizer.UCharacterProperty.upropsvec_addPropertyStarts(sun.text.normalizer.UnicodeSet)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.Object.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/lang/Object.html#java.lang.Object:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.lang.Object.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-ifnonnull 13
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../../java/lang/IllegalArgumentException.html">
-java.lang.IllegalArgumentException
-</a>
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-ldc string &apos;Argument trie cannot be null&apos;
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.lang.IllegalArgumentException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/lang/IllegalArgumentException.html#java.lang.IllegalArgumentException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
-java.lang.IllegalArgumentException.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_trie_:sun.text.normalizer.Trie">
-sun.text.normalizer.TrieIterator.m_trie_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../sun/text/normalizer/Trie.html">
-sun.text.normalizer.Trie
-</a>
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_trie_:sun.text.normalizer.Trie">
-sun.text.normalizer.TrieIterator.m_trie_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../sun/text/normalizer/Trie.html">
-sun.text.normalizer.Trie
-</a>
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int getInitialValue()">
-sun.text.normalizer.Trie.getInitialValue
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../sun/text/normalizer/IntTrie.html#sun.text.normalizer.IntTrie:getInitialValue:I" title="int getInitialValue()">
-sun.text.normalizer.IntTrie.getInitialValue
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../sun/text/normalizer/CharTrie.html#sun.text.normalizer.CharTrie:getInitialValue:I" title="int getInitialValue()">
-sun.text.normalizer.CharTrie.getInitialValue
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="32">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int extract(int)">
-sun.text.normalizer.TrieIterator.extract
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#sun.text.normalizer.TrieIterator:extract:II" title="int extract(int)">
-sun.text.normalizer.TrieIterator.extract
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_initialValue_:I">
-sun.text.normalizer.TrieIterator.m_initialValue_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="38">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="39">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void reset()">
-sun.text.normalizer.TrieIterator.reset
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#sun.text.normalizer.TrieIterator:reset:void" title="void reset()">
-sun.text.normalizer.TrieIterator.reset
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="42">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="sun.text.normalizer.TrieIterator:checkBlockDetail:IZ" href="#">
+<a name="sun.text.normalizer.TrieIterator:setResult:sun.text.normalizer.RangeValueIterator$ElementIIIvoid" href="#">
 
 </a>
 <div class="method_signature">
 private final 
-bool
+void
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-checkBlockDetail
+setResult
 </span>
 (
-int
+<a href="../../../sun/text/normalizer/RangeValueIterator$Element.html">
+sun.text.normalizer.RangeValueIterator$Element
+</a>
  1
+, 
+int
+ 2
+, 
+int
+ 3
+, 
+int
+ 4
 )
 ;
 <ul class="annot">
@@ -3278,13 +881,6 @@ sun.text.normalizer.TrieIterator.calculateNextBMPElement(sun.text.normalizer.Ran
 </li>
 <li>
 <div>
-<a href="#sun.text.normalizer.TrieIterator:checkBlock:IIZ" title="bool checkBlock(int, int)">
-sun.text.normalizer.TrieIterator.checkBlock(int, int)
-</a>
-</div>
-</li>
-<li>
-<div>
 <a href="#sun.text.normalizer.TrieIterator:calculateNextSupplementaryElement:sun.text.normalizer.RangeValueIterator$Elementvoid" title="void calculateNextSupplementaryElement(sun.text.normalizer.RangeValueIterator$Element)">
 sun.text.normalizer.TrieIterator.calculateNextSupplementaryElement(sun.text.normalizer.RangeValueIterator$Element)
 </a>
@@ -3296,18 +892,25 @@ sun.text.normalizer.TrieIterator.calculateNextSupplementaryElement(sun.text.norm
 <li value="0">
 <div class="instruction">
 <span>
-aload  0
+aload  1
 </span>
 </div>
 </li>
 <li value="1">
 <div class="instruction">
 <span>
-getfield 
+iload  2
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+putfield 
 </span>
 <span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextBlockIndex_:I">
-sun.text.normalizer.TrieIterator.m_nextBlockIndex_
+<a href="../../../sun/text/normalizer/RangeValueIterator$Element.html#sun.text.normalizer.RangeValueIterator$Element:start:I">
+sun.text.normalizer.RangeValueIterator$Element.start
 </a>
 </span>
 <span>
@@ -3318,400 +921,74 @@ int
 </span>
 </div>
 </li>
-<li value="4">
+<li value="5">
 <div class="instruction">
 <span>
-bipush 32
+aload  1
 </span>
 </div>
 </li>
 <li value="6">
 <div class="instruction">
 <span>
-ifcmpge 60
+iload  3
 </span>
 </div>
 </li>
-<li value="9">
+<li value="7">
 <div class="instruction">
 <span>
-aload  0
+putfield 
+</span>
+<span>
+<a href="../../../sun/text/normalizer/RangeValueIterator$Element.html#sun.text.normalizer.RangeValueIterator$Element:limit:I">
+sun.text.normalizer.RangeValueIterator$Element.limit
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
 </span>
 </div>
 </li>
 <li value="10">
 <div class="instruction">
 <span>
-aload  0
+aload  1
 </span>
 </div>
 </li>
 <li value="11">
 <div class="instruction">
 <span>
-aload  0
+iload  4
 </span>
 </div>
 </li>
-<li value="12">
+<li value="13">
 <div class="instruction">
 <span>
-getfield 
+putfield 
 </span>
 <span>
-<a href="#sun.text.normalizer.TrieIterator:m_trie_:sun.text.normalizer.Trie">
-sun.text.normalizer.TrieIterator.m_trie_
+<a href="../../../sun/text/normalizer/RangeValueIterator$Element.html#sun.text.normalizer.RangeValueIterator$Element:value:I">
+sun.text.normalizer.RangeValueIterator$Element.value
 </a>
 </span>
 <span>
  : 
 </span>
 <span>
-<a href="../../../sun/text/normalizer/Trie.html">
-sun.text.normalizer.Trie
-</a>
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-aload  0
+int
 </span>
 </div>
 </li>
 <li value="16">
 <div class="instruction">
 <span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextBlock_:I">
-sun.text.normalizer.TrieIterator.m_nextBlock_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextBlockIndex_:I">
-sun.text.normalizer.TrieIterator.m_nextBlockIndex_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int getValue(int)">
-sun.text.normalizer.Trie.getValue
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../sun/text/normalizer/CharTrie.html#sun.text.normalizer.CharTrie:getValue:II" title="int getValue(int)">
-sun.text.normalizer.CharTrie.getValue
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../sun/text/normalizer/IntTrie.html#sun.text.normalizer.IntTrie:getValue:II" title="int getValue(int)">
-sun.text.normalizer.IntTrie.getValue
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int extract(int)">
-sun.text.normalizer.TrieIterator.extract
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#sun.text.normalizer.TrieIterator:extract:II" title="int extract(int)">
-sun.text.normalizer.TrieIterator.extract
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextValue_:I">
-sun.text.normalizer.TrieIterator.m_nextValue_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="33">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="34">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextValue_:I">
-sun.text.normalizer.TrieIterator.m_nextValue_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="37">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="38">
-<div class="instruction">
-<span>
-ifcmpeq 5
-</span>
-</div>
-</li>
-<li value="41">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="42">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-<li value="43">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="44">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="45">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextBlockIndex_:I">
-sun.text.normalizer.TrieIterator.m_nextBlockIndex_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="48">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="49">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="50">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextBlockIndex_:I">
-sun.text.normalizer.TrieIterator.m_nextBlockIndex_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="53">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="54">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="55">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
-sun.text.normalizer.TrieIterator.m_nextCodepoint_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="58">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="59">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="60">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
-sun.text.normalizer.TrieIterator.m_nextCodepoint_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="63">
-<div class="instruction">
-<span>
-goto -63
-</span>
-</div>
-</li>
-<li value="66">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="67">
-<div class="instruction">
-<span>
-ireturn
+return
 </span>
 </div>
 </li>
@@ -5524,15 +2801,15 @@ int
 <ul class="clickable">
 <li>
 <div>
-<a href="../../../sun/text/normalizer/CharTrie.html#sun.text.normalizer.CharTrie:getValue:II" title="int getValue(int)">
-sun.text.normalizer.CharTrie.getValue
+<a href="../../../sun/text/normalizer/IntTrie.html#sun.text.normalizer.IntTrie:getValue:II" title="int getValue(int)">
+sun.text.normalizer.IntTrie.getValue
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../../sun/text/normalizer/IntTrie.html#sun.text.normalizer.IntTrie:getValue:II" title="int getValue(int)">
-sun.text.normalizer.IntTrie.getValue
+<a href="../../../sun/text/normalizer/CharTrie.html#sun.text.normalizer.CharTrie:getValue:II" title="int getValue(int)">
+sun.text.normalizer.CharTrie.getValue
 </a>
 </div>
 </li>
@@ -5560,6 +2837,13 @@ int
 <ul class="clickable">
 <li>
 <div>
+<a href="../../../sun/text/normalizer/NormalizerImpl$NormTrieImpl.html#sun.text.normalizer.NormalizerImpl$NormTrieImpl:getFoldingOffset:II" title="int getFoldingOffset(int)">
+sun.text.normalizer.NormalizerImpl$NormTrieImpl.getFoldingOffset
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../../sun/text/normalizer/NormalizerImpl$AuxTrieImpl.html#sun.text.normalizer.NormalizerImpl$AuxTrieImpl:getFoldingOffset:II" title="int getFoldingOffset(int)">
 sun.text.normalizer.NormalizerImpl$AuxTrieImpl.getFoldingOffset
 </a>
@@ -5576,13 +2860,6 @@ sun.text.normalizer.NormalizerImpl$FCDTrieImpl.getFoldingOffset
 <div>
 <a href="../../../sun/text/normalizer/Trie$DefaultGetFoldingOffset.html#sun.text.normalizer.Trie$DefaultGetFoldingOffset:getFoldingOffset:II" title="int getFoldingOffset(int)">
 sun.text.normalizer.Trie$DefaultGetFoldingOffset.getFoldingOffset
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../sun/text/normalizer/NormalizerImpl$NormTrieImpl.html#sun.text.normalizer.NormalizerImpl$NormTrieImpl:getFoldingOffset:II" title="int getFoldingOffset(int)">
-sun.text.normalizer.NormalizerImpl$NormTrieImpl.getFoldingOffset
 </a>
 </div>
 </li>
@@ -6725,30 +4002,22 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="sun.text.normalizer.TrieIterator:setResult:sun.text.normalizer.RangeValueIterator$ElementIIIvoid" href="#">
+<a name="sun.text.normalizer.TrieIterator:checkTrailBlock:IIZ" href="#">
 
 </a>
 <div class="method_signature">
 private final 
-void
+bool
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-setResult
+checkTrailBlock
 </span>
 (
-<a href="../../../sun/text/normalizer/RangeValueIterator$Element.html">
-sun.text.normalizer.RangeValueIterator$Element
-</a>
+int
  1
 , 
 int
  2
-, 
-int
- 3
-, 
-int
- 4
 )
 ;
 <ul class="annot">
@@ -6760,13 +4029,6 @@ Parsed
 </li>
 </ul>
 <ul class="clickable">
-<li>
-<div>
-<a href="#sun.text.normalizer.TrieIterator:calculateNextBMPElement:sun.text.normalizer.RangeValueIterator$ElementZ" title="bool calculateNextBMPElement(sun.text.normalizer.RangeValueIterator$Element)">
-sun.text.normalizer.TrieIterator.calculateNextBMPElement(sun.text.normalizer.RangeValueIterator$Element)
-</a>
-</div>
-</li>
 <li>
 <div>
 <a href="#sun.text.normalizer.TrieIterator:calculateNextSupplementaryElement:sun.text.normalizer.RangeValueIterator$Elementvoid" title="void calculateNextSupplementaryElement(sun.text.normalizer.RangeValueIterator$Element)">
@@ -6780,25 +4042,18 @@ sun.text.normalizer.TrieIterator.calculateNextSupplementaryElement(sun.text.norm
 <li value="0">
 <div class="instruction">
 <span>
-aload  1
+aload  0
 </span>
 </div>
 </li>
 <li value="1">
 <div class="instruction">
 <span>
-iload  2
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-putfield 
+getfield 
 </span>
 <span>
-<a href="../../../sun/text/normalizer/RangeValueIterator$Element.html#sun.text.normalizer.RangeValueIterator$Element:start:I">
-sun.text.normalizer.RangeValueIterator$Element.start
+<a href="#sun.text.normalizer.TrieIterator:m_nextTrailIndexOffset_:I">
+sun.text.normalizer.TrieIterator.m_nextTrailIndexOffset_
 </a>
 </span>
 <span>
@@ -6809,60 +4064,42 @@ int
 </span>
 </div>
 </li>
-<li value="5">
+<li value="4">
 <div class="instruction">
 <span>
-aload  1
+bipush 32
 </span>
 </div>
 </li>
 <li value="6">
 <div class="instruction">
 <span>
-iload  3
+ifcmpge 42
 </span>
 </div>
 </li>
-<li value="7">
+<li value="9">
 <div class="instruction">
 <span>
-putfield 
-</span>
-<span>
-<a href="../../../sun/text/normalizer/RangeValueIterator$Element.html#sun.text.normalizer.RangeValueIterator$Element:limit:I">
-sun.text.normalizer.RangeValueIterator$Element.limit
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
+aload  0
 </span>
 </div>
 </li>
 <li value="10">
 <div class="instruction">
 <span>
-aload  1
+iconst 0
 </span>
 </div>
 </li>
 <li value="11">
 <div class="instruction">
 <span>
-iload  4
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
 putfield 
 </span>
 <span>
-<a href="../../../sun/text/normalizer/RangeValueIterator$Element.html#sun.text.normalizer.RangeValueIterator$Element:value:I">
-sun.text.normalizer.RangeValueIterator$Element.value
+<a href="#sun.text.normalizer.TrieIterator:m_nextBlockIndex_:I">
+sun.text.normalizer.TrieIterator.m_nextBlockIndex_
 </a>
 </span>
 <span>
@@ -6873,10 +4110,225 @@ int
 </span>
 </div>
 </li>
+<li value="14">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
 <li value="16">
 <div class="instruction">
 <span>
-return
+iload  2
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool checkBlock(int, int)">
+sun.text.normalizer.TrieIterator.checkBlock
+</span>
+</span>
+<span>
+(
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.TrieIterator:checkBlock:IIZ" title="bool checkBlock(int, int)">
+sun.text.normalizer.TrieIterator.checkBlock
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+ifne 5
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextTrailIndexOffset_:I">
+sun.text.normalizer.TrieIterator.m_nextTrailIndexOffset_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextTrailIndexOffset_:I">
+sun.text.normalizer.TrieIterator.m_nextTrailIndexOffset_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextIndex_:I">
+sun.text.normalizer.TrieIterator.m_nextIndex_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextIndex_:I">
+sun.text.normalizer.TrieIterator.m_nextIndex_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span>
+goto -45
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+ireturn
 </span>
 </div>
 </li>
@@ -6885,7 +4337,7 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="sun.text.normalizer.TrieIterator:checkBlock:IIZ" href="#">
+<a name="sun.text.normalizer.TrieIterator:checkNullNextTrailIndex:Z" href="#">
 
 </a>
 <div class="method_signature">
@@ -6893,14 +4345,9 @@ private final
 bool
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-checkBlock
+checkNullNextTrailIndex
 </span>
 (
-int
- 1
-, 
-int
- 2
 )
 ;
 <ul class="annot">
@@ -6914,15 +4361,8 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="#sun.text.normalizer.TrieIterator:calculateNextBMPElement:sun.text.normalizer.RangeValueIterator$ElementZ" title="bool calculateNextBMPElement(sun.text.normalizer.RangeValueIterator$Element)">
-sun.text.normalizer.TrieIterator.calculateNextBMPElement(sun.text.normalizer.RangeValueIterator$Element)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#sun.text.normalizer.TrieIterator:checkTrailBlock:IIZ" title="bool checkTrailBlock(int, int)">
-sun.text.normalizer.TrieIterator.checkTrailBlock(int, int)
+<a href="#sun.text.normalizer.TrieIterator:calculateNextSupplementaryElement:sun.text.normalizer.RangeValueIterator$Elementvoid" title="void calculateNextSupplementaryElement(sun.text.normalizer.RangeValueIterator$Element)">
+sun.text.normalizer.TrieIterator.calculateNextSupplementaryElement(sun.text.normalizer.RangeValueIterator$Element)
 </a>
 </div>
 </li>
@@ -6939,11 +4379,161 @@ aload  0
 <li value="1">
 <div class="instruction">
 <span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextIndex_:I">
+sun.text.normalizer.TrieIterator.m_nextIndex_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ifgt 104
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
 aload  0
 </span>
 </div>
 </li>
-<li value="2">
+<li value="8">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
+sun.text.normalizer.TrieIterator.m_nextCodepoint_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+sipush 1023
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
+sun.text.normalizer.TrieIterator.m_nextCodepoint_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
+sun.text.normalizer.TrieIterator.m_nextCodepoint_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+char
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="char getLeadSurrogate(int)">
+sun.text.normalizer.UTF16.getLeadSurrogate
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/UTF16.html#sun.text.normalizer.UTF16:getLeadSurrogate:IC" title="char getLeadSurrogate(int)">
+sun.text.normalizer.UTF16.getLeadSurrogate
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+istore  1
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="28">
 <div class="instruction">
 <span>
 getfield 
@@ -6963,7 +4553,7 @@ sun.text.normalizer.Trie
 </span>
 </div>
 </li>
-<li value="5">
+<li value="31">
 <div class="instruction">
 <span>
 getfield 
@@ -6981,14 +4571,408 @@ char[]
 </span>
 </div>
 </li>
-<li value="8">
+<li value="34">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+iconst 5
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+ishr
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+caload
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+iconst 2
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+ishl
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+istore  2
+</span>
+</div>
+</li>
+<li value="41">
 <div class="instruction">
 <span>
 aload  0
 </span>
 </div>
 </li>
-<li value="9">
+<li value="42">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_trie_:sun.text.normalizer.Trie">
+sun.text.normalizer.TrieIterator.m_trie_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../sun/text/normalizer/Trie.html">
+sun.text.normalizer.Trie
+</a>
+</span>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../../sun/text/normalizer/Trie.html#sun.text.normalizer.Trie:m_dataManipulate_:sun.text.normalizer.Trie$DataManipulate">
+sun.text.normalizer.Trie.m_dataManipulate_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../sun/text/normalizer/Trie$DataManipulate.html">
+sun.text.normalizer.Trie$DataManipulate
+</a>
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+ifnonnull 13
+</span>
+</div>
+</li>
+<li value="51">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../java/lang/NullPointerException.html">
+java.lang.NullPointerException
+</a>
+</span>
+</div>
+</li>
+<li value="54">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="55">
+<div class="instruction">
+<span>
+ldc string &apos;The field DataManipulate in this Trie is null&apos;
+</span>
+</div>
+</li>
+<li value="57">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.lang.NullPointerException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/NullPointerException.html#java.lang.NullPointerException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
+java.lang.NullPointerException.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="60">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="61">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="62">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="63">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_trie_:sun.text.normalizer.Trie">
+sun.text.normalizer.TrieIterator.m_trie_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../sun/text/normalizer/Trie.html">
+sun.text.normalizer.Trie
+</a>
+</span>
+</div>
+</li>
+<li value="66">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../../sun/text/normalizer/Trie.html#sun.text.normalizer.Trie:m_dataManipulate_:sun.text.normalizer.Trie$DataManipulate">
+sun.text.normalizer.Trie.m_dataManipulate_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../sun/text/normalizer/Trie$DataManipulate.html">
+sun.text.normalizer.Trie$DataManipulate
+</a>
+</span>
+</div>
+</li>
+<li value="69">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="70">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_trie_:sun.text.normalizer.Trie">
+sun.text.normalizer.TrieIterator.m_trie_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../sun/text/normalizer/Trie.html">
+sun.text.normalizer.Trie
+</a>
+</span>
+</div>
+</li>
+<li value="73">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="74">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="75">
+<div class="instruction">
+<span>
+bipush 31
+</span>
+</div>
+</li>
+<li value="77">
+<div class="instruction">
+<span>
+iand
+</span>
+</div>
+</li>
+<li value="78">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="79">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getValue(int)">
+sun.text.normalizer.Trie.getValue
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/IntTrie.html#sun.text.normalizer.IntTrie:getValue:II" title="int getValue(int)">
+sun.text.normalizer.IntTrie.getValue
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/text/normalizer/CharTrie.html#sun.text.normalizer.CharTrie:getValue:II" title="int getValue(int)">
+sun.text.normalizer.CharTrie.getValue
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="82">
+<div class="instruction">
+<span>
+invokeinterface 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getFoldingOffset(int)">
+sun.text.normalizer.Trie$DataManipulate.getFoldingOffset
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/NormalizerImpl$NormTrieImpl.html#sun.text.normalizer.NormalizerImpl$NormTrieImpl:getFoldingOffset:II" title="int getFoldingOffset(int)">
+sun.text.normalizer.NormalizerImpl$NormTrieImpl.getFoldingOffset
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/text/normalizer/NormalizerImpl$AuxTrieImpl.html#sun.text.normalizer.NormalizerImpl$AuxTrieImpl:getFoldingOffset:II" title="int getFoldingOffset(int)">
+sun.text.normalizer.NormalizerImpl$AuxTrieImpl.getFoldingOffset
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/text/normalizer/NormalizerImpl$FCDTrieImpl.html#sun.text.normalizer.NormalizerImpl$FCDTrieImpl:getFoldingOffset:II" title="int getFoldingOffset(int)">
+sun.text.normalizer.NormalizerImpl$FCDTrieImpl.getFoldingOffset
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/text/normalizer/Trie$DefaultGetFoldingOffset.html#sun.text.normalizer.Trie$DefaultGetFoldingOffset:getFoldingOffset:II" title="int getFoldingOffset(int)">
+sun.text.normalizer.Trie$DefaultGetFoldingOffset.getFoldingOffset
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="87">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextIndex_:I">
+sun.text.normalizer.TrieIterator.m_nextIndex_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="90">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="91">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="92">
 <div class="instruction">
 <span>
 getfield 
@@ -7006,28 +4990,312 @@ int
 </span>
 </div>
 </li>
+<li value="95">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="96">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="97">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextIndex_:I">
+sun.text.normalizer.TrieIterator.m_nextIndex_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="100">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="101">
+<div class="instruction">
+<span>
+bipush 32
+</span>
+</div>
+</li>
+<li value="103">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextBlockIndex_:I">
+sun.text.normalizer.TrieIterator.m_nextBlockIndex_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="106">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="107">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="108">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="109">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.TrieIterator:reset:void" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+reset
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.TrieIterator:&lt;init&gt;:sun.text.normalizer.Trievoid" title="void &lt;init&gt;(sun.text.normalizer.Trie)">
+sun.text.normalizer.TrieIterator.&lt;init&gt;(sun.text.normalizer.Trie)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_currentCodepoint_:I">
+sun.text.normalizer.TrieIterator.m_currentCodepoint_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
+sun.text.normalizer.TrieIterator.m_nextCodepoint_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
 <li value="12">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextIndex_:I">
+sun.text.normalizer.TrieIterator.m_nextIndex_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_trie_:sun.text.normalizer.Trie">
+sun.text.normalizer.TrieIterator.m_trie_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../sun/text/normalizer/Trie.html">
+sun.text.normalizer.Trie
+</a>
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../../sun/text/normalizer/Trie.html#sun.text.normalizer.Trie:m_index_:C.-">
+sun.text.normalizer.Trie.m_index_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+char[]
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="24">
 <div class="instruction">
 <span>
 caload
 </span>
 </div>
 </li>
-<li value="13">
+<li value="25">
 <div class="instruction">
 <span>
 iconst 2
 </span>
 </div>
 </li>
-<li value="14">
+<li value="26">
 <div class="instruction">
 <span>
 ishl
 </span>
 </div>
 </li>
-<li value="15">
+<li value="27">
 <div class="instruction">
 <span>
 putfield 
@@ -7035,70 +5303,6 @@ putfield
 <span>
 <a href="#sun.text.normalizer.TrieIterator:m_nextBlock_:I">
 sun.text.normalizer.TrieIterator.m_nextBlock_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextBlock_:I">
-sun.text.normalizer.TrieIterator.m_nextBlock_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-ifcmpne 31
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
-sun.text.normalizer.TrieIterator.m_nextCodepoint_
 </a>
 </span>
 <span>
@@ -7122,8 +5326,8 @@ aload  0
 getfield 
 </span>
 <span>
-<a href="#sun.text.normalizer.TrieIterator:m_currentCodepoint_:I">
-sun.text.normalizer.TrieIterator.m_currentCodepoint_
+<a href="#sun.text.normalizer.TrieIterator:m_nextBlock_:I">
+sun.text.normalizer.TrieIterator.m_nextBlock_
 </a>
 </span>
 <span>
@@ -7137,46 +5341,50 @@ int
 <li value="34">
 <div class="instruction">
 <span>
-isub
-</span>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-bipush 32
+ifne 14
 </span>
 </div>
 </li>
 <li value="37">
 <div class="instruction">
 <span>
-ifcmplt 17
+aload  0
 </span>
 </div>
 </li>
-<li value="40">
+<li value="38">
 <div class="instruction">
 <span>
 aload  0
 </span>
 </div>
 </li>
-<li value="41">
+<li value="39">
 <div class="instruction">
 <span>
-dup
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_initialValue_:I">
+sun.text.normalizer.TrieIterator.m_initialValue_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
 </span>
 </div>
 </li>
 <li value="42">
 <div class="instruction">
 <span>
-getfield 
+putfield 
 </span>
 <span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
-sun.text.normalizer.TrieIterator.m_nextCodepoint_
+<a href="#sun.text.normalizer.TrieIterator:m_nextValue_:I">
+sun.text.normalizer.TrieIterator.m_nextValue_
 </a>
 </span>
 <span>
@@ -7190,39 +5398,48 @@ int
 <li value="45">
 <div class="instruction">
 <span>
-bipush 32
-</span>
-</div>
-</li>
-<li value="47">
-<div class="instruction">
-<span>
-iadd
+goto 22
 </span>
 </div>
 </li>
 <li value="48">
 <div class="instruction">
 <span>
-putfield 
+aload  0
 </span>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
 <span>
-<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
-sun.text.normalizer.TrieIterator.m_nextCodepoint_
-</a>
+aload  0
 </span>
+</div>
+</li>
+<li value="50">
+<div class="instruction">
 <span>
- : 
-</span>
-<span>
-int
+aload  0
 </span>
 </div>
 </li>
 <li value="51">
 <div class="instruction">
 <span>
-goto 57
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_trie_:sun.text.normalizer.Trie">
+sun.text.normalizer.TrieIterator.m_trie_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../sun/text/normalizer/Trie.html">
+sun.text.normalizer.Trie
+</a>
 </span>
 </div>
 </li>
@@ -7254,82 +5471,69 @@ int
 <li value="58">
 <div class="instruction">
 <span>
-ifne 40
+invokevirtual 
 </span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getValue(int)">
+sun.text.normalizer.Trie.getValue
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/IntTrie.html#sun.text.normalizer.IntTrie:getValue:II" title="int getValue(int)">
+sun.text.normalizer.IntTrie.getValue
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/text/normalizer/CharTrie.html#sun.text.normalizer.CharTrie:getValue:II" title="int getValue(int)">
+sun.text.normalizer.CharTrie.getValue
+</a>
+</div>
+</li>
+</ul>
 </div>
 </li>
 <li value="61">
 <div class="instruction">
 <span>
-iload  2
-</span>
-</div>
-</li>
-<li value="62">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="63">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.TrieIterator:m_initialValue_:I">
-sun.text.normalizer.TrieIterator.m_initialValue_
-</a>
-</span>
-<span>
- : 
+invokevirtual 
 </span>
 <span>
 int
 </span>
-</div>
-</li>
-<li value="66">
-<div class="instruction">
-<span>
-ifcmpeq 18
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int extract(int)">
+sun.text.normalizer.TrieIterator.extract
 </span>
-</div>
-</li>
-<li value="69">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="70">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="71">
-<div class="instruction">
-<span>
-getfield 
 </span>
 <span>
-<a href="#sun.text.normalizer.TrieIterator:m_initialValue_:I">
-sun.text.normalizer.TrieIterator.m_initialValue_
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
+(
 int
+)
 </span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.TrieIterator:extract:II" title="int extract(int)">
+sun.text.normalizer.TrieIterator.extract
+</a>
 </div>
 </li>
-<li value="74">
+</ul>
+</div>
+</li>
+<li value="64">
 <div class="instruction">
 <span>
 putfield 
@@ -7347,21 +5551,21 @@ int
 </span>
 </div>
 </li>
-<li value="77">
+<li value="67">
 <div class="instruction">
 <span>
 aload  0
 </span>
 </div>
 </li>
-<li value="78">
+<li value="68">
 <div class="instruction">
 <span>
 iconst 0
 </span>
 </div>
 </li>
-<li value="79">
+<li value="69">
 <div class="instruction">
 <span>
 putfield 
@@ -7379,35 +5583,165 @@ int
 </span>
 </div>
 </li>
-<li value="82">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="83">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-<li value="84">
+<li value="72">
 <div class="instruction">
 <span>
 aload  0
 </span>
 </div>
 </li>
-<li value="85">
+<li value="73">
 <div class="instruction">
 <span>
-dup
+bipush 32
 </span>
 </div>
 </li>
-<li value="86">
+<li value="75">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextTrailIndexOffset_:I">
+sun.text.normalizer.TrieIterator.m_nextTrailIndexOffset_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="78">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.TrieIterator:calculateNextBMPElement:sun.text.normalizer.RangeValueIterator$ElementZ" href="#">
+
+</a>
+<div class="method_signature">
+private final 
+bool
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+calculateNextBMPElement
+</span>
+(
+<a href="../../../sun/text/normalizer/RangeValueIterator$Element.html">
+sun.text.normalizer.RangeValueIterator$Element
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.TrieIterator:next:sun.text.normalizer.RangeValueIterator$ElementZ" title="bool next(sun.text.normalizer.RangeValueIterator$Element)">
+sun.text.normalizer.TrieIterator.next(sun.text.normalizer.RangeValueIterator$Element)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextBlock_:I">
+sun.text.normalizer.TrieIterator.m_nextBlock_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+istore  2
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextValue_:I">
+sun.text.normalizer.TrieIterator.m_nextValue_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+istore  3
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="12">
 <div class="instruction">
 <span>
 getfield 
@@ -7425,21 +5759,71 @@ int
 </span>
 </div>
 </li>
-<li value="89">
+<li value="15">
 <div class="instruction">
 <span>
-bipush 32
+putfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_currentCodepoint_:I">
+sun.text.normalizer.TrieIterator.m_currentCodepoint_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
 </span>
 </div>
 </li>
-<li value="91">
+<li value="18">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
+sun.text.normalizer.TrieIterator.m_nextCodepoint_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="24">
 <div class="instruction">
 <span>
 iadd
 </span>
 </div>
 </li>
-<li value="92">
+<li value="25">
 <div class="instruction">
 <span>
 putfield 
@@ -7457,28 +5841,85 @@ int
 </span>
 </div>
 </li>
-<li value="95">
-<div class="instruction">
-<span>
-goto 13
-</span>
-</div>
-</li>
-<li value="98">
+<li value="28">
 <div class="instruction">
 <span>
 aload  0
 </span>
 </div>
 </li>
-<li value="99">
+<li value="29">
 <div class="instruction">
 <span>
-iload  2
+dup
 </span>
 </div>
 </li>
-<li value="100">
+<li value="30">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextBlockIndex_:I">
+sun.text.normalizer.TrieIterator.m_nextBlockIndex_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextBlockIndex_:I">
+sun.text.normalizer.TrieIterator.m_nextBlockIndex_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="40">
 <div class="instruction">
 <span>
 invokespecial 
@@ -7507,35 +5948,1594 @@ sun.text.normalizer.TrieIterator.checkBlockDetail
 </ul>
 </div>
 </li>
-<li value="103">
+<li value="43">
 <div class="instruction">
 <span>
-ifne 5
+ifne 19
 </span>
 </div>
 </li>
-<li value="106">
+<li value="46">
 <div class="instruction">
 <span>
-iconst 0
+aload  0
 </span>
 </div>
 </li>
-<li value="107">
+<li value="47">
 <div class="instruction">
 <span>
-ireturn
+aload  1
 </span>
 </div>
 </li>
-<li value="108">
+<li value="48">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_currentCodepoint_:I">
+sun.text.normalizer.TrieIterator.m_currentCodepoint_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="52">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="53">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
+sun.text.normalizer.TrieIterator.m_nextCodepoint_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="57">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void setResult(sun.text.normalizer.RangeValueIterator$Element, int, int, int)">
+sun.text.normalizer.TrieIterator.setResult
+</span>
+</span>
+<span>
+(
+<a href="../../../sun/text/normalizer/RangeValueIterator$Element.html">
+sun.text.normalizer.RangeValueIterator$Element
+</a>
+, 
+int
+, 
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.TrieIterator:setResult:sun.text.normalizer.RangeValueIterator$ElementIIIvoid" title="void setResult(sun.text.normalizer.RangeValueIterator$Element, int, int, int)">
+sun.text.normalizer.TrieIterator.setResult
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="60">
 <div class="instruction">
 <span>
 iconst 1
 </span>
 </div>
 </li>
+<li value="61">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="62">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="63">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
+sun.text.normalizer.TrieIterator.m_nextCodepoint_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="66">
+<div class="instruction">
+<span>
+iconst 65536
+</span>
+</div>
+</li>
+<li value="68">
+<div class="instruction">
+<span>
+ifcmpge 81
+</span>
+</div>
+</li>
+<li value="71">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="72">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="73">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextIndex_:I">
+sun.text.normalizer.TrieIterator.m_nextIndex_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="76">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="77">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="78">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextIndex_:I">
+sun.text.normalizer.TrieIterator.m_nextIndex_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="81">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="82">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
+sun.text.normalizer.TrieIterator.m_nextCodepoint_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="85">
+<div class="instruction">
+<span>
+iconst 55296
+</span>
+</div>
+</li>
+<li value="87">
+<div class="instruction">
+<span>
+ifcmpne 13
+</span>
+</div>
+</li>
+<li value="90">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="91">
+<div class="instruction">
+<span>
+sipush 2048
+</span>
+</div>
+</li>
+<li value="94">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextIndex_:I">
+sun.text.normalizer.TrieIterator.m_nextIndex_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="97">
+<div class="instruction">
+<span>
+goto 22
+</span>
+</div>
+</li>
+<li value="100">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="101">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
+sun.text.normalizer.TrieIterator.m_nextCodepoint_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="104">
+<div class="instruction">
+<span>
+iconst 56320
+</span>
+</div>
+</li>
+<li value="106">
+<div class="instruction">
+<span>
+ifcmpne 13
+</span>
+</div>
+</li>
 <li value="109">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="110">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="111">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
+sun.text.normalizer.TrieIterator.m_nextCodepoint_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="114">
+<div class="instruction">
+<span>
+iconst 5
+</span>
+</div>
+</li>
+<li value="115">
+<div class="instruction">
+<span>
+ishr
+</span>
+</div>
+</li>
+<li value="116">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextIndex_:I">
+sun.text.normalizer.TrieIterator.m_nextIndex_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="119">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="120">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="121">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextBlockIndex_:I">
+sun.text.normalizer.TrieIterator.m_nextBlockIndex_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="124">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="125">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="126">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="127">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool checkBlock(int, int)">
+sun.text.normalizer.TrieIterator.checkBlock
+</span>
+</span>
+<span>
+(
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.TrieIterator:checkBlock:IIZ" title="bool checkBlock(int, int)">
+sun.text.normalizer.TrieIterator.checkBlock
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="130">
+<div class="instruction">
+<span>
+ifne -68
+</span>
+</div>
+</li>
+<li value="133">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="134">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="135">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="136">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_currentCodepoint_:I">
+sun.text.normalizer.TrieIterator.m_currentCodepoint_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="139">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="140">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
+sun.text.normalizer.TrieIterator.m_nextCodepoint_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="143">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="144">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void setResult(sun.text.normalizer.RangeValueIterator$Element, int, int, int)">
+sun.text.normalizer.TrieIterator.setResult
+</span>
+</span>
+<span>
+(
+<a href="../../../sun/text/normalizer/RangeValueIterator$Element.html">
+sun.text.normalizer.RangeValueIterator$Element
+</a>
+, 
+int
+, 
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.TrieIterator:setResult:sun.text.normalizer.RangeValueIterator$ElementIIIvoid" title="void setResult(sun.text.normalizer.RangeValueIterator$Element, int, int, int)">
+sun.text.normalizer.TrieIterator.setResult
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="147">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="148">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="149">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="150">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="151">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
+sun.text.normalizer.TrieIterator.m_nextCodepoint_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="154">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="155">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="156">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
+sun.text.normalizer.TrieIterator.m_nextCodepoint_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="159">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="160">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="161">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextBlockIndex_:I">
+sun.text.normalizer.TrieIterator.m_nextBlockIndex_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="164">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="165">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="166">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextBlockIndex_:I">
+sun.text.normalizer.TrieIterator.m_nextBlockIndex_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="169">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="170">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.TrieIterator:&lt;init&gt;:sun.text.normalizer.Trievoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<span class="methodname clickable" onclick="showInfoList(this)">
+TrieIterator
+</span>
+(
+<a href="../../../sun/text/normalizer/Trie.html">
+sun.text.normalizer.Trie
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/UCharacterProperty.html#sun.text.normalizer.UCharacterProperty:upropsvec_addPropertyStarts:sun.text.normalizer.UnicodeSetvoid" title="void upropsvec_addPropertyStarts(sun.text.normalizer.UnicodeSet)">
+sun.text.normalizer.UCharacterProperty.upropsvec_addPropertyStarts(sun.text.normalizer.UnicodeSet)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Object.html#java.lang.Object:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+ifnonnull 13
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+ldc string &apos;Argument trie cannot be null&apos;
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.lang.IllegalArgumentException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/IllegalArgumentException.html#java.lang.IllegalArgumentException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
+java.lang.IllegalArgumentException.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_trie_:sun.text.normalizer.Trie">
+sun.text.normalizer.TrieIterator.m_trie_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../sun/text/normalizer/Trie.html">
+sun.text.normalizer.Trie
+</a>
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_trie_:sun.text.normalizer.Trie">
+sun.text.normalizer.TrieIterator.m_trie_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../sun/text/normalizer/Trie.html">
+sun.text.normalizer.Trie
+</a>
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getInitialValue()">
+sun.text.normalizer.Trie.getInitialValue
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/CharTrie.html#sun.text.normalizer.CharTrie:getInitialValue:I" title="int getInitialValue()">
+sun.text.normalizer.CharTrie.getInitialValue
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/text/normalizer/IntTrie.html#sun.text.normalizer.IntTrie:getInitialValue:I" title="int getInitialValue()">
+sun.text.normalizer.IntTrie.getInitialValue
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int extract(int)">
+sun.text.normalizer.TrieIterator.extract
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.TrieIterator:extract:II" title="int extract(int)">
+sun.text.normalizer.TrieIterator.extract
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_initialValue_:I">
+sun.text.normalizer.TrieIterator.m_initialValue_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void reset()">
+sun.text.normalizer.TrieIterator.reset
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.TrieIterator:reset:void" title="void reset()">
+sun.text.normalizer.TrieIterator.reset
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.TrieIterator:checkBlockDetail:IZ" href="#">
+
+</a>
+<div class="method_signature">
+private final 
+bool
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+checkBlockDetail
+</span>
+(
+int
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.TrieIterator:calculateNextBMPElement:sun.text.normalizer.RangeValueIterator$ElementZ" title="bool calculateNextBMPElement(sun.text.normalizer.RangeValueIterator$Element)">
+sun.text.normalizer.TrieIterator.calculateNextBMPElement(sun.text.normalizer.RangeValueIterator$Element)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#sun.text.normalizer.TrieIterator:checkBlock:IIZ" title="bool checkBlock(int, int)">
+sun.text.normalizer.TrieIterator.checkBlock(int, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#sun.text.normalizer.TrieIterator:calculateNextSupplementaryElement:sun.text.normalizer.RangeValueIterator$Elementvoid" title="void calculateNextSupplementaryElement(sun.text.normalizer.RangeValueIterator$Element)">
+sun.text.normalizer.TrieIterator.calculateNextSupplementaryElement(sun.text.normalizer.RangeValueIterator$Element)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextBlockIndex_:I">
+sun.text.normalizer.TrieIterator.m_nextBlockIndex_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+bipush 32
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+ifcmpge 60
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_trie_:sun.text.normalizer.Trie">
+sun.text.normalizer.TrieIterator.m_trie_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../sun/text/normalizer/Trie.html">
+sun.text.normalizer.Trie
+</a>
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextBlock_:I">
+sun.text.normalizer.TrieIterator.m_nextBlock_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextBlockIndex_:I">
+sun.text.normalizer.TrieIterator.m_nextBlockIndex_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getValue(int)">
+sun.text.normalizer.Trie.getValue
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/IntTrie.html#sun.text.normalizer.IntTrie:getValue:II" title="int getValue(int)">
+sun.text.normalizer.IntTrie.getValue
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../sun/text/normalizer/CharTrie.html#sun.text.normalizer.CharTrie:getValue:II" title="int getValue(int)">
+sun.text.normalizer.CharTrie.getValue
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int extract(int)">
+sun.text.normalizer.TrieIterator.extract
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.text.normalizer.TrieIterator:extract:II" title="int extract(int)">
+sun.text.normalizer.TrieIterator.extract
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextValue_:I">
+sun.text.normalizer.TrieIterator.m_nextValue_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextValue_:I">
+sun.text.normalizer.TrieIterator.m_nextValue_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+ifcmpeq 5
+</span>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextBlockIndex_:I">
+sun.text.normalizer.TrieIterator.m_nextBlockIndex_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="50">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextBlockIndex_:I">
+sun.text.normalizer.TrieIterator.m_nextBlockIndex_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="53">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="54">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="55">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
+sun.text.normalizer.TrieIterator.m_nextCodepoint_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="58">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="59">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="60">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.TrieIterator:m_nextCodepoint_:I">
+sun.text.normalizer.TrieIterator.m_nextCodepoint_
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="63">
+<div class="instruction">
+<span>
+goto -63
+</span>
+</div>
+</li>
+<li value="66">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="67">
 <div class="instruction">
 <span>
 ireturn

@@ -1,0 +1,40 @@
+protected short value;
+public A ( ) ;
+
+    Concrete Method
+    Parsed
+
+0.  aload 0
+1.  invokespecial void java.lang.Object.<init> ( )
+        java.lang.Object.<init>
+4.  aload 0
+5.  bipush 10
+7.  putfield A.value : short
+10. return
+
+public short foo ( short 1 ) ;
+
+    Concrete Method
+    Parsed
+
+0.  aload 0
+1.  dup
+2.  getfield A.value : short
+5.  iload 1
+6.  iadd
+7.  i2s
+8.  putfield A.value : short
+11. aload 0
+12. getfield A.value : short
+15. ireturn
+
+public short bar ( ) ;
+
+    Concrete Method
+    Parsed
+
+0.  aload 0
+1.  getfield A.value : short
+4.  ireturn
+
+
