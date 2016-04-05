@@ -13,7 +13,7 @@ namespace ModelRewriter
         public ByteCodeInstructions()
         {
             // initialize instructions
-            instructions.Add(new BytecodeInstruction("00", "nop"));
+            /*instructions.Add(new BytecodeInstruction("00", "nop"));
             instructions.Add(new BytecodeInstruction("15", resolveMnemonic("15")));
             instructions.Add(new BytecodeInstruction("92", resolveMnemonic("92")));
             instructions.Add(new BytecodeInstruction("7B", resolveMnemonic("7B")));
@@ -23,9 +23,18 @@ namespace ModelRewriter
             instructions.Add(new BytecodeInstruction("7EE", resolveMnemonic("7EE"))); // test value
             instructions.Add(new BytecodeInstruction("8F", resolveMnemonic("8F")));
             instructions.Add(new BytecodeInstruction("83", resolveMnemonic("83")));
-            instructions.Add(new BytecodeInstruction("8B", resolveMnemonic("8B")));
+            instructions.Add(new BytecodeInstruction("8B", resolveMnemonic("8B")));*/
 
-
+            instructions.Add(new BytecodeInstruction("60", resolveMnemonic("60")));
+            instructions.Add(new BytecodeInstruction("70", resolveMnemonic("70")));
+            instructions.Add(new BytecodeInstruction("20", resolveMnemonic("20")));
+            instructions.Add(new BytecodeInstruction("30", resolveMnemonic("30")));
+            instructions.Add(new BytecodeInstruction("B", resolveMnemonic("B")));
+            instructions.Add(new BytecodeInstruction("1B", resolveMnemonic("1B")));
+            instructions.Add(new BytecodeInstruction("C", resolveMnemonic("C")));
+            instructions.Add(new BytecodeInstruction("1C", resolveMnemonic("1C")));
+            instructions.Add(new BytecodeInstruction("79", resolveMnemonic("79")));
+            instructions.Add(new BytecodeInstruction("69", resolveMnemonic("69")));
 
             instructions.ForEach(e => e.generateRelatedInstructions());
             instructions.ForEach(e => e.mnemonic = resolveMnemonic(e.hex));
@@ -57,7 +66,7 @@ namespace ModelRewriter
         {
             // fix opcode irregularities in case
             switch (opcode)
-            {
+            {/*
                 case "00":
                     return "nop";
                 case "15":
@@ -82,8 +91,7 @@ namespace ModelRewriter
                     return "iflt_w";
                 case "73":
                     return "stableswitch";
-                case "74":
-                    return "itableswitch";
+
                 case "75":
                     return "slookupswitch";
                 case "76":
@@ -106,6 +114,30 @@ namespace ModelRewriter
                     return "7A";
                 case "14":
                     return "iipush";
+                */
+                // original mnemonics
+                case "60":
+                    return "ifeq";
+                case "20":
+                    return "iload_0";
+                case "B":
+                    return "iconst_1";
+                case "C":
+                    return "iconst_2";
+                case "79":
+                    return "ireturn";
+
+                // fault mnemonics
+                case "70":                //0x60 -> 0x70
+                    return "goto";
+                case "30":                //0x20 -> 0x30
+                    return "sstore_1";
+                case "1B":                //0xb -> 0x1b
+                    return "aload_3";
+                case "1C":                //0xc -> 0x1c
+                    return "sload_0";
+                case "69":                //0x79 -> 0x69
+                    return "if_acmpne";
                 default:
                     return null;//throw new System.NotImplementedException(opcode);
             }

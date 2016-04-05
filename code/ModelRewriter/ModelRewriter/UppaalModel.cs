@@ -291,8 +291,8 @@ system s, s1;";
                     }
 
                     // get instruction name and resolve to byte code instruction
-                    int index = loc.name.IndexOf("_");
-                    string inst = loc.name.Substring(loc.name.IndexOf("_") + 1);
+                    //int index = loc.name.IndexOf("_");
+                    string inst = loc.name.Replace("_", "");//.Substring(loc.name.IndexOf("_") + 1);
                     BytecodeInstruction bci = insts.instructionToBytecode(inst);
 
                     if (index != -1 && bci != null)
@@ -383,6 +383,31 @@ system s, s1;";
             }
             return 0;
         }
+
+        public void addErrorLocation()
+        {
+            // add extra error location for each template
+            foreach (var t in templates)
+            {
+                // make location
+                Location errorLoc = new Location();
+                errorLoc.x = -400;
+                errorLoc.y = 200;
+                errorLoc.name = "error";
+                errorLoc.id = "id9999"; // arbitrary id set high so as to not interfere with "regular" locs
+                t.locations.Add(errorLoc);
+
+                // make transitions
+                foreach (var loc in t.locations)
+	            {
+                    // make sure we only get locations which are from the original program
+                    if (loc.pc != null && loc.pc != "None" && loc.id != errorLoc.id)
+                    {
+                        var errorTransition = new Transition(loc, errorLoc);
+                        t.transitions.Add(errorTransition);
+                    }
+	            }
+            }
+        }
 	}
 }
-

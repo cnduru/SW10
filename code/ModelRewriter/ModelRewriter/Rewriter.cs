@@ -17,6 +17,8 @@ namespace ModelRewriter
             //uml.rewritePCFault("testxml.xml");
             //uml.rewriteDataFault("testxml.xml");
             uml.rewriteInstructionFault("instructionRewrite.xml");
+            //uml.addErrorLocation();
+            //uml.Save("newErrorLoc.xml");
         }
     }
 }
