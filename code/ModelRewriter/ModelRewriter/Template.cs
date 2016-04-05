@@ -108,6 +108,13 @@ bool ifcmpme(){
         return os[osp-2] >= os[osp - 1];
     }
     return false;
+}
+
+bool ifcmpeq(){
+    if (osp > 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
 }";
             initialLocation = locations.First();
         }
@@ -265,7 +272,33 @@ bool ifcmpme(){
                         };
                         transitions.Add(new Transition(loc, NextLocation(loc), labels));
                         break;
+                    case "ifcmpeq":
+                        labels = new List<Label>()
+                            {
+                                new Label
+                                { 
+                                    content = timeGuard + " && ifcmpeq()", kind = "guard"
+                                },
+                                new Label
+                                { 
+                                    content = "osp_dec(2), t = 0", kind = "assignment"
+                                }
+                            };
+                        transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + Convert.ToInt32(instArg[1])), labels));
 
+                        labels = new List<Label>()
+                            {
+                                new Label
+                                { 
+                                    content = timeGuard + " && !ifcmpeq()", kind = "guard"
+                                },
+                                new Label
+                                { 
+                                    content = "opstack_fault = osp < 2 ? true : opstack_fault, osp_dec(2), t = 0", kind = "assignment"
+                                }
+                            };
+                        transitions.Add(new Transition(loc, NextLocation(loc), labels));
+                        break;
                     case "ifcmpme":
                         /* if greather or eq
                          * Opstack: .. ,value1, value2 -> ..
