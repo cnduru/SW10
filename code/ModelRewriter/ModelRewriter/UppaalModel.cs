@@ -285,7 +285,7 @@ system s, s1;";
             {
                 foreach (var loc in tem.locations)
                 {
-                    if(loc.pc == "null")
+                    if(loc.pc == null)
                     {
                         continue;
                     }
@@ -306,7 +306,7 @@ system s, s1;";
                         foreach (var edge in tem.transitions)
                         {
 
-                            if (edge.source.id == loc.id)
+                            if (edge.source.id == loc.id && !edge.source.id.Contains("-") && !edge.target.id.Contains("-"))
                             {
                                 var a = bci.relatedInstruction;
 
