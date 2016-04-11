@@ -585,5 +585,10 @@ bool ifcmpeq(){
             //faultTransitions.AddRange(tlist);
             transitions.AddRange(tlist);
         }
+
+        public Location idToLocation(string id)
+        {
+            return locations.First(l => l.id == id);
+        }
     }
 }

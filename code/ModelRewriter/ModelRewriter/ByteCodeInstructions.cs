@@ -26,7 +26,7 @@ namespace ModelRewriter
             instructions.Add(new BytecodeInstruction("8B", resolveMnemonic("8B")));*/
 
             instructions.Add(new BytecodeInstruction("60", resolveMnemonic("60")));
-            instructions.Add(new BytecodeInstruction("70", resolveMnemonic("70")));
+            //instructions.Add(new BytecodeInstruction("70", resolveMnemonic("70")));
             instructions.Add(new BytecodeInstruction("20", resolveMnemonic("20")));
             instructions.Add(new BytecodeInstruction("30", resolveMnemonic("30")));
             instructions.Add(new BytecodeInstruction("B", resolveMnemonic("B")));
@@ -128,8 +128,8 @@ namespace ModelRewriter
                     return "ireturn";
 
                 // fault mnemonics
-                case "70":                //0x60 -> 0x70
-                    return "goto";
+            //    case "70":                //0x60 -> 0x70
+              //      return "goto";
                 case "30":                //0x20 -> 0x30
                     return "sstore_1";
                 case "1B":                //0xb -> 0x1b
@@ -142,6 +142,19 @@ namespace ModelRewriter
                     return null;//throw new System.NotImplementedException(opcode);
             }
 
+        }
+
+        public bool isInstruction(string inst)
+        {
+            foreach (var ins in instructions)
+            {
+                if(ins.mnemonic == inst)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

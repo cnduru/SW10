@@ -295,17 +295,27 @@ system s, s1;";
                     string inst = loc.name.Replace("__", "_");//.Substring(loc.name.IndexOf("_") + 1);
                     inst = Regex.Replace(inst, @"pc\d*_", "");
                     inst = inst.Replace("\n", "");
-                    //inst = Regex.Replace(inst, @"_\d*", "");
+                    inst = Regex.Replace(inst, @"_\d*", "");
 
                     BytecodeInstruction bci = insts.instructionToBytecode(inst);
+                    var tempTrans = new List<Transition>();
 
-                    if (index != -1 && bci != null)
+                    if (bci != null && bci.relatedInstruction.mnemonic == "") // should we use "" or null for non-valid instruction?
+                    {   
+                        // make transition to error state if invalid instruction
+                        // var errorTransition = new Transition(loc, tem.idToLocation(""));//(loc, tem.idToLocation(Constants.errorLocId));
+                        var x = tem.idToLocation(Constants.errorLocId);
+                        Transition errorTransition = new Transition(loc, x);
+                        tempTrans.Add(errorTransition);
+                        //tem.transitions.Add(errorTransition);
+                    }
+
+                    if (bci != null && index != -1)
                     {
-                        var tempTrans = new List<Transition>();
 
                         foreach (var edge in tem.transitions)
-                        {
-
+                        {                           
+       
                             if (edge.source.id == loc.id && !edge.source.id.Contains("-") && !edge.target.id.Contains("-"))
                             {
                                 var a = bci.relatedInstruction;
@@ -398,19 +408,8 @@ system s, s1;";
                 errorLoc.x = -400;
                 errorLoc.y = 200;
                 errorLoc.name = "error";
-                errorLoc.id = "id9999"; // arbitrary id set high so as to not interfere with "regular" locs
+                errorLoc.id = Constants.errorLocId; // arbitrary id set high so as to not interfere with "regular" locs
                 t.locations.Add(errorLoc);
-
-                // make transitions
-                foreach (var loc in t.locations)
-	            {
-                    // make sure we only get locations which are from the original program
-                    if (loc.pc != null && loc.pc != "None" && loc.id != errorLoc.id)
-                    {
-                        var errorTransition = new Transition(loc, errorLoc);
-                        t.transitions.Add(errorTransition);
-                    }
-	            }
             }
         }
 	}
