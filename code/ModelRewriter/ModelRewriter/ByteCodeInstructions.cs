@@ -128,8 +128,8 @@ namespace ModelRewriter
                     return "ireturn";
 
                 // fault mnemonics
-                case "70":                //0x60 -> 0x70
-                    return "goto";
+                /*case "70":                //0x60 -> 0x70
+                    return "goto";*/
                 case "30":                //0x20 -> 0x30
                     return "sstore_1";
                 case "1B":                //0xb -> 0x1b

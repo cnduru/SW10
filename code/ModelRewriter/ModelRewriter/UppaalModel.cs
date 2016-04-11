@@ -283,13 +283,6 @@ system s, s1;";
 
             foreach (var tem in templates)
             {
-                Location errorLoc = new Location();
-                errorLoc.name = "Error";
-                errorLoc.id = Constants.errorLocId;
-                errorLoc.x = -200;
-                errorLoc.y = 50;
-                tem.locations.Add(errorLoc);
-
                 foreach (var loc in tem.locations)
                 {
                     if(loc.pc == null)

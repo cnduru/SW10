@@ -16,7 +16,7 @@ namespace ModelRewriter
             UppaalModel uml = new UppaalModel(path, "instruction");
             //uml.rewritePCFault("testxml.xml");
             //uml.rewriteDataFault("testxml.xml");
-            //uml.addErrorLocation();
+            uml.addErrorLocation();
             //uml.Save("new3.xml");
 
 
