@@ -139,7 +139,7 @@ namespace ModelRewriter
                 case "69":                //0x79 -> 0x69
                     return "if_acmpne";
                 default:
-                    return null;//throw new System.NotImplementedException(opcode);
+                    return null;
             }
 
         }
