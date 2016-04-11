@@ -588,7 +588,13 @@ bool ifcmpeq(){
 
         public Location idToLocation(string id)
         {
-            return locations.First(l => l.id == id);
+         /*   try
+            {*/
+                return locations.First(l => l.id == id);
+           /* } catch (Exception ex)
+            {
+                return null;
+            }*/
         }
     }
 }

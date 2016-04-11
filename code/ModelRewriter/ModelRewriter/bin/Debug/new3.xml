@@ -12,9 +12,7 @@ broadcast chan DubTestc;
 bool done = false;
 bool opstack_fault = false;
 
-
-int faultAt = 0;
-clock globalClock;</declaration>
+</declaration>
   <template>
     <name>Sample_foo</name>
     <declaration>const int os_size = 10;
@@ -88,16 +86,13 @@ bool ifcmpeq(){
 </name>
       <label kind="invariant" x="-70" y="260">t &lt;= 1</label>
     </location>
-    <location id="id9999" x="-400" y="200">
-      <name x="-380" y="187">error</name>
-    </location>
     <init ref="id-1" />
     <transition>
       <source ref="id-1" />
       <target ref="id0" />
       <label kind="guard" x="20" y="-52">t == 1</label>
-      <label kind="assignment" x="20" y="-26">loc0 = par0, t = 0</label>
       <label kind="synchronisation" x="20" y="-39">fooc?</label>
+      <label kind="assignment" x="20" y="-26">loc0 = par0, t = 0</label>
     </transition>
     <transition>
       <source ref="id-1" />
@@ -177,6 +172,7 @@ bool ifcmpeq(){
     <location id="id-1" x="0" y="-52">
       <name x="20" y="-65">main</name>
       <label kind="invariant" x="-70" y="-52">t &lt;= 11</label>
+      <urgent />
     </location>
     <location id="id0" x="0" y="0">
       <name x="20" y="-13">pc0__new_Sample
@@ -224,11 +220,8 @@ bool ifcmpeq(){
       <label kind="invariant" x="-70" y="416">t &lt;= 1</label>
     </location>
     <location id="id2a" x="200" y="130">
-      <name x="220" y="117"></name>
+      <name x="220" y="117" />
       <label kind="invariant" x="130" y="130">t &lt;= 5</label>
-    </location>
-    <location id="id9999" x="-400" y="200">
-      <name x="-380" y="187">error</name>
     </location>
     <init ref="id-1" />
     <transition>
@@ -391,23 +384,20 @@ bool ifcmpeq(){
       <label kind="invariant" x="-70" y="520">t &lt;= 1</label>
     </location>
     <location id="id3a" x="200" y="182">
-      <name x="220" y="169"></name>
+      <name x="220" y="169" />
       <label kind="invariant" x="130" y="182">t &lt;= 5</label>
     </location>
     <location id="id8a" x="200" y="442">
-      <name x="220" y="429"></name>
+      <name x="220" y="429" />
       <label kind="invariant" x="130" y="442">t &lt;= 5</label>
-    </location>
-    <location id="id9999" x="-400" y="200">
-      <name x="-380" y="187">error</name>
     </location>
     <init ref="id-1" />
     <transition>
       <source ref="id-1" />
       <target ref="id0" />
       <label kind="guard" x="20" y="-52">t == 1</label>
-      <label kind="assignment" x="20" y="-26">loc0 = par0, t = 0</label>
       <label kind="synchronisation" x="20" y="-39">installc?</label>
+      <label kind="assignment" x="20" y="-26">loc0 = par0, t = 0</label>
     </transition>
     <transition>
       <source ref="id-1" />
@@ -565,19 +555,16 @@ bool ifcmpeq(){
       <label kind="invariant" x="-70" y="260">t &lt;= 1</label>
     </location>
     <location id="id1a" x="200" y="78">
-      <name x="220" y="65"></name>
+      <name x="220" y="65" />
       <label kind="invariant" x="130" y="78">t &lt;= 5</label>
-    </location>
-    <location id="id9999" x="-400" y="200">
-      <name x="-380" y="187">error</name>
     </location>
     <init ref="id-1" />
     <transition>
       <source ref="id-1" />
       <target ref="id0" />
       <label kind="guard" x="20" y="-52">t == 1</label>
-      <label kind="assignment" x="20" y="-26">loc0 = par0, t = 0</label>
       <label kind="synchronisation" x="20" y="-39">Ac?</label>
+      <label kind="assignment" x="20" y="-26">loc0 = par0, t = 0</label>
     </transition>
     <transition>
       <source ref="id-1" />
@@ -681,16 +668,13 @@ bool ifcmpeq(){
 </name>
       <label kind="invariant" x="-70" y="52">t &lt;= 1</label>
     </location>
-    <location id="id9999" x="-400" y="200">
-      <name x="-380" y="187">error</name>
-    </location>
     <init ref="id-1" />
     <transition>
       <source ref="id-1" />
       <target ref="id0" />
       <label kind="guard" x="20" y="-52">t == 1</label>
-      <label kind="assignment" x="20" y="-26">loc0 = par0, t = 0</label>
       <label kind="synchronisation" x="20" y="-39">fooc?</label>
+      <label kind="assignment" x="20" y="-26">loc0 = par0, t = 0</label>
     </transition>
     <transition>
       <source ref="id-1" />
@@ -794,23 +778,20 @@ bool ifcmpeq(){
       <label kind="invariant" x="-70" y="364">t &lt;= 1</label>
     </location>
     <location id="id1a" x="200" y="78">
-      <name x="220" y="65"></name>
+      <name x="220" y="65" />
       <label kind="invariant" x="130" y="78">t &lt;= 5</label>
     </location>
     <location id="id5a" x="200" y="286">
-      <name x="220" y="273"></name>
+      <name x="220" y="273" />
       <label kind="invariant" x="130" y="286">t &lt;= 5</label>
-    </location>
-    <location id="id9999" x="-400" y="200">
-      <name x="-380" y="187">error</name>
     </location>
     <init ref="id-1" />
     <transition>
       <source ref="id-1" />
       <target ref="id0" />
       <label kind="guard" x="20" y="-52">t == 1</label>
-      <label kind="assignment" x="20" y="-26">loc0 = par0, t = 0</label>
       <label kind="synchronisation" x="20" y="-39">Bc?</label>
+      <label kind="assignment" x="20" y="-26">loc0 = par0, t = 0</label>
     </transition>
     <transition>
       <source ref="id-1" />
@@ -935,16 +916,13 @@ bool ifcmpeq(){
 </name>
       <label kind="invariant" x="-70" y="52">t &lt;= 1</label>
     </location>
-    <location id="id9999" x="-400" y="200">
-      <name x="-380" y="187">error</name>
-    </location>
     <init ref="id-1" />
     <transition>
       <source ref="id-1" />
       <target ref="id0" />
       <label kind="guard" x="20" y="-52">t == 1</label>
-      <label kind="assignment" x="20" y="-26">loc0 = par0, t = 0</label>
       <label kind="synchronisation" x="20" y="-39">fooc?</label>
+      <label kind="assignment" x="20" y="-26">loc0 = par0, t = 0</label>
     </transition>
     <transition>
       <source ref="id-1" />
@@ -966,7 +944,6 @@ bool ifcmpeq(){
   </template>
   <system>s = main();
 s1 = DubTest();
-
 system s, s1;</system>
   <queries>&lt;formula&gt;Pr[&lt;= 50] (&lt;&gt; done)
             &lt;/formula&gt;

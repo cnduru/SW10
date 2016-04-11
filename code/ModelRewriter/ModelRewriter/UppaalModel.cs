@@ -283,6 +283,13 @@ system s, s1;";
 
             foreach (var tem in templates)
             {
+                Location errorLoc = new Location();
+                errorLoc.name = "Error";
+                errorLoc.id = Constants.errorLocId;
+                errorLoc.x = -200;
+                errorLoc.y = 50;
+                tem.locations.Add(errorLoc);
+
                 foreach (var loc in tem.locations)
                 {
                     if(loc.pc == null)
@@ -304,6 +311,7 @@ system s, s1;";
                     {   
                         // make transition to error state if invalid instruction
                         // var errorTransition = new Transition(loc, tem.idToLocation(""));//(loc, tem.idToLocation(Constants.errorLocId));
+
                         var x = tem.idToLocation(Constants.errorLocId);
                         Transition errorTransition = new Transition(loc, x);
                         tempTrans.Add(errorTransition);
