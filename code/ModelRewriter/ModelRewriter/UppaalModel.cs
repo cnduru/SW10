@@ -58,7 +58,7 @@ namespace ModelRewriter
 
             foreach (var m in methods)
             {
-                AddTemplate(m, cls);
+                
             }
         }
 
@@ -117,9 +117,12 @@ system s, s1;";
 		}
             
         //Adds method templates from jbc
-        public void AddTemplate(List<string> method, string cls)
+        public void AddTemplates(JClass cls)
         {
-            templates.Add(new Template(method, cls));
+            foreach (var m in cls.Methods)
+            {
+                templates.Add(new Template(m, cls.Name));
+            }
         }
 
 		//Creates a xml element with a tag and value
