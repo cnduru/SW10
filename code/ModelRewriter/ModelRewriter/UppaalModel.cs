@@ -302,9 +302,17 @@ system s, s1;";
                     string inst = loc.name.Replace("__", "_");//.Substring(loc.name.IndexOf("_") + 1);
                     inst = Regex.Replace(inst, @"pc\d*_", "");
                     inst = inst.Replace("\n", "");
-                    inst = Regex.Replace(inst, @"_\d*", "");
+                    string instNotSpecial = Regex.Replace(inst, @"_\d*", "");
 
                     BytecodeInstruction bci = insts.instructionToBytecode(inst);
+                    BytecodeInstruction bciNotSpecial = insts.instructionToBytecode(instNotSpecial);
+
+                    if(bciNotSpecial != null)
+                    {
+                        // special case, overwrite bci
+                        bci = bciNotSpecial;
+                    }
+
                     var tempTrans = new List<Transition>();
 
                     if(bci == null || bci.relatedInstruction.mnemonic == "") // should we use "" or null for non-valid instruction?

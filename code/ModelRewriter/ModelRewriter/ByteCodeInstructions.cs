@@ -26,7 +26,7 @@ namespace ModelRewriter
             instructions.Add(new BytecodeInstruction("8B", resolveMnemonic("8B")));*/
 
             instructions.Add(new BytecodeInstruction("60", resolveMnemonic("60")));
-            //instructions.Add(new BytecodeInstruction("70", resolveMnemonic("70")));
+            instructions.Add(new BytecodeInstruction("70", resolveMnemonic("70")));
             instructions.Add(new BytecodeInstruction("20", resolveMnemonic("20")));
             instructions.Add(new BytecodeInstruction("30", resolveMnemonic("30")));
             instructions.Add(new BytecodeInstruction("B", resolveMnemonic("B")));
