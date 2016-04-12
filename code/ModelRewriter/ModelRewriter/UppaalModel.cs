@@ -283,40 +283,61 @@ namespace ModelRewriter
                         continue;
                     }
 
+                    foreach (var edge in tem.transitions)
+	                {
+                        if(edge.source.id == loc.id)
+                        {
+                            // for original edges
+                            // add guard to distribute probability equally among fault and valid edge
+                            Label antiProbLbl = new Label() { content = "faultAtId != " + loc.guid, kind = "guard", x = loc.x + 10, y = loc.y + 20 };
+                            edge.labels.Add(antiProbLbl);
+                           
+                        }
+	                }
+              
                     // get instruction name and resolve to byte code instruction
                     int index = loc.name.IndexOf("_");
                     string inst = loc.name.Replace("__", "_");//.Substring(loc.name.IndexOf("_") + 1);
                     inst = Regex.Replace(inst, @"pc\d*_", "");
                     inst = inst.Replace("\n", "");
-                    inst = Regex.Replace(inst, @"_\d*", "");
+                    string instNotSpecial = Regex.Replace(inst, @"_\d*", "");
 
                     BytecodeInstruction bci = insts.instructionToBytecode(inst);
+                    BytecodeInstruction bciNotSpecial = insts.instructionToBytecode(instNotSpecial);
+
+                    if(bciNotSpecial != null)
+                    {
+                        // special case, overwrite bci
+                        bci = bciNotSpecial;
+                    }
+
                     var tempTrans = new List<Transition>();
 
-                    if (bci != null && bci.relatedInstruction.mnemonic == "") // should we use "" or null for non-valid instruction?
+                    if(bci == null || bci.relatedInstruction.mnemonic == "") // should we use "" or null for non-valid instruction?
                     {   
                         // make transition to error state if invalid instruction
-                        // var errorTransition = new Transition(loc, tem.idToLocation(""));//(loc, tem.idToLocation(Constants.errorLocId));
-
                         var x = tem.idToLocation(Constants.errorLocId);
                         Transition errorTransition = new Transition(loc, x);
                         tempTrans.Add(errorTransition);
-                        //tem.transitions.Add(errorTransition);
                     }
 
                     if (bci != null && index != -1)
                     {
 
                         foreach (var edge in tem.transitions)
-                        {                           
-       
+                        {   
+                            // for inst fault edges
                             if (edge.source.id == loc.id && !edge.source.id.Contains("-") && !edge.target.id.Contains("-"))
                             {
                                 var a = bci.relatedInstruction;
 
                                 var labs = a.getLabels();
-                                int lx = 50, lx2 = 90, ly = 100;
 
+                                // add guard to distribute probability equally among fault and valid edge
+                                Label probLbl = new Label() {content = "faultAtId == " + loc.guid, kind = "guard", x = loc.x, y = loc.y };
+                                labs.Add(probLbl);
+
+                                int lx = 50, lx2 = 90, ly = 100;
                                 Transition tt = new Transition(edge.source, edge.target, labs);
 
                                 List<Transition.Nail> nails = new List<Transition.Nail>();
@@ -329,11 +350,22 @@ namespace ModelRewriter
                                 tempTrans.Add(tt);
                             }
                         }
-
-                        tem.transitions.AddRange(tempTrans);
                     }
+
+                    tem.transitions.AddRange(tempTrans);
                 }
             }
+
+            // add inst fault template
+            XElement instFaultTemplateXML = XElement.Parse(XMLProvider.getInstructionFaultTemplate());
+            XMLHandler xhl = new XMLHandler();
+            Template instFaultTemplate = xhl.getTemplateDataFault(instFaultTemplateXML);
+            //instFaultTemplate.locations[2].committed = true;
+
+            // todo: generalize this
+            globalDeclarations += "\nint faultAtId;\n";
+
+            templates.Add(instFaultTemplate);
 
 
             Save(path);

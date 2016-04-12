@@ -55,6 +55,8 @@ namespace ModelRewriter
             return t;
         }
 
+        static int idCount = 0;
+
         public Template getTemplate(XElement xel)
         {
             Template t = new Template(xel);
@@ -70,7 +72,8 @@ namespace ModelRewriter
 
                 l.id = (string)locs.Attribute("id");
                 l.name = (string)locs.Element("name");
-
+                l.guid = idCount.ToString();
+                idCount++;
 
                 XElement xele = locs.Element("label");
                 if (xele != null)

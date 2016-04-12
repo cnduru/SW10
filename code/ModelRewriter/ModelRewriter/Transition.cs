@@ -20,7 +20,7 @@ namespace ModelRewriter
             "<label kind=\"assignment\" x=\"18\" y=\"0\">up</label></transition>";
         public Location source { get; set; }
         public Location target { get; set; }
-        private List<Label> labels = new List<Label>();
+        public List<Label> labels = new List<Label>();
         public List<Nail> nails = new List<Nail>();
         public guards grds = new guards();
         public selections sels = new selections();
