@@ -19,12 +19,15 @@ namespace ModelRewriter
                 model.AddTemplates(jClass);
                 jClasses.Add(jClass);
             }
+            var methods = new List<string>();
             foreach (var jClass in jClasses)
             {
                 jClass.SetSuper(jClasses);
+                methods.AddRange(jClass.Methods.Select(x => jClass.Name + "_" + Template.FirstNonKeyword(x.First())));
+
             }
 
-            model.updateDec(20); 
+            model.InitDec(20,3,3, methods); 
             model.Save("new3.xml");
 		}
 	}

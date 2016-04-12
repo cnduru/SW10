@@ -50,44 +50,34 @@ namespace ModelRewriter
             templates = xlh.getTemplates();//new List<Template>();
 		}
 
-        public void parseClass(string jbc, string cls){
-            var lines = jbc.Split('\n');
-            var classSig = lines[0];
-            var methods = findMethods(lines.Skip(1));
-            fields[cls] = findFields(lines.Skip(1));
-
-            foreach (var m in methods)
-            {
-                
-            }
-        }
-
         //Sets dec, sys, and queries
-        public void updateDec(int heapsize)
+        public void InitDec(int heapSize, int cpSize, int maxPar, List<string> methods)
         {
             var globalDec = new StringBuilder();
-
-
-            var i =    String.Format(@"clock t;
-const int heap_size = {0};
-int H[heap_size];
-int cp0;
-int cp1;
-int par0;
-broadcast chan mainc;
-broadcast chan DubTestc;
-bool done = false;
-bool opstack_fault = false;
-
-", heapsize);
-                        /*foreach (var kvp in fields)
+            globalDec.Append("clock t;\n");
+            //HEAP
+            globalDec.Append(String.Format("const int heap_size = {0};\n",heapSize));
+            globalDec.Append("int H[heap_size];\n");
+            //ConstantPool
+            for (int i = 0; i < cpSize; i++) {
+                globalDec.Append("int cp" + i + ";\n");
+            }
+            //Method parameters
+            for (int i = 0; i < maxPar; i++)
             {
-                foreach (var f in kvp.Value)
-                {
-                    
-                }
-            }*/
+                globalDec.Append("int par" + i + ";\n");
+            }
+            //Method channels
+            foreach (var mName in methods)
+            {
+                globalDec.Append("broadcast chan c" + mName + ";\n");
+            }
 
+            globalDec.Append("bool done = false;\n");
+            globalDec.Append("bool opstack_fault = false;\n");
+
+
+            globalDeclarations = globalDec.ToString();
 
 
             system = @"s = main();

@@ -33,7 +33,6 @@ namespace ModelRewriter
                     if (cls.Name == superName)
                     {
                         super = cls;
-                        Fields.AddRange(super.Fields);
                     }
                 }    
             }
