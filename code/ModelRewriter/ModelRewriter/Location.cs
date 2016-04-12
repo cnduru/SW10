@@ -21,6 +21,7 @@ namespace ModelRewriter
         public bool urgent { get; set; }
         public bool committed { get; set; }
         public Label invariant;
+        public string guid;
 
         public Location()
         {
