@@ -307,6 +307,7 @@ system s, s1;";
                     BytecodeInstruction bci = insts.instructionToBytecode(inst);
                     BytecodeInstruction bciNotSpecial = insts.instructionToBytecode(instNotSpecial);
 
+                    // for handling special case in instruction, e.g. iconst_0 vs. ifeq 7
                     if(bciNotSpecial != null)
                     {
                         // special case, overwrite bci
@@ -362,7 +363,11 @@ system s, s1;";
             XElement instFaultTemplateXML = XElement.Parse(XMLProvider.getInstructionFaultTemplate());
             XMLHandler xhl = new XMLHandler();
             Template instFaultTemplate = xhl.getTemplateDataFault(instFaultTemplateXML);
-            //instFaultTemplate.locations[2].committed = true;
+            instFaultTemplate.locations[1].committed = true;
+
+            // define number range for fault number
+            Label selectFaultIdLabel = new Label(){content = string.Format("i:int[0,{0}]", XMLHandler.idCount), kind = "select", x = -110, y = -127};
+            instFaultTemplate.transitions[0].labels.Add(selectFaultIdLabel);
 
             // todo: generalize this
             globalDeclarations += "\nint faultAtId;\n";

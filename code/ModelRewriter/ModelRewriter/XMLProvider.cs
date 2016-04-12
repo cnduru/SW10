@@ -66,7 +66,6 @@ namespace ModelRewriter
 		<transition>
 			<source ref=""id1""/>
 			<target ref=""id0""/>
-			<label kind=""select"" x=""-110"" y=""-127"">i:int[0,10]</label>
 			<label kind=""assignment"" x=""-110"" y=""-68"">faultAtId = i</label>
 		</transition>
 	</template>";
