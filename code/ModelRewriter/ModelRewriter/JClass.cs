@@ -10,22 +10,33 @@ namespace ModelRewriter
     {
         JClass super;
         List<string> Fields;
+        string classSig;
+
         public string Name;
         public List<List<string>> Methods;
 
         public JClass(string filePath)
         {
             var lines = File.ReadAllText(filePath).Split(new string[] { Environment.NewLine }, StringSplitOptions.None).Where(x => x != "").ToArray();
-            var classSig = lines[0];
+            classSig = lines[0];
             Name = classSig.Split(new string[] { "extends" }, StringSplitOptions.None).First().Replace("Class", "").Replace(" ", "");
             Methods = findMethods(lines.Skip(1));
             Fields = findFields(lines.Skip(1));
         }
 
         public void SetSuper(List<JClass> classes){
-            
-
-
+            if (classSig.Contains(" extends "))
+            {
+                var superName = classSig.Split(new string[] { " extends " }, StringSplitOptions.None).Last();
+                foreach (var cls in classes)
+                {
+                    if (cls.Name == superName)
+                    {
+                        super = cls;
+                        Fields.AddRange(super.Fields);
+                    }
+                }    
+            }
         }
 
         List<List<string>> findMethods(IEnumerable<string> jbc)

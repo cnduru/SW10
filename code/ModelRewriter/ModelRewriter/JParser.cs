@@ -15,7 +15,6 @@ namespace ModelRewriter
             var jClasses = new List<JClass>();
             foreach (var p in path)
             {
-                var name = p.Split(new char[]{'.'}).First();
                 var jClass = new JClass(p);
                 model.AddTemplates(jClass);
                 jClasses.Add(jClass);
@@ -24,7 +23,8 @@ namespace ModelRewriter
             {
                 jClass.SetSuper(jClasses);
             }
-            model.updateDec(); 
+
+            model.updateDec(20); 
             model.Save("new3.xml");
 		}
 	}

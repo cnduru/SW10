@@ -19,7 +19,7 @@ namespace ModelRewriter
 			+ @" 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>";
 
 
-		string globalDeclarations;
+        string globalDeclarations;
 		List<Template> templates;
 		string system;
 		string queries;
@@ -63,11 +63,13 @@ namespace ModelRewriter
         }
 
         //Sets dec, sys, and queries
-        public void updateDec()
+        public void updateDec(int heapsize)
         {
-            int heapsize = getHeapsize();
-            globalDeclarations = @"clock t;
-const int heap_size = 10;
+            var globalDec = new StringBuilder();
+
+
+            var i =    String.Format(@"clock t;
+const int heap_size = {0};
 int H[heap_size];
 int cp0;
 int cp1;
@@ -77,7 +79,7 @@ broadcast chan DubTestc;
 bool done = false;
 bool opstack_fault = false;
 
-";
+", heapsize);
                         /*foreach (var kvp in fields)
             {
                 foreach (var f in kvp.Value)
