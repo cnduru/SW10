@@ -25,9 +25,6 @@ namespace ModelRewriter
 		string queries;
 
 
-        //List<List<string>> fields = new List<List<string>>();
-        Dictionary<string, List<string>> fields = 
-            new Dictionary<string, List<string>>();
         //var fields = new Dictionary<string, List<string>();
 
 		//Create a minimal UPPAAL model
@@ -53,36 +50,37 @@ namespace ModelRewriter
         //Sets dec, sys, and queries
         public void InitDec(int heapSize, int cpSize, int maxPar, List<string> methods)
         {
-            var globalDec = new StringBuilder();
-            globalDec.Append("clock t;\n");
+            var gloDecBuild = new StringBuilder();
+            var sysBuild = new StringBuilder();
+            gloDecBuild.Append("clock t;\n");
             //HEAP
-            globalDec.Append(String.Format("const int heap_size = {0};\n",heapSize));
-            globalDec.Append("int H[heap_size];\n");
+            gloDecBuild.Append(String.Format("const int heap_size = {0};\n",heapSize));
+            gloDecBuild.Append("int H[heap_size];\n");
             //ConstantPool
             for (int i = 0; i < cpSize; i++) {
-                globalDec.Append("int cp" + i + ";\n");
+                gloDecBuild.Append("int cp" + i + ";\n");
             }
             //Method parameters
             for (int i = 0; i < maxPar; i++)
             {
-                globalDec.Append("int par" + i + ";\n");
+                gloDecBuild.Append("int par" + i + ";\n");
             }
             //Method channels
             foreach (var mName in methods)
             {
-                globalDec.Append("broadcast chan c" + mName + ";\n");
+                gloDecBuild.Append("broadcast chan c" + mName + ";\n");
+                sysBuild.Append("i" + mName + " = " + mName +"();\n");
             }
-
-            globalDec.Append("bool done = false;\n");
-            globalDec.Append("bool opstack_fault = false;\n");
-
-
-            globalDeclarations = globalDec.ToString();
+            sysBuild.Append("system " + String.Join(",", methods.Select(x => "i" + x)) + ";\n");
+                
+            gloDecBuild.Append("bool done = false;\n");
+            gloDecBuild.Append("bool opstack_fault = false;\n");
 
 
-            system = @"s = main();
-s1 = DubTest();
-system s, s1;";
+            globalDeclarations = gloDecBuild.ToString();
+            system = sysBuild.ToString();
+
+
             queries = @"<formula>Pr[<= 50] (<> done)
             </formula>
             <comment>
