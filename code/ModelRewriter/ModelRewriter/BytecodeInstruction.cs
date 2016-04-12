@@ -40,6 +40,12 @@ namespace ModelRewriter
         {
             var labels = new List<Label>();
             
+            // to handle fault instructions
+            if(relatedInstruction == null)
+            {
+                return labels;
+            }
+
             if (mnemonic == "goto")
             {
                 labels = new List<Label>()
