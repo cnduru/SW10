@@ -11,6 +11,7 @@ using System.Xml.Schema;
 using System.Dynamic;
 using System.Collections.Specialized;
 using System.Net.Mime;
+using System.Runtime.InteropServices;
 
 
 namespace ModelRewriter
@@ -166,7 +167,7 @@ bool ifcmpeq(){
                         },
                         new Label
                         {
-                            content = String.Format("{0}c?", loc.name), 
+                            content = String.Format("c{0}?", name), 
                             kind = "synchronisation"
                         },
                         new Label
