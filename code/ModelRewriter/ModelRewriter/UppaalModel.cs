@@ -307,15 +307,12 @@ system s, s1;";
                     BytecodeInstruction bci = insts.instructionToBytecode(inst);
                     var tempTrans = new List<Transition>();
 
-                    if(bci != null && bci.relatedInstruction.mnemonic == "") // should we use "" or null for non-valid instruction?
+                    if(bci == null || bci.relatedInstruction.mnemonic == "") // should we use "" or null for non-valid instruction?
                     {   
                         // make transition to error state if invalid instruction
-                        // var errorTransition = new Transition(loc, tem.idToLocation(""));//(loc, tem.idToLocation(Constants.errorLocId));
-
                         var x = tem.idToLocation(Constants.errorLocId);
                         Transition errorTransition = new Transition(loc, x);
                         tempTrans.Add(errorTransition);
-                        //tem.transitions.Add(errorTransition);
                     }
 
                     if (bci != null && index != -1)
@@ -347,9 +344,9 @@ system s, s1;";
                                 tempTrans.Add(tt);
                             }
                         }
-
-                        tem.transitions.AddRange(tempTrans);
                     }
+
+                    tem.transitions.AddRange(tempTrans);
                 }
             }
 
