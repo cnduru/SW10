@@ -293,6 +293,7 @@ system s, s1;";
                             // add guard to distribute probability equally among fault and valid edge
                             Label antiProbLbl = new Label() { content = "faultAtId != " + loc.guid, kind = "guard", x = loc.x + 10, y = loc.y + 20 };
                             edge.labels.Add(antiProbLbl);
+                           
                         }
 	                }
               
@@ -306,7 +307,7 @@ system s, s1;";
                     BytecodeInstruction bci = insts.instructionToBytecode(inst);
                     var tempTrans = new List<Transition>();
 
-                    if (bci != null && bci.relatedInstruction.mnemonic == "") // should we use "" or null for non-valid instruction?
+                    if(bci != null && bci.relatedInstruction.mnemonic == "") // should we use "" or null for non-valid instruction?
                     {   
                         // make transition to error state if invalid instruction
                         // var errorTransition = new Transition(loc, tem.idToLocation(""));//(loc, tem.idToLocation(Constants.errorLocId));
