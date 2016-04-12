@@ -534,7 +534,7 @@ bool ifcmpeq(){
             return false;
         }
 
-        string FirstNonKeyword(string sig)
+        public static string FirstNonKeyword(string sig)
         {
             List<string> javaKeywords = new List<string>
             {"abstract", "assert", "boolean", "break", "byte", "case", 

@@ -12,17 +12,24 @@ namespace ModelRewriter
         public JParser(IEnumerable<string> path)
 		{
             UppaalModel model = new UppaalModel();
+            var jClasses = new List<JClass>();
             foreach (var p in path)
             {
-                var name = p.Split(new char[]{'.'}).First();
-                //var jClass = new JClass(name, p);
-                model.parseClass(System.IO.File.ReadAllText(p), name);
+                var jClass = new JClass(p);
+                model.AddTemplates(jClass);
+                jClasses.Add(jClass);
             }
-            model.updateDec(); 
+            var methods = new List<string>();
+            foreach (var jClass in jClasses)
+            {
+                jClass.SetSuper(jClasses);
+                methods.AddRange(jClass.Methods.Select(x => jClass.Name + "_" + Template.FirstNonKeyword(x.First())));
+
+            }
+
+            model.InitDec(20,3,3, methods); 
             model.Save("new3.xml");
 		}
-
-      
 	}
 }
 

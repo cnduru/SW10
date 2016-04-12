@@ -19,7 +19,7 @@ namespace ModelRewriter
 			+ @" 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>";
 
 
-		string globalDeclarations;
+        string globalDeclarations;
 		List<Template> templates;
 		string system;
 		string queries;
@@ -50,42 +50,34 @@ namespace ModelRewriter
             templates = xlh.getTemplates();//new List<Template>();
 		}
 
-        public void parseClass(string jbc, string cls){
-            var lines = jbc.Split('\n');
-            var classSig = lines[0];
-            var methods = findMethods(lines.Skip(1));
-            fields[cls] = findFields(lines.Skip(1));
-
-            foreach (var m in methods)
-            {
-                AddTemplate(m, cls);
-            }
-        }
-
         //Sets dec, sys, and queries
-        public void updateDec()
+        public void InitDec(int heapSize, int cpSize, int maxPar, List<string> methods)
         {
-            int heapsize = getHeapsize();
-            globalDeclarations = @"clock t;
-const int heap_size = 10;
-int H[heap_size];
-int cp0;
-int cp1;
-int par0;
-broadcast chan mainc;
-broadcast chan DubTestc;
-bool done = false;
-bool opstack_fault = false;
-
-";
-                        /*foreach (var kvp in fields)
+            var globalDec = new StringBuilder();
+            globalDec.Append("clock t;\n");
+            //HEAP
+            globalDec.Append(String.Format("const int heap_size = {0};\n",heapSize));
+            globalDec.Append("int H[heap_size];\n");
+            //ConstantPool
+            for (int i = 0; i < cpSize; i++) {
+                globalDec.Append("int cp" + i + ";\n");
+            }
+            //Method parameters
+            for (int i = 0; i < maxPar; i++)
             {
-                foreach (var f in kvp.Value)
-                {
-                    
-                }
-            }*/
+                globalDec.Append("int par" + i + ";\n");
+            }
+            //Method channels
+            foreach (var mName in methods)
+            {
+                globalDec.Append("broadcast chan c" + mName + ";\n");
+            }
 
+            globalDec.Append("bool done = false;\n");
+            globalDec.Append("bool opstack_fault = false;\n");
+
+
+            globalDeclarations = globalDec.ToString();
 
 
             system = @"s = main();
@@ -117,9 +109,12 @@ system s, s1;";
 		}
             
         //Adds method templates from jbc
-        public void AddTemplate(List<string> method, string cls)
+        public void AddTemplates(JClass cls)
         {
-            templates.Add(new Template(method, cls));
+            foreach (var m in cls.Methods)
+            {
+                templates.Add(new Template(m, cls.Name));
+            }
         }
 
 		//Creates a xml element with a tag and value
