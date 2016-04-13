@@ -286,17 +286,19 @@ namespace ModelRewriter
                         continue;
                     }
 
-                    foreach (var edge in tem.transitions)
-	                {
-                        if(edge.source.id == loc.id || loc.name.Contains("iconst_2"))
+                    foreach (var l2 in tem.locations)
+                    {
+                        if (loc.id != l2.id)
                         {
-                            // for original edges
-                            // add guard to distribute probability equally among fault and valid edge
-                            Label antiProbLbl = new Label() { content = "faultAtId != " + loc.guid, kind = "guard", x = loc.x + 10, y = loc.y + 20 };
-                            edge.labels.Add(antiProbLbl);
-                           
+                            foreach (var edge in tem.transitions)
+                            {
+                                if (edge.source.id == loc.id && edge.target.id == l2.id)
+                                {
+                                    edge.grds.content += " && faultAtId != " + loc.guid;
+                                }
+                            }
                         }
-	                }
+                    }
               
                     // get instruction name and resolve to byte code instruction
                     int index = loc.name.IndexOf("_");
