@@ -55,7 +55,7 @@ namespace ModelRewriter
             return t;
         }
 
-        static int idCount = 0;
+        public static int idCount = 0;
 
         public Template getTemplate(XElement xel)
         {

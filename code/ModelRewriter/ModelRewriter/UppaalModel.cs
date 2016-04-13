@@ -158,6 +158,8 @@ namespace ModelRewriter
             else if (countermeasure == "instruction")
             {
                 // are new additions to the system needed in this case since edges are just added?
+                loadedSystem.Add("Fault = InstFaultInj();\n");
+                sb.Append("Fault = InstFaultInj();\n");
             }
 
             MatchCollection matches = Regex.Matches(stem, patternSystem);
@@ -286,7 +288,7 @@ namespace ModelRewriter
 
                     foreach (var edge in tem.transitions)
 	                {
-                        if(edge.source.id == loc.id)
+                        if(edge.source.id == loc.id || loc.name.Contains("iconst_2"))
                         {
                             // for original edges
                             // add guard to distribute probability equally among fault and valid edge
@@ -306,6 +308,7 @@ namespace ModelRewriter
                     BytecodeInstruction bci = insts.instructionToBytecode(inst);
                     BytecodeInstruction bciNotSpecial = insts.instructionToBytecode(instNotSpecial);
 
+                    // for handling special case in instruction, e.g. iconst_0 vs. ifeq 7
                     if(bciNotSpecial != null)
                     {
                         // special case, overwrite bci
@@ -361,7 +364,11 @@ namespace ModelRewriter
             XElement instFaultTemplateXML = XElement.Parse(XMLProvider.getInstructionFaultTemplate());
             XMLHandler xhl = new XMLHandler();
             Template instFaultTemplate = xhl.getTemplateDataFault(instFaultTemplateXML);
-            //instFaultTemplate.locations[2].committed = true;
+            instFaultTemplate.locations[1].committed = true;
+
+            // define number range for fault number
+            Label selectFaultIdLabel = new Label(){content = string.Format("i:int[0,{0}]", XMLHandler.idCount), kind = "select", x = -110, y = -127};
+            instFaultTemplate.transitions[0].labels.Add(selectFaultIdLabel);
 
             // todo: generalize this
             globalDeclarations += "\nint faultAtId;\n";
