@@ -363,7 +363,14 @@ bool ifcmpeq(){
                         transitions.Add(new Transition(loc, PCToLocation(-1), labels));
                         break;
                     default:
-                        transitions.Add(new Transition(loc, NextLocation(loc), new List<Label>()));
+                        labels = new List<Label>()
+                        {
+                            new Label
+                            { 
+                                content = timeGuard, kind = "guard"
+                            }
+                        };
+                        transitions.Add(new Transition(loc, NextLocation(loc), labels));
                         //throw new System.NotImplementedException(instArg[0]);
                         break;
                 }
