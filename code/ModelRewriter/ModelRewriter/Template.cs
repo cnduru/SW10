@@ -158,7 +158,6 @@ bool ifcmpeq(){
                         transitions.Add(new Transition(loc, PCToLocation(0), labels));
                         continue; //clean up later
                     }
-
                     labels = new List<Label>()
                     {
                         new Label
@@ -178,16 +177,7 @@ bool ifcmpeq(){
                         }
                     };
                     transitions.Add(new Transition(loc, PCToLocation(0), labels));
-                    labels = new List<Label>()
-                    {
-                        new Label
-                        { 
-                            content = "t == 11", kind = "guard"
-                        }
-                            
-                    };
-                    // TODO done location
-                    transitions.Add(new Transition(loc, loc, labels));
+
                     continue;
                 }
                 

@@ -95,8 +95,8 @@ namespace ModelRewriter
             name = new Regex(" [a-zA-Z]+ \\(").Match(instLine)
                 .ToString().Replace(" ","").Replace("(","");
             invariant = new Label{
-                content = "t <= " + (Constants.maxInstTime + 1), 
-                kind = "invariant", 
+                content = "1", 
+                kind = "exponentialrate", 
                 y = y,
                 x = -70               
             };

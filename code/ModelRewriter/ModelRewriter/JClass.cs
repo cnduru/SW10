@@ -3,6 +3,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Linq;
+using MonoDevelop.Core.Collections;
 
 namespace ModelRewriter
 {
@@ -11,6 +12,7 @@ namespace ModelRewriter
         JClass super;
         List<string> Fields;
         string classSig;
+        bool fieldInit = false;
 
         public string Name;
         public List<List<string>> Methods;
@@ -36,6 +38,15 @@ namespace ModelRewriter
                     }
                 }    
             }
+        }
+
+        public void UpdateFields(){
+            if (!fieldInit && super != null)
+            {
+                super.UpdateFields();
+                Fields.AddRange(super.Fields);
+            }
+            fieldInit = true;
         }
 
         List<List<string>> findMethods(IEnumerable<string> jbc)
@@ -75,6 +86,8 @@ namespace ModelRewriter
             }
             return fields;
         }
+
+
     }
 }
 

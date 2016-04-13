@@ -24,7 +24,10 @@ namespace ModelRewriter
             {
                 jClass.SetSuper(jClasses);
                 methods.AddRange(jClass.Methods.Select(x => jClass.Name + "_" + Template.FirstNonKeyword(x.First())));
-
+            }
+            foreach (var jClass in jClasses)
+            {
+                jClass.UpdateFields();
             }
 
             model.InitDec(20,3,3, methods); 

@@ -41,7 +41,7 @@ namespace ModelRewriter
 			var nta =  xml.Element ("nta");
             globalDeclarations = getGlobalDeclarations(nta.Element("declaration").Value);
 			system = getSystem(nta.Element ("system").Value, countermeasure);
-			queries = nta.Element ("queries").Value;
+            queries = nta.Element ("queries").Value;
 
             XMLHandler xlh = new XMLHandler(xml);
             templates = xlh.getTemplates();//new List<Template>();
@@ -81,10 +81,7 @@ namespace ModelRewriter
             system = sysBuild.ToString();
 
 
-            queries = @"<formula>Pr[<= 50] (<> done)
-            </formula>
-            <comment>
-            </comment>";
+            queries = @"Pr[<= 50] (<> done)";
         }
 
 		//Store UPPAAL model to a file
@@ -102,7 +99,11 @@ namespace ModelRewriter
 			}
 
 			nta.Add(BuildXElement("system", system));
-			nta.Add(BuildXElement("queries", queries));
+            var xqueries = new XElement("queries", "queries");
+            var xquery = new XElement("query", "query");
+            xquery.Add(BuildXElement("formula", queries));
+            xqueries.Add(xquery);
+            nta.Add(xqueries);
 			xml.Save(path);
 		}
             
