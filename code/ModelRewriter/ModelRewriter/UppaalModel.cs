@@ -157,6 +157,8 @@ namespace ModelRewriter
             else if (countermeasure == "instruction")
             {
                 // are new additions to the system needed in this case since edges are just added?
+                loadedSystem.Add("Fault = InstFaultInj();\n");
+                sb.Append("Fault = InstFaultInj();\n");
             }
 
             MatchCollection matches = Regex.Matches(stem, patternSystem);
@@ -285,7 +287,7 @@ namespace ModelRewriter
 
                     foreach (var edge in tem.transitions)
 	                {
-                        if(edge.source.id == loc.id)
+                        if(edge.source.id == loc.id || loc.name.Contains("iconst_2"))
                         {
                             // for original edges
                             // add guard to distribute probability equally among fault and valid edge
