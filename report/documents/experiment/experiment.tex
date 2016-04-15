@@ -1,7 +1,20 @@
 \chapter{Experiments}
 
+\begin{lstlisting}[caption=Purse code sample from the \jc samples.]
+if (USERPIN.isValidated)
+{
+}
+\end{lstlisting}
 
-Opstack pointer assumption is broken\\\\
-Inst fault og Instruction Differentiation\\\\
-Code dub\\\\
-Call graph integrity\\\\
+\begin{lstlisting}[caption=Purse code sample from the \jc samples with a bit flipped to change the comparison.]
+if (!USERPIN.isValidated)
+{
+}
+\end{lstlisting}
+\section{Code Duplication}
+\input{documents/experiment/codedup}
+\section{Call Graph Integrity}
+%Opstack pointer assumption is broken\\\\
+%Inst fault og Instruction Differentiation\\\\
+%Code dub\\\\
+%Call graph integrity\\\\
