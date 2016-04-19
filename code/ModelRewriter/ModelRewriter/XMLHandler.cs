@@ -72,7 +72,7 @@ namespace ModelRewriter
 
                 l.id = (string)locs.Attribute("id");
                 l.name = (string)locs.Element("name");
-                l.guid = idCount.ToString();
+                l.Guid = idCount.ToString();
                 idCount++;
 
                 XElement xele = locs.Element("label");
@@ -82,7 +82,7 @@ namespace ModelRewriter
                     int yCoord = Convert.ToInt32(xele.Attribute("y").Value);
 
                     Label invariant = new Label { kind = "invariant", content = (string)xele.Value, x = xCoord, y = yCoord };
-                    l.invariant = invariant;
+                    l.Label = invariant;
                 }
 
                 try

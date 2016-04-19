@@ -116,6 +116,23 @@ namespace ModelRewriter
             }
         }
 
+
+        public void AddInvokevirtual(List<JClass> cls){
+            var methods = new List<string>();
+            foreach (var cl in cls)
+            {
+                foreach (var method in cl.Methods)
+                {
+                    var sig = method.First();
+                    if (JClass.IsVirtual(sig))
+                    {
+                        methods.Add(cl.GetMethodName(sig));
+                    }
+                }
+            }
+            templates.Add(new Template(methods));
+        }
+
 		//Creates a xml element with a tag and value
 		private XElement BuildXElement(string tag, string value)
 		{
@@ -292,7 +309,7 @@ namespace ModelRewriter
                         {
                             // for original edges
                             // add guard to distribute probability equally among fault and valid edge
-                            Label antiProbLbl = new Label() { content = "faultAtId != " + loc.guid, kind = "guard", x = loc.x + 10, y = loc.y + 20 };
+                            Label antiProbLbl = new Label() { content = "faultAtId != " + loc.Guid, kind = "guard", x = loc.x + 10, y = loc.y + 20 };
                             edge.labels.Add(antiProbLbl);
                            
                         }
@@ -338,7 +355,7 @@ namespace ModelRewriter
                                 var labs = a.getLabels();
 
                                 // add guard to distribute probability equally among fault and valid edge
-                                Label probLbl = new Label() {content = "faultAtId == " + loc.guid, kind = "guard", x = loc.x, y = loc.y };
+                                Label probLbl = new Label() {content = "faultAtId == " + loc.Guid, kind = "guard", x = loc.x, y = loc.y };
                                 labs.Add(probLbl);
 
                                 int lx = 50, lx2 = 90, ly = 100;

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using System.Diagnostics;
+using CBinding.ProjectPad;
 
 namespace ModelRewriter
 {
@@ -20,12 +21,26 @@ namespace ModelRewriter
         public List<Location> reachableLocs = new List<Location>();
         public bool urgent { get; set; }
         public bool committed { get; set; }
-        public Label invariant;
-        public string guid;
+        public Label Label;
+        public string Guid;
 
-        public Location()
+        private static int nextID = 0;
+
+        public Location(){}
+
+        public Location(string na, int xc, int yc)
         {
-
+            name = na;
+            x = xc;
+            y = yc;
+            Label = new Label{
+                content = "1", 
+                kind = "exponentialrate", 
+                y = y,
+                x = Constants.LabelOffsetX * 10 - 70               
+            };
+            id = "nId" + nextID;
+            nextID++;
         }
 
         public Location(Location caller)
@@ -33,7 +48,7 @@ namespace ModelRewriter
             id = caller.id + "a";
             y = caller.y + Constants.LabelOffsetY * 2;
             x = Constants.LabelOffsetX * 10;
-            invariant = new Label{
+            Label = new Label{
                 content = "t <= 5", 
                 kind = "invariant", 
                 y = y,
@@ -69,9 +84,9 @@ namespace ModelRewriter
             nameElement.SetAttributeValue("y", y - Constants.LabelOffsetY);
             locationElement.Add(nameElement);
 
-            if(invariant != null)
+            if(Label != null)
             {
-                locationElement.Add(invariant.GetXML());
+                locationElement.Add(Label.GetXML());
             }
 
             if(urgent)
@@ -94,7 +109,7 @@ namespace ModelRewriter
             inst = new Instruction();
             name = new Regex(" [a-zA-Z]+ \\(").Match(instLine)
                 .ToString().Replace(" ","").Replace("(","");
-            invariant = new Label{
+            Label = new Label{
                 content = "1", 
                 kind = "exponentialrate", 
                 y = y,
@@ -106,7 +121,7 @@ namespace ModelRewriter
             inst = new Instruction(instLine);
             name = "pc" + instLine.Replace("( ", "").Replace(" )", "").Replace("<", "").Replace(">", "")
                 .Replace(",", "").Replace(" ", "_").Replace(".", "_").Replace(":", "_").Replace("__", "_");
-            invariant = new Label{
+            Label = new Label{
                 content = "t <= " + Constants.instTime, 
                 kind = "invariant", 
                 y = y,

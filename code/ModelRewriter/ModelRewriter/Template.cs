@@ -77,7 +77,7 @@ namespace ModelRewriter
 
         public Template(List<string> method, string cls)
         {
-            name = cls + "_" + FirstNonKeyword(method.First());
+            name = cls + "_" + JClass.FirstNonKeyword(method.First());
             locations = ResolveLocations(method);
             ResolveCode();
             localDeclarations = @"const int os_size = 10;
@@ -118,6 +118,21 @@ bool ifcmpeq(){
     return false;
 }";
             initialLocation = locations.First();
+        }
+
+        public Template(List<string> method){
+            name = "virtual";
+
+            var initLoc = new Location("Invoke", 0 ,0);
+            initialLocation = initLoc;
+            locations.Add(initLoc);
+
+            foreach (var m in method)
+            {
+                
+            }
+
+
         }
 
         private List<Location> ResolveLocations(List<string> method)
@@ -532,26 +547,7 @@ bool ifcmpeq(){
             return false;
         }
 
-        public static string FirstNonKeyword(string sig)
-        {
-            List<string> javaKeywords = new List<string>
-            {"abstract", "assert", "boolean", "break", "byte", "case", 
-                "catch", "char", "class", "const", "continue", "default", "do", "double", "else", 
-                "enum", "extends", "final", "finally", "float", "for", "goto", "if", "implements", 
-                "import", "instanceof", "int", "interface", "long", "native", "new", "package", 
-                "private", "protected", "public", "return", "short", "static", "strictfp", "super", 
-                "switch", "synchronized", "this", "throw", "throws", "transient", "try", "void", 
-                "volatile", "while", "false", "null", "true"
-            };
-            foreach (var word in sig.Split(' '))
-            {
-                if (!javaKeywords.Contains(word))
-                {
-                    return word;
-                }
-            }
-            return null;
-        }
+
 
         public void addFaultTransitions()
         {

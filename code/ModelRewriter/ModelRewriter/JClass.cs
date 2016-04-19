@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Linq;
 using MonoDevelop.Core.Collections;
+using System.Xml.Xsl.Runtime;
 
 namespace ModelRewriter
 {
@@ -87,7 +88,34 @@ namespace ModelRewriter
             return fields;
         }
 
+        public static bool IsVirtual(string methodDef){
+            return methodDef.Contains("public") && !methodDef.Contains("static"); 
+        }
 
+        public string GetMethodName(string methodDef){
+            return Name + "_" + FirstNonKeyword(methodDef);
+        }
+
+        public static string FirstNonKeyword(string sig)
+        {
+            List<string> javaKeywords = new List<string>
+                {"abstract", "assert", "boolean", "break", "byte", "case", 
+                    "catch", "char", "class", "const", "continue", "default", "do", "double", "else", 
+                    "enum", "extends", "final", "finally", "float", "for", "goto", "if", "implements", 
+                    "import", "instanceof", "int", "interface", "long", "native", "new", "package", 
+                    "private", "protected", "public", "return", "short", "static", "strictfp", "super", 
+                    "switch", "synchronized", "this", "throw", "throws", "transient", "try", "void", 
+                    "volatile", "while", "false", "null", "true"
+                };
+            foreach (var word in sig.Split(' '))
+            {
+                if (!javaKeywords.Contains(word))
+                {
+                    return word;
+                }
+            }
+            return null;
+        }
     }
 }
 

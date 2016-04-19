@@ -23,12 +23,14 @@ namespace ModelRewriter
             foreach (var jClass in jClasses)
             {
                 jClass.SetSuper(jClasses);
-                methods.AddRange(jClass.Methods.Select(x => jClass.Name + "_" + Template.FirstNonKeyword(x.First())));
+                methods.AddRange(jClass.Methods.Select(x => jClass.Name + "_" + JClass.FirstNonKeyword(x.First())));
             }
             foreach (var jClass in jClasses)
             {
                 jClass.UpdateFields();
             }
+
+            model.AddInvokevirtual(jClasses);
 
             model.InitDec(20,3,3, methods); 
             model.Save("new3.xml");
