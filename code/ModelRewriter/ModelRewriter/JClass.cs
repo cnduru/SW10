@@ -3,7 +3,6 @@ using System.IO;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Linq;
-using MonoDevelop.Core.Collections;
 using System.Xml.Xsl.Runtime;
 
 namespace ModelRewriter
