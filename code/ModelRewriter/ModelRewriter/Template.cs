@@ -301,6 +301,7 @@ bool ifcmpeq(){
                                     content = "opstack_fault = osp < 2 ? true : opstack_fault, osp_dec(2), t = 0", kind = "assignment"
                                 }
                             };
+
                         transitions.Add(new Transition(loc, NextLocation(loc), labels));
                         break;
                     case "ifcmpme":
@@ -374,6 +375,17 @@ bool ifcmpeq(){
                             }
                         };
                         transitions.Add(new Transition(loc, PCToLocation(-1), labels));
+                        break;
+                    case "dup":
+                        labels = new List<Label>()
+                        {
+                            new Label
+                            { 
+                                content = "osp_inc(), os[osp] = os[osp - 1]", 
+                                kind = "assignment"
+                            }
+                        };
+                        transitions.Add(new Transition(loc, NextLocation(loc), labels));
                         break;
                     default:
                         labels = new List<Label>()
