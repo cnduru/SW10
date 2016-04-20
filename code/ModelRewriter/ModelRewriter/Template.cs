@@ -398,6 +398,17 @@ bool ifcmpeq(){
                         };
                         transitions.Add(new Transition(loc, NextLocation(loc), labels));
                         break;
+                    case "sipush":
+                        labels = new List<Label>()
+                        {
+                            new Label
+                            { 
+                                content = string.Format("osp_inc(), os[osp] = {0}", instArg[1]), 
+                                kind = "assignment"
+                            }
+                        };
+                        transitions.Add(new Transition(loc, NextLocation(loc), labels));
+                        break;
                     default:
                         labels = new List<Label>()
                         {
