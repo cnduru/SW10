@@ -387,17 +387,6 @@ bool ifcmpeq(){
                         };
                         transitions.Add(new Transition(loc, NextLocation(loc), labels));
                         break;
-                    case "istore":
-                        labels = new List<Label>()
-                        {
-                            new Label
-                            { 
-                                content = string.Format("locs[{0}] = os[osp], osp_dec(1)", instArg[1]), 
-                                kind = "assignment"
-                            }
-                        };
-                        transitions.Add(new Transition(loc, NextLocation(loc), labels));
-                        break;
                     case "sipush":
                         labels = new List<Label>()
                         {
@@ -415,6 +404,19 @@ bool ifcmpeq(){
                             new Label
                             { 
                                 content = string.Format("osp_inc(), os[osp] = locs[{0}]", instArg[1]), 
+                                kind = "assignment"
+                            }
+                        };
+                        transitions.Add(new Transition(loc, NextLocation(loc), labels));
+                        break;
+                    case "istore":
+                        // fall through to astore because Kristian wanted to save space..
+                    case "astore":
+                        labels = new List<Label>()
+                        {
+                            new Label
+                            { 
+                                content = string.Format("locs[{0}] = os[osp], osp_dec(1)", instArg[1]), 
                                 kind = "assignment"
                             }
                         };
