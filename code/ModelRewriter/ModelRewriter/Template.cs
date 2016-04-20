@@ -127,12 +127,10 @@ bool ifcmpeq(){
             initialLocation = initLoc;
             locations.Add(initLoc);
 
-            foreach (var m in method)
+            for (int i = 0; i < method.Count; i++)
             {
-                
+                locations.Add(new Location(method[i], 100, i*50));
             }
-
-
         }
 
         private List<Location> ResolveLocations(List<string> method)

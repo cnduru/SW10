@@ -61,7 +61,7 @@ namespace ModelRewriter
         public Location(int identifier, string instLine)
         {
             id = "id" + identifier;
-            y = (identifier * Constants.LabelOffsetY * 4);
+            y = (identifier * Constants.LabelOffsetY * 5);
             x = 0;
             if (identifier >= 0)
             {

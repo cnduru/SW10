@@ -3,7 +3,6 @@ using System.IO;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Linq;
-using System.Xml.Xsl.Runtime;
 
 namespace ModelRewriter
 {
@@ -13,6 +12,7 @@ namespace ModelRewriter
         List<string> Fields;
         string classSig;
         bool fieldInit = false;
+        List<string> Inits;
 
         public string Name;
         public List<List<string>> Methods;
@@ -87,13 +87,38 @@ namespace ModelRewriter
             return fields;
         }
 
-        public static bool IsVirtual(string methodDef){
-            return methodDef.Contains("public") && !methodDef.Contains("static"); 
+        public bool IsVirtual(string methodDef){
+            //is public and not static and not ctor.
+            return methodDef.Contains("public") && !methodDef.Contains("static") && methodDef != GetCTOR().First();
         }
 
-        public string GetMethodName(string methodDef){
-            return Name + "_" + FirstNonKeyword(methodDef);
+        public static string GetMethodName(string methodDef){
+            return FirstNonKeyword(methodDef);
+        } 
+
+        public List<string> GetCTOR(){
+            foreach (var method in Methods)
+            {
+                if (Name == GetMethodName(method.First()))
+                {
+                    return method;
+                }
+            }
+            throw new MissingFieldException("no CTOR");
         }
+
+        public void FindAloc(){
+            var aloc = new Regex("new ([a-zA-Z][a-zA-Z0-9]*)");
+            Inits = new List<string>();
+            foreach (var line in GetCTOR())
+            {
+                if (aloc.IsMatch(line))
+                {
+                    var cls = aloc.Match(line).ToString().Split(new string[] { "new " }, StringSplitOptions.None).Last();
+                    Inits.Add(cls);
+                }
+            };
+        } 
 
         public static string FirstNonKeyword(string sig)
         {
