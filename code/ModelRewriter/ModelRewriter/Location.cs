@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using System.Diagnostics;
-using CBinding.ProjectPad;
 
 namespace ModelRewriter
 {
