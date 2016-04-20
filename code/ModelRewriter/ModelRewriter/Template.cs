@@ -83,7 +83,7 @@ namespace ModelRewriter
             localDeclarations = @"const int os_size = 10;
 int os[os_size]; 
 int osp = 0;
-int loc0 = 0;
+int locs[10];
 
 
 void osp_inc(){
@@ -185,7 +185,7 @@ bool ifcmpeq(){
                         new Label
                         {
                             // TODO this should probably be fixed..
-                            content = String.Format("loc{0} = par{0}, t = 0", 0), 
+                            content = String.Format("locs[{0}] = par{0}, t = 0", 0), 
                             kind = "assignment"
                         }
                     };
@@ -210,7 +210,7 @@ bool ifcmpeq(){
                             },
                             new Label
                             { 
-                                    content = String.Format(" osp_inc(), os[osp - 1] = loc{0}, t = 0", instArg[1]), 
+                                    content = String.Format(" osp_inc(), os[osp - 1] = locs[{0}], t = 0", instArg[1]), 
                                 kind = "assignment"
                             }
                         };
@@ -382,6 +382,17 @@ bool ifcmpeq(){
                             new Label
                             { 
                                 content = "osp_inc(), os[osp] = os[osp - 1]", 
+                                kind = "assignment"
+                            }
+                        };
+                        transitions.Add(new Transition(loc, NextLocation(loc), labels));
+                        break;
+                    case "istore":
+                        labels = new List<Label>()
+                        {
+                            new Label
+                            { 
+                                content = string.Format("locs[{0}] = os[osp], osp_dec(1)", instArg[1]), 
                                 kind = "assignment"
                             }
                         };
