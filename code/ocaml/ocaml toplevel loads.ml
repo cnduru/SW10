@@ -38,9 +38,11 @@ let p_class =
       match ioc with
        | Class _c ->
          if ClassMap.mem (get_name ioc) instantiated_classes then
-           ["Instantiated"] else ["Not instantiatied"]
+           match super_class ioc with 
+            | Some _S -> [(cn_name (get_name  _S)) ^ " Instantiated"]
+            | _ -> ["Instantiated"] else ["Not instantiatied"]
        | _ -> []
-  )
+  );;
 
 (* p_method annots a method, saying if it is concrete or abstract,
    and if it has been parsed or not (by RTA). *)
@@ -70,7 +72,7 @@ let simple_info =
     JPrintHtml.p_method = p_method;
     JPrintHtml.p_pp = p_pp };;
 
-let output = "./sample"
+let output = "./prta"
 let () = JPrintHtml.JCodePrinter.print_program ~info:simple_info prta output;;
 
 store_callgraph (get_callgraph prta) "call_graph.txt";;
