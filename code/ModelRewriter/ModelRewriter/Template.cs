@@ -422,6 +422,33 @@ bool ifcmpeq(){
                         };
                         transitions.Add(new Transition(loc, NextLocation(loc), labels));
                         break;
+                    case "ifcmpge":
+                        var labelsNoJump = new List<Label>()
+                        {
+                            new Label
+                            { 
+                                content = string.Format("os[osp] < os[osp - 1], osp_dec(1)", instArg[1]), 
+                                kind = "guard"
+                            }
+                        };
+                        var labelsJump = new List<Label>()
+                        {
+                            new Label
+                            { 
+                                content = string.Format("os[osp] >= os[osp - 1], osp_dec(1)", instArg[1]), 
+                                kind = "guard"
+                            }
+                        };
+
+                        // edge to next location
+                        transitions.Add(new Transition(loc, NextLocation(loc), labelsNoJump));
+
+                        // edge to jump destination
+                        int absoluteAddress = loc.inst.pc + Convert.ToInt32(instArg[1]);
+                        Location jumpLoc = PCToLocation(absoluteAddress);
+                        transitions.Add(new Transition(loc, jumpLoc, labelsJump));
+
+                        break;
                     default:
                         labels = new List<Label>()
                         {
