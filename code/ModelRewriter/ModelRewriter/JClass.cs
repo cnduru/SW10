@@ -3,16 +3,17 @@ using System.IO;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Linq;
+using System.Security.Cryptography;
 
 namespace ModelRewriter
 {
     public class JClass
     {
         JClass super;
-        List<string> Fields;
+        public List<string> Fields;
         string classSig;
         bool fieldInit = false;
-        List<string> Inits;
+        public List<string> Inits;
 
         public string Name;
         public List<List<string>> Methods;
@@ -26,7 +27,21 @@ namespace ModelRewriter
             Fields = findFields(lines.Skip(1));
         }
 
-        public void SetSuper(List<JClass> classes){
+
+        public List<string> GetMethod(string methodName)
+        {
+            foreach (var method in Methods)
+            {
+                if (GetMethodName(method) == methodName)
+                {
+                    return method;
+                }
+            }
+            return null;
+        }
+
+        public void SetSuper(List<JClass> classes)
+        {
             if (classSig.Contains(" extends "))
             {
                 var superName = classSig.Split(new string[] { " extends " }, StringSplitOptions.None).Last();
@@ -40,7 +55,8 @@ namespace ModelRewriter
             }
         }
 
-        public void UpdateFields(){
+        public void UpdateFields()
+        {
             if (!fieldInit && super != null)
             {
                 super.UpdateFields();
@@ -92,11 +108,18 @@ namespace ModelRewriter
             return methodDef.Contains("public") && !methodDef.Contains("static") && methodDef != GetCTOR().First();
         }
 
-        public static string GetMethodName(string methodDef){
+        public static string GetMethodName(List<string> method)
+        {
+            return GetMethodName(method.First());
+        }
+
+        public static string GetMethodName(string methodDef)
+        {
             return FirstNonKeyword(methodDef);
         } 
 
-        public List<string> GetCTOR(){
+        public List<string> GetCTOR()
+        {
             foreach (var method in Methods)
             {
                 if (Name == GetMethodName(method.First()))
@@ -107,18 +130,25 @@ namespace ModelRewriter
             throw new MissingFieldException("no CTOR");
         }
 
-        public void FindAloc(){
+        public void FindAloc()
+        {
+            Inits = GetAloc(GetCTOR());
+        } 
+
+        public static List<string> GetAloc(List<string> method)
+        {
             var aloc = new Regex("new ([a-zA-Z][a-zA-Z0-9]*)");
-            Inits = new List<string>();
-            foreach (var line in GetCTOR())
+            var inits = new List<string>();
+            foreach (var line in method)
             {
                 if (aloc.IsMatch(line))
                 {
                     var cls = aloc.Match(line).ToString().Split(new string[] { "new " }, StringSplitOptions.None).Last();
-                    Inits.Add(cls);
+                    inits.Add(cls);
                 }
             };
-        } 
+            return inits;
+        }
 
         public static string FirstNonKeyword(string sig)
         {
