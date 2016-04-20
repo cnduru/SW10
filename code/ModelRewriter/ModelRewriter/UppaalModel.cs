@@ -124,9 +124,9 @@ namespace ModelRewriter
                 foreach (var method in cl.Methods)
                 {
                     var sig = method.First();
-                    if (JClass.IsVirtual(sig))
+                    if (cl.IsVirtual(sig))
                     {
-                        methods.Add(cl.GetMethodName(sig));
+                        methods.Add(cl.Name + "_" + JClass.GetMethodName(sig));
                     }
                 }
             }

@@ -30,6 +30,11 @@ namespace ModelRewriter
                 jClass.UpdateFields();
             }
 
+            foreach (var jClass in jClasses)
+            {
+                jClass.FindAloc();
+            }
+
             model.AddInvokevirtual(jClasses);
 
             model.InitDec(20,3,3, methods); 
