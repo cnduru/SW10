@@ -1,0 +1,20 @@
+\subsection{INSTRUCTION\_FAULT}
+A function, $flipInstruction$ is used to look up the instruction which an original, unaltered, instruction can be changed to by way of a bit flip. This function is defined as
+$$flipInstruction \subset inst$$
+
+
+
+This fault causes a change in an instruction, e.g. changing a \texttt{ADD} to a \texttt{POP} by changing a single bit in the instruction.
+
+$$\inference[INST\_F]{
+inst(P,mid, pc) = I \semsp
+P \equiv_1 P' \semnl \\
+I,I' \in Instructions \semsp
+I' \neq I \semsp
+flipInstruction(P',mid, pc) = I'
+}
+{\langle CP, P, H, (CS, \langle mid, loc, ops, pc \rangle) \rangle \Rightarrow \langle CP, P', H, (CS, \langle mid, loc, ops, pc \rangle)\rangle }$$
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../master"
+%%% End:
