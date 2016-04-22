@@ -427,7 +427,7 @@ bool ifcmpeq(){
                         {
                             new Label
                             { 
-                                content = string.Format("os[osp] < os[osp - 1], osp_dec(1)", instArg[1]), 
+                                content = string.Format("os[osp] < os[osp - 1] && osp_dec(1)", instArg[1]), 
                                 kind = "guard"
                             }
                         };
@@ -435,7 +435,7 @@ bool ifcmpeq(){
                         {
                             new Label
                             { 
-                                content = string.Format("os[osp] >= os[osp - 1], osp_dec(1)", instArg[1]), 
+                                content = string.Format("os[osp] >= os[osp - 1] && osp_dec(1)", instArg[1]), 
                                 kind = "guard"
                             }
                         };
