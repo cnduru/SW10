@@ -139,6 +139,11 @@ namespace ModelRewriter
         {
             var aloc = new Regex("new ([a-zA-Z][a-zA-Z0-9]*)");
             var inits = new List<string>();
+
+            // temp fix for exception
+            if(method == null)
+                return new List<String>();
+
             foreach (var line in method)
             {
                 if (aloc.IsMatch(line))
