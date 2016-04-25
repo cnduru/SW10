@@ -460,7 +460,6 @@ bool ifcmpeq(){
                         
                         transitions.Add(new Transition(loc, locations[locations.Count - 1], labels));
 
-
                         break;
                     default:
                         labels = new List<Label>()
