@@ -84,7 +84,7 @@ namespace ModelRewriter
 int os[os_size]; 
 int osp = 0;
 int locs[10];
-
+bool exceptionOccurred;
 
 void osp_inc(){
     if (osp >= os_size - 1){
@@ -447,6 +447,19 @@ bool ifcmpeq(){
                         int absoluteAddress = loc.inst.pc + Convert.ToInt32(instArg[1]);
                         Location jumpLoc = PCToLocation(absoluteAddress);
                         transitions.Add(new Transition(loc, jumpLoc, labelsJump));
+
+                        break;
+                    case "athrow":
+                        labels = new List<Label>()
+                        {
+                            new Label
+                            { 
+                                content = "exceptionOccurred == true", kind = "guard"
+                            }
+                        };
+                        
+                        transitions.Add(new Transition(loc, locations[locations.Count - 1], labels));
+
 
                         break;
                     default:
