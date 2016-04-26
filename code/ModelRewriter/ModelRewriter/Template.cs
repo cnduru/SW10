@@ -270,7 +270,7 @@ bool ifcmpeq(){
                             },
                             new Label
                             { 
-                                    content = String.Format("osp_inc(), os[osp-1] = {0}, t = 0", instArg[1]), 
+                                    content = String.Format("osp_inc(), os[osp - 1] = {0}, t = 0", instArg[1]), 
                                 kind = "assignment"
                             }
                         };
@@ -418,6 +418,11 @@ bool ifcmpeq(){
                             { 
                                 content = string.Format("locs[{0}] = os[osp], osp_dec(1)", instArg[1]), 
                                 kind = "assignment"
+                            },
+                            new Label
+                            { 
+                                content = string.Format("osp_dec(1)", instArg[1]), 
+                                kind = "update"
                             }
                         };
                         transitions.Add(new Transition(loc, NextLocation(loc), labels));
@@ -427,16 +432,26 @@ bool ifcmpeq(){
                         {
                             new Label
                             { 
-                                content = string.Format("os[osp] < os[osp - 1] && osp_dec(1)", instArg[1]), 
+                                content = string.Format("os[osp] < os[osp - 1]", instArg[1]), 
                                 kind = "guard"
+                            },
+                            new Label
+                            { 
+                                content = string.Format("osp_dec(1)", instArg[1]), 
+                                kind = "update"
                             }
                         };
                         var labelsJump = new List<Label>()
                         {
                             new Label
                             { 
-                                content = string.Format("os[osp] >= os[osp - 1] && osp_dec(1)", instArg[1]), 
+                                content = string.Format("os[osp] >= os[osp - 1]", instArg[1]), 
                                 kind = "guard"
+                            },
+                            new Label
+                            { 
+                                content = string.Format("osp_dec(1)", instArg[1]), 
+                                kind = "update"
                             }
                         };
 
@@ -454,7 +469,7 @@ bool ifcmpeq(){
                         {
                             new Label
                             { 
-                                content = "exceptionOccurred == true", kind = "guard"
+                                content = "exceptionOccurred = true", kind = "update"
                             }
                         };
                         
