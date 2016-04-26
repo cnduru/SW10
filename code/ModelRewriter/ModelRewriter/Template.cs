@@ -317,6 +317,10 @@ bool ifcmpeq(){
                             new Label
                             { 
                                     content = "osp_dec(2), t = 0", kind = "assignment"
+                            },
+                            new Label
+                            { 
+                                content = timeGuard, kind = "guard"
                             }
                         };
                         Transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + Convert.ToInt32(instArg[1])), labels));
@@ -330,6 +334,10 @@ bool ifcmpeq(){
                             new Label
                             { 
                                     content = "opstack_fault = osp < 2 ? true : opstack_fault, osp_dec(2), t = 0", kind = "assignment"
+                            },
+                            new Label
+                            { 
+                                content = timeGuard, kind = "guard"
                             }
                         };
                         Transitions.Add(new Transition(loc, NextLocation(loc), labels));
@@ -369,6 +377,10 @@ bool ifcmpeq(){
                                     content = String.Format("osp_inc(), os[osp-1] = cp{0}, t = 0",
                                     CP.Add(String.Join(" ", instArg.Skip(1)))), 
                                 kind = "assignment"
+                            },
+                            new Label
+                            { 
+                                content = timeGuard, kind = "guard"
                             }
                         };
                         Transitions.Add(new Transition(loc, NextLocation(loc), labels));
@@ -392,6 +404,10 @@ bool ifcmpeq(){
                             {
                                 content = String.Format("c{0}!", name), 
                                 kind = "synchronisation"
+                            },
+                            new Label
+                            { 
+                                content = timeGuard, kind = "guard"
                             }
                         };
                         if (name.Contains("main"))
@@ -415,6 +431,10 @@ bool ifcmpeq(){
                             { 
                                 content = "osp_inc(), os[osp] = os[osp - 1]", 
                                 kind = "assignment"
+                            },
+                            new Label
+                            { 
+                                content = timeGuard, kind = "guard"
                             }
                         };
                         Transitions.Add(new Transition(loc, NextLocation(loc), labels));
@@ -426,6 +446,10 @@ bool ifcmpeq(){
                             { 
                                 content = string.Format("osp_inc(), os[osp] = {0}", instArg[1]), 
                                 kind = "assignment"
+                            },
+                            new Label
+                            { 
+                                content = timeGuard, kind = "guard"
                             }
                         };
                         Transitions.Add(new Transition(loc, NextLocation(loc), labels));
@@ -437,6 +461,10 @@ bool ifcmpeq(){
                             { 
                                 content = string.Format("osp_inc(), os[osp] = locs[{0}]", instArg[1]), 
                                 kind = "assignment"
+                            },
+                            new Label
+                            { 
+                                content = timeGuard, kind = "guard"
                             }
                         };
                         Transitions.Add(new Transition(loc, NextLocation(loc), labels));
@@ -455,6 +483,10 @@ bool ifcmpeq(){
                             { 
                                 content = string.Format("osp_dec(1)", instArg[1]), 
                                 kind = "update"
+                            },
+                            new Label
+                            { 
+                                content = timeGuard, kind = "guard"
                             }
                         };
                         Transitions.Add(new Transition(loc, NextLocation(loc), labels));
@@ -471,6 +503,10 @@ bool ifcmpeq(){
                             { 
                                 content = string.Format("osp_dec(1)", instArg[1]), 
                                 kind = "update"
+                            },
+                            new Label
+                            { 
+                                content = timeGuard, kind = "guard"
                             }
                         };
                         var labelsJump = new List<Label>()
@@ -484,6 +520,10 @@ bool ifcmpeq(){
                             { 
                                 content = string.Format("osp_dec(1)", instArg[1]), 
                                 kind = "update"
+                            },
+                            new Label
+                            { 
+                                content = timeGuard, kind = "guard"
                             }
                         };
 
@@ -502,6 +542,10 @@ bool ifcmpeq(){
                             new Label
                             { 
                                 content = "exceptionOccurred = true", kind = "update"
+                            },
+                            new Label
+                            { 
+                                content = timeGuard, kind = "guard"
                             }
                         };
                         
