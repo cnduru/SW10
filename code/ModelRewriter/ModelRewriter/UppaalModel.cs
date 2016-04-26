@@ -76,6 +76,16 @@ namespace ModelRewriter
             gloDecBuild.Append("bool done = false;\n");
             gloDecBuild.Append("bool opstack_fault = false;\n");
 
+            gloDecBuild.Append(
+                "const int classFields[3] = {3, 2, 3};\n\n" +
+                "int heapPointer = 0;\n" +
+                "int alocNew(int classID){\n" +
+                "    int ref = heapPointer;\n" +
+                "    H[ref] = classID;" +
+                "    heapPointer += classFields[classID];\n" +
+                "    return ref;\n" +
+                "}");
+
 
             globalDeclarations = gloDecBuild.ToString();
             system = sysBuild.ToString();

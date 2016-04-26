@@ -334,11 +334,26 @@ bool ifcmpeq(){
                         };
                         Transitions.Add(new Transition(loc, NextLocation(loc), labels));
                         break;
-
+                    case "new":
+                        labels = new List<Label>()
+                            {
+                                new Label
+                                { 
+                                    content = timeGuard, kind = "guard"
+                                },
+                                new Label
+                                { 
+                                    content = String.Format("osp_inc(), os[osp-1] = alocNew({0}), t = 0",
+                                        JParser.getClassID(instArg[1])), 
+                                    kind = "assignment"
+                                }
+                            };
+                        Transitions.Add(new Transition(loc, NextLocation(loc), labels));
+                        break;
                     case "invokespecial":
                     case "invokestatic":
                         var waiter = new Location(loc);
-                        Transitions.AddRange(Invoke(loc, waiter, NextLocation(loc), true));
+                        Transitions.AddRange(InvokeStatic(loc, waiter, NextLocation(loc)));
                         newLocs.Add(waiter);
                         break;
 
@@ -482,9 +497,10 @@ bool ifcmpeq(){
             Locations.AddRange(newLocs);
         }
 
-        private List<Transition>Invoke(Location caller, Location waiter, Location next, bool objRef = false)
+        private List<Transition>InvokeStatic(Location caller, Location waiter, Location next)
         {
             bool ret = caller.inst.instArgs[1] != "void";
+            var objRef = caller.name.Contains("invokespecial") ? 1 : 0;
             string methodName = caller.inst.instArgs[2].Split('.').Last();
             string methodClassName = caller.inst.instArgs[2].Split('.').First();
             if (methodName == "<init>")
@@ -507,7 +523,7 @@ bool ifcmpeq(){
             {
                 call.Add(new Label
                     {
-                        content = String.Format("osp_dec({0}), t = 0", param.Count + (objRef ? 1 : 0)), 
+                        content = String.Format("osp_dec({0}), t = 0", param.Count + objRef), 
                         kind = "assignment"
                     });
                 call.Add(new Label
@@ -525,7 +541,7 @@ bool ifcmpeq(){
             {
                 call.Add(new Label
                     {
-                        content = String.Format("osp_dec({0}), t = 0", param.Count + (objRef ? 1 : 0)), 
+                        content = String.Format("osp_dec({0}), t = 0", param.Count + objRef), 
                         kind = "assignment"
                     });
                 wait.Add(new Label
