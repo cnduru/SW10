@@ -11,17 +11,16 @@ namespace ModelRewriter
     {
         public Rewriter(string path)
         {
+            UppaalModel uml;
             // countermeasure parameter has to fit UPPAAL rewrite mode - e.g. "pc" for PCFault and "data" for DataFault
             // should we handle Uppaal model generation without faults?
-            //UppaalModel uml = new UppaalModel(path, "pc");
+            uml = new UppaalModel(path, "pc");
+            uml.rewritePCFault("pcRewrite.xml");
 
-            //uml.rewritePCFault("testxml.xml");
-            //uml.rewriteDataFault("testxml.xml");
-            //uml.Save("new3.xml");
-            //UppaalModel uml = new UppaalModel(path, "data");
-            //uml.rewriteDataFault("datarewrite.xml");
+            uml = new UppaalModel(path, "data");
+            uml.rewriteDataFault("dataRewrite.xml");
 
-            UppaalModel uml = new UppaalModel(path, "instruction");
+            uml = new UppaalModel(path, "instruction");
             uml.addErrorLocation();
             uml.rewriteInstructionFault("instructionRewrite.xml");
 

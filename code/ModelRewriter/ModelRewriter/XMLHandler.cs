@@ -73,6 +73,8 @@ namespace ModelRewriter
                 l.id = (string)locs.Attribute("id");
                 l.name = (string)locs.Element("name");
                 l.Guid = idCount.ToString();
+                var tr = locs.Element("urgent");
+                l.Urgent = tr != null;
                 idCount++;
 
                 XElement xele = locs.Element("label");
@@ -81,7 +83,7 @@ namespace ModelRewriter
                     int xCoord = Convert.ToInt32(xele.Attribute("x").Value);
                     int yCoord = Convert.ToInt32(xele.Attribute("y").Value);
 
-                    Label invariant = new Label { kind = "invariant", content = (string)xele.Value, x = xCoord, y = yCoord };
+                    Label invariant = new Label { kind = xele.Attribute("kind").Value, content = (string)xele.Value, x = xCoord, y = yCoord };
                     l.Label = invariant;
                 }
 
