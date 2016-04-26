@@ -20,9 +20,13 @@ namespace ModelRewriter
             {
                 var jClass = new JClass(p);
                 Classes.Add(jClass.Name);
-                model.AddTemplates(jClass);
                 jClasses.Add(jClass);
             }
+            foreach (var jClass in jClasses)
+            {
+                model.AddTemplates(jClass);
+            }
+
             var methods = new List<string>();
             foreach (var jClass in jClasses)
             {
@@ -56,10 +60,22 @@ namespace ModelRewriter
             foreach (var clsName in allocs)
             {
                 var cls = jClasses.Where(x => x.Name == clsName).ToList().First();
+                heap.Add(cls.Name);
                 heap.AddRange(cls.Fields.Select(x => cls.Name + "_" + x));
                 heap.AddRange(AllocateHeap(cls.Inits, jClasses));
             }
             return heap;
+        }
+
+        public static int getClassID(string className){
+            for (int i = 0; i < Classes.Count; i++)
+            {
+                if (Classes[i] == className)
+                {
+                    return i;
+                }
+            }
+            throw new IndexOutOfRangeException();
         }
 	}
 }
