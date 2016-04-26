@@ -60,7 +60,7 @@ namespace ModelRewriter
         public Template getTemplate(XElement xel)
         {
             Template t = new Template(xel);
-            t.initialLocation.id = xel.Element("init").Attribute("ref").Value;
+            t.InitialLocation.id = xel.Element("init").Attribute("ref").Value;
 
             // store name object from XML
             t.name = (string)xel.Element("name");
@@ -105,7 +105,7 @@ namespace ModelRewriter
                 l.x = Convert.ToInt32(locs.Attribute("x").Value);
                 l.y = Convert.ToInt32(locs.Attribute("y").Value);
 
-                t.locations.Add(l);
+                t.Locations.Add(l);
             }
 
             // store information about transitions from UPPAAL model in objects from XML
@@ -133,7 +133,7 @@ namespace ModelRewriter
                 transitions.Add(srcDstPair);
             }
 
-            t.transitions = transitions;
+            t.Transitions = transitions;
 
             return t;
         }

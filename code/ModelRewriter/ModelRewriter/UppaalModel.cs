@@ -231,7 +231,7 @@ namespace ModelRewriter
             XMLHandler xhl = new XMLHandler();
 
             Template faultTemplate = xhl.getTemplatePCFault(faultTemplateXML);
-            faultTemplate.locations[1].committed = true;
+            faultTemplate.Locations[1].committed = true;
             templates.Add(faultTemplate);
 
             Save(path);
@@ -243,7 +243,7 @@ namespace ModelRewriter
             XElement dataFaultTemplateXML = XElement.Parse(XMLProvider.getDataFaultTemplate());
             XMLHandler xhl = new XMLHandler();
             Template dataFaultTemplate = xhl.getTemplateDataFault(dataFaultTemplateXML);
-            dataFaultTemplate.locations[2].committed = true;
+            dataFaultTemplate.Locations[2].committed = true;
 
             // todo: generalize this
             globalDeclarations += "\nclock faultClock;\n";
@@ -262,7 +262,7 @@ namespace ModelRewriter
                     continue;
                 }
 
-                foreach (var l in te.locations)
+                foreach (var l in te.Locations)
                 {
                     // if location is not a part of the original program, skip it
                     if (l.pc == null)
@@ -270,11 +270,11 @@ namespace ModelRewriter
                         continue;
                     }
 
-                    foreach (var l2 in te.locations)
+                    foreach (var l2 in te.Locations)
                     {
                         if(l.id != l2.id)
                         {
-                            foreach (var edge in te.transitions)
+                            foreach (var edge in te.Transitions)
                             {
                                 if(edge.source.id == l.id && edge.target.id == l2.id)
                                 {
@@ -296,18 +296,18 @@ namespace ModelRewriter
 
             foreach (var tem in templates)
             {
-                foreach (var loc in tem.locations)
+                foreach (var loc in tem.Locations)
                 {
                     if(loc.pc == null)
                     {
                         continue;
                     }
 
-                    foreach (var l2 in tem.locations)
+                    foreach (var l2 in tem.Locations)
                     {
                         if (loc.id != l2.id)
                         {
-                            foreach (var edge in tem.transitions)
+                            foreach (var edge in tem.Transitions)
                             {
                                 if (edge.source.id == loc.id && edge.target.id == l2.id)
                                 {
@@ -347,7 +347,7 @@ namespace ModelRewriter
                     if (bci != null && index != -1)
                     {
 
-                        foreach (var edge in tem.transitions)
+                        foreach (var edge in tem.Transitions)
                         {   
                             // for inst fault edges
                             if (edge.source.id == loc.id && !edge.source.id.Contains("-") && !edge.target.id.Contains("-"))
@@ -375,7 +375,7 @@ namespace ModelRewriter
                         }
                     }
 
-                    tem.transitions.AddRange(tempTrans);
+                    tem.Transitions.AddRange(tempTrans);
                 }
             }
 
@@ -383,11 +383,11 @@ namespace ModelRewriter
             XElement instFaultTemplateXML = XElement.Parse(XMLProvider.getInstructionFaultTemplate());
             XMLHandler xhl = new XMLHandler();
             Template instFaultTemplate = xhl.getTemplateDataFault(instFaultTemplateXML);
-            instFaultTemplate.locations[1].committed = true;
+            instFaultTemplate.Locations[1].committed = true;
 
             // define number range for fault number
             Label selectFaultIdLabel = new Label(){content = string.Format("i:int[0,{0}]", XMLHandler.idCount), kind = "select", x = -110, y = -127};
-            instFaultTemplate.transitions[0].labels.Add(selectFaultIdLabel);
+            instFaultTemplate.Transitions[0].labels.Add(selectFaultIdLabel);
 
             // todo: generalize this
             globalDeclarations += "\nint faultAtId;\n";
@@ -462,7 +462,7 @@ namespace ModelRewriter
                 errorLoc.y = 200;
                 errorLoc.name = "error";
                 errorLoc.id = Constants.errorLocId; // arbitrary id set high so as to not interfere with "regular" locs
-                t.locations.Add(errorLoc);
+                t.Locations.Add(errorLoc);
             }
         }
 	}
