@@ -394,6 +394,18 @@ bool ifcmpeq(){
                                 kind = "synchronisation"
                             }
                         };
+                        if (name.Contains("main"))
+                        {
+                            var endLoc = new Location(loc);
+                            endLoc.Label = new Label
+                            {
+                                content = String.Format("1"), 
+                                kind = "exponentialrate"
+                            };
+                            newLocs.Add(endLoc);
+                            Transitions.Add(new Transition(loc, endLoc, labels));
+                            break;
+                        }
                         Transitions.Add(new Transition(loc, PCToLocation(-1), labels));
                         break;
                     case "dup":
@@ -505,6 +517,7 @@ bool ifcmpeq(){
                             }
                         };
                         Transitions.Add(new Transition(loc, NextLocation(loc), labels));
+                        loc.name += "_NOT_IMPEMENTED__NOT_IMPEMENTED__NOT_IMPEMENTED__NOT_IMPEMENTED__NOT_IMPEMENTED";
                         //throw new System.NotImplementedException(instArg[0]);
                         break;
                 }
