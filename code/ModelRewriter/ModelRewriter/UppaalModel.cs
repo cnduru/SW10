@@ -474,6 +474,17 @@ namespace ModelRewriter
                 errorLoc.name = "error";
                 errorLoc.id = Constants.errorLocId; // arbitrary id set high so as to not interfere with "regular" locs
                 t.Locations.Add(errorLoc);
+
+                // add label to error location
+                int count = t.Locations.Count(l => l.id == Constants.errorLocId);
+                /*
+                if (count != 0)
+                {
+                    foreach (var loc in t.Locations)
+                    {
+                        if(loc.i)
+                    }
+                }*/
             }
         }
 	}

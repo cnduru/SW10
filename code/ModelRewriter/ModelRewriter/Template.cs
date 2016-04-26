@@ -116,6 +116,13 @@ bool ifcmpeq(){
         return os[osp-2] == os[osp - 1];
     }
     return false;
+}
+
+bool ifeq(){
+    if (osp > 1){
+        return os[osp - 1] == 0;
+    }
+    return false;
 }";
             InitialLocation = Locations.First();
         }
@@ -317,10 +324,6 @@ bool ifcmpeq(){
                             new Label
                             { 
                                     content = "osp_dec(2), t = 0", kind = "assignment"
-                            },
-                            new Label
-                            { 
-                                content = timeGuard, kind = "guard"
                             }
                         };
                         Transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + Convert.ToInt32(instArg[1])), labels));
@@ -338,6 +341,36 @@ bool ifcmpeq(){
                             new Label
                             { 
                                 content = timeGuard, kind = "guard"
+                            }
+                        };
+                        Transitions.Add(new Transition(loc, NextLocation(loc), labels));
+                        break;
+                    case "ifeq":
+                        /* if top element equal to 0
+                         * Opstack: .. , value1 -> ..
+                         */
+                        labels = new List<Label>()
+                        {
+                            new Label
+                            { 
+                                    content = timeGuard + " && ifeq()", kind = "guard"
+                            },
+                            new Label
+                            { 
+                                    content = "osp_dec(1), t = 0", kind = "assignment"
+                            }
+                        };
+                        Transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + Convert.ToInt32(instArg[1])), labels));
+
+                        labels = new List<Label>()
+                        {
+                            new Label
+                            { 
+                                    content = timeGuard + " && !ifeq()", kind = "guard"
+                            },
+                            new Label
+                            { 
+                                    content = "opstack_fault = osp < 1 ? true : opstack_fault, osp_dec(1), t = 0", kind = "assignment"
                             }
                         };
                         Transitions.Add(new Transition(loc, NextLocation(loc), labels));
