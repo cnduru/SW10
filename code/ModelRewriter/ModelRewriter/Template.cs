@@ -594,7 +594,7 @@ bool ifeq(){
                             }
                         };
                         Transitions.Add(new Transition(loc, NextLocation(loc), labels));
-                        loc.name += "_NOT_IMPEMENTED__NOT_IMPEMENTED__NOT_IMPEMENTED__NOT_IMPEMENTED__NOT_IMPEMENTED";
+                        loc.name += "___NOT_IMPLEMENTED___NOT_IMPLEMENTED___NOT_IMPLEMENTED";
                         //throw new System.NotImplementedException(instArg[0]);
                         break;
                 }
