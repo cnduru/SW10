@@ -79,9 +79,10 @@ namespace ModelRewriter
             gloDecBuild.Append(
                 "const int classFields[3] = {3, 2, 3};\n\n" +
                 "int heapPointer = 0;\n" +
-                "int alocNew(int classID){\n" +
+                "int alocNew(int classID){\n"+
                 "    int ref = heapPointer;\n" +
-                "    H[ref] = classID;" +
+                "    if(classID < 0) return -1;\n" +
+                "    H[ref] = classID;\n" +
                 "    heapPointer += classFields[classID];\n" +
                 "    return ref;\n" +
                 "}");

@@ -75,7 +75,7 @@ namespace ModelRewriter
                     return i;
                 }
             }
-            throw new IndexOutOfRangeException();
+            return -1;
         }
 	}
 }
