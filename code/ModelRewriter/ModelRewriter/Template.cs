@@ -514,8 +514,8 @@ bool ifeq(){
                             },
                             new Label
                             { 
-                                content = string.Format("osp_dec(1)", instArg[1]), 
-                                kind = "update"
+                                content = "osp_dec(1)", 
+                                kind = "assignment"
                             },
                             new Label
                             { 
@@ -529,34 +529,26 @@ bool ifeq(){
                         {
                             new Label
                             { 
-                                content = string.Format("os[osp] < os[osp - 1]", instArg[1]), 
+                                content = string.Format("{0} && os[osp] < os[osp - 1]", timeGuard), 
                                 kind = "guard"
                             },
                             new Label
                             { 
-                                content = string.Format("osp_dec(1)", instArg[1]), 
-                                kind = "update"
-                            },
-                            new Label
-                            { 
-                                content = timeGuard, kind = "guard"
+                                content = "osp_dec(1)", 
+                                kind = "assignment"
                             }
                         };
                         var labelsJump = new List<Label>()
                         {
                             new Label
                             { 
-                                content = string.Format("os[osp] >= os[osp - 1]", instArg[1]), 
+                                content = string.Format("{0} && os[osp] >= os[osp - 1]", timeGuard), 
                                 kind = "guard"
                             },
                             new Label
                             { 
-                                content = string.Format("osp_dec(1)", instArg[1]), 
-                                kind = "update"
-                            },
-                            new Label
-                            { 
-                                content = timeGuard, kind = "guard"
+                                content = "osp_dec(1)", 
+                                kind = "assignment"
                             }
                         };
 
@@ -574,7 +566,7 @@ bool ifeq(){
                         {
                             new Label
                             { 
-                                content = "exceptionOccurred = true", kind = "update"
+                                content = "exceptionOccurred = true", kind = "assignment"
                             },
                             new Label
                             { 
