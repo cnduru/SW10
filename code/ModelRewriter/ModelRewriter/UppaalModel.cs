@@ -53,6 +53,9 @@ namespace ModelRewriter
             var gloDecBuild = new StringBuilder();
             var sysBuild = new StringBuilder();
             gloDecBuild.Append("clock t;\n");
+            // exception
+            gloDecBuild.Append("bool exceptionOccurred;\n");
+            
             //HEAP
             gloDecBuild.Append(String.Format("const int heap_size = {0};\n",heapSize));
             gloDecBuild.Append("int H[heap_size];\n");

@@ -84,7 +84,6 @@ namespace ModelRewriter
 int os[os_size]; 
 int osp = 0;
 int locs[10];
-bool exceptionOccurred;
 
 void osp_inc(){
     if (osp >= os_size - 1){
