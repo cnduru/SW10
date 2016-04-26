@@ -18,7 +18,7 @@ namespace ModelRewriter
         public string name { get; set; }
         public string pc  { get; set; }
         public List<Location> reachableLocs = new List<Location>();
-        public bool urgent { get; set; }
+        public bool Urgent { get; set; }
         public bool committed { get; set; }
         public Label Label;
         public string Guid;
@@ -88,7 +88,7 @@ namespace ModelRewriter
                 locationElement.Add(Label.GetXML());
             }
 
-            if(urgent)
+            if(Urgent)
             {
                 locationElement.Add(new XElement("urgent"));
                 return locationElement;

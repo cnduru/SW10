@@ -20,9 +20,9 @@ namespace ModelRewriter
     {
         public string name { get; set; }
 
-        public Location initialLocation = new Location();
-        public List<Location> locations = new List<Location>();
-        public List<Transition> transitions = new List<Transition>();
+        public Location InitialLocation = new Location();
+        public List<Location> Locations = new List<Location>();
+        public List<Transition> Transitions = new List<Transition>();
         //public List<Transition> faultTransitions = new List<Transition>();
         // should probably be removed
         public string localDeclarations = "";
@@ -46,15 +46,15 @@ namespace ModelRewriter
             //initialLocation.id = modelXML.Element("init").Attribute("ref").Value;
  
             // transitions
-            transitions = transitionsFromXML(modelXML.Elements("transition").ToList());
+            Transitions = transitionsFromXML(modelXML.Elements("transition").ToList());
         }
 
         public Template(string tName, Location initial, List<Location> locs, List<Transition> transits, string localDecls)
         {
             name = tName;
-            initialLocation = initial;
-            locations = locs;
-            transitions = transits;
+            InitialLocation = initial;
+            Locations = locs;
+            Transitions = transits;
             localDeclarations = localDecls;
         }
 
@@ -78,7 +78,7 @@ namespace ModelRewriter
         public Template(List<string> method, string cls)
         {
             name = cls + "_" + JClass.FirstNonKeyword(method.First());
-            locations = ResolveLocations(method);
+            Locations = ResolveLocations(method);
             ResolveCode();
             localDeclarations = @"const int os_size = 10;
 int os[os_size]; 
@@ -117,19 +117,19 @@ bool ifcmpeq(){
     }
     return false;
 }";
-            initialLocation = locations.First();
+            InitialLocation = Locations.First();
         }
 
         public Template(List<string> method){
             name = "virtual";
 
             var initLoc = new Location("Invoke", 0 ,0);
-            initialLocation = initLoc;
-            locations.Add(initLoc);
+            InitialLocation = initLoc;
+            Locations.Add(initLoc);
 
             for (int i = 0; i < method.Count; i++)
             {
-                locations.Add(new Location(method[i], 100, i*50));
+                Locations.Add(new Location(method[i], 100, i*50));
             }
         }
 
@@ -150,7 +150,7 @@ bool ifcmpeq(){
             var newLocs = new List<Location>();
             List<Label> labels = new List<Label>();
 
-            foreach (var loc in locations)
+            foreach (var loc in Locations)
             {
                 //TODO maybe move to switch with instArg
                 if (loc.inst.pc == -1)
@@ -158,7 +158,7 @@ bool ifcmpeq(){
                     // special case for main
                     if (loc.name == "main")
                     {
-                        loc.urgent = true;
+                        loc.Urgent = true;
                         labels = new List<Label>()
                             {
                                 new Label
@@ -168,7 +168,7 @@ bool ifcmpeq(){
                                     kind = "assignment"
                                 }
                             };
-                        transitions.Add(new Transition(loc, PCToLocation(0), labels));
+                        Transitions.Add(new Transition(loc, PCToLocation(0), labels));
                         continue; //clean up later
                     }
                     labels = new List<Label>()
@@ -189,7 +189,7 @@ bool ifcmpeq(){
                             kind = "assignment"
                         }
                     };
-                    transitions.Add(new Transition(loc, PCToLocation(0), labels));
+                    Transitions.Add(new Transition(loc, PCToLocation(0), labels));
 
                     continue;
                 }
@@ -214,7 +214,7 @@ bool ifcmpeq(){
                                 kind = "assignment"
                             }
                         };
-                        transitions.Add(new Transition(loc, NextLocation(loc), labels)); //TODO is +1 allways true?
+                        Transitions.Add(new Transition(loc, NextLocation(loc), labels)); //TODO is +1 allways true?
                         break;
 
                     case "arraylength":
@@ -234,7 +234,7 @@ bool ifcmpeq(){
                                 content = "os[osp] = H[os[osp]], t = 0", kind = "assignment"
                             }
                         };
-                        transitions.Add(new Transition(loc, NextLocation(loc), labels));
+                        Transitions.Add(new Transition(loc, NextLocation(loc), labels));
                         break;
 
                     case "getstatic":
@@ -255,7 +255,7 @@ bool ifcmpeq(){
                                 kind = "assignment"
                             }
                         };
-                        transitions.Add(new Transition(loc, NextLocation(loc), labels));
+                        Transitions.Add(new Transition(loc, NextLocation(loc), labels));
                         break;
 
                     case "iconst":
@@ -274,7 +274,7 @@ bool ifcmpeq(){
                                 kind = "assignment"
                             }
                         };
-                        transitions.Add(new Transition(loc, NextLocation(loc), labels));
+                        Transitions.Add(new Transition(loc, NextLocation(loc), labels));
                         break;
                     case "ifcmpeq":
                         labels = new List<Label>()
@@ -288,7 +288,7 @@ bool ifcmpeq(){
                                     content = "osp_dec(2), t = 0", kind = "assignment"
                                 }
                             };
-                        transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + Convert.ToInt32(instArg[1])), labels));
+                        Transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + Convert.ToInt32(instArg[1])), labels));
 
                         labels = new List<Label>()
                             {
@@ -302,7 +302,7 @@ bool ifcmpeq(){
                                 }
                             };
 
-                        transitions.Add(new Transition(loc, NextLocation(loc), labels));
+                        Transitions.Add(new Transition(loc, NextLocation(loc), labels));
                         break;
                     case "ifcmpme":
                         /* if greather or eq
@@ -319,7 +319,7 @@ bool ifcmpeq(){
                                     content = "osp_dec(2), t = 0", kind = "assignment"
                             }
                         };
-                        transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + Convert.ToInt32(instArg[1])), labels));
+                        Transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + Convert.ToInt32(instArg[1])), labels));
 
                         labels = new List<Label>()
                         {
@@ -332,13 +332,13 @@ bool ifcmpeq(){
                                     content = "opstack_fault = osp < 2 ? true : opstack_fault, osp_dec(2), t = 0", kind = "assignment"
                             }
                         };
-                        transitions.Add(new Transition(loc, NextLocation(loc), labels));
+                        Transitions.Add(new Transition(loc, NextLocation(loc), labels));
                         break;
 
                     case "invokespecial":
-                    case "invokevirtual":
+                    case "invokestatic":
                         var waiter = new Location(loc);
-                        transitions.AddRange(Invoke(loc, waiter, NextLocation(loc), true));
+                        Transitions.AddRange(Invoke(loc, waiter, NextLocation(loc), true));
                         newLocs.Add(waiter);
                         break;
 
@@ -356,7 +356,7 @@ bool ifcmpeq(){
                                 kind = "assignment"
                             }
                         };
-                        transitions.Add(new Transition(loc, NextLocation(loc), labels));
+                        Transitions.Add(new Transition(loc, NextLocation(loc), labels));
                         break;
 
                     case "ireturn":
@@ -372,9 +372,14 @@ bool ifcmpeq(){
                                 content = String.Format("par0 = os[osp], osp = 0, t = 0, done = true",
                                     CP.Add(String.Join(" ", instArg.Skip(1)))), 
                                 kind = "assignment"
+                            },
+                            new Label
+                            {
+                                content = String.Format("c{0}!", name), 
+                                kind = "synchronisation"
                             }
                         };
-                        transitions.Add(new Transition(loc, PCToLocation(-1), labels));
+                        Transitions.Add(new Transition(loc, PCToLocation(-1), labels));
                         break;
                     case "dup":
                         labels = new List<Label>()
@@ -385,7 +390,7 @@ bool ifcmpeq(){
                                 kind = "assignment"
                             }
                         };
-                        transitions.Add(new Transition(loc, NextLocation(loc), labels));
+                        Transitions.Add(new Transition(loc, NextLocation(loc), labels));
                         break;
                     case "sipush":
                         labels = new List<Label>()
@@ -396,7 +401,7 @@ bool ifcmpeq(){
                                 kind = "assignment"
                             }
                         };
-                        transitions.Add(new Transition(loc, NextLocation(loc), labels));
+                        Transitions.Add(new Transition(loc, NextLocation(loc), labels));
                         break;
                     case "iload":
                         labels = new List<Label>()
@@ -407,7 +412,7 @@ bool ifcmpeq(){
                                 kind = "assignment"
                             }
                         };
-                        transitions.Add(new Transition(loc, NextLocation(loc), labels));
+                        Transitions.Add(new Transition(loc, NextLocation(loc), labels));
                         break;
                     case "istore":
                         // fall through to astore because Kristian wanted to save space..
@@ -420,7 +425,7 @@ bool ifcmpeq(){
                                 kind = "assignment"
                             }
                         };
-                        transitions.Add(new Transition(loc, NextLocation(loc), labels));
+                        Transitions.Add(new Transition(loc, NextLocation(loc), labels));
                         break;
                     case "ifcmpge":
                         var labelsNoJump = new List<Label>()
@@ -441,12 +446,12 @@ bool ifcmpeq(){
                         };
 
                         // edge to next location
-                        transitions.Add(new Transition(loc, NextLocation(loc), labelsNoJump));
+                        Transitions.Add(new Transition(loc, NextLocation(loc), labelsNoJump));
 
                         // edge to jump destination
                         int absoluteAddress = loc.inst.pc + Convert.ToInt32(instArg[1]);
                         Location jumpLoc = PCToLocation(absoluteAddress);
-                        transitions.Add(new Transition(loc, jumpLoc, labelsJump));
+                        Transitions.Add(new Transition(loc, jumpLoc, labelsJump));
 
                         break;
                     case "athrow":
@@ -458,7 +463,7 @@ bool ifcmpeq(){
                             }
                         };
                         
-                        transitions.Add(new Transition(loc, locations[locations.Count - 1], labels));
+                        Transitions.Add(new Transition(loc, Locations[Locations.Count - 1], labels));
 
                         break;
                     default:
@@ -469,20 +474,25 @@ bool ifcmpeq(){
                                 content = timeGuard, kind = "guard"
                             }
                         };
-                        transitions.Add(new Transition(loc, NextLocation(loc), labels));
+                        Transitions.Add(new Transition(loc, NextLocation(loc), labels));
                         //throw new System.NotImplementedException(instArg[0]);
                         break;
                 }
             }
-            locations.AddRange(newLocs);
+            Locations.AddRange(newLocs);
         }
 
-        private List<Transition>Invoke(Location caller, Location waiter, Location next, bool virt = false)
+        private List<Transition>Invoke(Location caller, Location waiter, Location next, bool objRef = false)
         {
             bool ret = caller.inst.instArgs[1] != "void";
-            string mid = caller.inst.instArgs[2];
+            string methodName = caller.inst.instArgs[2].Split('.').Last();
+            string methodClassName = caller.inst.instArgs[2].Split('.').First();
+            if (methodName == "<init>")
+            {
+                methodName = methodClassName;
+            }
             var param = caller.inst.instArgs.Skip(3).Where(p => p != "(" && p != ")").ToList();
-            bool included = parseable(mid);
+            bool included = JParser.Classes.Contains(methodClassName);
 
             var res = new List<Transition>();
             var call = new List<Label>()
@@ -495,13 +505,27 @@ bool ifcmpeq(){
             var wait = new List<Label>();
             if (included)
             {
-                throw new NotImplementedException();
+                call.Add(new Label
+                    {
+                        content = String.Format("osp_dec({0}), t = 0", param.Count + (objRef ? 1 : 0)), 
+                        kind = "assignment"
+                    });
+                call.Add(new Label
+                    {
+                        content = String.Format("c{0}!", methodClassName + "_" + methodName), 
+                        kind = "synchronisation"
+                    });
+                wait.Add(new Label
+                    {
+                        content = String.Format("c{0}?", methodClassName + "_" + methodName), 
+                        kind = "synchronisation"
+                    });
             }
             else
             {
                 call.Add(new Label
                     {
-                        content = String.Format("osp_dec({0}), t = 0", param.Count + (virt ? 1 : 0)), 
+                        content = String.Format("osp_dec({0}), t = 0", param.Count + (objRef ? 1 : 0)), 
                         kind = "assignment"
                     });
                 wait.Add(new Label
@@ -536,14 +560,9 @@ bool ifcmpeq(){
             return res;
         }
 
-        private bool parseable(string method)
-        {
-            return false;
-        }
-
         private Location PCToLocation(int pc)
         {
-            foreach (var loc in locations)
+            foreach (var loc in Locations)
             {
                 if (loc.inst.pc == pc)
                 {
@@ -555,7 +574,7 @@ bool ifcmpeq(){
 
         private Location NextLocation(Location current)
         {
-            var orderedLocs = locations.OrderBy(x => x.inst.pc).ToList();
+            var orderedLocs = Locations.OrderBy(x => x.inst.pc).ToList();
             foreach (var loc in orderedLocs)
             {
                 if (loc.inst.pc > current.inst.pc)
@@ -574,17 +593,17 @@ bool ifcmpeq(){
             el.Add(new XElement("declaration", localDeclarations));
             
             // add locations
-            foreach (var loc in locations)
+            foreach (var loc in Locations)
             {
                 el.Add(loc.getXML());
             }
 
             // add initial state
             XElement initState = new XElement("init");
-            initState.SetAttributeValue("ref", initialLocation.id);
+            initState.SetAttributeValue("ref", InitialLocation.id);
             el.Add(initState);
 
-            foreach (var trans in transitions)
+            foreach (var trans in Transitions)
             {
                 el.Add(trans.getXML());
             }
@@ -595,9 +614,9 @@ bool ifcmpeq(){
         public void calculateReachableLocations()
         {
             // calculate which states are reachable by a single bit flip
-            foreach (Location l in locations)
+            foreach (Location l in Locations)
             {
-                foreach (Location lNext in locations)
+                foreach (Location lNext in Locations)
                 {
                     if ((l.id != lNext.id && isReachable(l, lNext)))// && !(reachableLocs.ContainsKey(l) || reachableLocs.ContainsKey(lNext)))
                     {
@@ -641,7 +660,7 @@ bool ifcmpeq(){
             // caluclate reachable locations
             calculateReachableLocations();
 
-            foreach (Location originalLocation in locations)
+            foreach (Location originalLocation in Locations)
             {
                 foreach (var loc in originalLocation.reachableLocs)
                 {
@@ -661,12 +680,12 @@ bool ifcmpeq(){
             }
 
             //faultTransitions.AddRange(tlist);
-            transitions.AddRange(tlist);
+            Transitions.AddRange(tlist);
         }
 
         public Location idToLocation(string id)
         {
-            return locations.First(l => l.id == id);
+            return Locations.First(l => l.id == id);
         }
     }
 }
