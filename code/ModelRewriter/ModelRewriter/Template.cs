@@ -410,12 +410,12 @@ bool ifcmpeq(){
                                 content = timeGuard, kind = "guard"
                             }
                         };
-                        if (name.Contains("main"))
+                        if (name.Split('_').Last() == "main")
                         {
                             var endLoc = new Location(loc);
                             endLoc.Label = new Label
                             {
-                                content = String.Format("1"), 
+                                content = "1", 
                                 kind = "exponentialrate"
                             };
                             newLocs.Add(endLoc);

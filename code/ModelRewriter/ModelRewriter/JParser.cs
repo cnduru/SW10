@@ -51,7 +51,7 @@ namespace ModelRewriter
             //Add Invoke
             model.AddInvokevirtual(jClasses);
 
-            model.InitDec(heap.Count,3,3, methods); 
+            model.InitDec(heap.Count + 1,3,3, methods); 
             model.Save("new3.xml");
 		}
 
