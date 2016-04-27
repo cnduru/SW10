@@ -25,7 +25,7 @@ open JProgram;;
 
 let (prta,instantiated_classes) =
   JRTA.parse_program 
-    "java/example.jar:rt.jar:jce.jar"
+    "java/Example.jar:rt.jar:jce.jar"
     (JBasics.make_cms (JBasics.make_cn "Example") JProgram.main_signature);;
 
 
