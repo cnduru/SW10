@@ -254,7 +254,7 @@ namespace ModelRewriter
         }
 
 
-        public void rewriteDataFault(string path)
+        public void rewriteHeapFault(string path)
         {
             XElement dataFaultTemplateXML = XElement.Parse(XMLProvider.getDataFaultTemplate());
             XMLHandler xhl = new XMLHandler();
