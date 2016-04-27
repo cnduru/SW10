@@ -17,8 +17,11 @@ namespace ModelRewriter
             //uml = new UppaalModel(path, "pc");
             //uml.rewritePCFault("pcRewrite.xml");
 
-            uml = new UppaalModel(path, "data");
-            uml.rewriteHeapFault("dataRewrite.xml");
+            //uml = new UppaalModel(path, "heap");
+            //uml.rewriteHeapFault("heapRewrite.xml");
+
+            uml = new UppaalModel(path, "locals");
+            uml.rewriteLocalFault("localRewrite.xml");
 
             //uml = new UppaalModel(path, "instruction");
             //uml.addErrorLocation();

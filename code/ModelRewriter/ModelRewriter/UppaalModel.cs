@@ -424,58 +424,6 @@ namespace ModelRewriter
 
         }
 
-        List<List<string>> findMethods(IEnumerable<string> jbc)
-        {
-            var methods = new List<List<string>>();
-            List<string> curMethod = new List<string>();
-
-            var methodStart = new Regex("^(privat)|(public).+\\(");
-            var inst = new Regex("^([0-9]+\\.)"); 
-            foreach(var line in jbc) 
-            {
-                if (methodStart.IsMatch(line))
-                {
-                    curMethod = new List<string>();
-                    curMethod.Add(line);
-                    methods.Add(curMethod);
-                }
-                else if (inst.IsMatch(line))
-                {
-                    curMethod.Add(line);
-                }
-            }
-            return methods;
-        }
-
-        List<string> findFields(IEnumerable<string> jbc)
-        {
-            var fields = new List<string>();
-            var methodStart = new Regex("^(privat)|(public).+\\(");
-            var field = new Regex("^(privat)|(public)");
-            foreach (var line in jbc)
-            {
-                if (!methodStart.IsMatch(line) && field.IsMatch(line))
-                {
-                    fields.Add(line);
-                }
-            }
-            return fields;
-        }
-
-        private int getHeapsize()
-        {
-            foreach (var template in templates)
-            {
-                if (template.name.Contains("Install"))
-                {
-                    //var cln = template.name.Split("_")[0];
-
-                };
-
-            }
-            return 0;
-        }
-
         public void addErrorLocation()
         {
             // add extra error location for each template
@@ -490,5 +438,21 @@ namespace ModelRewriter
                 t.Locations.Add(errorLoc);
             }
         }
-	}
+
+        public void rewriteLocalFault(string p)
+        {
+            foreach (var tem in templates)
+            {
+                foreach (var loc in tem.Locations)
+                {
+                    List<Label> labList = new List<Label>() 
+                    {
+ 
+                    };
+
+                    Transition locFaultTrans = new Transition();
+                }
+            }
+        }
+    }
 }
