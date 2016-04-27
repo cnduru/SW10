@@ -126,16 +126,96 @@ bool ifeq(){
             InitialLocation = Locations.First();
         }
 
+        /* pattern can be:
+         * Select, s
+         * Guard, g
+         * sYnc, y
+         * Update, u
+         * Invariant, i
+         * Exponentialrate, e
+         * 
+         * e.g. makeLabels("gu", new List<string>(){"t == 1", "osp[0] = par0"})
+         */
+        public static List<Label> makeLabels(string pattern, List<string> values)
+        {
+            var res = new List<Label>();
+            var usedList = new List<char>();
+            for (int i = 0; i < values.Count; i++)
+            {
+                if (usedList.Contains(pattern[i]))
+                {
+                    throw new Exception("Nduru should stop doing this");
+                }
+                usedList.Add(pattern[i]);
+                switch (pattern[i])
+                {
+                    case 's': 
+                        res.Add(new Label
+                            { 
+                                content = values[i], kind = "select"
+                            });
+                        break;
+                    case 'g': 
+                        res.Add(new Label
+                            { 
+                                content = values[i], kind = "guard"
+                            });
+                        break;
+                    case 'y': 
+                        res.Add(new Label
+                            { 
+                                content = values[i], kind = "synchronisation"
+                            });
+                        break;
+                    case 'u': 
+                        res.Add(new Label
+                            { 
+                                content = values[i], kind = "assignment"
+                            });
+                        break;
+                    case 'i': 
+                        res.Add(new Label
+                            { 
+                                content = values[i], kind = "invariant"
+                            });
+                        break;
+                    case 'e': 
+                        res.Add(new Label
+                            { 
+                                content = values[i], kind = "exponentialrate"
+                            });
+                        break;
+                    default:
+                        throw new KeyNotFoundException();
+                }
+            }
+            return res;
+                
+        }
+
         public Template(List<string> method){
             name = "virtual";
 
+            //initLoc
             var initLoc = new Location("Invoke", 0 ,0);
             InitialLocation = initLoc;
             Locations.Add(initLoc);
 
+            //resolve loc
+            var resolveLoc = new Location("Resolver", 0, 0);
+            resolveLoc.Urgent = true;
+            Locations.Add(resolveLoc);
+
+            Transitions.Add(new Transition(initLoc, resolveLoc,
+                makeLabels("y", new List<string>(){"cVirtual?"})
+            ));
+
+
+
+            //Method locations
             for (int i = 0; i < method.Count; i++)
             {
-                Locations.Add(new Location(method[i], 100, i*50));
+                Locations.Add(new Location(method[i], 200, i*50));
             }
         }
 
@@ -155,6 +235,7 @@ bool ifeq(){
             var timeGuard = "t == 1";
             var newLocs = new List<Location>();
             List<Label> labels = new List<Label>();
+            var temp = "";
 
             foreach (var loc in Locations)
             {
@@ -390,11 +471,34 @@ bool ifeq(){
                             };
                         Transitions.Add(new Transition(loc, NextLocation(loc), labels));
                         break;
+                    case "invokevirtual":
+                        var waiterV = new Location(loc);
+                        var param = loc.inst.instArgs.Skip(3).Where(p => p != "(" && p != ")").ToList();
+                        labels = makeLabels("gya", new List<string>()
+                            {
+                                timeGuard,
+                                "cVirtual!",
+                                String.Format("osp_dec({0}), t = 0", param.Count + 1)
+                            });
+                        newLocs.Add(waiterV);
+                        Transitions.Add(new Transition(loc, waiterV, labels));
+
+                        var virReturn = "t = 0";
+                        if (loc.inst.instArgs[1] != "void")
+                        {
+                            virReturn += ", os[osp] = par0, osp_inc()";
+                        }
+                        labels = makeLabels("ya", new List<string>(){
+                            "cVirtual?",
+                            virReturn
+                        });
+                        Transitions.Add(new Transition(waiterV, NextLocation(loc), labels));
+                        break;    
                     case "invokespecial":
                     case "invokestatic":
-                        var waiter = new Location(loc);
-                        Transitions.AddRange(InvokeStatic(loc, waiter, NextLocation(loc)));
-                        newLocs.Add(waiter);
+                        var waiterS = new Location(loc);
+                        Transitions.AddRange(InvokeStatic(loc, waiterS, NextLocation(loc)));
+                        newLocs.Add(waiterS);
                         break;
 
                     case "ldc":
@@ -503,6 +607,7 @@ bool ifeq(){
                         break;
                     case "istore":
                         // fall through to astore because Kristian wanted to save space..
+                        // lol, it does the same as astore from our perspetive anyway
                     case "astore":
                         labels = new List<Label>()
                         {

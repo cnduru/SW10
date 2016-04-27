@@ -13,8 +13,8 @@ namespace ModelRewriter
 			if (args.Count () > 1) {
 				switch (args [0]) {
 				case "b":
-                    //new JParser (args.Skip(1));
-                    new JParser(new List<string>() { "exlinesDup.txt" });
+                    new JParser (args.Skip(1));
+                    //new JParser(new List<string>() { "exlinesDup.txt" });
                     new Rewriter("new3.xml");
 					break;
 				default:
