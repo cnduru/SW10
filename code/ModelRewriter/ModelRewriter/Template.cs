@@ -75,9 +75,9 @@ namespace ModelRewriter
             return transitionsList; 
         }
 
-        public Template(List<string> method, string cls)
+        public Template(List<string> method, string methodName)
         {
-            name = cls + "_" + JClass.FirstNonKeyword(method.First());
+            name = methodName;
             Locations = ResolveLocations(method);
             ResolveCode();
             localDeclarations = @"const int os_size = 10;
@@ -134,13 +134,13 @@ bool ifeq(){
          * Invariant, i
          * Exponentialrate, e
          * 
-         * e.g. makeLabels("gu", new List<string>(){"t == 1", "osp[0] = par0"})
+         * e.g. makeLabels("gu", "t == 1", "osp[0] = par0")
          */
-        public static List<Label> makeLabels(string pattern, List<string> values)
+        public static List<Label> makeLabels(string pattern, params string[] values)
         {
             var res = new List<Label>();
             var usedList = new List<char>();
-            for (int i = 0; i < values.Count; i++)
+            for (int i = 0; i < pattern.Length; i++)
             {
                 if (usedList.Contains(pattern[i]))
                 {
@@ -207,15 +207,27 @@ bool ifeq(){
             Locations.Add(resolveLoc);
 
             Transitions.Add(new Transition(initLoc, resolveLoc,
-                makeLabels("y", new List<string>(){"cVirtual?"})
+                makeLabels("y", "cVirtual?")
             ));
+                
+            var returnerLoc = new Location("Returner", -300, 400);
+            returnerLoc.Urgent = true;
+            Locations.Add(returnerLoc);
 
-
+            Transitions.Add(new Transition(returnerLoc, initLoc, makeLabels("y", "cVirtual!")));
 
             //Method locations
             for (int i = 0; i < method.Count; i++)
             {
-                Locations.Add(new Location(method[i], i*200, 200));
+                var mLoc = new Location(method[i], i*200, 200);
+                Locations.Add(mLoc);
+                Transitions.Add(new Transition(resolveLoc, mLoc, makeLabels("gy",
+                    String.Format("signature(H[par0], {0})", JParser.GetMethodIndex(method).ToString()),
+                    String.Format("c{0}!", mLoc.name)
+                )));
+
+                Transitions.Add(new Transition(mLoc, returnerLoc, 
+                    makeLabels("y", String.Format("c{0}?", mLoc.name))));
             }
         }
 
@@ -235,7 +247,6 @@ bool ifeq(){
             var timeGuard = "t == 1";
             var newLocs = new List<Location>();
             List<Label> labels = new List<Label>();
-            var temp = "";
 
             foreach (var loc in Locations)
             {
@@ -474,12 +485,11 @@ bool ifeq(){
                     case "invokevirtual":
                         var waiterV = new Location(loc);
                         var param = loc.inst.instArgs.Skip(3).Where(p => p != "(" && p != ")").ToList();
-                        labels = makeLabels("gyu", new List<string>()
-                            {
+                        labels = makeLabels("gyu", 
                                 timeGuard,
                                 "cVirtual!",
-                                String.Format("osp_dec({0}), t = 0", param.Count + 1)
-                            });
+                                String.Format("osp_dec({0})", param.Count + 1) //TODO t=0 ?
+                            );
                         newLocs.Add(waiterV);
                         Transitions.Add(new Transition(loc, waiterV, labels));
 
@@ -488,10 +498,7 @@ bool ifeq(){
                         {
                             virReturn += ", os[osp] = par0, osp_inc()";
                         }
-                        labels = makeLabels("yu", new List<string>(){
-                            "cVirtual?",
-                            virReturn
-                        });
+                        labels = makeLabels("yu", "cVirtual?", virReturn);
                         Transitions.Add(new Transition(waiterV, NextLocation(loc), labels));
                         break;    
                     case "invokespecial":
@@ -709,7 +716,7 @@ bool ifeq(){
                 methodName = methodClassName;
             }
             var param = caller.inst.instArgs.Skip(3).Where(p => p != "(" && p != ")").ToList();
-            bool included = JParser.Classes.Contains(methodClassName);
+            bool included = JParser.ClassNames.Contains(methodClassName);
 
             var res = new List<Transition>();
             var call = new List<Label>()
