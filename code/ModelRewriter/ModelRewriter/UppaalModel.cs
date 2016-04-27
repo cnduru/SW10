@@ -356,7 +356,16 @@ namespace ModelRewriter
                     {   
                         // make transition to error state if invalid instruction
                         var x = tem.idToLocation(Constants.errorLocId);
-                        Transition errorTransition = new Transition(loc, x);
+                        var labs = new List<Label>()
+                        {
+                            new Label() 
+                            {
+                                content = string.Format("faultAtId == {0}", loc.Guid),
+                                kind = "guard"
+                            }
+                         };   
+
+                        Transition errorTransition = new Transition(loc, x, labs);
                         tempTrans.Add(errorTransition);
                     }
 
@@ -479,17 +488,6 @@ namespace ModelRewriter
                 errorLoc.name = "error";
                 errorLoc.id = Constants.errorLocId; // arbitrary id set high so as to not interfere with "regular" locs
                 t.Locations.Add(errorLoc);
-
-                // add label to error location
-                int count = t.Locations.Count(l => l.id == Constants.errorLocId);
-                /*
-                if (count != 0)
-                {
-                    foreach (var loc in t.Locations)
-                    {
-                        if(loc.i)
-                    }
-                }*/
             }
         }
 	}
