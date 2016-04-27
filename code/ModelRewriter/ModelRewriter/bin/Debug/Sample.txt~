@@ -1,3 +1,4 @@
+
 Class Sample
 
     Instantiated
@@ -12,10 +13,40 @@ Sample ( ) ;
 0.  aload 0
 1.  invokespecial void java.lang.Object.<init> ( )
 4.  aload 0
-5.  invokespecial void Sample.install ( )
+5.  new A
+8.  dup
+9.  invokespecial void A.<init> ( )
+12. putfield Sample.a : A
+15. aload 0
+16. new B
+19. dup
+20. invokespecial void B.<init> ( )
+23. putfield Sample.b : A
+26. return
+
+private static void install ( ) ;
+
+    Concrete Method
+    Parsed
+
+0.  new Sample
+3.  dup
+4.  invokespecial void Sample.<init> ( )
+7.  pop
 8.  return
 
-public static int foo ( int 0) ;
+public static void main ( java.lang.String [] 0 ) ;
+
+    Concrete Method
+    Parsed
+
+0.  invokestatic void Sample.install ( )
+3.  iconst 3
+4.  invokestatic int Sample.foo ( int )
+7.  pop
+8.  return
+
+public static int foo ( int 0 ) ;
 
     Concrete Method
     Parsed
@@ -26,37 +57,5 @@ public static int foo ( int 0) ;
 5.  goto 4
 8.  iconst 2
 9.  ireturn
-
-public static void main ( java.lang.String [] 0 ) ;
-
-    Concrete Method
-    Parsed
-
-0.  new Sample
-1.  dup
-4.  invokespecial void Sample.<init> ( )
-7.  astore 1
-8.  iconst 1
-9.  iconst 0
-10. invokestatic int Sample.foo ( bool , bool )
-13. pop
-14. return
-
-private static void install ( ) ;
-
-    Concrete Method
-    Parsed
-
-0.  aload 0
-1.  new A
-4.  dup
-5.  invokespecial void A.<init> ( )
-8.  putfield Sample.a : A
-11. aload 0
-12. new B
-15. dup
-16. invokespecial void B.<init> ( )
-19. putfield Sample.b : A
-22. return
 
 

@@ -194,7 +194,7 @@ bool ifeq(){
         }
 
         public Template(List<string> method){
-            name = "virtual";
+            name = "Virtual";
 
             //initLoc
             var initLoc = new Location("Invoke", 0 ,0);
@@ -202,7 +202,7 @@ bool ifeq(){
             Locations.Add(initLoc);
 
             //resolve loc
-            var resolveLoc = new Location("Resolver", 0, 0);
+            var resolveLoc = new Location("Resolver", 0, 100);
             resolveLoc.Urgent = true;
             Locations.Add(resolveLoc);
 
@@ -215,7 +215,7 @@ bool ifeq(){
             //Method locations
             for (int i = 0; i < method.Count; i++)
             {
-                Locations.Add(new Location(method[i], 200, i*50));
+                Locations.Add(new Location(method[i], i*200, 200));
             }
         }
 
@@ -474,7 +474,7 @@ bool ifeq(){
                     case "invokevirtual":
                         var waiterV = new Location(loc);
                         var param = loc.inst.instArgs.Skip(3).Where(p => p != "(" && p != ")").ToList();
-                        labels = makeLabels("gya", new List<string>()
+                        labels = makeLabels("gyu", new List<string>()
                             {
                                 timeGuard,
                                 "cVirtual!",
@@ -488,7 +488,7 @@ bool ifeq(){
                         {
                             virReturn += ", os[osp] = par0, osp_inc()";
                         }
-                        labels = makeLabels("ya", new List<string>(){
+                        labels = makeLabels("yu", new List<string>(){
                             "cVirtual?",
                             virReturn
                         });

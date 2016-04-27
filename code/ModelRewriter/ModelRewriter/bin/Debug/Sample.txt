@@ -10,6 +10,7 @@ Sample ( ) ;
     Concrete Method
     Parsed
 
+
 0.  aload 0
 1.  invokespecial void java.lang.Object.<init> ( )
 4.  aload 0
@@ -22,7 +23,16 @@ Sample ( ) ;
 19. dup
 20. invokespecial void B.<init> ( )
 23. putfield Sample.b : A
-26. return
+26. aload 0
+27. getfield Sample.a : A
+30. invokevirtual int A.foo ( )
+33. pop
+34. aload 0
+35. getfield Sample.b : A
+38. invokevirtual int A.foo ( )
+41. pop
+42. return
+
 
 private static void install ( ) ;
 
