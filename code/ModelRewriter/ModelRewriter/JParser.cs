@@ -10,16 +10,19 @@ namespace ModelRewriter
 {
 	public class JParser
 	{
-        public static List<string> Classes;
+        public static List<string> ClassNames;
+        public static List<string> MethodNames;
+
         public JParser(IEnumerable<string> path)
 		{
             UppaalModel model = new UppaalModel();
             var jClasses = new List<JClass>(); 
-            Classes = new List<string>();
+            ClassNames = new List<string>();
+            MethodNames = new List<string>();
             foreach (var p in path)
             {
                 var jClass = new JClass(p);
-                Classes.Add(jClass.Name);
+                ClassNames.Add(jClass.Name);
                 jClasses.Add(jClass);
             }
             foreach (var jClass in jClasses)
@@ -55,7 +58,8 @@ namespace ModelRewriter
             model.Save("new3.xml");
 		}
 
-        private List<string> AllocateHeap(List<string> allocs, List<JClass> jClasses){
+        private List<string> AllocateHeap(List<string> allocs, List<JClass> jClasses)
+        {
             var heap = new List<string>();
             foreach (var clsName in allocs)
             {
@@ -67,16 +71,24 @@ namespace ModelRewriter
             return heap;
         }
 
-        public static int getClassID(string className){
-            for (int i = 0; i < Classes.Count; i++)
+        public static int getClassID(string className)
+        {
+            for (int i = 0; i < ClassNames.Count; i++)
             {
-                if (Classes[i] == className)
+                if (ClassNames[i] == className)
                 {
                     return i;
                 }
             }
             return -1;
         }
+
+        public static int GetMethodIndex(List<string> method)
+        {
+            var name = JClass.GetMethodName(method).Split('_').Last();
+            return MethodNames.FindIndex(x => x == name);
+        }
+
 	}
 }
 

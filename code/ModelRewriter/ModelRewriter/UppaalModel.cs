@@ -92,6 +92,10 @@ namespace ModelRewriter
                 "    return ref;\n" +
                 "}");
 
+            gloDecBuild.Append(
+                "bool signature(int classID, int t){\n" +
+                "    return true;\n}");
+
 
             globalDeclarations = gloDecBuild.ToString();
             system = sysBuild.ToString();
@@ -128,7 +132,13 @@ namespace ModelRewriter
         {
             foreach (var m in cls.Methods)
             {
-                templates.Add(new Template(m, cls.Name));
+                var methodName = JClass.FirstNonKeyword(m.First());
+                templates.Add(new Template(m, cls.Name + "_" + methodName));
+
+                if (!JParser.MethodNames.Contains(methodName))
+                {
+                    JParser.MethodNames.Add(methodName);
+                }
             }
         }
 
