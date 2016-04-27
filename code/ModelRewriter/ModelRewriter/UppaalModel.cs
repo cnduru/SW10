@@ -172,9 +172,6 @@ namespace ModelRewriter
             StringBuilder sb = new StringBuilder();
             sb.Append(declarations);
             sb.Append("\nint faultAt = 0;");
-            sb.Append("\nint faultTimeLocals = 0;");
-            sb.Append("\nint locsBitPos = 0;");
-            sb.Append("\nint locsPos = 0;");
             sb.Append("\nclock globalClock;");
 
             return sb.ToString();
