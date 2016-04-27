@@ -25,8 +25,8 @@ open JProgram;;
 
 let (prta,instantiated_classes) =
   JRTA.parse_program 
-    "java/sample.jar:rt.jar:jce.jar"
-    (JBasics.make_cms (JBasics.make_cn "Sample") JProgram.main_signature);;
+    "java/Example.jar:rt.jar:jce.jar"
+    (JBasics.make_cms (JBasics.make_cn "Example") JProgram.main_signature);;
 
 
 
@@ -38,9 +38,7 @@ let p_class =
       match ioc with
        | Class _c ->
          if ClassMap.mem (get_name ioc) instantiated_classes then
-           match super_class ioc with 
-            | Some _S -> [(cn_name (get_name  _S)) ^ " Instantiated"]
-            | _ -> ["Instantiated"] else ["Not instantiatied"]
+           ["Instantiated"] else ["Not instantiatied"]
        | _ -> []
   );;
 
@@ -72,7 +70,7 @@ let simple_info =
     JPrintHtml.p_method = p_method;
     JPrintHtml.p_pp = p_pp };;
 
-let output = "./prta"
+let output = "./example"
 let () = JPrintHtml.JCodePrinter.print_program ~info:simple_info prta output;;
 
 store_callgraph (get_callgraph prta) "call_graph.txt";;
