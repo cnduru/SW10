@@ -183,10 +183,10 @@ namespace ModelRewriter
                 loadedSystem.Add("Fault = FaultInj();\n");
                 sb.Append("Fault = FaultInj();\n");
             }
-            else if(countermeasure == "data")
+            else if(countermeasure == "heap")
             {
-                loadedSystem.Add("Fault = dataFault();\n");
-                sb.Append("Fault = dataFault();\n");
+                loadedSystem.Add("Fault = heapFault();\n");
+                sb.Append("Fault = heapFault();\n");
             }
             else if (countermeasure == "instruction")
             {
@@ -256,7 +256,7 @@ namespace ModelRewriter
 
         public void rewriteHeapFault(string path)
         {
-            XElement dataFaultTemplateXML = XElement.Parse(XMLProvider.getDataFaultTemplate());
+            XElement dataFaultTemplateXML = XElement.Parse(XMLProvider.getHeapFaultTemplate());
             XMLHandler xhl = new XMLHandler();
             Template dataFaultTemplate = xhl.getTemplateDataFault(dataFaultTemplateXML);
             dataFaultTemplate.Locations[2].committed = true;

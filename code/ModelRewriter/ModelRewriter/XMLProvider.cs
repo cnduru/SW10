@@ -26,10 +26,10 @@ namespace ModelRewriter
 	</template>";
         }
 
-        public static string getDataFaultTemplate()
+        public static string getHeapFaultTemplate()
         {
             return @"	<template>
-		<name>dataFault</name>
+		<name>heapFault</name>
 		<location id=""id2"" x=""25"" y=""-127"">
 		</location>
 		<location id=""id3"" x=""-195"" y=""-17"">
