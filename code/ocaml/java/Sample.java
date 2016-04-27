@@ -8,12 +8,14 @@ public class Sample{
     }
 
     Sample(){
-       a = new A();
-       b = new B();
+        a = new A();
+        b = new B();
+        a.foo();
+        b.foo();
     }
     //may add paramenters later
     private static void install(){
-      new Sample();
+        new Sample();
     }
 
     public static int foo(int i){
