@@ -54,25 +54,6 @@ namespace ModelRewriter
 	</template>";
         }
 
-        public static string getLocalsFaultTemplate()
-        {
-            return @"	<template>
-		<name>localsFault</name>
-		<location id=""id3"" x=""-195"" y=""-17"">
-		</location>
-		<location id=""id4"" x=""-586"" y=""-17"">
-			<committed/>
-		</location>
-		<init ref=""id4""/>
-		<transition>
-			<source ref=""id4""/>
-			<target ref=""id3""/>
-			<label kind=""select"" x=""-493"" y=""-42"">i:int[0,46], ii:int[0,7], iii:int[0,7]</label>
-			<label kind=""assignment"" x=""-493"" y=""-17"">faultTimeLocals = i, locsBitPos = ii, locsPos = iii</label>
-		</transition>
-	</template>";
-        }
-
         public static string getInstructionFaultTemplate()
         {
             return @"<template>

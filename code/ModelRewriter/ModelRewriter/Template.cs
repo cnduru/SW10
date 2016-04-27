@@ -81,9 +81,10 @@ namespace ModelRewriter
             Locations = ResolveLocations(method);
             ResolveCode();
             localDeclarations = @"const int os_size = 10;
+const int locs_size = 10;
 int os[os_size]; 
 int osp = 0;
-int locs[10];
+int locs[locs_size];
 
 void osp_inc(){
     if (osp >= os_size - 1){

@@ -55,7 +55,7 @@ namespace ModelRewriter
             gloDecBuild.Append("clock t;\n");
             // exception
             gloDecBuild.Append("bool exceptionOccurred;\n");
-            
+
             //HEAP
             gloDecBuild.Append(String.Format("const int heap_size = {0};\n",heapSize));
             gloDecBuild.Append("int H[heap_size];\n");
@@ -179,8 +179,6 @@ namespace ModelRewriter
 
             return sb.ToString();
         }
-
-        string countermeasure;
         
         private string getSystem(string stem, string faultModel)
         {
@@ -206,11 +204,6 @@ namespace ModelRewriter
                 // are new additions to the system needed in this case since edges are just added?
                 loadedSystem.Add("Fault = InstFaultInj();\n");
                 sb.Append("Fault = InstFaultInj();\n");
-            }
-            else if (faultModel == "locals")
-            {
-                loadedSystem.Add("Fault = localsFault();\n");
-                sb.Append("Fault = localsFault();\n");
             }
 
             MatchCollection matches = Regex.Matches(stem, patternSystem);
@@ -459,14 +452,12 @@ namespace ModelRewriter
 
         public void rewriteLocalFault(string path)
         {
-            XElement localsFaultTemplateXML = XElement.Parse(XMLProvider.getLocalsFaultTemplate());
-            XMLHandler xhl = new XMLHandler();
-            Template localsFaultTemplate = xhl.getTemplate(localsFaultTemplateXML);
-
-            templates.Add(localsFaultTemplate);
-
             foreach (var tem in templates)
             {
+                tem.localDeclarations += "\n\nint locsPos;\n";
+                tem.localDeclarations += "int locsBitPos;\n";
+                tem.localDeclarations += "int faultTimeLocals;\n";
+
                 if (!tem.name.Contains("Fault"))
                 {
                     foreach (var loc in tem.Locations)
@@ -474,8 +465,10 @@ namespace ModelRewriter
                         if(loc.pc != null)
                         {
                             Transition locFaultTrans = new Transition(loc, loc,
-                           Template.makeLabels("gu", "faultTimeLocals == globalClock",
-                                                     "locs[locsPos] ^= 1 << locsBitPos"));
+                                                      Template.makeLabels("gus", "faultTimeLocals == globalClock",
+                                                      "locs[locsPos] ^= 1 << locsBitPos, locsPos = i, locsBitPos = ii, faultTimeLocals = iii",
+                                                      "i:int[0,locs_size - 1], ii:int[0,7], iii:int[0,7]"));
+                            
                             tem.Transitions.Add(locFaultTrans);
                         }
 
