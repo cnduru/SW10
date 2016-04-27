@@ -193,6 +193,7 @@ bool ifeq(){
                 
         }
 
+        //The CTOR for the Virtual template.
         public Template(List<string> method){
             name = "Virtual";
 
@@ -210,7 +211,7 @@ bool ifeq(){
                 makeLabels("y", "cVirtual?")
             ));
                 
-            var returnerLoc = new Location("Returner", -300, 400);
+            var returnerLoc = new Location("Returner", -100, 300);
             returnerLoc.Urgent = true;
             Locations.Add(returnerLoc);
 

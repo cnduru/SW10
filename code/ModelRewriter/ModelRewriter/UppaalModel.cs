@@ -24,6 +24,7 @@ namespace ModelRewriter
 		string system;
 		string queries;
 
+        private StringBuilder extraGlobalDec = new StringBuilder();
 
         //var fields = new Dictionary<string, List<string>();
 
@@ -142,7 +143,6 @@ namespace ModelRewriter
             }
         }
 
-
         public void AddInvokevirtual(List<JClass> cls){
             var methods = new List<string>();
             foreach (var cl in cls)
@@ -157,6 +157,15 @@ namespace ModelRewriter
                 }
             }
             templates.Add(new Template(methods));
+
+            extraGlobalDec.Append("\n" +
+                "const int classImpl[3] = {0, 3, 3};");
+            extraGlobalDec.Append("\n" +
+                "bool signature(int classID, int methodID)\n" +
+                "{\n" +
+                "    return methodID < classImpl[classID] ^ (1 << (methodID - 1));\n" +
+                "}\n");
+
         }
 
 		//Creates a xml element with a tag and value
