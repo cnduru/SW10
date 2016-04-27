@@ -35,14 +35,6 @@ namespace ModelRewriter
             return t;
         }
 
-        public Template getTemplateDataFault(XElement xel)
-        {
-            // load template
-            Template t = getTemplate(xel);
-            
-            return t;
-        }
-
         public List<Template> getTemplates()
         {
             List<Template> t = new List<Template>();

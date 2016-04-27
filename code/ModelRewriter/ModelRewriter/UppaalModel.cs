@@ -56,7 +56,7 @@ namespace ModelRewriter
             gloDecBuild.Append("clock t;\n");
             // exception
             gloDecBuild.Append("bool exceptionOccurred;\n");
-            
+
             //HEAP
             gloDecBuild.Append(String.Format("const int heap_size = {0};\n",heapSize));
             gloDecBuild.Append("int H[heap_size];\n");
@@ -181,14 +181,15 @@ namespace ModelRewriter
             StringBuilder sb = new StringBuilder();
             sb.Append(declarations);
             sb.Append("\nint faultAt = 0;");
+            sb.Append("\nint faultTimeLocals = 0;");
+            sb.Append("\nint locsBitPos = 0;");
+            sb.Append("\nint locsPos = 0;");
             sb.Append("\nclock globalClock;");
 
             return sb.ToString();
         }
-
-        string countermeasure;
         
-        private string getSystem(string stem, string countermeasure)
+        private string getSystem(string stem, string faultModel)
         {
             List<string> loadedSystem = new List<string>();
             List<string> loadedProcesses = new List<string>();
@@ -197,17 +198,17 @@ namespace ModelRewriter
             string patternSystem = @"(\w*\s=\s\w*\(\));";//@"(Process\d? = \w*\(\));";
 
             // add fault system
-            if(countermeasure == "pc")
+            if(faultModel == "pc")
             {
                 loadedSystem.Add("Fault = FaultInj();\n");
                 sb.Append("Fault = FaultInj();\n");
             }
-            else if(countermeasure == "data")
+            else if(faultModel == "heap")
             {
-                loadedSystem.Add("Fault = dataFault();\n");
-                sb.Append("Fault = dataFault();\n");
+                loadedSystem.Add("Fault = heapFault();\n");
+                sb.Append("Fault = heapFault();\n");
             }
-            else if (countermeasure == "instruction")
+            else if (faultModel == "instruction")
             {
                 // are new additions to the system needed in this case since edges are just added?
                 loadedSystem.Add("Fault = InstFaultInj();\n");
@@ -273,17 +274,17 @@ namespace ModelRewriter
         }
 
 
-        public void rewriteDataFault(string path)
+        public void rewriteHeapFault(string path)
         {
-            XElement dataFaultTemplateXML = XElement.Parse(XMLProvider.getDataFaultTemplate());
+            XElement dataFaultTemplateXML = XElement.Parse(XMLProvider.getHeapFaultTemplate());
             XMLHandler xhl = new XMLHandler();
-            Template dataFaultTemplate = xhl.getTemplateDataFault(dataFaultTemplateXML);
+            Template dataFaultTemplate = xhl.getTemplate(dataFaultTemplateXML);
             dataFaultTemplate.Locations[2].committed = true;
 
             // todo: generalize this
             globalDeclarations += "\nclock faultClock;\n";
             globalDeclarations += "int faultTime;\n";
-            globalDeclarations += "int bitPos;\n";
+            globalDeclarations += "int bitPosHeap;\n";
             globalDeclarations += "broadcast chan f;\n";
 
             templates.Add(dataFaultTemplate);
@@ -426,7 +427,7 @@ namespace ModelRewriter
             // add inst fault template
             XElement instFaultTemplateXML = XElement.Parse(XMLProvider.getInstructionFaultTemplate());
             XMLHandler xhl = new XMLHandler();
-            Template instFaultTemplate = xhl.getTemplateDataFault(instFaultTemplateXML);
+            Template instFaultTemplate = xhl.getTemplate(instFaultTemplateXML);
             instFaultTemplate.Locations[1].committed = true;
 
             // define number range for fault number
@@ -443,58 +444,6 @@ namespace ModelRewriter
 
         }
 
-        List<List<string>> findMethods(IEnumerable<string> jbc)
-        {
-            var methods = new List<List<string>>();
-            List<string> curMethod = new List<string>();
-
-            var methodStart = new Regex("^(privat)|(public).+\\(");
-            var inst = new Regex("^([0-9]+\\.)"); 
-            foreach(var line in jbc) 
-            {
-                if (methodStart.IsMatch(line))
-                {
-                    curMethod = new List<string>();
-                    curMethod.Add(line);
-                    methods.Add(curMethod);
-                }
-                else if (inst.IsMatch(line))
-                {
-                    curMethod.Add(line);
-                }
-            }
-            return methods;
-        }
-
-        List<string> findFields(IEnumerable<string> jbc)
-        {
-            var fields = new List<string>();
-            var methodStart = new Regex("^(privat)|(public).+\\(");
-            var field = new Regex("^(privat)|(public)");
-            foreach (var line in jbc)
-            {
-                if (!methodStart.IsMatch(line) && field.IsMatch(line))
-                {
-                    fields.Add(line);
-                }
-            }
-            return fields;
-        }
-
-        private int getHeapsize()
-        {
-            foreach (var template in templates)
-            {
-                if (template.name.Contains("Install"))
-                {
-                    //var cln = template.name.Split("_")[0];
-
-                };
-
-            }
-            return 0;
-        }
-
         public void addErrorLocation()
         {
             // add extra error location for each template
@@ -509,5 +458,34 @@ namespace ModelRewriter
                 t.Locations.Add(errorLoc);
             }
         }
-	}
+
+        public void rewriteLocalFault(string path)
+        {
+            foreach (var tem in templates)
+            {
+                tem.localDeclarations += "\n\nint locsPos;\n";
+                tem.localDeclarations += "int locsBitPos;\n";
+                tem.localDeclarations += "int faultTimeLocals;\n";
+
+                if (!tem.name.Contains("Fault"))
+                {
+                    foreach (var loc in tem.Locations)
+                    {
+                        if(loc.pc != null)
+                        {
+                            Transition locFaultTrans = new Transition(loc, loc,
+                                                      Template.makeLabels("gus", "faultTimeLocals == globalClock",
+                                                      "locs[locsPos] ^= 1 << locsBitPos, locsPos = i, locsBitPos = ii, faultTimeLocals = iii",
+                                                      "i:int[0,locs_size - 1], ii:int[0,7], iii:int[0,7]"));
+                            
+                            tem.Transitions.Add(locFaultTrans);
+                        }
+
+                    }
+                }
+            }
+            Save(path);
+
+        }
+    }
 }

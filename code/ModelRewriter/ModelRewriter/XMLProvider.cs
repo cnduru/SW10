@@ -26,10 +26,10 @@ namespace ModelRewriter
 	</template>";
         }
 
-        public static string getDataFaultTemplate()
+        public static string getHeapFaultTemplate()
         {
             return @"	<template>
-		<name>dataFault</name>
+		<name>heapFault</name>
 		<location id=""id2"" x=""25"" y=""-127"">
 		</location>
 		<location id=""id3"" x=""-195"" y=""-17"">
@@ -43,13 +43,13 @@ namespace ModelRewriter
 			<target ref=""id2""/>
 			<label kind=""select"" x=""51"" y=""-153"">heapIndex:int[0,heap_size - 1]</label>
 			<label kind=""guard"" x=""-177"" y=""-106"">faultClock == faultTime</label>
-			<label kind=""assignment"" x=""51"" y=""-127"">H[heapIndex] ^= 1 &lt;&lt; bitPos, faultClock = 0</label>
+			<label kind=""assignment"" x=""51"" y=""-127"">H[heapIndex] ^= 1 &lt;&lt; bitPosHeap, faultClock = 0</label>
 		</transition>
 		<transition>
 			<source ref=""id4""/>
 			<target ref=""id3""/>
 			<label kind=""select"" x=""-493"" y=""-42"">i:int[0,46], ii:int[0,7]</label>
-			<label kind=""assignment"" x=""-493"" y=""-17"">faultTime = i, bitPos = ii</label>
+			<label kind=""assignment"" x=""-493"" y=""-17"">faultTime = i, bitPosHeap = ii</label>
 		</transition>
 	</template>";
         }
