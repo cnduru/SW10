@@ -68,6 +68,8 @@ namespace ModelRewriter
             {
                 gloDecBuild.Append("int par" + i + ";\n");
             }
+            //Invoke channel
+            gloDecBuild.Append("broadcast chan cVirtual");
             //Method channels
             foreach (var mName in methods)
             {
