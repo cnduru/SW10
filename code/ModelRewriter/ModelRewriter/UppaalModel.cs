@@ -183,7 +183,7 @@ namespace ModelRewriter
             sb.Append(declarations);
             sb.Append("\nint faultAt = 0;");
             sb.Append("\nclock globalClock;");
-            sb.Append("\nint faultTimeLocals;");
+            sb.Append("\nint faultTime;");
 
             return sb.ToString();
         }
@@ -213,11 +213,11 @@ namespace ModelRewriter
                 loadedSystem.Add("Fault = InstFaultInj();\n");
                 sb.Append("Fault = InstFaultInj();\n");
             }
-            else if (faultModel == "locals")
+            else if (faultModel == "locals" || faultModel == "opstack")
             {
                 // are new additions to the system needed in this case since edges are just added?
-                loadedSystem.Add("Fault = LocalsFaultInj();\n");
-                sb.Append("Fault = LocalsFaultInj();\n");
+                loadedSystem.Add("Fault = FaultInj();\n");
+                sb.Append("Fault = FaultInj();\n");
             }
 
             MatchCollection matches = Regex.Matches(stem, patternSystem);
@@ -464,17 +464,28 @@ namespace ModelRewriter
             }
         }
 
-        public void rewriteLocalFault(string path)
+        public void rewriteLocalFault(string path, string type = "")
         {
-            XElement localsFaultTemplateXML = XElement.Parse(XMLProvider.getLocalsFaultTemplate());
+            string variableName = "";
+
+            // "" for locals fault, "opstack" for opstack fault
+            if(type == "")
+            {
+                variableName = "locs";
+            }else if(type == "opstack")
+            {
+                variableName = "os";
+            }
+
+            XElement localsFaultTemplateXML = XElement.Parse(XMLProvider.getFaultInjTemplate());
             XMLHandler xhl = new XMLHandler();
             Template localsFaultTemplate = xhl.getTemplate(localsFaultTemplateXML);
             templates.Add(localsFaultTemplate);
 
             foreach (var tem in templates)
             {
-                tem.localDeclarations += "\n\nint locsPos;\n";
-                tem.localDeclarations += "int locsBitPos;\n";
+                tem.localDeclarations += string.Format("\n\nint {0}Pos;\n", variableName);
+                tem.localDeclarations += string.Format("int {0}BitPos;\n", variableName);
 
                 if (!tem.name.Contains("Fault"))
                 {
@@ -491,30 +502,30 @@ namespace ModelRewriter
                             {
                                 if(tr.grds.content != "")
                                 {
-                                    tr.grds.content += " && faultTimeLocals > globalClock";
+                                    tr.grds.content += " && faultTime > globalClock";
                                 }
                                 else
                                 {
-                                    tr.grds.content = "faultTimeLocals > globalClock";
+                                    tr.grds.content = "faultTime > globalClock";
                                 }
 
                                 if (tr.sels.content != "")
                                 {
-                                    tr.asms.content += ", faultTimeLocals = 200";
+                                    tr.asms.content += ", faultTime = 200";
                                 }
                                 else
                                 {
-                                    tr.asms.content = "faultTimeLocals = 200";
+                                    tr.asms.content = "faultTime = 200";
                                 }
                             }
                         }
 
-
-
+                        string posString1 = string.Format("{0}[{0}Pos] ^= 1 << {0}BitPos", variableName);
+                        string posString2 = string.Format("{0}Pos:int[0,{0}_size - 1], {0}BitPos:int[0,7]", variableName);
                         Transition locFaultTrans = new Transition(loc, loc,
-                                                      Template.makeLabels("gus", "faultTimeLocals <= globalClock",
-                                                      "locs[locsPos] ^= 1 << locsBitPos",
-                                                      "locsPos:int[0,locs_size - 1], locsBitPos:int[0,7]"));
+                                                      Template.makeLabels("gus", "faultTime <= globalClock",
+                                                      posString1,
+                                                      posString2));
                             
                         tem.Transitions.Add(locFaultTrans);
                         
@@ -523,6 +534,11 @@ namespace ModelRewriter
             }
 
             Save(path);
+        }
+
+        public void rewriteOpstackFault(string path)
+        {
+            rewriteLocalFault(path, "opstack");
         }
     }
 }
