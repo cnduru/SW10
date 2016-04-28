@@ -125,7 +125,7 @@ namespace ModelRewriter
                 srcDstPair.syncs = getSyncs(trans);
 
                 // add nails
-                //srcDstPair.nails = getNails(trans);
+                srcDstPair.nails = getNails(trans);
 
                 transitions.Add(srcDstPair);
             }
