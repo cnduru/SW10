@@ -124,6 +124,9 @@ namespace ModelRewriter
                 // add synchronizations
                 srcDstPair.syncs = getSyncs(trans);
 
+                // add nails
+                srcDstPair.nails = getNails(trans);
+
                 transitions.Add(srcDstPair);
             }
 
@@ -212,6 +215,15 @@ namespace ModelRewriter
             {
                 return new Transition.synchronizations() { content = "", x = 0, y = 0 };
             }
+        }
+
+        private List<ModelRewriter.Transition.Nail> getNails(XElement el)
+        {
+            return el.Elements("nail").Select(xn => new Transition.Nail()
+                {
+                    x = Convert.ToInt32(xn.Attribute("x").Value),
+                    y = Convert.ToInt32(xn.Attribute("y").Value)
+                }).ToList();
         }
     }
 }
