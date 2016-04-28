@@ -465,7 +465,6 @@ namespace ModelRewriter
             {
                 tem.localDeclarations += "\n\nint locsPos;\n";
                 tem.localDeclarations += "int locsBitPos;\n";
-                tem.localDeclarations += "int faultTimeLocals;\n";
 
                 if (!tem.name.Contains("Fault"))
                 {
