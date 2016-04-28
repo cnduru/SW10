@@ -471,16 +471,45 @@ namespace ModelRewriter
                 {
                     foreach (var loc in tem.Locations)
                     {
+                        foreach (var tr in tem.Transitions)
+                        {
+                            if (tr.source.id == loc.id )
+                            {
+                                if(tr.grds.content != "")
+                                {
+                                    tr.grds.content += " && faultTimeLocals > globalClock";
+                                }
+                                else
+                                {
+                                    tr.grds.content = "faultTimeLocals > globalClock";
+                                }
+
+                                if (tr.sels.content != "")
+                                {
+                                    tr.asms.content += ", faultTimeLocals = 200";
+                                }
+                                else
+                                {
+                                    tr.asms.content = "faultTimeLocals = 200";
+                                }
+
+                               /* foreach (var lab in tr.labels)
+                                {
+                                    if (lab.kind == "guard" && lab.content != "")
+                                    {
+                                        lab.content += " && faultTimeLocals > globalClock";
+                                    }
+
+                                    if (lab.kind == "assignment" && lab.content != "")
+                                    {
+                                        lab.content += ", faultTimeLocals = 200";
+                                    }
+                                }*/
+                            }
+                        }
+
                         if (loc.pc != null)
                         {
-                            foreach (var tr in tem.Transitions)
-                            {
-                                if (tr.source.id == loc.id)
-                                {
-                                    tr.labels.Select(l => l.kind == "guard" ? Template.makeLabels("g", l.content + " && faultTimeLocals > globalClock").First() : l);
-                                    tr.labels.Select(l => l.kind == "assignments" ? Template.makeLabels("a", l.content + ", faultTimeLocals = 200").First() : l);
-                                }
-                            }
 
                             Transition locFaultTrans = new Transition(loc, loc,
                                                       Template.makeLabels("gus", "faultTimeLocals <= globalClock",
