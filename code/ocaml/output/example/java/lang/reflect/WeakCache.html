@@ -1,0 +1,2462 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>
+java.lang.reflect.WeakCache
+</title>
+<link rel="StyleSheet" href="../../../style.css" type="text/css" media="all" />
+<script type="text/javascript" src="../../../actions.js">
+</script>
+</head>
+<body>
+<div class="class">
+<a name="java.lang.reflect.WeakCache" href="#">
+
+</a>
+<div class="classname">
+Class java.lang.reflect.WeakCache
+</div>
+<ul class="annot">
+<li>
+Instantiated
+</li>
+</ul>
+<div class="field">
+<a name="java.lang.reflect.WeakCache:subKeyFactory:java.lang.reflect.WeakCache$BiFunction" href="#">
+
+</a>
+<span class="field_signature">
+private final 
+<a href="../../../java/lang/reflect/WeakCache$BiFunction.html">
+java.lang.reflect.WeakCache$BiFunction
+</a>
+ subKeyFactory;
+</span>
+</div>
+<div class="field">
+<a name="java.lang.reflect.WeakCache:reverseMap:java.util.concurrent.ConcurrentMap" href="#">
+
+</a>
+<span class="field_signature">
+private final 
+<a href="../../../java/util/concurrent/ConcurrentMap.html">
+java.util.concurrent.ConcurrentMap
+</a>
+ reverseMap;
+</span>
+</div>
+<div class="field">
+<a name="java.lang.reflect.WeakCache:refQueue:java.lang.ref.ReferenceQueue" href="#">
+
+</a>
+<span class="field_signature">
+private final 
+<a href="../../../java/lang/ref/ReferenceQueue.html">
+java.lang.ref.ReferenceQueue
+</a>
+ refQueue;
+</span>
+</div>
+<div class="field">
+<a name="java.lang.reflect.WeakCache:map:java.util.concurrent.ConcurrentMap" href="#">
+
+</a>
+<span class="field_signature">
+private final 
+<a href="../../../java/util/concurrent/ConcurrentMap.html">
+java.util.concurrent.ConcurrentMap
+</a>
+ map;
+</span>
+</div>
+<div class="field">
+<a name="java.lang.reflect.WeakCache:valueFactory:java.lang.reflect.WeakCache$BiFunction" href="#">
+
+</a>
+<span class="field_signature">
+private final 
+<a href="../../../java/lang/reflect/WeakCache$BiFunction.html">
+java.lang.reflect.WeakCache$BiFunction
+</a>
+ valueFactory;
+</span>
+</div>
+<div class="method">
+<a name="java.lang.reflect.WeakCache:get:java.lang.Objectjava.lang.Objectjava.lang.Object" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 
+<span>
+get
+</span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+, 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object requireNonNull(java.lang.Object)">
+java.util.Objects.requireNonNull
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/Objects.html#java.util.Objects:requireNonNull:java.lang.Objectjava.lang.Object" title="java.lang.Object requireNonNull(java.lang.Object)">
+java.util.Objects.requireNonNull
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+pop
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void expungeStaleEntries()">
+java.lang.reflect.WeakCache.expungeStaleEntries
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.lang.reflect.WeakCache:expungeStaleEntries:void" title="void expungeStaleEntries()">
+java.lang.reflect.WeakCache.expungeStaleEntries
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.reflect.WeakCache:refQueue:java.lang.ref.ReferenceQueue">
+java.lang.reflect.WeakCache.refQueue
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/lang/ref/ReferenceQueue.html">
+java.lang.ref.ReferenceQueue
+</a>
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object valueOf(java.lang.Object, java.lang.ref.ReferenceQueue)">
+java.lang.reflect.WeakCache$CacheKey.valueOf
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+<a href="../../../java/lang/ref/ReferenceQueue.html">
+java.lang.ref.ReferenceQueue
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+astore  3
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.reflect.WeakCache:map:java.util.concurrent.ConcurrentMap">
+java.lang.reflect.WeakCache.map
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/util/concurrent/ConcurrentMap.html">
+java.util.concurrent.ConcurrentMap
+</a>
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+invokeinterface 
+</span>
+<span>
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object get(java.lang.Object)">
+java.util.concurrent.ConcurrentMap.get
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap.get
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="../../../java/util/concurrent/ConcurrentMap.html">
+java.util.concurrent.ConcurrentMap
+</a>
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+astore  4
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+aload  4
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+ifnonnull 37
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.reflect.WeakCache:map:java.util.concurrent.ConcurrentMap">
+java.lang.reflect.WeakCache.map
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/util/concurrent/ConcurrentMap.html">
+java.util.concurrent.ConcurrentMap
+</a>
+</span>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html">
+java.util.concurrent.ConcurrentHashMap
+</a>
+</span>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.util.concurrent.ConcurrentHashMap.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.util.concurrent.ConcurrentHashMap.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="50">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="51">
+<div class="instruction">
+<span>
+astore  4
+</span>
+</div>
+</li>
+<li value="53">
+<div class="instruction">
+<span>
+invokeinterface 
+</span>
+<span>
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object putIfAbsent(java.lang.Object, java.lang.Object)">
+java.util.concurrent.ConcurrentMap.putIfAbsent
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:putIfAbsent:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object putIfAbsent(java.lang.Object, java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap.putIfAbsent
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="58">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="../../../java/util/concurrent/ConcurrentMap.html">
+java.util.concurrent.ConcurrentMap
+</a>
+</span>
+</div>
+</li>
+<li value="61">
+<div class="instruction">
+<span>
+astore  5
+</span>
+</div>
+</li>
+<li value="63">
+<div class="instruction">
+<span>
+aload  5
+</span>
+</div>
+</li>
+<li value="65">
+<div class="instruction">
+<span>
+ifnull 7
+</span>
+</div>
+</li>
+<li value="68">
+<div class="instruction">
+<span>
+aload  5
+</span>
+</div>
+</li>
+<li value="70">
+<div class="instruction">
+<span>
+astore  4
+</span>
+</div>
+</li>
+<li value="72">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="73">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.reflect.WeakCache:subKeyFactory:java.lang.reflect.WeakCache$BiFunction">
+java.lang.reflect.WeakCache.subKeyFactory
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/lang/reflect/WeakCache$BiFunction.html">
+java.lang.reflect.WeakCache$BiFunction
+</a>
+</span>
+</div>
+</li>
+<li value="76">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="77">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="78">
+<div class="instruction">
+<span>
+invokeinterface 
+</span>
+<span>
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object apply(java.lang.Object, java.lang.Object)">
+java.lang.reflect.WeakCache$BiFunction.apply
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="83">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object requireNonNull(java.lang.Object)">
+java.util.Objects.requireNonNull
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/Objects.html#java.util.Objects:requireNonNull:java.lang.Objectjava.lang.Object" title="java.lang.Object requireNonNull(java.lang.Object)">
+java.util.Objects.requireNonNull
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="86">
+<div class="instruction">
+<span>
+astore  5
+</span>
+</div>
+</li>
+<li value="88">
+<div class="instruction">
+<span>
+aload  4
+</span>
+</div>
+</li>
+<li value="90">
+<div class="instruction">
+<span>
+aload  5
+</span>
+</div>
+</li>
+<li value="92">
+<div class="instruction">
+<span>
+invokeinterface 
+</span>
+<span>
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object get(java.lang.Object)">
+java.util.concurrent.ConcurrentMap.get
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap.get
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="97">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="../../../java/lang/reflect/WeakCache$Supplier.html">
+java.lang.reflect.WeakCache$Supplier
+</a>
+</span>
+</div>
+</li>
+<li value="100">
+<div class="instruction">
+<span>
+astore  6
+</span>
+</div>
+</li>
+<li value="102">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="103">
+<div class="instruction">
+<span>
+astore  7
+</span>
+</div>
+</li>
+<li value="105">
+<div class="instruction">
+<span>
+aload  6
+</span>
+</div>
+</li>
+<li value="107">
+<div class="instruction">
+<span>
+ifnull 20
+</span>
+</div>
+</li>
+<li value="110">
+<div class="instruction">
+<span>
+aload  6
+</span>
+</div>
+</li>
+<li value="112">
+<div class="instruction">
+<span>
+invokeinterface 
+</span>
+<span>
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object get()">
+java.lang.reflect.WeakCache$Supplier.get
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/reflect/WeakCache$LookupValue.html#java.lang.reflect.WeakCache$LookupValue:get:java.lang.Object" title="java.lang.Object get()">
+java.lang.reflect.WeakCache$LookupValue.get
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="117">
+<div class="instruction">
+<span>
+astore  8
+</span>
+</div>
+</li>
+<li value="119">
+<div class="instruction">
+<span>
+aload  8
+</span>
+</div>
+</li>
+<li value="121">
+<div class="instruction">
+<span>
+ifnull 6
+</span>
+</div>
+</li>
+<li value="124">
+<div class="instruction">
+<span>
+aload  8
+</span>
+</div>
+</li>
+<li value="126">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+<li value="127">
+<div class="instruction">
+<span>
+aload  7
+</span>
+</div>
+</li>
+<li value="129">
+<div class="instruction">
+<span>
+ifnonnull 19
+</span>
+</div>
+</li>
+<li value="132">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+java.lang.reflect.WeakCache$Factory
+</span>
+</div>
+</li>
+<li value="135">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="136">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="137">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="138">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="139">
+<div class="instruction">
+<span>
+aload  5
+</span>
+</div>
+</li>
+<li value="141">
+<div class="instruction">
+<span>
+aload  4
+</span>
+</div>
+</li>
+<li value="143">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.reflect.WeakCache, java.lang.Object, java.lang.Object, java.lang.Object, java.util.concurrent.ConcurrentMap)">
+java.lang.reflect.WeakCache$Factory.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="WeakCache.html">
+java.lang.reflect.WeakCache
+</a>
+, 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+<a href="../../../java/util/concurrent/ConcurrentMap.html">
+java.util.concurrent.ConcurrentMap
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="146">
+<div class="instruction">
+<span>
+astore  7
+</span>
+</div>
+</li>
+<li value="148">
+<div class="instruction">
+<span>
+aload  6
+</span>
+</div>
+</li>
+<li value="150">
+<div class="instruction">
+<span>
+ifnonnull 31
+</span>
+</div>
+</li>
+<li value="153">
+<div class="instruction">
+<span>
+aload  4
+</span>
+</div>
+</li>
+<li value="155">
+<div class="instruction">
+<span>
+aload  5
+</span>
+</div>
+</li>
+<li value="157">
+<div class="instruction">
+<span>
+aload  7
+</span>
+</div>
+</li>
+<li value="159">
+<div class="instruction">
+<span>
+invokeinterface 
+</span>
+<span>
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object putIfAbsent(java.lang.Object, java.lang.Object)">
+java.util.concurrent.ConcurrentMap.putIfAbsent
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:putIfAbsent:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object putIfAbsent(java.lang.Object, java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap.putIfAbsent
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="164">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="../../../java/lang/reflect/WeakCache$Supplier.html">
+java.lang.reflect.WeakCache$Supplier
+</a>
+</span>
+</div>
+</li>
+<li value="167">
+<div class="instruction">
+<span>
+astore  6
+</span>
+</div>
+</li>
+<li value="169">
+<div class="instruction">
+<span>
+aload  6
+</span>
+</div>
+</li>
+<li value="171">
+<div class="instruction">
+<span>
+ifnonnull -66
+</span>
+</div>
+</li>
+<li value="174">
+<div class="instruction">
+<span>
+aload  7
+</span>
+</div>
+</li>
+<li value="176">
+<div class="instruction">
+<span>
+astore  6
+</span>
+</div>
+</li>
+<li value="178">
+<div class="instruction">
+<span>
+goto -73
+</span>
+</div>
+</li>
+<li value="181">
+<div class="instruction">
+<span>
+aload  4
+</span>
+</div>
+</li>
+<li value="183">
+<div class="instruction">
+<span>
+aload  5
+</span>
+</div>
+</li>
+<li value="185">
+<div class="instruction">
+<span>
+aload  6
+</span>
+</div>
+</li>
+<li value="187">
+<div class="instruction">
+<span>
+aload  7
+</span>
+</div>
+</li>
+<li value="189">
+<div class="instruction">
+<span>
+invokeinterface 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool replace(java.lang.Object, java.lang.Object, java.lang.Object)">
+java.util.concurrent.ConcurrentMap.replace
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="194">
+<div class="instruction">
+<span>
+ifeq 10
+</span>
+</div>
+</li>
+<li value="197">
+<div class="instruction">
+<span>
+aload  7
+</span>
+</div>
+</li>
+<li value="199">
+<div class="instruction">
+<span>
+astore  6
+</span>
+</div>
+</li>
+<li value="201">
+<div class="instruction">
+<span>
+goto -96
+</span>
+</div>
+</li>
+<li value="204">
+<div class="instruction">
+<span>
+aload  4
+</span>
+</div>
+</li>
+<li value="206">
+<div class="instruction">
+<span>
+aload  5
+</span>
+</div>
+</li>
+<li value="208">
+<div class="instruction">
+<span>
+invokeinterface 
+</span>
+<span>
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object get(java.lang.Object)">
+java.util.concurrent.ConcurrentMap.get
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap.get
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="213">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="../../../java/lang/reflect/WeakCache$Supplier.html">
+java.lang.reflect.WeakCache$Supplier
+</a>
+</span>
+</div>
+</li>
+<li value="216">
+<div class="instruction">
+<span>
+astore  6
+</span>
+</div>
+</li>
+<li value="218">
+<div class="instruction">
+<span>
+goto -113
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.reflect.WeakCache:access$000:java.lang.reflect.WeakCachejava.lang.reflect.WeakCache$BiFunction" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<a href="../../../java/lang/reflect/WeakCache$BiFunction.html">
+java.lang.reflect.WeakCache$BiFunction
+</a>
+ 
+<span>
+access$000
+</span>
+(
+<a href="WeakCache.html">
+java.lang.reflect.WeakCache
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.reflect.WeakCache:valueFactory:java.lang.reflect.WeakCache$BiFunction">
+java.lang.reflect.WeakCache.valueFactory
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/lang/reflect/WeakCache$BiFunction.html">
+java.lang.reflect.WeakCache$BiFunction
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.reflect.WeakCache:size:I" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span>
+size
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void expungeStaleEntries()">
+java.lang.reflect.WeakCache.expungeStaleEntries
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.lang.reflect.WeakCache:expungeStaleEntries:void" title="void expungeStaleEntries()">
+java.lang.reflect.WeakCache.expungeStaleEntries
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.reflect.WeakCache:reverseMap:java.util.concurrent.ConcurrentMap">
+java.lang.reflect.WeakCache.reverseMap
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/util/concurrent/ConcurrentMap.html">
+java.util.concurrent.ConcurrentMap
+</a>
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+invokeinterface 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int size()">
+java.util.concurrent.ConcurrentMap.size
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:size:I" title="int size()">
+java.util.concurrent.ConcurrentHashMap.size
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.reflect.WeakCache:containsValue:java.lang.ObjectZ" href="#">
+
+</a>
+<div class="method_signature">
+public 
+bool
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+containsValue
+</span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/reflect/Proxy.html#java.lang.reflect.Proxy:isProxyClass:java.lang.ClassZ" title="bool isProxyClass(java.lang.Class)">
+java.lang.reflect.Proxy.isProxyClass(java.lang.Class)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object requireNonNull(java.lang.Object)">
+java.util.Objects.requireNonNull
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/Objects.html#java.util.Objects:requireNonNull:java.lang.Objectjava.lang.Object" title="java.lang.Object requireNonNull(java.lang.Object)">
+java.util.Objects.requireNonNull
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+pop
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void expungeStaleEntries()">
+java.lang.reflect.WeakCache.expungeStaleEntries
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.lang.reflect.WeakCache:expungeStaleEntries:void" title="void expungeStaleEntries()">
+java.lang.reflect.WeakCache.expungeStaleEntries
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.reflect.WeakCache:reverseMap:java.util.concurrent.ConcurrentMap">
+java.lang.reflect.WeakCache.reverseMap
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/util/concurrent/ConcurrentMap.html">
+java.util.concurrent.ConcurrentMap
+</a>
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../java/lang/reflect/WeakCache$LookupValue.html">
+java.lang.reflect.WeakCache$LookupValue
+</a>
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.Object)">
+java.lang.reflect.WeakCache$LookupValue.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/reflect/WeakCache$LookupValue.html#java.lang.reflect.WeakCache$LookupValue:&lt;init&gt;:java.lang.Objectvoid" title="void &lt;init&gt;(java.lang.Object)">
+java.lang.reflect.WeakCache$LookupValue.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+invokeinterface 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool containsKey(java.lang.Object)">
+java.util.concurrent.ConcurrentMap.containsKey
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap.containsKey
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.reflect.WeakCache:access$100:java.lang.reflect.WeakCachejava.util.concurrent.ConcurrentMap" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<a href="../../../java/util/concurrent/ConcurrentMap.html">
+java.util.concurrent.ConcurrentMap
+</a>
+ 
+<span>
+access$100
+</span>
+(
+<a href="WeakCache.html">
+java.lang.reflect.WeakCache
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.reflect.WeakCache:reverseMap:java.util.concurrent.ConcurrentMap">
+java.lang.reflect.WeakCache.reverseMap
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/util/concurrent/ConcurrentMap.html">
+java.util.concurrent.ConcurrentMap
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.reflect.WeakCache:expungeStaleEntries:void" href="#">
+
+</a>
+<div class="method_signature">
+private 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+expungeStaleEntries
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.lang.reflect.WeakCache:containsValue:java.lang.ObjectZ" title="bool containsValue(java.lang.Object)">
+java.lang.reflect.WeakCache.containsValue(java.lang.Object)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.reflect.WeakCache:refQueue:java.lang.ref.ReferenceQueue">
+java.lang.reflect.WeakCache.refQueue
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/lang/ref/ReferenceQueue.html">
+java.lang.ref.ReferenceQueue
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../../java/lang/ref/Reference.html">
+java.lang.ref.Reference
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.ref.Reference poll()">
+java.lang.ref.ReferenceQueue.poll
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/ref/ReferenceQueue.html#java.lang.ref.ReferenceQueue:poll:java.lang.ref.Reference" title="java.lang.ref.Reference poll()">
+java.lang.ref.ReferenceQueue.poll
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="../../../java/lang/reflect/WeakCache$CacheKey.html">
+java.lang.reflect.WeakCache$CacheKey
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+astore  1
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+ifnull 18
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.reflect.WeakCache:map:java.util.concurrent.ConcurrentMap">
+java.lang.reflect.WeakCache.map
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/util/concurrent/ConcurrentMap.html">
+java.util.concurrent.ConcurrentMap
+</a>
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.reflect.WeakCache:reverseMap:java.util.concurrent.ConcurrentMap">
+java.lang.reflect.WeakCache.reverseMap
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/util/concurrent/ConcurrentMap.html">
+java.util.concurrent.ConcurrentMap
+</a>
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void expungeFrom(java.util.concurrent.ConcurrentMap, java.util.concurrent.ConcurrentMap)">
+java.lang.reflect.WeakCache$CacheKey.expungeFrom
+</span>
+</span>
+<span>
+(
+<a href="../../../java/util/concurrent/ConcurrentMap.html">
+java.util.concurrent.ConcurrentMap
+</a>
+, 
+<a href="../../../java/util/concurrent/ConcurrentMap.html">
+java.util.concurrent.ConcurrentMap
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+goto -27
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.reflect.WeakCache:&lt;init&gt;:java.lang.reflect.WeakCache$BiFunctionjava.lang.reflect.WeakCache$BiFunctionvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<span class="methodname clickable" onclick="showInfoList(this)">
+WeakCache
+</span>
+(
+<a href="../../../java/lang/reflect/WeakCache$BiFunction.html">
+java.lang.reflect.WeakCache$BiFunction
+</a>
+ 1
+, 
+<a href="../../../java/lang/reflect/WeakCache$BiFunction.html">
+java.lang.reflect.WeakCache$BiFunction
+</a>
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/reflect/Proxy.html#java.lang.reflect.Proxy:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.lang.reflect.Proxy.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/Object.html#java.lang.Object:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../java/lang/ref/ReferenceQueue.html">
+java.lang.ref.ReferenceQueue
+</a>
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.ref.ReferenceQueue.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/lang/ref/ReferenceQueue.html#java.lang.ref.ReferenceQueue:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.ref.ReferenceQueue.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.lang.reflect.WeakCache:refQueue:java.lang.ref.ReferenceQueue">
+java.lang.reflect.WeakCache.refQueue
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/lang/ref/ReferenceQueue.html">
+java.lang.ref.ReferenceQueue
+</a>
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html">
+java.util.concurrent.ConcurrentHashMap
+</a>
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.util.concurrent.ConcurrentHashMap.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.util.concurrent.ConcurrentHashMap.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.lang.reflect.WeakCache:map:java.util.concurrent.ConcurrentMap">
+java.lang.reflect.WeakCache.map
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/util/concurrent/ConcurrentMap.html">
+java.util.concurrent.ConcurrentMap
+</a>
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html">
+java.util.concurrent.ConcurrentHashMap
+</a>
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.util.concurrent.ConcurrentHashMap.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.util.concurrent.ConcurrentHashMap.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.lang.reflect.WeakCache:reverseMap:java.util.concurrent.ConcurrentMap">
+java.lang.reflect.WeakCache.reverseMap
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/util/concurrent/ConcurrentMap.html">
+java.util.concurrent.ConcurrentMap
+</a>
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object requireNonNull(java.lang.Object)">
+java.util.Objects.requireNonNull
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/Objects.html#java.util.Objects:requireNonNull:java.lang.Objectjava.lang.Object" title="java.lang.Object requireNonNull(java.lang.Object)">
+java.util.Objects.requireNonNull
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="../../../java/lang/reflect/WeakCache$BiFunction.html">
+java.lang.reflect.WeakCache$BiFunction
+</a>
+</span>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.lang.reflect.WeakCache:subKeyFactory:java.lang.reflect.WeakCache$BiFunction">
+java.lang.reflect.WeakCache.subKeyFactory
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/lang/reflect/WeakCache$BiFunction.html">
+java.lang.reflect.WeakCache$BiFunction
+</a>
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="50">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object requireNonNull(java.lang.Object)">
+java.util.Objects.requireNonNull
+</span>
+</span>
+<span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/util/Objects.html#java.util.Objects:requireNonNull:java.lang.Objectjava.lang.Object" title="java.lang.Object requireNonNull(java.lang.Object)">
+java.util.Objects.requireNonNull
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="53">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="../../../java/lang/reflect/WeakCache$BiFunction.html">
+java.lang.reflect.WeakCache$BiFunction
+</a>
+</span>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.lang.reflect.WeakCache:valueFactory:java.lang.reflect.WeakCache$BiFunction">
+java.lang.reflect.WeakCache.valueFactory
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/lang/reflect/WeakCache$BiFunction.html">
+java.lang.reflect.WeakCache$BiFunction
+</a>
+</span>
+</div>
+</li>
+<li value="59">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+</div>
+</body>
+</html>

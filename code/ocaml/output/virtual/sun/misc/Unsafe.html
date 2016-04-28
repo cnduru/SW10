@@ -1,0 +1,8221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>
+sun.misc.Unsafe
+</title>
+<link rel="StyleSheet" href="../../style.css" type="text/css" media="all" />
+<script type="text/javascript" src="../../actions.js">
+</script>
+</head>
+<body>
+<div class="class">
+<a name="sun.misc.Unsafe" href="#">
+
+</a>
+<div class="classname">
+Class sun.misc.Unsafe
+</div>
+<ul class="annot">
+<li>
+Instantiated
+</li>
+</ul>
+<div class="field">
+<a name="sun.misc.Unsafe:ARRAY_BYTE_INDEX_SCALE:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ ARRAY_BYTE_INDEX_SCALE;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Unsafe:INVALID_FIELD_OFFSET:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ INVALID_FIELD_OFFSET;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Unsafe:ARRAY_INT_INDEX_SCALE:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ ARRAY_INT_INDEX_SCALE;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Unsafe:ADDRESS_SIZE:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ ADDRESS_SIZE;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Unsafe:ARRAY_OBJECT_INDEX_SCALE:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ ARRAY_OBJECT_INDEX_SCALE;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Unsafe:ARRAY_DOUBLE_INDEX_SCALE:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ ARRAY_DOUBLE_INDEX_SCALE;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Unsafe:ARRAY_BOOLEAN_INDEX_SCALE:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ ARRAY_BOOLEAN_INDEX_SCALE;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Unsafe:ARRAY_SHORT_INDEX_SCALE:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ ARRAY_SHORT_INDEX_SCALE;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Unsafe:ARRAY_FLOAT_INDEX_SCALE:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ ARRAY_FLOAT_INDEX_SCALE;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Unsafe:ARRAY_LONG_INDEX_SCALE:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ ARRAY_LONG_INDEX_SCALE;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Unsafe:ARRAY_CHAR_INDEX_SCALE:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ ARRAY_CHAR_INDEX_SCALE;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Unsafe:ARRAY_BYTE_BASE_OFFSET:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ ARRAY_BYTE_BASE_OFFSET;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Unsafe:theUnsafe:sun.misc.Unsafe" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+<a href="Unsafe.html">
+sun.misc.Unsafe
+</a>
+ theUnsafe;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Unsafe:ARRAY_INT_BASE_OFFSET:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ ARRAY_INT_BASE_OFFSET;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Unsafe:ARRAY_OBJECT_BASE_OFFSET:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ ARRAY_OBJECT_BASE_OFFSET;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Unsafe:ARRAY_DOUBLE_BASE_OFFSET:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ ARRAY_DOUBLE_BASE_OFFSET;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Unsafe:ARRAY_BOOLEAN_BASE_OFFSET:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ ARRAY_BOOLEAN_BASE_OFFSET;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Unsafe:ARRAY_SHORT_BASE_OFFSET:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ ARRAY_SHORT_BASE_OFFSET;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Unsafe:ARRAY_FLOAT_BASE_OFFSET:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ ARRAY_FLOAT_BASE_OFFSET;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Unsafe:ARRAY_LONG_BASE_OFFSET:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ ARRAY_LONG_BASE_OFFSET;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Unsafe:ARRAY_CHAR_BASE_OFFSET:I" href="#">
+
+</a>
+<span class="field_signature">
+public static final 
+int
+ ARRAY_CHAR_BASE_OFFSET;
+</span>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:&lt;clinit&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<span>
+clinit
+</span>
+{};
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void registerNatives()">
+sun.misc.Unsafe.registerNatives
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:registerNatives:void" title="void registerNatives()">
+sun.misc.Unsafe.registerNatives
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+ldc class Lsun/misc/Unsafe;
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+anewarray 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+ldc string &apos;getUnsafe&apos;
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+aastore
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void registerMethodsToFilter(java.lang.Class, java.lang.String[])">
+sun.reflect.Reflection.registerMethodsToFilter
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+, 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+[]
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/reflect/Reflection.html#sun.reflect.Reflection:registerMethodsToFilter:java.lang.Classjava.lang.String.-void" title="void registerMethodsToFilter(java.lang.Class, java.lang.String[])">
+sun.reflect.Reflection.registerMethodsToFilter
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+sun.misc.Unsafe.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:&lt;init&gt;:void" title="void &lt;init&gt;()">
+sun.misc.Unsafe.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:theUnsafe:sun.misc.Unsafe">
+sun.misc.Unsafe.theUnsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:theUnsafe:sun.misc.Unsafe">
+sun.misc.Unsafe.theUnsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+ldc class [Z
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int arrayBaseOffset(java.lang.Class)">
+sun.misc.Unsafe.arrayBaseOffset
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:arrayBaseOffset:java.lang.ClassI" title="int arrayBaseOffset(java.lang.Class)">
+sun.misc.Unsafe.arrayBaseOffset
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:ARRAY_BOOLEAN_BASE_OFFSET:I">
+sun.misc.Unsafe.ARRAY_BOOLEAN_BASE_OFFSET
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:theUnsafe:sun.misc.Unsafe">
+sun.misc.Unsafe.theUnsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+ldc class [B
+</span>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int arrayBaseOffset(java.lang.Class)">
+sun.misc.Unsafe.arrayBaseOffset
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:arrayBaseOffset:java.lang.ClassI" title="int arrayBaseOffset(java.lang.Class)">
+sun.misc.Unsafe.arrayBaseOffset
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:ARRAY_BYTE_BASE_OFFSET:I">
+sun.misc.Unsafe.ARRAY_BYTE_BASE_OFFSET
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="52">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:theUnsafe:sun.misc.Unsafe">
+sun.misc.Unsafe.theUnsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="55">
+<div class="instruction">
+<span>
+ldc class [S
+</span>
+</div>
+</li>
+<li value="58">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int arrayBaseOffset(java.lang.Class)">
+sun.misc.Unsafe.arrayBaseOffset
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:arrayBaseOffset:java.lang.ClassI" title="int arrayBaseOffset(java.lang.Class)">
+sun.misc.Unsafe.arrayBaseOffset
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="61">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:ARRAY_SHORT_BASE_OFFSET:I">
+sun.misc.Unsafe.ARRAY_SHORT_BASE_OFFSET
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="64">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:theUnsafe:sun.misc.Unsafe">
+sun.misc.Unsafe.theUnsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="67">
+<div class="instruction">
+<span>
+ldc class [C
+</span>
+</div>
+</li>
+<li value="70">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int arrayBaseOffset(java.lang.Class)">
+sun.misc.Unsafe.arrayBaseOffset
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:arrayBaseOffset:java.lang.ClassI" title="int arrayBaseOffset(java.lang.Class)">
+sun.misc.Unsafe.arrayBaseOffset
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="73">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:ARRAY_CHAR_BASE_OFFSET:I">
+sun.misc.Unsafe.ARRAY_CHAR_BASE_OFFSET
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="76">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:theUnsafe:sun.misc.Unsafe">
+sun.misc.Unsafe.theUnsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="79">
+<div class="instruction">
+<span>
+ldc class [I
+</span>
+</div>
+</li>
+<li value="82">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int arrayBaseOffset(java.lang.Class)">
+sun.misc.Unsafe.arrayBaseOffset
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:arrayBaseOffset:java.lang.ClassI" title="int arrayBaseOffset(java.lang.Class)">
+sun.misc.Unsafe.arrayBaseOffset
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="85">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:ARRAY_INT_BASE_OFFSET:I">
+sun.misc.Unsafe.ARRAY_INT_BASE_OFFSET
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="88">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:theUnsafe:sun.misc.Unsafe">
+sun.misc.Unsafe.theUnsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="91">
+<div class="instruction">
+<span>
+ldc class [J
+</span>
+</div>
+</li>
+<li value="94">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int arrayBaseOffset(java.lang.Class)">
+sun.misc.Unsafe.arrayBaseOffset
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:arrayBaseOffset:java.lang.ClassI" title="int arrayBaseOffset(java.lang.Class)">
+sun.misc.Unsafe.arrayBaseOffset
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="97">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:ARRAY_LONG_BASE_OFFSET:I">
+sun.misc.Unsafe.ARRAY_LONG_BASE_OFFSET
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="100">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:theUnsafe:sun.misc.Unsafe">
+sun.misc.Unsafe.theUnsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="103">
+<div class="instruction">
+<span>
+ldc class [F
+</span>
+</div>
+</li>
+<li value="106">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int arrayBaseOffset(java.lang.Class)">
+sun.misc.Unsafe.arrayBaseOffset
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:arrayBaseOffset:java.lang.ClassI" title="int arrayBaseOffset(java.lang.Class)">
+sun.misc.Unsafe.arrayBaseOffset
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="109">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:ARRAY_FLOAT_BASE_OFFSET:I">
+sun.misc.Unsafe.ARRAY_FLOAT_BASE_OFFSET
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="112">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:theUnsafe:sun.misc.Unsafe">
+sun.misc.Unsafe.theUnsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="115">
+<div class="instruction">
+<span>
+ldc class [D
+</span>
+</div>
+</li>
+<li value="118">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int arrayBaseOffset(java.lang.Class)">
+sun.misc.Unsafe.arrayBaseOffset
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:arrayBaseOffset:java.lang.ClassI" title="int arrayBaseOffset(java.lang.Class)">
+sun.misc.Unsafe.arrayBaseOffset
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="121">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:ARRAY_DOUBLE_BASE_OFFSET:I">
+sun.misc.Unsafe.ARRAY_DOUBLE_BASE_OFFSET
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="124">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:theUnsafe:sun.misc.Unsafe">
+sun.misc.Unsafe.theUnsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="127">
+<div class="instruction">
+<span>
+ldc class [Ljava/lang/Object;
+</span>
+</div>
+</li>
+<li value="130">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int arrayBaseOffset(java.lang.Class)">
+sun.misc.Unsafe.arrayBaseOffset
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:arrayBaseOffset:java.lang.ClassI" title="int arrayBaseOffset(java.lang.Class)">
+sun.misc.Unsafe.arrayBaseOffset
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="133">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:ARRAY_OBJECT_BASE_OFFSET:I">
+sun.misc.Unsafe.ARRAY_OBJECT_BASE_OFFSET
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="136">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:theUnsafe:sun.misc.Unsafe">
+sun.misc.Unsafe.theUnsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="139">
+<div class="instruction">
+<span>
+ldc class [Z
+</span>
+</div>
+</li>
+<li value="142">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int arrayIndexScale(java.lang.Class)">
+sun.misc.Unsafe.arrayIndexScale
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:arrayIndexScale:java.lang.ClassI" title="int arrayIndexScale(java.lang.Class)">
+sun.misc.Unsafe.arrayIndexScale
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="145">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:ARRAY_BOOLEAN_INDEX_SCALE:I">
+sun.misc.Unsafe.ARRAY_BOOLEAN_INDEX_SCALE
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="148">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:theUnsafe:sun.misc.Unsafe">
+sun.misc.Unsafe.theUnsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="151">
+<div class="instruction">
+<span>
+ldc class [B
+</span>
+</div>
+</li>
+<li value="154">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int arrayIndexScale(java.lang.Class)">
+sun.misc.Unsafe.arrayIndexScale
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:arrayIndexScale:java.lang.ClassI" title="int arrayIndexScale(java.lang.Class)">
+sun.misc.Unsafe.arrayIndexScale
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="157">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:ARRAY_BYTE_INDEX_SCALE:I">
+sun.misc.Unsafe.ARRAY_BYTE_INDEX_SCALE
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="160">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:theUnsafe:sun.misc.Unsafe">
+sun.misc.Unsafe.theUnsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="163">
+<div class="instruction">
+<span>
+ldc class [S
+</span>
+</div>
+</li>
+<li value="166">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int arrayIndexScale(java.lang.Class)">
+sun.misc.Unsafe.arrayIndexScale
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:arrayIndexScale:java.lang.ClassI" title="int arrayIndexScale(java.lang.Class)">
+sun.misc.Unsafe.arrayIndexScale
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="169">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:ARRAY_SHORT_INDEX_SCALE:I">
+sun.misc.Unsafe.ARRAY_SHORT_INDEX_SCALE
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="172">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:theUnsafe:sun.misc.Unsafe">
+sun.misc.Unsafe.theUnsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="175">
+<div class="instruction">
+<span>
+ldc class [C
+</span>
+</div>
+</li>
+<li value="178">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int arrayIndexScale(java.lang.Class)">
+sun.misc.Unsafe.arrayIndexScale
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:arrayIndexScale:java.lang.ClassI" title="int arrayIndexScale(java.lang.Class)">
+sun.misc.Unsafe.arrayIndexScale
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="181">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:ARRAY_CHAR_INDEX_SCALE:I">
+sun.misc.Unsafe.ARRAY_CHAR_INDEX_SCALE
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="184">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:theUnsafe:sun.misc.Unsafe">
+sun.misc.Unsafe.theUnsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="187">
+<div class="instruction">
+<span>
+ldc class [I
+</span>
+</div>
+</li>
+<li value="190">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int arrayIndexScale(java.lang.Class)">
+sun.misc.Unsafe.arrayIndexScale
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:arrayIndexScale:java.lang.ClassI" title="int arrayIndexScale(java.lang.Class)">
+sun.misc.Unsafe.arrayIndexScale
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="193">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:ARRAY_INT_INDEX_SCALE:I">
+sun.misc.Unsafe.ARRAY_INT_INDEX_SCALE
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="196">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:theUnsafe:sun.misc.Unsafe">
+sun.misc.Unsafe.theUnsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="199">
+<div class="instruction">
+<span>
+ldc class [J
+</span>
+</div>
+</li>
+<li value="202">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int arrayIndexScale(java.lang.Class)">
+sun.misc.Unsafe.arrayIndexScale
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:arrayIndexScale:java.lang.ClassI" title="int arrayIndexScale(java.lang.Class)">
+sun.misc.Unsafe.arrayIndexScale
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="205">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:ARRAY_LONG_INDEX_SCALE:I">
+sun.misc.Unsafe.ARRAY_LONG_INDEX_SCALE
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="208">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:theUnsafe:sun.misc.Unsafe">
+sun.misc.Unsafe.theUnsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="211">
+<div class="instruction">
+<span>
+ldc class [F
+</span>
+</div>
+</li>
+<li value="214">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int arrayIndexScale(java.lang.Class)">
+sun.misc.Unsafe.arrayIndexScale
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:arrayIndexScale:java.lang.ClassI" title="int arrayIndexScale(java.lang.Class)">
+sun.misc.Unsafe.arrayIndexScale
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="217">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:ARRAY_FLOAT_INDEX_SCALE:I">
+sun.misc.Unsafe.ARRAY_FLOAT_INDEX_SCALE
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="220">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:theUnsafe:sun.misc.Unsafe">
+sun.misc.Unsafe.theUnsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="223">
+<div class="instruction">
+<span>
+ldc class [D
+</span>
+</div>
+</li>
+<li value="226">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int arrayIndexScale(java.lang.Class)">
+sun.misc.Unsafe.arrayIndexScale
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:arrayIndexScale:java.lang.ClassI" title="int arrayIndexScale(java.lang.Class)">
+sun.misc.Unsafe.arrayIndexScale
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="229">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:ARRAY_DOUBLE_INDEX_SCALE:I">
+sun.misc.Unsafe.ARRAY_DOUBLE_INDEX_SCALE
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="232">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:theUnsafe:sun.misc.Unsafe">
+sun.misc.Unsafe.theUnsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="235">
+<div class="instruction">
+<span>
+ldc class [Ljava/lang/Object;
+</span>
+</div>
+</li>
+<li value="238">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int arrayIndexScale(java.lang.Class)">
+sun.misc.Unsafe.arrayIndexScale
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:arrayIndexScale:java.lang.ClassI" title="int arrayIndexScale(java.lang.Class)">
+sun.misc.Unsafe.arrayIndexScale
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="241">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:ARRAY_OBJECT_INDEX_SCALE:I">
+sun.misc.Unsafe.ARRAY_OBJECT_INDEX_SCALE
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="244">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:theUnsafe:sun.misc.Unsafe">
+sun.misc.Unsafe.theUnsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="247">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int addressSize()">
+sun.misc.Unsafe.addressSize
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:addressSize:I" title="int addressSize()">
+sun.misc.Unsafe.addressSize
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="250">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:ADDRESS_SIZE:I">
+sun.misc.Unsafe.ADDRESS_SIZE
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="253">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getAddress:JJ" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+long
+ 
+<span>
+getAddress
+</span>
+(
+long
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putFloatVolatile:java.lang.ObjectJFvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+putFloatVolatile
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+, 
+float
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getInt:java.lang.ObjectII" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span>
+getInt
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+, 
+int
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+i2l
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getInt(java.lang.Object, long)">
+sun.misc.Unsafe.getInt
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+long
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:monitorExit:java.lang.Objectvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+monitorExit
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:arrayBaseOffset:java.lang.ClassI" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+arrayBaseOffset
+</span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+sun.misc.Unsafe.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.util.concurrent.ConcurrentHashMap.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getShort:java.lang.ObjectJS" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+short
+ 
+<span>
+getShort
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getDouble:java.lang.ObjectID" href="#">
+
+</a>
+<div class="method_signature">
+public 
+double
+ 
+<span>
+getDouble
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+, 
+int
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+i2l
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+double
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="double getDouble(java.lang.Object, long)">
+sun.misc.Unsafe.getDouble
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+long
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+dreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:staticFieldBase:java.lang.Classjava.lang.Object" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 
+<span>
+staticFieldBase
+</span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/reflect/Field.html">
+java.lang.reflect.Field
+</a>
+[]
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.reflect.Field[] getDeclaredFields()">
+java.lang.Class.getDeclaredFields
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+astore  2
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+istore  3
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+ifcmpge 29
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+aaload
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getModifiers()">
+java.lang.reflect.Field.getModifiers
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isStatic(int)">
+java.lang.reflect.Modifier.isStatic
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+ifeq 11
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+aaload
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object staticFieldBase(java.lang.reflect.Field)">
+sun.misc.Unsafe.staticFieldBase
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/reflect/Field.html">
+java.lang.reflect.Field
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+iinc 3 1
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+goto -29
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:defineClass:java.lang.StringB.-IIjava.lang.Class" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+ 
+<span>
+defineClass
+</span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 0
+, 
+byte[]
+ 1
+, 
+int
+ 2
+, 
+int
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getShort:java.lang.ObjectIS" href="#">
+
+</a>
+<div class="method_signature">
+public 
+short
+ 
+<span>
+getShort
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+, 
+int
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+i2l
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+short
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="short getShort(java.lang.Object, long)">
+sun.misc.Unsafe.getShort
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+long
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putByteVolatile:java.lang.ObjectJBvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+putByteVolatile
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+, 
+byte
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:compareAndSwapObject:java.lang.ObjectJjava.lang.Objectjava.lang.ObjectZ" href="#">
+
+</a>
+<div class="method_signature">
+public final native 
+bool
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+compareAndSwapObject
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+, 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 2
+, 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/concurrent/locks/AbstractQueuedSynchronizer.html#java.util.concurrent.locks.AbstractQueuedSynchronizer:compareAndSetNext:java.util.concurrent.locks.AbstractQueuedSynchronizer$Nodejava.util.concurrent.locks.AbstractQueuedSynchronizer$Nodejava.util.concurrent.locks.AbstractQueuedSynchronizer$NodeZ" title="bool compareAndSetNext(java.util.concurrent.locks.AbstractQueuedSynchronizer$Node, java.util.concurrent.locks.AbstractQueuedSynchronizer$Node, java.util.concurrent.locks.AbstractQueuedSynchronizer$Node)">
+java.util.concurrent.locks.AbstractQueuedSynchronizer.compareAndSetNext(java.util.concurrent.locks.AbstractQueuedSynchronizer$Node, java.util.concurrent.locks.AbstractQueuedSynchronizer$Node, java.util.concurrent.locks.AbstractQueuedSynchronizer$Node)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/locks/AbstractQueuedSynchronizer.html#java.util.concurrent.locks.AbstractQueuedSynchronizer:compareAndSetTail:java.util.concurrent.locks.AbstractQueuedSynchronizer$Nodejava.util.concurrent.locks.AbstractQueuedSynchronizer$NodeZ" title="bool compareAndSetTail(java.util.concurrent.locks.AbstractQueuedSynchronizer$Node, java.util.concurrent.locks.AbstractQueuedSynchronizer$Node)">
+java.util.concurrent.locks.AbstractQueuedSynchronizer.compareAndSetTail(java.util.concurrent.locks.AbstractQueuedSynchronizer$Node, java.util.concurrent.locks.AbstractQueuedSynchronizer$Node)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/locks/AbstractQueuedSynchronizer.html#java.util.concurrent.locks.AbstractQueuedSynchronizer:compareAndSetHead:java.util.concurrent.locks.AbstractQueuedSynchronizer$NodeZ" title="bool compareAndSetHead(java.util.concurrent.locks.AbstractQueuedSynchronizer$Node)">
+java.util.concurrent.locks.AbstractQueuedSynchronizer.compareAndSetHead(java.util.concurrent.locks.AbstractQueuedSynchronizer$Node)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/Class$Atomic.html#java.lang.Class$Atomic:casReflectionData:java.lang.Classjava.lang.ref.SoftReferencejava.lang.ref.SoftReferenceZ" title="bool casReflectionData(java.lang.Class, java.lang.ref.SoftReference, java.lang.ref.SoftReference)">
+java.lang.Class$Atomic.casReflectionData(java.lang.Class, java.lang.ref.SoftReference, java.lang.ref.SoftReference)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:ensureSegment:Ijava.util.concurrent.ConcurrentHashMap$Segment" title="java.util.concurrent.ConcurrentHashMap$Segment ensureSegment(int)">
+java.util.concurrent.ConcurrentHashMap.ensureSegment(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/atomic/AtomicReferenceFieldUpdater$AtomicReferenceFieldUpdaterImpl.html#java.util.concurrent.atomic.AtomicReferenceFieldUpdater$AtomicReferenceFieldUpdaterImpl:compareAndSet:java.lang.Objectjava.lang.Objectjava.lang.ObjectZ" title="bool compareAndSet(java.lang.Object, java.lang.Object, java.lang.Object)">
+java.util.concurrent.atomic.AtomicReferenceFieldUpdater$AtomicReferenceFieldUpdaterImpl.compareAndSet(java.lang.Object, java.lang.Object, java.lang.Object)
+</a>
+</div>
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:setMemory:java.lang.ObjectJJBvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+setMemory
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+, 
+long
+ 2
+, 
+byte
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getInt:JI" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+int
+ 
+<span>
+getInt
+</span>
+(
+long
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:setMemory:JJBvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span>
+setMemory
+</span>
+(
+long
+ 1
+, 
+long
+ 2
+, 
+byte
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+lload  1
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+lload  3
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+iload  5
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void setMemory(java.lang.Object, long, long, byte)">
+sun.misc.Unsafe.setMemory
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+long
+, 
+long
+, 
+byte
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putOrderedLong:java.lang.ObjectJJvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+putOrderedLong
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+, 
+long
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getBoolean:java.lang.ObjectIZ" href="#">
+
+</a>
+<div class="method_signature">
+public 
+bool
+ 
+<span>
+getBoolean
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+, 
+int
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+i2l
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool getBoolean(java.lang.Object, long)">
+sun.misc.Unsafe.getBoolean
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+long
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getIntVolatile:java.lang.ObjectJI" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+int
+ 
+<span>
+getIntVolatile
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getObject:java.lang.ObjectJjava.lang.Object" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getObject
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:putIfAbsent:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object putIfAbsent(java.lang.Object, java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap.putIfAbsent(java.lang.Object, java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap.put(java.lang.Object, java.lang.Object)
+</a>
+</div>
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putDouble:java.lang.ObjectJDvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+putDouble
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+, 
+double
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getShort:JS" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+short
+ 
+<span>
+getShort
+</span>
+(
+long
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:defineClass:java.lang.StringB.-IIjava.lang.ClassLoaderjava.security.ProtectionDomainjava.lang.Class" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+ 
+<span>
+defineClass
+</span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 0
+, 
+byte[]
+ 1
+, 
+int
+ 2
+, 
+int
+ 3
+, 
+<a href="../../java/lang/ClassLoader.html">
+java.lang.ClassLoader
+</a>
+ 4
+, 
+<a href="../../java/security/ProtectionDomain.html">
+java.security.ProtectionDomain
+</a>
+ 5
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getDouble:java.lang.ObjectJD" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+double
+ 
+<span>
+getDouble
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getLong:java.lang.ObjectIJ" href="#">
+
+</a>
+<div class="method_signature">
+public 
+long
+ 
+<span>
+getLong
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+, 
+int
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+i2l
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+long
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long getLong(java.lang.Object, long)">
+sun.misc.Unsafe.getLong
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+long
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+lreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putCharVolatile:java.lang.ObjectJCvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+putCharVolatile
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+, 
+char
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putObject:java.lang.ObjectJjava.lang.Objectvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+putObject
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+, 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/concurrent/locks/LockSupport.html#java.util.concurrent.locks.LockSupport:setBlocker:java.lang.Threadjava.lang.Objectvoid" title="void setBlocker(java.lang.Thread, java.lang.Object)">
+java.util.concurrent.locks.LockSupport.setBlocker(java.lang.Thread, java.lang.Object)
+</a>
+</div>
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getFloat:JF" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+float
+ 
+<span>
+getFloat
+</span>
+(
+long
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:allocateMemory:JJ" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+long
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+allocateMemory
+</span>
+(
+long
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/Bits.html#java.nio.Bits:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.nio.Bits.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putDoubleVolatile:java.lang.ObjectJDvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+putDoubleVolatile
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+, 
+double
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getObject:java.lang.ObjectIjava.lang.Object" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 
+<span>
+getObject
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+, 
+int
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+i2l
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object getObject(java.lang.Object, long)">
+sun.misc.Unsafe.getObject
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+long
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:getObject:java.lang.ObjectJjava.lang.Object" title="java.lang.Object getObject(java.lang.Object, long)">
+sun.misc.Unsafe.getObject
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:compareAndSwapInt:java.lang.ObjectJIIZ" href="#">
+
+</a>
+<div class="method_signature">
+public final native 
+bool
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+compareAndSwapInt
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+, 
+int
+ 2
+, 
+int
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/concurrent/locks/AbstractQueuedSynchronizer.html#java.util.concurrent.locks.AbstractQueuedSynchronizer:compareAndSetState:IIZ" title="bool compareAndSetState(int, int)">
+java.util.concurrent.locks.AbstractQueuedSynchronizer.compareAndSetState(int, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/atomic/AtomicInteger.html#java.util.concurrent.atomic.AtomicInteger:compareAndSet:IIZ" title="bool compareAndSet(int, int)">
+java.util.concurrent.atomic.AtomicInteger.compareAndSet(int, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/locks/AbstractQueuedSynchronizer.html#java.util.concurrent.locks.AbstractQueuedSynchronizer:compareAndSetWaitStatus:java.util.concurrent.locks.AbstractQueuedSynchronizer$NodeIIZ" title="bool compareAndSetWaitStatus(java.util.concurrent.locks.AbstractQueuedSynchronizer$Node, int, int)">
+java.util.concurrent.locks.AbstractQueuedSynchronizer.compareAndSetWaitStatus(java.util.concurrent.locks.AbstractQueuedSynchronizer$Node, int, int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putIntVolatile:java.lang.ObjectJIvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+putIntVolatile
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+, 
+int
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:&lt;init&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+private 
+<span class="methodname clickable" onclick="showInfoList(this)">
+Unsafe
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+sun.misc.Unsafe.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Object.html#java.lang.Object:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putByte:java.lang.ObjectJBvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+putByte
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+, 
+byte
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getByte:JB" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+byte
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getByte
+</span>
+(
+long
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/Bits.html#java.nio.Bits:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.nio.Bits.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:ensureClassInitialized:java.lang.Classvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+ensureClassInitialized
+</span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:throwException:java.lang.Throwablevoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+throwException
+</span>
+(
+<a href="../../java/lang/Throwable.html">
+java.lang.Throwable
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Class.html#java.lang.Class:newInstance:java.lang.Object" title="java.lang.Object newInstance()">
+java.lang.Class.newInstance()
+</a>
+</div>
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getByte:java.lang.ObjectJB" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+byte
+ 
+<span>
+getByte
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getChar:java.lang.ObjectIC" href="#">
+
+</a>
+<div class="method_signature">
+public 
+char
+ 
+<span>
+getChar
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+, 
+int
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+i2l
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+char
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="char getChar(java.lang.Object, long)">
+sun.misc.Unsafe.getChar
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+long
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putShortVolatile:java.lang.ObjectJSvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+putShortVolatile
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+, 
+short
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putBoolean:java.lang.ObjectJZvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+putBoolean
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+, 
+bool
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getLong:JJ" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+long
+ 
+<span>
+getLong
+</span>
+(
+long
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:freeMemory:Jvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+freeMemory
+</span>
+(
+long
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/Bits.html#java.nio.Bits:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.nio.Bits.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:park:ZJvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+park
+</span>
+(
+bool
+ 0
+, 
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/concurrent/locks/LockSupport.html#java.util.concurrent.locks.LockSupport:park:java.lang.Objectvoid" title="void park(java.lang.Object)">
+java.util.concurrent.locks.LockSupport.park(java.lang.Object)
+</a>
+</div>
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getByte:java.lang.ObjectIB" href="#">
+
+</a>
+<div class="method_signature">
+public 
+byte
+ 
+<span>
+getByte
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+, 
+int
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+i2l
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+byte
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="byte getByte(java.lang.Object, long)">
+sun.misc.Unsafe.getByte
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+long
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putBooleanVolatile:java.lang.ObjectJZvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+putBooleanVolatile
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+, 
+bool
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putObjectVolatile:java.lang.ObjectJjava.lang.Objectvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+putObjectVolatile
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+, 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putInt:java.lang.ObjectJIvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+putInt
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+, 
+int
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getChar:JC" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+char
+ 
+<span>
+getChar
+</span>
+(
+long
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:allocateInstance:java.lang.Classjava.lang.Object" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 
+<span>
+allocateInstance
+</span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getInt:java.lang.ObjectJI" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+int
+ 
+<span>
+getInt
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getFloat:java.lang.ObjectIF" href="#">
+
+</a>
+<div class="method_signature">
+public 
+float
+ 
+<span>
+getFloat
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+, 
+int
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+i2l
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+float
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="float getFloat(java.lang.Object, long)">
+sun.misc.Unsafe.getFloat
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+long
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+freturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putLongVolatile:java.lang.ObjectJJvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+putLongVolatile
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+, 
+long
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:staticFieldBase:java.lang.reflect.Fieldjava.lang.Object" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 
+<span>
+staticFieldBase
+</span>
+(
+<a href="../../java/lang/reflect/Field.html">
+java.lang.reflect.Field
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getDouble:JD" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+double
+ 
+<span>
+getDouble
+</span>
+(
+long
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putAddress:JJvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+putAddress
+</span>
+(
+long
+ 0
+, 
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getDoubleVolatile:java.lang.ObjectJD" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+double
+ 
+<span>
+getDoubleVolatile
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putInt:java.lang.ObjectIIvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span>
+putInt
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+, 
+int
+ 2
+, 
+int
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+i2l
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void putInt(java.lang.Object, long, int)">
+sun.misc.Unsafe.putInt
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+long
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:tryMonitorEnter:java.lang.ObjectZ" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+bool
+ 
+<span>
+tryMonitorEnter
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:arrayIndexScale:java.lang.ClassI" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+arrayIndexScale
+</span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+sun.misc.Unsafe.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.util.concurrent.ConcurrentHashMap.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getBoolean:java.lang.ObjectJZ" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+bool
+ 
+<span>
+getBoolean
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putDouble:java.lang.ObjectIDvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span>
+putDouble
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+, 
+int
+ 2
+, 
+double
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+i2l
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+dload  3
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void putDouble(java.lang.Object, long, double)">
+sun.misc.Unsafe.putDouble
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+long
+, 
+double
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:shouldBeInitialized:java.lang.ClassZ" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+bool
+ 
+<span>
+shouldBeInitialized
+</span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:addressSize:I" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+addressSize
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+sun.misc.Unsafe.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putShort:java.lang.ObjectISvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span>
+putShort
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+, 
+int
+ 2
+, 
+short
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+i2l
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void putShort(java.lang.Object, long, short)">
+sun.misc.Unsafe.putShort
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+long
+, 
+short
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getShortVolatile:java.lang.ObjectJS" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+short
+ 
+<span>
+getShortVolatile
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putShort:java.lang.ObjectJSvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+putShort
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+, 
+short
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putInt:JIvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+putInt
+</span>
+(
+long
+ 0
+, 
+int
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:copyMemory:JJJvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span>
+copyMemory
+</span>
+(
+long
+ 1
+, 
+long
+ 2
+, 
+long
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+lload  1
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+lload  3
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+lload  5
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void copyMemory(java.lang.Object, long, java.lang.Object, long, long)">
+sun.misc.Unsafe.copyMemory
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+long
+, 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+long
+, 
+long
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:unpark:java.lang.Objectvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+unpark
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/concurrent/locks/LockSupport.html#java.util.concurrent.locks.LockSupport:unpark:java.lang.Threadvoid" title="void unpark(java.lang.Thread)">
+java.util.concurrent.locks.LockSupport.unpark(java.lang.Thread)
+</a>
+</div>
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putBoolean:java.lang.ObjectIZvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span>
+putBoolean
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+, 
+int
+ 2
+, 
+bool
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+i2l
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void putBoolean(java.lang.Object, long, bool)">
+sun.misc.Unsafe.putBoolean
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+long
+, 
+bool
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getBooleanVolatile:java.lang.ObjectJZ" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+bool
+ 
+<span>
+getBooleanVolatile
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getObjectVolatile:java.lang.ObjectJjava.lang.Object" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getObjectVolatile
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:segmentForHash:Ijava.util.concurrent.ConcurrentHashMap$Segment" title="java.util.concurrent.ConcurrentHashMap$Segment segmentForHash(int)">
+java.util.concurrent.ConcurrentHashMap.segmentForHash(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap.containsKey(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:segmentAt:java.util.concurrent.ConcurrentHashMap$Segment.-Ijava.util.concurrent.ConcurrentHashMap$Segment" title="java.util.concurrent.ConcurrentHashMap$Segment segmentAt(java.util.concurrent.ConcurrentHashMap$Segment[], int)">
+java.util.concurrent.ConcurrentHashMap.segmentAt(java.util.concurrent.ConcurrentHashMap$Segment[], int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap.get(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:entryForHash:java.util.concurrent.ConcurrentHashMap$SegmentIjava.util.concurrent.ConcurrentHashMap$HashEntry" title="java.util.concurrent.ConcurrentHashMap$HashEntry entryForHash(java.util.concurrent.ConcurrentHashMap$Segment, int)">
+java.util.concurrent.ConcurrentHashMap.entryForHash(java.util.concurrent.ConcurrentHashMap$Segment, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:entryAt:java.util.concurrent.ConcurrentHashMap$HashEntry.-Ijava.util.concurrent.ConcurrentHashMap$HashEntry" title="java.util.concurrent.ConcurrentHashMap$HashEntry entryAt(java.util.concurrent.ConcurrentHashMap$HashEntry[], int)">
+java.util.concurrent.ConcurrentHashMap.entryAt(java.util.concurrent.ConcurrentHashMap$HashEntry[], int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:ensureSegment:Ijava.util.concurrent.ConcurrentHashMap$Segment" title="java.util.concurrent.ConcurrentHashMap$Segment ensureSegment(int)">
+java.util.concurrent.ConcurrentHashMap.ensureSegment(int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putFloat:java.lang.ObjectJFvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+putFloat
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+, 
+float
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putShort:JSvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+putShort
+</span>
+(
+long
+ 0
+, 
+short
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:defineAnonymousClass:java.lang.ClassB.-java.lang.Object.-java.lang.Class" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+ 
+<span>
+defineAnonymousClass
+</span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+ 0
+, 
+byte[]
+ 1
+, 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getFloat:java.lang.ObjectJF" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+float
+ 
+<span>
+getFloat
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putLong:java.lang.ObjectIJvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span>
+putLong
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+, 
+int
+ 2
+, 
+long
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+i2l
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+lload  3
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void putLong(java.lang.Object, long, long)">
+sun.misc.Unsafe.putLong
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+long
+, 
+long
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getLongVolatile:java.lang.ObjectJJ" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+long
+ 
+<span>
+getLongVolatile
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:copyMemory:java.lang.ObjectJjava.lang.ObjectJJvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+copyMemory
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+, 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 2
+, 
+long
+ 3
+, 
+long
+ 4
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putFloat:JFvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+putFloat
+</span>
+(
+long
+ 0
+, 
+float
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:reallocateMemory:JJJ" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+long
+ 
+<span>
+reallocateMemory
+</span>
+(
+long
+ 0
+, 
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putOrderedInt:java.lang.ObjectJIvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+putOrderedInt
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+, 
+int
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putObject:java.lang.ObjectIjava.lang.Objectvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span>
+putObject
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+, 
+int
+ 2
+, 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+i2l
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void putObject(java.lang.Object, long, java.lang.Object)">
+sun.misc.Unsafe.putObject
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+long
+, 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:putObject:java.lang.ObjectJjava.lang.Objectvoid" title="void putObject(java.lang.Object, long, java.lang.Object)">
+sun.misc.Unsafe.putObject
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:compareAndSwapLong:java.lang.ObjectJJJZ" href="#">
+
+</a>
+<div class="method_signature">
+public final native 
+bool
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+compareAndSwapLong
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+, 
+long
+ 2
+, 
+long
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/concurrent/atomic/AtomicLong.html#java.util.concurrent.atomic.AtomicLong:compareAndSet:JJZ" title="bool compareAndSet(long, long)">
+java.util.concurrent.atomic.AtomicLong.compareAndSet(long, long)
+</a>
+</div>
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:objectFieldOffset:java.lang.reflect.FieldJ" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+long
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+objectFieldOffset
+</span>
+(
+<a href="../../java/lang/reflect/Field.html">
+java.lang.reflect.Field
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/concurrent/atomic/AtomicReference.html#java.util.concurrent.atomic.AtomicReference:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.util.concurrent.atomic.AtomicReference.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/atomic/AtomicLong.html#java.util.concurrent.atomic.AtomicLong:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.util.concurrent.atomic.AtomicLong.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.util.concurrent.ConcurrentHashMap.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/atomic/AtomicReferenceFieldUpdater$AtomicReferenceFieldUpdaterImpl.html#java.util.concurrent.atomic.AtomicReferenceFieldUpdater$AtomicReferenceFieldUpdaterImpl:&lt;init&gt;:java.lang.Classjava.lang.Classjava.lang.Stringjava.lang.Classvoid" title="void &lt;init&gt;(java.lang.Class, java.lang.Class, java.lang.String, java.lang.Class)">
+java.util.concurrent.atomic.AtomicReferenceFieldUpdater$AtomicReferenceFieldUpdaterImpl.&lt;init&gt;(java.lang.Class, java.lang.Class, java.lang.String, java.lang.Class)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/math/BigInteger.html#java.math.BigInteger:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.math.BigInteger.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/atomic/AtomicInteger.html#java.util.concurrent.atomic.AtomicInteger:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.util.concurrent.atomic.AtomicInteger.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/Class$Atomic.html#java.lang.Class$Atomic:objectFieldOffset:java.lang.reflect.Field.-java.lang.StringJ" title="long objectFieldOffset(java.lang.reflect.Field[], java.lang.String)">
+java.lang.Class$Atomic.objectFieldOffset(java.lang.reflect.Field[], java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/locks/AbstractQueuedSynchronizer.html#java.util.concurrent.locks.AbstractQueuedSynchronizer:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.util.concurrent.locks.AbstractQueuedSynchronizer.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/net/InetAddress.html#java.net.InetAddress:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.net.InetAddress.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/locks/LockSupport.html#java.util.concurrent.locks.LockSupport:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.util.concurrent.locks.LockSupport.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/net/Inet6Address.html#java.net.Inet6Address:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.net.Inet6Address.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Random.html#java.util.Random:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.util.Random.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/ConcurrentHashMap$HashEntry.html#java.util.concurrent.ConcurrentHashMap$HashEntry:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.util.concurrent.ConcurrentHashMap$HashEntry.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putChar:java.lang.ObjectJCvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+putChar
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+, 
+char
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putByte:JBvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+putByte
+</span>
+(
+long
+ 0
+, 
+byte
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:registerNatives:void" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+registerNatives
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+sun.misc.Unsafe.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:pageSize:I" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+int
+ 
+<span>
+pageSize
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getUnsafe:sun.misc.Unsafe" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="Unsafe.html">
+sun.misc.Unsafe
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getUnsafe
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/concurrent/atomic/AtomicReference.html#java.util.concurrent.atomic.AtomicReference:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.util.concurrent.atomic.AtomicReference.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/atomic/AtomicLong.html#java.util.concurrent.atomic.AtomicLong:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.util.concurrent.atomic.AtomicLong.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/nio/Bits.html#java.nio.Bits:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.nio.Bits.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.util.concurrent.ConcurrentHashMap.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/Class.html#java.lang.Class:newInstance:java.lang.Object" title="java.lang.Object newInstance()">
+java.lang.Class.newInstance()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/math/BigInteger.html#java.math.BigInteger:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.math.BigInteger.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/atomic/AtomicInteger.html#java.util.concurrent.atomic.AtomicInteger:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.util.concurrent.atomic.AtomicInteger.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/locks/AbstractQueuedSynchronizer.html#java.util.concurrent.locks.AbstractQueuedSynchronizer:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.util.concurrent.locks.AbstractQueuedSynchronizer.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/net/InetAddress.html#java.net.InetAddress:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.net.InetAddress.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/locks/LockSupport.html#java.util.concurrent.locks.LockSupport:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.util.concurrent.locks.LockSupport.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/net/Inet6Address.html#java.net.Inet6Address:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.net.Inet6Address.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/atomic/AtomicReferenceFieldUpdater$AtomicReferenceFieldUpdaterImpl.html#java.util.concurrent.atomic.AtomicReferenceFieldUpdater$AtomicReferenceFieldUpdaterImpl:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.util.concurrent.atomic.AtomicReferenceFieldUpdater$AtomicReferenceFieldUpdaterImpl.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/Class$Atomic.html#java.lang.Class$Atomic:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.lang.Class$Atomic.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Random.html#java.util.Random:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.util.Random.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/ConcurrentHashMap$HashEntry.html#java.util.concurrent.ConcurrentHashMap$HashEntry:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.util.concurrent.ConcurrentHashMap$HashEntry.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/misc/SharedSecrets.html#sun.misc.SharedSecrets:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+sun.misc.SharedSecrets.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Class getCallerClass()">
+sun.reflect.Reflection.getCallerClass
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/reflect/Reflection.html#sun.reflect.Reflection:getCallerClass:java.lang.Class" title="java.lang.Class getCallerClass()">
+sun.reflect.Reflection.getCallerClass
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+astore  0
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/ClassLoader.html">
+java.lang.ClassLoader
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.ClassLoader getClassLoader()">
+java.lang.Class.getClassLoader
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Class.html#java.lang.Class:getClassLoader:java.lang.ClassLoader" title="java.lang.ClassLoader getClassLoader()">
+java.lang.Class.getClassLoader
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+ifnull 13
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/SecurityException.html">
+java.lang.SecurityException
+</a>
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+ldc string &apos;Unsafe&apos;
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.lang.SecurityException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/SecurityException.html#java.lang.SecurityException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
+java.lang.SecurityException.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.misc.Unsafe:theUnsafe:sun.misc.Unsafe">
+sun.misc.Unsafe.theUnsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getChar:java.lang.ObjectJC" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+char
+ 
+<span>
+getChar
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putChar:java.lang.ObjectICvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span>
+putChar
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+, 
+int
+ 2
+, 
+char
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+i2l
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void putChar(java.lang.Object, long, char)">
+sun.misc.Unsafe.putChar
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+long
+, 
+char
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getCharVolatile:java.lang.ObjectJC" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+char
+ 
+<span>
+getCharVolatile
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:staticFieldOffset:java.lang.reflect.FieldJ" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+long
+ 
+<span>
+staticFieldOffset
+</span>
+(
+<a href="../../java/lang/reflect/Field.html">
+java.lang.reflect.Field
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putLong:JJvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+putLong
+</span>
+(
+long
+ 0
+, 
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/Bits.html#java.nio.Bits:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.nio.Bits.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:fieldOffset:java.lang.reflect.FieldI" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span>
+fieldOffset
+</span>
+(
+<a href="../../java/lang/reflect/Field.html">
+java.lang.reflect.Field
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getModifiers()">
+java.lang.reflect.Field.getModifiers
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool isStatic(int)">
+java.lang.reflect.Modifier.isStatic
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+ifeq 10
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+long
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long staticFieldOffset(java.lang.reflect.Field)">
+sun.misc.Unsafe.staticFieldOffset
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/reflect/Field.html">
+java.lang.reflect.Field
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+l2i
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+long
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long objectFieldOffset(java.lang.reflect.Field)">
+sun.misc.Unsafe.objectFieldOffset
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/reflect/Field.html">
+java.lang.reflect.Field
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Unsafe:objectFieldOffset:java.lang.reflect.FieldJ" title="long objectFieldOffset(java.lang.reflect.Field)">
+sun.misc.Unsafe.objectFieldOffset
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+l2i
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getLoadAverage:D.-II" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+int
+ 
+<span>
+getLoadAverage
+</span>
+(
+double[]
+ 0
+, 
+int
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putByte:java.lang.ObjectIBvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span>
+putByte
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+, 
+int
+ 2
+, 
+byte
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+i2l
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void putByte(java.lang.Object, long, byte)">
+sun.misc.Unsafe.putByte
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+long
+, 
+byte
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getByteVolatile:java.lang.ObjectJB" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+byte
+ 
+<span>
+getByteVolatile
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putOrderedObject:java.lang.ObjectJjava.lang.Objectvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+putOrderedObject
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+, 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:setEntryAt:java.util.concurrent.ConcurrentHashMap$HashEntry.-Ijava.util.concurrent.ConcurrentHashMap$HashEntryvoid" title="void setEntryAt(java.util.concurrent.ConcurrentHashMap$HashEntry[], int, java.util.concurrent.ConcurrentHashMap$HashEntry)">
+java.util.concurrent.ConcurrentHashMap.setEntryAt(java.util.concurrent.ConcurrentHashMap$HashEntry[], int, java.util.concurrent.ConcurrentHashMap$HashEntry)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/ConcurrentHashMap$HashEntry.html#java.util.concurrent.ConcurrentHashMap$HashEntry:setNext:java.util.concurrent.ConcurrentHashMap$HashEntryvoid" title="void setNext(java.util.concurrent.ConcurrentHashMap$HashEntry)">
+java.util.concurrent.ConcurrentHashMap$HashEntry.setNext(java.util.concurrent.ConcurrentHashMap$HashEntry)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:&lt;init&gt;:IFIvoid" title="void &lt;init&gt;(int, float, int)">
+java.util.concurrent.ConcurrentHashMap.&lt;init&gt;(int, float, int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putLong:java.lang.ObjectJJvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+putLong
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+, 
+long
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putChar:JCvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+putChar
+</span>
+(
+long
+ 0
+, 
+char
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:monitorEnter:java.lang.Objectvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+monitorEnter
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getLong:java.lang.ObjectJJ" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+long
+ 
+<span>
+getLong
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putFloat:java.lang.ObjectIFvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span>
+putFloat
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+, 
+int
+ 2
+, 
+float
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+i2l
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+fload  3
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void putFloat(java.lang.Object, long, float)">
+sun.misc.Unsafe.putFloat
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+long
+, 
+float
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:getFloatVolatile:java.lang.ObjectJF" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+float
+ 
+<span>
+getFloatVolatile
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Unsafe:putDouble:JDvoid" href="#">
+
+</a>
+<div class="method_signature">
+public native 
+void
+ 
+<span>
+putDouble
+</span>
+(
+long
+ 0
+, 
+double
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1941 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>
+java.util.concurrent.locks.LockSupport
+</title>
+<link rel="StyleSheet" href="../../../../style.css" type="text/css" media="all" />
+<script type="text/javascript" src="../../../../actions.js">
+</script>
+</head>
+<body>
+<div class="class">
+<a name="java.util.concurrent.locks.LockSupport" href="#">
+
+</a>
+<div class="classname">
+Class java.util.concurrent.locks.LockSupport
+</div>
+<ul class="annot">
+<li>
+Not instantiatied
+</li>
+</ul>
+<div class="field">
+<a name="java.util.concurrent.locks.LockSupport:parkBlockerOffset:J" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+long
+ parkBlockerOffset;
+</span>
+</div>
+<div class="field">
+<a name="java.util.concurrent.locks.LockSupport:unsafe:sun.misc.Unsafe" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+<a href="../../../../sun/misc/Unsafe.html">
+sun.misc.Unsafe
+</a>
+ unsafe;
+</span>
+</div>
+<div class="method">
+<a name="java.util.concurrent.locks.LockSupport:&lt;clinit&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<span>
+clinit
+</span>
+{};
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../../../sun/misc/Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="sun.misc.Unsafe getUnsafe()">
+sun.misc.Unsafe.getUnsafe
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../../sun/misc/Unsafe.html#sun.misc.Unsafe:getUnsafe:sun.misc.Unsafe" title="sun.misc.Unsafe getUnsafe()">
+sun.misc.Unsafe.getUnsafe
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#java.util.concurrent.locks.LockSupport:unsafe:sun.misc.Unsafe">
+java.util.concurrent.locks.LockSupport.unsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../../sun/misc/Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.util.concurrent.locks.LockSupport:unsafe:sun.misc.Unsafe">
+java.util.concurrent.locks.LockSupport.unsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../../sun/misc/Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+ldc class Ljava/lang/Thread;
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+ldc string &apos;parkBlocker&apos;
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../../../java/lang/reflect/Field.html">
+java.lang.reflect.Field
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.reflect.Field getDeclaredField(java.lang.String)">
+java.lang.Class.getDeclaredField
+</span>
+</span>
+<span>
+(
+<a href="../../../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../../java/lang/Class.html#java.lang.Class:getDeclaredField:java.lang.Stringjava.lang.reflect.Field" title="java.lang.reflect.Field getDeclaredField(java.lang.String)">
+java.lang.Class.getDeclaredField
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+long
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long objectFieldOffset(java.lang.reflect.Field)">
+sun.misc.Unsafe.objectFieldOffset
+</span>
+</span>
+<span>
+(
+<a href="../../../../java/lang/reflect/Field.html">
+java.lang.reflect.Field
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../../sun/misc/Unsafe.html#sun.misc.Unsafe:objectFieldOffset:java.lang.reflect.FieldJ" title="long objectFieldOffset(java.lang.reflect.Field)">
+sun.misc.Unsafe.objectFieldOffset
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#java.util.concurrent.locks.LockSupport:parkBlockerOffset:J">
+java.util.concurrent.locks.LockSupport.parkBlockerOffset
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+long
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+goto 13
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+astore  0
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../../java/lang/Error.html">
+java.lang.Error
+</a>
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.Throwable)">
+java.lang.Error.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../../../java/lang/Throwable.html">
+java.lang.Throwable
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../../java/lang/Error.html#java.lang.Error:&lt;init&gt;:java.lang.Throwablevoid" title="void &lt;init&gt;(java.lang.Throwable)">
+java.lang.Error.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 6; try end: 23: catch start: 26; catched type: java.lang.Exception.
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
+<a name="java.util.concurrent.locks.LockSupport:park:void" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+void
+ 
+<span>
+park
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.util.concurrent.locks.LockSupport:unsafe:sun.misc.Unsafe">
+java.util.concurrent.locks.LockSupport.unsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../../sun/misc/Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+lconst %Ld0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void park(bool, long)">
+sun.misc.Unsafe.park
+</span>
+</span>
+<span>
+(
+bool
+, 
+long
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../../sun/misc/Unsafe.html#sun.misc.Unsafe:park:ZJvoid" title="void park(bool, long)">
+sun.misc.Unsafe.park
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.concurrent.locks.LockSupport:&lt;init&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+private 
+<span>
+LockSupport
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.concurrent.locks.LockSupport:parkNanos:java.lang.ObjectJvoid" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+void
+ 
+<span>
+parkNanos
+</span>
+(
+<a href="../../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+lload  1
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+lconst %Ld0
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+lcmp
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+ifle 25
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../../../java/lang/Thread.html">
+java.lang.Thread
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Thread currentThread()">
+java.lang.Thread.currentThread
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../../java/lang/Thread.html#java.lang.Thread:currentThread:java.lang.Thread" title="java.lang.Thread currentThread()">
+java.lang.Thread.currentThread
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+astore  3
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void setBlocker(java.lang.Thread, java.lang.Object)">
+java.util.concurrent.locks.LockSupport.setBlocker
+</span>
+</span>
+<span>
+(
+<a href="../../../../java/lang/Thread.html">
+java.lang.Thread
+</a>
+, 
+<a href="../../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.concurrent.locks.LockSupport:setBlocker:java.lang.Threadjava.lang.Objectvoid" title="void setBlocker(java.lang.Thread, java.lang.Object)">
+java.util.concurrent.locks.LockSupport.setBlocker
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.util.concurrent.locks.LockSupport:unsafe:sun.misc.Unsafe">
+java.util.concurrent.locks.LockSupport.unsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../../sun/misc/Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+lload  1
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void park(bool, long)">
+sun.misc.Unsafe.park
+</span>
+</span>
+<span>
+(
+bool
+, 
+long
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../../sun/misc/Unsafe.html#sun.misc.Unsafe:park:ZJvoid" title="void park(bool, long)">
+sun.misc.Unsafe.park
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void setBlocker(java.lang.Thread, java.lang.Object)">
+java.util.concurrent.locks.LockSupport.setBlocker
+</span>
+</span>
+<span>
+(
+<a href="../../../../java/lang/Thread.html">
+java.lang.Thread
+</a>
+, 
+<a href="../../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.concurrent.locks.LockSupport:setBlocker:java.lang.Threadjava.lang.Objectvoid" title="void setBlocker(java.lang.Thread, java.lang.Object)">
+java.util.concurrent.locks.LockSupport.setBlocker
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.concurrent.locks.LockSupport:parkUntil:java.lang.ObjectJvoid" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+void
+ 
+<span>
+parkUntil
+</span>
+(
+<a href="../../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../../../java/lang/Thread.html">
+java.lang.Thread
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Thread currentThread()">
+java.lang.Thread.currentThread
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../../java/lang/Thread.html#java.lang.Thread:currentThread:java.lang.Thread" title="java.lang.Thread currentThread()">
+java.lang.Thread.currentThread
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+astore  3
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void setBlocker(java.lang.Thread, java.lang.Object)">
+java.util.concurrent.locks.LockSupport.setBlocker
+</span>
+</span>
+<span>
+(
+<a href="../../../../java/lang/Thread.html">
+java.lang.Thread
+</a>
+, 
+<a href="../../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.concurrent.locks.LockSupport:setBlocker:java.lang.Threadjava.lang.Objectvoid" title="void setBlocker(java.lang.Thread, java.lang.Object)">
+java.util.concurrent.locks.LockSupport.setBlocker
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.util.concurrent.locks.LockSupport:unsafe:sun.misc.Unsafe">
+java.util.concurrent.locks.LockSupport.unsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../../sun/misc/Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+lload  1
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void park(bool, long)">
+sun.misc.Unsafe.park
+</span>
+</span>
+<span>
+(
+bool
+, 
+long
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../../sun/misc/Unsafe.html#sun.misc.Unsafe:park:ZJvoid" title="void park(bool, long)">
+sun.misc.Unsafe.park
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void setBlocker(java.lang.Thread, java.lang.Object)">
+java.util.concurrent.locks.LockSupport.setBlocker
+</span>
+</span>
+<span>
+(
+<a href="../../../../java/lang/Thread.html">
+java.lang.Thread
+</a>
+, 
+<a href="../../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.concurrent.locks.LockSupport:setBlocker:java.lang.Threadjava.lang.Objectvoid" title="void setBlocker(java.lang.Thread, java.lang.Object)">
+java.util.concurrent.locks.LockSupport.setBlocker
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.concurrent.locks.LockSupport:parkUntil:Jvoid" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+void
+ 
+<span>
+parkUntil
+</span>
+(
+long
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.util.concurrent.locks.LockSupport:unsafe:sun.misc.Unsafe">
+java.util.concurrent.locks.LockSupport.unsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../../sun/misc/Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+lload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void park(bool, long)">
+sun.misc.Unsafe.park
+</span>
+</span>
+<span>
+(
+bool
+, 
+long
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../../sun/misc/Unsafe.html#sun.misc.Unsafe:park:ZJvoid" title="void park(bool, long)">
+sun.misc.Unsafe.park
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.concurrent.locks.LockSupport:park:java.lang.Objectvoid" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+park
+</span>
+(
+<a href="../../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../../java/util/concurrent/locks/AbstractQueuedSynchronizer.html#java.util.concurrent.locks.AbstractQueuedSynchronizer:parkAndCheckInterrupt:Z" title="bool parkAndCheckInterrupt()">
+java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../../../java/lang/Thread.html">
+java.lang.Thread
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Thread currentThread()">
+java.lang.Thread.currentThread
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../../java/lang/Thread.html#java.lang.Thread:currentThread:java.lang.Thread" title="java.lang.Thread currentThread()">
+java.lang.Thread.currentThread
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+astore  1
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void setBlocker(java.lang.Thread, java.lang.Object)">
+java.util.concurrent.locks.LockSupport.setBlocker
+</span>
+</span>
+<span>
+(
+<a href="../../../../java/lang/Thread.html">
+java.lang.Thread
+</a>
+, 
+<a href="../../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.concurrent.locks.LockSupport:setBlocker:java.lang.Threadjava.lang.Objectvoid" title="void setBlocker(java.lang.Thread, java.lang.Object)">
+java.util.concurrent.locks.LockSupport.setBlocker
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.util.concurrent.locks.LockSupport:unsafe:sun.misc.Unsafe">
+java.util.concurrent.locks.LockSupport.unsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../../sun/misc/Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+lconst %Ld0
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void park(bool, long)">
+sun.misc.Unsafe.park
+</span>
+</span>
+<span>
+(
+bool
+, 
+long
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../../sun/misc/Unsafe.html#sun.misc.Unsafe:park:ZJvoid" title="void park(bool, long)">
+sun.misc.Unsafe.park
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void setBlocker(java.lang.Thread, java.lang.Object)">
+java.util.concurrent.locks.LockSupport.setBlocker
+</span>
+</span>
+<span>
+(
+<a href="../../../../java/lang/Thread.html">
+java.lang.Thread
+</a>
+, 
+<a href="../../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.concurrent.locks.LockSupport:setBlocker:java.lang.Threadjava.lang.Objectvoid" title="void setBlocker(java.lang.Thread, java.lang.Object)">
+java.util.concurrent.locks.LockSupport.setBlocker
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.concurrent.locks.LockSupport:setBlocker:java.lang.Threadjava.lang.Objectvoid" href="#">
+
+</a>
+<div class="method_signature">
+private static 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+setBlocker
+</span>
+(
+<a href="../../../../java/lang/Thread.html">
+java.lang.Thread
+</a>
+ 0
+, 
+<a href="../../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.concurrent.locks.LockSupport:park:java.lang.Objectvoid" title="void park(java.lang.Object)">
+java.util.concurrent.locks.LockSupport.park(java.lang.Object)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.util.concurrent.locks.LockSupport:unsafe:sun.misc.Unsafe">
+java.util.concurrent.locks.LockSupport.unsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../../sun/misc/Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.util.concurrent.locks.LockSupport:parkBlockerOffset:J">
+java.util.concurrent.locks.LockSupport.parkBlockerOffset
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+long
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void putObject(java.lang.Object, long, java.lang.Object)">
+sun.misc.Unsafe.putObject
+</span>
+</span>
+<span>
+(
+<a href="../../../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+long
+, 
+<a href="../../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../../sun/misc/Unsafe.html#sun.misc.Unsafe:putObject:java.lang.ObjectJjava.lang.Objectvoid" title="void putObject(java.lang.Object, long, java.lang.Object)">
+sun.misc.Unsafe.putObject
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.concurrent.locks.LockSupport:parkNanos:Jvoid" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+void
+ 
+<span>
+parkNanos
+</span>
+(
+long
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+lload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+lconst %Ld0
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+lcmp
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+ifle 11
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.util.concurrent.locks.LockSupport:unsafe:sun.misc.Unsafe">
+java.util.concurrent.locks.LockSupport.unsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../../sun/misc/Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+lload  0
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void park(bool, long)">
+sun.misc.Unsafe.park
+</span>
+</span>
+<span>
+(
+bool
+, 
+long
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../../sun/misc/Unsafe.html#sun.misc.Unsafe:park:ZJvoid" title="void park(bool, long)">
+sun.misc.Unsafe.park
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.concurrent.locks.LockSupport:unpark:java.lang.Threadvoid" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+unpark
+</span>
+(
+<a href="../../../../java/lang/Thread.html">
+java.lang.Thread
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../../java/util/concurrent/locks/AbstractQueuedSynchronizer.html#java.util.concurrent.locks.AbstractQueuedSynchronizer:unparkSuccessor:java.util.concurrent.locks.AbstractQueuedSynchronizer$Nodevoid" title="void unparkSuccessor(java.util.concurrent.locks.AbstractQueuedSynchronizer$Node)">
+java.util.concurrent.locks.AbstractQueuedSynchronizer.unparkSuccessor(java.util.concurrent.locks.AbstractQueuedSynchronizer$Node)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+ifnull 10
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.util.concurrent.locks.LockSupport:unsafe:sun.misc.Unsafe">
+java.util.concurrent.locks.LockSupport.unsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../../sun/misc/Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void unpark(java.lang.Object)">
+sun.misc.Unsafe.unpark
+</span>
+</span>
+<span>
+(
+<a href="../../../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../../sun/misc/Unsafe.html#sun.misc.Unsafe:unpark:java.lang.Objectvoid" title="void unpark(java.lang.Object)">
+sun.misc.Unsafe.unpark
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.concurrent.locks.LockSupport:getBlocker:java.lang.Threadjava.lang.Object" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="../../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 
+<span>
+getBlocker
+</span>
+(
+<a href="../../../../java/lang/Thread.html">
+java.lang.Thread
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+ifnonnull 11
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../../../java/lang/NullPointerException.html">
+java.lang.NullPointerException
+</a>
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.NullPointerException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.util.concurrent.locks.LockSupport:unsafe:sun.misc.Unsafe">
+java.util.concurrent.locks.LockSupport.unsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../../sun/misc/Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.util.concurrent.locks.LockSupport:parkBlockerOffset:J">
+java.util.concurrent.locks.LockSupport.parkBlockerOffset
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+long
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object getObjectVolatile(java.lang.Object, long)">
+sun.misc.Unsafe.getObjectVolatile
+</span>
+</span>
+<span>
+(
+<a href="../../../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+long
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../../sun/misc/Unsafe.html#sun.misc.Unsafe:getObjectVolatile:java.lang.ObjectJjava.lang.Object" title="java.lang.Object getObjectVolatile(java.lang.Object, long)">
+sun.misc.Unsafe.getObjectVolatile
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+</div>
+</body>
+</html>

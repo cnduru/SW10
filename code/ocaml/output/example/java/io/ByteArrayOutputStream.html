@@ -1,0 +1,2618 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>
+java.io.ByteArrayOutputStream
+</title>
+<link rel="StyleSheet" href="../../style.css" type="text/css" media="all" />
+<script type="text/javascript" src="../../actions.js">
+</script>
+</head>
+<body>
+<div class="class">
+<a name="java.io.ByteArrayOutputStream" href="#">
+
+</a>
+<div class="classname">
+Class java.io.ByteArrayOutputStream
+</div>
+<ul class="annot">
+<li>
+Not instantiatied
+</li>
+</ul>
+<div class="field">
+<a name="java.io.ByteArrayOutputStream:count:I" href="#">
+
+</a>
+<span class="field_signature">
+protected  
+int
+ count;
+</span>
+</div>
+<div class="field">
+<a name="java.io.ByteArrayOutputStream:MAX_ARRAY_SIZE:I" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+int
+ MAX_ARRAY_SIZE;
+</span>
+</div>
+<div class="field">
+<a name="java.io.ByteArrayOutputStream:buf:B.-" href="#">
+
+</a>
+<span class="field_signature">
+protected  
+byte[]
+ buf;
+</span>
+</div>
+<div class="method">
+<a name="java.io.ByteArrayOutputStream:write:B.-IIvoid" href="#">
+
+</a>
+<div class="method_signature">
+public synchronized 
+void
+ 
+<span>
+write
+</span>
+(
+byte[]
+ 1
+, 
+int
+ 2
+, 
+int
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+iflt 22
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+ifcmpgt 16
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+iflt 12
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+ifle 11
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/IndexOutOfBoundsException.html">
+java.lang.IndexOutOfBoundsException
+</a>
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.IndexOutOfBoundsException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.ByteArrayOutputStream:count:I">
+java.io.ByteArrayOutputStream.count
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void ensureCapacity(int)">
+java.io.ByteArrayOutputStream.ensureCapacity
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.ByteArrayOutputStream:buf:B.-">
+java.io.ByteArrayOutputStream.buf
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+byte[]
+</span>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.ByteArrayOutputStream:count:I">
+java.io.ByteArrayOutputStream.count
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="51">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="52">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void arraycopy(java.lang.Object, int, java.lang.Object, int, int)">
+java.lang.System.arraycopy
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+int
+, 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/System.html#java.lang.System:arraycopy:java.lang.ObjectIjava.lang.ObjectIIvoid" title="void arraycopy(java.lang.Object, int, java.lang.Object, int, int)">
+java.lang.System.arraycopy
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="55">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="57">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.ByteArrayOutputStream:count:I">
+java.io.ByteArrayOutputStream.count
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="60">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="61">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="62">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.io.ByteArrayOutputStream:count:I">
+java.io.ByteArrayOutputStream.count
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="65">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.ByteArrayOutputStream:ensureCapacity:Ivoid" href="#">
+
+</a>
+<div class="method_signature">
+private 
+void
+ 
+<span>
+ensureCapacity
+</span>
+(
+int
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.ByteArrayOutputStream:buf:B.-">
+java.io.ByteArrayOutputStream.buf
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+byte[]
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+ifle 8
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void grow(int)">
+java.io.ByteArrayOutputStream.grow
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.ByteArrayOutputStream:&lt;init&gt;:Ivoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<span>
+ByteArrayOutputStream
+</span>
+(
+int
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.io.OutputStream.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+ifge 30
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.StringBuilder.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+ldc string &apos;Negative initial size: &apos;
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.Stringjava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.String)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(int)">
+java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:Ijava.lang.StringBuilder" title="java.lang.StringBuilder append(int)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String toString()">
+java.lang.StringBuilder.toString
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:toString:java.lang.String" title="java.lang.String toString()">
+java.lang.StringBuilder.toString
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.lang.IllegalArgumentException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+newarray 
+</span>
+<span>
+byte
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.io.ByteArrayOutputStream:buf:B.-">
+java.io.ByteArrayOutputStream.buf
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+byte[]
+</span>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.ByteArrayOutputStream:toString:java.lang.Stringjava.lang.String" href="#">
+
+</a>
+<div class="method_signature">
+public synchronized 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span>
+toString
+</span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.ByteArrayOutputStream:buf:B.-">
+java.io.ByteArrayOutputStream.buf
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+byte[]
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.ByteArrayOutputStream:count:I">
+java.io.ByteArrayOutputStream.count
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(byte[], int, int, java.lang.String)">
+java.lang.String.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+byte[]
+, 
+int
+, 
+int
+, 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.ByteArrayOutputStream:&lt;init&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<span>
+ByteArrayOutputStream
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+bipush 32
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(int)">
+java.io.ByteArrayOutputStream.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.ByteArrayOutputStream:close:void" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span>
+close
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.ByteArrayOutputStream:reset:void" href="#">
+
+</a>
+<div class="method_signature">
+public synchronized 
+void
+ 
+<span>
+reset
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.io.ByteArrayOutputStream:count:I">
+java.io.ByteArrayOutputStream.count
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.ByteArrayOutputStream:toByteArray:B.-" href="#">
+
+</a>
+<div class="method_signature">
+public synchronized 
+byte[]
+ 
+<span>
+toByteArray
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.ByteArrayOutputStream:buf:B.-">
+java.io.ByteArrayOutputStream.buf
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+byte[]
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.ByteArrayOutputStream:count:I">
+java.io.ByteArrayOutputStream.count
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+byte[]
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="byte[] copyOf(byte[], int)">
+java.util.Arrays.copyOf
+</span>
+</span>
+<span>
+(
+byte[]
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.ByteArrayOutputStream:writeTo:java.io.OutputStreamvoid" href="#">
+
+</a>
+<div class="method_signature">
+public synchronized 
+void
+ 
+<span>
+writeTo
+</span>
+(
+<a href="../../java/io/OutputStream.html">
+java.io.OutputStream
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.ByteArrayOutputStream:buf:B.-">
+java.io.ByteArrayOutputStream.buf
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+byte[]
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.ByteArrayOutputStream:count:I">
+java.io.ByteArrayOutputStream.count
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void write(byte[], int, int)">
+java.io.OutputStream.write
+</span>
+</span>
+<span>
+(
+byte[]
+, 
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/io/FileOutputStream.html#java.io.FileOutputStream:write:B.-IIvoid" title="void write(byte[], int, int)">
+java.io.FileOutputStream.write
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/PrintStream.html#java.io.PrintStream:write:B.-IIvoid" title="void write(byte[], int, int)">
+java.io.PrintStream.write
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/BufferedOutputStream.html#java.io.BufferedOutputStream:write:B.-IIvoid" title="void write(byte[], int, int)">
+java.io.BufferedOutputStream.write
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.ByteArrayOutputStream:hugeCapacity:II" href="#">
+
+</a>
+<div class="method_signature">
+private static 
+int
+ 
+<span>
+hugeCapacity
+</span>
+(
+int
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+ifge 11
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/OutOfMemoryError.html">
+java.lang.OutOfMemoryError
+</a>
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.OutOfMemoryError.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+iconst 2147483639
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+ifcmpme 8
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+iconst 2147483647
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+goto 5
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+iconst 2147483639
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.ByteArrayOutputStream:size:I" href="#">
+
+</a>
+<div class="method_signature">
+public synchronized 
+int
+ 
+<span>
+size
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.ByteArrayOutputStream:count:I">
+java.io.ByteArrayOutputStream.count
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.ByteArrayOutputStream:toString:java.lang.String" href="#">
+
+</a>
+<div class="method_signature">
+public synchronized 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span>
+toString
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.ByteArrayOutputStream:buf:B.-">
+java.io.ByteArrayOutputStream.buf
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+byte[]
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.ByteArrayOutputStream:count:I">
+java.io.ByteArrayOutputStream.count
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(byte[], int, int)">
+java.lang.String.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+byte[]
+, 
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.ByteArrayOutputStream:grow:Ivoid" href="#">
+
+</a>
+<div class="method_signature">
+private 
+void
+ 
+<span>
+grow
+</span>
+(
+int
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.ByteArrayOutputStream:buf:B.-">
+java.io.ByteArrayOutputStream.buf
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+byte[]
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+istore  2
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+ishl
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+istore  3
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+ifge 5
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+istore  3
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+iconst 2147483639
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+ifle 8
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int hugeCapacity(int)">
+java.io.ByteArrayOutputStream.hugeCapacity
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+istore  3
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.ByteArrayOutputStream:buf:B.-">
+java.io.ByteArrayOutputStream.buf
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+byte[]
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+byte[]
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="byte[] copyOf(byte[], int)">
+java.util.Arrays.copyOf
+</span>
+</span>
+<span>
+(
+byte[]
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.io.ByteArrayOutputStream:buf:B.-">
+java.io.ByteArrayOutputStream.buf
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+byte[]
+</span>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.ByteArrayOutputStream:write:Ivoid" href="#">
+
+</a>
+<div class="method_signature">
+public synchronized 
+void
+ 
+<span>
+write
+</span>
+(
+int
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.ByteArrayOutputStream:count:I">
+java.io.ByteArrayOutputStream.count
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void ensureCapacity(int)">
+java.io.ByteArrayOutputStream.ensureCapacity
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.ByteArrayOutputStream:buf:B.-">
+java.io.ByteArrayOutputStream.buf
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+byte[]
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.ByteArrayOutputStream:count:I">
+java.io.ByteArrayOutputStream.count
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+i2b
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+bastore
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.ByteArrayOutputStream:count:I">
+java.io.ByteArrayOutputStream.count
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.io.ByteArrayOutputStream:count:I">
+java.io.ByteArrayOutputStream.count
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.io.ByteArrayOutputStream:toString:Ijava.lang.String" href="#">
+
+</a>
+<div class="method_signature">
+public synchronized 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span>
+toString
+</span>
+(
+int
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.ByteArrayOutputStream:buf:B.-">
+java.io.ByteArrayOutputStream.buf
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+byte[]
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.io.ByteArrayOutputStream:count:I">
+java.io.ByteArrayOutputStream.count
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(byte[], int, int, int)">
+java.lang.String.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+byte[]
+, 
+int
+, 
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+</div>
+</body>
+</html>

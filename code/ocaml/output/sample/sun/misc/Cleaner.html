@@ -1,0 +1,1617 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>
+sun.misc.Cleaner
+</title>
+<link rel="StyleSheet" href="../../style.css" type="text/css" media="all" />
+<script type="text/javascript" src="../../actions.js">
+</script>
+</head>
+<body>
+<div class="class">
+<a name="sun.misc.Cleaner" href="#">
+
+</a>
+<div class="classname">
+Class sun.misc.Cleaner
+</div>
+<ul class="annot">
+<li>
+Not instantiatied
+</li>
+</ul>
+<div class="field">
+<a name="sun.misc.Cleaner:first:sun.misc.Cleaner" href="#">
+
+</a>
+<span class="field_signature">
+private static  
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+ first;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Cleaner:prev:sun.misc.Cleaner" href="#">
+
+</a>
+<span class="field_signature">
+private  
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+ prev;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Cleaner:thunk:java.lang.Runnable" href="#">
+
+</a>
+<span class="field_signature">
+private final 
+<a href="../../java/lang/Runnable.html">
+java.lang.Runnable
+</a>
+ thunk;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Cleaner:dummyQueue:java.lang.ref.ReferenceQueue" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+<a href="../../java/lang/ref/ReferenceQueue.html">
+java.lang.ref.ReferenceQueue
+</a>
+ dummyQueue;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Cleaner:next:sun.misc.Cleaner" href="#">
+
+</a>
+<span class="field_signature">
+private  
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+ next;
+</span>
+</div>
+<div class="method">
+<a name="sun.misc.Cleaner:&lt;clinit&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<span>
+clinit
+</span>
+{};
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/ref/ReferenceQueue.html">
+java.lang.ref.ReferenceQueue
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.ref.ReferenceQueue.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:dummyQueue:java.lang.ref.ReferenceQueue">
+sun.misc.Cleaner.dummyQueue
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/ref/ReferenceQueue.html">
+java.lang.ref.ReferenceQueue
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:first:sun.misc.Cleaner">
+sun.misc.Cleaner.first
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Cleaner:clean:void" href="#">
+
+</a>
+<div class="method_signature">
+public 
+void
+ 
+<span>
+clean
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool remove(sun.misc.Cleaner)">
+sun.misc.Cleaner.remove
+</span>
+</span>
+<span>
+(
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ifne 4
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:thunk:java.lang.Runnable">
+sun.misc.Cleaner.thunk
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/Runnable.html">
+java.lang.Runnable
+</a>
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+invokeinterface 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void run()">
+java.lang.Runnable.run
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/ref/Finalizer$FinalizerThread.html#java.lang.ref.Finalizer$FinalizerThread:run:void" title="void run()">
+java.lang.ref.Finalizer$FinalizerThread.run
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/ref/Reference$ReferenceHandler.html#java.lang.ref.Reference$ReferenceHandler:run:void" title="void run()">
+java.lang.ref.Reference$ReferenceHandler.run
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+goto 17
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+astore  1
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+sun.misc.Cleaner$1
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(sun.misc.Cleaner, java.lang.Throwable)">
+sun.misc.Cleaner$1.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+, 
+<a href="../../java/lang/Throwable.html">
+java.lang.Throwable
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object doPrivileged(java.security.PrivilegedAction)">
+java.security.AccessController.doPrivileged
+</span>
+</span>
+<span>
+(
+<a href="../../java/security/PrivilegedAction.html">
+java.security.PrivilegedAction
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/security/AccessController.html#java.security.AccessController:doPrivileged:java.security.PrivilegedActionjava.lang.Object" title="java.lang.Object doPrivileged(java.security.PrivilegedAction)">
+java.security.AccessController.doPrivileged
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+pop
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 8; try end: 17: catch start: 20; catched type: java.lang.Throwable.
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
+<a name="sun.misc.Cleaner:add:sun.misc.Cleanersun.misc.Cleaner" href="#">
+
+</a>
+<div class="method_signature">
+private static synchronized 
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+ 
+<span>
+add
+</span>
+(
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:first:sun.misc.Cleaner">
+sun.misc.Cleaner.first
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+ifnull 17
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:first:sun.misc.Cleaner">
+sun.misc.Cleaner.first
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:next:sun.misc.Cleaner">
+sun.misc.Cleaner.next
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:first:sun.misc.Cleaner">
+sun.misc.Cleaner.first
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:prev:sun.misc.Cleaner">
+sun.misc.Cleaner.prev
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:first:sun.misc.Cleaner">
+sun.misc.Cleaner.first
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Cleaner:remove:sun.misc.CleanerZ" href="#">
+
+</a>
+<div class="method_signature">
+private static synchronized 
+bool
+ 
+<span>
+remove
+</span>
+(
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:next:sun.misc.Cleaner">
+sun.misc.Cleaner.next
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+ifacmpne 5
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:first:sun.misc.Cleaner">
+sun.misc.Cleaner.first
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+ifacmpne 27
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:next:sun.misc.Cleaner">
+sun.misc.Cleaner.next
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+ifnull 13
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:next:sun.misc.Cleaner">
+sun.misc.Cleaner.next
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:first:sun.misc.Cleaner">
+sun.misc.Cleaner.first
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+goto 10
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:prev:sun.misc.Cleaner">
+sun.misc.Cleaner.prev
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+putstatic 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:first:sun.misc.Cleaner">
+sun.misc.Cleaner.first
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+</span>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:next:sun.misc.Cleaner">
+sun.misc.Cleaner.next
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+</span>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span>
+ifnull 14
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:next:sun.misc.Cleaner">
+sun.misc.Cleaner.next
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+</span>
+</div>
+</li>
+<li value="52">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="53">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:prev:sun.misc.Cleaner">
+sun.misc.Cleaner.prev
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+</span>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:prev:sun.misc.Cleaner">
+sun.misc.Cleaner.prev
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+</span>
+</div>
+</li>
+<li value="59">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="60">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:prev:sun.misc.Cleaner">
+sun.misc.Cleaner.prev
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+</span>
+</div>
+</li>
+<li value="63">
+<div class="instruction">
+<span>
+ifnull 14
+</span>
+</div>
+</li>
+<li value="66">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="67">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:prev:sun.misc.Cleaner">
+sun.misc.Cleaner.prev
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+</span>
+</div>
+</li>
+<li value="70">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="71">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:next:sun.misc.Cleaner">
+sun.misc.Cleaner.next
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+</span>
+</div>
+</li>
+<li value="74">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:next:sun.misc.Cleaner">
+sun.misc.Cleaner.next
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+</span>
+</div>
+</li>
+<li value="77">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="78">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="79">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:next:sun.misc.Cleaner">
+sun.misc.Cleaner.next
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+</span>
+</div>
+</li>
+<li value="82">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="83">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="84">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:prev:sun.misc.Cleaner">
+sun.misc.Cleaner.prev
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+</span>
+</div>
+</li>
+<li value="87">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="88">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Cleaner:create:java.lang.Objectjava.lang.Runnablesun.misc.Cleaner" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+ 
+<span>
+create
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+<a href="../../java/lang/Runnable.html">
+java.lang.Runnable
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+ifnonnull 5
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.Object, java.lang.Runnable)">
+sun.misc.Cleaner.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+<a href="../../java/lang/Runnable.html">
+java.lang.Runnable
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="sun.misc.Cleaner add(sun.misc.Cleaner)">
+sun.misc.Cleaner.add
+</span>
+</span>
+<span>
+(
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Cleaner:&lt;init&gt;:java.lang.Objectjava.lang.Runnablevoid" href="#">
+
+</a>
+<div class="method_signature">
+private 
+<span>
+Cleaner
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+, 
+<a href="../../java/lang/Runnable.html">
+java.lang.Runnable
+</a>
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:dummyQueue:java.lang.ref.ReferenceQueue">
+sun.misc.Cleaner.dummyQueue
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/ref/ReferenceQueue.html">
+java.lang.ref.ReferenceQueue
+</a>
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.Object, java.lang.ref.ReferenceQueue)">
+java.lang.ref.PhantomReference.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+<a href="../../java/lang/ref/ReferenceQueue.html">
+java.lang.ref.ReferenceQueue
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:next:sun.misc.Cleaner">
+sun.misc.Cleaner.next
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:prev:sun.misc.Cleaner">
+sun.misc.Cleaner.prev
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="Cleaner.html">
+sun.misc.Cleaner
+</a>
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.misc.Cleaner:thunk:java.lang.Runnable">
+sun.misc.Cleaner.thunk
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/Runnable.html">
+java.lang.Runnable
+</a>
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+</div>
+</body>
+</html>

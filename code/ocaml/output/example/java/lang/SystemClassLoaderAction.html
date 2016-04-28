@@ -1,0 +1,724 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>
+java.lang.SystemClassLoaderAction
+</title>
+<link rel="StyleSheet" href="../../style.css" type="text/css" media="all" />
+<script type="text/javascript" src="../../actions.js">
+</script>
+</head>
+<body>
+<div class="class">
+<a name="java.lang.SystemClassLoaderAction" href="#">
+
+</a>
+<div class="classname">
+Class java.lang.SystemClassLoaderAction
+</div>
+<ul class="annot">
+<li>
+Instantiated
+</li>
+</ul>
+<div class="field">
+<a name="java.lang.SystemClassLoaderAction:parent:java.lang.ClassLoader" href="#">
+
+</a>
+<span class="field_signature">
+private  
+<a href="../../java/lang/ClassLoader.html">
+java.lang.ClassLoader
+</a>
+ parent;
+</span>
+</div>
+<div class="method">
+<a name="java.lang.SystemClassLoaderAction:run:java.lang.ClassLoader" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/lang/ClassLoader.html">
+java.lang.ClassLoader
+</a>
+ 
+<span>
+run
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+ldc string &apos;java.system.class.loader&apos;
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String getProperty(java.lang.String)">
+java.lang.System.getProperty
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/System.html#java.lang.System:getProperty:java.lang.Stringjava.lang.String" title="java.lang.String getProperty(java.lang.String)">
+java.lang.System.getProperty
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+astore  1
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+ifnonnull 8
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.SystemClassLoaderAction:parent:java.lang.ClassLoader">
+java.lang.SystemClassLoaderAction.parent
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/ClassLoader.html">
+java.lang.ClassLoader
+</a>
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.SystemClassLoaderAction:parent:java.lang.ClassLoader">
+java.lang.SystemClassLoaderAction.parent
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/ClassLoader.html">
+java.lang.ClassLoader
+</a>
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Class forName(java.lang.String, bool, java.lang.ClassLoader)">
+java.lang.Class.forName
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+, 
+bool
+, 
+<a href="../../java/lang/ClassLoader.html">
+java.lang.ClassLoader
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Class.html#java.lang.Class:forName:java.lang.StringZjava.lang.ClassLoaderjava.lang.Class" title="java.lang.Class forName(java.lang.String, bool, java.lang.ClassLoader)">
+java.lang.Class.forName
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+anewarray 
+</span>
+<span>
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+ldc class Ljava/lang/ClassLoader;
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+aastore
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/reflect/Constructor.html">
+java.lang.reflect.Constructor
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.reflect.Constructor getDeclaredConstructor(java.lang.Class[])">
+java.lang.Class.getDeclaredConstructor
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Class.html">
+java.lang.Class
+</a>
+[]
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+astore  2
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+anewarray 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.lang.SystemClassLoaderAction:parent:java.lang.ClassLoader">
+java.lang.SystemClassLoaderAction.parent
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/ClassLoader.html">
+java.lang.ClassLoader
+</a>
+</span>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+aastore
+</span>
+</div>
+</li>
+<li value="50">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object newInstance(java.lang.Object[])">
+java.lang.reflect.Constructor.newInstance
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="53">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="../../java/lang/ClassLoader.html">
+java.lang.ClassLoader
+</a>
+</span>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+astore  3
+</span>
+</div>
+</li>
+<li value="57">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/lang/Thread.html">
+java.lang.Thread
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Thread currentThread()">
+java.lang.Thread.currentThread
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Thread.html#java.lang.Thread:currentThread:java.lang.Thread" title="java.lang.Thread currentThread()">
+java.lang.Thread.currentThread
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="60">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="61">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void setContextClassLoader(java.lang.ClassLoader)">
+java.lang.Thread.setContextClassLoader
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/ClassLoader.html">
+java.lang.ClassLoader
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Thread.html#java.lang.Thread:setContextClassLoader:java.lang.ClassLoadervoid" title="void setContextClassLoader(java.lang.ClassLoader)">
+java.lang.Thread.setContextClassLoader
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="64">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="65">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.SystemClassLoaderAction:&lt;init&gt;:java.lang.ClassLoadervoid" href="#">
+
+</a>
+<div class="method_signature">
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+SystemClassLoaderAction
+</span>
+(
+<a href="../../java/lang/ClassLoader.html">
+java.lang.ClassLoader
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/ClassLoader.html#java.lang.ClassLoader:initSystemClassLoader:void" title="void initSystemClassLoader()">
+java.lang.ClassLoader.initSystemClassLoader()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Object.html#java.lang.Object:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.lang.SystemClassLoaderAction:parent:java.lang.ClassLoader">
+java.lang.SystemClassLoaderAction.parent
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/ClassLoader.html">
+java.lang.ClassLoader
+</a>
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.SystemClassLoaderAction:run:java.lang.Object" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 
+<span>
+run
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/ClassLoader.html">
+java.lang.ClassLoader
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.ClassLoader run()">
+java.lang.SystemClassLoaderAction.run
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+</div>
+</body>
+</html>
