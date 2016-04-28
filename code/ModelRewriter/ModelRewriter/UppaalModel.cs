@@ -475,12 +475,16 @@ namespace ModelRewriter
             {
                 tem.localDeclarations += "\n\nint locsPos;\n";
                 tem.localDeclarations += "int locsBitPos;\n";
-                tem.localDeclarations += "int faultTimeLocals;\n";
 
                 if (!tem.name.Contains("Fault"))
                 {
                     foreach (var loc in tem.Locations)
                     {
+                        if (loc.pc == null)
+                        {
+                            continue;
+                        }
+
                         foreach (var tr in tem.Transitions)
                         {
                             if (tr.source.id == loc.id )
@@ -502,32 +506,18 @@ namespace ModelRewriter
                                 {
                                     tr.asms.content = "faultTimeLocals = 200";
                                 }
-
-                               /* foreach (var lab in tr.labels)
-                                {
-                                    if (lab.kind == "guard" && lab.content != "")
-                                    {
-                                        lab.content += " && faultTimeLocals > globalClock";
-                                    }
-
-                                    if (lab.kind == "assignment" && lab.content != "")
-                                    {
-                                        lab.content += ", faultTimeLocals = 200";
-                                    }
-                                }*/
                             }
                         }
 
-                        if (loc.pc != null)
-                        {
 
-                            Transition locFaultTrans = new Transition(loc, loc,
+
+                        Transition locFaultTrans = new Transition(loc, loc,
                                                       Template.makeLabels("gus", "faultTimeLocals <= globalClock",
                                                       "locs[locsPos] ^= 1 << locsBitPos",
                                                       "locsPos:int[0,locs_size - 1], locsBitPos:int[0,7]"));
                             
-                            tem.Transitions.Add(locFaultTrans);
-                        }
+                        tem.Transitions.Add(locFaultTrans);
+                        
                     }
                 }
             }
