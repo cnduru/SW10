@@ -182,10 +182,8 @@ namespace ModelRewriter
             StringBuilder sb = new StringBuilder();
             sb.Append(declarations);
             sb.Append("\nint faultAt = 0;");
-            sb.Append("\nint faultTimeLocals = 0;");
-            sb.Append("\nint locsBitPos = 0;");
-            sb.Append("\nint locsPos = 0;");
             sb.Append("\nclock globalClock;");
+            sb.Append("\nint faultTimeLocals;");
 
             return sb.ToString();
         }
@@ -214,6 +212,12 @@ namespace ModelRewriter
                 // are new additions to the system needed in this case since edges are just added?
                 loadedSystem.Add("Fault = InstFaultInj();\n");
                 sb.Append("Fault = InstFaultInj();\n");
+            }
+            else if (faultModel == "locals")
+            {
+                // are new additions to the system needed in this case since edges are just added?
+                loadedSystem.Add("Fault = LocalsFaultInj();\n");
+                sb.Append("Fault = LocalsFaultInj();\n");
             }
 
             MatchCollection matches = Regex.Matches(stem, patternSystem);
@@ -462,6 +466,11 @@ namespace ModelRewriter
 
         public void rewriteLocalFault(string path)
         {
+            XElement localsFaultTemplateXML = XElement.Parse(XMLProvider.getLocalsFaultTemplate());
+            XMLHandler xhl = new XMLHandler();
+            Template localsFaultTemplate = xhl.getTemplate(localsFaultTemplateXML);
+            templates.Add(localsFaultTemplate);
+
             foreach (var tem in templates)
             {
                 tem.localDeclarations += "\n\nint locsPos;\n";
@@ -472,21 +481,58 @@ namespace ModelRewriter
                 {
                     foreach (var loc in tem.Locations)
                     {
-                        if(loc.pc != null)
+                        foreach (var tr in tem.Transitions)
                         {
+                            if (tr.source.id == loc.id )
+                            {
+                                if(tr.grds.content != "")
+                                {
+                                    tr.grds.content += " && faultTimeLocals > globalClock";
+                                }
+                                else
+                                {
+                                    tr.grds.content = "faultTimeLocals > globalClock";
+                                }
+
+                                if (tr.sels.content != "")
+                                {
+                                    tr.asms.content += ", faultTimeLocals = 200";
+                                }
+                                else
+                                {
+                                    tr.asms.content = "faultTimeLocals = 200";
+                                }
+
+                               /* foreach (var lab in tr.labels)
+                                {
+                                    if (lab.kind == "guard" && lab.content != "")
+                                    {
+                                        lab.content += " && faultTimeLocals > globalClock";
+                                    }
+
+                                    if (lab.kind == "assignment" && lab.content != "")
+                                    {
+                                        lab.content += ", faultTimeLocals = 200";
+                                    }
+                                }*/
+                            }
+                        }
+
+                        if (loc.pc != null)
+                        {
+
                             Transition locFaultTrans = new Transition(loc, loc,
-                                                      Template.makeLabels("gus", "faultTimeLocals == globalClock",
-                                                      "locs[locsPos] ^= 1 << locsBitPos, locsPos = i, locsBitPos = ii, faultTimeLocals = iii",
-                                                      "i:int[0,locs_size - 1], ii:int[0,7], iii:int[0,7]"));
+                                                      Template.makeLabels("gus", "faultTimeLocals <= globalClock",
+                                                      "locs[locsPos] ^= 1 << locsBitPos",
+                                                      "locsPos:int[0,locs_size - 1], locsBitPos:int[0,7]"));
                             
                             tem.Transitions.Add(locFaultTrans);
                         }
-
                     }
                 }
             }
-            Save(path);
 
+            Save(path);
         }
     }
 }
