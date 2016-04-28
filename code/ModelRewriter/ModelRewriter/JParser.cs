@@ -10,15 +10,14 @@ namespace ModelRewriter
 {
 	public class JParser
 	{
-        public static List<string> ClassNames;
-        public static List<string> MethodNames;
+        public static List<string> ClassNames = new List<string>();
+        public static List<string> MethodNames = new List<string>();
 
         public JParser(IEnumerable<string> path)
 		{
             UppaalModel model = new UppaalModel();
             var jClasses = new List<JClass>(); 
-            ClassNames = new List<string>();
-            MethodNames = new List<string>();
+            ClassNames.Add("Object");
             foreach (var p in path)
             {
                 var jClass = new JClass(p);
