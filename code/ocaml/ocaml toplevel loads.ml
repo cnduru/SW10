@@ -21,12 +21,15 @@ open JBasics
 open Sawja_pack
 open JProgram;;
 
-
+(* Setup here! *)
+let jar_file = "java/virtual.jar"
+let main_class = "AClass"
+let output = "output/virtual"
 
 let (prta,instantiated_classes) =
   JRTA.parse_program 
-    "java/sample.jar:rt.jar:jce.jar"
-    (JBasics.make_cms (JBasics.make_cn "Sample") JProgram.main_signature);;
+    (String.concat "" [jar_file ; ":rt.jar:jce.jar"])
+    (JBasics.make_cms (JBasics.make_cn main_class) JProgram.main_signature);;
 
 
 
@@ -70,7 +73,7 @@ let simple_info =
     JPrintHtml.p_method = p_method;
     JPrintHtml.p_pp = p_pp };;
 
-let output = "./sample"
+
 let () = JPrintHtml.JCodePrinter.print_program ~info:simple_info prta output;;
 
 store_callgraph (get_callgraph prta) "call_graph.txt";;
