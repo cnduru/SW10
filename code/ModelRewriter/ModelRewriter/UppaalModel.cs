@@ -81,9 +81,10 @@ namespace ModelRewriter
                 
             gloDecBuild.Append("bool done = false;\n");
             gloDecBuild.Append("bool opstack_fault = false;\n");
+            gloDecBuild.Append("int clID = 0;\n");
 
             gloDecBuild.Append(
-                "const int classFields[3] = {3, 2, 3};\n\n" +
+                "const int classFields[4] = {0, 3, 2, 3};\n\n" +
                 "int heapPointer = 0;\n" +
                 "int alocNew(int classID){\n"+
                 "    int ref = heapPointer;\n" +
@@ -93,12 +94,8 @@ namespace ModelRewriter
                 "    return ref;\n" +
                 "}");
 
-            gloDecBuild.Append(
-                "bool signature(int classID, int t){\n" +
-                "    return true;\n}");
 
-
-            globalDeclarations = gloDecBuild.ToString();
+            globalDeclarations = gloDecBuild.ToString() + "\n\n" + extraGlobalDec.ToString();
             system = sysBuild.ToString();
 
 
@@ -159,11 +156,15 @@ namespace ModelRewriter
             templates.Add(new Template(methods));
 
             extraGlobalDec.Append("\n" +
-                "const int classImpl[3] = {0, 3, 3};");
+                "const int classHierarchy[4] = {0, 0, 0, 2};");
+
             extraGlobalDec.Append("\n" +
-                "bool signature(int classID, int methodID)\n" +
+                "const int classImpl[4] = {0, 0, 3, 3};");
+            extraGlobalDec.Append("\n" +
+                "bool signature(int classID, int methodID, int methodClassID)\n" +
                 "{\n" +
-                "    return methodID < classImpl[classID] ^ (1 << (methodID - 1));\n" +
+                "    return methodID < classImpl[classID] ^ (1 << (methodID - 1)) \n" +
+                "        && classID == methodClassID;\n" +
                 "}\n");
 
         }
@@ -266,7 +267,7 @@ namespace ModelRewriter
             XElement faultTemplateXML = XElement.Parse(XMLProvider.getFaultTemplate());
             XMLHandler xhl = new XMLHandler();
 
-            Template faultTemplate = xhl.getTemplatePCFault(faultTemplateXML);
+            Template faultTemplate = xhl.getTemplate(faultTemplateXML);
             faultTemplate.Locations[1].committed = true;
             templates.Add(faultTemplate);
 

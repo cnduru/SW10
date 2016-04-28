@@ -69,7 +69,7 @@ namespace ModelRewriter
             target = to;
         }
 
-        public Transition (Location from, Location to, List<Label> labl)
+        public Transition (Location from, Location to, List<Label> labl, int xOffset = 0)
         {
             source = from;
             target = to;
@@ -79,6 +79,12 @@ namespace ModelRewriter
                 tmp.SetCords(from, i * Constants.LabelOffsetY);
                 labels.Add(tmp);
             }
+
+            if (xOffset != 0)
+            {
+                nails.Add(new Nail(){x = xOffset, y = (from.y + to.y) / 2});
+            }
+
         }
 
         public struct Nail 

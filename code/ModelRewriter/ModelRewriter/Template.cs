@@ -204,12 +204,13 @@ bool ifeq(){
             Locations.Add(initLoc);
 
             //resolve loc
+            var SignaChecks = new List<string>();
             var resolveLoc = new Location("Resolver", 0, 100);
             resolveLoc.Urgent = true;
             Locations.Add(resolveLoc);
 
             Transitions.Add(new Transition(initLoc, resolveLoc,
-                makeLabels("y", "cVirtual?")
+                makeLabels("yu", "cVirtual?", "clID = H[par0]")
             ));
                 
             var returnerLoc = new Location("Returner", -100, 300);
@@ -222,15 +223,24 @@ bool ifeq(){
             for (int i = 0; i < method.Count; i++)
             {
                 var mLoc = new Location(method[i], i*200, 200);
+                var sigCheck = String.Format("signature(clID, {0}, {1})", 
+                    JParser.GetMethodIndex(method).ToString(),
+                    JParser.getClassID(mLoc.name.Split('_').First()));
                 Locations.Add(mLoc);
                 Transitions.Add(new Transition(resolveLoc, mLoc, makeLabels("gy",
-                    String.Format("signature(H[par0], {0})", JParser.GetMethodIndex(method).ToString()),
+                    sigCheck,
                     String.Format("c{0}!", mLoc.name)
                 )));
-
                 Transitions.Add(new Transition(mLoc, returnerLoc, 
                     makeLabels("y", String.Format("c{0}?", mLoc.name))));
+
+                SignaChecks.Add(sigCheck);
             }
+
+            Transitions.Add(new Transition(resolveLoc, resolveLoc, makeLabels("gu", 
+                String.Format("!({0})",String.Join(" || ", SignaChecks)),
+                "clID = classHierarchy[clID]"
+            )));
         }
 
         private List<Location> ResolveLocations(List<string> method)
@@ -388,7 +398,7 @@ bool ifeq(){
                                     content = "osp_dec(2), t = 0", kind = "assignment"
                                 }
                             };
-                        Transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + Convert.ToInt32(instArg[1])), labels));
+                        Transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + Convert.ToInt32(instArg[1])), labels, -50));
 
                         labels = new List<Label>()
                             {
@@ -419,7 +429,7 @@ bool ifeq(){
                                     content = "osp_dec(2), t = 0", kind = "assignment"
                             }
                         };
-                        Transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + Convert.ToInt32(instArg[1])), labels));
+                        Transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + Convert.ToInt32(instArg[1])), labels, -50));
 
                         labels = new List<Label>()
                         {
@@ -453,7 +463,7 @@ bool ifeq(){
                                     content = "osp_dec(1), t = 0", kind = "assignment"
                             }
                         };
-                        Transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + Convert.ToInt32(instArg[1])), labels));
+                        Transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + Convert.ToInt32(instArg[1])), labels, -50));
 
                         labels = new List<Label>()
                         {
@@ -490,7 +500,7 @@ bool ifeq(){
                         labels = makeLabels("gyu", 
                                 timeGuard,
                                 "cVirtual!",
-                                String.Format("osp_dec({0})", param.Count + 1) //TODO t=0 ?
+                                String.Format("osp_dec({0}), par0 = os[osp]", param.Count + 1) //TODO t=0 ? also parameters
                             );
                         newLocs.Add(waiterV);
                         Transitions.Add(new Transition(loc, waiterV, labels));
@@ -567,7 +577,7 @@ bool ifeq(){
                             Transitions.Add(new Transition(loc, endLoc, labels));
                             break;
                         }
-                        Transitions.Add(new Transition(loc, PCToLocation(-1), labels));
+                        Transitions.Add(new Transition(loc, PCToLocation(-1), labels, -100));
                         break;
                     case "dup":
                         labels = new List<Label>()
@@ -671,7 +681,7 @@ bool ifeq(){
                         // edge to jump destination
                         int absoluteAddress = loc.inst.pc + Convert.ToInt32(instArg[1]);
                         Location jumpLoc = PCToLocation(absoluteAddress);
-                        Transitions.Add(new Transition(loc, jumpLoc, labelsJump));
+                        Transitions.Add(new Transition(loc, jumpLoc, labelsJump, -50));
 
                         break;
                     case "athrow":
