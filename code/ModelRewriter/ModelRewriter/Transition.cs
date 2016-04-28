@@ -112,11 +112,6 @@ namespace ModelRewriter
                 transitionElement.Add(label);
             }
 
-            foreach (XElement nail in getNailsXML())
-	        {
-                transitionElement.Add(nail);
-        	}
-
             // content is "" if there was no guard
             if(grds.content != "" && grds.content != null)
             {
@@ -139,6 +134,11 @@ namespace ModelRewriter
             if (syncs.content != "" && syncs.content != null)
             {
                 transitionElement.Add(getSyncs());
+            }
+
+            foreach (XElement nail in getNailsXML())
+            {
+                transitionElement.Add(nail);
             }
 
             return transitionElement;
