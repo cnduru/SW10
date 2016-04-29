@@ -23,16 +23,6 @@ Not instantiatied
 </li>
 </ul>
 <div class="field">
-<a name="java.nio.ByteBuffer:nativeByteOrder:Z" href="#">
-
-</a>
-<span class="field_signature">
-  
-bool
- nativeByteOrder;
-</span>
-</div>
-<div class="field">
 <a name="java.nio.ByteBuffer:offset:I" href="#">
 
 </a>
@@ -40,6 +30,16 @@ bool
  final 
 int
  offset;
+</span>
+</div>
+<div class="field">
+<a name="java.nio.ByteBuffer:nativeByteOrder:Z" href="#">
+
+</a>
+<span class="field_signature">
+  
+bool
+ nativeByteOrder;
 </span>
 </div>
 <div class="field">
@@ -53,16 +53,6 @@ bool
 </span>
 </div>
 <div class="field">
-<a name="java.nio.ByteBuffer:bigEndian:Z" href="#">
-
-</a>
-<span class="field_signature">
-  
-bool
- bigEndian;
-</span>
-</div>
-<div class="field">
 <a name="java.nio.ByteBuffer:hb:B.-" href="#">
 
 </a>
@@ -72,8 +62,573 @@ byte[]
  hb;
 </span>
 </div>
+<div class="field">
+<a name="java.nio.ByteBuffer:bigEndian:Z" href="#">
+
+</a>
+<span class="field_signature">
+  
+bool
+ bigEndian;
+</span>
+</div>
 <div class="method">
-<a name="java.nio.ByteBuffer:put:java.nio.ByteBufferjava.nio.ByteBuffer" href="#">
+<a name="java.nio.ByteBuffer:get:B" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+byte
+ 
+<span>
+get
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:asIntBuffer:java.nio.IntBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+java.nio.IntBuffer
+ 
+<span>
+asIntBuffer
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:wrap:B.-java.nio.ByteBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+wrap
+</span>
+(
+byte[]
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/charset/CharsetEncoder.html#java.nio.charset.CharsetEncoder:isLegalReplacement:B.-Z" title="bool isLegalReplacement(byte[])">
+java.nio.charset.CharsetEncoder.isLegalReplacement(byte[])
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.ByteBuffer wrap(byte[], int, int)">
+java.nio.ByteBuffer.wrap
+</span>
+</span>
+<span>
+(
+byte[]
+, 
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.ByteBuffer:wrap:B.-IIjava.nio.ByteBuffer" title="java.nio.ByteBuffer wrap(byte[], int, int)">
+java.nio.ByteBuffer.wrap
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:_get:IB" href="#">
+
+</a>
+<div class="method_signature">
+ abstract 
+byte
+ 
+<span>
+_get
+</span>
+(
+int
+ 0
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:wrap:B.-IIjava.nio.ByteBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+wrap
+</span>
+(
+byte[]
+ 0
+, 
+int
+ 1
+, 
+int
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.ByteBuffer:wrap:B.-java.nio.ByteBuffer" title="java.nio.ByteBuffer wrap(byte[])">
+java.nio.ByteBuffer.wrap(byte[])
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/StringCoding$StringDecoder.html#java.lang.StringCoding$StringDecoder:decode:B.-IIC.-" title="char[] decode(byte[], int, int)">
+java.lang.StringCoding$StringDecoder.decode(byte[], int, int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/nio/HeapByteBuffer.html">
+java.nio.HeapByteBuffer
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(byte[], int, int)">
+java.nio.HeapByteBuffer.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+byte[]
+, 
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/HeapByteBuffer.html#java.nio.HeapByteBuffer:&lt;init&gt;:B.-IIvoid" title="void &lt;init&gt;(byte[], int, int)">
+java.nio.HeapByteBuffer.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+astore  3
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/IndexOutOfBoundsException.html">
+java.lang.IndexOutOfBoundsException
+</a>
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.IndexOutOfBoundsException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/IndexOutOfBoundsException.html#java.lang.IndexOutOfBoundsException:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.IndexOutOfBoundsException.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+</ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
+<ol>
+<li>
+<span>
+try start: 0; try end: 10: catch start: 11; catched type: java.lang.IllegalArgumentException.
+</span>
+</li>
+</ol>
+</span>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:getFloat:IF" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+float
+ 
+<span>
+getFloat
+</span>
+(
+int
+ 0
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:putShort:Sjava.nio.ByteBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+ 
+<span>
+putShort
+</span>
+(
+short
+ 0
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:put:Bjava.nio.ByteBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+ 
+<span>
+put
+</span>
+(
+byte
+ 0
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:putLong:IJjava.nio.ByteBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+ 
+<span>
+putLong
+</span>
+(
+int
+ 0
+, 
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:getChar:IC" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+char
+ 
+<span>
+getChar
+</span>
+(
+int
+ 0
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:asReadOnlyBuffer:java.nio.ByteBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+ 
+<span>
+asReadOnlyBuffer
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:get:B.-java.nio.ByteBuffer" href="#">
 
 </a>
 <div class="method_signature">
@@ -83,12 +638,10 @@ java.nio.ByteBuffer
 </a>
  
 <span>
-put
+get
 </span>
 (
-<a href="ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
+byte[]
  1
 )
 ;
@@ -105,203 +658,60 @@ Not parsed
 <li value="0">
 <div class="instruction">
 <span>
-aload  1
+aload  0
 </span>
 </div>
 </li>
 <li value="1">
 <div class="instruction">
 <span>
-aload  0
+aload  1
 </span>
 </div>
 </li>
 <li value="2">
 <div class="instruction">
 <span>
-ifacmpne 11
+iconst 0
 </span>
 </div>
 </li>
-<li value="5">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/IllegalArgumentException.html">
-java.lang.IllegalArgumentException
-</a>
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.IllegalArgumentException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/IllegalArgumentException.html#java.lang.IllegalArgumentException:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.lang.IllegalArgumentException.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="13">
+<li value="3">
 <div class="instruction">
 <span>
 aload  1
 </span>
 </div>
 </li>
-<li value="14">
+<li value="4">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="5">
 <div class="instruction">
 <span>
 invokevirtual 
 </span>
 <span>
+<a href="ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.ByteBuffer get(byte[], int, int)">
+java.nio.ByteBuffer.get
+</span>
+</span>
+<span>
+(
+byte[]
+, 
 int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int remaining()">
-java.nio.ByteBuffer.remaining
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/Buffer.html#java.nio.Buffer:remaining:I" title="int remaining()">
-java.nio.Buffer.remaining
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-istore  2
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
+, 
 int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int remaining()">
-java.nio.ByteBuffer.remaining
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/Buffer.html#java.nio.Buffer:remaining:I" title="int remaining()">
-java.nio.Buffer.remaining
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-ifcmpme 11
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/nio/BufferOverflowException.html">
-java.nio.BufferOverflowException
-</a>
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.nio.BufferOverflowException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
 )
 </span>
 <ul class="clickable">
@@ -313,150 +723,7 @@ No reachable result.
 </ul>
 </div>
 </li>
-<li value="33">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="34">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-istore  3
-</span>
-</div>
-</li>
-<li value="36">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="37">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="38">
-<div class="instruction">
-<span>
-ifcmpge 18
-</span>
-</div>
-</li>
-<li value="41">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="42">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="43">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-byte
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="byte get()">
-java.nio.ByteBuffer.get
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/HeapByteBuffer.html#java.nio.HeapByteBuffer:get:B" title="byte get()">
-java.nio.HeapByteBuffer.get
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="46">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.nio.ByteBuffer put(byte)">
-java.nio.ByteBuffer.put
-</span>
-</span>
-<span>
-(
-byte
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/HeapByteBuffer.html#java.nio.HeapByteBuffer:put:Bjava.nio.ByteBuffer" title="java.nio.ByteBuffer put(byte)">
-java.nio.HeapByteBuffer.put
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="49">
-<div class="instruction">
-<span>
-pop
-</span>
-</div>
-</li>
-<li value="50">
-<div class="instruction">
-<span>
-iinc 3 1
-</span>
-</div>
-</li>
-<li value="53">
-<div class="instruction">
-<span>
-goto -17
-</span>
-</div>
-</li>
-<li value="56">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="57">
+<li value="8">
 <div class="instruction">
 <span>
 areturn
@@ -520,15 +787,195 @@ Abstract Method
 </ol>
 </div>
 <div class="method">
-<a name="java.nio.ByteBuffer:getChar:IC" href="#">
+<a name="java.nio.ByteBuffer:allocate:Ijava.nio.ByteBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+allocate
+</span>
+(
+int
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:&lt;init&gt;:java.io.OutputStreamjava.lang.Objectjava.nio.charset.CharsetEncodervoid" title="void &lt;init&gt;(java.io.OutputStream, java.lang.Object, java.nio.charset.CharsetEncoder)">
+sun.nio.cs.StreamEncoder.&lt;init&gt;(java.io.OutputStream, java.lang.Object, java.nio.charset.CharsetEncoder)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+ifge 11
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.IllegalArgumentException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/IllegalArgumentException.html#java.lang.IllegalArgumentException:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.IllegalArgumentException.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/nio/HeapByteBuffer.html">
+java.nio.HeapByteBuffer
+</a>
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(int, int)">
+java.nio.HeapByteBuffer.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/HeapByteBuffer.html#java.nio.HeapByteBuffer:&lt;init&gt;:IIvoid" title="void &lt;init&gt;(int, int)">
+java.nio.HeapByteBuffer.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:get:IB" href="#">
 
 </a>
 <div class="method_signature">
 public abstract 
-char
+byte
  
 <span>
-getChar
+get
 </span>
 (
 int
@@ -546,7 +993,7 @@ Abstract Method
 </ol>
 </div>
 <div class="method">
-<a name="java.nio.ByteBuffer:putLong:IJjava.nio.ByteBuffer" href="#">
+<a name="java.nio.ByteBuffer:putLong:Jjava.nio.ByteBuffer" href="#">
 
 </a>
 <div class="method_signature">
@@ -559,10 +1006,208 @@ java.nio.ByteBuffer
 putLong
 </span>
 (
+long
+ 0
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:getChar:C" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+char
+ 
+<span>
+getChar
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:array:java.lang.Object" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 
+<span>
+array
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+byte[]
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="byte[] array()">
+java.nio.ByteBuffer.array
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.ByteBuffer:array:B.-" title="byte[] array()">
+java.nio.ByteBuffer.array
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:slice:java.nio.ByteBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+ 
+<span>
+slice
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:isDirect:Z" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+bool
+ 
+<span>
+isDirect
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:asFloatBuffer:java.nio.FloatBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+java.nio.FloatBuffer
+ 
+<span>
+asFloatBuffer
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:putShort:ISjava.nio.ByteBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+ 
+<span>
+putShort
+</span>
+(
 int
  0
 , 
-long
+short
  1
 )
 ;
@@ -577,7 +1222,126 @@ Abstract Method
 </ol>
 </div>
 <div class="method">
-<a name="java.nio.ByteBuffer:put:B.-IIjava.nio.ByteBuffer" href="#">
+<a name="java.nio.ByteBuffer:compareTo:java.lang.ObjectI" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+compareTo
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/TreeMap.html#java.util.TreeMap:compare:java.lang.Objectjava.lang.ObjectI" title="int compare(java.lang.Object, java.lang.Object)">
+java.util.TreeMap.compare(java.lang.Object, java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/TreeMap.html#java.util.TreeMap:getEntry:java.lang.Objectjava.util.TreeMap$Entry" title="java.util.TreeMap$Entry getEntry(java.lang.Object)">
+java.util.TreeMap.getEntry(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/TreeMap.html#java.util.TreeMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
+java.util.TreeMap.put(java.lang.Object, java.lang.Object)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int compareTo(java.nio.ByteBuffer)">
+java.nio.ByteBuffer.compareTo
+</span>
+</span>
+<span>
+(
+<a href="ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.ByteBuffer:compareTo:java.nio.ByteBufferI" title="int compareTo(java.nio.ByteBuffer)">
+java.nio.ByteBuffer.compareTo
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:get:B.-IIjava.nio.ByteBuffer" href="#">
 
 </a>
 <div class="method_signature">
@@ -587,7 +1351,7 @@ java.nio.ByteBuffer
 </a>
  
 <span>
-put
+get
 </span>
 (
 byte[]
@@ -724,8 +1488,8 @@ ifcmpme 11
 new 
 </span>
 <span>
-<a href="../../java/nio/BufferOverflowException.html">
-java.nio.BufferOverflowException
+<a href="../../java/nio/BufferUnderflowException.html">
+java.nio.BufferUnderflowException
 </a>
 </span>
 </div>
@@ -747,7 +1511,7 @@ void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
 <span title="void &lt;init&gt;()">
-java.nio.BufferOverflowException.&lt;init&gt;
+java.nio.BufferUnderflowException.&lt;init&gt;
 </span>
 </span>
 <span>
@@ -829,1360 +1593,95 @@ iload  4
 <li value="35">
 <div class="instruction">
 <span>
-ifcmpge 18
+ifcmpge 17
 </span>
 </div>
 </li>
 <li value="38">
 <div class="instruction">
 <span>
-aload  0
-</span>
-</div>
-</li>
-<li value="39">
-<div class="instruction">
-<span>
 aload  1
 </span>
 </div>
 </li>
-<li value="40">
+<li value="39">
 <div class="instruction">
 <span>
 iload  5
 </span>
 </div>
 </li>
-<li value="42">
+<li value="41">
 <div class="instruction">
 <span>
-baload
+aload  0
 </span>
 </div>
 </li>
-<li value="43">
+<li value="42">
 <div class="instruction">
 <span>
 invokevirtual 
 </span>
 <span>
-<a href="ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
+byte
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.nio.ByteBuffer put(byte)">
-java.nio.ByteBuffer.put
+<span title="byte get()">
+java.nio.ByteBuffer.get
 </span>
 </span>
 <span>
 (
-byte
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/nio/HeapByteBuffer.html#java.nio.HeapByteBuffer:put:Bjava.nio.ByteBuffer" title="java.nio.ByteBuffer put(byte)">
-java.nio.HeapByteBuffer.put
+<a href="../../java/nio/HeapByteBuffer.html#java.nio.HeapByteBuffer:get:B" title="byte get()">
+java.nio.HeapByteBuffer.get
 </a>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="46">
+<li value="45">
 <div class="instruction">
 <span>
-pop
+bastore
 </span>
 </div>
 </li>
-<li value="47">
+<li value="46">
 <div class="instruction">
 <span>
 iinc 5 1
 </span>
 </div>
 </li>
-<li value="50">
+<li value="49">
 <div class="instruction">
 <span>
-goto -19
+goto -18
+</span>
+</div>
+</li>
+<li value="52">
+<div class="instruction">
+<span>
+aload  0
 </span>
 </div>
 </li>
 <li value="53">
 <div class="instruction">
 <span>
-aload  0
-</span>
-</div>
-</li>
-<li value="54">
-<div class="instruction">
-<span>
 areturn
 </span>
 </div>
 </li>
 </ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:_get:IB" href="#">
-
-</a>
-<div class="method_signature">
- abstract 
-byte
- 
-<span>
-_get
-</span>
-(
-int
- 0
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:asIntBuffer:java.nio.IntBuffer" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-java.nio.IntBuffer
- 
-<span>
-asIntBuffer
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:&lt;init&gt;:IIIIB.-Ivoid" href="#">
-
-</a>
-<div class="method_signature">
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-ByteBuffer
-</span>
-(
-int
- 1
-, 
-int
- 2
-, 
-int
- 3
-, 
-int
- 4
-, 
-byte[]
- 5
-, 
-int
- 6
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/HeapByteBuffer.html#java.nio.HeapByteBuffer:&lt;init&gt;:IIvoid" title="void &lt;init&gt;(int, int)">
-java.nio.HeapByteBuffer.&lt;init&gt;(int, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/nio/HeapByteBuffer.html#java.nio.HeapByteBuffer:&lt;init&gt;:B.-IIvoid" title="void &lt;init&gt;(byte[], int, int)">
-java.nio.HeapByteBuffer.&lt;init&gt;(byte[], int, int)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-iload  4
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(int, int, int, int)">
-java.nio.Buffer.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-int
-, 
-int
-, 
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/Buffer.html#java.nio.Buffer:&lt;init&gt;:IIIIvoid" title="void &lt;init&gt;(int, int, int, int)">
-java.nio.Buffer.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.nio.ByteBuffer:bigEndian:Z">
-java.nio.ByteBuffer.bigEndian
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-bool
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../java/nio/ByteOrder.html">
-java.nio.ByteOrder
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.nio.ByteOrder byteOrder()">
-java.nio.Bits.byteOrder
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/Bits.html#java.nio.Bits:byteOrder:java.nio.ByteOrder" title="java.nio.ByteOrder byteOrder()">
-java.nio.Bits.byteOrder
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="../../java/nio/ByteOrder.html#java.nio.ByteOrder:BIG_ENDIAN:java.nio.ByteOrder">
-java.nio.ByteOrder.BIG_ENDIAN
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/nio/ByteOrder.html">
-java.nio.ByteOrder
-</a>
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-ifacmpne 7
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="28">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.nio.ByteBuffer:nativeByteOrder:Z">
-java.nio.ByteBuffer.nativeByteOrder
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-bool
-</span>
-</div>
-</li>
-<li value="32">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="33">
-<div class="instruction">
-<span>
-aload  5
-</span>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.nio.ByteBuffer:hb:B.-">
-java.nio.ByteBuffer.hb
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-byte[]
-</span>
-</div>
-</li>
-<li value="38">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="39">
-<div class="instruction">
-<span>
-iload  6
-</span>
-</div>
-</li>
-<li value="41">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.nio.ByteBuffer:offset:I">
-java.nio.ByteBuffer.offset
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="44">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:putShort:Sjava.nio.ByteBuffer" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-<a href="ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
- 
-<span>
-putShort
-</span>
-(
-short
- 0
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:&lt;init&gt;:IIIIvoid" href="#">
-
-</a>
-<div class="method_signature">
- 
-<span>
-ByteBuffer
-</span>
-(
-int
- 1
-, 
-int
- 2
-, 
-int
- 3
-, 
-int
- 4
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-iload  4
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-aconstnull
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(int, int, int, int, byte[], int)">
-java.nio.ByteBuffer.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-int
-, 
-int
-, 
-int
-, 
-int
-, 
-byte[]
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:get:B.-java.nio.ByteBuffer" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<a href="ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
- 
-<span>
-get
-</span>
-(
-byte[]
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-arraylength
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.nio.ByteBuffer get(byte[], int, int)">
-java.nio.ByteBuffer.get
-</span>
-</span>
-<span>
-(
-byte[]
-, 
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:array:java.lang.Object" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
- 
-<span>
-array
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-byte[]
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="byte[] array()">
-java.nio.ByteBuffer.array
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.ByteBuffer:array:B.-" title="byte[] array()">
-java.nio.ByteBuffer.array
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:getFloat:IF" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-float
- 
-<span>
-getFloat
-</span>
-(
-int
- 0
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:slice:java.nio.ByteBuffer" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-<a href="ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
- 
-<span>
-slice
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:compact:java.nio.ByteBuffer" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-<a href="ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
- 
-<span>
-compact
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:putDouble:IDjava.nio.ByteBuffer" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-<a href="ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
- 
-<span>
-putDouble
-</span>
-(
-int
- 0
-, 
-double
- 1
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:getInt:II" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-int
- 
-<span>
-getInt
-</span>
-(
-int
- 0
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:equals:BBZ" href="#">
-
-</a>
-<div class="method_signature">
-private static 
-bool
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-equals
-</span>
-(
-byte
- 0
-, 
-byte
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.ByteBuffer:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.nio.ByteBuffer.equals(java.lang.Object)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-ifcmpne 7
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-iconst 1
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:asCharBuffer:java.nio.CharBuffer" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-<a href="../../java/nio/CharBuffer.html">
-java.nio.CharBuffer
-</a>
- 
-<span>
-asCharBuffer
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:isDirect:Z" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-bool
- 
-<span>
-isDirect
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:getFloat:F" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-float
- 
-<span>
-getFloat
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:allocateDirect:Ijava.nio.ByteBuffer" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-<a href="ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
- 
-<span>
-allocateDirect
-</span>
-(
-int
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-java.nio.DirectByteBuffer
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(int)">
-java.nio.DirectByteBuffer.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:compareTo:java.lang.ObjectI" href="#">
-
-</a>
-<div class="method_signature">
-public 
-int
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-compareTo
-</span>
-(
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/util/TreeMap.html#java.util.TreeMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.Object, java.lang.Object)">
-java.util.TreeMap.put(java.lang.Object, java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/TreeMap.html#java.util.TreeMap:getEntry:java.lang.Objectjava.util.TreeMap$Entry" title="java.util.TreeMap$Entry getEntry(java.lang.Object)">
-java.util.TreeMap.getEntry(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/TreeMap.html#java.util.TreeMap:compare:java.lang.Objectjava.lang.ObjectI" title="int compare(java.lang.Object, java.lang.Object)">
-java.util.TreeMap.compare(java.lang.Object, java.lang.Object)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-checkcast 
-</span>
-<span>
-<a href="ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int compareTo(java.nio.ByteBuffer)">
-java.nio.ByteBuffer.compareTo
-</span>
-</span>
-<span>
-(
-<a href="ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.ByteBuffer:compareTo:java.nio.ByteBufferI" title="int compareTo(java.nio.ByteBuffer)">
-java.nio.ByteBuffer.compareTo
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:getChar:C" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-char
- 
-<span>
-getChar
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
 <ol>
 </ol>
 </div>
@@ -2218,15 +1717,15 @@ sun.nio.cs.US_ASCII$Decoder.decodeArrayLoop(java.nio.ByteBuffer, java.nio.CharBu
 </li>
 <li>
 <div>
-<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:writeBytes:void" title="void writeBytes()">
-sun.nio.cs.StreamEncoder.writeBytes()
+<a href="../../sun/nio/cs/US_ASCII$Encoder.html#sun.nio.cs.US_ASCII$Encoder:encodeArrayLoop:java.nio.CharBufferjava.nio.ByteBufferjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult encodeArrayLoop(java.nio.CharBuffer, java.nio.ByteBuffer)">
+sun.nio.cs.US_ASCII$Encoder.encodeArrayLoop(java.nio.CharBuffer, java.nio.ByteBuffer)
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../sun/nio/cs/US_ASCII$Encoder.html#sun.nio.cs.US_ASCII$Encoder:encodeArrayLoop:java.nio.CharBufferjava.nio.ByteBufferjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult encodeArrayLoop(java.nio.CharBuffer, java.nio.ByteBuffer)">
-sun.nio.cs.US_ASCII$Encoder.encodeArrayLoop(java.nio.CharBuffer, java.nio.ByteBuffer)
+<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:writeBytes:void" title="void writeBytes()">
+sun.nio.cs.StreamEncoder.writeBytes()
 </a>
 </div>
 </li>
@@ -2442,21 +1941,17 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.nio.ByteBuffer:putLong:Jjava.nio.ByteBuffer" href="#">
+<a name="java.nio.ByteBuffer:getFloat:F" href="#">
 
 </a>
 <div class="method_signature">
 public abstract 
-<a href="ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
+float
  
 <span>
-putLong
+getFloat
 </span>
 (
-long
- 0
 )
 ;
 <ul class="annot">
@@ -2470,560 +1965,33 @@ Abstract Method
 </ol>
 </div>
 <div class="method">
-<a name="java.nio.ByteBuffer:compareTo:java.nio.ByteBufferI" href="#">
+<a name="java.nio.ByteBuffer:asCharBuffer:java.nio.CharBuffer" href="#">
 
 </a>
 <div class="method_signature">
-public 
-int
+public abstract 
+<a href="../../java/nio/CharBuffer.html">
+java.nio.CharBuffer
+</a>
  
-<span class="methodname clickable" onclick="showInfoList(this)">
-compareTo
+<span>
+asCharBuffer
 </span>
 (
-<a href="ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
- 1
 )
 ;
 <ul class="annot">
 <li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.ByteBuffer:compareTo:java.lang.ObjectI" title="int compareTo(java.lang.Object)">
-java.nio.ByteBuffer.compareTo(java.lang.Object)
-</a>
-</div>
+Abstract Method
 </li>
 </ul>
 </div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int position()">
-java.nio.ByteBuffer.position
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/Buffer.html#java.nio.Buffer:position:I" title="int position()">
-java.nio.Buffer.position
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int remaining()">
-java.nio.ByteBuffer.remaining
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/Buffer.html#java.nio.Buffer:remaining:I" title="int remaining()">
-java.nio.Buffer.remaining
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int remaining()">
-java.nio.ByteBuffer.remaining
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/Buffer.html#java.nio.Buffer:remaining:I" title="int remaining()">
-java.nio.Buffer.remaining
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int min(int, int)">
-java.lang.Math.min
-</span>
-</span>
-<span>
-(
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/Math.html#java.lang.Math:min:III" title="int min(int, int)">
-java.lang.Math.min
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-istore  2
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int position()">
-java.nio.ByteBuffer.position
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/Buffer.html#java.nio.Buffer:position:I" title="int position()">
-java.nio.Buffer.position
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-istore  3
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int position()">
-java.nio.ByteBuffer.position
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/Buffer.html#java.nio.Buffer:position:I" title="int position()">
-java.nio.Buffer.position
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-istore  4
-</span>
-</div>
-</li>
-<li value="28">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-ifcmpge 36
-</span>
-</div>
-</li>
-<li value="33">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="34">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-byte
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="byte get(int)">
-java.nio.ByteBuffer.get
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/HeapByteBuffer.html#java.nio.HeapByteBuffer:get:IB" title="byte get(int)">
-java.nio.HeapByteBuffer.get
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="38">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="39">
-<div class="instruction">
-<span>
-iload  4
-</span>
-</div>
-</li>
-<li value="41">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-byte
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="byte get(int)">
-java.nio.ByteBuffer.get
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/HeapByteBuffer.html#java.nio.HeapByteBuffer:get:IB" title="byte get(int)">
-java.nio.HeapByteBuffer.get
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="44">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int compare(byte, byte)">
-java.nio.ByteBuffer.compare
-</span>
-</span>
-<span>
-(
-byte
-, 
-byte
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.ByteBuffer:compare:BBI" title="int compare(byte, byte)">
-java.nio.ByteBuffer.compare
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="47">
-<div class="instruction">
-<span>
-istore  5
-</span>
-</div>
-</li>
-<li value="49">
-<div class="instruction">
-<span>
-iload  5
-</span>
-</div>
-</li>
-<li value="51">
-<div class="instruction">
-<span>
-ifeq 6
-</span>
-</div>
-</li>
-<li value="54">
-<div class="instruction">
-<span>
-iload  5
-</span>
-</div>
-</li>
-<li value="56">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-<li value="57">
-<div class="instruction">
-<span>
-iinc 3 1
-</span>
-</div>
-</li>
-<li value="60">
-<div class="instruction">
-<span>
-iinc 4 1
-</span>
-</div>
-</li>
-<li value="63">
-<div class="instruction">
-<span>
-goto -35
-</span>
-</div>
-</li>
-<li value="66">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="67">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int remaining()">
-java.nio.ByteBuffer.remaining
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/Buffer.html#java.nio.Buffer:remaining:I" title="int remaining()">
-java.nio.Buffer.remaining
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="70">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="71">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int remaining()">
-java.nio.ByteBuffer.remaining
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/Buffer.html#java.nio.Buffer:remaining:I" title="int remaining()">
-java.nio.Buffer.remaining
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="74">
-<div class="instruction">
-<span>
-isub
-</span>
-</div>
-</li>
-<li value="75">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
+
 <ol>
 </ol>
 </div>
 <div class="method">
-<a name="java.nio.ByteBuffer:putShort:ISjava.nio.ByteBuffer" href="#">
+<a name="java.nio.ByteBuffer:compact:java.nio.ByteBuffer" href="#">
 
 </a>
 <div class="method_signature">
@@ -3033,13 +2001,39 @@ java.nio.ByteBuffer
 </a>
  
 <span>
-putShort
+compact
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:putDouble:IDjava.nio.ByteBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+ 
+<span>
+putDouble
 </span>
 (
 int
  0
 , 
-short
+double
  1
 )
 ;
@@ -3096,6 +2090,13 @@ java.util.concurrent.ConcurrentHashMap$Segment.scanAndLock(java.lang.Object, int
 </li>
 <li>
 <div>
+<a href="../../java/util/Arrays.html#java.util.Arrays:deepEquals0:java.lang.Objectjava.lang.ObjectZ" title="bool deepEquals0(java.lang.Object, java.lang.Object)">
+java.util.Arrays.deepEquals0(java.lang.Object, java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../java/util/Hashtable$Entry.html#java.util.Hashtable$Entry:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
 java.util.Hashtable$Entry.equals(java.lang.Object)
 </a>
@@ -3103,22 +2104,8 @@ java.util.Hashtable$Entry.equals(java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../java/util/TreeMap.html#java.util.TreeMap:valEquals:java.lang.Objectjava.lang.ObjectZ" title="bool valEquals(java.lang.Object, java.lang.Object)">
-java.util.TreeMap.valEquals(java.lang.Object, java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
 <a href="../../java/util/AbstractMap.html#java.util.AbstractMap:containsValue:java.lang.ObjectZ" title="bool containsValue(java.lang.Object)">
 java.util.AbstractMap.containsValue(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Arrays$ArrayList.html#java.util.Arrays$ArrayList:indexOf:java.lang.ObjectI" title="int indexOf(java.lang.Object)">
-java.util.Arrays$ArrayList.indexOf(java.lang.Object)
 </a>
 </div>
 </li>
@@ -3133,6 +2120,27 @@ java.util.Hashtable.put(java.lang.Object, java.lang.Object)
 <div>
 <a href="../../java/util/HashMap.html#java.util.HashMap:putForCreate:java.lang.Objectjava.lang.Objectvoid" title="void putForCreate(java.lang.Object, java.lang.Object)">
 java.util.HashMap.putForCreate(java.lang.Object, java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/util/PreHashedMap.html#sun.util.PreHashedMap:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
+sun.util.PreHashedMap.get(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.text.RuleBasedBreakIterator.equals(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/ArrayList.html#java.util.ArrayList:indexOf:java.lang.ObjectI" title="int indexOf(java.lang.Object)">
+java.util.ArrayList.indexOf(java.lang.Object)
 </a>
 </div>
 </li>
@@ -3154,6 +2162,13 @@ java.util.AbstractCollection.contains(java.lang.Object)
 <div>
 <a href="../../java/util/AbstractMap.html#java.util.AbstractMap:remove:java.lang.Objectjava.lang.Object" title="java.lang.Object remove(java.lang.Object)">
 java.util.AbstractMap.remove(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/LinkedList.html#java.util.LinkedList:indexOf:java.lang.ObjectI" title="int indexOf(java.lang.Object)">
+java.util.LinkedList.indexOf(java.lang.Object)
 </a>
 </div>
 </li>
@@ -3187,13 +2202,6 @@ java.util.HashMap.put(java.lang.Object, java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../sun/util/PreHashedMap.html#sun.util.PreHashedMap:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
-sun.util.PreHashedMap.get(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
 <a href="../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
 java.util.concurrent.ConcurrentHashMap.containsKey(java.lang.Object)
 </a>
@@ -3215,13 +2223,6 @@ java.util.WeakHashMap.containsValue(java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.text.RuleBasedBreakIterator.equals(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
 <a href="../../java/util/HashMap.html#java.util.HashMap:removeEntryForKey:java.lang.Objectjava.util.HashMap$Entry" title="java.util.HashMap$Entry removeEntryForKey(java.lang.Object)">
 java.util.HashMap.removeEntryForKey(java.lang.Object)
 </a>
@@ -3229,8 +2230,8 @@ java.util.HashMap.removeEntryForKey(java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../java/util/ArrayList.html#java.util.ArrayList:indexOf:java.lang.ObjectI" title="int indexOf(java.lang.Object)">
-java.util.ArrayList.indexOf(java.lang.Object)
+<a href="../../java/util/TreeMap.html#java.util.TreeMap:valEquals:java.lang.Objectjava.lang.ObjectZ" title="bool valEquals(java.lang.Object, java.lang.Object)">
+java.util.TreeMap.valEquals(java.lang.Object, java.lang.Object)
 </a>
 </div>
 </li>
@@ -3243,8 +2244,8 @@ java.util.LinkedHashMap.containsValue(java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../java/util/LinkedList.html#java.util.LinkedList:indexOf:java.lang.ObjectI" title="int indexOf(java.lang.Object)">
-java.util.LinkedList.indexOf(java.lang.Object)
+<a href="../../java/util/Arrays$ArrayList.html#java.util.Arrays$ArrayList:indexOf:java.lang.ObjectI" title="int indexOf(java.lang.Object)">
+java.util.Arrays$ArrayList.indexOf(java.lang.Object)
 </a>
 </div>
 </li>
@@ -3252,13 +2253,6 @@ java.util.LinkedList.indexOf(java.lang.Object)
 <div>
 <a href="../../java/util/AbstractMap.html#java.util.AbstractMap:eq:java.lang.Objectjava.lang.ObjectZ" title="bool eq(java.lang.Object, java.lang.Object)">
 java.util.AbstractMap.eq(java.lang.Object, java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Arrays.html#java.util.Arrays:deepEquals0:java.lang.Objectjava.lang.ObjectZ" title="bool deepEquals0(java.lang.Object, java.lang.Object)">
-java.util.Arrays.deepEquals0(java.lang.Object, java.lang.Object)
 </a>
 </div>
 </li>
@@ -3273,13 +2267,6 @@ java.security.AccessControlContext.equals(java.lang.Object)
 <div>
 <a href="../../java/util/WeakHashMap.html#java.util.WeakHashMap:eq:java.lang.Objectjava.lang.ObjectZ" title="bool eq(java.lang.Object, java.lang.Object)">
 java.util.WeakHashMap.eq(java.lang.Object, java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/concurrent/ConcurrentHashMap$EntrySet.html#java.util.concurrent.ConcurrentHashMap$EntrySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.concurrent.ConcurrentHashMap$EntrySet.contains(java.lang.Object)
 </a>
 </div>
 </li>
@@ -3313,13 +2300,6 @@ java.util.concurrent.ConcurrentHashMap$Segment.remove(java.lang.Object, int, jav
 </li>
 <li>
 <div>
-<a href="../../sun/util/PreHashedMap$2$1$1.html#sun.util.PreHashedMap$2$1$1:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-sun.util.PreHashedMap$2$1$1.equals(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
 <a href="../../java/util/AbstractMap.html#java.util.AbstractMap:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
 java.util.AbstractMap.containsKey(java.lang.Object)
 </a>
@@ -3327,15 +2307,29 @@ java.util.AbstractMap.containsKey(java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../java/util/Calendar.html#java.util.Calendar:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.Calendar.equals(java.lang.Object)
+<a href="../../java/util/Hashtable.html#java.util.Hashtable:remove:java.lang.Objectjava.lang.Object" title="java.lang.Object remove(java.lang.Object)">
+java.util.Hashtable.remove(java.lang.Object)
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/util/Hashtable.html#java.util.Hashtable:remove:java.lang.Objectjava.lang.Object" title="java.lang.Object remove(java.lang.Object)">
-java.util.Hashtable.remove(java.lang.Object)
+<a href="../../sun/util/PreHashedMap.html#sun.util.PreHashedMap:put:java.lang.Stringjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.String, java.lang.Object)">
+sun.util.PreHashedMap.put(java.lang.String, java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Arrays.html#java.util.Arrays:equals:java.lang.Object.-java.lang.Object.-Z" title="bool equals(java.lang.Object[], java.lang.Object[])">
+java.util.Arrays.equals(java.lang.Object[], java.lang.Object[])
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Collections.html#java.util.Collections:eq:java.lang.Objectjava.lang.ObjectZ" title="bool eq(java.lang.Object, java.lang.Object)">
+java.util.Collections.eq(java.lang.Object, java.lang.Object)
 </a>
 </div>
 </li>
@@ -3355,8 +2349,8 @@ java.util.HashMap.containsValue(java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../sun/util/PreHashedMap.html#sun.util.PreHashedMap:put:java.lang.Stringjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.String, java.lang.Object)">
-sun.util.PreHashedMap.put(java.lang.String, java.lang.Object)
+<a href="../../java/util/concurrent/ConcurrentHashMap$EntrySet.html#java.util.concurrent.ConcurrentHashMap$EntrySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap$EntrySet.contains(java.lang.Object)
 </a>
 </div>
 </li>
@@ -3376,15 +2370,15 @@ java.util.AbstractList.equals(java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../java/util/Arrays.html#java.util.Arrays:equals:java.lang.Object.-java.lang.Object.-Z" title="bool equals(java.lang.Object[], java.lang.Object[])">
-java.util.Arrays.equals(java.lang.Object[], java.lang.Object[])
+<a href="../../sun/util/PreHashedMap$2$1$1.html#sun.util.PreHashedMap$2$1$1:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+sun.util.PreHashedMap$2$1$1.equals(java.lang.Object)
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/util/Collections.html#java.util.Collections:eq:java.lang.Objectjava.lang.ObjectZ" title="bool eq(java.lang.Object, java.lang.Object)">
-java.util.Collections.eq(java.lang.Object, java.lang.Object)
+<a href="../../java/util/Calendar.html#java.util.Calendar:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.Calendar.equals(java.lang.Object)
 </a>
 </div>
 </li>
@@ -3971,15 +2965,41 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.nio.ByteBuffer:compare:BBI" href="#">
+<a name="java.nio.ByteBuffer:getInt:II" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+int
+ 
+<span>
+getInt
+</span>
+(
+int
+ 0
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:equals:BBZ" href="#">
 
 </a>
 <div class="method_signature">
 private static 
-int
+bool
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-compare
+equals
 </span>
 (
 byte
@@ -4000,8 +3020,8 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="#java.nio.ByteBuffer:compareTo:java.nio.ByteBufferI" title="int compareTo(java.nio.ByteBuffer)">
-java.nio.ByteBuffer.compareTo(java.nio.ByteBuffer)
+<a href="#java.nio.ByteBuffer:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.nio.ByteBuffer.equals(java.lang.Object)
 </a>
 </div>
 </li>
@@ -4025,35 +3045,32 @@ iload  1
 <li value="2">
 <div class="instruction">
 <span>
-invokestatic 
+ifcmpne 7
 </span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int compare(byte, byte)">
-java.lang.Byte.compare
-</span>
-</span>
-<span>
-(
-byte
-, 
-byte
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/Byte.html#java.lang.Byte:compare:BBI" title="int compare(byte, byte)">
-java.lang.Byte.compare
-</a>
-</div>
-</li>
-</ul>
 </div>
 </li>
 <li value="5">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="10">
 <div class="instruction">
 <span>
 ireturn
@@ -4065,15 +3082,15 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.nio.ByteBuffer:asFloatBuffer:java.nio.FloatBuffer" href="#">
+<a name="java.nio.ByteBuffer:getLong:J" href="#">
 
 </a>
 <div class="method_signature">
 public abstract 
-java.nio.FloatBuffer
+long
  
 <span>
-asFloatBuffer
+getLong
 </span>
 (
 )
@@ -4089,46 +3106,22 @@ Abstract Method
 </ol>
 </div>
 <div class="method">
-<a name="java.nio.ByteBuffer:asReadOnlyBuffer:java.nio.ByteBuffer" href="#">
+<a name="java.nio.ByteBuffer:put:java.nio.ByteBufferjava.nio.ByteBuffer" href="#">
 
 </a>
 <div class="method_signature">
-public abstract 
+public 
 <a href="ByteBuffer.html">
 java.nio.ByteBuffer
 </a>
  
 <span>
-asReadOnlyBuffer
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:put:B.-java.nio.ByteBuffer" href="#">
-
-</a>
-<div class="method_signature">
-public final 
-<a href="ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
 put
 </span>
 (
-byte[]
+<a href="ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
  1
 )
 ;
@@ -4137,16 +3130,427 @@ byte[]
 Concrete Method 
 </li>
 <li>
-Parsed
+Not parsed
 </li>
 </ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+ifacmpne 11
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.IllegalArgumentException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/nio/charset/CharsetEncoder.html#java.nio.charset.CharsetEncoder:encode:java.nio.CharBufferjava.nio.ByteBufferZjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult encode(java.nio.CharBuffer, java.nio.ByteBuffer, bool)">
-java.nio.charset.CharsetEncoder.encode(java.nio.CharBuffer, java.nio.ByteBuffer, bool)
+<a href="../../java/lang/IllegalArgumentException.html#java.lang.IllegalArgumentException:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.IllegalArgumentException.&lt;init&gt;
 </a>
 </div>
+</li>
+</ul>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int remaining()">
+java.nio.ByteBuffer.remaining
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/Buffer.html#java.nio.Buffer:remaining:I" title="int remaining()">
+java.nio.Buffer.remaining
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+istore  2
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int remaining()">
+java.nio.ByteBuffer.remaining
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/Buffer.html#java.nio.Buffer:remaining:I" title="int remaining()">
+java.nio.Buffer.remaining
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+ifcmpme 11
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/nio/BufferOverflowException.html">
+java.nio.BufferOverflowException
+</a>
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.nio.BufferOverflowException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+istore  3
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+ifcmpge 18
+</span>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+byte
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="byte get()">
+java.nio.ByteBuffer.get
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/HeapByteBuffer.html#java.nio.HeapByteBuffer:get:B" title="byte get()">
+java.nio.HeapByteBuffer.get
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.ByteBuffer put(byte)">
+java.nio.ByteBuffer.put
+</span>
+</span>
+<span>
+(
+byte
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/HeapByteBuffer.html#java.nio.HeapByteBuffer:put:Bjava.nio.ByteBuffer" title="java.nio.ByteBuffer put(byte)">
+java.nio.HeapByteBuffer.put
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+pop
+</span>
+</div>
+</li>
+<li value="50">
+<div class="instruction">
+<span>
+iinc 3 1
+</span>
+</div>
+</li>
+<li value="53">
+<div class="instruction">
+<span>
+goto -17
+</span>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="57">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:_put:IBvoid" href="#">
+
+</a>
+<div class="method_signature">
+ abstract 
+void
+ 
+<span>
+_put
+</span>
+(
+int
+ 0
+, 
+byte
+ 1
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:order:java.nio.ByteOrder" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+<a href="../../java/nio/ByteOrder.html">
+java.nio.ByteOrder
+</a>
+ 
+<span>
+order
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
 </li>
 </ul>
 </div>
@@ -4161,61 +3565,160 @@ aload  0
 <li value="1">
 <div class="instruction">
 <span>
-aload  1
+getfield 
 </span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
 <span>
-iconst 0
+<a href="#java.nio.ByteBuffer:bigEndian:Z">
+java.nio.ByteBuffer.bigEndian
+</a>
 </span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
 <span>
-aload  1
+ : 
+</span>
+<span>
+bool
 </span>
 </div>
 </li>
 <li value="4">
 <div class="instruction">
 <span>
-arraylength
+ifeq 9
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="../../java/nio/ByteOrder.html#java.nio.ByteOrder:BIG_ENDIAN:java.nio.ByteOrder">
+java.nio.ByteOrder.BIG_ENDIAN
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/nio/ByteOrder.html">
+java.nio.ByteOrder
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+goto 6
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="../../java/nio/ByteOrder.html#java.nio.ByteOrder:LITTLE_ENDIAN:java.nio.ByteOrder">
+java.nio.ByteOrder.LITTLE_ENDIAN
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/nio/ByteOrder.html">
+java.nio.ByteOrder
+</a>
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:allocateDirect:Ijava.nio.ByteBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+<a href="ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+ 
+<span>
+allocateDirect
+</span>
+(
+int
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+java.nio.DirectByteBuffer
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+iload  0
 </span>
 </div>
 </li>
 <li value="5">
 <div class="instruction">
 <span>
-invokevirtual 
+invokespecial 
 </span>
 <span>
-<a href="ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
+void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.nio.ByteBuffer put(byte[], int, int)">
-java.nio.ByteBuffer.put
+<span title="void &lt;init&gt;(int)">
+java.nio.DirectByteBuffer.&lt;init&gt;
 </span>
 </span>
 <span>
 (
-byte[]
-, 
-int
-, 
 int
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/nio/HeapByteBuffer.html#java.nio.HeapByteBuffer:put:B.-IIjava.nio.ByteBuffer" title="java.nio.ByteBuffer put(byte[], int, int)">
-java.nio.HeapByteBuffer.put
-</a>
+No reachable result.
 </div>
 </li>
 </ul>
@@ -4229,115 +3732,6 @@ areturn
 </div>
 </li>
 </ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:getDouble:ID" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-double
- 
-<span>
-getDouble
-</span>
-(
-int
- 0
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:putInt:Ijava.nio.ByteBuffer" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-<a href="ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
- 
-<span>
-putInt
-</span>
-(
-int
- 0
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:get:B" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-byte
- 
-<span>
-get
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:putChar:ICjava.nio.ByteBuffer" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-<a href="ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
- 
-<span>
-putChar
-</span>
-(
-int
- 0
-, 
-char
- 1
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
 <ol>
 </ol>
 </div>
@@ -4478,289 +3872,7 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.nio.ByteBuffer:asLongBuffer:java.nio.LongBuffer" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-java.nio.LongBuffer
- 
-<span>
-asLongBuffer
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:wrap:B.-IIjava.nio.ByteBuffer" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-<a href="ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-wrap
-</span>
-(
-byte[]
- 0
-, 
-int
- 1
-, 
-int
- 2
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.ByteBuffer:wrap:B.-java.nio.ByteBuffer" title="java.nio.ByteBuffer wrap(byte[])">
-java.nio.ByteBuffer.wrap(byte[])
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/StringCoding$StringDecoder.html#java.lang.StringCoding$StringDecoder:decode:B.-IIC.-" title="char[] decode(byte[], int, int)">
-java.lang.StringCoding$StringDecoder.decode(byte[], int, int)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/nio/HeapByteBuffer.html">
-java.nio.HeapByteBuffer
-</a>
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(byte[], int, int)">
-java.nio.HeapByteBuffer.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-byte[]
-, 
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/HeapByteBuffer.html#java.nio.HeapByteBuffer:&lt;init&gt;:B.-IIvoid" title="void &lt;init&gt;(byte[], int, int)">
-java.nio.HeapByteBuffer.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-astore  3
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/IndexOutOfBoundsException.html">
-java.lang.IndexOutOfBoundsException
-</a>
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.IndexOutOfBoundsException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/IndexOutOfBoundsException.html#java.lang.IndexOutOfBoundsException:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.lang.IndexOutOfBoundsException.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-</ol>
-<span title="Exceptions">
-<h3>
-Exceptions handling:
-</h3>
-<ol>
-<li>
-<span>
-try start: 0; try end: 10: catch start: 11; catched type: java.lang.IllegalArgumentException.
-</span>
-</li>
-</ol>
-</span>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:_put:IBvoid" href="#">
-
-</a>
-<div class="method_signature">
- abstract 
-void
- 
-<span>
-_put
-</span>
-(
-int
- 0
-, 
-byte
- 1
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:getLong:J" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-long
- 
-<span>
-getLong
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:put:Bjava.nio.ByteBuffer" href="#">
+<a name="java.nio.ByteBuffer:putFloat:IFjava.nio.ByteBuffer" href="#">
 
 </a>
 <div class="method_signature">
@@ -4770,11 +3882,14 @@ java.nio.ByteBuffer
 </a>
  
 <span>
-put
+putFloat
 </span>
 (
-byte
+int
  0
+, 
+float
+ 1
 )
 ;
 <ul class="annot">
@@ -4801,6 +3916,645 @@ getShort
 (
 int
  0
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:compareTo:java.nio.ByteBufferI" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+compareTo
+</span>
+(
+<a href="ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.ByteBuffer:compareTo:java.lang.ObjectI" title="int compareTo(java.lang.Object)">
+java.nio.ByteBuffer.compareTo(java.lang.Object)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int position()">
+java.nio.ByteBuffer.position
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/Buffer.html#java.nio.Buffer:position:I" title="int position()">
+java.nio.Buffer.position
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int remaining()">
+java.nio.ByteBuffer.remaining
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/Buffer.html#java.nio.Buffer:remaining:I" title="int remaining()">
+java.nio.Buffer.remaining
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int remaining()">
+java.nio.ByteBuffer.remaining
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/Buffer.html#java.nio.Buffer:remaining:I" title="int remaining()">
+java.nio.Buffer.remaining
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int min(int, int)">
+java.lang.Math.min
+</span>
+</span>
+<span>
+(
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Math.html#java.lang.Math:min:III" title="int min(int, int)">
+java.lang.Math.min
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+istore  2
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int position()">
+java.nio.ByteBuffer.position
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/Buffer.html#java.nio.Buffer:position:I" title="int position()">
+java.nio.Buffer.position
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+istore  3
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int position()">
+java.nio.ByteBuffer.position
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/Buffer.html#java.nio.Buffer:position:I" title="int position()">
+java.nio.Buffer.position
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+istore  4
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+ifcmpge 36
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+byte
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="byte get(int)">
+java.nio.ByteBuffer.get
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/HeapByteBuffer.html#java.nio.HeapByteBuffer:get:IB" title="byte get(int)">
+java.nio.HeapByteBuffer.get
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+iload  4
+</span>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+byte
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="byte get(int)">
+java.nio.ByteBuffer.get
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/HeapByteBuffer.html#java.nio.HeapByteBuffer:get:IB" title="byte get(int)">
+java.nio.HeapByteBuffer.get
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int compare(byte, byte)">
+java.nio.ByteBuffer.compare
+</span>
+</span>
+<span>
+(
+byte
+, 
+byte
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.ByteBuffer:compare:BBI" title="int compare(byte, byte)">
+java.nio.ByteBuffer.compare
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+istore  5
+</span>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+iload  5
+</span>
+</div>
+</li>
+<li value="51">
+<div class="instruction">
+<span>
+ifeq 6
+</span>
+</div>
+</li>
+<li value="54">
+<div class="instruction">
+<span>
+iload  5
+</span>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="57">
+<div class="instruction">
+<span>
+iinc 3 1
+</span>
+</div>
+</li>
+<li value="60">
+<div class="instruction">
+<span>
+iinc 4 1
+</span>
+</div>
+</li>
+<li value="63">
+<div class="instruction">
+<span>
+goto -35
+</span>
+</div>
+</li>
+<li value="66">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="67">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int remaining()">
+java.nio.ByteBuffer.remaining
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/Buffer.html#java.nio.Buffer:remaining:I" title="int remaining()">
+java.nio.Buffer.remaining
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="70">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="71">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int remaining()">
+java.nio.ByteBuffer.remaining
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/Buffer.html#java.nio.Buffer:remaining:I" title="int remaining()">
+java.nio.Buffer.remaining
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="74">
+<div class="instruction">
+<span>
+isub
+</span>
+</div>
+</li>
+<li value="75">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:asLongBuffer:java.nio.LongBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+java.nio.LongBuffer
+ 
+<span>
+asLongBuffer
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:putChar:ICjava.nio.ByteBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+ 
+<span>
+putChar
+</span>
+(
+int
+ 0
+, 
+char
+ 1
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:put:IBjava.nio.ByteBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+ 
+<span>
+put
+</span>
+(
+int
+ 0
+, 
+byte
+ 1
 )
 ;
 <ul class="annot">
@@ -4868,6 +4622,20 @@ java.util.Hashtable.toString()
 </li>
 <li>
 <div>
+<a href="../../java/util/Collections$SynchronizedCollection.html#java.util.Collections$SynchronizedCollection:toString:java.lang.String" title="java.lang.String toString()">
+java.util.Collections$SynchronizedCollection.toString()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Objects.html#java.util.Objects:toString:java.lang.Objectjava.lang.Stringjava.lang.String" title="java.lang.String toString(java.lang.Object, java.lang.String)">
+java.util.Objects.toString(java.lang.Object, java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../java/util/Collections$UnmodifiableCollection.html#java.util.Collections$UnmodifiableCollection:toString:java.lang.String" title="java.lang.String toString()">
 java.util.Collections$UnmodifiableCollection.toString()
 </a>
@@ -4884,20 +4652,6 @@ java.util.Collections$SetFromMap.toString()
 <div>
 <a href="../../java/util/Formatter$FormatSpecifier.html#java.util.Formatter$FormatSpecifier:printString:java.lang.Objectjava.util.Localevoid" title="void printString(java.lang.Object, java.util.Locale)">
 java.util.Formatter$FormatSpecifier.printString(java.lang.Object, java.util.Locale)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Collections$SynchronizedCollection.html#java.util.Collections$SynchronizedCollection:toString:java.lang.String" title="java.lang.String toString()">
-java.util.Collections$SynchronizedCollection.toString()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Objects.html#java.util.Objects:toString:java.lang.Objectjava.lang.Stringjava.lang.String" title="java.lang.String toString(java.lang.Object, java.lang.String)">
-java.util.Objects.toString(java.lang.Object, java.lang.String)
 </a>
 </div>
 </li>
@@ -5584,24 +5338,19 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.nio.ByteBuffer:putFloat:IFjava.nio.ByteBuffer" href="#">
+<a name="java.nio.ByteBuffer:getDouble:ID" href="#">
 
 </a>
 <div class="method_signature">
 public abstract 
-<a href="ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
+double
  
 <span>
-putFloat
+getDouble
 </span>
 (
 int
  0
-, 
-float
- 1
 )
 ;
 <ul class="annot">
@@ -5611,6 +5360,647 @@ Abstract Method
 </ul>
 </div>
 
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:putInt:Ijava.nio.ByteBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+ 
+<span>
+putInt
+</span>
+(
+int
+ 0
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:compare:BBI" href="#">
+
+</a>
+<div class="method_signature">
+private static 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+compare
+</span>
+(
+byte
+ 0
+, 
+byte
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.ByteBuffer:compareTo:java.nio.ByteBufferI" title="int compareTo(java.nio.ByteBuffer)">
+java.nio.ByteBuffer.compareTo(java.nio.ByteBuffer)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int compare(byte, byte)">
+java.lang.Byte.compare
+</span>
+</span>
+<span>
+(
+byte
+, 
+byte
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Byte.html#java.lang.Byte:compare:BBI" title="int compare(byte, byte)">
+java.lang.Byte.compare
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:&lt;init&gt;:IIIIB.-Ivoid" href="#">
+
+</a>
+<div class="method_signature">
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+ByteBuffer
+</span>
+(
+int
+ 1
+, 
+int
+ 2
+, 
+int
+ 3
+, 
+int
+ 4
+, 
+byte[]
+ 5
+, 
+int
+ 6
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/HeapByteBuffer.html#java.nio.HeapByteBuffer:&lt;init&gt;:IIvoid" title="void &lt;init&gt;(int, int)">
+java.nio.HeapByteBuffer.&lt;init&gt;(int, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/nio/HeapByteBuffer.html#java.nio.HeapByteBuffer:&lt;init&gt;:B.-IIvoid" title="void &lt;init&gt;(byte[], int, int)">
+java.nio.HeapByteBuffer.&lt;init&gt;(byte[], int, int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+iload  4
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(int, int, int, int)">
+java.nio.Buffer.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+int
+, 
+int
+, 
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/Buffer.html#java.nio.Buffer:&lt;init&gt;:IIIIvoid" title="void &lt;init&gt;(int, int, int, int)">
+java.nio.Buffer.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.nio.ByteBuffer:bigEndian:Z">
+java.nio.ByteBuffer.bigEndian
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+bool
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/nio/ByteOrder.html">
+java.nio.ByteOrder
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.ByteOrder byteOrder()">
+java.nio.Bits.byteOrder
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/Bits.html#java.nio.Bits:byteOrder:java.nio.ByteOrder" title="java.nio.ByteOrder byteOrder()">
+java.nio.Bits.byteOrder
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="../../java/nio/ByteOrder.html#java.nio.ByteOrder:BIG_ENDIAN:java.nio.ByteOrder">
+java.nio.ByteOrder.BIG_ENDIAN
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/nio/ByteOrder.html">
+java.nio.ByteOrder
+</a>
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+ifacmpne 7
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+iconst 1
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.nio.ByteBuffer:nativeByteOrder:Z">
+java.nio.ByteBuffer.nativeByteOrder
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+bool
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+aload  5
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.nio.ByteBuffer:hb:B.-">
+java.nio.ByteBuffer.hb
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+byte[]
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+iload  6
+</span>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.nio.ByteBuffer:offset:I">
+java.nio.ByteBuffer.offset
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:getLong:IJ" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+long
+ 
+<span>
+getLong
+</span>
+(
+int
+ 0
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:putChar:Cjava.nio.ByteBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+ 
+<span>
+putChar
+</span>
+(
+char
+ 0
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:&lt;init&gt;:IIIIvoid" href="#">
+
+</a>
+<div class="method_signature">
+ 
+<span>
+ByteBuffer
+</span>
+(
+int
+ 1
+, 
+int
+ 2
+, 
+int
+ 3
+, 
+int
+ 4
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+iload  4
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(int, int, int, int, byte[], int)">
+java.nio.ByteBuffer.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+int
+, 
+int
+, 
+int
+, 
+int
+, 
+byte[]
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
 <ol>
 </ol>
 </div>
@@ -5626,6 +6016,716 @@ java.nio.ByteBuffer
  
 <span>
 duplicate
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:array:B.-" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+byte[]
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+array
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/nio/cs/US_ASCII$Decoder.html#sun.nio.cs.US_ASCII$Decoder:decodeArrayLoop:java.nio.ByteBufferjava.nio.CharBufferjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult decodeArrayLoop(java.nio.ByteBuffer, java.nio.CharBuffer)">
+sun.nio.cs.US_ASCII$Decoder.decodeArrayLoop(java.nio.ByteBuffer, java.nio.CharBuffer)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/nio/cs/US_ASCII$Encoder.html#sun.nio.cs.US_ASCII$Encoder:encodeArrayLoop:java.nio.CharBufferjava.nio.ByteBufferjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult encodeArrayLoop(java.nio.CharBuffer, java.nio.ByteBuffer)">
+sun.nio.cs.US_ASCII$Encoder.encodeArrayLoop(java.nio.CharBuffer, java.nio.ByteBuffer)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:writeBytes:void" title="void writeBytes()">
+sun.nio.cs.StreamEncoder.writeBytes()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.nio.ByteBuffer:hb:B.-">
+java.nio.ByteBuffer.hb
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+byte[]
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ifnonnull 11
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/UnsupportedOperationException.html">
+java.lang.UnsupportedOperationException
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.UnsupportedOperationException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/UnsupportedOperationException.html#java.lang.UnsupportedOperationException:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.UnsupportedOperationException.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.nio.ByteBuffer:isReadOnly:Z">
+java.nio.ByteBuffer.isReadOnly
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+bool
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+ifeq 11
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/nio/ReadOnlyBufferException.html">
+java.nio.ReadOnlyBufferException
+</a>
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.nio.ReadOnlyBufferException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/ReadOnlyBufferException.html#java.nio.ReadOnlyBufferException:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.nio.ReadOnlyBufferException.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.nio.ByteBuffer:hb:B.-">
+java.nio.ByteBuffer.hb
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+byte[]
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:getDouble:D" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+double
+ 
+<span>
+getDouble
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:asShortBuffer:java.nio.ShortBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+java.nio.ShortBuffer
+ 
+<span>
+asShortBuffer
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:put:B.-IIjava.nio.ByteBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+ 
+<span>
+put
+</span>
+(
+byte[]
+ 1
+, 
+int
+ 2
+, 
+int
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void checkBounds(int, int, int)">
+java.nio.ByteBuffer.checkBounds
+</span>
+</span>
+<span>
+(
+int
+, 
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int remaining()">
+java.nio.ByteBuffer.remaining
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/Buffer.html#java.nio.Buffer:remaining:I" title="int remaining()">
+java.nio.Buffer.remaining
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+ifcmpme 11
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/nio/BufferOverflowException.html">
+java.nio.BufferOverflowException
+</a>
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.nio.BufferOverflowException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+istore  4
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+istore  5
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+iload  5
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+iload  4
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+ifcmpge 18
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+iload  5
+</span>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+baload
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.ByteBuffer put(byte)">
+java.nio.ByteBuffer.put
+</span>
+</span>
+<span>
+(
+byte
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/HeapByteBuffer.html#java.nio.HeapByteBuffer:put:Bjava.nio.ByteBuffer" title="java.nio.ByteBuffer put(byte)">
+java.nio.HeapByteBuffer.put
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+pop
+</span>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+iinc 5 1
+</span>
+</div>
+</li>
+<li value="50">
+<div class="instruction">
+<span>
+goto -19
+</span>
+</div>
+</li>
+<li value="53">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="54">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:putFloat:Fjava.nio.ByteBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
+ 
+<span>
+putFloat
+</span>
+(
+float
+ 0
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.ByteBuffer:getShort:S" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+short
+ 
+<span>
+getShort
 </span>
 (
 )
@@ -5980,67 +7080,21 @@ Abstract Method
 </ol>
 </div>
 <div class="method">
-<a name="java.nio.ByteBuffer:get:IB" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-byte
- 
-<span>
-get
-</span>
-(
-int
- 0
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:getShort:S" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-short
- 
-<span>
-getShort
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:array:B.-" href="#">
+<a name="java.nio.ByteBuffer:put:B.-java.nio.ByteBuffer" href="#">
 
 </a>
 <div class="method_signature">
 public final 
-byte[]
+<a href="ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-array
+put
 </span>
 (
+byte[]
+ 1
 )
 ;
 <ul class="annot">
@@ -6054,22 +7108,8 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../sun/nio/cs/US_ASCII$Decoder.html#sun.nio.cs.US_ASCII$Decoder:decodeArrayLoop:java.nio.ByteBufferjava.nio.CharBufferjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult decodeArrayLoop(java.nio.ByteBuffer, java.nio.CharBuffer)">
-sun.nio.cs.US_ASCII$Decoder.decodeArrayLoop(java.nio.ByteBuffer, java.nio.CharBuffer)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:writeBytes:void" title="void writeBytes()">
-sun.nio.cs.StreamEncoder.writeBytes()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/nio/cs/US_ASCII$Encoder.html#sun.nio.cs.US_ASCII$Encoder:encodeArrayLoop:java.nio.CharBufferjava.nio.ByteBufferjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult encodeArrayLoop(java.nio.CharBuffer, java.nio.ByteBuffer)">
-sun.nio.cs.US_ASCII$Encoder.encodeArrayLoop(java.nio.CharBuffer, java.nio.ByteBuffer)
+<a href="../../java/nio/charset/CharsetEncoder.html#java.nio.charset.CharsetEncoder:encode:java.nio.CharBufferjava.nio.ByteBufferZjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult encode(java.nio.CharBuffer, java.nio.ByteBuffer, bool)">
+java.nio.charset.CharsetEncoder.encode(java.nio.CharBuffer, java.nio.ByteBuffer, bool)
 </a>
 </div>
 </li>
@@ -6086,771 +7126,49 @@ aload  0
 <li value="1">
 <div class="instruction">
 <span>
-getfield 
-</span>
-<span>
-<a href="#java.nio.ByteBuffer:hb:B.-">
-java.nio.ByteBuffer.hb
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-byte[]
+aload  1
 </span>
 </div>
 </li>
-<li value="4">
-<div class="instruction">
-<span>
-ifnonnull 11
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/UnsupportedOperationException.html">
-java.lang.UnsupportedOperationException
-</a>
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.UnsupportedOperationException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/UnsupportedOperationException.html#java.lang.UnsupportedOperationException:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.lang.UnsupportedOperationException.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.nio.ByteBuffer:isReadOnly:Z">
-java.nio.ByteBuffer.isReadOnly
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-bool
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-ifeq 11
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/nio/ReadOnlyBufferException.html">
-java.nio.ReadOnlyBufferException
-</a>
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.nio.ReadOnlyBufferException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/ReadOnlyBufferException.html#java.nio.ReadOnlyBufferException:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.nio.ReadOnlyBufferException.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="31">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.nio.ByteBuffer:hb:B.-">
-java.nio.ByteBuffer.hb
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-byte[]
-</span>
-</div>
-</li>
-<li value="34">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:order:java.nio.ByteOrder" href="#">
-
-</a>
-<div class="method_signature">
-public final 
-<a href="../../java/nio/ByteOrder.html">
-java.nio.ByteOrder
-</a>
- 
-<span>
-order
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.nio.ByteBuffer:bigEndian:Z">
-java.nio.ByteBuffer.bigEndian
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-bool
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ifeq 9
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="../../java/nio/ByteOrder.html#java.nio.ByteOrder:BIG_ENDIAN:java.nio.ByteOrder">
-java.nio.ByteOrder.BIG_ENDIAN
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/nio/ByteOrder.html">
-java.nio.ByteOrder
-</a>
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-goto 6
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="../../java/nio/ByteOrder.html#java.nio.ByteOrder:LITTLE_ENDIAN:java.nio.ByteOrder">
-java.nio.ByteOrder.LITTLE_ENDIAN
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/nio/ByteOrder.html">
-java.nio.ByteOrder
-</a>
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:allocate:Ijava.nio.ByteBuffer" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-<a href="ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-allocate
-</span>
-(
-int
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:&lt;init&gt;:java.io.OutputStreamjava.lang.Objectjava.nio.charset.CharsetEncodervoid" title="void &lt;init&gt;(java.io.OutputStream, java.lang.Object, java.nio.charset.CharsetEncoder)">
-sun.nio.cs.StreamEncoder.&lt;init&gt;(java.io.OutputStream, java.lang.Object, java.nio.charset.CharsetEncoder)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-ifge 11
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/IllegalArgumentException.html">
-java.lang.IllegalArgumentException
-</a>
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.IllegalArgumentException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/IllegalArgumentException.html#java.lang.IllegalArgumentException:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.lang.IllegalArgumentException.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/nio/HeapByteBuffer.html">
-java.nio.HeapByteBuffer
-</a>
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(int, int)">
-java.nio.HeapByteBuffer.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/HeapByteBuffer.html#java.nio.HeapByteBuffer:&lt;init&gt;:IIvoid" title="void &lt;init&gt;(int, int)">
-java.nio.HeapByteBuffer.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:putFloat:Fjava.nio.ByteBuffer" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-<a href="ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
- 
-<span>
-putFloat
-</span>
-(
-float
- 0
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:wrap:B.-java.nio.ByteBuffer" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-<a href="ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-wrap
-</span>
-(
-byte[]
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/charset/CharsetEncoder.html#java.nio.charset.CharsetEncoder:isLegalReplacement:B.-Z" title="bool isLegalReplacement(byte[])">
-java.nio.charset.CharsetEncoder.isLegalReplacement(byte[])
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
+<li value="2">
 <div class="instruction">
 <span>
 iconst 0
 </span>
 </div>
 </li>
-<li value="2">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
 <li value="3">
-<div class="instruction">
-<span>
-arraylength
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.nio.ByteBuffer wrap(byte[], int, int)">
-java.nio.ByteBuffer.wrap
-</span>
-</span>
-<span>
-(
-byte[]
-, 
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.ByteBuffer:wrap:B.-IIjava.nio.ByteBuffer" title="java.nio.ByteBuffer wrap(byte[], int, int)">
-java.nio.ByteBuffer.wrap
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:putChar:Cjava.nio.ByteBuffer" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-<a href="ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
- 
-<span>
-putChar
-</span>
-(
-char
- 0
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:getLong:IJ" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-long
- 
-<span>
-getLong
-</span>
-(
-int
- 0
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:get:B.-IIjava.nio.ByteBuffer" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<a href="ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
- 
-<span>
-get
-</span>
-(
-byte[]
- 1
-, 
-int
- 2
-, 
-int
- 3
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="2">
 <div class="instruction">
 <span>
 aload  1
 </span>
 </div>
 </li>
-<li value="3">
+<li value="4">
 <div class="instruction">
 <span>
 arraylength
 </span>
 </div>
 </li>
-<li value="4">
+<li value="5">
 <div class="instruction">
 <span>
-invokestatic 
+invokevirtual 
 </span>
 <span>
-void
+<a href="ByteBuffer.html">
+java.nio.ByteBuffer
+</a>
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void checkBounds(int, int, int)">
-java.nio.ByteBuffer.checkBounds
+<span title="java.nio.ByteBuffer put(byte[], int, int)">
+java.nio.ByteBuffer.put
 </span>
 </span>
 <span>
 (
-int
+byte[]
 , 
 int
 , 
@@ -6860,309 +7178,22 @@ int
 <ul class="clickable">
 <li>
 <div>
-No reachable result.
+<a href="../../java/nio/HeapByteBuffer.html#java.nio.HeapByteBuffer:put:B.-IIjava.nio.ByteBuffer" title="java.nio.ByteBuffer put(byte[], int, int)">
+java.nio.HeapByteBuffer.put
+</a>
 </div>
 </li>
 </ul>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-iload  3
-</span>
 </div>
 </li>
 <li value="8">
 <div class="instruction">
 <span>
-aload  0
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int remaining()">
-java.nio.ByteBuffer.remaining
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/Buffer.html#java.nio.Buffer:remaining:I" title="int remaining()">
-java.nio.Buffer.remaining
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-ifcmpme 11
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/nio/BufferUnderflowException.html">
-java.nio.BufferUnderflowException
-</a>
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.nio.BufferUnderflowException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-istore  4
-</span>
-</div>
-</li>
-<li value="28">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-istore  5
-</span>
-</div>
-</li>
-<li value="31">
-<div class="instruction">
-<span>
-iload  5
-</span>
-</div>
-</li>
-<li value="33">
-<div class="instruction">
-<span>
-iload  4
-</span>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-ifcmpge 17
-</span>
-</div>
-</li>
-<li value="38">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="39">
-<div class="instruction">
-<span>
-iload  5
-</span>
-</div>
-</li>
-<li value="41">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="42">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-byte
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="byte get()">
-java.nio.ByteBuffer.get
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/HeapByteBuffer.html#java.nio.HeapByteBuffer:get:B" title="byte get()">
-java.nio.HeapByteBuffer.get
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="45">
-<div class="instruction">
-<span>
-bastore
-</span>
-</div>
-</li>
-<li value="46">
-<div class="instruction">
-<span>
-iinc 5 1
-</span>
-</div>
-</li>
-<li value="49">
-<div class="instruction">
-<span>
-goto -18
-</span>
-</div>
-</li>
-<li value="52">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="53">
-<div class="instruction">
-<span>
 areturn
 </span>
 </div>
 </li>
 </ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:asShortBuffer:java.nio.ShortBuffer" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-java.nio.ShortBuffer
- 
-<span>
-asShortBuffer
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:getDouble:D" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-double
- 
-<span>
-getDouble
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
 <ol>
 </ol>
 </div>
@@ -7198,8 +7229,15 @@ sun.util.calendar.CalendarDate.hashCode()
 </li>
 <li>
 <div>
-<a href="../../sun/util/PreHashedMap$2$1$1.html#sun.util.PreHashedMap$2$1$1:hashCode:I" title="int hashCode()">
-sun.util.PreHashedMap$2$1$1.hashCode()
+<a href="../../java/util/AbstractMap$SimpleEntry.html#java.util.AbstractMap$SimpleEntry:hashCode:I" title="int hashCode()">
+java.util.AbstractMap$SimpleEntry.hashCode()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Calendar.html#java.util.Calendar:hashCode:I" title="int hashCode()">
+java.util.Calendar.hashCode()
 </a>
 </div>
 </li>
@@ -7212,8 +7250,8 @@ java.security.AccessControlContext.hashCode()
 </li>
 <li>
 <div>
-<a href="../../java/util/Objects.html#java.util.Objects:hashCode:java.lang.ObjectI" title="int hashCode(java.lang.Object)">
-java.util.Objects.hashCode(java.lang.Object)
+<a href="../../sun/util/PreHashedMap.html#sun.util.PreHashedMap:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
+sun.util.PreHashedMap.get(java.lang.Object)
 </a>
 </div>
 </li>
@@ -7233,8 +7271,8 @@ java.util.WeakHashMap.hash(java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../sun/util/PreHashedMap.html#sun.util.PreHashedMap:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
-sun.util.PreHashedMap.get(java.lang.Object)
+<a href="../../sun/util/PreHashedMap$2$1$1.html#sun.util.PreHashedMap$2$1$1:hashCode:I" title="int hashCode()">
+sun.util.PreHashedMap$2$1$1.hashCode()
 </a>
 </div>
 </li>
@@ -7254,15 +7292,8 @@ java.util.AbstractSet.hashCode()
 </li>
 <li>
 <div>
-<a href="../../java/util/AbstractMap$SimpleEntry.html#java.util.AbstractMap$SimpleEntry:hashCode:I" title="int hashCode()">
-java.util.AbstractMap$SimpleEntry.hashCode()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Calendar.html#java.util.Calendar:hashCode:I" title="int hashCode()">
-java.util.Calendar.hashCode()
+<a href="../../java/util/Objects.html#java.util.Objects:hashCode:java.lang.ObjectI" title="int hashCode(java.lang.Object)">
+java.util.Objects.hashCode(java.lang.Object)
 </a>
 </div>
 </li>
@@ -7270,13 +7301,6 @@ java.util.Calendar.hashCode()
 <div>
 <a href="../../java/util/Hashtable.html#java.util.Hashtable:hash:java.lang.ObjectI" title="int hash(java.lang.Object)">
 java.util.Hashtable.hash(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/AbstractMap$SimpleImmutableEntry.html#java.util.AbstractMap$SimpleImmutableEntry:hashCode:I" title="int hashCode()">
-java.util.AbstractMap$SimpleImmutableEntry.hashCode()
 </a>
 </div>
 </li>
@@ -7296,8 +7320,8 @@ java.util.concurrent.ConcurrentHashMap.hash(java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../java/util/Formatter$FormatSpecifier.html#java.util.Formatter$FormatSpecifier:printHashCode:java.lang.Objectvoid" title="void printHashCode(java.lang.Object)">
-java.util.Formatter$FormatSpecifier.printHashCode(java.lang.Object)
+<a href="../../java/util/TreeMap$Entry.html#java.util.TreeMap$Entry:hashCode:I" title="int hashCode()">
+java.util.TreeMap$Entry.hashCode()
 </a>
 </div>
 </li>
@@ -7310,8 +7334,15 @@ java.util.WeakHashMap$Entry.hashCode()
 </li>
 <li>
 <div>
-<a href="../../java/util/TreeMap$Entry.html#java.util.TreeMap$Entry:hashCode:I" title="int hashCode()">
-java.util.TreeMap$Entry.hashCode()
+<a href="../../java/util/AbstractMap$SimpleImmutableEntry.html#java.util.AbstractMap$SimpleImmutableEntry:hashCode:I" title="int hashCode()">
+java.util.AbstractMap$SimpleImmutableEntry.hashCode()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Formatter$FormatSpecifier.html#java.util.Formatter$FormatSpecifier:printHashCode:java.lang.Objectvoid" title="void printHashCode(java.lang.Object)">
+java.util.Formatter$FormatSpecifier.printHashCode(java.lang.Object)
 </a>
 </div>
 </li>
@@ -7558,37 +7589,6 @@ ireturn
 </div>
 </li>
 </ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.ByteBuffer:put:IBjava.nio.ByteBuffer" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-<a href="ByteBuffer.html">
-java.nio.ByteBuffer
-</a>
- 
-<span>
-put
-</span>
-(
-int
- 0
-, 
-byte
- 1
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
 <ol>
 </ol>
 </div>

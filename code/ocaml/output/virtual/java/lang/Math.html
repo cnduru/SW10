@@ -23,18 +23,6 @@ Not instantiatied
 </li>
 </ul>
 <div class="field">
-<a name="java.lang.Math:randomNumberGenerator:java.util.Random" href="#">
-
-</a>
-<span class="field_signature">
-private static  
-<a href="../../java/util/Random.html">
-java.util.Random
-</a>
- randomNumberGenerator;
-</span>
-</div>
-<div class="field">
 <a name="java.lang.Math:PI:D" href="#">
 
 </a>
@@ -55,13 +43,15 @@ long
 </span>
 </div>
 <div class="field">
-<a name="java.lang.Math:negativeZeroFloatBits:J" href="#">
+<a name="java.lang.Math:randomNumberGenerator:java.util.Random" href="#">
 
 </a>
 <span class="field_signature">
 private static  
-long
- negativeZeroFloatBits;
+<a href="../../java/util/Random.html">
+java.util.Random
+</a>
+ randomNumberGenerator;
 </span>
 </div>
 <div class="field">
@@ -72,6 +62,16 @@ long
 public static final 
 double
  E;
+</span>
+</div>
+<div class="field">
+<a name="java.lang.Math:negativeZeroFloatBits:J" href="#">
+
+</a>
+<span class="field_signature">
+private static  
+long
+ negativeZeroFloatBits;
 </span>
 </div>
 <div class="method">
@@ -221,21 +221,538 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.Math:min:JJJ" href="#">
+<a name="java.lang.Math:ulp:DD" href="#">
 
 </a>
 <div class="method_signature">
 public static 
-long
+double
  
 <span>
-min
+ulp
 </span>
 (
-long
+double
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+dload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+double
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="double ulp(double)">
+sun.misc.FpUtils.ulp
+</span>
+</span>
+<span>
+(
+double
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+dreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:cosh:DD" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+double
+ 
+<span>
+cosh
+</span>
+(
+double
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+dload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+double
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="double cosh(double)">
+java.lang.StrictMath.cosh
+</span>
+</span>
+<span>
+(
+double
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+dreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:random:D" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+double
+ 
+<span>
+random
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.lang.Math:randomNumberGenerator:java.util.Random">
+java.lang.Math.randomNumberGenerator
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/util/Random.html">
+java.util.Random
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+astore  0
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+ifnonnull 7
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/util/Random.html">
+java.util.Random
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.util.Random initRNG()">
+java.lang.Math.initRNG
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+astore  0
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+double
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="double nextDouble()">
+java.util.Random.nextDouble
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+dreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:floor:DD" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+double
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+floor
+</span>
+(
+double
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/misc/FloatingDecimal.html#sun.misc.FloatingDecimal:dtoa:IJIvoid" title="void dtoa(int, long, int)">
+sun.misc.FloatingDecimal.dtoa(int, long, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/misc/FormattedFloatingDecimal.html#sun.misc.FormattedFloatingDecimal:dtoa:IJIvoid" title="void dtoa(int, long, int)">
+sun.misc.FormattedFloatingDecimal.dtoa(int, long, int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+dload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+double
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="double floor(double)">
+java.lang.StrictMath.floor
+</span>
+</span>
+<span>
+(
+double
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StrictMath.html#java.lang.StrictMath:floor:DD" title="double floor(double)">
+java.lang.StrictMath.floor
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+dreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:getExponent:FI" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+int
+ 
+<span>
+getExponent
+</span>
+(
+float
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+fload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getExponent(float)">
+sun.misc.FpUtils.getExponent
+</span>
+</span>
+<span>
+(
+float
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:tan:DD" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+double
+ 
+<span>
+tan
+</span>
+(
+double
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+dload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+double
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="double tan(double)">
+java.lang.StrictMath.tan
+</span>
+</span>
+<span>
+(
+double
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+dreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:copySign:DDD" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+double
+ 
+<span>
+copySign
+</span>
+(
+double
  0
 , 
-long
+double
  1
 )
 ;
@@ -252,6 +769,836 @@ Not parsed
 <li value="0">
 <div class="instruction">
 <span>
+dload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+dload  2
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+double
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="double rawCopySign(double, double)">
+sun.misc.FpUtils.rawCopySign
+</span>
+</span>
+<span>
+(
+double
+, 
+double
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/misc/FpUtils.html#sun.misc.FpUtils:rawCopySign:DDD" title="double rawCopySign(double, double)">
+sun.misc.FpUtils.rawCopySign
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+dreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:scalb:DID" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+double
+ 
+<span>
+scalb
+</span>
+(
+double
+ 0
+, 
+int
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+dload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+double
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="double scalb(double, int)">
+sun.misc.FpUtils.scalb
+</span>
+</span>
+<span>
+(
+double
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/misc/FpUtils.html#sun.misc.FpUtils:scalb:DID" title="double scalb(double, int)">
+sun.misc.FpUtils.scalb
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+dreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:log1p:DD" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+double
+ 
+<span>
+log1p
+</span>
+(
+double
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+dload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+double
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="double log1p(double)">
+java.lang.StrictMath.log1p
+</span>
+</span>
+<span>
+(
+double
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+dreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:abs:DD" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+double
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+abs
+</span>
+(
+double
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Double.html#java.lang.Double:toHexString:Djava.lang.String" title="java.lang.String toHexString(double)">
+java.lang.Double.toHexString(double)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/misc/FpUtils.html#sun.misc.FpUtils:isFinite:DZ" title="bool isFinite(double)">
+sun.misc.FpUtils.isFinite(double)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Formatter$FormatSpecifier.html#java.util.Formatter$FormatSpecifier:print:Djava.util.Localevoid" title="void print(double, java.util.Locale)">
+java.util.Formatter$FormatSpecifier.print(double, java.util.Locale)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+dload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+dconst 0.
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+dcmpg
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+ifgt 9
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+dconst 0.
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+dload  0
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+dsub
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+dload  0
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+dreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:atan:DD" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+double
+ 
+<span>
+atan
+</span>
+(
+double
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+dload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+double
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="double atan(double)">
+java.lang.StrictMath.atan
+</span>
+</span>
+<span>
+(
+double
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+dreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:toRadians:DD" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+double
+ 
+<span>
+toRadians
+</span>
+(
+double
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+dload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+dconst 180.
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ddiv
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+dconst 3.14159265359
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+dmult
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+dreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:hypot:DDD" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+double
+ 
+<span>
+hypot
+</span>
+(
+double
+ 0
+, 
+double
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+dload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+dload  2
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+double
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="double hypot(double, double)">
+java.lang.StrictMath.hypot
+</span>
+</span>
+<span>
+(
+double
+, 
+double
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+dreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:nextAfter:DDD" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+double
+ 
+<span>
+nextAfter
+</span>
+(
+double
+ 0
+, 
+double
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+dload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+dload  2
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+double
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="double nextAfter(double, double)">
+sun.misc.FpUtils.nextAfter
+</span>
+</span>
+<span>
+(
+double
+, 
+double
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+dreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:expm1:DD" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+double
+ 
+<span>
+expm1
+</span>
+(
+double
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+dload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+double
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="double expm1(double)">
+java.lang.StrictMath.expm1
+</span>
+</span>
+<span>
+(
+double
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+dreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:&lt;init&gt;:void" href="#">
+
+</a>
+<div class="method_signature">
+private 
+<span>
+Math
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:abs:JJ" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+long
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+abs
+</span>
+(
+long
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/Formatter$FormatSpecifier$BigDecimalLayout.html#java.util.Formatter$FormatSpecifier$BigDecimalLayout:layout:java.math.BigIntegerIjava.util.Formatter$BigDecimalLayoutFormvoid" title="void layout(java.math.BigInteger, int, java.util.Formatter$BigDecimalLayoutForm)">
+java.util.Formatter$FormatSpecifier$BigDecimalLayout.layout(java.math.BigInteger, int, java.util.Formatter$BigDecimalLayoutForm)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/math/BigDecimal.html#java.math.BigDecimal:layoutChars:Zjava.lang.String" title="java.lang.String layoutChars(bool)">
+java.math.BigDecimal.layoutChars(bool)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/math/BigDecimal.html#java.math.BigDecimal:longMultiplyPowerTen:JIJ" title="long longMultiplyPowerTen(long, int)">
+java.math.BigDecimal.longMultiplyPowerTen(long, int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
 lload  0
 </span>
 </div>
@@ -259,7 +1606,7 @@ lload  0
 <li value="1">
 <div class="instruction">
 <span>
-lload  2
+lconst %Ld0
 </span>
 </div>
 </li>
@@ -273,7 +1620,7 @@ lcmp
 <li value="3">
 <div class="instruction">
 <span>
-ifgt 7
+ifge 8
 </span>
 </div>
 </li>
@@ -287,21 +1634,1764 @@ lload  0
 <li value="7">
 <div class="instruction">
 <span>
-goto 4
+lneg
 </span>
 </div>
 </li>
-<li value="10">
+<li value="8">
 <div class="instruction">
 <span>
-lload  2
+goto 4
 </span>
 </div>
 </li>
 <li value="11">
 <div class="instruction">
 <span>
+lload  0
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
 lreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:acos:DD" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+double
+ 
+<span>
+acos
+</span>
+(
+double
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+dload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+double
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="double acos(double)">
+java.lang.StrictMath.acos
+</span>
+</span>
+<span>
+(
+double
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+dreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:max:FFF" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+float
+ 
+<span>
+max
+</span>
+(
+float
+ 0
+, 
+float
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+fload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+fload  0
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+fcmpl
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+ifeq 5
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+fload  0
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+freturn
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+fload  0
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+fconst 0.
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+fcmpl
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+ifne 23
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+fload  1
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+fconst 0.
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+fcmpl
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+ifne 17
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+fload  0
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int floatToIntBits(float)">
+java.lang.Float.floatToIntBits
+</span>
+</span>
+<span>
+(
+float
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Float.html#java.lang.Float:floatToIntBits:FI" title="int floatToIntBits(float)">
+java.lang.Float.floatToIntBits
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+i2l
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.lang.Math:negativeZeroFloatBits:J">
+java.lang.Math.negativeZeroFloatBits
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+long
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+lcmp
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+ifne 5
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+fload  1
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+freturn
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+fload  0
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+fload  1
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+fcmpl
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+iflt 7
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+fload  0
+</span>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+fload  1
+</span>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span>
+freturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:IEEEremainder:DDD" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+double
+ 
+<span>
+IEEEremainder
+</span>
+(
+double
+ 0
+, 
+double
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+dload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+dload  2
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+double
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="double IEEEremainder(double, double)">
+java.lang.StrictMath.IEEEremainder
+</span>
+</span>
+<span>
+(
+double
+, 
+double
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+dreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:signum:FF" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+float
+ 
+<span>
+signum
+</span>
+(
+float
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+fload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+float
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="float signum(float)">
+sun.misc.FpUtils.signum
+</span>
+</span>
+<span>
+(
+float
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+freturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:sin:DD" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+double
+ 
+<span>
+sin
+</span>
+(
+double
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+dload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+double
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="double sin(double)">
+java.lang.StrictMath.sin
+</span>
+</span>
+<span>
+(
+double
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+dreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:max:DDD" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+double
+ 
+<span>
+max
+</span>
+(
+double
+ 0
+, 
+double
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+dload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+dload  0
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+dcmpl
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+ifeq 5
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+dload  0
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+dreturn
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+dload  0
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+dconst 0.
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+dcmpl
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+ifne 22
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+dload  2
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+dconst 0.
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+dcmpl
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+ifne 16
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+dload  0
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+long
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long doubleToLongBits(double)">
+java.lang.Double.doubleToLongBits
+</span>
+</span>
+<span>
+(
+double
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Double.html#java.lang.Double:doubleToLongBits:DJ" title="long doubleToLongBits(double)">
+java.lang.Double.doubleToLongBits
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.lang.Math:negativeZeroDoubleBits:J">
+java.lang.Math.negativeZeroDoubleBits
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+long
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+lcmp
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+ifne 5
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+dload  2
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+dreturn
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+dload  0
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+dload  2
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+dcmpl
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+iflt 7
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+dload  0
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+dload  2
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+dreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:ceil:DD" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+double
+ 
+<span>
+ceil
+</span>
+(
+double
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+dload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+double
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="double ceil(double)">
+java.lang.StrictMath.ceil
+</span>
+</span>
+<span>
+(
+double
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+dreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:round:FI" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+int
+ 
+<span>
+round
+</span>
+(
+float
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+fload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+fconst 0.499999970198
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+fcmpl
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ifeq 13
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+fload  0
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+fconst 0.5
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+fadd
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+f2d
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+double
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="double floor(double)">
+java.lang.Math.floor
+</span>
+</span>
+<span>
+(
+double
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.lang.Math:floor:DD" title="double floor(double)">
+java.lang.Math.floor
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+d2i
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:sqrt:DD" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+double
+ 
+<span>
+sqrt
+</span>
+(
+double
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+dload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+double
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="double sqrt(double)">
+java.lang.StrictMath.sqrt
+</span>
+</span>
+<span>
+(
+double
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+dreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:nextUp:DD" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+double
+ 
+<span>
+nextUp
+</span>
+(
+double
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+dload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+double
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="double nextUp(double)">
+sun.misc.FpUtils.nextUp
+</span>
+</span>
+<span>
+(
+double
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+dreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:max:III" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+max
+</span>
+(
+int
+ 0
+, 
+int
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:setMaximumFractionDigits:Ivoid" title="void setMaximumFractionDigits(int)">
+java.text.DecimalFormat.setMaximumFractionDigits(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/JapaneseImperialCalendar.html#java.util.JapaneseImperialCalendar:getMaximum:II" title="int getMaximum(int)">
+java.util.JapaneseImperialCalendar.getMaximum(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:setMaximumIntegerDigits:Ivoid" title="void setMaximumIntegerDigits(int)">
+java.text.DecimalFormat.setMaximumIntegerDigits(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/misc/FloatingDecimal.html#sun.misc.FloatingDecimal:dtoa:IJIvoid" title="void dtoa(int, long, int)">
+sun.misc.FloatingDecimal.dtoa(int, long, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/regex/Matcher.html#java.util.regex.Matcher:&lt;init&gt;:java.util.regex.Patternjava.lang.CharSequencevoid" title="void &lt;init&gt;(java.util.regex.Pattern, java.lang.CharSequence)">
+java.util.regex.Matcher.&lt;init&gt;(java.util.regex.Pattern, java.lang.CharSequence)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/regex/Pattern$BnM.html#java.util.regex.Pattern$BnM:match:java.util.regex.MatcherIjava.lang.CharSequenceZ" title="bool match(java.util.regex.Matcher, int, java.lang.CharSequence)">
+java.util.regex.Pattern$BnM.match(java.util.regex.Matcher, int, java.lang.CharSequence)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/NumberFormat.html#java.text.NumberFormat:setMaximumIntegerDigits:Ivoid" title="void setMaximumIntegerDigits(int)">
+java.text.NumberFormat.setMaximumIntegerDigits(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/regex/Pattern$BehindS.html#java.util.regex.Pattern$BehindS:match:java.util.regex.MatcherIjava.lang.CharSequenceZ" title="bool match(java.util.regex.Matcher, int, java.lang.CharSequence)">
+java.util.regex.Pattern$BehindS.match(java.util.regex.Matcher, int, java.lang.CharSequence)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/GregorianCalendar.html#java.util.GregorianCalendar:getMaximum:II" title="int getMaximum(int)">
+java.util.GregorianCalendar.getMaximum(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Calendar.html#java.util.Calendar:selectFields:I" title="int selectFields()">
+java.util.Calendar.selectFields()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/NumberFormat.html#java.text.NumberFormat:setMaximumFractionDigits:Ivoid" title="void setMaximumFractionDigits(int)">
+java.text.NumberFormat.setMaximumFractionDigits(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/ArrayList.html#java.util.ArrayList:ensureCapacityInternal:Ivoid" title="void ensureCapacityInternal(int)">
+java.util.ArrayList.ensureCapacityInternal(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/HashMap.html#java.util.HashMap:&lt;init&gt;:java.util.Mapvoid" title="void &lt;init&gt;(java.util.Map)">
+java.util.HashMap.&lt;init&gt;(java.util.Map)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:setMinimumFractionDigits:Ivoid" title="void setMinimumFractionDigits(int)">
+java.text.DecimalFormat.setMinimumFractionDigits(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/regex/Pattern$NotBehindS.html#java.util.regex.Pattern$NotBehindS:match:java.util.regex.MatcherIjava.lang.CharSequenceZ" title="bool match(java.util.regex.Matcher, int, java.lang.CharSequence)">
+java.util.regex.Pattern$NotBehindS.match(java.util.regex.Matcher, int, java.lang.CharSequence)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/regex/Pattern$BnMS.html#java.util.regex.Pattern$BnMS:match:java.util.regex.MatcherIjava.lang.CharSequenceZ" title="bool match(java.util.regex.Matcher, int, java.lang.CharSequence)">
+java.util.regex.Pattern$BnMS.match(java.util.regex.Matcher, int, java.lang.CharSequence)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/NumberFormat.html#java.text.NumberFormat:setMinimumIntegerDigits:Ivoid" title="void setMinimumIntegerDigits(int)">
+java.text.NumberFormat.setMinimumIntegerDigits(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:setMinimumIntegerDigits:Ivoid" title="void setMinimumIntegerDigits(int)">
+java.text.DecimalFormat.setMinimumIntegerDigits(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/regex/Pattern$Behind.html#java.util.regex.Pattern$Behind:match:java.util.regex.MatcherIjava.lang.CharSequenceZ" title="bool match(java.util.regex.Matcher, int, java.lang.CharSequence)">
+java.util.regex.Pattern$Behind.match(java.util.regex.Matcher, int, java.lang.CharSequence)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/regex/Pattern$Branch.html#java.util.regex.Pattern$Branch:study:java.util.regex.Pattern$TreeInfoZ" title="bool study(java.util.regex.Pattern$TreeInfo)">
+java.util.regex.Pattern$Branch.study(java.util.regex.Pattern$TreeInfo)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/misc/FormattedFloatingDecimal.html#sun.misc.FormattedFloatingDecimal:dtoa:IJIvoid" title="void dtoa(int, long, int)">
+sun.misc.FormattedFloatingDecimal.dtoa(int, long, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/misc/FpUtils.html#sun.misc.FpUtils:scalb:DID" title="double scalb(double, int)">
+sun.misc.FpUtils.scalb(double, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/NumberFormat.html#java.text.NumberFormat:setMinimumFractionDigits:Ivoid" title="void setMinimumFractionDigits(int)">
+java.text.NumberFormat.setMinimumFractionDigits(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/regex/Pattern$NotBehind.html#java.util.regex.Pattern$NotBehind:match:java.util.regex.MatcherIjava.lang.CharSequenceZ" title="bool match(java.util.regex.Matcher, int, java.lang.CharSequence)">
+java.util.regex.Pattern$NotBehind.match(java.util.regex.Matcher, int, java.lang.CharSequence)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/Integer$IntegerCache.html#java.lang.Integer$IntegerCache:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.lang.Integer$IntegerCache.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+ifcmplt 7
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:min:III" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+min
+</span>
+(
+int
+ 0
+, 
+int
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/nio/cs/US_ASCII$Decoder.html#sun.nio.cs.US_ASCII$Decoder:decode:B.-IIC.-I" title="int decode(byte[], int, int, char[])">
+sun.nio.cs.US_ASCII$Decoder.decode(byte[], int, int, char[])
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Arrays.html#java.util.Arrays:copyOfRange:C.-IIC.-" title="char[] copyOfRange(char[], int, int)">
+java.util.Arrays.copyOfRange(char[], int, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:setMaximumFractionDigits:Ivoid" title="void setMaximumFractionDigits(int)">
+java.text.DecimalFormat.setMaximumFractionDigits(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Arrays.html#java.util.Arrays:copyOf:I.-II.-" title="int[] copyOf(int[], int)">
+java.util.Arrays.copyOf(int[], int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/String.html#java.lang.String:lastIndexOfSupplementary:III" title="int lastIndexOfSupplementary(int, int)">
+java.lang.String.lastIndexOfSupplementary(int, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:setMaximumIntegerDigits:Ivoid" title="void setMaximumIntegerDigits(int)">
+java.text.DecimalFormat.setMaximumIntegerDigits(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/nio/ByteBuffer.html#java.nio.ByteBuffer:compareTo:java.nio.ByteBufferI" title="int compareTo(java.nio.ByteBuffer)">
+java.nio.ByteBuffer.compareTo(java.nio.ByteBuffer)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/misc/FloatingDecimal.html#sun.misc.FloatingDecimal:dtoa:IJIvoid" title="void dtoa(int, long, int)">
+sun.misc.FloatingDecimal.dtoa(int, long, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Arrays.html#java.util.Arrays:copyOfRange:I.-III.-" title="int[] copyOfRange(int[], int, int)">
+java.util.Arrays.copyOfRange(int[], int, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Arrays.html#java.util.Arrays:copyOf:C.-IC.-" title="char[] copyOf(char[], int)">
+java.util.Arrays.copyOf(char[], int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:adjustForCurrencyDefaultFractionDigits:void" title="void adjustForCurrencyDefaultFractionDigits()">
+java.text.DecimalFormat.adjustForCurrencyDefaultFractionDigits()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/JapaneseImperialCalendar.html#java.util.JapaneseImperialCalendar:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.util.JapaneseImperialCalendar.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/text/CompactByteArray.html#sun.text.CompactByteArray:hashCode:I" title="int hashCode()">
+sun.text.CompactByteArray.hashCode()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Arrays.html#java.util.Arrays:copyOf:java.lang.Object.-Ijava.lang.Classjava.lang.Object.-" title="java.lang.Object[] copyOf(java.lang.Object[], int, java.lang.Class)">
+java.util.Arrays.copyOf(java.lang.Object[], int, java.lang.Class)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/misc/FloatingDecimal.html#sun.misc.FloatingDecimal:getChars:C.-I" title="int getChars(char[])">
+sun.misc.FloatingDecimal.getChars(char[])
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:setMinimumFractionDigits:Ivoid" title="void setMinimumFractionDigits(int)">
+java.text.DecimalFormat.setMinimumFractionDigits(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/String$CaseInsensitiveComparator.html#java.lang.String$CaseInsensitiveComparator:compare:java.lang.Stringjava.lang.StringI" title="int compare(java.lang.String, java.lang.String)">
+java.lang.String$CaseInsensitiveComparator.compare(java.lang.String, java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/misc/FDBigInt.html#sun.misc.FDBigInt:toString:java.lang.String" title="java.lang.String toString()">
+sun.misc.FDBigInt.toString()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:setMinimumIntegerDigits:Ivoid" title="void setMinimumIntegerDigits(int)">
+java.text.DecimalFormat.setMinimumIntegerDigits(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/regex/Pattern$Branch.html#java.util.regex.Pattern$Branch:study:java.util.regex.Pattern$TreeInfoZ" title="bool study(java.util.regex.Pattern$TreeInfo)">
+java.util.regex.Pattern$Branch.study(java.util.regex.Pattern$TreeInfo)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:compareTo:java.nio.CharBufferI" title="int compareTo(java.nio.CharBuffer)">
+java.nio.CharBuffer.compareTo(java.nio.CharBuffer)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/misc/FormattedFloatingDecimal.html#sun.misc.FormattedFloatingDecimal:dtoa:IJIvoid" title="void dtoa(int, long, int)">
+sun.misc.FormattedFloatingDecimal.dtoa(int, long, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/String.html#java.lang.String:lastIndexOf:III" title="int lastIndexOf(int, int)">
+java.lang.String.lastIndexOf(int, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/misc/FpUtils.html#sun.misc.FpUtils:scalb:DID" title="double scalb(double, int)">
+sun.misc.FpUtils.scalb(double, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/HashMap.html#java.util.HashMap:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.HashMap.clone()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/Integer$IntegerCache.html#java.lang.Integer$IntegerCache:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.lang.Integer$IntegerCache.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/misc/FormattedFloatingDecimal.html#sun.misc.FormattedFloatingDecimal:getChars:C.-I" title="int getChars(char[])">
+sun.misc.FormattedFloatingDecimal.getChars(char[])
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/String.html#java.lang.String:compareTo:java.lang.StringI" title="int compareTo(java.lang.String)">
+java.lang.String.compareTo(java.lang.String)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+ifcmpgt 7
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+iload  0
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+ireturn
 </span>
 </div>
 </li>
@@ -861,6 +3951,95 @@ No reachable result.
 <div class="instruction">
 <span>
 dreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.lang.Math:min:JJJ" href="#">
+
+</a>
+<div class="method_signature">
+public static 
+long
+ 
+<span>
+min
+</span>
+(
+long
+ 0
+, 
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+lload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+lload  2
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+lcmp
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+ifgt 7
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+lload  0
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+goto 4
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+lload  2
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+lreturn
 </span>
 </div>
 </li>
@@ -1551,72 +4730,6 @@ dreturn
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.Math:&lt;init&gt;:void" href="#">
-
-</a>
-<div class="method_signature">
-private 
-<span>
-Math
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.Object.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
 <a name="java.lang.Math:abs:FF" href="#">
 
 </a>
@@ -1788,15 +4901,15 @@ dreturn
 </ol>
 </div>
 <div class="method">
-<a name="java.lang.Math:max:FFF" href="#">
+<a name="java.lang.Math:min:FFF" href="#">
 
 </a>
 <div class="method_signature">
 public static 
 float
  
-<span>
-max
+<span class="methodname clickable" onclick="showInfoList(this)">
+min
 </span>
 (
 float
@@ -1811,7 +4924,44 @@ float
 Concrete Method 
 </li>
 <li>
-Not parsed
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/HashMap.html#java.util.HashMap:resize:Ivoid" title="void resize(int)">
+java.util.HashMap.resize(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Hashtable.html#java.util.Hashtable:rehash:void" title="void rehash()">
+java.util.Hashtable.rehash()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/HashMap.html#java.util.HashMap:inflateTable:Ivoid" title="void inflateTable(int)">
+java.util.HashMap.inflateTable(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Hashtable.html#java.util.Hashtable:&lt;init&gt;:IFvoid" title="void &lt;init&gt;(int, float)">
+java.util.Hashtable.&lt;init&gt;(int, float)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/HashMap.html#java.util.HashMap:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.HashMap.clone()
+</a>
+</div>
 </li>
 </ul>
 </div>
@@ -1917,7 +5067,7 @@ ifne 17
 <li value="20">
 <div class="instruction">
 <span>
-fload  0
+fload  1
 </span>
 </div>
 </li>
@@ -2020,14 +5170,14 @@ fload  1
 <li value="36">
 <div class="instruction">
 <span>
-fcmpl
+fcmpg
 </span>
 </div>
 </li>
 <li value="37">
 <div class="instruction">
 <span>
-iflt 7
+ifgt 7
 </span>
 </div>
 </li>
@@ -2891,3156 +6041,6 @@ double
 <span class="parameter clickable" onclick="showInfoList(this)">
 <span title="double signum(double)">
 sun.misc.FpUtils.signum
-</span>
-</span>
-<span>
-(
-double
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-dreturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Math:max:III" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-int
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-max
-</span>
-(
-int
- 0
-, 
-int
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/util/JapaneseImperialCalendar.html#java.util.JapaneseImperialCalendar:getMaximum:II" title="int getMaximum(int)">
-java.util.JapaneseImperialCalendar.getMaximum(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:setMaximumIntegerDigits:Ivoid" title="void setMaximumIntegerDigits(int)">
-java.text.DecimalFormat.setMaximumIntegerDigits(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/misc/FloatingDecimal.html#sun.misc.FloatingDecimal:dtoa:IJIvoid" title="void dtoa(int, long, int)">
-sun.misc.FloatingDecimal.dtoa(int, long, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/regex/Matcher.html#java.util.regex.Matcher:&lt;init&gt;:java.util.regex.Patternjava.lang.CharSequencevoid" title="void &lt;init&gt;(java.util.regex.Pattern, java.lang.CharSequence)">
-java.util.regex.Matcher.&lt;init&gt;(java.util.regex.Pattern, java.lang.CharSequence)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/regex/Pattern$BnM.html#java.util.regex.Pattern$BnM:match:java.util.regex.MatcherIjava.lang.CharSequenceZ" title="bool match(java.util.regex.Matcher, int, java.lang.CharSequence)">
-java.util.regex.Pattern$BnM.match(java.util.regex.Matcher, int, java.lang.CharSequence)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:setMaximumFractionDigits:Ivoid" title="void setMaximumFractionDigits(int)">
-java.text.DecimalFormat.setMaximumFractionDigits(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/NumberFormat.html#java.text.NumberFormat:setMinimumIntegerDigits:Ivoid" title="void setMinimumIntegerDigits(int)">
-java.text.NumberFormat.setMinimumIntegerDigits(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:setMinimumIntegerDigits:Ivoid" title="void setMinimumIntegerDigits(int)">
-java.text.DecimalFormat.setMinimumIntegerDigits(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/regex/Pattern$Behind.html#java.util.regex.Pattern$Behind:match:java.util.regex.MatcherIjava.lang.CharSequenceZ" title="bool match(java.util.regex.Matcher, int, java.lang.CharSequence)">
-java.util.regex.Pattern$Behind.match(java.util.regex.Matcher, int, java.lang.CharSequence)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/regex/Pattern$Branch.html#java.util.regex.Pattern$Branch:study:java.util.regex.Pattern$TreeInfoZ" title="bool study(java.util.regex.Pattern$TreeInfo)">
-java.util.regex.Pattern$Branch.study(java.util.regex.Pattern$TreeInfo)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/misc/FormattedFloatingDecimal.html#sun.misc.FormattedFloatingDecimal:dtoa:IJIvoid" title="void dtoa(int, long, int)">
-sun.misc.FormattedFloatingDecimal.dtoa(int, long, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/misc/FpUtils.html#sun.misc.FpUtils:scalb:DID" title="double scalb(double, int)">
-sun.misc.FpUtils.scalb(double, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/NumberFormat.html#java.text.NumberFormat:setMinimumFractionDigits:Ivoid" title="void setMinimumFractionDigits(int)">
-java.text.NumberFormat.setMinimumFractionDigits(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/HashMap.html#java.util.HashMap:&lt;init&gt;:java.util.Mapvoid" title="void &lt;init&gt;(java.util.Map)">
-java.util.HashMap.&lt;init&gt;(java.util.Map)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/regex/Pattern$NotBehind.html#java.util.regex.Pattern$NotBehind:match:java.util.regex.MatcherIjava.lang.CharSequenceZ" title="bool match(java.util.regex.Matcher, int, java.lang.CharSequence)">
-java.util.regex.Pattern$NotBehind.match(java.util.regex.Matcher, int, java.lang.CharSequence)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/Integer$IntegerCache.html#java.lang.Integer$IntegerCache:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
-java.lang.Integer$IntegerCache.&lt;clinit&gt;()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Calendar.html#java.util.Calendar:selectFields:I" title="int selectFields()">
-java.util.Calendar.selectFields()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/NumberFormat.html#java.text.NumberFormat:setMaximumFractionDigits:Ivoid" title="void setMaximumFractionDigits(int)">
-java.text.NumberFormat.setMaximumFractionDigits(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/ArrayList.html#java.util.ArrayList:ensureCapacityInternal:Ivoid" title="void ensureCapacityInternal(int)">
-java.util.ArrayList.ensureCapacityInternal(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:setMinimumFractionDigits:Ivoid" title="void setMinimumFractionDigits(int)">
-java.text.DecimalFormat.setMinimumFractionDigits(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/regex/Pattern$NotBehindS.html#java.util.regex.Pattern$NotBehindS:match:java.util.regex.MatcherIjava.lang.CharSequenceZ" title="bool match(java.util.regex.Matcher, int, java.lang.CharSequence)">
-java.util.regex.Pattern$NotBehindS.match(java.util.regex.Matcher, int, java.lang.CharSequence)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/regex/Pattern$BnMS.html#java.util.regex.Pattern$BnMS:match:java.util.regex.MatcherIjava.lang.CharSequenceZ" title="bool match(java.util.regex.Matcher, int, java.lang.CharSequence)">
-java.util.regex.Pattern$BnMS.match(java.util.regex.Matcher, int, java.lang.CharSequence)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/GregorianCalendar.html#java.util.GregorianCalendar:getMaximum:II" title="int getMaximum(int)">
-java.util.GregorianCalendar.getMaximum(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/regex/Pattern$BehindS.html#java.util.regex.Pattern$BehindS:match:java.util.regex.MatcherIjava.lang.CharSequenceZ" title="bool match(java.util.regex.Matcher, int, java.lang.CharSequence)">
-java.util.regex.Pattern$BehindS.match(java.util.regex.Matcher, int, java.lang.CharSequence)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/NumberFormat.html#java.text.NumberFormat:setMaximumIntegerDigits:Ivoid" title="void setMaximumIntegerDigits(int)">
-java.text.NumberFormat.setMaximumIntegerDigits(int)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-ifcmplt 7
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Math:min:III" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-int
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-min
-</span>
-(
-int
- 0
-, 
-int
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:setMaximumIntegerDigits:Ivoid" title="void setMaximumIntegerDigits(int)">
-java.text.DecimalFormat.setMaximumIntegerDigits(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/misc/FloatingDecimal.html#sun.misc.FloatingDecimal:dtoa:IJIvoid" title="void dtoa(int, long, int)">
-sun.misc.FloatingDecimal.dtoa(int, long, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Arrays.html#java.util.Arrays:copyOfRange:I.-III.-" title="int[] copyOfRange(int[], int, int)">
-java.util.Arrays.copyOfRange(int[], int, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Arrays.html#java.util.Arrays:copyOf:C.-IC.-" title="char[] copyOf(char[], int)">
-java.util.Arrays.copyOf(char[], int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:adjustForCurrencyDefaultFractionDigits:void" title="void adjustForCurrencyDefaultFractionDigits()">
-java.text.DecimalFormat.adjustForCurrencyDefaultFractionDigits()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/JapaneseImperialCalendar.html#java.util.JapaneseImperialCalendar:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
-java.util.JapaneseImperialCalendar.&lt;clinit&gt;()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/String.html#java.lang.String:lastIndexOfSupplementary:III" title="int lastIndexOfSupplementary(int, int)">
-java.lang.String.lastIndexOfSupplementary(int, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:setMaximumFractionDigits:Ivoid" title="void setMaximumFractionDigits(int)">
-java.text.DecimalFormat.setMaximumFractionDigits(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Arrays.html#java.util.Arrays:copyOf:I.-II.-" title="int[] copyOf(int[], int)">
-java.util.Arrays.copyOf(int[], int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Arrays.html#java.util.Arrays:copyOfRange:C.-IIC.-" title="char[] copyOfRange(char[], int, int)">
-java.util.Arrays.copyOfRange(char[], int, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/nio/cs/US_ASCII$Decoder.html#sun.nio.cs.US_ASCII$Decoder:decode:B.-IIC.-I" title="int decode(byte[], int, int, char[])">
-sun.nio.cs.US_ASCII$Decoder.decode(byte[], int, int, char[])
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/misc/FDBigInt.html#sun.misc.FDBigInt:toString:java.lang.String" title="java.lang.String toString()">
-sun.misc.FDBigInt.toString()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:setMinimumIntegerDigits:Ivoid" title="void setMinimumIntegerDigits(int)">
-java.text.DecimalFormat.setMinimumIntegerDigits(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/regex/Pattern$Branch.html#java.util.regex.Pattern$Branch:study:java.util.regex.Pattern$TreeInfoZ" title="bool study(java.util.regex.Pattern$TreeInfo)">
-java.util.regex.Pattern$Branch.study(java.util.regex.Pattern$TreeInfo)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/misc/FormattedFloatingDecimal.html#sun.misc.FormattedFloatingDecimal:dtoa:IJIvoid" title="void dtoa(int, long, int)">
-sun.misc.FormattedFloatingDecimal.dtoa(int, long, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:compareTo:java.nio.CharBufferI" title="int compareTo(java.nio.CharBuffer)">
-java.nio.CharBuffer.compareTo(java.nio.CharBuffer)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/misc/FpUtils.html#sun.misc.FpUtils:scalb:DID" title="double scalb(double, int)">
-sun.misc.FpUtils.scalb(double, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/Integer$IntegerCache.html#java.lang.Integer$IntegerCache:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
-java.lang.Integer$IntegerCache.&lt;clinit&gt;()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/misc/FormattedFloatingDecimal.html#sun.misc.FormattedFloatingDecimal:getChars:C.-I" title="int getChars(char[])">
-sun.misc.FormattedFloatingDecimal.getChars(char[])
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:setMinimumFractionDigits:Ivoid" title="void setMinimumFractionDigits(int)">
-java.text.DecimalFormat.setMinimumFractionDigits(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/nio/ByteBuffer.html#java.nio.ByteBuffer:compareTo:java.nio.ByteBufferI" title="int compareTo(java.nio.ByteBuffer)">
-java.nio.ByteBuffer.compareTo(java.nio.ByteBuffer)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/String$CaseInsensitiveComparator.html#java.lang.String$CaseInsensitiveComparator:compare:java.lang.Stringjava.lang.StringI" title="int compare(java.lang.String, java.lang.String)">
-java.lang.String$CaseInsensitiveComparator.compare(java.lang.String, java.lang.String)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/String.html#java.lang.String:lastIndexOf:III" title="int lastIndexOf(int, int)">
-java.lang.String.lastIndexOf(int, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Arrays.html#java.util.Arrays:copyOf:java.lang.Object.-Ijava.lang.Classjava.lang.Object.-" title="java.lang.Object[] copyOf(java.lang.Object[], int, java.lang.Class)">
-java.util.Arrays.copyOf(java.lang.Object[], int, java.lang.Class)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/misc/FloatingDecimal.html#sun.misc.FloatingDecimal:getChars:C.-I" title="int getChars(char[])">
-sun.misc.FloatingDecimal.getChars(char[])
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/HashMap.html#java.util.HashMap:clone:java.lang.Object" title="java.lang.Object clone()">
-java.util.HashMap.clone()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/String.html#java.lang.String:compareTo:java.lang.StringI" title="int compareTo(java.lang.String)">
-java.lang.String.compareTo(java.lang.String)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/text/CompactByteArray.html#sun.text.CompactByteArray:hashCode:I" title="int hashCode()">
-sun.text.CompactByteArray.hashCode()
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-ifcmpgt 7
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-iload  0
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Math:nextAfter:DDD" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-double
- 
-<span>
-nextAfter
-</span>
-(
-double
- 0
-, 
-double
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-dload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-dload  2
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-double
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="double nextAfter(double, double)">
-sun.misc.FpUtils.nextAfter
-</span>
-</span>
-<span>
-(
-double
-, 
-double
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-dreturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Math:expm1:DD" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-double
- 
-<span>
-expm1
-</span>
-(
-double
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-dload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-double
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="double expm1(double)">
-java.lang.StrictMath.expm1
-</span>
-</span>
-<span>
-(
-double
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-dreturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Math:abs:JJ" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-long
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-abs
-</span>
-(
-long
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/math/BigDecimal.html#java.math.BigDecimal:layoutChars:Zjava.lang.String" title="java.lang.String layoutChars(bool)">
-java.math.BigDecimal.layoutChars(bool)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Formatter$FormatSpecifier$BigDecimalLayout.html#java.util.Formatter$FormatSpecifier$BigDecimalLayout:layout:java.math.BigIntegerIjava.util.Formatter$BigDecimalLayoutFormvoid" title="void layout(java.math.BigInteger, int, java.util.Formatter$BigDecimalLayoutForm)">
-java.util.Formatter$FormatSpecifier$BigDecimalLayout.layout(java.math.BigInteger, int, java.util.Formatter$BigDecimalLayoutForm)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/math/BigDecimal.html#java.math.BigDecimal:longMultiplyPowerTen:JIJ" title="long longMultiplyPowerTen(long, int)">
-java.math.BigDecimal.longMultiplyPowerTen(long, int)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-lload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-lconst %Ld0
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-lcmp
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-ifge 8
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-lload  0
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-lneg
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-lload  0
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-lreturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Math:acos:DD" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-double
- 
-<span>
-acos
-</span>
-(
-double
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-dload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-double
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="double acos(double)">
-java.lang.StrictMath.acos
-</span>
-</span>
-<span>
-(
-double
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-dreturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Math:IEEEremainder:DDD" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-double
- 
-<span>
-IEEEremainder
-</span>
-(
-double
- 0
-, 
-double
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-dload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-dload  2
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-double
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="double IEEEremainder(double, double)">
-java.lang.StrictMath.IEEEremainder
-</span>
-</span>
-<span>
-(
-double
-, 
-double
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-dreturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Math:signum:FF" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-float
- 
-<span>
-signum
-</span>
-(
-float
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-fload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-float
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="float signum(float)">
-sun.misc.FpUtils.signum
-</span>
-</span>
-<span>
-(
-float
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-freturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Math:sin:DD" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-double
- 
-<span>
-sin
-</span>
-(
-double
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-dload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-double
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="double sin(double)">
-java.lang.StrictMath.sin
-</span>
-</span>
-<span>
-(
-double
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-dreturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Math:max:DDD" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-double
- 
-<span>
-max
-</span>
-(
-double
- 0
-, 
-double
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-dload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-dload  0
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-dcmpl
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-ifeq 5
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-dload  0
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-dreturn
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-dload  0
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-dconst 0.
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-dcmpl
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-ifne 22
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-dload  2
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-dconst 0.
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-dcmpl
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-ifne 16
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-dload  0
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-long
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="long doubleToLongBits(double)">
-java.lang.Double.doubleToLongBits
-</span>
-</span>
-<span>
-(
-double
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/Double.html#java.lang.Double:doubleToLongBits:DJ" title="long doubleToLongBits(double)">
-java.lang.Double.doubleToLongBits
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.lang.Math:negativeZeroDoubleBits:J">
-java.lang.Math.negativeZeroDoubleBits
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-long
-</span>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-lcmp
-</span>
-</div>
-</li>
-<li value="28">
-<div class="instruction">
-<span>
-ifne 5
-</span>
-</div>
-</li>
-<li value="31">
-<div class="instruction">
-<span>
-dload  2
-</span>
-</div>
-</li>
-<li value="32">
-<div class="instruction">
-<span>
-dreturn
-</span>
-</div>
-</li>
-<li value="33">
-<div class="instruction">
-<span>
-dload  0
-</span>
-</div>
-</li>
-<li value="34">
-<div class="instruction">
-<span>
-dload  2
-</span>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-dcmpl
-</span>
-</div>
-</li>
-<li value="36">
-<div class="instruction">
-<span>
-iflt 7
-</span>
-</div>
-</li>
-<li value="39">
-<div class="instruction">
-<span>
-dload  0
-</span>
-</div>
-</li>
-<li value="40">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="43">
-<div class="instruction">
-<span>
-dload  2
-</span>
-</div>
-</li>
-<li value="44">
-<div class="instruction">
-<span>
-dreturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Math:ceil:DD" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-double
- 
-<span>
-ceil
-</span>
-(
-double
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-dload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-double
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="double ceil(double)">
-java.lang.StrictMath.ceil
-</span>
-</span>
-<span>
-(
-double
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-dreturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Math:round:FI" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-int
- 
-<span>
-round
-</span>
-(
-float
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-fload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-fconst 0.499999970198
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-fcmpl
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ifeq 13
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-fload  0
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-fconst 0.5
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-fadd
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-f2d
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-double
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="double floor(double)">
-java.lang.Math.floor
-</span>
-</span>
-<span>
-(
-double
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.lang.Math:floor:DD" title="double floor(double)">
-java.lang.Math.floor
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-d2i
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Math:sqrt:DD" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-double
- 
-<span>
-sqrt
-</span>
-(
-double
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-dload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-double
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="double sqrt(double)">
-java.lang.StrictMath.sqrt
-</span>
-</span>
-<span>
-(
-double
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-dreturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Math:nextUp:DD" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-double
- 
-<span>
-nextUp
-</span>
-(
-double
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-dload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-double
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="double nextUp(double)">
-sun.misc.FpUtils.nextUp
-</span>
-</span>
-<span>
-(
-double
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-dreturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Math:scalb:DID" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-double
- 
-<span>
-scalb
-</span>
-(
-double
- 0
-, 
-int
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-dload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-double
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="double scalb(double, int)">
-sun.misc.FpUtils.scalb
-</span>
-</span>
-<span>
-(
-double
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../sun/misc/FpUtils.html#sun.misc.FpUtils:scalb:DID" title="double scalb(double, int)">
-sun.misc.FpUtils.scalb
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-dreturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Math:log1p:DD" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-double
- 
-<span>
-log1p
-</span>
-(
-double
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-dload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-double
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="double log1p(double)">
-java.lang.StrictMath.log1p
-</span>
-</span>
-<span>
-(
-double
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-dreturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Math:abs:DD" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-double
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-abs
-</span>
-(
-double
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/Double.html#java.lang.Double:toHexString:Djava.lang.String" title="java.lang.String toHexString(double)">
-java.lang.Double.toHexString(double)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Formatter$FormatSpecifier.html#java.util.Formatter$FormatSpecifier:print:Djava.util.Localevoid" title="void print(double, java.util.Locale)">
-java.util.Formatter$FormatSpecifier.print(double, java.util.Locale)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/misc/FpUtils.html#sun.misc.FpUtils:isFinite:DZ" title="bool isFinite(double)">
-sun.misc.FpUtils.isFinite(double)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-dload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-dconst 0.
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-dcmpg
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-ifgt 9
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-dconst 0.
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-dload  0
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-dsub
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-dload  0
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-dreturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Math:atan:DD" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-double
- 
-<span>
-atan
-</span>
-(
-double
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-dload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-double
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="double atan(double)">
-java.lang.StrictMath.atan
-</span>
-</span>
-<span>
-(
-double
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-dreturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Math:min:FFF" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-float
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-min
-</span>
-(
-float
- 0
-, 
-float
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/util/HashMap.html#java.util.HashMap:resize:Ivoid" title="void resize(int)">
-java.util.HashMap.resize(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Hashtable.html#java.util.Hashtable:rehash:void" title="void rehash()">
-java.util.Hashtable.rehash()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/HashMap.html#java.util.HashMap:inflateTable:Ivoid" title="void inflateTable(int)">
-java.util.HashMap.inflateTable(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Hashtable.html#java.util.Hashtable:&lt;init&gt;:IFvoid" title="void &lt;init&gt;(int, float)">
-java.util.Hashtable.&lt;init&gt;(int, float)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/HashMap.html#java.util.HashMap:clone:java.lang.Object" title="java.lang.Object clone()">
-java.util.HashMap.clone()
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-fload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-fload  0
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-fcmpl
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-ifeq 5
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-fload  0
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-freturn
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-fload  0
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-fconst 0.
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-fcmpl
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-ifne 23
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-fload  1
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-fconst 0.
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-fcmpl
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-ifne 17
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-fload  1
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int floatToIntBits(float)">
-java.lang.Float.floatToIntBits
-</span>
-</span>
-<span>
-(
-float
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/Float.html#java.lang.Float:floatToIntBits:FI" title="int floatToIntBits(float)">
-java.lang.Float.floatToIntBits
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-i2l
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.lang.Math:negativeZeroFloatBits:J">
-java.lang.Math.negativeZeroFloatBits
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-long
-</span>
-</div>
-</li>
-<li value="28">
-<div class="instruction">
-<span>
-lcmp
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-ifne 5
-</span>
-</div>
-</li>
-<li value="32">
-<div class="instruction">
-<span>
-fload  1
-</span>
-</div>
-</li>
-<li value="33">
-<div class="instruction">
-<span>
-freturn
-</span>
-</div>
-</li>
-<li value="34">
-<div class="instruction">
-<span>
-fload  0
-</span>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-fload  1
-</span>
-</div>
-</li>
-<li value="36">
-<div class="instruction">
-<span>
-fcmpg
-</span>
-</div>
-</li>
-<li value="37">
-<div class="instruction">
-<span>
-ifgt 7
-</span>
-</div>
-</li>
-<li value="40">
-<div class="instruction">
-<span>
-fload  0
-</span>
-</div>
-</li>
-<li value="41">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="44">
-<div class="instruction">
-<span>
-fload  1
-</span>
-</div>
-</li>
-<li value="45">
-<div class="instruction">
-<span>
-freturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Math:toRadians:DD" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-double
- 
-<span>
-toRadians
-</span>
-(
-double
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-dload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-dconst 180.
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ddiv
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-dconst 3.14159265359
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-dmult
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-dreturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Math:hypot:DDD" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-double
- 
-<span>
-hypot
-</span>
-(
-double
- 0
-, 
-double
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-dload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-dload  2
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-double
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="double hypot(double, double)">
-java.lang.StrictMath.hypot
-</span>
-</span>
-<span>
-(
-double
-, 
-double
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-dreturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Math:floor:DD" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-double
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-floor
-</span>
-(
-double
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../sun/misc/FloatingDecimal.html#sun.misc.FloatingDecimal:dtoa:IJIvoid" title="void dtoa(int, long, int)">
-sun.misc.FloatingDecimal.dtoa(int, long, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/misc/FormattedFloatingDecimal.html#sun.misc.FormattedFloatingDecimal:dtoa:IJIvoid" title="void dtoa(int, long, int)">
-sun.misc.FormattedFloatingDecimal.dtoa(int, long, int)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-dload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-double
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="double floor(double)">
-java.lang.StrictMath.floor
-</span>
-</span>
-<span>
-(
-double
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StrictMath.html#java.lang.StrictMath:floor:DD" title="double floor(double)">
-java.lang.StrictMath.floor
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-dreturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Math:getExponent:FI" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-int
- 
-<span>
-getExponent
-</span>
-(
-float
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-fload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int getExponent(float)">
-sun.misc.FpUtils.getExponent
-</span>
-</span>
-<span>
-(
-float
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Math:tan:DD" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-double
- 
-<span>
-tan
-</span>
-(
-double
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-dload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-double
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="double tan(double)">
-java.lang.StrictMath.tan
-</span>
-</span>
-<span>
-(
-double
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-dreturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Math:copySign:DDD" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-double
- 
-<span>
-copySign
-</span>
-(
-double
- 0
-, 
-double
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-dload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-dload  2
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-double
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="double rawCopySign(double, double)">
-sun.misc.FpUtils.rawCopySign
-</span>
-</span>
-<span>
-(
-double
-, 
-double
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../sun/misc/FpUtils.html#sun.misc.FpUtils:rawCopySign:DDD" title="double rawCopySign(double, double)">
-sun.misc.FpUtils.rawCopySign
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-dreturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Math:cosh:DD" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-double
- 
-<span>
-cosh
-</span>
-(
-double
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-dload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-double
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="double cosh(double)">
-java.lang.StrictMath.cosh
-</span>
-</span>
-<span>
-(
-double
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-dreturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Math:random:D" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-double
- 
-<span>
-random
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.lang.Math:randomNumberGenerator:java.util.Random">
-java.lang.Math.randomNumberGenerator
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/util/Random.html">
-java.util.Random
-</a>
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-astore  0
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-ifnonnull 7
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../java/util/Random.html">
-java.util.Random
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.util.Random initRNG()">
-java.lang.Math.initRNG
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-astore  0
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-double
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="double nextDouble()">
-java.util.Random.nextDouble
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-dreturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.lang.Math:ulp:DD" href="#">
-
-</a>
-<div class="method_signature">
-public static 
-double
- 
-<span>
-ulp
-</span>
-(
-double
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-dload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-double
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="double ulp(double)">
-sun.misc.FpUtils.ulp
 </span>
 </span>
 <span>

@@ -35,16 +35,6 @@ sun.misc.Unsafe
 </span>
 </div>
 <div class="field">
-<a name="java.util.concurrent.atomic.AtomicLong:valueOffset:J" href="#">
-
-</a>
-<span class="field_signature">
-private static final 
-long
- valueOffset;
-</span>
-</div>
-<div class="field">
 <a name="java.util.concurrent.atomic.AtomicLong:value:J" href="#">
 
 </a>
@@ -72,6 +62,16 @@ long
  static final 
 bool
  VM_SUPPORTS_LONG_CAS;
+</span>
+</div>
+<div class="field">
+<a name="java.util.concurrent.atomic.AtomicLong:valueOffset:J" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+long
+ valueOffset;
 </span>
 </div>
 <div class="method">
@@ -406,15 +406,167 @@ try start: 12; try end: 29: catch start: 32; catched type: java.lang.Exception.
 </span>
 </div>
 <div class="method">
-<a name="java.util.concurrent.atomic.AtomicLong:weakCompareAndSet:JJZ" href="#">
+<a name="java.util.concurrent.atomic.AtomicLong:getAndSet:JJ" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+long
+ 
+<span>
+getAndSet
+</span>
+(
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+long
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long get()">
+java.util.concurrent.atomic.AtomicLong.get
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.concurrent.atomic.AtomicLong:get:J" title="long get()">
+java.util.concurrent.atomic.AtomicLong.get
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+lstore  3
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+lload  3
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+lload  1
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool compareAndSet(long, long)">
+java.util.concurrent.atomic.AtomicLong.compareAndSet
+</span>
+</span>
+<span>
+(
+long
+, 
+long
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.concurrent.atomic.AtomicLong:compareAndSet:JJZ" title="bool compareAndSet(long, long)">
+java.util.concurrent.atomic.AtomicLong.compareAndSet
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+ifeq 5
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+lload  3
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+lreturn
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+goto -16
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.concurrent.atomic.AtomicLong:compareAndSet:JJZ" href="#">
 
 </a>
 <div class="method_signature">
 public final 
 bool
  
-<span>
-weakCompareAndSet
+<span class="methodname clickable" onclick="showInfoList(this)">
+compareAndSet
 </span>
 (
 long
@@ -429,7 +581,16 @@ long
 Concrete Method 
 </li>
 <li>
-Not parsed
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../../java/util/Random.html#java.util.Random:seedUniquifier:J" title="long seedUniquifier()">
+java.util.Random.seedUniquifier()
+</a>
+</div>
 </li>
 </ul>
 </div>
@@ -542,17 +703,19 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.util.concurrent.atomic.AtomicLong:longValue:J" href="#">
+<a name="java.util.concurrent.atomic.AtomicLong:getAndAdd:JJ" href="#">
 
 </a>
 <div class="method_signature">
-public 
+public final 
 long
  
 <span>
-longValue
+getAndAdd
 </span>
 (
+long
+ 1
 )
 ;
 <ul class="annot">
@@ -603,7 +766,115 @@ java.util.concurrent.atomic.AtomicLong.get
 <li value="4">
 <div class="instruction">
 <span>
+lstore  3
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+lload  3
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+lload  1
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+ladd
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+lstore  5
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+lload  3
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+lload  5
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool compareAndSet(long, long)">
+java.util.concurrent.atomic.AtomicLong.compareAndSet
+</span>
+</span>
+<span>
+(
+long
+, 
+long
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.concurrent.atomic.AtomicLong:compareAndSet:JJZ" title="bool compareAndSet(long, long)">
+java.util.concurrent.atomic.AtomicLong.compareAndSet
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+ifeq 5
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+lload  3
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
 lreturn
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+goto -22
 </span>
 </div>
 </li>
@@ -612,7 +883,7 @@ lreturn
 </ol>
 </div>
 <div class="method">
-<a name="java.util.concurrent.atomic.AtomicLong:incrementAndGet:J" href="#">
+<a name="java.util.concurrent.atomic.AtomicLong:getAndIncrement:J" href="#">
 
 </a>
 <div class="method_signature">
@@ -620,7 +891,7 @@ public final
 long
  
 <span>
-incrementAndGet
+getAndIncrement
 </span>
 (
 )
@@ -695,184 +966,6 @@ lconst %Ld1
 <div class="instruction">
 <span>
 ladd
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-lstore  3
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-lload  1
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-lload  3
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool compareAndSet(long, long)">
-java.util.concurrent.atomic.AtomicLong.compareAndSet
-</span>
-</span>
-<span>
-(
-long
-, 
-long
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.concurrent.atomic.AtomicLong:compareAndSet:JJZ" title="bool compareAndSet(long, long)">
-java.util.concurrent.atomic.AtomicLong.compareAndSet
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-ifeq 5
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-lload  3
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-lreturn
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-goto -20
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.concurrent.atomic.AtomicLong:getAndDecrement:J" href="#">
-
-</a>
-<div class="method_signature">
-public final 
-long
- 
-<span>
-getAndDecrement
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-long
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="long get()">
-java.util.concurrent.atomic.AtomicLong.get
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.concurrent.atomic.AtomicLong:get:J" title="long get()">
-java.util.concurrent.atomic.AtomicLong.get
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-lstore  1
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-lload  1
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-lconst %Ld1
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-lsub
 </span>
 </div>
 </li>
@@ -1129,83 +1222,6 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.util.concurrent.atomic.AtomicLong:doubleValue:D" href="#">
-
-</a>
-<div class="method_signature">
-public 
-double
- 
-<span>
-doubleValue
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-long
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="long get()">
-java.util.concurrent.atomic.AtomicLong.get
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.concurrent.atomic.AtomicLong:get:J" title="long get()">
-java.util.concurrent.atomic.AtomicLong.get
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-l2d
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-dreturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
 <a name="java.util.concurrent.atomic.AtomicLong:&lt;init&gt;:Jvoid" href="#">
 
 </a>
@@ -1316,632 +1332,6 @@ long
 <div class="instruction">
 <span>
 return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.concurrent.atomic.AtomicLong:addAndGet:JJ" href="#">
-
-</a>
-<div class="method_signature">
-public final 
-long
- 
-<span>
-addAndGet
-</span>
-(
-long
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-long
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="long get()">
-java.util.concurrent.atomic.AtomicLong.get
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.concurrent.atomic.AtomicLong:get:J" title="long get()">
-java.util.concurrent.atomic.AtomicLong.get
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-lstore  3
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-lload  3
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-lload  1
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-ladd
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-lstore  5
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-lload  3
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-lload  5
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool compareAndSet(long, long)">
-java.util.concurrent.atomic.AtomicLong.compareAndSet
-</span>
-</span>
-<span>
-(
-long
-, 
-long
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.concurrent.atomic.AtomicLong:compareAndSet:JJZ" title="bool compareAndSet(long, long)">
-java.util.concurrent.atomic.AtomicLong.compareAndSet
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-ifeq 6
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-lload  5
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-lreturn
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-goto -23
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.concurrent.atomic.AtomicLong:set:Jvoid" href="#">
-
-</a>
-<div class="method_signature">
-public final 
-void
- 
-<span>
-set
-</span>
-(
-long
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-lload  1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.util.concurrent.atomic.AtomicLong:value:J">
-java.util.concurrent.atomic.AtomicLong.value
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-long
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.concurrent.atomic.AtomicLong:lazySet:Jvoid" href="#">
-
-</a>
-<div class="method_signature">
-public final 
-void
- 
-<span>
-lazySet
-</span>
-(
-long
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.util.concurrent.atomic.AtomicLong:unsafe:sun.misc.Unsafe">
-java.util.concurrent.atomic.AtomicLong.unsafe
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../../sun/misc/Unsafe.html">
-sun.misc.Unsafe
-</a>
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#java.util.concurrent.atomic.AtomicLong:valueOffset:J">
-java.util.concurrent.atomic.AtomicLong.valueOffset
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-long
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-lload  1
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void putOrderedLong(java.lang.Object, long, long)">
-sun.misc.Unsafe.putOrderedLong
-</span>
-</span>
-<span>
-(
-<a href="../../../../java/lang/Object.html">
-java.lang.Object
-</a>
-, 
-long
-, 
-long
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.concurrent.atomic.AtomicLong:getAndIncrement:J" href="#">
-
-</a>
-<div class="method_signature">
-public final 
-long
- 
-<span>
-getAndIncrement
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-long
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="long get()">
-java.util.concurrent.atomic.AtomicLong.get
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.concurrent.atomic.AtomicLong:get:J" title="long get()">
-java.util.concurrent.atomic.AtomicLong.get
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-lstore  1
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-lload  1
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-lconst %Ld1
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-ladd
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-lstore  3
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-lload  1
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-lload  3
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool compareAndSet(long, long)">
-java.util.concurrent.atomic.AtomicLong.compareAndSet
-</span>
-</span>
-<span>
-(
-long
-, 
-long
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.concurrent.atomic.AtomicLong:compareAndSet:JJZ" title="bool compareAndSet(long, long)">
-java.util.concurrent.atomic.AtomicLong.compareAndSet
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-ifeq 5
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-lload  1
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-lreturn
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-goto -20
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.concurrent.atomic.AtomicLong:floatValue:F" href="#">
-
-</a>
-<div class="method_signature">
-public 
-float
- 
-<span>
-floatValue
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-long
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="long get()">
-java.util.concurrent.atomic.AtomicLong.get
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.concurrent.atomic.AtomicLong:get:J" title="long get()">
-java.util.concurrent.atomic.AtomicLong.get
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-l2f
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-freturn
 </span>
 </div>
 </li>
@@ -2204,6 +1594,433 @@ lreturn
 </ol>
 </div>
 <div class="method">
+<a name="java.util.concurrent.atomic.AtomicLong:floatValue:F" href="#">
+
+</a>
+<div class="method_signature">
+public 
+float
+ 
+<span>
+floatValue
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+long
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long get()">
+java.util.concurrent.atomic.AtomicLong.get
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.concurrent.atomic.AtomicLong:get:J" title="long get()">
+java.util.concurrent.atomic.AtomicLong.get
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+l2f
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+freturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.concurrent.atomic.AtomicLong:VMSupportsCS8:Z" href="#">
+
+</a>
+<div class="method_signature">
+private static native 
+bool
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+VMSupportsCS8
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.concurrent.atomic.AtomicLong:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+java.util.concurrent.atomic.AtomicLong.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.concurrent.atomic.AtomicLong:weakCompareAndSet:JJZ" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+bool
+ 
+<span>
+weakCompareAndSet
+</span>
+(
+long
+ 1
+, 
+long
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.util.concurrent.atomic.AtomicLong:unsafe:sun.misc.Unsafe">
+java.util.concurrent.atomic.AtomicLong.unsafe
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../../sun/misc/Unsafe.html">
+sun.misc.Unsafe
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#java.util.concurrent.atomic.AtomicLong:valueOffset:J">
+java.util.concurrent.atomic.AtomicLong.valueOffset
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+long
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+lload  1
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+lload  3
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool compareAndSwapLong(java.lang.Object, long, long, long)">
+sun.misc.Unsafe.compareAndSwapLong
+</span>
+</span>
+<span>
+(
+<a href="../../../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+long
+, 
+long
+, 
+long
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../../sun/misc/Unsafe.html#sun.misc.Unsafe:compareAndSwapLong:java.lang.ObjectJJJZ" title="bool compareAndSwapLong(java.lang.Object, long, long, long)">
+sun.misc.Unsafe.compareAndSwapLong
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.concurrent.atomic.AtomicLong:incrementAndGet:J" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+long
+ 
+<span>
+incrementAndGet
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+long
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long get()">
+java.util.concurrent.atomic.AtomicLong.get
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.concurrent.atomic.AtomicLong:get:J" title="long get()">
+java.util.concurrent.atomic.AtomicLong.get
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+lstore  1
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+lload  1
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+lconst %Ld1
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+ladd
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+lstore  3
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+lload  1
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+lload  3
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool compareAndSet(long, long)">
+java.util.concurrent.atomic.AtomicLong.compareAndSet
+</span>
+</span>
+<span>
+(
+long
+, 
+long
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.concurrent.atomic.AtomicLong:compareAndSet:JJZ" title="bool compareAndSet(long, long)">
+java.util.concurrent.atomic.AtomicLong.compareAndSet
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+ifeq 5
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+lload  3
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+lreturn
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+goto -20
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
 <a name="java.util.concurrent.atomic.AtomicLong:toString:java.lang.String" href="#">
 
 </a>
@@ -2258,6 +2075,20 @@ java.util.Hashtable.toString()
 </li>
 <li>
 <div>
+<a href="../../../../java/util/Collections$SynchronizedCollection.html#java.util.Collections$SynchronizedCollection:toString:java.lang.String" title="java.lang.String toString()">
+java.util.Collections$SynchronizedCollection.toString()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../../../java/util/Objects.html#java.util.Objects:toString:java.lang.Objectjava.lang.Stringjava.lang.String" title="java.lang.String toString(java.lang.Object, java.lang.String)">
+java.util.Objects.toString(java.lang.Object, java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../../../java/util/Collections$UnmodifiableCollection.html#java.util.Collections$UnmodifiableCollection:toString:java.lang.String" title="java.lang.String toString()">
 java.util.Collections$UnmodifiableCollection.toString()
 </a>
@@ -2274,20 +2105,6 @@ java.util.Collections$SetFromMap.toString()
 <div>
 <a href="../../../../java/util/Formatter$FormatSpecifier.html#java.util.Formatter$FormatSpecifier:printString:java.lang.Objectjava.util.Localevoid" title="void printString(java.lang.Object, java.util.Locale)">
 java.util.Formatter$FormatSpecifier.printString(java.lang.Object, java.util.Locale)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../../java/util/Collections$SynchronizedCollection.html#java.util.Collections$SynchronizedCollection:toString:java.lang.String" title="java.lang.String toString()">
-java.util.Collections$SynchronizedCollection.toString()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../../../java/util/Objects.html#java.util.Objects:toString:java.lang.Objectjava.lang.Stringjava.lang.String" title="java.lang.String toString(java.lang.Object, java.lang.String)">
-java.util.Objects.toString(java.lang.Object, java.lang.String)
 </a>
 </div>
 </li>
@@ -2379,15 +2196,15 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.util.concurrent.atomic.AtomicLong:VMSupportsCS8:Z" href="#">
+<a name="java.util.concurrent.atomic.AtomicLong:longValue:J" href="#">
 
 </a>
 <div class="method_signature">
-private static native 
-bool
+public 
+long
  
-<span class="methodname clickable" onclick="showInfoList(this)">
-VMSupportsCS8
+<span>
+longValue
 </span>
 (
 )
@@ -2397,25 +2214,59 @@ VMSupportsCS8
 Concrete Method 
 </li>
 <li>
-Parsed
+Not parsed
 </li>
 </ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+long
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long get()">
+java.util.concurrent.atomic.AtomicLong.get
+</span>
+</span>
+<span>
+(
+)
+</span>
 <ul class="clickable">
 <li>
 <div>
-<a href="#java.util.concurrent.atomic.AtomicLong:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
-java.util.concurrent.atomic.AtomicLong.&lt;clinit&gt;()
+<a href="#java.util.concurrent.atomic.AtomicLong:get:J" title="long get()">
+java.util.concurrent.atomic.AtomicLong.get
 </a>
 </div>
 </li>
 </ul>
 </div>
-
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+lreturn
+</span>
+</div>
+</li>
+</ol>
 <ol>
 </ol>
 </div>
 <div class="method">
-<a name="java.util.concurrent.atomic.AtomicLong:getAndAdd:JJ" href="#">
+<a name="java.util.concurrent.atomic.AtomicLong:getAndDecrement:J" href="#">
 
 </a>
 <div class="method_signature">
@@ -2423,7 +2274,185 @@ public final
 long
  
 <span>
-getAndAdd
+getAndDecrement
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+long
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long get()">
+java.util.concurrent.atomic.AtomicLong.get
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.concurrent.atomic.AtomicLong:get:J" title="long get()">
+java.util.concurrent.atomic.AtomicLong.get
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+lstore  1
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+lload  1
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+lconst %Ld1
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+lsub
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+lstore  3
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+lload  1
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+lload  3
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+bool
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="bool compareAndSet(long, long)">
+java.util.concurrent.atomic.AtomicLong.compareAndSet
+</span>
+</span>
+<span>
+(
+long
+, 
+long
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.concurrent.atomic.AtomicLong:compareAndSet:JJZ" title="bool compareAndSet(long, long)">
+java.util.concurrent.atomic.AtomicLong.compareAndSet
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+ifeq 5
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+lload  1
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+lreturn
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+goto -20
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.concurrent.atomic.AtomicLong:addAndGet:JJ" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+long
+ 
+<span>
+addAndGet
 </span>
 (
 long
@@ -2565,28 +2594,28 @@ java.util.concurrent.atomic.AtomicLong.compareAndSet
 <li value="17">
 <div class="instruction">
 <span>
-ifeq 5
+ifeq 6
 </span>
 </div>
 </li>
 <li value="20">
 <div class="instruction">
 <span>
-lload  3
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-lreturn
+lload  5
 </span>
 </div>
 </li>
 <li value="22">
 <div class="instruction">
 <span>
-goto -22
+lreturn
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+goto -23
 </span>
 </div>
 </li>
@@ -2595,22 +2624,19 @@ goto -22
 </ol>
 </div>
 <div class="method">
-<a name="java.util.concurrent.atomic.AtomicLong:compareAndSet:JJZ" href="#">
+<a name="java.util.concurrent.atomic.AtomicLong:set:Jvoid" href="#">
 
 </a>
 <div class="method_signature">
 public final 
-bool
+void
  
-<span class="methodname clickable" onclick="showInfoList(this)">
-compareAndSet
+<span>
+set
 </span>
 (
 long
  1
-, 
-long
- 2
 )
 ;
 <ul class="annot">
@@ -2618,16 +2644,153 @@ long
 Concrete Method 
 </li>
 <li>
-Parsed
+Not parsed
 </li>
 </ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+lload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.util.concurrent.atomic.AtomicLong:value:J">
+java.util.concurrent.atomic.AtomicLong.value
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+long
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.concurrent.atomic.AtomicLong:doubleValue:D" href="#">
+
+</a>
+<div class="method_signature">
+public 
+double
+ 
+<span>
+doubleValue
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+long
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="long get()">
+java.util.concurrent.atomic.AtomicLong.get
+</span>
+</span>
+<span>
+(
+)
+</span>
 <ul class="clickable">
 <li>
 <div>
-<a href="../../../../java/util/Random.html#java.util.Random:seedUniquifier:J" title="long seedUniquifier()">
-java.util.Random.seedUniquifier()
+<a href="#java.util.concurrent.atomic.AtomicLong:get:J" title="long get()">
+java.util.concurrent.atomic.AtomicLong.get
 </a>
 </div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+l2d
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+dreturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.concurrent.atomic.AtomicLong:lazySet:Jvoid" href="#">
+
+</a>
+<div class="method_signature">
+public final 
+void
+ 
+<span>
+lazySet
+</span>
+(
+long
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
 </li>
 </ul>
 </div>
@@ -2687,21 +2850,14 @@ lload  1
 <li value="8">
 <div class="instruction">
 <span>
-lload  3
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
 invokevirtual 
 </span>
 <span>
-bool
+void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool compareAndSwapLong(java.lang.Object, long, long, long)">
-sun.misc.Unsafe.compareAndSwapLong
+<span title="void putOrderedLong(java.lang.Object, long, long)">
+sun.misc.Unsafe.putOrderedLong
 </span>
 </span>
 <span>
@@ -2713,147 +2869,12 @@ java.lang.Object
 long
 , 
 long
-, 
-long
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="../../../../sun/misc/Unsafe.html#sun.misc.Unsafe:compareAndSwapLong:java.lang.ObjectJJJZ" title="bool compareAndSwapLong(java.lang.Object, long, long, long)">
-sun.misc.Unsafe.compareAndSwapLong
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.concurrent.atomic.AtomicLong:getAndSet:JJ" href="#">
-
-</a>
-<div class="method_signature">
-public final 
-long
- 
-<span>
-getAndSet
-</span>
-(
-long
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-long
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="long get()">
-java.util.concurrent.atomic.AtomicLong.get
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.concurrent.atomic.AtomicLong:get:J" title="long get()">
-java.util.concurrent.atomic.AtomicLong.get
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-lstore  3
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-lload  3
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-lload  1
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-bool
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="bool compareAndSet(long, long)">
-java.util.concurrent.atomic.AtomicLong.compareAndSet
-</span>
-</span>
-<span>
-(
-long
-, 
-long
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.concurrent.atomic.AtomicLong:compareAndSet:JJZ" title="bool compareAndSet(long, long)">
-java.util.concurrent.atomic.AtomicLong.compareAndSet
-</a>
+No reachable result.
 </div>
 </li>
 </ul>
@@ -2862,28 +2883,7 @@ java.util.concurrent.atomic.AtomicLong.compareAndSet
 <li value="11">
 <div class="instruction">
 <span>
-ifeq 5
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-lload  3
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-lreturn
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-goto -16
+return
 </span>
 </div>
 </li>

@@ -23,16 +23,6 @@ Instantiated
 </li>
 </ul>
 <div class="field">
-<a name="java.text.RuleBasedBreakIterator$SafeCharIterator:rangeLimit:I" href="#">
-
-</a>
-<span class="field_signature">
-private  
-int
- rangeLimit;
-</span>
-</div>
-<div class="field">
 <a name="java.text.RuleBasedBreakIterator$SafeCharIterator:base:java.text.CharacterIterator" href="#">
 
 </a>
@@ -42,6 +32,16 @@ private
 java.text.CharacterIterator
 </a>
  base;
+</span>
+</div>
+<div class="field">
+<a name="java.text.RuleBasedBreakIterator$SafeCharIterator:rangeLimit:I" href="#">
+
+</a>
+<span class="field_signature">
+private  
+int
+ rangeLimit;
 </span>
 </div>
 <div class="field">
@@ -175,15 +175,15 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.text.RuleBasedBreakIterator$SafeCharIterator:current:C" href="#">
+<a name="java.text.RuleBasedBreakIterator$SafeCharIterator:getIndex:I" href="#">
 
 </a>
 <div class="method_signature">
 public 
-char
+int
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-current
+getIndex
 </span>
 (
 )
@@ -199,6 +199,34 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:handleNext:I" title="int handleNext()">
+java.text.RuleBasedBreakIterator.handleNext()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getNextIndex:I" title="int getNextIndex()">
+java.text.RuleBasedBreakIterator.getNextIndex()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getPrevious:I" title="int getPrevious()">
+java.text.RuleBasedBreakIterator.getPrevious()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/DictionaryBasedBreakIterator.html#java.text.DictionaryBasedBreakIterator:handleNext:I" title="int handleNext()">
+java.text.DictionaryBasedBreakIterator.handleNext()
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getCurrentCodePointCount:I" title="int getCurrentCodePointCount()">
 java.text.RuleBasedBreakIterator.getCurrentCodePointCount()
 </a>
@@ -206,8 +234,15 @@ java.text.RuleBasedBreakIterator.getCurrentCodePointCount()
 </li>
 <li>
 <div>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:setIndex:IC" title="char setIndex(int)">
-java.text.RuleBasedBreakIterator$SafeCharIterator.setIndex(int)
+<a href="../../java/text/DictionaryBasedBreakIterator.html#java.text.DictionaryBasedBreakIterator:divideUpDictionaryRange:IIvoid" title="void divideUpDictionaryRange(int, int)">
+java.text.DictionaryBasedBreakIterator.divideUpDictionaryRange(int, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:handlePrevious:I" title="int handlePrevious()">
+java.text.RuleBasedBreakIterator.handlePrevious()
 </a>
 </div>
 </li>
@@ -215,6 +250,34 @@ java.text.RuleBasedBreakIterator$SafeCharIterator.setIndex(int)
 <div>
 <a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getCurrent:I" title="int getCurrent()">
 java.text.RuleBasedBreakIterator.getCurrent()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:&lt;init&gt;:java.text.CharacterIteratorvoid" title="void &lt;init&gt;(java.text.CharacterIterator)">
+java.text.RuleBasedBreakIterator$SafeCharIterator.&lt;init&gt;(java.text.CharacterIterator)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/DictionaryBasedBreakIterator.html#java.text.DictionaryBasedBreakIterator:following:II" title="int following(int)">
+java.text.DictionaryBasedBreakIterator.following(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getNext:I" title="int getNext()">
+java.text.RuleBasedBreakIterator.getNext()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:setText:java.text.CharacterIteratorvoid" title="void setText(java.text.CharacterIterator)">
+java.text.RuleBasedBreakIterator.setText(java.text.CharacterIterator)
 </a>
 </div>
 </li>
@@ -249,197 +312,6 @@ int
 <li value="4">
 <div class="instruction">
 <span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:rangeStart:I">
-java.text.RuleBasedBreakIterator$SafeCharIterator.rangeStart
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-ifcmplt 14
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:currentIndex:I">
-java.text.RuleBasedBreakIterator$SafeCharIterator.currentIndex
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:rangeLimit:I">
-java.text.RuleBasedBreakIterator$SafeCharIterator.rangeLimit
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-ifcmplt 6
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-iconst 65535
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:base:java.text.CharacterIterator">
-java.text.RuleBasedBreakIterator$SafeCharIterator.base
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/text/CharacterIterator.html">
-java.text.CharacterIterator
-</a>
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:currentIndex:I">
-java.text.RuleBasedBreakIterator$SafeCharIterator.currentIndex
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="33">
-<div class="instruction">
-<span>
-invokeinterface 
-</span>
-<span>
-char
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="char setIndex(int)">
-java.text.CharacterIterator.setIndex
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/text/StringCharacterIterator.html#java.text.StringCharacterIterator:setIndex:IC" title="char setIndex(int)">
-java.text.StringCharacterIterator.setIndex
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:setIndex:IC" title="char setIndex(int)">
-java.text.RuleBasedBreakIterator$SafeCharIterator.setIndex
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="38">
-<div class="instruction">
-<span>
 ireturn
 </span>
 </div>
@@ -449,7 +321,7 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.text.RuleBasedBreakIterator$SafeCharIterator:getEndIndex:I" href="#">
+<a name="java.text.RuleBasedBreakIterator$SafeCharIterator:getBeginIndex:I" href="#">
 
 </a>
 <div class="method_signature">
@@ -457,7 +329,7 @@ public
 int
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-getEndIndex
+getBeginIndex
 </span>
 (
 )
@@ -473,43 +345,22 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getCurrentCodePointCount:I" title="int getCurrentCodePointCount()">
-java.text.RuleBasedBreakIterator.getCurrentCodePointCount()
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getPrevious:I" title="int getPrevious()">
+java.text.RuleBasedBreakIterator.getPrevious()
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getNextIndex:I" title="int getNextIndex()">
-java.text.RuleBasedBreakIterator.getNextIndex()
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:isBoundary:IZ" title="bool isBoundary(int)">
+java.text.RuleBasedBreakIterator.isBoundary(int)
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:handleNext:I" title="int handleNext()">
-java.text.RuleBasedBreakIterator.handleNext()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getNext:I" title="int getNext()">
-java.text.RuleBasedBreakIterator.getNext()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:setText:java.text.CharacterIteratorvoid" title="void setText(java.text.CharacterIterator)">
-java.text.RuleBasedBreakIterator.setText(java.text.CharacterIterator)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getCurrent:I" title="int getCurrent()">
-java.text.RuleBasedBreakIterator.getCurrent()
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:following:II" title="int following(int)">
+java.text.RuleBasedBreakIterator.following(int)
 </a>
 </div>
 </li>
@@ -543,8 +394,8 @@ aload  0
 getfield 
 </span>
 <span>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:rangeLimit:I">
-java.text.RuleBasedBreakIterator$SafeCharIterator.rangeLimit
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:rangeStart:I">
+java.text.RuleBasedBreakIterator$SafeCharIterator.rangeStart
 </a>
 </span>
 <span>
@@ -567,323 +418,7 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.text.RuleBasedBreakIterator$SafeCharIterator:&lt;init&gt;:java.text.CharacterIteratorvoid" href="#">
-
-</a>
-<div class="method_signature">
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-RuleBasedBreakIterator$SafeCharIterator
-</span>
-(
-<a href="../../java/text/CharacterIterator.html">
-java.text.CharacterIterator
-</a>
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:setText:java.text.CharacterIteratorvoid" title="void setText(java.text.CharacterIterator)">
-java.text.RuleBasedBreakIterator.setText(java.text.CharacterIterator)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.Object.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/Object.html#java.lang.Object:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.lang.Object.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:base:java.text.CharacterIterator">
-java.text.RuleBasedBreakIterator$SafeCharIterator.base
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/text/CharacterIterator.html">
-java.text.CharacterIterator
-</a>
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-invokeinterface 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int getBeginIndex()">
-java.text.CharacterIterator.getBeginIndex
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:getBeginIndex:I" title="int getBeginIndex()">
-java.text.RuleBasedBreakIterator$SafeCharIterator.getBeginIndex
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/StringCharacterIterator.html#java.text.StringCharacterIterator:getBeginIndex:I" title="int getBeginIndex()">
-java.text.StringCharacterIterator.getBeginIndex
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:rangeStart:I">
-java.text.RuleBasedBreakIterator$SafeCharIterator.rangeStart
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-invokeinterface 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int getEndIndex()">
-java.text.CharacterIterator.getEndIndex
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/text/StringCharacterIterator.html#java.text.StringCharacterIterator:getEndIndex:I" title="int getEndIndex()">
-java.text.StringCharacterIterator.getEndIndex
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:getEndIndex:I" title="int getEndIndex()">
-java.text.RuleBasedBreakIterator$SafeCharIterator.getEndIndex
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:rangeLimit:I">
-java.text.RuleBasedBreakIterator$SafeCharIterator.rangeLimit
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="31">
-<div class="instruction">
-<span>
-invokeinterface 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int getIndex()">
-java.text.CharacterIterator.getIndex
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:getIndex:I" title="int getIndex()">
-java.text.RuleBasedBreakIterator$SafeCharIterator.getIndex
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/StringCharacterIterator.html#java.text.StringCharacterIterator:getIndex:I" title="int getIndex()">
-java.text.StringCharacterIterator.getIndex
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="36">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:currentIndex:I">
-java.text.RuleBasedBreakIterator$SafeCharIterator.currentIndex
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="39">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.text.RuleBasedBreakIterator$SafeCharIterator:setIndex:IC" href="#">
+<a name="java.text.RuleBasedBreakIterator$SafeCharIterator:previous:C" href="#">
 
 </a>
 <div class="method_signature">
@@ -891,332 +426,7 @@ public
 char
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-setIndex
-</span>
-(
-int
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:first:C" title="char first()">
-java.text.RuleBasedBreakIterator$SafeCharIterator.first()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:following:II" title="int following(int)">
-java.text.RuleBasedBreakIterator.following(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:previous:C" title="char previous()">
-java.text.RuleBasedBreakIterator$SafeCharIterator.previous()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/DictionaryBasedBreakIterator.html#java.text.DictionaryBasedBreakIterator:divideUpDictionaryRange:IIvoid" title="void divideUpDictionaryRange(int, int)">
-java.text.DictionaryBasedBreakIterator.divideUpDictionaryRange(int, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:current:C" title="char current()">
-java.text.RuleBasedBreakIterator$SafeCharIterator.current()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/DictionaryBasedBreakIterator.html#java.text.DictionaryBasedBreakIterator:handleNext:I" title="int handleNext()">
-java.text.DictionaryBasedBreakIterator.handleNext()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:handleNext:I" title="int handleNext()">
-java.text.RuleBasedBreakIterator.handleNext()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/DictionaryBasedBreakIterator.html#java.text.DictionaryBasedBreakIterator:following:II" title="int following(int)">
-java.text.DictionaryBasedBreakIterator.following(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getNext:I" title="int getNext()">
-java.text.RuleBasedBreakIterator.getNext()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:setText:java.text.CharacterIteratorvoid" title="void setText(java.text.CharacterIterator)">
-java.text.RuleBasedBreakIterator.setText(java.text.CharacterIterator)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:next:C" title="char next()">
-java.text.RuleBasedBreakIterator$SafeCharIterator.next()
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:rangeStart:I">
-java.text.RuleBasedBreakIterator$SafeCharIterator.rangeStart
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-ifcmplt 11
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:rangeLimit:I">
-java.text.RuleBasedBreakIterator$SafeCharIterator.rangeLimit
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-ifcmpme 13
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/IllegalArgumentException.html">
-java.lang.IllegalArgumentException
-</a>
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-ldc string &apos;Invalid position&apos;
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.lang.IllegalArgumentException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/IllegalArgumentException.html#java.lang.IllegalArgumentException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
-java.lang.IllegalArgumentException.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="28">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:currentIndex:I">
-java.text.RuleBasedBreakIterator$SafeCharIterator.currentIndex
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="31">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="32">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-char
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="char current()">
-java.text.RuleBasedBreakIterator$SafeCharIterator.current
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:current:C" title="char current()">
-java.text.RuleBasedBreakIterator$SafeCharIterator.current
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.text.RuleBasedBreakIterator$SafeCharIterator:next:C" href="#">
-
-</a>
-<div class="method_signature">
-public 
-char
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-next
+previous
 </span>
 (
 )
@@ -1230,17 +440,17 @@ Parsed
 </li>
 </ul>
 <ul class="clickable">
-<li>
-<div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getCurrentCodePointCount:I" title="int getCurrentCodePointCount()">
-java.text.RuleBasedBreakIterator.getCurrentCodePointCount()
-</a>
-</div>
-</li>
 <li>
 <div>
 <a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getPrevious:I" title="int getPrevious()">
 java.text.RuleBasedBreakIterator.getPrevious()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getCurrentCodePointCount:I" title="int getCurrentCodePointCount()">
+java.text.RuleBasedBreakIterator.getCurrentCodePointCount()
 </a>
 </div>
 </li>
@@ -1296,7 +506,7 @@ iconst 1
 <li value="6">
 <div class="instruction">
 <span>
-iadd
+isub
 </span>
 </div>
 </li>
@@ -1356,8 +566,8 @@ aload  0
 getfield 
 </span>
 <span>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:rangeLimit:I">
-java.text.RuleBasedBreakIterator$SafeCharIterator.rangeLimit
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:rangeStart:I">
+java.text.RuleBasedBreakIterator$SafeCharIterator.rangeStart
 </a>
 </span>
 <span>
@@ -1371,7 +581,7 @@ int
 <li value="18">
 <div class="instruction">
 <span>
-ifcmplt 14
+ifcmpge 14
 </span>
 </div>
 </li>
@@ -1395,8 +605,8 @@ aload  0
 getfield 
 </span>
 <span>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:rangeLimit:I">
-java.text.RuleBasedBreakIterator$SafeCharIterator.rangeLimit
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:rangeStart:I">
+java.text.RuleBasedBreakIterator$SafeCharIterator.rangeStart
 </a>
 </span>
 <span>
@@ -1512,11 +722,116 @@ int
 <ul class="clickable">
 <li>
 <div>
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:setIndex:IC" title="char setIndex(int)">
+java.text.RuleBasedBreakIterator$SafeCharIterator.setIndex
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../java/text/StringCharacterIterator.html#java.text.StringCharacterIterator:setIndex:IC" title="char setIndex(int)">
 java.text.StringCharacterIterator.setIndex
 </a>
 </div>
 </li>
+</ul>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.RuleBasedBreakIterator$SafeCharIterator:first:C" href="#">
+
+</a>
+<div class="method_signature">
+public 
+char
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+first
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:setText:java.text.CharacterIteratorvoid" title="void setText(java.text.CharacterIterator)">
+java.text.RuleBasedBreakIterator.setText(java.text.CharacterIterator)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:rangeStart:I">
+java.text.RuleBasedBreakIterator$SafeCharIterator.rangeStart
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+char
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="char setIndex(int)">
+java.text.RuleBasedBreakIterator$SafeCharIterator.setIndex
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
 <li>
 <div>
 <a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:setIndex:IC" title="char setIndex(int)">
@@ -1527,7 +842,7 @@ java.text.RuleBasedBreakIterator$SafeCharIterator.setIndex
 </ul>
 </div>
 </li>
-<li value="45">
+<li value="8">
 <div class="instruction">
 <span>
 ireturn
@@ -1586,55 +901,6 @@ java.net.InetAddress.getAllByName0(java.lang.String, java.net.InetAddress, bool)
 </li>
 <li>
 <div>
-<a href="../../sun/misc/FormattedFloatingDecimal$Form.html#sun.misc.FormattedFloatingDecimal$Form:values:sun.misc.FormattedFloatingDecimal$Form.-" title="sun.misc.FormattedFloatingDecimal$Form[] values()">
-sun.misc.FormattedFloatingDecimal$Form.values()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:clone:java.lang.Object" title="java.lang.Object clone()">
-java.text.RuleBasedBreakIterator.clone()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:clone:java.lang.Object" title="java.lang.Object clone()">
-java.text.RuleBasedBreakIterator$SafeCharIterator.clone()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/Normalizer$Form.html#java.text.Normalizer$Form:values:java.text.Normalizer$Form.-" title="java.text.Normalizer$Form[] values()">
-java.text.Normalizer$Form.values()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/IdentityHashMap.html#java.util.IdentityHashMap:clone:java.lang.Object" title="java.lang.Object clone()">
-java.util.IdentityHashMap.clone()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/text/CompactByteArray.html#sun.text.CompactByteArray:clone:java.lang.Object" title="java.lang.Object clone()">
-sun.text.CompactByteArray.clone()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/net/Inet6Address.html#java.net.Inet6Address:getAddress:B.-" title="byte[] getAddress()">
-java.net.Inet6Address.getAddress()
-</a>
-</div>
-</li>
-<li>
-<div>
 <a href="../../sun/util/resources/LocaleData.html#sun.util.resources.LocaleData:getAvailableLocales:java.util.Locale.-" title="java.util.Locale[] getAvailableLocales()">
 sun.util.resources.LocaleData.getAvailableLocales()
 </a>
@@ -1649,8 +915,57 @@ sun.util.logging.PlatformLogger$Level.values()
 </li>
 <li>
 <div>
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:clone:java.lang.Object" title="java.lang.Object clone()">
+java.text.RuleBasedBreakIterator$SafeCharIterator.clone()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/net/Inet6Address.html#java.net.Inet6Address:getAddress:B.-" title="byte[] getAddress()">
+java.net.Inet6Address.getAddress()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/misc/FormattedFloatingDecimal$Form.html#sun.misc.FormattedFloatingDecimal$Form:values:sun.misc.FormattedFloatingDecimal$Form.-" title="sun.misc.FormattedFloatingDecimal$Form[] values()">
+sun.misc.FormattedFloatingDecimal$Form.values()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:clone:java.lang.Object" title="java.lang.Object clone()">
+java.text.RuleBasedBreakIterator.clone()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/Normalizer$Form.html#java.text.Normalizer$Form:values:java.text.Normalizer$Form.-" title="java.text.Normalizer$Form[] values()">
+java.text.Normalizer$Form.values()
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../sun/text/normalizer/UnicodeSet.html#sun.text.normalizer.UnicodeSet:set:sun.text.normalizer.UnicodeSetsun.text.normalizer.UnicodeSet" title="sun.text.normalizer.UnicodeSet set(sun.text.normalizer.UnicodeSet)">
 sun.text.normalizer.UnicodeSet.set(sun.text.normalizer.UnicodeSet)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/IdentityHashMap.html#java.util.IdentityHashMap:clone:java.lang.Object" title="java.lang.Object clone()">
+java.util.IdentityHashMap.clone()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/text/CompactByteArray.html#sun.text.CompactByteArray:clone:java.lang.Object" title="java.lang.Object clone()">
+sun.text.CompactByteArray.clone()
 </a>
 </div>
 </li>
@@ -2101,7 +1416,7 @@ try start: 2; try end: 10: catch start: 13; catched type: java.lang.CloneNotSupp
 </span>
 </div>
 <div class="method">
-<a name="java.text.RuleBasedBreakIterator$SafeCharIterator:first:C" href="#">
+<a name="java.text.RuleBasedBreakIterator$SafeCharIterator:current:C" href="#">
 
 </a>
 <div class="method_signature">
@@ -2109,9 +1424,403 @@ public
 char
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-first
+current
 </span>
 (
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getCurrentCodePointCount:I" title="int getCurrentCodePointCount()">
+java.text.RuleBasedBreakIterator.getCurrentCodePointCount()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:setIndex:IC" title="char setIndex(int)">
+java.text.RuleBasedBreakIterator$SafeCharIterator.setIndex(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getCurrent:I" title="int getCurrent()">
+java.text.RuleBasedBreakIterator.getCurrent()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:currentIndex:I">
+java.text.RuleBasedBreakIterator$SafeCharIterator.currentIndex
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:rangeStart:I">
+java.text.RuleBasedBreakIterator$SafeCharIterator.rangeStart
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+ifcmplt 14
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:currentIndex:I">
+java.text.RuleBasedBreakIterator$SafeCharIterator.currentIndex
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:rangeLimit:I">
+java.text.RuleBasedBreakIterator$SafeCharIterator.rangeLimit
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+ifcmplt 6
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+iconst 65535
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:base:java.text.CharacterIterator">
+java.text.RuleBasedBreakIterator$SafeCharIterator.base
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/text/CharacterIterator.html">
+java.text.CharacterIterator
+</a>
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:currentIndex:I">
+java.text.RuleBasedBreakIterator$SafeCharIterator.currentIndex
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+invokeinterface 
+</span>
+<span>
+char
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="char setIndex(int)">
+java.text.CharacterIterator.setIndex
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:setIndex:IC" title="char setIndex(int)">
+java.text.RuleBasedBreakIterator$SafeCharIterator.setIndex
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/StringCharacterIterator.html#java.text.StringCharacterIterator:setIndex:IC" title="char setIndex(int)">
+java.text.StringCharacterIterator.setIndex
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.RuleBasedBreakIterator$SafeCharIterator:getEndIndex:I" href="#">
+
+</a>
+<div class="method_signature">
+public 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getEndIndex
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:handleNext:I" title="int handleNext()">
+java.text.RuleBasedBreakIterator.handleNext()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getNextIndex:I" title="int getNextIndex()">
+java.text.RuleBasedBreakIterator.getNextIndex()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getCurrentCodePointCount:I" title="int getCurrentCodePointCount()">
+java.text.RuleBasedBreakIterator.getCurrentCodePointCount()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:checkOffset:Ijava.text.CharacterIteratorvoid" title="void checkOffset(int, java.text.CharacterIterator)">
+java.text.RuleBasedBreakIterator.checkOffset(int, java.text.CharacterIterator)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getCurrent:I" title="int getCurrent()">
+java.text.RuleBasedBreakIterator.getCurrent()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:&lt;init&gt;:java.text.CharacterIteratorvoid" title="void &lt;init&gt;(java.text.CharacterIterator)">
+java.text.RuleBasedBreakIterator$SafeCharIterator.&lt;init&gt;(java.text.CharacterIterator)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getNext:I" title="int getNext()">
+java.text.RuleBasedBreakIterator.getNext()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:setText:java.text.CharacterIteratorvoid" title="void setText(java.text.CharacterIterator)">
+java.text.RuleBasedBreakIterator.setText(java.text.CharacterIterator)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:rangeLimit:I">
+java.text.RuleBasedBreakIterator$SafeCharIterator.rangeLimit
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.RuleBasedBreakIterator$SafeCharIterator:&lt;init&gt;:java.text.CharacterIteratorvoid" href="#">
+
+</a>
+<div class="method_signature">
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+RuleBasedBreakIterator$SafeCharIterator
+</span>
+(
+<a href="../../java/text/CharacterIterator.html">
+java.text.CharacterIterator
+</a>
+ 1
 )
 ;
 <ul class="annot">
@@ -2143,6 +1852,392 @@ aload  0
 <li value="1">
 <div class="instruction">
 <span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Object.html#java.lang.Object:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:base:java.text.CharacterIterator">
+java.text.RuleBasedBreakIterator$SafeCharIterator.base
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/text/CharacterIterator.html">
+java.text.CharacterIterator
+</a>
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+invokeinterface 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getBeginIndex()">
+java.text.CharacterIterator.getBeginIndex
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:getBeginIndex:I" title="int getBeginIndex()">
+java.text.RuleBasedBreakIterator$SafeCharIterator.getBeginIndex
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/StringCharacterIterator.html#java.text.StringCharacterIterator:getBeginIndex:I" title="int getBeginIndex()">
+java.text.StringCharacterIterator.getBeginIndex
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:rangeStart:I">
+java.text.RuleBasedBreakIterator$SafeCharIterator.rangeStart
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+invokeinterface 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getEndIndex()">
+java.text.CharacterIterator.getEndIndex
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/StringCharacterIterator.html#java.text.StringCharacterIterator:getEndIndex:I" title="int getEndIndex()">
+java.text.StringCharacterIterator.getEndIndex
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:getEndIndex:I" title="int getEndIndex()">
+java.text.RuleBasedBreakIterator$SafeCharIterator.getEndIndex
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:rangeLimit:I">
+java.text.RuleBasedBreakIterator$SafeCharIterator.rangeLimit
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+invokeinterface 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int getIndex()">
+java.text.CharacterIterator.getIndex
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:getIndex:I" title="int getIndex()">
+java.text.RuleBasedBreakIterator$SafeCharIterator.getIndex
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/StringCharacterIterator.html#java.text.StringCharacterIterator:getIndex:I" title="int getIndex()">
+java.text.StringCharacterIterator.getIndex
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:currentIndex:I">
+java.text.RuleBasedBreakIterator$SafeCharIterator.currentIndex
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.text.RuleBasedBreakIterator$SafeCharIterator:setIndex:IC" href="#">
+
+</a>
+<div class="method_signature">
+public 
+char
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+setIndex
+</span>
+(
+int
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:handleNext:I" title="int handleNext()">
+java.text.RuleBasedBreakIterator.handleNext()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:previous:C" title="char previous()">
+java.text.RuleBasedBreakIterator$SafeCharIterator.previous()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:first:C" title="char first()">
+java.text.RuleBasedBreakIterator$SafeCharIterator.first()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/DictionaryBasedBreakIterator.html#java.text.DictionaryBasedBreakIterator:handleNext:I" title="int handleNext()">
+java.text.DictionaryBasedBreakIterator.handleNext()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:following:II" title="int following(int)">
+java.text.RuleBasedBreakIterator.following(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:current:C" title="char current()">
+java.text.RuleBasedBreakIterator$SafeCharIterator.current()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/DictionaryBasedBreakIterator.html#java.text.DictionaryBasedBreakIterator:divideUpDictionaryRange:IIvoid" title="void divideUpDictionaryRange(int, int)">
+java.text.DictionaryBasedBreakIterator.divideUpDictionaryRange(int, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/DictionaryBasedBreakIterator.html#java.text.DictionaryBasedBreakIterator:following:II" title="int following(int)">
+java.text.DictionaryBasedBreakIterator.following(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:next:C" title="char next()">
+java.text.RuleBasedBreakIterator$SafeCharIterator.next()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getNext:I" title="int getNext()">
+java.text.RuleBasedBreakIterator.getNext()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:setText:java.text.CharacterIteratorvoid" title="void setText(java.text.CharacterIterator)">
+java.text.RuleBasedBreakIterator.setText(java.text.CharacterIterator)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
 aload  0
 </span>
 </div>
@@ -2168,119 +2263,32 @@ int
 <li value="5">
 <div class="instruction">
 <span>
-invokevirtual 
+ifcmplt 11
 </span>
-<span>
-char
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="char setIndex(int)">
-java.text.RuleBasedBreakIterator$SafeCharIterator.setIndex
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:setIndex:IC" title="char setIndex(int)">
-java.text.RuleBasedBreakIterator$SafeCharIterator.setIndex
-</a>
-</div>
-</li>
-</ul>
 </div>
 </li>
 <li value="8">
 <div class="instruction">
 <span>
-ireturn
+iload  1
 </span>
 </div>
 </li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.text.RuleBasedBreakIterator$SafeCharIterator:getBeginIndex:I" href="#">
-
-</a>
-<div class="method_signature">
-public 
-int
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-getBeginIndex
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:following:II" title="int following(int)">
-java.text.RuleBasedBreakIterator.following(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getPrevious:I" title="int getPrevious()">
-java.text.RuleBasedBreakIterator.getPrevious()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:isBoundary:IZ" title="bool isBoundary(int)">
-java.text.RuleBasedBreakIterator.isBoundary(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:checkOffset:Ijava.text.CharacterIteratorvoid" title="void checkOffset(int, java.text.CharacterIterator)">
-java.text.RuleBasedBreakIterator.checkOffset(int, java.text.CharacterIterator)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:&lt;init&gt;:java.text.CharacterIteratorvoid" title="void &lt;init&gt;(java.text.CharacterIterator)">
-java.text.RuleBasedBreakIterator$SafeCharIterator.&lt;init&gt;(java.text.CharacterIterator)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
+<li value="9">
 <div class="instruction">
 <span>
 aload  0
 </span>
 </div>
 </li>
-<li value="1">
+<li value="10">
 <div class="instruction">
 <span>
 getfield 
 </span>
 <span>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:rangeStart:I">
-java.text.RuleBasedBreakIterator$SafeCharIterator.rangeStart
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:rangeLimit:I">
+java.text.RuleBasedBreakIterator$SafeCharIterator.rangeLimit
 </a>
 </span>
 <span>
@@ -2291,7 +2299,145 @@ int
 </span>
 </div>
 </li>
-<li value="4">
+<li value="13">
+<div class="instruction">
+<span>
+ifcmpme 13
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+ldc string &apos;Invalid position&apos;
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.lang.IllegalArgumentException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/IllegalArgumentException.html#java.lang.IllegalArgumentException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
+java.lang.IllegalArgumentException.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:currentIndex:I">
+java.text.RuleBasedBreakIterator$SafeCharIterator.currentIndex
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+char
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="char current()">
+java.text.RuleBasedBreakIterator$SafeCharIterator.current
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:current:C" title="char current()">
+java.text.RuleBasedBreakIterator$SafeCharIterator.current
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="35">
 <div class="instruction">
 <span>
 ireturn
@@ -2303,7 +2449,7 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="java.text.RuleBasedBreakIterator$SafeCharIterator:previous:C" href="#">
+<a name="java.text.RuleBasedBreakIterator$SafeCharIterator:next:C" href="#">
 
 </a>
 <div class="method_signature">
@@ -2311,7 +2457,7 @@ public
 char
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-previous
+next
 </span>
 (
 )
@@ -2327,15 +2473,15 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getCurrentCodePointCount:I" title="int getCurrentCodePointCount()">
-java.text.RuleBasedBreakIterator.getCurrentCodePointCount()
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getPrevious:I" title="int getPrevious()">
+java.text.RuleBasedBreakIterator.getPrevious()
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getPrevious:I" title="int getPrevious()">
-java.text.RuleBasedBreakIterator.getPrevious()
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getCurrentCodePointCount:I" title="int getCurrentCodePointCount()">
+java.text.RuleBasedBreakIterator.getCurrentCodePointCount()
 </a>
 </div>
 </li>
@@ -2391,7 +2537,7 @@ iconst 1
 <li value="6">
 <div class="instruction">
 <span>
-isub
+iadd
 </span>
 </div>
 </li>
@@ -2451,8 +2597,8 @@ aload  0
 getfield 
 </span>
 <span>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:rangeStart:I">
-java.text.RuleBasedBreakIterator$SafeCharIterator.rangeStart
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:rangeLimit:I">
+java.text.RuleBasedBreakIterator$SafeCharIterator.rangeLimit
 </a>
 </span>
 <span>
@@ -2466,7 +2612,7 @@ int
 <li value="18">
 <div class="instruction">
 <span>
-ifcmpge 14
+ifcmplt 14
 </span>
 </div>
 </li>
@@ -2490,8 +2636,8 @@ aload  0
 getfield 
 </span>
 <span>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:rangeStart:I">
-java.text.RuleBasedBreakIterator$SafeCharIterator.rangeStart
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:rangeLimit:I">
+java.text.RuleBasedBreakIterator$SafeCharIterator.rangeLimit
 </a>
 </span>
 <span>
@@ -2607,15 +2753,15 @@ int
 <ul class="clickable">
 <li>
 <div>
-<a href="../../java/text/StringCharacterIterator.html#java.text.StringCharacterIterator:setIndex:IC" title="char setIndex(int)">
-java.text.StringCharacterIterator.setIndex
+<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:setIndex:IC" title="char setIndex(int)">
+java.text.RuleBasedBreakIterator$SafeCharIterator.setIndex
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:setIndex:IC" title="char setIndex(int)">
-java.text.RuleBasedBreakIterator$SafeCharIterator.setIndex
+<a href="../../java/text/StringCharacterIterator.html#java.text.StringCharacterIterator:setIndex:IC" title="char setIndex(int)">
+java.text.StringCharacterIterator.setIndex
 </a>
 </div>
 </li>
@@ -2623,152 +2769,6 @@ java.text.RuleBasedBreakIterator$SafeCharIterator.setIndex
 </div>
 </li>
 <li value="45">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.text.RuleBasedBreakIterator$SafeCharIterator:getIndex:I" href="#">
-
-</a>
-<div class="method_signature">
-public 
-int
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-getIndex
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getCurrentCodePointCount:I" title="int getCurrentCodePointCount()">
-java.text.RuleBasedBreakIterator.getCurrentCodePointCount()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/DictionaryBasedBreakIterator.html#java.text.DictionaryBasedBreakIterator:divideUpDictionaryRange:IIvoid" title="void divideUpDictionaryRange(int, int)">
-java.text.DictionaryBasedBreakIterator.divideUpDictionaryRange(int, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getPrevious:I" title="int getPrevious()">
-java.text.RuleBasedBreakIterator.getPrevious()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/DictionaryBasedBreakIterator.html#java.text.DictionaryBasedBreakIterator:handleNext:I" title="int handleNext()">
-java.text.DictionaryBasedBreakIterator.handleNext()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getNextIndex:I" title="int getNextIndex()">
-java.text.RuleBasedBreakIterator.getNextIndex()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:handleNext:I" title="int handleNext()">
-java.text.RuleBasedBreakIterator.handleNext()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/DictionaryBasedBreakIterator.html#java.text.DictionaryBasedBreakIterator:following:II" title="int following(int)">
-java.text.DictionaryBasedBreakIterator.following(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getNext:I" title="int getNext()">
-java.text.RuleBasedBreakIterator.getNext()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:setText:java.text.CharacterIteratorvoid" title="void setText(java.text.CharacterIterator)">
-java.text.RuleBasedBreakIterator.setText(java.text.CharacterIterator)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:getCurrent:I" title="int getCurrent()">
-java.text.RuleBasedBreakIterator.getCurrent()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:handlePrevious:I" title="int handlePrevious()">
-java.text.RuleBasedBreakIterator.handlePrevious()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:&lt;init&gt;:java.text.CharacterIteratorvoid" title="void &lt;init&gt;(java.text.CharacterIterator)">
-java.text.RuleBasedBreakIterator$SafeCharIterator.&lt;init&gt;(java.text.CharacterIterator)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.text.RuleBasedBreakIterator$SafeCharIterator:currentIndex:I">
-java.text.RuleBasedBreakIterator$SafeCharIterator.currentIndex
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="4">
 <div class="instruction">
 <span>
 ireturn

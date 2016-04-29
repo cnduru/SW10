@@ -23,16 +23,6 @@ Instantiated
 </li>
 </ul>
 <div class="field">
-<a name="sun.text.normalizer.NormalizerDataReader:DATA_FORMAT_VERSION:B.-" href="#">
-
-</a>
-<span class="field_signature">
-private static final 
-byte[]
- DATA_FORMAT_VERSION;
-</span>
-</div>
-<div class="field">
 <a name="sun.text.normalizer.NormalizerDataReader:unicodeVersion:B.-" href="#">
 
 </a>
@@ -43,13 +33,13 @@ byte[]
 </span>
 </div>
 <div class="field">
-<a name="sun.text.normalizer.NormalizerDataReader:DATA_FORMAT_ID:B.-" href="#">
+<a name="sun.text.normalizer.NormalizerDataReader:DATA_FORMAT_VERSION:B.-" href="#">
 
 </a>
 <span class="field_signature">
 private static final 
 byte[]
- DATA_FORMAT_ID;
+ DATA_FORMAT_VERSION;
 </span>
 </div>
 <div class="field">
@@ -62,6 +52,16 @@ private
 java.io.DataInputStream
 </a>
  dataInputStream;
+</span>
+</div>
+<div class="field">
+<a name="sun.text.normalizer.NormalizerDataReader:DATA_FORMAT_ID:B.-" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+byte[]
+ DATA_FORMAT_ID;
 </span>
 </div>
 <div class="method">
@@ -382,6 +382,586 @@ byte[]
 <div class="instruction">
 <span>
 return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.NormalizerDataReader:read:B.-B.-B.-C.-C.-void" href="#">
+
+</a>
+<div class="method_signature">
+protected 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+read
+</span>
+(
+byte[]
+ 1
+, 
+byte[]
+ 2
+, 
+byte[]
+ 3
+, 
+char[]
+ 4
+, 
+char[]
+ 5
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/NormalizerImpl.html#sun.text.normalizer.NormalizerImpl:&lt;init&gt;:void" title="void &lt;init&gt;()">
+sun.text.normalizer.NormalizerImpl.&lt;init&gt;()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.NormalizerDataReader:dataInputStream:java.io.DataInputStream">
+sun.text.normalizer.NormalizerDataReader.dataInputStream
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/io/DataInputStream.html">
+java.io.DataInputStream
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void readFully(byte[])">
+java.io.DataInputStream.readFully
+</span>
+</span>
+<span>
+(
+byte[]
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/io/DataInputStream.html#java.io.DataInputStream:readFully:B.-void" title="void readFully(byte[])">
+java.io.DataInputStream.readFully
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+istore  6
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+iload  6
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+aload  4
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+ifcmpge 21
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+aload  4
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+iload  6
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.NormalizerDataReader:dataInputStream:java.io.DataInputStream">
+sun.text.normalizer.NormalizerDataReader.dataInputStream
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/io/DataInputStream.html">
+java.io.DataInputStream
+</a>
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+char
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="char readChar()">
+java.io.DataInputStream.readChar
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/io/DataInputStream.html#java.io.DataInputStream:readChar:C" title="char readChar()">
+java.io.DataInputStream.readChar
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+castore
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+iinc 6 1
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+goto -23
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+istore  6
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+iload  6
+</span>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+aload  5
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span>
+ifcmpge 21
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+aload  5
+</span>
+</div>
+</li>
+<li value="50">
+<div class="instruction">
+<span>
+iload  6
+</span>
+</div>
+</li>
+<li value="52">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="53">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.NormalizerDataReader:dataInputStream:java.io.DataInputStream">
+sun.text.normalizer.NormalizerDataReader.dataInputStream
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/io/DataInputStream.html">
+java.io.DataInputStream
+</a>
+</span>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+char
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="char readChar()">
+java.io.DataInputStream.readChar
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/io/DataInputStream.html#java.io.DataInputStream:readChar:C" title="char readChar()">
+java.io.DataInputStream.readChar
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="59">
+<div class="instruction">
+<span>
+castore
+</span>
+</div>
+</li>
+<li value="60">
+<div class="instruction">
+<span>
+iinc 6 1
+</span>
+</div>
+</li>
+<li value="63">
+<div class="instruction">
+<span>
+goto -23
+</span>
+</div>
+</li>
+<li value="66">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="67">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.NormalizerDataReader:dataInputStream:java.io.DataInputStream">
+sun.text.normalizer.NormalizerDataReader.dataInputStream
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/io/DataInputStream.html">
+java.io.DataInputStream
+</a>
+</span>
+</div>
+</li>
+<li value="70">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="71">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void readFully(byte[])">
+java.io.DataInputStream.readFully
+</span>
+</span>
+<span>
+(
+byte[]
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/io/DataInputStream.html#java.io.DataInputStream:readFully:B.-void" title="void readFully(byte[])">
+java.io.DataInputStream.readFully
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="74">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="75">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.NormalizerDataReader:dataInputStream:java.io.DataInputStream">
+sun.text.normalizer.NormalizerDataReader.dataInputStream
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../../java/io/DataInputStream.html">
+java.io.DataInputStream
+</a>
+</span>
+</div>
+</li>
+<li value="78">
+<div class="instruction">
+<span>
+aload  3
+</span>
+</div>
+</li>
+<li value="79">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void readFully(byte[])">
+java.io.DataInputStream.readFully
+</span>
+</span>
+<span>
+(
+byte[]
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../java/io/DataInputStream.html#java.io.DataInputStream:readFully:B.-void" title="void readFully(byte[])">
+java.io.DataInputStream.readFully
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="82">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.text.normalizer.NormalizerDataReader:getUnicodeVersion:B.-" href="#">
+
+</a>
+<div class="method_signature">
+public 
+byte[]
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+getUnicodeVersion
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../../sun/text/normalizer/NormalizerImpl.html#sun.text.normalizer.NormalizerImpl:&lt;init&gt;:void" title="void &lt;init&gt;()">
+sun.text.normalizer.NormalizerImpl.&lt;init&gt;()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.text.normalizer.NormalizerDataReader:unicodeVersion:B.-">
+sun.text.normalizer.NormalizerDataReader.unicodeVersion
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+byte[]
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+areturn
 </span>
 </div>
 </li>
@@ -1152,586 +1732,6 @@ aload  2
 <div class="instruction">
 <span>
 areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="sun.text.normalizer.NormalizerDataReader:getUnicodeVersion:B.-" href="#">
-
-</a>
-<div class="method_signature">
-public 
-byte[]
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-getUnicodeVersion
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../sun/text/normalizer/NormalizerImpl.html#sun.text.normalizer.NormalizerImpl:&lt;init&gt;:void" title="void &lt;init&gt;()">
-sun.text.normalizer.NormalizerImpl.&lt;init&gt;()
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.NormalizerDataReader:unicodeVersion:B.-">
-sun.text.normalizer.NormalizerDataReader.unicodeVersion
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-byte[]
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="sun.text.normalizer.NormalizerDataReader:read:B.-B.-B.-C.-C.-void" href="#">
-
-</a>
-<div class="method_signature">
-protected 
-void
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-read
-</span>
-(
-byte[]
- 1
-, 
-byte[]
- 2
-, 
-byte[]
- 3
-, 
-char[]
- 4
-, 
-char[]
- 5
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../sun/text/normalizer/NormalizerImpl.html#sun.text.normalizer.NormalizerImpl:&lt;init&gt;:void" title="void &lt;init&gt;()">
-sun.text.normalizer.NormalizerImpl.&lt;init&gt;()
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.NormalizerDataReader:dataInputStream:java.io.DataInputStream">
-sun.text.normalizer.NormalizerDataReader.dataInputStream
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/io/DataInputStream.html">
-java.io.DataInputStream
-</a>
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void readFully(byte[])">
-java.io.DataInputStream.readFully
-</span>
-</span>
-<span>
-(
-byte[]
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/io/DataInputStream.html#java.io.DataInputStream:readFully:B.-void" title="void readFully(byte[])">
-java.io.DataInputStream.readFully
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-istore  6
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-iload  6
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-aload  4
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-arraylength
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-ifcmpge 21
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-aload  4
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-iload  6
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.NormalizerDataReader:dataInputStream:java.io.DataInputStream">
-sun.text.normalizer.NormalizerDataReader.dataInputStream
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/io/DataInputStream.html">
-java.io.DataInputStream
-</a>
-</span>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-char
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="char readChar()">
-java.io.DataInputStream.readChar
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/io/DataInputStream.html#java.io.DataInputStream:readChar:C" title="char readChar()">
-java.io.DataInputStream.readChar
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-castore
-</span>
-</div>
-</li>
-<li value="31">
-<div class="instruction">
-<span>
-iinc 6 1
-</span>
-</div>
-</li>
-<li value="34">
-<div class="instruction">
-<span>
-goto -23
-</span>
-</div>
-</li>
-<li value="37">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="38">
-<div class="instruction">
-<span>
-istore  6
-</span>
-</div>
-</li>
-<li value="40">
-<div class="instruction">
-<span>
-iload  6
-</span>
-</div>
-</li>
-<li value="42">
-<div class="instruction">
-<span>
-aload  5
-</span>
-</div>
-</li>
-<li value="44">
-<div class="instruction">
-<span>
-arraylength
-</span>
-</div>
-</li>
-<li value="45">
-<div class="instruction">
-<span>
-ifcmpge 21
-</span>
-</div>
-</li>
-<li value="48">
-<div class="instruction">
-<span>
-aload  5
-</span>
-</div>
-</li>
-<li value="50">
-<div class="instruction">
-<span>
-iload  6
-</span>
-</div>
-</li>
-<li value="52">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="53">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.NormalizerDataReader:dataInputStream:java.io.DataInputStream">
-sun.text.normalizer.NormalizerDataReader.dataInputStream
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/io/DataInputStream.html">
-java.io.DataInputStream
-</a>
-</span>
-</div>
-</li>
-<li value="56">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-char
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="char readChar()">
-java.io.DataInputStream.readChar
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/io/DataInputStream.html#java.io.DataInputStream:readChar:C" title="char readChar()">
-java.io.DataInputStream.readChar
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="59">
-<div class="instruction">
-<span>
-castore
-</span>
-</div>
-</li>
-<li value="60">
-<div class="instruction">
-<span>
-iinc 6 1
-</span>
-</div>
-</li>
-<li value="63">
-<div class="instruction">
-<span>
-goto -23
-</span>
-</div>
-</li>
-<li value="66">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="67">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.NormalizerDataReader:dataInputStream:java.io.DataInputStream">
-sun.text.normalizer.NormalizerDataReader.dataInputStream
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/io/DataInputStream.html">
-java.io.DataInputStream
-</a>
-</span>
-</div>
-</li>
-<li value="70">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="71">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void readFully(byte[])">
-java.io.DataInputStream.readFully
-</span>
-</span>
-<span>
-(
-byte[]
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/io/DataInputStream.html#java.io.DataInputStream:readFully:B.-void" title="void readFully(byte[])">
-java.io.DataInputStream.readFully
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="74">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="75">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.text.normalizer.NormalizerDataReader:dataInputStream:java.io.DataInputStream">
-sun.text.normalizer.NormalizerDataReader.dataInputStream
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../../java/io/DataInputStream.html">
-java.io.DataInputStream
-</a>
-</span>
-</div>
-</li>
-<li value="78">
-<div class="instruction">
-<span>
-aload  3
-</span>
-</div>
-</li>
-<li value="79">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void readFully(byte[])">
-java.io.DataInputStream.readFully
-</span>
-</span>
-<span>
-(
-byte[]
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../../java/io/DataInputStream.html#java.io.DataInputStream:readFully:B.-void" title="void readFully(byte[])">
-java.io.DataInputStream.readFully
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="82">
-<div class="instruction">
-<span>
-return
 </span>
 </div>
 </li>

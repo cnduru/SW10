@@ -23,7 +23,7 @@ open JProgram;;
 
 (* Setup here! *)
 let jar_file = "java/virtual.jar"
-let main_class = "AClass"
+let main_class = "Virtual"
 let output = "output/virtual"
 
 let (prta,instantiated_classes) =

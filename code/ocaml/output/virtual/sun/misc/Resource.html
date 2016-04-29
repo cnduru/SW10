@@ -61,15 +61,17 @@ Abstract Method
 </ol>
 </div>
 <div class="method">
-<a name="sun.misc.Resource:getContentLength:I" href="#">
+<a name="sun.misc.Resource:getCodeSourceURL:java.net.URL" href="#">
 
 </a>
 <div class="method_signature">
 public abstract 
-int
+<a href="../../java/net/URL.html">
+java.net.URL
+</a>
  
 <span>
-getContentLength
+getCodeSourceURL
 </span>
 (
 )
@@ -81,48 +83,6 @@ Abstract Method
 </ul>
 </div>
 
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="sun.misc.Resource:getManifest:java.util.jar.Manifest" href="#">
-
-</a>
-<div class="method_signature">
-public 
-java.util.jar.Manifest
- 
-<span>
-getManifest
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aconstnull
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
 <ol>
 </ol>
 </div>
@@ -219,17 +179,17 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="sun.misc.Resource:getByteBuffer:java.nio.ByteBuffer" href="#">
+<a name="sun.misc.Resource:cachedInputStream:java.io.InputStream" href="#">
 
 </a>
 <div class="method_signature">
-public 
-<a href="../../java/nio/ByteBuffer.html">
-java.nio.ByteBuffer
+private synchronized 
+<a href="../../java/io/InputStream.html">
+java.io.InputStream
 </a>
  
 <span>
-getByteBuffer
+cachedInputStream
 </span>
 (
 )
@@ -254,7 +214,48 @@ aload  0
 <li value="1">
 <div class="instruction">
 <span>
-invokespecial 
+getfield 
+</span>
+<span>
+<a href="#sun.misc.Resource:cis:java.io.InputStream">
+sun.misc.Resource.cis
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/io/InputStream.html">
+java.io.InputStream
+</a>
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ifnonnull 11
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+invokevirtual 
 </span>
 <span>
 <a href="../../java/io/InputStream.html">
@@ -262,8 +263,8 @@ java.io.InputStream
 </a>
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.io.InputStream cachedInputStream()">
-sun.misc.Resource.cachedInputStream
+<span title="java.io.InputStream getInputStream()">
+sun.misc.Resource.getInputStream
 </span>
 </span>
 <span>
@@ -279,97 +280,54 @@ No reachable result.
 </ul>
 </div>
 </li>
-<li value="4">
-<div class="instruction">
-<span>
-astore  1
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-instanceof 
-</span>
-<span>
-sun.nio.ByteBuffered
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-ifeq 13
-</span>
-</div>
-</li>
 <li value="12">
 <div class="instruction">
 <span>
-aload  1
+putfield 
+</span>
+<span>
+<a href="#sun.misc.Resource:cis:java.io.InputStream">
+sun.misc.Resource.cis
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/io/InputStream.html">
+java.io.InputStream
+</a>
 </span>
 </div>
 </li>
-<li value="13">
+<li value="15">
 <div class="instruction">
 <span>
-checkcast 
-</span>
-<span>
-sun.nio.ByteBuffered
+aload  0
 </span>
 </div>
 </li>
 <li value="16">
 <div class="instruction">
 <span>
-invokeinterface 
+getfield 
 </span>
 <span>
-<a href="../../java/nio/ByteBuffer.html">
-java.nio.ByteBuffer
+<a href="#sun.misc.Resource:cis:java.io.InputStream">
+sun.misc.Resource.cis
 </a>
 </span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.nio.ByteBuffer getByteBuffer()">
-sun.nio.ByteBuffered.getByteBuffer
-</span>
+<span>
+ : 
 </span>
 <span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-areturn
+<a href="../../java/io/InputStream.html">
+java.io.InputStream
+</a>
 </span>
 </div>
 </li>
-<li value="22">
-<div class="instruction">
-<span>
-aconstnull
-</span>
-</div>
-</li>
-<li value="23">
+<li value="19">
 <div class="instruction">
 <span>
 areturn
@@ -1789,17 +1747,83 @@ try start: 209; try end: 211: catch start: 209; catched type: None (finally bloc
 </span>
 </div>
 <div class="method">
-<a name="sun.misc.Resource:cachedInputStream:java.io.InputStream" href="#">
+<a name="sun.misc.Resource:getContentLength:I" href="#">
 
 </a>
 <div class="method_signature">
-private synchronized 
-<a href="../../java/io/InputStream.html">
-java.io.InputStream
+public abstract 
+int
+ 
+<span>
+getContentLength
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Resource:getManifest:java.util.jar.Manifest" href="#">
+
+</a>
+<div class="method_signature">
+public 
+java.util.jar.Manifest
+ 
+<span>
+getManifest
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Resource:getByteBuffer:java.nio.ByteBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/nio/ByteBuffer.html">
+java.nio.ByteBuffer
 </a>
  
 <span>
-cachedInputStream
+getByteBuffer
 </span>
 (
 )
@@ -1824,48 +1848,7 @@ aload  0
 <li value="1">
 <div class="instruction">
 <span>
-getfield 
-</span>
-<span>
-<a href="#sun.misc.Resource:cis:java.io.InputStream">
-sun.misc.Resource.cis
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/io/InputStream.html">
-java.io.InputStream
-</a>
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ifnonnull 11
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-invokevirtual 
+invokespecial 
 </span>
 <span>
 <a href="../../java/io/InputStream.html">
@@ -1873,8 +1856,8 @@ java.io.InputStream
 </a>
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.io.InputStream getInputStream()">
-sun.misc.Resource.getInputStream
+<span title="java.io.InputStream cachedInputStream()">
+sun.misc.Resource.cachedInputStream
 </span>
 </span>
 <span>
@@ -1890,54 +1873,97 @@ No reachable result.
 </ul>
 </div>
 </li>
-<li value="12">
+<li value="4">
 <div class="instruction">
 <span>
-putfield 
-</span>
-<span>
-<a href="#sun.misc.Resource:cis:java.io.InputStream">
-sun.misc.Resource.cis
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/io/InputStream.html">
-java.io.InputStream
-</a>
+astore  1
 </span>
 </div>
 </li>
-<li value="15">
+<li value="5">
 <div class="instruction">
 <span>
-aload  0
+aload  1
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+instanceof 
+</span>
+<span>
+sun.nio.ByteBuffered
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+ifeq 13
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+sun.nio.ByteBuffered
 </span>
 </div>
 </li>
 <li value="16">
 <div class="instruction">
 <span>
-getfield 
+invokeinterface 
 </span>
 <span>
-<a href="#sun.misc.Resource:cis:java.io.InputStream">
-sun.misc.Resource.cis
+<a href="../../java/nio/ByteBuffer.html">
+java.nio.ByteBuffer
 </a>
 </span>
-<span>
- : 
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.ByteBuffer getByteBuffer()">
+sun.nio.ByteBuffered.getByteBuffer
+</span>
 </span>
 <span>
-<a href="../../java/io/InputStream.html">
-java.io.InputStream
-</a>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+areturn
 </span>
 </div>
 </li>
-<li value="19">
+<li value="22">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="23">
 <div class="instruction">
 <span>
 areturn
@@ -1945,32 +1971,6 @@ areturn
 </div>
 </li>
 </ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="sun.misc.Resource:getCodeSourceURL:java.net.URL" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-<a href="../../java/net/URL.html">
-java.net.URL
-</a>
- 
-<span>
-getCodeSourceURL
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
 <ol>
 </ol>
 </div>

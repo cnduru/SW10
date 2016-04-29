@@ -35,16 +35,6 @@ java.lang.String
 </span>
 </div>
 <div class="field">
-<a name="java.util.PropertyPermission:mask:I" href="#">
-
-</a>
-<span class="field_signature">
-private  
-int
- mask;
-</span>
-</div>
-<div class="field">
 <a name="java.util.PropertyPermission:READ:I" href="#">
 
 </a>
@@ -55,6 +45,16 @@ int
 </span>
 </div>
 <div class="field">
+<a name="java.util.PropertyPermission:mask:I" href="#">
+
+</a>
+<span class="field_signature">
+private  
+int
+ mask;
+</span>
+</div>
+<div class="field">
 <a name="java.util.PropertyPermission:NONE:I" href="#">
 
 </a>
@@ -62,16 +62,6 @@ int
 private static final 
 int
  NONE;
-</span>
-</div>
-<div class="field">
-<a name="java.util.PropertyPermission:WRITE:I" href="#">
-
-</a>
-<span class="field_signature">
-private static final 
-int
- WRITE;
 </span>
 </div>
 <div class="field">
@@ -92,6 +82,16 @@ long
 private static final 
 int
  ALL;
+</span>
+</div>
+<div class="field">
+<a name="java.util.PropertyPermission:WRITE:I" href="#">
+
+</a>
+<span class="field_signature">
+private static final 
+int
+ WRITE;
 </span>
 </div>
 <div class="method">
@@ -147,369 +147,6 @@ int
 <div class="instruction">
 <span>
 ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.PropertyPermission:init:Ivoid" href="#">
-
-</a>
-<div class="method_signature">
-private 
-void
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-init
-</span>
-(
-int
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.PropertyPermission:&lt;init&gt;:java.lang.Stringjava.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String, java.lang.String)">
-java.util.PropertyPermission.&lt;init&gt;(java.lang.String, java.lang.String)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-iconst 3
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-iand
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-ifcmpeq 13
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/IllegalArgumentException.html">
-java.lang.IllegalArgumentException
-</a>
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-ldc string &apos;invalid actions mask&apos;
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.lang.IllegalArgumentException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/IllegalArgumentException.html#java.lang.IllegalArgumentException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
-java.lang.IllegalArgumentException.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-ifne 13
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/IllegalArgumentException.html">
-java.lang.IllegalArgumentException
-</a>
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-ldc string &apos;invalid actions mask&apos;
-</span>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.lang.IllegalArgumentException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/IllegalArgumentException.html#java.lang.IllegalArgumentException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
-java.lang.IllegalArgumentException.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="31">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="32">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.String getName()">
-java.util.PropertyPermission.getName
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/security/Permission.html#java.security.Permission:getName:java.lang.String" title="java.lang.String getName()">
-java.security.Permission.getName
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-ifnonnull 13
-</span>
-</div>
-</li>
-<li value="38">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/NullPointerException.html">
-java.lang.NullPointerException
-</a>
-</span>
-</div>
-</li>
-<li value="41">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="42">
-<div class="instruction">
-<span>
-ldc string &apos;name can&apos;t be null&apos;
-</span>
-</div>
-</li>
-<li value="44">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.String)">
-java.lang.NullPointerException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/NullPointerException.html#java.lang.NullPointerException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
-java.lang.NullPointerException.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="47">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="48">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="49">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="50">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.util.PropertyPermission:mask:I">
-java.util.PropertyPermission.mask
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="53">
-<div class="instruction">
-<span>
-return
 </span>
 </div>
 </li>
@@ -3378,6 +3015,13 @@ java.util.concurrent.ConcurrentHashMap$Segment.scanAndLock(java.lang.Object, int
 </li>
 <li>
 <div>
+<a href="../../java/util/Arrays.html#java.util.Arrays:deepEquals0:java.lang.Objectjava.lang.ObjectZ" title="bool deepEquals0(java.lang.Object, java.lang.Object)">
+java.util.Arrays.deepEquals0(java.lang.Object, java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../java/util/Hashtable$Entry.html#java.util.Hashtable$Entry:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
 java.util.Hashtable$Entry.equals(java.lang.Object)
 </a>
@@ -3385,22 +3029,8 @@ java.util.Hashtable$Entry.equals(java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../java/util/TreeMap.html#java.util.TreeMap:valEquals:java.lang.Objectjava.lang.ObjectZ" title="bool valEquals(java.lang.Object, java.lang.Object)">
-java.util.TreeMap.valEquals(java.lang.Object, java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
 <a href="../../java/util/AbstractMap.html#java.util.AbstractMap:containsValue:java.lang.ObjectZ" title="bool containsValue(java.lang.Object)">
 java.util.AbstractMap.containsValue(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Arrays$ArrayList.html#java.util.Arrays$ArrayList:indexOf:java.lang.ObjectI" title="int indexOf(java.lang.Object)">
-java.util.Arrays$ArrayList.indexOf(java.lang.Object)
 </a>
 </div>
 </li>
@@ -3415,6 +3045,27 @@ java.util.Hashtable.put(java.lang.Object, java.lang.Object)
 <div>
 <a href="../../java/util/HashMap.html#java.util.HashMap:putForCreate:java.lang.Objectjava.lang.Objectvoid" title="void putForCreate(java.lang.Object, java.lang.Object)">
 java.util.HashMap.putForCreate(java.lang.Object, java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/util/PreHashedMap.html#sun.util.PreHashedMap:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
+sun.util.PreHashedMap.get(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.text.RuleBasedBreakIterator.equals(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/ArrayList.html#java.util.ArrayList:indexOf:java.lang.ObjectI" title="int indexOf(java.lang.Object)">
+java.util.ArrayList.indexOf(java.lang.Object)
 </a>
 </div>
 </li>
@@ -3436,6 +3087,13 @@ java.util.AbstractCollection.contains(java.lang.Object)
 <div>
 <a href="../../java/util/AbstractMap.html#java.util.AbstractMap:remove:java.lang.Objectjava.lang.Object" title="java.lang.Object remove(java.lang.Object)">
 java.util.AbstractMap.remove(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/LinkedList.html#java.util.LinkedList:indexOf:java.lang.ObjectI" title="int indexOf(java.lang.Object)">
+java.util.LinkedList.indexOf(java.lang.Object)
 </a>
 </div>
 </li>
@@ -3469,13 +3127,6 @@ java.util.HashMap.put(java.lang.Object, java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../sun/util/PreHashedMap.html#sun.util.PreHashedMap:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
-sun.util.PreHashedMap.get(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
 <a href="../../java/util/concurrent/ConcurrentHashMap.html#java.util.concurrent.ConcurrentHashMap:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
 java.util.concurrent.ConcurrentHashMap.containsKey(java.lang.Object)
 </a>
@@ -3497,13 +3148,6 @@ java.util.WeakHashMap.containsValue(java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.text.RuleBasedBreakIterator.equals(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
 <a href="../../java/util/HashMap.html#java.util.HashMap:removeEntryForKey:java.lang.Objectjava.util.HashMap$Entry" title="java.util.HashMap$Entry removeEntryForKey(java.lang.Object)">
 java.util.HashMap.removeEntryForKey(java.lang.Object)
 </a>
@@ -3511,8 +3155,8 @@ java.util.HashMap.removeEntryForKey(java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../java/util/ArrayList.html#java.util.ArrayList:indexOf:java.lang.ObjectI" title="int indexOf(java.lang.Object)">
-java.util.ArrayList.indexOf(java.lang.Object)
+<a href="../../java/util/TreeMap.html#java.util.TreeMap:valEquals:java.lang.Objectjava.lang.ObjectZ" title="bool valEquals(java.lang.Object, java.lang.Object)">
+java.util.TreeMap.valEquals(java.lang.Object, java.lang.Object)
 </a>
 </div>
 </li>
@@ -3525,8 +3169,8 @@ java.util.LinkedHashMap.containsValue(java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../java/util/LinkedList.html#java.util.LinkedList:indexOf:java.lang.ObjectI" title="int indexOf(java.lang.Object)">
-java.util.LinkedList.indexOf(java.lang.Object)
+<a href="../../java/util/Arrays$ArrayList.html#java.util.Arrays$ArrayList:indexOf:java.lang.ObjectI" title="int indexOf(java.lang.Object)">
+java.util.Arrays$ArrayList.indexOf(java.lang.Object)
 </a>
 </div>
 </li>
@@ -3534,13 +3178,6 @@ java.util.LinkedList.indexOf(java.lang.Object)
 <div>
 <a href="../../java/util/AbstractMap.html#java.util.AbstractMap:eq:java.lang.Objectjava.lang.ObjectZ" title="bool eq(java.lang.Object, java.lang.Object)">
 java.util.AbstractMap.eq(java.lang.Object, java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Arrays.html#java.util.Arrays:deepEquals0:java.lang.Objectjava.lang.ObjectZ" title="bool deepEquals0(java.lang.Object, java.lang.Object)">
-java.util.Arrays.deepEquals0(java.lang.Object, java.lang.Object)
 </a>
 </div>
 </li>
@@ -3555,13 +3192,6 @@ java.security.AccessControlContext.equals(java.lang.Object)
 <div>
 <a href="../../java/util/WeakHashMap.html#java.util.WeakHashMap:eq:java.lang.Objectjava.lang.ObjectZ" title="bool eq(java.lang.Object, java.lang.Object)">
 java.util.WeakHashMap.eq(java.lang.Object, java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/concurrent/ConcurrentHashMap$EntrySet.html#java.util.concurrent.ConcurrentHashMap$EntrySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
-java.util.concurrent.ConcurrentHashMap$EntrySet.contains(java.lang.Object)
 </a>
 </div>
 </li>
@@ -3595,13 +3225,6 @@ java.util.concurrent.ConcurrentHashMap$Segment.remove(java.lang.Object, int, jav
 </li>
 <li>
 <div>
-<a href="../../sun/util/PreHashedMap$2$1$1.html#sun.util.PreHashedMap$2$1$1:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-sun.util.PreHashedMap$2$1$1.equals(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
 <a href="../../java/util/AbstractMap.html#java.util.AbstractMap:containsKey:java.lang.ObjectZ" title="bool containsKey(java.lang.Object)">
 java.util.AbstractMap.containsKey(java.lang.Object)
 </a>
@@ -3609,15 +3232,29 @@ java.util.AbstractMap.containsKey(java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../java/util/Calendar.html#java.util.Calendar:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.Calendar.equals(java.lang.Object)
+<a href="../../java/util/Hashtable.html#java.util.Hashtable:remove:java.lang.Objectjava.lang.Object" title="java.lang.Object remove(java.lang.Object)">
+java.util.Hashtable.remove(java.lang.Object)
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/util/Hashtable.html#java.util.Hashtable:remove:java.lang.Objectjava.lang.Object" title="java.lang.Object remove(java.lang.Object)">
-java.util.Hashtable.remove(java.lang.Object)
+<a href="../../sun/util/PreHashedMap.html#sun.util.PreHashedMap:put:java.lang.Stringjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.String, java.lang.Object)">
+sun.util.PreHashedMap.put(java.lang.String, java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Arrays.html#java.util.Arrays:equals:java.lang.Object.-java.lang.Object.-Z" title="bool equals(java.lang.Object[], java.lang.Object[])">
+java.util.Arrays.equals(java.lang.Object[], java.lang.Object[])
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Collections.html#java.util.Collections:eq:java.lang.Objectjava.lang.ObjectZ" title="bool eq(java.lang.Object, java.lang.Object)">
+java.util.Collections.eq(java.lang.Object, java.lang.Object)
 </a>
 </div>
 </li>
@@ -3637,8 +3274,8 @@ java.util.HashMap.containsValue(java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../sun/util/PreHashedMap.html#sun.util.PreHashedMap:put:java.lang.Stringjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.String, java.lang.Object)">
-sun.util.PreHashedMap.put(java.lang.String, java.lang.Object)
+<a href="../../java/util/concurrent/ConcurrentHashMap$EntrySet.html#java.util.concurrent.ConcurrentHashMap$EntrySet:contains:java.lang.ObjectZ" title="bool contains(java.lang.Object)">
+java.util.concurrent.ConcurrentHashMap$EntrySet.contains(java.lang.Object)
 </a>
 </div>
 </li>
@@ -3658,15 +3295,15 @@ java.util.AbstractList.equals(java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../java/util/Arrays.html#java.util.Arrays:equals:java.lang.Object.-java.lang.Object.-Z" title="bool equals(java.lang.Object[], java.lang.Object[])">
-java.util.Arrays.equals(java.lang.Object[], java.lang.Object[])
+<a href="../../sun/util/PreHashedMap$2$1$1.html#sun.util.PreHashedMap$2$1$1:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+sun.util.PreHashedMap$2$1$1.equals(java.lang.Object)
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/util/Collections.html#java.util.Collections:eq:java.lang.Objectjava.lang.ObjectZ" title="bool eq(java.lang.Object, java.lang.Object)">
-java.util.Collections.eq(java.lang.Object, java.lang.Object)
+<a href="../../java/util/Calendar.html#java.util.Calendar:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.Calendar.equals(java.lang.Object)
 </a>
 </div>
 </li>
@@ -4003,6 +3640,369 @@ iconst 0
 <div class="instruction">
 <span>
 ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.PropertyPermission:init:Ivoid" href="#">
+
+</a>
+<div class="method_signature">
+private 
+void
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+init
+</span>
+(
+int
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.PropertyPermission:&lt;init&gt;:java.lang.Stringjava.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String, java.lang.String)">
+java.util.PropertyPermission.&lt;init&gt;(java.lang.String, java.lang.String)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+iconst 3
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+iand
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ifcmpeq 13
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+ldc string &apos;invalid actions mask&apos;
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.lang.IllegalArgumentException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/IllegalArgumentException.html#java.lang.IllegalArgumentException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
+java.lang.IllegalArgumentException.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+ifne 13
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/IllegalArgumentException.html">
+java.lang.IllegalArgumentException
+</a>
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+ldc string &apos;invalid actions mask&apos;
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.lang.IllegalArgumentException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/IllegalArgumentException.html#java.lang.IllegalArgumentException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
+java.lang.IllegalArgumentException.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.String getName()">
+java.util.PropertyPermission.getName
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/security/Permission.html#java.security.Permission:getName:java.lang.String" title="java.lang.String getName()">
+java.security.Permission.getName
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+ifnonnull 13
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/NullPointerException.html">
+java.lang.NullPointerException
+</a>
+</span>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+ldc string &apos;name can&apos;t be null&apos;
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.String)">
+java.lang.NullPointerException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/NullPointerException.html#java.lang.NullPointerException:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
+java.lang.NullPointerException.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="50">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.util.PropertyPermission:mask:I">
+java.util.PropertyPermission.mask
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="53">
+<div class="instruction">
+<span>
+return
 </span>
 </div>
 </li>
@@ -4742,8 +4742,15 @@ sun.util.calendar.CalendarDate.hashCode()
 </li>
 <li>
 <div>
-<a href="../../sun/util/PreHashedMap$2$1$1.html#sun.util.PreHashedMap$2$1$1:hashCode:I" title="int hashCode()">
-sun.util.PreHashedMap$2$1$1.hashCode()
+<a href="../../java/util/AbstractMap$SimpleEntry.html#java.util.AbstractMap$SimpleEntry:hashCode:I" title="int hashCode()">
+java.util.AbstractMap$SimpleEntry.hashCode()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Calendar.html#java.util.Calendar:hashCode:I" title="int hashCode()">
+java.util.Calendar.hashCode()
 </a>
 </div>
 </li>
@@ -4756,8 +4763,8 @@ java.security.AccessControlContext.hashCode()
 </li>
 <li>
 <div>
-<a href="../../java/util/Objects.html#java.util.Objects:hashCode:java.lang.ObjectI" title="int hashCode(java.lang.Object)">
-java.util.Objects.hashCode(java.lang.Object)
+<a href="../../sun/util/PreHashedMap.html#sun.util.PreHashedMap:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
+sun.util.PreHashedMap.get(java.lang.Object)
 </a>
 </div>
 </li>
@@ -4777,8 +4784,8 @@ java.util.WeakHashMap.hash(java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../sun/util/PreHashedMap.html#sun.util.PreHashedMap:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
-sun.util.PreHashedMap.get(java.lang.Object)
+<a href="../../sun/util/PreHashedMap$2$1$1.html#sun.util.PreHashedMap$2$1$1:hashCode:I" title="int hashCode()">
+sun.util.PreHashedMap$2$1$1.hashCode()
 </a>
 </div>
 </li>
@@ -4798,15 +4805,8 @@ java.util.AbstractSet.hashCode()
 </li>
 <li>
 <div>
-<a href="../../java/util/AbstractMap$SimpleEntry.html#java.util.AbstractMap$SimpleEntry:hashCode:I" title="int hashCode()">
-java.util.AbstractMap$SimpleEntry.hashCode()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Calendar.html#java.util.Calendar:hashCode:I" title="int hashCode()">
-java.util.Calendar.hashCode()
+<a href="../../java/util/Objects.html#java.util.Objects:hashCode:java.lang.ObjectI" title="int hashCode(java.lang.Object)">
+java.util.Objects.hashCode(java.lang.Object)
 </a>
 </div>
 </li>
@@ -4814,13 +4814,6 @@ java.util.Calendar.hashCode()
 <div>
 <a href="../../java/util/Hashtable.html#java.util.Hashtable:hash:java.lang.ObjectI" title="int hash(java.lang.Object)">
 java.util.Hashtable.hash(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/AbstractMap$SimpleImmutableEntry.html#java.util.AbstractMap$SimpleImmutableEntry:hashCode:I" title="int hashCode()">
-java.util.AbstractMap$SimpleImmutableEntry.hashCode()
 </a>
 </div>
 </li>
@@ -4840,8 +4833,8 @@ java.util.concurrent.ConcurrentHashMap.hash(java.lang.Object)
 </li>
 <li>
 <div>
-<a href="../../java/util/Formatter$FormatSpecifier.html#java.util.Formatter$FormatSpecifier:printHashCode:java.lang.Objectvoid" title="void printHashCode(java.lang.Object)">
-java.util.Formatter$FormatSpecifier.printHashCode(java.lang.Object)
+<a href="../../java/util/TreeMap$Entry.html#java.util.TreeMap$Entry:hashCode:I" title="int hashCode()">
+java.util.TreeMap$Entry.hashCode()
 </a>
 </div>
 </li>
@@ -4854,8 +4847,15 @@ java.util.WeakHashMap$Entry.hashCode()
 </li>
 <li>
 <div>
-<a href="../../java/util/TreeMap$Entry.html#java.util.TreeMap$Entry:hashCode:I" title="int hashCode()">
-java.util.TreeMap$Entry.hashCode()
+<a href="../../java/util/AbstractMap$SimpleImmutableEntry.html#java.util.AbstractMap$SimpleImmutableEntry:hashCode:I" title="int hashCode()">
+java.util.AbstractMap$SimpleImmutableEntry.hashCode()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Formatter$FormatSpecifier.html#java.util.Formatter$FormatSpecifier:printHashCode:java.lang.Objectvoid" title="void printHashCode(java.lang.Object)">
+java.util.Formatter$FormatSpecifier.printHashCode(java.lang.Object)
 </a>
 </div>
 </li>

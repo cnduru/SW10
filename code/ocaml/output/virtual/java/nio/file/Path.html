@@ -18,7 +18,7 @@ java.nio.file.Path
 Interface java.nio.file.Path
 </div>
 <div class="method">
-<a name="java.nio.file.Path:resolveSibling:java.lang.Stringjava.nio.file.Path" href="#">
+<a name="java.nio.file.Path:resolve:java.lang.Stringjava.nio.file.Path" href="#">
 
 </a>
 <div class="method_signature">
@@ -28,7 +28,7 @@ java.nio.file.Path
 </a>
  
 <span>
-resolveSibling
+resolve
 </span>
 (
 <a href="../../../java/lang/String.html">
@@ -48,259 +48,17 @@ Abstract Method
 </ol>
 </div>
 <div class="method">
-<a name="java.nio.file.Path:getName:Ijava.nio.file.Path" href="#">
+<a name="java.nio.file.Path:getFileSystem:java.nio.file.FileSystem" href="#">
 
 </a>
 <div class="method_signature">
 public abstract 
-<a href="Path.html">
-java.nio.file.Path
-</a>
+java.nio.file.FileSystem
  
 <span>
-getName
+getFileSystem
 </span>
 (
-int
- 0
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.file.Path:compareTo:java.nio.file.PathI" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-int
- 
-<span>
-compareTo
-</span>
-(
-<a href="Path.html">
-java.nio.file.Path
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.file.Path:getRoot:java.nio.file.Path" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-<a href="Path.html">
-java.nio.file.Path
-</a>
- 
-<span>
-getRoot
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.file.Path:isAbsolute:Z" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-bool
- 
-<span>
-isAbsolute
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.file.Path:toRealPath:java.nio.file.LinkOption.-java.nio.file.Path" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-<a href="Path.html">
-java.nio.file.Path
-</a>
- 
-<span>
-toRealPath
-</span>
-(
-java.nio.file.LinkOption[]
- 0
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.file.Path:normalize:java.nio.file.Path" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-<a href="Path.html">
-java.nio.file.Path
-</a>
- 
-<span>
-normalize
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.file.Path:toUri:java.net.URI" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-java.net.URI
- 
-<span>
-toUri
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.file.Path:iterator:java.util.Iterator" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-<a href="../../../java/util/Iterator.html">
-java.util.Iterator
-</a>
- 
-<span>
-iterator
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.file.Path:startsWith:java.nio.file.PathZ" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-bool
- 
-<span>
-startsWith
-</span>
-(
-<a href="Path.html">
-java.nio.file.Path
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.file.Path:startsWith:java.lang.StringZ" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-bool
- 
-<span>
-startsWith
-</span>
-(
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
- 0
 )
 ;
 <ul class="annot">
@@ -372,7 +130,83 @@ Abstract Method
 </ol>
 </div>
 <div class="method">
-<a name="java.nio.file.Path:resolve:java.lang.Stringjava.nio.file.Path" href="#">
+<a name="java.nio.file.Path:isAbsolute:Z" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+bool
+ 
+<span>
+isAbsolute
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.file.Path:toUri:java.net.URI" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+java.net.URI
+ 
+<span>
+toUri
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.file.Path:startsWith:java.nio.file.PathZ" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+bool
+ 
+<span>
+startsWith
+</span>
+(
+<a href="Path.html">
+java.nio.file.Path
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.file.Path:resolveSibling:java.lang.Stringjava.nio.file.Path" href="#">
 
 </a>
 <div class="method_signature">
@@ -382,13 +216,203 @@ java.nio.file.Path
 </a>
  
 <span>
-resolve
+resolveSibling
 </span>
 (
 <a href="../../../java/lang/String.html">
 java.lang.String
 </a>
  0
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.file.Path:iterator:java.util.Iterator" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="../../../java/util/Iterator.html">
+java.util.Iterator
+</a>
+ 
+<span>
+iterator
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.file.Path:getName:Ijava.nio.file.Path" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="Path.html">
+java.nio.file.Path
+</a>
+ 
+<span>
+getName
+</span>
+(
+int
+ 0
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.file.Path:compareTo:java.nio.file.PathI" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+int
+ 
+<span>
+compareTo
+</span>
+(
+<a href="Path.html">
+java.nio.file.Path
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.file.Path:startsWith:java.lang.StringZ" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+bool
+ 
+<span>
+startsWith
+</span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.file.Path:getRoot:java.nio.file.Path" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="Path.html">
+java.nio.file.Path
+</a>
+ 
+<span>
+getRoot
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.file.Path:toRealPath:java.nio.file.LinkOption.-java.nio.file.Path" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="Path.html">
+java.nio.file.Path
+</a>
+ 
+<span>
+toRealPath
+</span>
+(
+java.nio.file.LinkOption[]
+ 0
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.file.Path:normalize:java.nio.file.Path" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="Path.html">
+java.nio.file.Path
+</a>
+ 
+<span>
+normalize
+</span>
+(
 )
 ;
 <ul class="annot">
@@ -443,6 +467,169 @@ endsWith
 (
 <a href="../../../java/lang/String.html">
 java.lang.String
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.file.Path:resolveSibling:java.nio.file.Pathjava.nio.file.Path" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="Path.html">
+java.nio.file.Path
+</a>
+ 
+<span>
+resolveSibling
+</span>
+(
+<a href="Path.html">
+java.nio.file.Path
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.file.Path:getNameCount:I" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+int
+ 
+<span>
+getNameCount
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.file.Path:register:java.nio.file.WatchServicejava.nio.file.WatchEvent$Kind.-java.nio.file.WatchKey" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+java.nio.file.WatchKey
+ 
+<span>
+register
+</span>
+(
+java.nio.file.WatchService
+ 0
+, 
+java.nio.file.WatchEvent$Kind[]
+ 1
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.file.Path:toAbsolutePath:java.nio.file.Path" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="Path.html">
+java.nio.file.Path
+</a>
+ 
+<span>
+toAbsolutePath
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.file.Path:toString:java.lang.String" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span>
+toString
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.file.Path:endsWith:java.nio.file.PathZ" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+bool
+ 
+<span>
+endsWith
+</span>
+(
+<a href="Path.html">
+java.nio.file.Path
 </a>
  0
 )
@@ -571,32 +758,6 @@ Abstract Method
 </ol>
 </div>
 <div class="method">
-<a name="java.nio.file.Path:toString:java.lang.String" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
- 
-<span>
-toString
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
 <a name="java.nio.file.Path:resolve:java.nio.file.Pathjava.nio.file.Path" href="#">
 
 </a>
@@ -608,167 +769,6 @@ java.nio.file.Path
  
 <span>
 resolve
-</span>
-(
-<a href="Path.html">
-java.nio.file.Path
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.file.Path:toAbsolutePath:java.nio.file.Path" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-<a href="Path.html">
-java.nio.file.Path
-</a>
- 
-<span>
-toAbsolutePath
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.file.Path:endsWith:java.nio.file.PathZ" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-bool
- 
-<span>
-endsWith
-</span>
-(
-<a href="Path.html">
-java.nio.file.Path
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.file.Path:getFileSystem:java.nio.file.FileSystem" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-java.nio.file.FileSystem
- 
-<span>
-getFileSystem
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.file.Path:getNameCount:I" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-int
- 
-<span>
-getNameCount
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.file.Path:register:java.nio.file.WatchServicejava.nio.file.WatchEvent$Kind.-java.nio.file.WatchKey" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-java.nio.file.WatchKey
- 
-<span>
-register
-</span>
-(
-java.nio.file.WatchService
- 0
-, 
-java.nio.file.WatchEvent$Kind[]
- 1
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.file.Path:resolveSibling:java.nio.file.Pathjava.nio.file.Path" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-<a href="Path.html">
-java.nio.file.Path
-</a>
- 
-<span>
-resolveSibling
 </span>
 (
 <a href="Path.html">

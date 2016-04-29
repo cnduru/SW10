@@ -23,7 +23,7 @@ Instantiated
 </li>
 </ul>
 <div class="method">
-<a name="java.nio.HeapCharBuffer:get:C.-IIjava.nio.CharBuffer" href="#">
+<a name="java.nio.HeapCharBuffer:put:C.-IIjava.nio.CharBuffer" href="#">
 
 </a>
 <div class="method_signature">
@@ -33,7 +33,7 @@ java.nio.CharBuffer
 </a>
  
 <span>
-get
+put
 </span>
 (
 char[]
@@ -168,8 +168,8 @@ ifcmpme 11
 new 
 </span>
 <span>
-<a href="../../java/nio/BufferUnderflowException.html">
-java.nio.BufferUnderflowException
+<a href="../../java/nio/BufferOverflowException.html">
+java.nio.BufferOverflowException
 </a>
 </span>
 </div>
@@ -191,7 +191,7 @@ void
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
 <span title="void &lt;init&gt;()">
-java.nio.BufferUnderflowException.&lt;init&gt;
+java.nio.BufferOverflowException.&lt;init&gt;
 </span>
 </span>
 <span>
@@ -217,11 +217,25 @@ athrow
 <li value="23">
 <div class="instruction">
 <span>
-aload  0
+aload  1
 </span>
 </div>
 </li>
 <li value="24">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="26">
 <div class="instruction">
 <span>
 getfield 
@@ -239,21 +253,21 @@ char[]
 </span>
 </div>
 </li>
-<li value="27">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="28">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
 <li value="29">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="31">
 <div class="instruction">
 <span>
 invokevirtual 
@@ -281,7 +295,7 @@ java.nio.Buffer.position
 </ul>
 </div>
 </li>
-<li value="32">
+<li value="34">
 <div class="instruction">
 <span>
 invokevirtual 
@@ -308,20 +322,6 @@ java.nio.HeapCharBuffer.ix
 </div>
 </li>
 </ul>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="36">
-<div class="instruction">
-<span>
-iload  2
-</span>
 </div>
 </li>
 <li value="37">
@@ -475,582 +475,6 @@ aload  0
 <div class="instruction">
 <span>
 areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.HeapCharBuffer:slice:java.nio.CharBuffer" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<a href="../../java/nio/CharBuffer.html">
-java.nio.CharBuffer
-</a>
- 
-<span>
-slice
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="HeapCharBuffer.html">
-java.nio.HeapCharBuffer
-</a>
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:hb:C.-">
-java.nio.CharBuffer.hb
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-char[]
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-iconst -1
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int remaining()">
-java.nio.HeapCharBuffer.remaining
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int remaining()">
-java.nio.HeapCharBuffer.remaining
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int position()">
-java.nio.HeapCharBuffer.position
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/Buffer.html#java.nio.Buffer:position:I" title="int position()">
-java.nio.Buffer.position
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:offset:I">
-java.nio.CharBuffer.offset
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(char[], int, int, int, int, int)">
-java.nio.HeapCharBuffer.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-char[]
-, 
-int
-, 
-int
-, 
-int
-, 
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.HeapCharBuffer:&lt;init&gt;:C.-IIIIIvoid" title="void &lt;init&gt;(char[], int, int, int, int, int)">
-java.nio.HeapCharBuffer.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.HeapCharBuffer:get:C" href="#">
-
-</a>
-<div class="method_signature">
-public 
-char
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-get
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../sun/nio/cs/US_ASCII$Encoder.html#sun.nio.cs.US_ASCII$Encoder:encodeBufferLoop:java.nio.CharBufferjava.nio.ByteBufferjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult encodeBufferLoop(java.nio.CharBuffer, java.nio.ByteBuffer)">
-sun.nio.cs.US_ASCII$Encoder.encodeBufferLoop(java.nio.CharBuffer, java.nio.ByteBuffer)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:flushLeftoverChar:java.nio.CharBufferZvoid" title="void flushLeftoverChar(java.nio.CharBuffer, bool)">
-sun.nio.cs.StreamEncoder.flushLeftoverChar(java.nio.CharBuffer, bool)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/nio/cs/Surrogate$Parser.html#sun.nio.cs.Surrogate$Parser:parse:Cjava.nio.CharBufferI" title="int parse(char, java.nio.CharBuffer)">
-sun.nio.cs.Surrogate$Parser.parse(char, java.nio.CharBuffer)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:implWrite:C.-IIvoid" title="void implWrite(char[], int, int)">
-sun.nio.cs.StreamEncoder.implWrite(char[], int, int)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:hb:C.-">
-java.nio.CharBuffer.hb
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-char[]
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int nextGetIndex()">
-java.nio.HeapCharBuffer.nextGetIndex
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/Buffer.html#java.nio.Buffer:nextGetIndex:I" title="int nextGetIndex()">
-java.nio.Buffer.nextGetIndex
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int ix(int)">
-java.nio.HeapCharBuffer.ix
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.HeapCharBuffer:ix:II" title="int ix(int)">
-java.nio.HeapCharBuffer.ix
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-caload
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.HeapCharBuffer:ix:II" href="#">
-
-</a>
-<div class="method_signature">
-protected 
-int
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-ix
-</span>
-(
-int
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.HeapCharBuffer:get:C" title="char get()">
-java.nio.HeapCharBuffer.get()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.nio.HeapCharBuffer:put:Cjava.nio.CharBuffer" title="java.nio.CharBuffer put(char)">
-java.nio.HeapCharBuffer.put(char)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.nio.HeapCharBuffer:get:IC" title="char get(int)">
-java.nio.HeapCharBuffer.get(int)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:offset:I">
-java.nio.CharBuffer.offset
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.HeapCharBuffer:isDirect:Z" href="#">
-
-</a>
-<div class="method_signature">
-public 
-bool
- 
-<span>
-isDirect
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-ireturn
 </span>
 </div>
 </li>
@@ -1805,615 +1229,6 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.nio.HeapCharBuffer:subSequence:IIjava.nio.CharBuffer" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<a href="../../java/nio/CharBuffer.html">
-java.nio.CharBuffer
-</a>
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-subSequence
-</span>
-(
-int
- 1
-, 
-int
- 2
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.HeapCharBuffer:subSequence:IIjava.lang.CharSequence" title="java.lang.CharSequence subSequence(int, int)">
-java.nio.HeapCharBuffer.subSequence(int, int)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-iflt 16
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int length()">
-java.nio.HeapCharBuffer.length
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:length:I" title="int length()">
-java.nio.CharBuffer.length
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-ifcmpgt 8
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-ifcmpme 11
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/IndexOutOfBoundsException.html">
-java.lang.IndexOutOfBoundsException
-</a>
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.IndexOutOfBoundsException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/IndexOutOfBoundsException.html#java.lang.IndexOutOfBoundsException:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.lang.IndexOutOfBoundsException.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int position()">
-java.nio.HeapCharBuffer.position
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/Buffer.html#java.nio.Buffer:position:I" title="int position()">
-java.nio.Buffer.position
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-istore  3
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="HeapCharBuffer.html">
-java.nio.HeapCharBuffer
-</a>
-</span>
-</div>
-</li>
-<li value="33">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="34">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:hb:C.-">
-java.nio.CharBuffer.hb
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-char[]
-</span>
-</div>
-</li>
-<li value="38">
-<div class="instruction">
-<span>
-iconst -1
-</span>
-</div>
-</li>
-<li value="39">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="40">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="41">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="42">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="43">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="44">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="45">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="46">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int capacity()">
-java.nio.HeapCharBuffer.capacity
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/Buffer.html#java.nio.Buffer:capacity:I" title="int capacity()">
-java.nio.Buffer.capacity
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="49">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="50">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:offset:I">
-java.nio.CharBuffer.offset
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="53">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(char[], int, int, int, int, int)">
-java.nio.HeapCharBuffer.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-char[]
-, 
-int
-, 
-int
-, 
-int
-, 
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.HeapCharBuffer:&lt;init&gt;:C.-IIIIIvoid" title="void &lt;init&gt;(char[], int, int, int, int, int)">
-java.nio.HeapCharBuffer.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="56">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.HeapCharBuffer:put:Cjava.nio.CharBuffer" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<a href="../../java/nio/CharBuffer.html">
-java.nio.CharBuffer
-</a>
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-put
-</span>
-(
-char
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:flushLeftoverChar:java.nio.CharBufferZvoid" title="void flushLeftoverChar(java.nio.CharBuffer, bool)">
-sun.nio.cs.StreamEncoder.flushLeftoverChar(java.nio.CharBuffer, bool)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:append:Cjava.nio.CharBuffer" title="java.nio.CharBuffer append(char)">
-java.nio.CharBuffer.append(char)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/nio/cs/US_ASCII$Decoder.html#sun.nio.cs.US_ASCII$Decoder:decodeBufferLoop:java.nio.ByteBufferjava.nio.CharBufferjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult decodeBufferLoop(java.nio.ByteBuffer, java.nio.CharBuffer)">
-sun.nio.cs.US_ASCII$Decoder.decodeBufferLoop(java.nio.ByteBuffer, java.nio.CharBuffer)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:put:java.lang.StringIIjava.nio.CharBuffer" title="java.nio.CharBuffer put(java.lang.String, int, int)">
-java.nio.CharBuffer.put(java.lang.String, int, int)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:hb:C.-">
-java.nio.CharBuffer.hb
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-char[]
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int nextPutIndex()">
-java.nio.HeapCharBuffer.nextPutIndex
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/Buffer.html#java.nio.Buffer:nextPutIndex:I" title="int nextPutIndex()">
-java.nio.Buffer.nextPutIndex
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int ix(int)">
-java.nio.HeapCharBuffer.ix
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.HeapCharBuffer:ix:II" title="int ix(int)">
-java.nio.HeapCharBuffer.ix
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-castore
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
 <a name="java.nio.HeapCharBuffer:&lt;init&gt;:C.-IIIIIvoid" href="#">
 
 </a>
@@ -2561,7 +1376,7 @@ return
 </ol>
 </div>
 <div class="method">
-<a name="java.nio.HeapCharBuffer:put:C.-IIjava.nio.CharBuffer" href="#">
+<a name="java.nio.HeapCharBuffer:slice:java.nio.CharBuffer" href="#">
 
 </a>
 <div class="method_signature">
@@ -2571,467 +1386,7 @@ java.nio.CharBuffer
 </a>
  
 <span>
-put
-</span>
-(
-char[]
- 1
-, 
-int
- 2
-, 
-int
- 3
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-arraylength
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void checkBounds(int, int, int)">
-java.nio.HeapCharBuffer.checkBounds
-</span>
-</span>
-<span>
-(
-int
-, 
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int remaining()">
-java.nio.HeapCharBuffer.remaining
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-ifcmpme 11
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/nio/BufferOverflowException.html">
-java.nio.BufferOverflowException
-</a>
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.nio.BufferOverflowException.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:hb:C.-">
-java.nio.CharBuffer.hb
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-char[]
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="31">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int position()">
-java.nio.HeapCharBuffer.position
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/Buffer.html#java.nio.Buffer:position:I" title="int position()">
-java.nio.Buffer.position
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="34">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int ix(int)">
-java.nio.HeapCharBuffer.ix
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.HeapCharBuffer:ix:II" title="int ix(int)">
-java.nio.HeapCharBuffer.ix
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="37">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="38">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void arraycopy(java.lang.Object, int, java.lang.Object, int, int)">
-java.lang.System.arraycopy
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-, 
-int
-, 
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-, 
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/System.html#java.lang.System:arraycopy:java.lang.ObjectIjava.lang.ObjectIIvoid" title="void arraycopy(java.lang.Object, int, java.lang.Object, int, int)">
-java.lang.System.arraycopy
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="41">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="42">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="43">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int position()">
-java.nio.HeapCharBuffer.position
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/Buffer.html#java.nio.Buffer:position:I" title="int position()">
-java.nio.Buffer.position
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="46">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="47">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="48">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/nio/Buffer.html">
-java.nio.Buffer
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.nio.Buffer position(int)">
-java.nio.HeapCharBuffer.position
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="51">
-<div class="instruction">
-<span>
-pop
-</span>
-</div>
-</li>
-<li value="52">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="53">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.HeapCharBuffer:duplicate:java.nio.CharBuffer" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<a href="../../java/nio/CharBuffer.html">
-java.nio.CharBuffer
-</a>
- 
-<span>
-duplicate
+slice
 </span>
 (
 )
@@ -3093,11 +1448,25 @@ char[]
 <li value="8">
 <div class="instruction">
 <span>
-aload  0
+iconst -1
 </span>
 </div>
 </li>
 <li value="9">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="11">
 <div class="instruction">
 <span>
 invokevirtual 
@@ -3106,8 +1475,8 @@ invokevirtual
 int
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int markValue()">
-java.nio.HeapCharBuffer.markValue
+<span title="int remaining()">
+java.nio.HeapCharBuffer.remaining
 </span>
 </span>
 <span>
@@ -3123,14 +1492,47 @@ No reachable result.
 </ul>
 </div>
 </li>
-<li value="12">
+<li value="14">
 <div class="instruction">
 <span>
 aload  0
 </span>
 </div>
 </li>
-<li value="13">
+<li value="15">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int remaining()">
+java.nio.HeapCharBuffer.remaining
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="19">
 <div class="instruction">
 <span>
 invokevirtual 
@@ -3158,82 +1560,14 @@ java.nio.Buffer.position
 </ul>
 </div>
 </li>
-<li value="16">
+<li value="22">
 <div class="instruction">
 <span>
 aload  0
 </span>
 </div>
 </li>
-<li value="17">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int limit()">
-java.nio.HeapCharBuffer.limit
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="21">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int capacity()">
-java.nio.HeapCharBuffer.capacity
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/Buffer.html#java.nio.Buffer:capacity:I" title="int capacity()">
-java.nio.Buffer.capacity
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="24">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="25">
+<li value="23">
 <div class="instruction">
 <span>
 getfield 
@@ -3251,7 +1585,14 @@ int
 </span>
 </div>
 </li>
-<li value="28">
+<li value="26">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="27">
 <div class="instruction">
 <span>
 invokespecial 
@@ -3290,7 +1631,7 @@ java.nio.HeapCharBuffer.&lt;init&gt;
 </ul>
 </div>
 </li>
-<li value="31">
+<li value="30">
 <div class="instruction">
 <span>
 areturn
@@ -3302,20 +1643,17 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="java.nio.HeapCharBuffer:&lt;init&gt;:IIvoid" href="#">
+<a name="java.nio.HeapCharBuffer:isDirect:Z" href="#">
 
 </a>
 <div class="method_signature">
+public 
+bool
  
-<span class="methodname clickable" onclick="showInfoList(this)">
-HeapCharBuffer
+<span>
+isDirect
 </span>
 (
-int
- 1
-, 
-int
- 2
 )
 ;
 <ul class="annot">
@@ -3323,16 +1661,7 @@ int
 Concrete Method 
 </li>
 <li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:allocate:Ijava.nio.CharBuffer" title="java.nio.CharBuffer allocate(int)">
-java.nio.CharBuffer.allocate(int)
-</a>
-</div>
+Not parsed
 </li>
 </ul>
 </div>
@@ -3340,264 +1669,14 @@ java.nio.CharBuffer.allocate(int)
 <li value="0">
 <div class="instruction">
 <span>
-aload  0
+iconst 0
 </span>
 </div>
 </li>
 <li value="1">
 <div class="instruction">
 <span>
-iconst -1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-newarray 
-</span>
-<span>
-char
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(int, int, int, int, char[], int)">
-java.nio.CharBuffer.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-int
-, 
-int
-, 
-int
-, 
-int
-, 
-char[]
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:&lt;init&gt;:IIIIC.-Ivoid" title="void &lt;init&gt;(int, int, int, int, char[], int)">
-java.nio.CharBuffer.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.HeapCharBuffer:&lt;init&gt;:C.-IIvoid" href="#">
-
-</a>
-<div class="method_signature">
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-HeapCharBuffer
-</span>
-(
-char[]
- 1
-, 
-int
- 2
-, 
-int
- 3
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:wrap:C.-IIjava.nio.CharBuffer" title="java.nio.CharBuffer wrap(char[], int, int)">
-java.nio.CharBuffer.wrap(char[], int, int)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-iconst -1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-iadd
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-arraylength
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(int, int, int, int, char[], int)">
-java.nio.CharBuffer.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-int
-, 
-int
-, 
-int
-, 
-int
-, 
-char[]
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:&lt;init&gt;:IIIIC.-Ivoid" title="void &lt;init&gt;(int, int, int, int, char[], int)">
-java.nio.CharBuffer.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-return
+ireturn
 </span>
 </div>
 </li>
@@ -3863,570 +1942,6 @@ try start: 0; try end: 20: catch start: 21; catched type: java.lang.StringIndexO
 </li>
 </ol>
 </span>
-</div>
-<div class="method">
-<a name="java.nio.HeapCharBuffer:order:java.nio.ByteOrder" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<a href="../../java/nio/ByteOrder.html">
-java.nio.ByteOrder
-</a>
- 
-<span>
-order
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../java/nio/ByteOrder.html">
-java.nio.ByteOrder
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.nio.ByteOrder nativeOrder()">
-java.nio.ByteOrder.nativeOrder
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.HeapCharBuffer:isReadOnly:Z" href="#">
-
-</a>
-<div class="method_signature">
-public 
-bool
- 
-<span>
-isReadOnly
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.HeapCharBuffer:put:ICjava.nio.CharBuffer" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<a href="../../java/nio/CharBuffer.html">
-java.nio.CharBuffer
-</a>
- 
-<span>
-put
-</span>
-(
-int
- 1
-, 
-char
- 2
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:hb:C.-">
-java.nio.CharBuffer.hb
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-char[]
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int checkIndex(int)">
-java.nio.HeapCharBuffer.checkIndex
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/Buffer.html#java.nio.Buffer:checkIndex:II" title="int checkIndex(int)">
-java.nio.Buffer.checkIndex
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int ix(int)">
-java.nio.HeapCharBuffer.ix
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.HeapCharBuffer:ix:II" title="int ix(int)">
-java.nio.HeapCharBuffer.ix
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-castore
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.HeapCharBuffer:get:IC" href="#">
-
-</a>
-<div class="method_signature">
-public 
-char
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-get
-</span>
-(
-int
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:hashCode:I" title="int hashCode()">
-java.nio.CharBuffer.hashCode()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:charAt:IC" title="char charAt(int)">
-java.nio.CharBuffer.charAt(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:compareTo:java.nio.CharBufferI" title="int compareTo(java.nio.CharBuffer)">
-java.nio.CharBuffer.compareTo(java.nio.CharBuffer)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.nio.CharBuffer.equals(java.lang.Object)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:hb:C.-">
-java.nio.CharBuffer.hb
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-char[]
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int checkIndex(int)">
-java.nio.HeapCharBuffer.checkIndex
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/nio/Buffer.html#java.nio.Buffer:checkIndex:II" title="int checkIndex(int)">
-java.nio.Buffer.checkIndex
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int ix(int)">
-java.nio.HeapCharBuffer.ix
-</span>
-</span>
-<span>
-(
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.HeapCharBuffer:ix:II" title="int ix(int)">
-java.nio.HeapCharBuffer.ix
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-caload
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.nio.HeapCharBuffer:subSequence:IIjava.lang.CharSequence" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<a href="../../java/lang/CharSequence.html">
-java.lang.CharSequence
-</a>
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-subSequence
-</span>
-(
-int
- 1
-, 
-int
- 2
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/util/regex/Matcher.html#java.util.regex.Matcher:getSubSequence:IIjava.lang.CharSequence" title="java.lang.CharSequence getSubSequence(int, int)">
-java.util.regex.Matcher.getSubSequence(int, int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/regex/Pattern.html#java.util.regex.Pattern:split:java.lang.CharSequenceIjava.lang.String.-" title="java.lang.String[] split(java.lang.CharSequence, int)">
-java.util.regex.Pattern.split(java.lang.CharSequence, int)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/nio/CharBuffer.html">
-java.nio.CharBuffer
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.nio.CharBuffer subSequence(int, int)">
-java.nio.HeapCharBuffer.subSequence
-</span>
-</span>
-<span>
-(
-int
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.nio.HeapCharBuffer:subSequence:IIjava.nio.CharBuffer" title="java.nio.CharBuffer subSequence(int, int)">
-java.nio.HeapCharBuffer.subSequence
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
 </div>
 <div class="method">
 <a name="java.nio.HeapCharBuffer:put:java.nio.CharBufferjava.nio.CharBuffer" href="#">
@@ -5643,6 +3158,2491 @@ aload  0
 </div>
 </li>
 <li value="166">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.HeapCharBuffer:get:IC" href="#">
+
+</a>
+<div class="method_signature">
+public 
+char
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+get
+</span>
+(
+int
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:hashCode:I" title="int hashCode()">
+java.nio.CharBuffer.hashCode()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:charAt:IC" title="char charAt(int)">
+java.nio.CharBuffer.charAt(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.nio.CharBuffer.equals(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:compareTo:java.nio.CharBufferI" title="int compareTo(java.nio.CharBuffer)">
+java.nio.CharBuffer.compareTo(java.nio.CharBuffer)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:hb:C.-">
+java.nio.CharBuffer.hb
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+char[]
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int checkIndex(int)">
+java.nio.HeapCharBuffer.checkIndex
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/Buffer.html#java.nio.Buffer:checkIndex:II" title="int checkIndex(int)">
+java.nio.Buffer.checkIndex
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int ix(int)">
+java.nio.HeapCharBuffer.ix
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.HeapCharBuffer:ix:II" title="int ix(int)">
+java.nio.HeapCharBuffer.ix
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+caload
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.HeapCharBuffer:order:java.nio.ByteOrder" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/nio/ByteOrder.html">
+java.nio.ByteOrder
+</a>
+ 
+<span>
+order
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/nio/ByteOrder.html">
+java.nio.ByteOrder
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.ByteOrder nativeOrder()">
+java.nio.ByteOrder.nativeOrder
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.HeapCharBuffer:&lt;init&gt;:IIvoid" href="#">
+
+</a>
+<div class="method_signature">
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+HeapCharBuffer
+</span>
+(
+int
+ 1
+, 
+int
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:allocate:Ijava.nio.CharBuffer" title="java.nio.CharBuffer allocate(int)">
+java.nio.CharBuffer.allocate(int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+iconst -1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+newarray 
+</span>
+<span>
+char
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(int, int, int, int, char[], int)">
+java.nio.CharBuffer.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+int
+, 
+int
+, 
+int
+, 
+int
+, 
+char[]
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:&lt;init&gt;:IIIIC.-Ivoid" title="void &lt;init&gt;(int, int, int, int, char[], int)">
+java.nio.CharBuffer.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.HeapCharBuffer:put:ICjava.nio.CharBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/nio/CharBuffer.html">
+java.nio.CharBuffer
+</a>
+ 
+<span>
+put
+</span>
+(
+int
+ 1
+, 
+char
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:hb:C.-">
+java.nio.CharBuffer.hb
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+char[]
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int checkIndex(int)">
+java.nio.HeapCharBuffer.checkIndex
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/Buffer.html#java.nio.Buffer:checkIndex:II" title="int checkIndex(int)">
+java.nio.Buffer.checkIndex
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int ix(int)">
+java.nio.HeapCharBuffer.ix
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.HeapCharBuffer:ix:II" title="int ix(int)">
+java.nio.HeapCharBuffer.ix
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+castore
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.HeapCharBuffer:&lt;init&gt;:C.-IIvoid" href="#">
+
+</a>
+<div class="method_signature">
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+HeapCharBuffer
+</span>
+(
+char[]
+ 1
+, 
+int
+ 2
+, 
+int
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:wrap:C.-IIjava.nio.CharBuffer" title="java.nio.CharBuffer wrap(char[], int, int)">
+java.nio.CharBuffer.wrap(char[], int, int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+iconst -1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(int, int, int, int, char[], int)">
+java.nio.CharBuffer.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+int
+, 
+int
+, 
+int
+, 
+int
+, 
+char[]
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:&lt;init&gt;:IIIIC.-Ivoid" title="void &lt;init&gt;(int, int, int, int, char[], int)">
+java.nio.CharBuffer.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.HeapCharBuffer:get:C" href="#">
+
+</a>
+<div class="method_signature">
+public 
+char
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+get
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:flushLeftoverChar:java.nio.CharBufferZvoid" title="void flushLeftoverChar(java.nio.CharBuffer, bool)">
+sun.nio.cs.StreamEncoder.flushLeftoverChar(java.nio.CharBuffer, bool)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/nio/cs/US_ASCII$Encoder.html#sun.nio.cs.US_ASCII$Encoder:encodeBufferLoop:java.nio.CharBufferjava.nio.ByteBufferjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult encodeBufferLoop(java.nio.CharBuffer, java.nio.ByteBuffer)">
+sun.nio.cs.US_ASCII$Encoder.encodeBufferLoop(java.nio.CharBuffer, java.nio.ByteBuffer)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:implWrite:C.-IIvoid" title="void implWrite(char[], int, int)">
+sun.nio.cs.StreamEncoder.implWrite(char[], int, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/nio/cs/Surrogate$Parser.html#sun.nio.cs.Surrogate$Parser:parse:Cjava.nio.CharBufferI" title="int parse(char, java.nio.CharBuffer)">
+sun.nio.cs.Surrogate$Parser.parse(char, java.nio.CharBuffer)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:hb:C.-">
+java.nio.CharBuffer.hb
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+char[]
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int nextGetIndex()">
+java.nio.HeapCharBuffer.nextGetIndex
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/Buffer.html#java.nio.Buffer:nextGetIndex:I" title="int nextGetIndex()">
+java.nio.Buffer.nextGetIndex
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int ix(int)">
+java.nio.HeapCharBuffer.ix
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.HeapCharBuffer:ix:II" title="int ix(int)">
+java.nio.HeapCharBuffer.ix
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+caload
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.HeapCharBuffer:subSequence:IIjava.nio.CharBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/nio/CharBuffer.html">
+java.nio.CharBuffer
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+subSequence
+</span>
+(
+int
+ 1
+, 
+int
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.HeapCharBuffer:subSequence:IIjava.lang.CharSequence" title="java.lang.CharSequence subSequence(int, int)">
+java.nio.HeapCharBuffer.subSequence(int, int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+iflt 16
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int length()">
+java.nio.HeapCharBuffer.length
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:length:I" title="int length()">
+java.nio.CharBuffer.length
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+ifcmpgt 8
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+ifcmpme 11
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/IndexOutOfBoundsException.html">
+java.lang.IndexOutOfBoundsException
+</a>
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.IndexOutOfBoundsException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/IndexOutOfBoundsException.html#java.lang.IndexOutOfBoundsException:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.IndexOutOfBoundsException.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int position()">
+java.nio.HeapCharBuffer.position
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/Buffer.html#java.nio.Buffer:position:I" title="int position()">
+java.nio.Buffer.position
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+istore  3
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="HeapCharBuffer.html">
+java.nio.HeapCharBuffer
+</a>
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:hb:C.-">
+java.nio.CharBuffer.hb
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+char[]
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+iconst -1
+</span>
+</div>
+</li>
+<li value="39">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="44">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="45">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int capacity()">
+java.nio.HeapCharBuffer.capacity
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/Buffer.html#java.nio.Buffer:capacity:I" title="int capacity()">
+java.nio.Buffer.capacity
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="49">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="50">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:offset:I">
+java.nio.CharBuffer.offset
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="53">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(char[], int, int, int, int, int)">
+java.nio.HeapCharBuffer.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+char[]
+, 
+int
+, 
+int
+, 
+int
+, 
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.HeapCharBuffer:&lt;init&gt;:C.-IIIIIvoid" title="void &lt;init&gt;(char[], int, int, int, int, int)">
+java.nio.HeapCharBuffer.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="56">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.HeapCharBuffer:ix:II" href="#">
+
+</a>
+<div class="method_signature">
+protected 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+ix
+</span>
+(
+int
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.HeapCharBuffer:get:C" title="char get()">
+java.nio.HeapCharBuffer.get()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.nio.HeapCharBuffer:put:Cjava.nio.CharBuffer" title="java.nio.CharBuffer put(char)">
+java.nio.HeapCharBuffer.put(char)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.nio.HeapCharBuffer:get:IC" title="char get(int)">
+java.nio.HeapCharBuffer.get(int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:offset:I">
+java.nio.CharBuffer.offset
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.HeapCharBuffer:duplicate:java.nio.CharBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/nio/CharBuffer.html">
+java.nio.CharBuffer
+</a>
+ 
+<span>
+duplicate
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="HeapCharBuffer.html">
+java.nio.HeapCharBuffer
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:hb:C.-">
+java.nio.CharBuffer.hb
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+char[]
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int markValue()">
+java.nio.HeapCharBuffer.markValue
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int position()">
+java.nio.HeapCharBuffer.position
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/Buffer.html#java.nio.Buffer:position:I" title="int position()">
+java.nio.Buffer.position
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int limit()">
+java.nio.HeapCharBuffer.limit
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="21">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int capacity()">
+java.nio.HeapCharBuffer.capacity
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/Buffer.html#java.nio.Buffer:capacity:I" title="int capacity()">
+java.nio.Buffer.capacity
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:offset:I">
+java.nio.CharBuffer.offset
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(char[], int, int, int, int, int)">
+java.nio.HeapCharBuffer.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+char[]
+, 
+int
+, 
+int
+, 
+int
+, 
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.HeapCharBuffer:&lt;init&gt;:C.-IIIIIvoid" title="void &lt;init&gt;(char[], int, int, int, int, int)">
+java.nio.HeapCharBuffer.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.HeapCharBuffer:isReadOnly:Z" href="#">
+
+</a>
+<div class="method_signature">
+public 
+bool
+ 
+<span>
+isReadOnly
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.HeapCharBuffer:subSequence:IIjava.lang.CharSequence" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/lang/CharSequence.html">
+java.lang.CharSequence
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+subSequence
+</span>
+(
+int
+ 1
+, 
+int
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/regex/Matcher.html#java.util.regex.Matcher:getSubSequence:IIjava.lang.CharSequence" title="java.lang.CharSequence getSubSequence(int, int)">
+java.util.regex.Matcher.getSubSequence(int, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/regex/Pattern.html#java.util.regex.Pattern:split:java.lang.CharSequenceIjava.lang.String.-" title="java.lang.String[] split(java.lang.CharSequence, int)">
+java.util.regex.Pattern.split(java.lang.CharSequence, int)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/nio/CharBuffer.html">
+java.nio.CharBuffer
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.CharBuffer subSequence(int, int)">
+java.nio.HeapCharBuffer.subSequence
+</span>
+</span>
+<span>
+(
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.HeapCharBuffer:subSequence:IIjava.nio.CharBuffer" title="java.nio.CharBuffer subSequence(int, int)">
+java.nio.HeapCharBuffer.subSequence
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.HeapCharBuffer:put:Cjava.nio.CharBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/nio/CharBuffer.html">
+java.nio.CharBuffer
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+put
+</span>
+(
+char
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/nio/cs/StreamEncoder.html#sun.nio.cs.StreamEncoder:flushLeftoverChar:java.nio.CharBufferZvoid" title="void flushLeftoverChar(java.nio.CharBuffer, bool)">
+sun.nio.cs.StreamEncoder.flushLeftoverChar(java.nio.CharBuffer, bool)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:append:Cjava.nio.CharBuffer" title="java.nio.CharBuffer append(char)">
+java.nio.CharBuffer.append(char)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:put:java.lang.StringIIjava.nio.CharBuffer" title="java.nio.CharBuffer put(java.lang.String, int, int)">
+java.nio.CharBuffer.put(java.lang.String, int, int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/nio/cs/US_ASCII$Decoder.html#sun.nio.cs.US_ASCII$Decoder:decodeBufferLoop:java.nio.ByteBufferjava.nio.CharBufferjava.nio.charset.CoderResult" title="java.nio.charset.CoderResult decodeBufferLoop(java.nio.ByteBuffer, java.nio.CharBuffer)">
+sun.nio.cs.US_ASCII$Decoder.decodeBufferLoop(java.nio.ByteBuffer, java.nio.CharBuffer)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:hb:C.-">
+java.nio.CharBuffer.hb
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+char[]
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int nextPutIndex()">
+java.nio.HeapCharBuffer.nextPutIndex
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/Buffer.html#java.nio.Buffer:nextPutIndex:I" title="int nextPutIndex()">
+java.nio.Buffer.nextPutIndex
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int ix(int)">
+java.nio.HeapCharBuffer.ix
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.HeapCharBuffer:ix:II" title="int ix(int)">
+java.nio.HeapCharBuffer.ix
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+castore
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.nio.HeapCharBuffer:get:C.-IIjava.nio.CharBuffer" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/nio/CharBuffer.html">
+java.nio.CharBuffer
+</a>
+ 
+<span>
+get
+</span>
+(
+char[]
+ 1
+, 
+int
+ 2
+, 
+int
+ 3
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void checkBounds(int, int, int)">
+java.nio.HeapCharBuffer.checkBounds
+</span>
+</span>
+<span>
+(
+int
+, 
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int remaining()">
+java.nio.HeapCharBuffer.remaining
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+ifcmpme 11
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/nio/BufferUnderflowException.html">
+java.nio.BufferUnderflowException
+</a>
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.nio.BufferUnderflowException.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="24">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:hb:C.-">
+java.nio.CharBuffer.hb
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+char[]
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int position()">
+java.nio.HeapCharBuffer.position
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/Buffer.html#java.nio.Buffer:position:I" title="int position()">
+java.nio.Buffer.position
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="32">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int ix(int)">
+java.nio.HeapCharBuffer.ix
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.nio.HeapCharBuffer:ix:II" title="int ix(int)">
+java.nio.HeapCharBuffer.ix
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void arraycopy(java.lang.Object, int, java.lang.Object, int, int)">
+java.lang.System.arraycopy
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+int
+, 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+, 
+int
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/System.html#java.lang.System:arraycopy:java.lang.ObjectIjava.lang.ObjectIIvoid" title="void arraycopy(java.lang.Object, int, java.lang.Object, int, int)">
+java.lang.System.arraycopy
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="42">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="43">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int position()">
+java.nio.HeapCharBuffer.position
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/nio/Buffer.html#java.nio.Buffer:position:I" title="int position()">
+java.nio.Buffer.position
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="46">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="47">
+<div class="instruction">
+<span>
+iadd
+</span>
+</div>
+</li>
+<li value="48">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/nio/Buffer.html">
+java.nio.Buffer
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.nio.Buffer position(int)">
+java.nio.HeapCharBuffer.position
+</span>
+</span>
+<span>
+(
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="51">
+<div class="instruction">
+<span>
+pop
+</span>
+</div>
+</li>
+<li value="52">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="53">
 <div class="instruction">
 <span>
 areturn

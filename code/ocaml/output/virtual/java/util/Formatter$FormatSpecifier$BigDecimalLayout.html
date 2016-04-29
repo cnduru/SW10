@@ -23,13 +23,15 @@ Instantiated
 </li>
 </ul>
 <div class="field">
-<a name="java.util.Formatter$FormatSpecifier$BigDecimalLayout:scale:I" href="#">
+<a name="java.util.Formatter$FormatSpecifier$BigDecimalLayout:mant:java.lang.StringBuilder" href="#">
 
 </a>
 <span class="field_signature">
 private  
-int
- scale;
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+ mant;
 </span>
 </div>
 <div class="field">
@@ -43,7 +45,17 @@ bool
 </span>
 </div>
 <div class="field">
-<a name="java.util.Formatter$FormatSpecifier$BigDecimalLayout:mant:java.lang.StringBuilder" href="#">
+<a name="java.util.Formatter$FormatSpecifier$BigDecimalLayout:scale:I" href="#">
+
+</a>
+<span class="field_signature">
+private  
+int
+ scale;
+</span>
+</div>
+<div class="field">
+<a name="java.util.Formatter$FormatSpecifier$BigDecimalLayout:exp:java.lang.StringBuilder" href="#">
 
 </a>
 <span class="field_signature">
@@ -51,7 +63,7 @@ private
 <a href="../../java/lang/StringBuilder.html">
 java.lang.StringBuilder
 </a>
- mant;
+ exp;
 </span>
 </div>
 <div class="field">
@@ -66,17 +78,880 @@ java.util.Formatter$FormatSpecifier
  this$1;
 </span>
 </div>
-<div class="field">
-<a name="java.util.Formatter$FormatSpecifier$BigDecimalLayout:exp:java.lang.StringBuilder" href="#">
+<div class="method">
+<a name="java.util.Formatter$FormatSpecifier$BigDecimalLayout:exponent:C.-" href="#">
 
 </a>
-<span class="field_signature">
-private  
+<div class="method_signature">
+public 
+char[]
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+exponent
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/Formatter$FormatSpecifier.html#java.util.Formatter$FormatSpecifier:print:java.lang.StringBuilderjava.math.BigDecimaljava.util.Localejava.util.Formatter$FlagsCIZvoid" title="void print(java.lang.StringBuilder, java.math.BigDecimal, java.util.Locale, java.util.Formatter$Flags, char, int, bool)">
+java.util.Formatter$FormatSpecifier.print(java.lang.StringBuilder, java.math.BigDecimal, java.util.Locale, java.util.Formatter$Flags, char, int, bool)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.util.Formatter$FormatSpecifier$BigDecimalLayout:exp:java.lang.StringBuilder">
+java.util.Formatter$FormatSpecifier$BigDecimalLayout.exp
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
 <a href="../../java/lang/StringBuilder.html">
 java.lang.StringBuilder
 </a>
- exp;
 </span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+char[]
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="char[] toCharArray(java.lang.StringBuilder)">
+java.util.Formatter$FormatSpecifier$BigDecimalLayout.toCharArray
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.Formatter$FormatSpecifier$BigDecimalLayout:toCharArray:java.lang.StringBuilderC.-" title="char[] toCharArray(java.lang.StringBuilder)">
+java.util.Formatter$FormatSpecifier$BigDecimalLayout.toCharArray
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.Formatter$FormatSpecifier$BigDecimalLayout:toCharArray:java.lang.StringBuilderC.-" href="#">
+
+</a>
+<div class="method_signature">
+private 
+char[]
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+toCharArray
+</span>
+(
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.Formatter$FormatSpecifier$BigDecimalLayout:exponent:C.-" title="char[] exponent()">
+java.util.Formatter$FormatSpecifier$BigDecimalLayout.exponent()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#java.util.Formatter$FormatSpecifier$BigDecimalLayout:mantissa:C.-" title="char[] mantissa()">
+java.util.Formatter$FormatSpecifier$BigDecimalLayout.mantissa()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+ifnonnull 5
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aconstnull
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+int
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="int length()">
+java.lang.StringBuilder.length
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:length:I" title="int length()">
+java.lang.StringBuilder.length
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+newarray 
+</span>
+<span>
+char
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+astore  2
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void getChars(int, int, char[], int)">
+java.lang.StringBuilder.getChars
+</span>
+</span>
+<span>
+(
+int
+, 
+int
+, 
+char[]
+, 
+int
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:getChars:IIC.-Ivoid" title="void getChars(int, int, char[], int)">
+java.lang.StringBuilder.getChars
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.Formatter$FormatSpecifier$BigDecimalLayout:&lt;init&gt;:java.util.Formatter$FormatSpecifierjava.math.BigIntegerIjava.util.Formatter$BigDecimalLayoutFormvoid" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<span class="methodname clickable" onclick="showInfoList(this)">
+Formatter$FormatSpecifier$BigDecimalLayout
+</span>
+(
+<a href="../../java/util/Formatter$FormatSpecifier.html">
+java.util.Formatter$FormatSpecifier
+</a>
+ 1
+, 
+<a href="../../java/math/BigInteger.html">
+java.math.BigInteger
+</a>
+ 2
+, 
+int
+ 3
+, 
+<a href="../../java/util/Formatter$BigDecimalLayoutForm.html">
+java.util.Formatter$BigDecimalLayoutForm
+</a>
+ 4
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/Formatter$FormatSpecifier.html#java.util.Formatter$FormatSpecifier:print:java.lang.StringBuilderjava.math.BigDecimaljava.util.Localejava.util.Formatter$FlagsCIZvoid" title="void print(java.lang.StringBuilder, java.math.BigDecimal, java.util.Locale, java.util.Formatter$Flags, char, int, bool)">
+java.util.Formatter$FormatSpecifier.print(java.lang.StringBuilder, java.math.BigDecimal, java.util.Locale, java.util.Formatter$Flags, char, int, bool)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.util.Formatter$FormatSpecifier$BigDecimalLayout:this$1:java.util.Formatter$FormatSpecifier">
+java.util.Formatter$FormatSpecifier$BigDecimalLayout.this$1
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/util/Formatter$FormatSpecifier.html">
+java.util.Formatter$FormatSpecifier
+</a>
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/Object.html#java.lang.Object:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.lang.Object.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#java.util.Formatter$FormatSpecifier$BigDecimalLayout:dot:Z">
+java.util.Formatter$FormatSpecifier$BigDecimalLayout.dot
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+bool
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+aload  4
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void layout(java.math.BigInteger, int, java.util.Formatter$BigDecimalLayoutForm)">
+java.util.Formatter$FormatSpecifier$BigDecimalLayout.layout
+</span>
+</span>
+<span>
+(
+<a href="../../java/math/BigInteger.html">
+java.math.BigInteger
+</a>
+, 
+int
+, 
+<a href="../../java/util/Formatter$BigDecimalLayoutForm.html">
+java.util.Formatter$BigDecimalLayoutForm
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.Formatter$FormatSpecifier$BigDecimalLayout:layout:java.math.BigIntegerIjava.util.Formatter$BigDecimalLayoutFormvoid" title="void layout(java.math.BigInteger, int, java.util.Formatter$BigDecimalLayoutForm)">
+java.util.Formatter$FormatSpecifier$BigDecimalLayout.layout
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+return
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="java.util.Formatter$FormatSpecifier$BigDecimalLayout:layoutChars:C.-" href="#">
+
+</a>
+<div class="method_signature">
+public 
+char[]
+ 
+<span>
+layoutChars
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Not parsed
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.util.Formatter$FormatSpecifier$BigDecimalLayout:mant:java.lang.StringBuilder">
+java.util.Formatter$FormatSpecifier$BigDecimalLayout.mant
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;(java.lang.CharSequence)">
+java.lang.StringBuilder.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/CharSequence.html">
+java.lang.CharSequence
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+astore  1
+</span>
+</div>
+</li>
+<li value="12">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="13">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.util.Formatter$FormatSpecifier$BigDecimalLayout:exp:java.lang.StringBuilder">
+java.util.Formatter$FormatSpecifier$BigDecimalLayout.exp
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+ifnull 19
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+bipush 69
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(char)">
+java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+(
+char
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:Cjava.lang.StringBuilder" title="java.lang.StringBuilder append(char)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+pop
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="28">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#java.util.Formatter$FormatSpecifier$BigDecimalLayout:exp:java.lang.StringBuilder">
+java.util.Formatter$FormatSpecifier$BigDecimalLayout.exp
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+</div>
+</li>
+<li value="31">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.StringBuilder append(java.lang.CharSequence)">
+java.lang.StringBuilder.append
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/CharSequence.html">
+java.lang.CharSequence
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.CharSequencejava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.CharSequence)">
+java.lang.StringBuilder.append
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+pop
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="36">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="37">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+char[]
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="char[] toCharArray(java.lang.StringBuilder)">
+java.util.Formatter$FormatSpecifier$BigDecimalLayout.toCharArray
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/StringBuilder.html">
+java.lang.StringBuilder
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#java.util.Formatter$FormatSpecifier$BigDecimalLayout:toCharArray:java.lang.StringBuilderC.-" title="char[] toCharArray(java.lang.StringBuilder)">
+java.util.Formatter$FormatSpecifier$BigDecimalLayout.toCharArray
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="40">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
 </div>
 <div class="method">
 <a name="java.util.Formatter$FormatSpecifier$BigDecimalLayout:scale:I" href="#">
@@ -3487,881 +4362,6 @@ bool
 <div class="instruction">
 <span>
 ireturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.Formatter$FormatSpecifier$BigDecimalLayout:&lt;init&gt;:java.util.Formatter$FormatSpecifierjava.math.BigIntegerIjava.util.Formatter$BigDecimalLayoutFormvoid" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<span class="methodname clickable" onclick="showInfoList(this)">
-Formatter$FormatSpecifier$BigDecimalLayout
-</span>
-(
-<a href="../../java/util/Formatter$FormatSpecifier.html">
-java.util.Formatter$FormatSpecifier
-</a>
- 1
-, 
-<a href="../../java/math/BigInteger.html">
-java.math.BigInteger
-</a>
- 2
-, 
-int
- 3
-, 
-<a href="../../java/util/Formatter$BigDecimalLayoutForm.html">
-java.util.Formatter$BigDecimalLayoutForm
-</a>
- 4
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/util/Formatter$FormatSpecifier.html#java.util.Formatter$FormatSpecifier:print:java.lang.StringBuilderjava.math.BigDecimaljava.util.Localejava.util.Formatter$FlagsCIZvoid" title="void print(java.lang.StringBuilder, java.math.BigDecimal, java.util.Locale, java.util.Formatter$Flags, char, int, bool)">
-java.util.Formatter$FormatSpecifier.print(java.lang.StringBuilder, java.math.BigDecimal, java.util.Locale, java.util.Formatter$Flags, char, int, bool)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.util.Formatter$FormatSpecifier$BigDecimalLayout:this$1:java.util.Formatter$FormatSpecifier">
-java.util.Formatter$FormatSpecifier$BigDecimalLayout.this$1
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/util/Formatter$FormatSpecifier.html">
-java.util.Formatter$FormatSpecifier
-</a>
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.Object.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/Object.html#java.lang.Object:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.lang.Object.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#java.util.Formatter$FormatSpecifier$BigDecimalLayout:dot:Z">
-java.util.Formatter$FormatSpecifier$BigDecimalLayout.dot
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-bool
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-aload  4
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void layout(java.math.BigInteger, int, java.util.Formatter$BigDecimalLayoutForm)">
-java.util.Formatter$FormatSpecifier$BigDecimalLayout.layout
-</span>
-</span>
-<span>
-(
-<a href="../../java/math/BigInteger.html">
-java.math.BigInteger
-</a>
-, 
-int
-, 
-<a href="../../java/util/Formatter$BigDecimalLayoutForm.html">
-java.util.Formatter$BigDecimalLayoutForm
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.Formatter$FormatSpecifier$BigDecimalLayout:layout:java.math.BigIntegerIjava.util.Formatter$BigDecimalLayoutFormvoid" title="void layout(java.math.BigInteger, int, java.util.Formatter$BigDecimalLayoutForm)">
-java.util.Formatter$FormatSpecifier$BigDecimalLayout.layout
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.Formatter$FormatSpecifier$BigDecimalLayout:layoutChars:C.-" href="#">
-
-</a>
-<div class="method_signature">
-public 
-char[]
- 
-<span>
-layoutChars
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.util.Formatter$FormatSpecifier$BigDecimalLayout:mant:java.lang.StringBuilder">
-java.util.Formatter$FormatSpecifier$BigDecimalLayout.mant
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;(java.lang.CharSequence)">
-java.lang.StringBuilder.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/CharSequence.html">
-java.lang.CharSequence
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-astore  1
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.util.Formatter$FormatSpecifier$BigDecimalLayout:exp:java.lang.StringBuilder">
-java.util.Formatter$FormatSpecifier$BigDecimalLayout.exp
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-ifnull 19
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-bipush 69
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.StringBuilder append(char)">
-java.lang.StringBuilder.append
-</span>
-</span>
-<span>
-(
-char
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:Cjava.lang.StringBuilder" title="java.lang.StringBuilder append(char)">
-java.lang.StringBuilder.append
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-pop
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="28">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.util.Formatter$FormatSpecifier$BigDecimalLayout:exp:java.lang.StringBuilder">
-java.util.Formatter$FormatSpecifier$BigDecimalLayout.exp
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-</span>
-</div>
-</li>
-<li value="31">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.StringBuilder append(java.lang.CharSequence)">
-java.lang.StringBuilder.append
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/CharSequence.html">
-java.lang.CharSequence
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:append:java.lang.CharSequencejava.lang.StringBuilder" title="java.lang.StringBuilder append(java.lang.CharSequence)">
-java.lang.StringBuilder.append
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="34">
-<div class="instruction">
-<span>
-pop
-</span>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="36">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="37">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-char[]
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="char[] toCharArray(java.lang.StringBuilder)">
-java.util.Formatter$FormatSpecifier$BigDecimalLayout.toCharArray
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.Formatter$FormatSpecifier$BigDecimalLayout:toCharArray:java.lang.StringBuilderC.-" title="char[] toCharArray(java.lang.StringBuilder)">
-java.util.Formatter$FormatSpecifier$BigDecimalLayout.toCharArray
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="40">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.Formatter$FormatSpecifier$BigDecimalLayout:exponent:C.-" href="#">
-
-</a>
-<div class="method_signature">
-public 
-char[]
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-exponent
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/util/Formatter$FormatSpecifier.html#java.util.Formatter$FormatSpecifier:print:java.lang.StringBuilderjava.math.BigDecimaljava.util.Localejava.util.Formatter$FlagsCIZvoid" title="void print(java.lang.StringBuilder, java.math.BigDecimal, java.util.Locale, java.util.Formatter$Flags, char, int, bool)">
-java.util.Formatter$FormatSpecifier.print(java.lang.StringBuilder, java.math.BigDecimal, java.util.Locale, java.util.Formatter$Flags, char, int, bool)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#java.util.Formatter$FormatSpecifier$BigDecimalLayout:exp:java.lang.StringBuilder">
-java.util.Formatter$FormatSpecifier$BigDecimalLayout.exp
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-char[]
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="char[] toCharArray(java.lang.StringBuilder)">
-java.util.Formatter$FormatSpecifier$BigDecimalLayout.toCharArray
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.Formatter$FormatSpecifier$BigDecimalLayout:toCharArray:java.lang.StringBuilderC.-" title="char[] toCharArray(java.lang.StringBuilder)">
-java.util.Formatter$FormatSpecifier$BigDecimalLayout.toCharArray
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="java.util.Formatter$FormatSpecifier$BigDecimalLayout:toCharArray:java.lang.StringBuilderC.-" href="#">
-
-</a>
-<div class="method_signature">
-private 
-char[]
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-toCharArray
-</span>
-(
-<a href="../../java/lang/StringBuilder.html">
-java.lang.StringBuilder
-</a>
- 1
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#java.util.Formatter$FormatSpecifier$BigDecimalLayout:exponent:C.-" title="char[] exponent()">
-java.util.Formatter$FormatSpecifier$BigDecimalLayout.exponent()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#java.util.Formatter$FormatSpecifier$BigDecimalLayout:mantissa:C.-" title="char[] mantissa()">
-java.util.Formatter$FormatSpecifier$BigDecimalLayout.mantissa()
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-ifnonnull 5
-</span>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aconstnull
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-int
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="int length()">
-java.lang.StringBuilder.length
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:length:I" title="int length()">
-java.lang.StringBuilder.length
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-newarray 
-</span>
-<span>
-char
-</span>
-</div>
-</li>
-<li value="12">
-<div class="instruction">
-<span>
-astore  2
-</span>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-arraylength
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void getChars(int, int, char[], int)">
-java.lang.StringBuilder.getChars
-</span>
-</span>
-<span>
-(
-int
-, 
-int
-, 
-char[]
-, 
-int
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/lang/StringBuilder.html#java.lang.StringBuilder:getChars:IIC.-Ivoid" title="void getChars(int, int, char[], int)">
-java.lang.StringBuilder.getChars
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-areturn
 </span>
 </div>
 </li>

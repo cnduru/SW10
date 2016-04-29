@@ -23,15 +23,15 @@ Instantiated
 </li>
 </ul>
 <div class="field">
-<a name="sun.misc.Launcher:loader:java.lang.ClassLoader" href="#">
+<a name="sun.misc.Launcher:bootClassPath:java.lang.String" href="#">
 
 </a>
 <span class="field_signature">
-private  
-<a href="../../java/lang/ClassLoader.html">
-java.lang.ClassLoader
+private static  
+<a href="../../java/lang/String.html">
+java.lang.String
 </a>
- loader;
+ bootClassPath;
 </span>
 </div>
 <div class="field">
@@ -47,27 +47,15 @@ java.net.URLStreamHandlerFactory
 </span>
 </div>
 <div class="field">
-<a name="sun.misc.Launcher:bootClassPath:java.lang.String" href="#">
+<a name="sun.misc.Launcher:loader:java.lang.ClassLoader" href="#">
 
 </a>
 <span class="field_signature">
-private static  
-<a href="../../java/lang/String.html">
-java.lang.String
+private  
+<a href="../../java/lang/ClassLoader.html">
+java.lang.ClassLoader
 </a>
- bootClassPath;
-</span>
-</div>
-<div class="field">
-<a name="sun.misc.Launcher:launcher:sun.misc.Launcher" href="#">
-
-</a>
-<span class="field_signature">
-private static  
-<a href="Launcher.html">
-sun.misc.Launcher
-</a>
- launcher;
+ loader;
 </span>
 </div>
 <div class="field">
@@ -80,6 +68,18 @@ private static
 java.net.URLStreamHandler
 </a>
  fileHandler;
+</span>
+</div>
+<div class="field">
+<a name="sun.misc.Launcher:launcher:sun.misc.Launcher" href="#">
+
+</a>
+<span class="field_signature">
+private static  
+<a href="Launcher.html">
+sun.misc.Launcher
+</a>
+ launcher;
 </span>
 </div>
 <div class="method">
@@ -391,23 +391,24 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="sun.misc.Launcher:access$200:java.lang.Stringjava.io.File.-" href="#">
+<a name="sun.misc.Launcher:pathToURLs:java.io.File.-java.net.URL.-" href="#">
 
 </a>
 <div class="method_signature">
- static 
+private static 
+<a href="../../java/net/URL.html">
+java.net.URL
+</a>
+[]
+ 
+<span>
+pathToURLs
+</span>
+(
 <a href="../../java/io/File.html">
 java.io.File
 </a>
 []
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-access$200
-</span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
  0
 )
 ;
@@ -416,16 +417,7 @@ java.lang.String
 Concrete Method 
 </li>
 <li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../sun/misc/Launcher$AppClassLoader.html#sun.misc.Launcher$AppClassLoader:getAppClassLoader:java.lang.ClassLoaderjava.lang.ClassLoader" title="java.lang.ClassLoader getAppClassLoader(java.lang.ClassLoader)">
-sun.misc.Launcher$AppClassLoader.getAppClassLoader(java.lang.ClassLoader)
-</a>
-</div>
+Not parsed
 </li>
 </ul>
 </div>
@@ -440,38 +432,232 @@ aload  0
 <li value="1">
 <div class="instruction">
 <span>
+arraylength
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+anewarray 
+</span>
+<span>
+<a href="../../java/net/URL.html">
+java.net.URL
+</a>
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+astore  1
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+iconst 0
+</span>
+</div>
+</li>
+<li value="7">
+<div class="instruction">
+<span>
+istore  2
+</span>
+</div>
+</li>
+<li value="8">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+arraylength
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+ifcmpge 18
+</span>
+</div>
+</li>
+<li value="14">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="17">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+aaload
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
 invokestatic 
 </span>
 <span>
-<a href="../../java/io/File.html">
-java.io.File
+<a href="../../java/net/URL.html">
+java.net.URL
 </a>
-[]
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.io.File[] getClassPath(java.lang.String)">
-sun.misc.Launcher.getClassPath
+<span title="java.net.URL getFileURL(java.io.File)">
+sun.misc.Launcher.getFileURL
 </span>
 </span>
 <span>
 (
-<a href="../../java/lang/String.html">
-java.lang.String
+<a href="../../java/io/File.html">
+java.io.File
 </a>
 )
 </span>
 <ul class="clickable">
 <li>
 <div>
-<a href="#sun.misc.Launcher:getClassPath:java.lang.Stringjava.io.File.-" title="java.io.File[] getClassPath(java.lang.String)">
-sun.misc.Launcher.getClassPath
-</a>
+No reachable result.
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li value="4">
+<li value="22">
+<div class="instruction">
+<span>
+aastore
+</span>
+</div>
+</li>
+<li value="23">
+<div class="instruction">
+<span>
+iinc 2 1
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+goto -18
+</span>
+</div>
+</li>
+<li value="29">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Launcher:access$100:java.net.URLStreamHandlerFactory" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<a href="../../java/net/URLStreamHandlerFactory.html">
+java.net.URLStreamHandlerFactory
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+access$100
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/misc/Launcher$BootClassPathHolder.html#sun.misc.Launcher$BootClassPathHolder:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+sun.misc.Launcher$BootClassPathHolder.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.misc.Launcher:factory:java.net.URLStreamHandlerFactory">
+sun.misc.Launcher.factory
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/net/URLStreamHandlerFactory.html">
+java.net.URLStreamHandlerFactory
+</a>
+</span>
+</div>
+</li>
+<li value="3">
 <div class="instruction">
 <span>
 areturn
@@ -1620,281 +1806,6 @@ try start: 95; try end: 110: catch start: 123; catched type: java.lang.ClassNotF
 <li>
 <span>
 try start: 95; try end: 110: catch start: 128; catched type: java.lang.ClassCastException.
-</span>
-</li>
-</ol>
-</span>
-</div>
-<div class="method">
-<a name="sun.misc.Launcher:access$400:java.lang.String" href="#">
-
-</a>
-<div class="method_signature">
- static 
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-access$400
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../sun/misc/Launcher$BootClassPathHolder.html#sun.misc.Launcher$BootClassPathHolder:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
-sun.misc.Launcher$BootClassPathHolder.&lt;clinit&gt;()
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#sun.misc.Launcher:bootClassPath:java.lang.String">
-sun.misc.Launcher.bootClassPath
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="sun.misc.Launcher:getFileURL:java.io.Filejava.net.URL" href="#">
-
-</a>
-<div class="method_signature">
- static 
-<a href="../../java/net/URL.html">
-java.net.URL
-</a>
- 
-<span>
-getFileURL
-</span>
-(
-<a href="../../java/io/File.html">
-java.io.File
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Not parsed
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/io/File.html">
-java.io.File
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.io.File getCanonicalFile()">
-java.io.File.getCanonicalFile
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-astore  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-goto 4
-</span>
-</div>
-</li>
-<li value="8">
-<div class="instruction">
-<span>
-astore  1
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-invokestatic 
-</span>
-<span>
-<a href="../../java/net/URL.html">
-java.net.URL
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.net.URL fileToEncodedURL(java.io.File)">
-sun.net.www.ParseUtil.fileToEncodedURL
-</span>
-</span>
-<span>
-(
-<a href="../../java/io/File.html">
-java.io.File
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="13">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-astore  1
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-new 
-</span>
-<span>
-<a href="../../java/lang/InternalError.html">
-java.lang.InternalError
-</a>
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-dup
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.lang.InternalError.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-No reachable result.
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-athrow
-</span>
-</div>
-</li>
-</ol>
-<span title="Exceptions">
-<h3>
-Exceptions handling:
-</h3>
-<ol>
-<li>
-<span>
-try start: 0; try end: 5: catch start: 8; catched type: java.io.IOException.
-</span>
-</li>
-<li>
-<span>
-try start: 9; try end: 13: catch start: 14; catched type: java.net.MalformedURLException.
 </span>
 </li>
 </ol>
@@ -3119,6 +3030,98 @@ areturn
 </ol>
 </div>
 <div class="method">
+<a name="sun.misc.Launcher:access$200:java.lang.Stringjava.io.File.-" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+<a href="../../java/io/File.html">
+java.io.File
+</a>
+[]
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+access$200
+</span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/misc/Launcher$AppClassLoader.html#sun.misc.Launcher$AppClassLoader:getAppClassLoader:java.lang.ClassLoaderjava.lang.ClassLoader" title="java.lang.ClassLoader getAppClassLoader(java.lang.ClassLoader)">
+sun.misc.Launcher$AppClassLoader.getAppClassLoader(java.lang.ClassLoader)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+invokestatic 
+</span>
+<span>
+<a href="../../java/io/File.html">
+java.io.File
+</a>
+[]
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.io.File[] getClassPath(java.lang.String)">
+sun.misc.Launcher.getClassPath
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.misc.Launcher:getClassPath:java.lang.Stringjava.io.File.-" title="java.io.File[] getClassPath(java.lang.String)">
+sun.misc.Launcher.getClassPath
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
 <a name="sun.misc.Launcher:getBootstrapClassPath:sun.misc.URLClassPath" href="#">
 
 </a>
@@ -3169,72 +3172,6 @@ sun.misc.Launcher$BootClassPathHolder.bcp
 <span>
 <a href="../../sun/misc/URLClassPath.html">
 sun.misc.URLClassPath
-</a>
-</span>
-</div>
-</li>
-<li value="3">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="sun.misc.Launcher:access$100:java.net.URLStreamHandlerFactory" href="#">
-
-</a>
-<div class="method_signature">
- static 
-<a href="../../java/net/URLStreamHandlerFactory.html">
-java.net.URLStreamHandlerFactory
-</a>
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-access$100
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../sun/misc/Launcher$BootClassPathHolder.html#sun.misc.Launcher$BootClassPathHolder:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
-sun.misc.Launcher$BootClassPathHolder.&lt;clinit&gt;()
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-getstatic 
-</span>
-<span>
-<a href="#sun.misc.Launcher:factory:java.net.URLStreamHandlerFactory">
-sun.misc.Launcher.factory
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/net/URLStreamHandlerFactory.html">
-java.net.URLStreamHandlerFactory
 </a>
 </span>
 </div>
@@ -3317,24 +3254,88 @@ areturn
 </ol>
 </div>
 <div class="method">
-<a name="sun.misc.Launcher:pathToURLs:java.io.File.-java.net.URL.-" href="#">
+<a name="sun.misc.Launcher:access$400:java.lang.String" href="#">
 
 </a>
 <div class="method_signature">
-private static 
+ static 
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+access$400
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/misc/Launcher$BootClassPathHolder.html#sun.misc.Launcher$BootClassPathHolder:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+sun.misc.Launcher$BootClassPathHolder.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+getstatic 
+</span>
+<span>
+<a href="#sun.misc.Launcher:bootClassPath:java.lang.String">
+sun.misc.Launcher.bootClassPath
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+</div>
+</li>
+<li value="3">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.misc.Launcher:getFileURL:java.io.Filejava.net.URL" href="#">
+
+</a>
+<div class="method_signature">
+ static 
 <a href="../../java/net/URL.html">
 java.net.URL
 </a>
-[]
  
 <span>
-pathToURLs
+getFileURL
 </span>
 (
 <a href="../../java/io/File.html">
 java.io.File
 </a>
-[]
  0
 )
 ;
@@ -3358,47 +3359,49 @@ aload  0
 <li value="1">
 <div class="instruction">
 <span>
-arraylength
+invokevirtual 
 </span>
+<span>
+<a href="../../java/io/File.html">
+java.io.File
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.io.File getCanonicalFile()">
+java.io.File.getCanonicalFile
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
 </div>
 </li>
-<li value="2">
+</ul>
+</div>
+</li>
+<li value="4">
 <div class="instruction">
 <span>
-anewarray 
-</span>
-<span>
-<a href="../../java/net/URL.html">
-java.net.URL
-</a>
+astore  0
 </span>
 </div>
 </li>
 <li value="5">
 <div class="instruction">
 <span>
-astore  1
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-iconst 0
-</span>
-</div>
-</li>
-<li value="7">
-<div class="instruction">
-<span>
-istore  2
+goto 4
 </span>
 </div>
 </li>
 <li value="8">
 <div class="instruction">
 <span>
-iload  2
+astore  1
 </span>
 </div>
 </li>
@@ -3412,55 +3415,6 @@ aload  0
 <li value="10">
 <div class="instruction">
 <span>
-arraylength
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-ifcmpge 18
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="17">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="18">
-<div class="instruction">
-<span>
-aaload
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
 invokestatic 
 </span>
 <span>
@@ -3469,8 +3423,8 @@ java.net.URL
 </a>
 </span>
 <span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.net.URL getFileURL(java.io.File)">
-sun.misc.Launcher.getFileURL
+<span title="java.net.URL fileToEncodedURL(java.io.File)">
+sun.net.www.ParseUtil.fileToEncodedURL
 </span>
 </span>
 <span>
@@ -3489,44 +3443,90 @@ No reachable result.
 </ul>
 </div>
 </li>
-<li value="22">
-<div class="instruction">
-<span>
-aastore
-</span>
-</div>
-</li>
-<li value="23">
-<div class="instruction">
-<span>
-iinc 2 1
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-goto -18
-</span>
-</div>
-</li>
-<li value="29">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="30">
+<li value="13">
 <div class="instruction">
 <span>
 areturn
 </span>
 </div>
 </li>
+<li value="14">
+<div class="instruction">
+<span>
+astore  1
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+new 
+</span>
+<span>
+<a href="../../java/lang/InternalError.html">
+java.lang.InternalError
+</a>
+</span>
+</div>
+</li>
+<li value="18">
+<div class="instruction">
+<span>
+dup
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.lang.InternalError.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+No reachable result.
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+athrow
+</span>
+</div>
+</li>
 </ol>
+<span title="Exceptions">
+<h3>
+Exceptions handling:
+</h3>
 <ol>
+<li>
+<span>
+try start: 0; try end: 5: catch start: 8; catched type: java.io.IOException.
+</span>
+</li>
+<li>
+<span>
+try start: 9; try end: 13: catch start: 14; catched type: java.net.MalformedURLException.
+</span>
+</li>
 </ol>
+</span>
 </div>
 </div>
 </body>

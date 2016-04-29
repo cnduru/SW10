@@ -18,35 +18,7 @@ sun.util.logging.LoggingProxy
 Interface sun.util.logging.LoggingProxy
 </div>
 <div class="method">
-<a name="sun.util.logging.LoggingProxy:getLevelValue:java.lang.ObjectI" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-int
- 
-<span>
-getLevelValue
-</span>
-(
-<a href="../../../java/lang/Object.html">
-java.lang.Object
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="sun.util.logging.LoggingProxy:getParentLoggerName:java.lang.Stringjava.lang.String" href="#">
+<a name="sun.util.logging.LoggingProxy:getLoggerLevel:java.lang.Stringjava.lang.String" href="#">
 
 </a>
 <div class="method_signature">
@@ -56,7 +28,7 @@ java.lang.String
 </a>
  
 <span>
-getParentLoggerName
+getLoggerLevel
 </span>
 (
 <a href="../../../java/lang/String.html">
@@ -76,7 +48,7 @@ Abstract Method
 </ol>
 </div>
 <div class="method">
-<a name="sun.util.logging.LoggingProxy:log:java.lang.Objectjava.lang.Objectjava.lang.Stringjava.lang.Object.-void" href="#">
+<a name="sun.util.logging.LoggingProxy:log:java.lang.Objectjava.lang.Objectjava.lang.Stringvoid" href="#">
 
 </a>
 <div class="method_signature">
@@ -101,12 +73,6 @@ java.lang.Object
 java.lang.String
 </a>
  2
-, 
-<a href="../../../java/lang/Object.html">
-java.lang.Object
-</a>
-[]
- 3
 )
 ;
 <ul class="annot">
@@ -120,23 +86,26 @@ Abstract Method
 </ol>
 </div>
 <div class="method">
-<a name="sun.util.logging.LoggingProxy:getLogger:java.lang.Stringjava.lang.Object" href="#">
+<a name="sun.util.logging.LoggingProxy:isLoggable:java.lang.Objectjava.lang.ObjectZ" href="#">
 
 </a>
 <div class="method_signature">
 public abstract 
+bool
+ 
+<span>
+isLoggable
+</span>
+(
 <a href="../../../java/lang/Object.html">
 java.lang.Object
 </a>
- 
-<span>
-getLogger
-</span>
-(
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
  0
+, 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
 )
 ;
 <ul class="annot">
@@ -165,95 +134,6 @@ getProperty
 (
 <a href="../../../java/lang/String.html">
 java.lang.String
-</a>
- 0
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="sun.util.logging.LoggingProxy:setLevel:java.lang.Objectjava.lang.Objectvoid" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-void
- 
-<span>
-setLevel
-</span>
-(
-<a href="../../../java/lang/Object.html">
-java.lang.Object
-</a>
- 0
-, 
-<a href="../../../java/lang/Object.html">
-java.lang.Object
-</a>
- 1
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="sun.util.logging.LoggingProxy:getLoggerNames:java.util.List" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-<a href="../../../java/util/List.html">
-java.util.List
-</a>
- 
-<span>
-getLoggerNames
-</span>
-(
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="sun.util.logging.LoggingProxy:getLevelName:java.lang.Objectjava.lang.String" href="#">
-
-</a>
-<div class="method_signature">
-public abstract 
-<a href="../../../java/lang/String.html">
-java.lang.String
-</a>
- 
-<span>
-getLevelName
-</span>
-(
-<a href="../../../java/lang/Object.html">
-java.lang.Object
 </a>
  0
 )
@@ -405,26 +285,21 @@ Abstract Method
 </ol>
 </div>
 <div class="method">
-<a name="sun.util.logging.LoggingProxy:isLoggable:java.lang.Objectjava.lang.ObjectZ" href="#">
+<a name="sun.util.logging.LoggingProxy:getLevelValue:java.lang.ObjectI" href="#">
 
 </a>
 <div class="method_signature">
 public abstract 
-bool
+int
  
 <span>
-isLoggable
+getLevelValue
 </span>
 (
 <a href="../../../java/lang/Object.html">
 java.lang.Object
 </a>
  0
-, 
-<a href="../../../java/lang/Object.html">
-java.lang.Object
-</a>
- 1
 )
 ;
 <ul class="annot">
@@ -438,7 +313,7 @@ Abstract Method
 </ol>
 </div>
 <div class="method">
-<a name="sun.util.logging.LoggingProxy:getLoggerLevel:java.lang.Stringjava.lang.String" href="#">
+<a name="sun.util.logging.LoggingProxy:getParentLoggerName:java.lang.Stringjava.lang.String" href="#">
 
 </a>
 <div class="method_signature">
@@ -448,7 +323,7 @@ java.lang.String
 </a>
  
 <span>
-getLoggerLevel
+getParentLoggerName
 </span>
 (
 <a href="../../../java/lang/String.html">
@@ -468,7 +343,7 @@ Abstract Method
 </ol>
 </div>
 <div class="method">
-<a name="sun.util.logging.LoggingProxy:log:java.lang.Objectjava.lang.Objectjava.lang.Stringvoid" href="#">
+<a name="sun.util.logging.LoggingProxy:log:java.lang.Objectjava.lang.Objectjava.lang.Stringjava.lang.Object.-void" href="#">
 
 </a>
 <div class="method_signature">
@@ -493,6 +368,131 @@ java.lang.Object
 java.lang.String
 </a>
  2
+, 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
+ 3
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.util.logging.LoggingProxy:getLogger:java.lang.Stringjava.lang.Object" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 
+<span>
+getLogger
+</span>
+(
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.util.logging.LoggingProxy:setLevel:java.lang.Objectjava.lang.Objectvoid" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+void
+ 
+<span>
+setLevel
+</span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
+, 
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.util.logging.LoggingProxy:getLoggerNames:java.util.List" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="../../../java/util/List.html">
+java.util.List
+</a>
+ 
+<span>
+getLoggerNames
+</span>
+(
+)
+;
+<ul class="annot">
+<li>
+Abstract Method
+</li>
+</ul>
+</div>
+
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.util.logging.LoggingProxy:getLevelName:java.lang.Objectjava.lang.String" href="#">
+
+</a>
+<div class="method_signature">
+public abstract 
+<a href="../../../java/lang/String.html">
+java.lang.String
+</a>
+ 
+<span>
+getLevelName
+</span>
+(
+<a href="../../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 0
 )
 ;
 <ul class="annot">

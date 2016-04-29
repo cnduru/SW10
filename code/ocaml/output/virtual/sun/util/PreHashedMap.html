@@ -23,16 +23,6 @@ Not instantiatied
 </li>
 </ul>
 <div class="field">
-<a name="sun.util.PreHashedMap:shift:I" href="#">
-
-</a>
-<span class="field_signature">
-private final 
-int
- shift;
-</span>
-</div>
-<div class="field">
 <a name="sun.util.PreHashedMap:mask:I" href="#">
 
 </a>
@@ -53,13 +43,13 @@ int
 </span>
 </div>
 <div class="field">
-<a name="sun.util.PreHashedMap:rows:I" href="#">
+<a name="sun.util.PreHashedMap:shift:I" href="#">
 
 </a>
 <span class="field_signature">
 private final 
 int
- rows;
+ shift;
 </span>
 </div>
 <div class="field">
@@ -75,8 +65,18 @@ java.lang.Object
  ht;
 </span>
 </div>
+<div class="field">
+<a name="sun.util.PreHashedMap:rows:I" href="#">
+
+</a>
+<span class="field_signature">
+private final 
+int
+ rows;
+</span>
+</div>
 <div class="method">
-<a name="sun.util.PreHashedMap:access$100:sun.util.PreHashedMapI" href="#">
+<a name="sun.util.PreHashedMap:access$000:sun.util.PreHashedMapI" href="#">
 
 </a>
 <div class="method_signature">
@@ -84,7 +84,7 @@ java.lang.Object
 int
  
 <span class="methodname clickable" onclick="showInfoList(this)">
-access$100
+access$000
 </span>
 (
 <a href="PreHashedMap.html">
@@ -104,8 +104,15 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../sun/util/PreHashedMap$1$1.html#sun.util.PreHashedMap$1$1:findNext:Z" title="bool findNext()">
-sun.util.PreHashedMap$1$1.findNext()
+<a href="../../sun/util/PreHashedMap$2.html#sun.util.PreHashedMap$2:size:I" title="int size()">
+sun.util.PreHashedMap$2.size()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/util/PreHashedMap$1.html#sun.util.PreHashedMap$1:size:I" title="int size()">
+sun.util.PreHashedMap$1.size()
 </a>
 </div>
 </li>
@@ -125,8 +132,8 @@ aload  0
 getfield 
 </span>
 <span>
-<a href="#sun.util.PreHashedMap:rows:I">
-sun.util.PreHashedMap.rows
+<a href="#sun.util.PreHashedMap:size:I">
+sun.util.PreHashedMap.size
 </a>
 </span>
 <span>
@@ -149,424 +156,31 @@ ireturn
 </ol>
 </div>
 <div class="method">
-<a name="sun.util.PreHashedMap:toV:java.lang.Objectjava.lang.Object" href="#">
+<a name="sun.util.PreHashedMap:init:java.lang.Object.-void" href="#">
 
 </a>
 <div class="method_signature">
-private 
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
+protected abstract 
+void
  
-<span class="methodname clickable" onclick="showInfoList(this)">
-toV
+<span>
+init
 </span>
 (
 <a href="../../java/lang/Object.html">
 java.lang.Object
 </a>
- 1
+[]
+ 0
 )
 ;
 <ul class="annot">
 <li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="#sun.util.PreHashedMap:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
-sun.util.PreHashedMap.get(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="#sun.util.PreHashedMap:put:java.lang.Stringjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.String, java.lang.Object)">
-sun.util.PreHashedMap.put(java.lang.String, java.lang.Object)
-</a>
-</div>
+Abstract Method
 </li>
 </ul>
 </div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="sun.util.PreHashedMap:&lt;init&gt;:IIIIvoid" href="#">
 
-</a>
-<div class="method_signature">
-protected 
-<span class="methodname clickable" onclick="showInfoList(this)">
-PreHashedMap
-</span>
-(
-int
- 1
-, 
-int
- 2
-, 
-int
- 3
-, 
-int
- 4
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../sun/nio/cs/StandardCharsets$Aliases.html#sun.nio.cs.StandardCharsets$Aliases:&lt;init&gt;:void" title="void &lt;init&gt;()">
-sun.nio.cs.StandardCharsets$Aliases.&lt;init&gt;()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/nio/cs/StandardCharsets$Classes.html#sun.nio.cs.StandardCharsets$Classes:&lt;init&gt;:void" title="void &lt;init&gt;()">
-sun.nio.cs.StandardCharsets$Classes.&lt;init&gt;()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/nio/cs/StandardCharsets$Cache.html#sun.nio.cs.StandardCharsets$Cache:&lt;init&gt;:void" title="void &lt;init&gt;()">
-sun.nio.cs.StandardCharsets$Cache.&lt;init&gt;()
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-invokespecial 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void &lt;init&gt;()">
-java.util.AbstractMap.&lt;init&gt;
-</span>
-</span>
-<span>
-(
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../java/util/AbstractMap.html#java.util.AbstractMap:&lt;init&gt;:void" title="void &lt;init&gt;()">
-java.util.AbstractMap.&lt;init&gt;
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="4">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.util.PreHashedMap:rows:I">
-sun.util.PreHashedMap.rows
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="9">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="10">
-<div class="instruction">
-<span>
-iload  2
-</span>
-</div>
-</li>
-<li value="11">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.util.PreHashedMap:size:I">
-sun.util.PreHashedMap.size
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="14">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="15">
-<div class="instruction">
-<span>
-iload  3
-</span>
-</div>
-</li>
-<li value="16">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.util.PreHashedMap:shift:I">
-sun.util.PreHashedMap.shift
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="19">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="20">
-<div class="instruction">
-<span>
-iload  4
-</span>
-</div>
-</li>
-<li value="22">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.util.PreHashedMap:mask:I">
-sun.util.PreHashedMap.mask
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-int
-</span>
-</div>
-</li>
-<li value="25">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="26">
-<div class="instruction">
-<span>
-iload  1
-</span>
-</div>
-</li>
-<li value="27">
-<div class="instruction">
-<span>
-anewarray 
-</span>
-<span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-</span>
-</div>
-</li>
-<li value="30">
-<div class="instruction">
-<span>
-putfield 
-</span>
-<span>
-<a href="#sun.util.PreHashedMap:ht:java.lang.Object.-">
-sun.util.PreHashedMap.ht
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-[]
-</span>
-</div>
-</li>
-<li value="33">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="34">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="35">
-<div class="instruction">
-<span>
-getfield 
-</span>
-<span>
-<a href="#sun.util.PreHashedMap:ht:java.lang.Object.-">
-sun.util.PreHashedMap.ht
-</a>
-</span>
-<span>
- : 
-</span>
-<span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-[]
-</span>
-</div>
-</li>
-<li value="38">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-void
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="void init(java.lang.Object[])">
-sun.util.PreHashedMap.init
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-[]
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../sun/nio/cs/StandardCharsets$Cache.html#sun.nio.cs.StandardCharsets$Cache:init:java.lang.Object.-void" title="void init(java.lang.Object[])">
-sun.nio.cs.StandardCharsets$Cache.init
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/nio/cs/StandardCharsets$Aliases.html#sun.nio.cs.StandardCharsets$Aliases:init:java.lang.Object.-void" title="void init(java.lang.Object[])">
-sun.nio.cs.StandardCharsets$Aliases.init
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/nio/cs/StandardCharsets$Classes.html#sun.nio.cs.StandardCharsets$Classes:init:java.lang.Object.-void" title="void init(java.lang.Object[])">
-sun.nio.cs.StandardCharsets$Classes.init
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="41">
-<div class="instruction">
-<span>
-return
-</span>
-</div>
-</li>
-</ol>
 <ol>
 </ol>
 </div>
@@ -618,13 +232,6 @@ java.util.AbstractMap.toString()
 </li>
 <li>
 <div>
-<a href="../../sun/util/TimeZoneNameUtility$TimeZoneNameGetter.html#sun.util.TimeZoneNameUtility$TimeZoneNameGetter:getObject:java.util.spi.TimeZoneNameProviderjava.util.Localejava.lang.Stringjava.lang.Object.-java.lang.String.-" title="java.lang.String[] getObject(java.util.spi.TimeZoneNameProvider, java.util.Locale, java.lang.String, java.lang.Object[])">
-sun.util.TimeZoneNameUtility$TimeZoneNameGetter.getObject(java.util.spi.TimeZoneNameProvider, java.util.Locale, java.lang.String, java.lang.Object[])
-</a>
-</div>
-</li>
-<li>
-<div>
 <a href="../../java/util/AbstractMap.html#java.util.AbstractMap:remove:java.lang.Objectjava.lang.Object" title="java.lang.Object remove(java.lang.Object)">
 java.util.AbstractMap.remove(java.lang.Object)
 </a>
@@ -653,6 +260,13 @@ java.util.AbstractMap.size()
 </li>
 <li>
 <div>
+<a href="../../sun/util/TimeZoneNameUtility$TimeZoneNameGetter.html#sun.util.TimeZoneNameUtility$TimeZoneNameGetter:getObject:java.util.spi.TimeZoneNameProviderjava.util.Localejava.lang.Stringjava.lang.Object.-java.lang.String.-" title="java.lang.String[] getObject(java.util.spi.TimeZoneNameProvider, java.util.Locale, java.lang.String, java.lang.Object[])">
+sun.util.TimeZoneNameUtility$TimeZoneNameGetter.getObject(java.util.spi.TimeZoneNameProvider, java.util.Locale, java.lang.String, java.lang.Object[])
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../java/util/AbstractMap.html#java.util.AbstractMap:clear:void" title="void clear()">
 java.util.AbstractMap.clear()
 </a>
@@ -674,8 +288,15 @@ java.util.HashMap.putAllForCreate(java.util.Map)
 </li>
 <li>
 <div>
-<a href="../../java/util/AbstractMap$2$1.html#java.util.AbstractMap$2$1:&lt;init&gt;:java.util.AbstractMap$2void" title="void &lt;init&gt;(java.util.AbstractMap$2)">
-java.util.AbstractMap$2$1.&lt;init&gt;(java.util.AbstractMap$2)
+<a href="../../java/util/IdentityHashMap.html#java.util.IdentityHashMap:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.IdentityHashMap.equals(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/util/locale/UnicodeLocaleExtension.html#sun.util.locale.UnicodeLocaleExtension:&lt;init&gt;:java.util.SortedSetjava.util.SortedMapvoid" title="void &lt;init&gt;(java.util.SortedSet, java.util.SortedMap)">
+sun.util.locale.UnicodeLocaleExtension.&lt;init&gt;(java.util.SortedSet, java.util.SortedMap)
 </a>
 </div>
 </li>
@@ -688,15 +309,8 @@ java.util.AbstractMap.hashCode()
 </li>
 <li>
 <div>
-<a href="../../java/util/IdentityHashMap.html#java.util.IdentityHashMap:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.IdentityHashMap.equals(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/util/locale/UnicodeLocaleExtension.html#sun.util.locale.UnicodeLocaleExtension:&lt;init&gt;:java.util.SortedSetjava.util.SortedMapvoid" title="void &lt;init&gt;(java.util.SortedSet, java.util.SortedMap)">
-sun.util.locale.UnicodeLocaleExtension.&lt;init&gt;(java.util.SortedSet, java.util.SortedMap)
+<a href="../../java/util/AbstractMap$2$1.html#java.util.AbstractMap$2$1:&lt;init&gt;:java.util.AbstractMap$2void" title="void &lt;init&gt;(java.util.AbstractMap$2)">
+java.util.AbstractMap$2$1.&lt;init&gt;(java.util.AbstractMap$2)
 </a>
 </div>
 </li>
@@ -805,15 +419,15 @@ sun.util.PreHashedMap$2$1.&lt;init&gt;(sun.util.PreHashedMap$2)
 </li>
 <li>
 <div>
-<a href="../../java/util/Collections$SetFromMap.html#java.util.Collections$SetFromMap:&lt;init&gt;:java.util.Mapvoid" title="void &lt;init&gt;(java.util.Map)">
-java.util.Collections$SetFromMap.&lt;init&gt;(java.util.Map)
+<a href="../../sun/util/locale/LocaleExtensions.html#sun.util.locale.LocaleExtensions:getKeys:java.util.Set" title="java.util.Set getKeys()">
+sun.util.locale.LocaleExtensions.getKeys()
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../sun/util/locale/LocaleExtensions.html#sun.util.locale.LocaleExtensions:getKeys:java.util.Set" title="java.util.Set getKeys()">
-sun.util.locale.LocaleExtensions.getKeys()
+<a href="../../java/util/Collections$SetFromMap.html#java.util.Collections$SetFromMap:&lt;init&gt;:java.util.Mapvoid" title="void &lt;init&gt;(java.util.Map)">
+java.util.Collections$SetFromMap.&lt;init&gt;(java.util.Map)
 </a>
 </div>
 </li>
@@ -885,264 +499,6 @@ sun.util.PreHashedMap$1.&lt;init&gt;
 </div>
 </li>
 <li value="8">
-<div class="instruction">
-<span>
-areturn
-</span>
-</div>
-</li>
-</ol>
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="sun.util.PreHashedMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" href="#">
-
-</a>
-<div class="method_signature">
-public 
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
- 
-<span class="methodname clickable" onclick="showInfoList(this)">
-put
-</span>
-(
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
- 1
-, 
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
- 2
-)
-;
-<ul class="annot">
-<li>
-Concrete Method 
-</li>
-<li>
-Parsed
-</li>
-</ul>
-<ul class="clickable">
-<li>
-<div>
-<a href="../../sun/nio/cs/FastCharsetProvider.html#sun.nio.cs.FastCharsetProvider:lookup:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset lookup(java.lang.String)">
-sun.nio.cs.FastCharsetProvider.lookup(java.lang.String)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/reflect/Reflection.html#sun.reflect.Reflection:registerFilter:java.util.Mapjava.lang.Classjava.lang.String.-java.util.Map" title="java.util.Map registerFilter(java.util.Map, java.lang.Class, java.lang.String[])">
-sun.reflect.Reflection.registerFilter(java.util.Map, java.lang.Class, java.lang.String[])
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/Character$UnicodeBlock.html#java.lang.Character$UnicodeBlock:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
-java.lang.Character$UnicodeBlock.&lt;init&gt;(java.lang.String)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/util/logging/PlatformLogger.html#sun.util.logging.PlatformLogger:getLogger:java.lang.Stringsun.util.logging.PlatformLogger" title="sun.util.logging.PlatformLogger getLogger(java.lang.String)">
-sun.util.logging.PlatformLogger.getLogger(java.lang.String)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/reflect/Reflection.html#sun.reflect.Reflection:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
-sun.reflect.Reflection.&lt;clinit&gt;()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/util/calendar/ZoneInfoFile.html#sun.util.calendar.ZoneInfoFile:addToCache:java.lang.Stringsun.util.calendar.ZoneInfosun.util.calendar.ZoneInfo" title="sun.util.calendar.ZoneInfo addToCache(java.lang.String, sun.util.calendar.ZoneInfo)">
-sun.util.calendar.ZoneInfoFile.addToCache(java.lang.String, sun.util.calendar.ZoneInfo)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/Character$UnicodeBlock.html#java.lang.Character$UnicodeBlock:&lt;init&gt;:java.lang.Stringjava.lang.String.-void" title="void &lt;init&gt;(java.lang.String, java.lang.String[])">
-java.lang.Character$UnicodeBlock.&lt;init&gt;(java.lang.String, java.lang.String[])
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/util/locale/InternalLocaleBuilder.html#sun.util.locale.InternalLocaleBuilder:setUnicodeLocaleExtension:java.lang.Stringvoid" title="void setUnicodeLocaleExtension(java.lang.String)">
-sun.util.locale.InternalLocaleBuilder.setUnicodeLocaleExtension(java.lang.String)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/util/calendar/ZoneInfoFile.html#sun.util.calendar.ZoneInfoFile:getZoneAliases:java.util.Map" title="java.util.Map getZoneAliases()">
-sun.util.calendar.ZoneInfoFile.getZoneAliases()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/TimeZone.html#java.util.TimeZone:getDisplayNames:java.lang.Stringjava.util.Localejava.lang.String.-" title="java.lang.String[] getDisplayNames(java.lang.String, java.util.Locale)">
-java.util.TimeZone.getDisplayNames(java.lang.String, java.util.Locale)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/util/locale/InternalLocaleBuilder.html#sun.util.locale.InternalLocaleBuilder:setExtensions:java.util.Listjava.lang.Stringsun.util.locale.InternalLocaleBuilder" title="sun.util.locale.InternalLocaleBuilder setExtensions(java.util.List, java.lang.String)">
-sun.util.locale.InternalLocaleBuilder.setExtensions(java.util.List, java.lang.String)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/Character$UnicodeBlock.html#java.lang.Character$UnicodeBlock:&lt;init&gt;:java.lang.Stringjava.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String, java.lang.String)">
-java.lang.Character$UnicodeBlock.&lt;init&gt;(java.lang.String, java.lang.String)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/Class.html#java.lang.Class:enumConstantDirectory:java.util.Map" title="java.util.Map enumConstantDirectory()">
-java.lang.Class.enumConstantDirectory()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/util/locale/LanguageTag.html#sun.util.locale.LanguageTag:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
-sun.util.locale.LanguageTag.&lt;clinit&gt;()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/nio/charset/CoderResult$Cache.html#java.nio.charset.CoderResult$Cache:get:Ijava.nio.charset.CoderResult" title="java.nio.charset.CoderResult get(int)">
-java.nio.charset.CoderResult$Cache.get(int)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/regex/Pattern.html#java.util.regex.Pattern:group0:java.util.regex.Pattern$Node" title="java.util.regex.Pattern$Node group0()">
-java.util.regex.Pattern.group0()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/util/locale/InternalLocaleBuilder.html#sun.util.locale.InternalLocaleBuilder:setLocale:sun.util.locale.BaseLocalesun.util.locale.LocaleExtensionssun.util.locale.InternalLocaleBuilder" title="sun.util.locale.InternalLocaleBuilder setLocale(sun.util.locale.BaseLocale, sun.util.locale.LocaleExtensions)">
-sun.util.locale.InternalLocaleBuilder.setLocale(sun.util.locale.BaseLocale, sun.util.locale.LocaleExtensions)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Collections$SetFromMap.html#java.util.Collections$SetFromMap:add:java.lang.ObjectZ" title="bool add(java.lang.Object)">
-java.util.Collections$SetFromMap.add(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/util/calendar/TzIDOldMapping.html#sun.util.calendar.TzIDOldMapping:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
-sun.util.calendar.TzIDOldMapping.&lt;clinit&gt;()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/util/LocaleServiceProviderPool.html#sun.util.LocaleServiceProviderPool:findProvider:java.util.Localejava.util.spi.LocaleServiceProvider" title="java.util.spi.LocaleServiceProvider findProvider(java.util.Locale)">
-sun.util.LocaleServiceProviderPool.findProvider(java.util.Locale)
-</a>
-</div>
-</li>
-</ul>
-</div>
-<ol class="code">
-<li value="0">
-<div class="instruction">
-<span>
-aload  0
-</span>
-</div>
-</li>
-<li value="1">
-<div class="instruction">
-<span>
-aload  1
-</span>
-</div>
-</li>
-<li value="2">
-<div class="instruction">
-<span>
-checkcast 
-</span>
-<span>
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-</span>
-</div>
-</li>
-<li value="5">
-<div class="instruction">
-<span>
-aload  2
-</span>
-</div>
-</li>
-<li value="6">
-<div class="instruction">
-<span>
-invokevirtual 
-</span>
-<span>
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-</span>
-<span class="parameter clickable" onclick="showInfoList(this)">
-<span title="java.lang.Object put(java.lang.String, java.lang.Object)">
-sun.util.PreHashedMap.put
-</span>
-</span>
-<span>
-(
-<a href="../../java/lang/String.html">
-java.lang.String
-</a>
-, 
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-)
-</span>
-<ul class="clickable">
-<li>
-<div>
-<a href="#sun.util.PreHashedMap:put:java.lang.Stringjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.String, java.lang.Object)">
-sun.util.PreHashedMap.put
-</a>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li value="9">
 <div class="instruction">
 <span>
 areturn
@@ -1586,8 +942,113 @@ java.lang.Object
 <ul class="clickable">
 <li>
 <div>
+<a href="../../sun/text/CompactByteArray.html#sun.text.CompactByteArray:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+sun.text.CompactByteArray.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Hashtable$Entry.html#java.util.Hashtable$Entry:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.Hashtable$Entry.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/nio/ByteBuffer.html#java.nio.ByteBuffer:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.nio.ByteBuffer.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/JapaneseImperialCalendar.html#java.util.JapaneseImperialCalendar:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.JapaneseImperialCalendar.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Collections$SynchronizedSet.html#java.util.Collections$SynchronizedSet:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.Collections$SynchronizedSet.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/Integer.html#java.lang.Integer:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.lang.Integer.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/Boolean.html#java.lang.Boolean:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.lang.Boolean.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/TreeMap$Entry.html#java.util.TreeMap$Entry:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.TreeMap$Entry.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.text.RuleBasedBreakIterator.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/DigitList.html#java.text.DigitList:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.text.DigitList.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/WeakHashMap$Entry.html#java.util.WeakHashMap$Entry:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.WeakHashMap$Entry.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Vector.html#java.util.Vector:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.Vector.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/math/MathContext.html#java.math.MathContext:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.math.MathContext.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/util/calendar/Era.html#sun.util.calendar.Era:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+sun.util.calendar.Era.equals
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../java/util/SimpleTimeZone.html#java.util.SimpleTimeZone:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
 java.util.SimpleTimeZone.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/AbstractMap.html#java.util.AbstractMap:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.AbstractMap.equals
 </a>
 </div>
 </li>
@@ -1600,8 +1061,36 @@ java.lang.Thread$WeakClassKey.equals
 </li>
 <li>
 <div>
+<a href="../../java/util/HashMap$Entry.html#java.util.HashMap$Entry:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.HashMap$Entry.equals
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../java/net/Inet6Address.html#java.net.Inet6Address:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
 java.net.Inet6Address.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/security/BasicPermission.html#java.security.BasicPermission:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.security.BasicPermission.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Collections$UnmodifiableList.html#java.util.Collections$UnmodifiableList:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.Collections$UnmodifiableList.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/net/SocketPermission.html#java.net.SocketPermission:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.net.SocketPermission.equals
 </a>
 </div>
 </li>
@@ -1635,13 +1124,6 @@ java.util.AbstractMap$SimpleImmutableEntry.equals
 </li>
 <li>
 <div>
-<a href="../../java/util/Hashtable$Entry.html#java.util.Hashtable$Entry:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.Hashtable$Entry.equals
-</a>
-</div>
-</li>
-<li>
-<div>
 <a href="../../sun/util/calendar/ImmutableGregorianDate.html#sun.util.calendar.ImmutableGregorianDate:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
 sun.util.calendar.ImmutableGregorianDate.equals
 </a>
@@ -1649,134 +1131,15 @@ sun.util.calendar.ImmutableGregorianDate.equals
 </li>
 <li>
 <div>
-<a href="../../sun/util/locale/InternalLocaleBuilder$CaseInsensitiveChar.html#sun.util.locale.InternalLocaleBuilder$CaseInsensitiveChar:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-sun.util.locale.InternalLocaleBuilder$CaseInsensitiveChar.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/Character$Subset.html#java.lang.Character$Subset:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.lang.Character$Subset.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/Boolean.html#java.lang.Boolean:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.lang.Boolean.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/security/AllPermission.html#java.security.AllPermission:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.security.AllPermission.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/net/Inet6Address$Inet6AddressHolder.html#java.net.Inet6Address$Inet6AddressHolder:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.net.Inet6Address$Inet6AddressHolder.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/WeakHashMap$Entry.html#java.util.WeakHashMap$Entry:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.WeakHashMap$Entry.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Vector.html#java.util.Vector:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.Vector.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/util/calendar/Era.html#sun.util.calendar.Era:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-sun.util.calendar.Era.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/AbstractMap.html#java.util.AbstractMap:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.AbstractMap.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/HashMap$Entry.html#java.util.HashMap$Entry:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.HashMap$Entry.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/Integer.html#java.lang.Integer:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.lang.Integer.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/security/BasicPermission.html#java.security.BasicPermission:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.security.BasicPermission.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Collections$UnmodifiableList.html#java.util.Collections$UnmodifiableList:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.Collections$UnmodifiableList.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/net/SocketPermission.html#java.net.SocketPermission:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.net.SocketPermission.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.text.RuleBasedBreakIterator.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/DigitList.html#java.text.DigitList:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.text.DigitList.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/TreeMap$Entry.html#java.util.TreeMap$Entry:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.TreeMap$Entry.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/math/MathContext.html#java.math.MathContext:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.math.MathContext.equals
-</a>
-</div>
-</li>
-<li>
-<div>
 <a href="../../java/util/Collections$EmptyMap.html#java.util.Collections$EmptyMap:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
 java.util.Collections$EmptyMap.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/util/locale/InternalLocaleBuilder$CaseInsensitiveChar.html#sun.util.locale.InternalLocaleBuilder$CaseInsensitiveChar:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+sun.util.locale.InternalLocaleBuilder$CaseInsensitiveChar.equals
 </a>
 </div>
 </li>
@@ -1796,22 +1159,22 @@ java.security.AccessControlContext.equals
 </li>
 <li>
 <div>
-<a href="../../java/util/JapaneseImperialCalendar.html#java.util.JapaneseImperialCalendar:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.JapaneseImperialCalendar.equals
+<a href="../../java/lang/Character$Subset.html#java.lang.Character$Subset:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.lang.Character$Subset.equals
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/util/Collections$SynchronizedSet.html#java.util.Collections$SynchronizedSet:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.Collections$SynchronizedSet.equals
+<a href="../../java/security/AllPermission.html#java.security.AllPermission:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.security.AllPermission.equals
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../sun/text/CompactByteArray.html#sun.text.CompactByteArray:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-sun.text.CompactByteArray.equals
+<a href="../../java/net/Inet6Address$Inet6AddressHolder.html#java.net.Inet6Address$Inet6AddressHolder:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.net.Inet6Address$Inet6AddressHolder.equals
 </a>
 </div>
 </li>
@@ -1831,8 +1194,120 @@ sun.util.locale.BaseLocale.equals
 </li>
 <li>
 <div>
+<a href="../../sun/util/calendar/ZoneInfo.html#sun.util.calendar.ZoneInfo:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+sun.util.calendar.ZoneInfo.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.nio.CharBuffer.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/File.html#java.io.File:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.io.File.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Collections$UnmodifiableSet.html#java.util.Collections$UnmodifiableSet:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.Collections$UnmodifiableSet.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/DateFormatSymbols.html#java.text.DateFormatSymbols:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.text.DateFormatSymbols.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/Character.html#java.lang.Character:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.lang.Character.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/AbstractSet.html#java.util.AbstractSet:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.AbstractSet.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/DecimalFormatSymbols.html#java.text.DecimalFormatSymbols:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.text.DecimalFormatSymbols.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.text.DecimalFormat.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/PropertyPermission.html#java.util.PropertyPermission:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.PropertyPermission.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/IdentityHashMap.html#java.util.IdentityHashMap:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.IdentityHashMap.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/util/locale/InternalLocaleBuilder$CaseInsensitiveString.html#sun.util.locale.InternalLocaleBuilder$CaseInsensitiveString:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+sun.util.locale.InternalLocaleBuilder$CaseInsensitiveString.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Collections$EmptyList.html#java.util.Collections$EmptyList:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.Collections$EmptyList.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Date.html#java.util.Date:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.Date.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/nio/charset/Charset.html#java.nio.charset.Charset:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.nio.charset.Charset.equals
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../java/text/ParsePosition.html#java.text.ParsePosition:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
 java.text.ParsePosition.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/Object.html#java.lang.Object:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.lang.Object.equals
 </a>
 </div>
 </li>
@@ -1845,15 +1320,15 @@ java.math.BigDecimal.equals
 </li>
 <li>
 <div>
-<a href="../../java/util/GregorianCalendar.html#java.util.GregorianCalendar:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.GregorianCalendar.equals
+<a href="../../java/util/AbstractList.html#java.util.AbstractList:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.AbstractList.equals
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/nio/ByteBuffer.html#java.nio.ByteBuffer:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.nio.ByteBuffer.equals
+<a href="../../java/util/GregorianCalendar.html#java.util.GregorianCalendar:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.GregorianCalendar.equals
 </a>
 </div>
 </li>
@@ -1873,8 +1348,15 @@ java.lang.reflect.WeakCache$LookupValue.equals
 </li>
 <li>
 <div>
-<a href="../../java/util/AbstractSet.html#java.util.AbstractSet:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.AbstractSet.equals
+<a href="../../java/util/Locale.html#java.util.Locale:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.Locale.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/String.html#java.lang.String:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.lang.String.equals
 </a>
 </div>
 </li>
@@ -1901,8 +1383,15 @@ java.util.Collections$SetFromMap.equals
 </li>
 <li>
 <div>
-<a href="../../java/util/Collections$EmptyList.html#java.util.Collections$EmptyList:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.Collections$EmptyList.equals
+<a href="../../java/util/Hashtable.html#java.util.Hashtable:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.Hashtable.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/util/calendar/CalendarDate.html#sun.util.calendar.CalendarDate:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+sun.util.calendar.CalendarDate.equals
 </a>
 </div>
 </li>
@@ -1922,148 +1411,15 @@ java.util.IdentityHashMap$EntryIterator$Entry.equals
 </li>
 <li>
 <div>
-<a href="../../java/net/Inet4Address.html#java.net.Inet4Address:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.net.Inet4Address.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.text.DecimalFormat.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Date.html#java.util.Date:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.Date.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/nio/charset/Charset.html#java.nio.charset.Charset:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.nio.charset.Charset.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/PropertyPermission.html#java.util.PropertyPermission:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.PropertyPermission.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/Object.html#java.lang.Object:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.lang.Object.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/AbstractList.html#java.util.AbstractList:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.AbstractList.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/IdentityHashMap.html#java.util.IdentityHashMap:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.IdentityHashMap.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/util/locale/InternalLocaleBuilder$CaseInsensitiveString.html#sun.util.locale.InternalLocaleBuilder$CaseInsensitiveString:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-sun.util.locale.InternalLocaleBuilder$CaseInsensitiveString.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Locale.html#java.util.Locale:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.Locale.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/String.html#java.lang.String:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.lang.String.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/io/File.html#java.io.File:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.io.File.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Collections$UnmodifiableSet.html#java.util.Collections$UnmodifiableSet:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.Collections$UnmodifiableSet.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.nio.CharBuffer.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/DateFormatSymbols.html#java.text.DateFormatSymbols:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.text.DateFormatSymbols.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/Character.html#java.lang.Character:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.lang.Character.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/DecimalFormatSymbols.html#java.text.DecimalFormatSymbols:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.text.DecimalFormatSymbols.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Hashtable.html#java.util.Hashtable:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.Hashtable.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/util/calendar/CalendarDate.html#sun.util.calendar.CalendarDate:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-sun.util.calendar.CalendarDate.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/util/calendar/ZoneInfo.html#sun.util.calendar.ZoneInfo:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-sun.util.calendar.ZoneInfo.equals
-</a>
-</div>
-</li>
-<li>
-<div>
 <a href="../../sun/misc/Signal.html#sun.misc.Signal:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
 sun.misc.Signal.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/net/Inet4Address.html#java.net.Inet4Address:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.net.Inet4Address.equals
 </a>
 </div>
 </li>
@@ -2345,6 +1701,401 @@ goto -57
 </ol>
 </div>
 <div class="method">
+<a name="sun.util.PreHashedMap:put:java.lang.Objectjava.lang.Objectjava.lang.Object" href="#">
+
+</a>
+<div class="method_signature">
+public 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+put
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+, 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 2
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/util/locale/InternalLocaleBuilder.html#sun.util.locale.InternalLocaleBuilder:setUnicodeLocaleExtension:java.lang.Stringvoid" title="void setUnicodeLocaleExtension(java.lang.String)">
+sun.util.locale.InternalLocaleBuilder.setUnicodeLocaleExtension(java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/Character$UnicodeBlock.html#java.lang.Character$UnicodeBlock:&lt;init&gt;:java.lang.Stringjava.lang.String.-void" title="void &lt;init&gt;(java.lang.String, java.lang.String[])">
+java.lang.Character$UnicodeBlock.&lt;init&gt;(java.lang.String, java.lang.String[])
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/util/calendar/ZoneInfoFile.html#sun.util.calendar.ZoneInfoFile:addToCache:java.lang.Stringsun.util.calendar.ZoneInfosun.util.calendar.ZoneInfo" title="sun.util.calendar.ZoneInfo addToCache(java.lang.String, sun.util.calendar.ZoneInfo)">
+sun.util.calendar.ZoneInfoFile.addToCache(java.lang.String, sun.util.calendar.ZoneInfo)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/reflect/Reflection.html#sun.reflect.Reflection:registerFilter:java.util.Mapjava.lang.Classjava.lang.String.-java.util.Map" title="java.util.Map registerFilter(java.util.Map, java.lang.Class, java.lang.String[])">
+sun.reflect.Reflection.registerFilter(java.util.Map, java.lang.Class, java.lang.String[])
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/util/logging/PlatformLogger.html#sun.util.logging.PlatformLogger:getLogger:java.lang.Stringsun.util.logging.PlatformLogger" title="sun.util.logging.PlatformLogger getLogger(java.lang.String)">
+sun.util.logging.PlatformLogger.getLogger(java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/nio/cs/FastCharsetProvider.html#sun.nio.cs.FastCharsetProvider:lookup:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset lookup(java.lang.String)">
+sun.nio.cs.FastCharsetProvider.lookup(java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/reflect/Reflection.html#sun.reflect.Reflection:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+sun.reflect.Reflection.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/Character$UnicodeBlock.html#java.lang.Character$UnicodeBlock:&lt;init&gt;:java.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String)">
+java.lang.Character$UnicodeBlock.&lt;init&gt;(java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/util/LocaleServiceProviderPool.html#sun.util.LocaleServiceProviderPool:findProvider:java.util.Localejava.util.spi.LocaleServiceProvider" title="java.util.spi.LocaleServiceProvider findProvider(java.util.Locale)">
+sun.util.LocaleServiceProviderPool.findProvider(java.util.Locale)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Collections$SetFromMap.html#java.util.Collections$SetFromMap:add:java.lang.ObjectZ" title="bool add(java.lang.Object)">
+java.util.Collections$SetFromMap.add(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/util/calendar/TzIDOldMapping.html#sun.util.calendar.TzIDOldMapping:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+sun.util.calendar.TzIDOldMapping.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/util/locale/LanguageTag.html#sun.util.locale.LanguageTag:&lt;clinit&gt;:void" title="void &lt;clinit&gt;()">
+sun.util.locale.LanguageTag.&lt;clinit&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/nio/charset/CoderResult$Cache.html#java.nio.charset.CoderResult$Cache:get:Ijava.nio.charset.CoderResult" title="java.nio.charset.CoderResult get(int)">
+java.nio.charset.CoderResult$Cache.get(int)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/util/locale/InternalLocaleBuilder.html#sun.util.locale.InternalLocaleBuilder:setLocale:sun.util.locale.BaseLocalesun.util.locale.LocaleExtensionssun.util.locale.InternalLocaleBuilder" title="sun.util.locale.InternalLocaleBuilder setLocale(sun.util.locale.BaseLocale, sun.util.locale.LocaleExtensions)">
+sun.util.locale.InternalLocaleBuilder.setLocale(sun.util.locale.BaseLocale, sun.util.locale.LocaleExtensions)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/TimeZone.html#java.util.TimeZone:getDisplayNames:java.lang.Stringjava.util.Localejava.lang.String.-" title="java.lang.String[] getDisplayNames(java.lang.String, java.util.Locale)">
+java.util.TimeZone.getDisplayNames(java.lang.String, java.util.Locale)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/regex/Pattern.html#java.util.regex.Pattern:group0:java.util.regex.Pattern$Node" title="java.util.regex.Pattern$Node group0()">
+java.util.regex.Pattern.group0()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/Class.html#java.lang.Class:enumConstantDirectory:java.util.Map" title="java.util.Map enumConstantDirectory()">
+java.lang.Class.enumConstantDirectory()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/util/calendar/ZoneInfoFile.html#sun.util.calendar.ZoneInfoFile:getZoneAliases:java.util.Map" title="java.util.Map getZoneAliases()">
+sun.util.calendar.ZoneInfoFile.getZoneAliases()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/util/locale/InternalLocaleBuilder.html#sun.util.locale.InternalLocaleBuilder:setExtensions:java.util.Listjava.lang.Stringsun.util.locale.InternalLocaleBuilder" title="sun.util.locale.InternalLocaleBuilder setExtensions(java.util.List, java.lang.String)">
+sun.util.locale.InternalLocaleBuilder.setExtensions(java.util.List, java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/Character$UnicodeBlock.html#java.lang.Character$UnicodeBlock:&lt;init&gt;:java.lang.Stringjava.lang.Stringvoid" title="void &lt;init&gt;(java.lang.String, java.lang.String)">
+java.lang.Character$UnicodeBlock.&lt;init&gt;(java.lang.String, java.lang.String)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="2">
+<div class="instruction">
+<span>
+checkcast 
+</span>
+<span>
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+aload  2
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="java.lang.Object put(java.lang.String, java.lang.Object)">
+sun.util.PreHashedMap.put
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/String.html">
+java.lang.String
+</a>
+, 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.util.PreHashedMap:put:java.lang.Stringjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.String, java.lang.Object)">
+sun.util.PreHashedMap.put
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.util.PreHashedMap:access$100:sun.util.PreHashedMapI" href="#">
+
+</a>
+<div class="method_signature">
+ static 
+int
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+access$100
+</span>
+(
+<a href="PreHashedMap.html">
+sun.util.PreHashedMap
+</a>
+ 0
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/util/PreHashedMap$1$1.html#sun.util.PreHashedMap$1$1:findNext:Z" title="bool findNext()">
+sun.util.PreHashedMap$1$1.findNext()
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.util.PreHashedMap:rows:I">
+sun.util.PreHashedMap.rows
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+ireturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
+<a name="sun.util.PreHashedMap:toV:java.lang.Objectjava.lang.Object" href="#">
+
+</a>
+<div class="method_signature">
+private 
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 
+<span class="methodname clickable" onclick="showInfoList(this)">
+toV
+</span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+ 1
+)
+;
+<ul class="annot">
+<li>
+Concrete Method 
+</li>
+<li>
+Parsed
+</li>
+</ul>
+<ul class="clickable">
+<li>
+<div>
+<a href="#sun.util.PreHashedMap:get:java.lang.Objectjava.lang.Object" title="java.lang.Object get(java.lang.Object)">
+sun.util.PreHashedMap.get(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="#sun.util.PreHashedMap:put:java.lang.Stringjava.lang.Objectjava.lang.Object" title="java.lang.Object put(java.lang.String, java.lang.Object)">
+sun.util.PreHashedMap.put(java.lang.String, java.lang.Object)
+</a>
+</div>
+</li>
+</ul>
+</div>
+<ol class="code">
+<li value="0">
+<div class="instruction">
+<span>
+aload  1
+</span>
+</div>
+</li>
+<li value="1">
+<div class="instruction">
+<span>
+areturn
+</span>
+</div>
+</li>
+</ol>
+<ol>
+</ol>
+</div>
+<div class="method">
 <a name="sun.util.PreHashedMap:get:java.lang.Objectjava.lang.Object" href="#">
 
 </a>
@@ -2375,22 +2126,22 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../sun/nio/cs/FastCharsetProvider.html#sun.nio.cs.FastCharsetProvider:lookup:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset lookup(java.lang.String)">
-sun.nio.cs.FastCharsetProvider.lookup(java.lang.String)
+<a href="../../sun/util/locale/UnicodeLocaleExtension.html#sun.util.locale.UnicodeLocaleExtension:getUnicodeLocaleType:java.lang.Stringjava.lang.String" title="java.lang.String getUnicodeLocaleType(java.lang.String)">
+sun.util.locale.UnicodeLocaleExtension.getUnicodeLocaleType(java.lang.String)
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../sun/util/PreHashedMap$2$1$1.html#sun.util.PreHashedMap$2$1$1:hashCode:I" title="int hashCode()">
-sun.util.PreHashedMap$2$1$1.hashCode()
+<a href="../../sun/nio/cs/FastCharsetProvider.html#sun.nio.cs.FastCharsetProvider:canonicalize:java.lang.Stringjava.lang.String" title="java.lang.String canonicalize(java.lang.String)">
+sun.nio.cs.FastCharsetProvider.canonicalize(java.lang.String)
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/lang/Package.html#java.lang.Package:getSystemPackage:java.lang.Stringjava.lang.Package" title="java.lang.Package getSystemPackage(java.lang.String)">
-java.lang.Package.getSystemPackage(java.lang.String)
+<a href="../../sun/util/calendar/ZoneInfoFile.html#sun.util.calendar.ZoneInfoFile:addToCache:java.lang.Stringsun.util.calendar.ZoneInfosun.util.calendar.ZoneInfo" title="sun.util.calendar.ZoneInfo addToCache(java.lang.String, sun.util.calendar.ZoneInfo)">
+sun.util.calendar.ZoneInfoFile.addToCache(java.lang.String, sun.util.calendar.ZoneInfo)
 </a>
 </div>
 </li>
@@ -2398,27 +2149,6 @@ java.lang.Package.getSystemPackage(java.lang.String)
 <div>
 <a href="../../sun/reflect/Reflection.html#sun.reflect.Reflection:registerFilter:java.util.Mapjava.lang.Classjava.lang.String.-java.util.Map" title="java.util.Map registerFilter(java.util.Map, java.lang.Class, java.lang.String[])">
 sun.reflect.Reflection.registerFilter(java.util.Map, java.lang.Class, java.lang.String[])
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/util/calendar/ZoneInfoFile.html#sun.util.calendar.ZoneInfoFile:getZoneInfo:java.lang.Stringsun.util.calendar.ZoneInfo" title="sun.util.calendar.ZoneInfo getZoneInfo(java.lang.String)">
-sun.util.calendar.ZoneInfoFile.getZoneInfo(java.lang.String)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/util/TimeZoneNameUtility$TimeZoneNameGetter.html#sun.util.TimeZoneNameUtility$TimeZoneNameGetter:getObject:java.util.spi.TimeZoneNameProviderjava.util.Localejava.lang.Stringjava.lang.Object.-java.lang.String.-" title="java.lang.String[] getObject(java.util.spi.TimeZoneNameProvider, java.util.Locale, java.lang.String, java.lang.Object[])">
-sun.util.TimeZoneNameUtility$TimeZoneNameGetter.getObject(java.util.spi.TimeZoneNameProvider, java.util.Locale, java.lang.String, java.lang.Object[])
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/AbstractMap.html#java.util.AbstractMap:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.AbstractMap.equals(java.lang.Object)
 </a>
 </div>
 </li>
@@ -2445,6 +2175,34 @@ sun.util.locale.InternalLocaleBuilder.getBaseLocale()
 </li>
 <li>
 <div>
+<a href="../../java/util/AbstractMap.html#java.util.AbstractMap:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.AbstractMap.equals(java.lang.Object)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/nio/cs/FastCharsetProvider.html#sun.nio.cs.FastCharsetProvider:lookup:java.lang.Stringjava.nio.charset.Charset" title="java.nio.charset.Charset lookup(java.lang.String)">
+sun.nio.cs.FastCharsetProvider.lookup(java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/util/PreHashedMap$2$1$1.html#sun.util.PreHashedMap$2$1$1:hashCode:I" title="int hashCode()">
+sun.util.PreHashedMap$2$1$1.hashCode()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/Package.html#java.lang.Package:getSystemPackage:java.lang.Stringjava.lang.Package" title="java.lang.Package getSystemPackage(java.lang.String)">
+java.lang.Package.getSystemPackage(java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../sun/util/locale/LocaleExtensions.html#sun.util.locale.LocaleExtensions:getExtension:java.lang.Charactersun.util.locale.Extension" title="sun.util.locale.Extension getExtension(java.lang.Character)">
 sun.util.locale.LocaleExtensions.getExtension(java.lang.Character)
 </a>
@@ -2466,22 +2224,15 @@ sun.reflect.Reflection.filterMethods(java.lang.Class, java.lang.reflect.Method[]
 </li>
 <li>
 <div>
-<a href="../../sun/util/calendar/ZoneInfoFile.html#sun.util.calendar.ZoneInfoFile:addToCache:java.lang.Stringsun.util.calendar.ZoneInfosun.util.calendar.ZoneInfo" title="sun.util.calendar.ZoneInfo addToCache(java.lang.String, sun.util.calendar.ZoneInfo)">
-sun.util.calendar.ZoneInfoFile.addToCache(java.lang.String, sun.util.calendar.ZoneInfo)
+<a href="../../sun/util/calendar/ZoneInfoFile.html#sun.util.calendar.ZoneInfoFile:getZoneInfo:java.lang.Stringsun.util.calendar.ZoneInfo" title="sun.util.calendar.ZoneInfo getZoneInfo(java.lang.String)">
+sun.util.calendar.ZoneInfoFile.getZoneInfo(java.lang.String)
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../sun/util/locale/UnicodeLocaleExtension.html#sun.util.locale.UnicodeLocaleExtension:getUnicodeLocaleType:java.lang.Stringjava.lang.String" title="java.lang.String getUnicodeLocaleType(java.lang.String)">
-sun.util.locale.UnicodeLocaleExtension.getUnicodeLocaleType(java.lang.String)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/nio/cs/FastCharsetProvider.html#sun.nio.cs.FastCharsetProvider:canonicalize:java.lang.Stringjava.lang.String" title="java.lang.String canonicalize(java.lang.String)">
-sun.nio.cs.FastCharsetProvider.canonicalize(java.lang.String)
+<a href="../../sun/util/TimeZoneNameUtility$TimeZoneNameGetter.html#sun.util.TimeZoneNameUtility$TimeZoneNameGetter:getObject:java.util.spi.TimeZoneNameProviderjava.util.Localejava.lang.Stringjava.lang.Object.-java.lang.String.-" title="java.lang.String[] getObject(java.util.spi.TimeZoneNameProvider, java.util.Locale, java.lang.String, java.lang.Object[])">
+sun.util.TimeZoneNameUtility$TimeZoneNameGetter.getObject(java.util.spi.TimeZoneNameProvider, java.util.Locale, java.lang.String, java.lang.Object[])
 </a>
 </div>
 </li>
@@ -2494,43 +2245,15 @@ sun.util.locale.LocaleExtensions.getUnicodeLocaleType(java.lang.String)
 </li>
 <li>
 <div>
-<a href="../../sun/util/locale/LanguageTag.html#sun.util.locale.LanguageTag:parse:java.lang.Stringsun.util.locale.ParseStatussun.util.locale.LanguageTag" title="sun.util.locale.LanguageTag parse(java.lang.String, sun.util.locale.ParseStatus)">
-sun.util.locale.LanguageTag.parse(java.lang.String, sun.util.locale.ParseStatus)
+<a href="../../sun/util/LocaleServiceProviderPool.html#sun.util.LocaleServiceProviderPool:findProvider:java.util.Localejava.util.spi.LocaleServiceProvider" title="java.util.spi.LocaleServiceProvider findProvider(java.util.Locale)">
+sun.util.LocaleServiceProviderPool.findProvider(java.util.Locale)
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/lang/Character$UnicodeBlock.html#java.lang.Character$UnicodeBlock:forName:java.lang.Stringjava.lang.Character$UnicodeBlock" title="java.lang.Character$UnicodeBlock forName(java.lang.String)">
-java.lang.Character$UnicodeBlock.forName(java.lang.String)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/TimeZone.html#java.util.TimeZone:getDisplayNames:java.lang.Stringjava.util.Localejava.lang.String.-" title="java.lang.String[] getDisplayNames(java.lang.String, java.util.Locale)">
-java.util.TimeZone.getDisplayNames(java.lang.String, java.util.Locale)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/reflect/Reflection.html#sun.reflect.Reflection:filterFields:java.lang.Classjava.lang.reflect.Field.-java.lang.reflect.Field.-" title="java.lang.reflect.Field[] filterFields(java.lang.Class, java.lang.reflect.Field[])">
-sun.reflect.Reflection.filterFields(java.lang.Class, java.lang.reflect.Field[])
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/util/calendar/ZoneInfoFile.html#sun.util.calendar.ZoneInfoFile:getFromCache:java.lang.Stringsun.util.calendar.ZoneInfo" title="sun.util.calendar.ZoneInfo getFromCache(java.lang.String)">
-sun.util.calendar.ZoneInfoFile.getFromCache(java.lang.String)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/regex/Pattern.html#java.util.regex.Pattern:escape:ZZI" title="int escape(bool, bool)">
-java.util.regex.Pattern.escape(bool, bool)
+<a href="../../sun/util/PreHashedMap$2$1$1.html#sun.util.PreHashedMap$2$1$1:getValue:java.lang.Object" title="java.lang.Object getValue()">
+sun.util.PreHashedMap$2$1$1.getValue()
 </a>
 </div>
 </li>
@@ -2550,22 +2273,50 @@ java.nio.charset.CoderResult$Cache.get(int)
 </li>
 <li>
 <div>
+<a href="../../java/util/TimeZone.html#java.util.TimeZone:getDisplayNames:java.lang.Stringjava.util.Localejava.lang.String.-" title="java.lang.String[] getDisplayNames(java.lang.String, java.util.Locale)">
+java.util.TimeZone.getDisplayNames(java.lang.String, java.util.Locale)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/reflect/Reflection.html#sun.reflect.Reflection:filterFields:java.lang.Classjava.lang.reflect.Field.-java.lang.reflect.Field.-" title="java.lang.reflect.Field[] filterFields(java.lang.Class, java.lang.reflect.Field[])">
+sun.reflect.Reflection.filterFields(java.lang.Class, java.lang.reflect.Field[])
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/util/locale/LanguageTag.html#sun.util.locale.LanguageTag:parse:java.lang.Stringsun.util.locale.ParseStatussun.util.locale.LanguageTag" title="sun.util.locale.LanguageTag parse(java.lang.String, sun.util.locale.ParseStatus)">
+sun.util.locale.LanguageTag.parse(java.lang.String, sun.util.locale.ParseStatus)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/Character$UnicodeBlock.html#java.lang.Character$UnicodeBlock:forName:java.lang.Stringjava.lang.Character$UnicodeBlock" title="java.lang.Character$UnicodeBlock forName(java.lang.String)">
+java.lang.Character$UnicodeBlock.forName(java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/regex/Pattern.html#java.util.regex.Pattern:escape:ZZI" title="int escape(bool, bool)">
+java.util.regex.Pattern.escape(bool, bool)
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/util/calendar/ZoneInfoFile.html#sun.util.calendar.ZoneInfoFile:getFromCache:java.lang.Stringsun.util.calendar.ZoneInfo" title="sun.util.calendar.ZoneInfo getFromCache(java.lang.String)">
+sun.util.calendar.ZoneInfoFile.getFromCache(java.lang.String)
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../java/util/Hashtable.html#java.util.Hashtable:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
 java.util.Hashtable.equals(java.lang.Object)
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/util/PreHashedMap$2$1$1.html#sun.util.PreHashedMap$2$1$1:getValue:java.lang.Object" title="java.lang.Object getValue()">
-sun.util.PreHashedMap$2$1$1.getValue()
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/util/LocaleServiceProviderPool.html#sun.util.LocaleServiceProviderPool:findProvider:java.util.Localejava.util.spi.LocaleServiceProvider" title="java.util.spi.LocaleServiceProvider findProvider(java.util.Locale)">
-sun.util.LocaleServiceProviderPool.findProvider(java.util.Locale)
 </a>
 </div>
 </li>
@@ -2599,6 +2350,20 @@ java.lang.Object.hashCode
 <ul class="clickable">
 <li>
 <div>
+<a href="../../sun/util/locale/BaseLocale$Key.html#sun.util.locale.BaseLocale$Key:hashCode:I" title="int hashCode()">
+sun.util.locale.BaseLocale$Key.hashCode
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/IdentityHashMap$EntryIterator$Entry.html#java.util.IdentityHashMap$EntryIterator$Entry:hashCode:I" title="int hashCode()">
+java.util.IdentityHashMap$EntryIterator$Entry.hashCode
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../sun/misc/Signal.html#sun.misc.Signal:hashCode:I" title="int hashCode()">
 sun.misc.Signal.hashCode
 </a>
@@ -2606,8 +2371,8 @@ sun.misc.Signal.hashCode
 </li>
 <li>
 <div>
-<a href="../../java/util/IdentityHashMap$KeySet.html#java.util.IdentityHashMap$KeySet:hashCode:I" title="int hashCode()">
-java.util.IdentityHashMap$KeySet.hashCode
+<a href="../../sun/util/calendar/ZoneInfo.html#sun.util.calendar.ZoneInfo:hashCode:I" title="int hashCode()">
+sun.util.calendar.ZoneInfo.hashCode
 </a>
 </div>
 </li>
@@ -2627,8 +2392,92 @@ sun.util.calendar.CalendarDate.hashCode
 </li>
 <li>
 <div>
-<a href="../../java/nio/ByteBuffer.html#java.nio.ByteBuffer:hashCode:I" title="int hashCode()">
-java.nio.ByteBuffer.hashCode
+<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:hashCode:I" title="int hashCode()">
+java.nio.CharBuffer.hashCode
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/AbstractMap$SimpleEntry.html#java.util.AbstractMap$SimpleEntry:hashCode:I" title="int hashCode()">
+java.util.AbstractMap$SimpleEntry.hashCode
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/security/AccessControlContext.html#java.security.AccessControlContext:hashCode:I" title="int hashCode()">
+java.security.AccessControlContext.hashCode
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/DateFormatSymbols.html#java.text.DateFormatSymbols:hashCode:I" title="int hashCode()">
+java.text.DateFormatSymbols.hashCode
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/Character.html#java.lang.Character:hashCode:I" title="int hashCode()">
+java.lang.Character.hashCode
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/ParsePosition.html#java.text.ParsePosition:hashCode:I" title="int hashCode()">
+java.text.ParsePosition.hashCode
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/AbstractList.html#java.util.AbstractList:hashCode:I" title="int hashCode()">
+java.util.AbstractList.hashCode
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/GregorianCalendar.html#java.util.GregorianCalendar:hashCode:I" title="int hashCode()">
+java.util.GregorianCalendar.hashCode
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/util/locale/InternalLocaleBuilder$CaseInsensitiveString.html#sun.util.locale.InternalLocaleBuilder$CaseInsensitiveString:hashCode:I" title="int hashCode()">
+sun.util.locale.InternalLocaleBuilder$CaseInsensitiveString.hashCode
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/Enum.html#java.lang.Enum:hashCode:I" title="int hashCode()">
+java.lang.Enum.hashCode
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/IdentityHashMap$KeySet.html#java.util.IdentityHashMap$KeySet:hashCode:I" title="int hashCode()">
+java.util.IdentityHashMap$KeySet.hashCode
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/nio/charset/Charset.html#java.nio.charset.Charset:hashCode:I" title="int hashCode()">
+java.nio.charset.Charset.hashCode
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/Object.html#java.lang.Object:hashCode:I" title="int hashCode()">
+java.lang.Object.hashCode
 </a>
 </div>
 </li>
@@ -2662,8 +2511,15 @@ java.util.Collections$UnmodifiableSet.hashCode
 </li>
 <li>
 <div>
-<a href="../../java/security/AccessControlContext.html#java.security.AccessControlContext:hashCode:I" title="int hashCode()">
-java.security.AccessControlContext.hashCode
+<a href="../../java/util/Locale.html#java.util.Locale:hashCode:I" title="int hashCode()">
+java.util.Locale.hashCode
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/AbstractSet.html#java.util.AbstractSet:hashCode:I" title="int hashCode()">
+java.util.AbstractSet.hashCode
 </a>
 </div>
 </li>
@@ -2683,6 +2539,13 @@ java.text.DecimalFormat.hashCode
 </li>
 <li>
 <div>
+<a href="../../java/util/Date.html#java.util.Date:hashCode:I" title="int hashCode()">
+java.util.Date.hashCode
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../java/util/PropertyPermission.html#java.util.PropertyPermission:hashCode:I" title="int hashCode()">
 java.util.PropertyPermission.hashCode
 </a>
@@ -2697,15 +2560,15 @@ java.math.BigDecimal.hashCode
 </li>
 <li>
 <div>
-<a href="../../java/util/AbstractList.html#java.util.AbstractList:hashCode:I" title="int hashCode()">
-java.util.AbstractList.hashCode
+<a href="../../java/util/Collections$SetFromMap.html#java.util.Collections$SetFromMap:hashCode:I" title="int hashCode()">
+java.util.Collections$SetFromMap.hashCode
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/util/Collections$SetFromMap.html#java.util.Collections$SetFromMap:hashCode:I" title="int hashCode()">
-java.util.Collections$SetFromMap.hashCode
+<a href="../../java/lang/String.html#java.lang.String:hashCode:I" title="int hashCode()">
+java.lang.String.hashCode
 </a>
 </div>
 </li>
@@ -2725,6 +2588,13 @@ java.text.RuleBasedBreakIterator.hashCode
 </li>
 <li>
 <div>
+<a href="../../java/util/Collections$EmptyList.html#java.util.Collections$EmptyList:hashCode:I" title="int hashCode()">
+java.util.Collections$EmptyList.hashCode
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../java/net/Inet4Address.html#java.net.Inet4Address:hashCode:I" title="int hashCode()">
 java.net.Inet4Address.hashCode
 </a>
@@ -2739,162 +2609,29 @@ java.math.BigInteger.hashCode
 </li>
 <li>
 <div>
-<a href="../../java/lang/Enum.html#java.lang.Enum:hashCode:I" title="int hashCode()">
-java.lang.Enum.hashCode
+<a href="../../java/util/SimpleTimeZone.html#java.util.SimpleTimeZone:hashCode:I" title="int hashCode()">
+java.util.SimpleTimeZone.hashCode
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/nio/charset/Charset.html#java.nio.charset.Charset:hashCode:I" title="int hashCode()">
-java.nio.charset.Charset.hashCode
+<a href="../../java/lang/Thread$WeakClassKey.html#java.lang.Thread$WeakClassKey:hashCode:I" title="int hashCode()">
+java.lang.Thread$WeakClassKey.hashCode
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/text/ParsePosition.html#java.text.ParsePosition:hashCode:I" title="int hashCode()">
-java.text.ParsePosition.hashCode
+<a href="../../sun/text/CompactByteArray.html#sun.text.CompactByteArray:hashCode:I" title="int hashCode()">
+sun.text.CompactByteArray.hashCode
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/lang/Object.html#java.lang.Object:hashCode:I" title="int hashCode()">
-java.lang.Object.hashCode
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/GregorianCalendar.html#java.util.GregorianCalendar:hashCode:I" title="int hashCode()">
-java.util.GregorianCalendar.hashCode
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/util/locale/InternalLocaleBuilder$CaseInsensitiveString.html#sun.util.locale.InternalLocaleBuilder$CaseInsensitiveString:hashCode:I" title="int hashCode()">
-sun.util.locale.InternalLocaleBuilder$CaseInsensitiveString.hashCode
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Locale.html#java.util.Locale:hashCode:I" title="int hashCode()">
-java.util.Locale.hashCode
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/AbstractSet.html#java.util.AbstractSet:hashCode:I" title="int hashCode()">
-java.util.AbstractSet.hashCode
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/AbstractMap$SimpleEntry.html#java.util.AbstractMap$SimpleEntry:hashCode:I" title="int hashCode()">
-java.util.AbstractMap$SimpleEntry.hashCode
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Date.html#java.util.Date:hashCode:I" title="int hashCode()">
-java.util.Date.hashCode
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:hashCode:I" title="int hashCode()">
-java.nio.CharBuffer.hashCode
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/DateFormatSymbols.html#java.text.DateFormatSymbols:hashCode:I" title="int hashCode()">
-java.text.DateFormatSymbols.hashCode
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/Character.html#java.lang.Character:hashCode:I" title="int hashCode()">
-java.lang.Character.hashCode
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/String.html#java.lang.String:hashCode:I" title="int hashCode()">
-java.lang.String.hashCode
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Collections$EmptyList.html#java.util.Collections$EmptyList:hashCode:I" title="int hashCode()">
-java.util.Collections$EmptyList.hashCode
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/util/calendar/ZoneInfo.html#sun.util.calendar.ZoneInfo:hashCode:I" title="int hashCode()">
-sun.util.calendar.ZoneInfo.hashCode
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/util/locale/BaseLocale$Key.html#sun.util.locale.BaseLocale$Key:hashCode:I" title="int hashCode()">
-sun.util.locale.BaseLocale$Key.hashCode
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/IdentityHashMap$EntryIterator$Entry.html#java.util.IdentityHashMap$EntryIterator$Entry:hashCode:I" title="int hashCode()">
-java.util.IdentityHashMap$EntryIterator$Entry.hashCode
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/Integer.html#java.lang.Integer:hashCode:I" title="int hashCode()">
-java.lang.Integer.hashCode
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/StringCharacterIterator.html#java.text.StringCharacterIterator:hashCode:I" title="int hashCode()">
-java.text.StringCharacterIterator.hashCode
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/util/BuddhistCalendar.html#sun.util.BuddhistCalendar:hashCode:I" title="int hashCode()">
-sun.util.BuddhistCalendar.hashCode
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Locale$LocaleKey.html#java.util.Locale$LocaleKey:hashCode:I" title="int hashCode()">
-java.util.Locale$LocaleKey.hashCode
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/AbstractMap$SimpleImmutableEntry.html#java.util.AbstractMap$SimpleImmutableEntry:hashCode:I" title="int hashCode()">
-java.util.AbstractMap$SimpleImmutableEntry.hashCode
+<a href="../../java/net/Inet6Address.html#java.net.Inet6Address:hashCode:I" title="int hashCode()">
+java.net.Inet6Address.hashCode
 </a>
 </div>
 </li>
@@ -2907,8 +2644,22 @@ java.util.Hashtable$Entry.hashCode
 </li>
 <li>
 <div>
-<a href="../../sun/util/calendar/ImmutableGregorianDate.html#sun.util.calendar.ImmutableGregorianDate:hashCode:I" title="int hashCode()">
-sun.util.calendar.ImmutableGregorianDate.hashCode
+<a href="../../java/util/JapaneseImperialCalendar.html#java.util.JapaneseImperialCalendar:hashCode:I" title="int hashCode()">
+java.util.JapaneseImperialCalendar.hashCode
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Collections$SynchronizedSet.html#java.util.Collections$SynchronizedSet:hashCode:I" title="int hashCode()">
+java.util.Collections$SynchronizedSet.hashCode
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/util/locale/InternalLocaleBuilder$CaseInsensitiveChar.html#sun.util.locale.InternalLocaleBuilder$CaseInsensitiveChar:hashCode:I" title="int hashCode()">
+sun.util.locale.InternalLocaleBuilder$CaseInsensitiveChar.hashCode
 </a>
 </div>
 </li>
@@ -2921,22 +2672,15 @@ sun.util.locale.LocaleExtensions.hashCode
 </li>
 <li>
 <div>
-<a href="../../java/lang/Character$Subset.html#java.lang.Character$Subset:hashCode:I" title="int hashCode()">
-java.lang.Character$Subset.hashCode
+<a href="../../java/util/TreeMap$Entry.html#java.util.TreeMap$Entry:hashCode:I" title="int hashCode()">
+java.util.TreeMap$Entry.hashCode
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/security/AllPermission.html#java.security.AllPermission:hashCode:I" title="int hashCode()">
-java.security.AllPermission.hashCode
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/net/Inet6Address$Inet6AddressHolder.html#java.net.Inet6Address$Inet6AddressHolder:hashCode:I" title="int hashCode()">
-java.net.Inet6Address$Inet6AddressHolder.hashCode
+<a href="../../java/text/DigitList.html#java.text.DigitList:hashCode:I" title="int hashCode()">
+java.text.DigitList.hashCode
 </a>
 </div>
 </li>
@@ -2951,6 +2695,13 @@ java.util.WeakHashMap$Entry.hashCode
 <div>
 <a href="../../java/util/Vector.html#java.util.Vector:hashCode:I" title="int hashCode()">
 java.util.Vector.hashCode
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/math/MathContext.html#java.math.MathContext:hashCode:I" title="int hashCode()">
+java.math.MathContext.hashCode
 </a>
 </div>
 </li>
@@ -2977,15 +2728,15 @@ java.util.HashMap$Entry.hashCode
 </li>
 <li>
 <div>
-<a href="../../sun/util/locale/InternalLocaleBuilder$CaseInsensitiveChar.html#sun.util.locale.InternalLocaleBuilder$CaseInsensitiveChar:hashCode:I" title="int hashCode()">
-sun.util.locale.InternalLocaleBuilder$CaseInsensitiveChar.hashCode
+<a href="../../sun/util/locale/BaseLocale.html#sun.util.locale.BaseLocale:hashCode:I" title="int hashCode()">
+sun.util.locale.BaseLocale.hashCode
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../sun/util/locale/BaseLocale.html#sun.util.locale.BaseLocale:hashCode:I" title="int hashCode()">
-sun.util.locale.BaseLocale.hashCode
+<a href="../../java/lang/Integer.html#java.lang.Integer:hashCode:I" title="int hashCode()">
+java.lang.Integer.hashCode
 </a>
 </div>
 </li>
@@ -3019,22 +2770,36 @@ java.net.SocketPermission.hashCode
 </li>
 <li>
 <div>
-<a href="../../java/text/DigitList.html#java.text.DigitList:hashCode:I" title="int hashCode()">
-java.text.DigitList.hashCode
+<a href="../../java/text/StringCharacterIterator.html#java.text.StringCharacterIterator:hashCode:I" title="int hashCode()">
+java.text.StringCharacterIterator.hashCode
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/util/TreeMap$Entry.html#java.util.TreeMap$Entry:hashCode:I" title="int hashCode()">
-java.util.TreeMap$Entry.hashCode
+<a href="../../sun/util/BuddhistCalendar.html#sun.util.BuddhistCalendar:hashCode:I" title="int hashCode()">
+sun.util.BuddhistCalendar.hashCode
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/math/MathContext.html#java.math.MathContext:hashCode:I" title="int hashCode()">
-java.math.MathContext.hashCode
+<a href="../../java/util/Locale$LocaleKey.html#java.util.Locale$LocaleKey:hashCode:I" title="int hashCode()">
+java.util.Locale$LocaleKey.hashCode
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/AbstractMap$SimpleImmutableEntry.html#java.util.AbstractMap$SimpleImmutableEntry:hashCode:I" title="int hashCode()">
+java.util.AbstractMap$SimpleImmutableEntry.hashCode
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/util/calendar/ImmutableGregorianDate.html#sun.util.calendar.ImmutableGregorianDate:hashCode:I" title="int hashCode()">
+sun.util.calendar.ImmutableGregorianDate.hashCode
 </a>
 </div>
 </li>
@@ -3047,43 +2812,29 @@ java.util.Collections$EmptyMap.hashCode
 </li>
 <li>
 <div>
-<a href="../../java/util/JapaneseImperialCalendar.html#java.util.JapaneseImperialCalendar:hashCode:I" title="int hashCode()">
-java.util.JapaneseImperialCalendar.hashCode
+<a href="../../java/lang/Character$Subset.html#java.lang.Character$Subset:hashCode:I" title="int hashCode()">
+java.lang.Character$Subset.hashCode
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/util/Collections$SynchronizedSet.html#java.util.Collections$SynchronizedSet:hashCode:I" title="int hashCode()">
-java.util.Collections$SynchronizedSet.hashCode
+<a href="../../java/nio/ByteBuffer.html#java.nio.ByteBuffer:hashCode:I" title="int hashCode()">
+java.nio.ByteBuffer.hashCode
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/net/Inet6Address.html#java.net.Inet6Address:hashCode:I" title="int hashCode()">
-java.net.Inet6Address.hashCode
+<a href="../../java/security/AllPermission.html#java.security.AllPermission:hashCode:I" title="int hashCode()">
+java.security.AllPermission.hashCode
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/lang/Thread$WeakClassKey.html#java.lang.Thread$WeakClassKey:hashCode:I" title="int hashCode()">
-java.lang.Thread$WeakClassKey.hashCode
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/text/CompactByteArray.html#sun.text.CompactByteArray:hashCode:I" title="int hashCode()">
-sun.text.CompactByteArray.hashCode
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/SimpleTimeZone.html#java.util.SimpleTimeZone:hashCode:I" title="int hashCode()">
-java.util.SimpleTimeZone.hashCode
+<a href="../../java/net/Inet6Address$Inet6AddressHolder.html#java.net.Inet6Address$Inet6AddressHolder:hashCode:I" title="int hashCode()">
+java.net.Inet6Address$Inet6AddressHolder.hashCode
 </a>
 </div>
 </li>
@@ -3315,8 +3066,113 @@ java.lang.Object
 <ul class="clickable">
 <li>
 <div>
+<a href="../../sun/text/CompactByteArray.html#sun.text.CompactByteArray:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+sun.text.CompactByteArray.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Hashtable$Entry.html#java.util.Hashtable$Entry:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.Hashtable$Entry.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/nio/ByteBuffer.html#java.nio.ByteBuffer:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.nio.ByteBuffer.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/JapaneseImperialCalendar.html#java.util.JapaneseImperialCalendar:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.JapaneseImperialCalendar.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Collections$SynchronizedSet.html#java.util.Collections$SynchronizedSet:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.Collections$SynchronizedSet.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/Integer.html#java.lang.Integer:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.lang.Integer.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/Boolean.html#java.lang.Boolean:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.lang.Boolean.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/TreeMap$Entry.html#java.util.TreeMap$Entry:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.TreeMap$Entry.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.text.RuleBasedBreakIterator.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/DigitList.html#java.text.DigitList:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.text.DigitList.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/WeakHashMap$Entry.html#java.util.WeakHashMap$Entry:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.WeakHashMap$Entry.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Vector.html#java.util.Vector:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.Vector.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/math/MathContext.html#java.math.MathContext:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.math.MathContext.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/util/calendar/Era.html#sun.util.calendar.Era:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+sun.util.calendar.Era.equals
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../java/util/SimpleTimeZone.html#java.util.SimpleTimeZone:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
 java.util.SimpleTimeZone.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/AbstractMap.html#java.util.AbstractMap:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.AbstractMap.equals
 </a>
 </div>
 </li>
@@ -3329,8 +3185,36 @@ java.lang.Thread$WeakClassKey.equals
 </li>
 <li>
 <div>
+<a href="../../java/util/HashMap$Entry.html#java.util.HashMap$Entry:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.HashMap$Entry.equals
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../java/net/Inet6Address.html#java.net.Inet6Address:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
 java.net.Inet6Address.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/security/BasicPermission.html#java.security.BasicPermission:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.security.BasicPermission.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Collections$UnmodifiableList.html#java.util.Collections$UnmodifiableList:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.Collections$UnmodifiableList.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/net/SocketPermission.html#java.net.SocketPermission:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.net.SocketPermission.equals
 </a>
 </div>
 </li>
@@ -3364,13 +3248,6 @@ java.util.AbstractMap$SimpleImmutableEntry.equals
 </li>
 <li>
 <div>
-<a href="../../java/util/Hashtable$Entry.html#java.util.Hashtable$Entry:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.Hashtable$Entry.equals
-</a>
-</div>
-</li>
-<li>
-<div>
 <a href="../../sun/util/calendar/ImmutableGregorianDate.html#sun.util.calendar.ImmutableGregorianDate:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
 sun.util.calendar.ImmutableGregorianDate.equals
 </a>
@@ -3378,134 +3255,15 @@ sun.util.calendar.ImmutableGregorianDate.equals
 </li>
 <li>
 <div>
-<a href="../../sun/util/locale/InternalLocaleBuilder$CaseInsensitiveChar.html#sun.util.locale.InternalLocaleBuilder$CaseInsensitiveChar:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-sun.util.locale.InternalLocaleBuilder$CaseInsensitiveChar.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/Character$Subset.html#java.lang.Character$Subset:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.lang.Character$Subset.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/Boolean.html#java.lang.Boolean:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.lang.Boolean.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/security/AllPermission.html#java.security.AllPermission:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.security.AllPermission.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/net/Inet6Address$Inet6AddressHolder.html#java.net.Inet6Address$Inet6AddressHolder:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.net.Inet6Address$Inet6AddressHolder.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/WeakHashMap$Entry.html#java.util.WeakHashMap$Entry:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.WeakHashMap$Entry.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Vector.html#java.util.Vector:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.Vector.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/util/calendar/Era.html#sun.util.calendar.Era:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-sun.util.calendar.Era.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/AbstractMap.html#java.util.AbstractMap:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.AbstractMap.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/HashMap$Entry.html#java.util.HashMap$Entry:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.HashMap$Entry.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/Integer.html#java.lang.Integer:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.lang.Integer.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/security/BasicPermission.html#java.security.BasicPermission:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.security.BasicPermission.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Collections$UnmodifiableList.html#java.util.Collections$UnmodifiableList:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.Collections$UnmodifiableList.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/net/SocketPermission.html#java.net.SocketPermission:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.net.SocketPermission.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/RuleBasedBreakIterator.html#java.text.RuleBasedBreakIterator:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.text.RuleBasedBreakIterator.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/DigitList.html#java.text.DigitList:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.text.DigitList.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/TreeMap$Entry.html#java.util.TreeMap$Entry:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.TreeMap$Entry.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/math/MathContext.html#java.math.MathContext:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.math.MathContext.equals
-</a>
-</div>
-</li>
-<li>
-<div>
 <a href="../../java/util/Collections$EmptyMap.html#java.util.Collections$EmptyMap:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
 java.util.Collections$EmptyMap.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/util/locale/InternalLocaleBuilder$CaseInsensitiveChar.html#sun.util.locale.InternalLocaleBuilder$CaseInsensitiveChar:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+sun.util.locale.InternalLocaleBuilder$CaseInsensitiveChar.equals
 </a>
 </div>
 </li>
@@ -3525,22 +3283,22 @@ java.security.AccessControlContext.equals
 </li>
 <li>
 <div>
-<a href="../../java/util/JapaneseImperialCalendar.html#java.util.JapaneseImperialCalendar:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.JapaneseImperialCalendar.equals
+<a href="../../java/lang/Character$Subset.html#java.lang.Character$Subset:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.lang.Character$Subset.equals
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/util/Collections$SynchronizedSet.html#java.util.Collections$SynchronizedSet:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.Collections$SynchronizedSet.equals
+<a href="../../java/security/AllPermission.html#java.security.AllPermission:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.security.AllPermission.equals
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../sun/text/CompactByteArray.html#sun.text.CompactByteArray:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-sun.text.CompactByteArray.equals
+<a href="../../java/net/Inet6Address$Inet6AddressHolder.html#java.net.Inet6Address$Inet6AddressHolder:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.net.Inet6Address$Inet6AddressHolder.equals
 </a>
 </div>
 </li>
@@ -3560,8 +3318,120 @@ sun.util.locale.BaseLocale.equals
 </li>
 <li>
 <div>
+<a href="../../sun/util/calendar/ZoneInfo.html#sun.util.calendar.ZoneInfo:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+sun.util.calendar.ZoneInfo.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.nio.CharBuffer.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/io/File.html#java.io.File:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.io.File.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Collections$UnmodifiableSet.html#java.util.Collections$UnmodifiableSet:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.Collections$UnmodifiableSet.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/DateFormatSymbols.html#java.text.DateFormatSymbols:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.text.DateFormatSymbols.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/Character.html#java.lang.Character:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.lang.Character.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/AbstractSet.html#java.util.AbstractSet:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.AbstractSet.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/DecimalFormatSymbols.html#java.text.DecimalFormatSymbols:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.text.DecimalFormatSymbols.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.text.DecimalFormat.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/PropertyPermission.html#java.util.PropertyPermission:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.PropertyPermission.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/IdentityHashMap.html#java.util.IdentityHashMap:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.IdentityHashMap.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/util/locale/InternalLocaleBuilder$CaseInsensitiveString.html#sun.util.locale.InternalLocaleBuilder$CaseInsensitiveString:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+sun.util.locale.InternalLocaleBuilder$CaseInsensitiveString.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Collections$EmptyList.html#java.util.Collections$EmptyList:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.Collections$EmptyList.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/util/Date.html#java.util.Date:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.Date.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/nio/charset/Charset.html#java.nio.charset.Charset:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.nio.charset.Charset.equals
+</a>
+</div>
+</li>
+<li>
+<div>
 <a href="../../java/text/ParsePosition.html#java.text.ParsePosition:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
 java.text.ParsePosition.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/Object.html#java.lang.Object:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.lang.Object.equals
 </a>
 </div>
 </li>
@@ -3574,15 +3444,15 @@ java.math.BigDecimal.equals
 </li>
 <li>
 <div>
-<a href="../../java/util/GregorianCalendar.html#java.util.GregorianCalendar:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.GregorianCalendar.equals
+<a href="../../java/util/AbstractList.html#java.util.AbstractList:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.AbstractList.equals
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../java/nio/ByteBuffer.html#java.nio.ByteBuffer:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.nio.ByteBuffer.equals
+<a href="../../java/util/GregorianCalendar.html#java.util.GregorianCalendar:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.GregorianCalendar.equals
 </a>
 </div>
 </li>
@@ -3602,8 +3472,15 @@ java.lang.reflect.WeakCache$LookupValue.equals
 </li>
 <li>
 <div>
-<a href="../../java/util/AbstractSet.html#java.util.AbstractSet:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.AbstractSet.equals
+<a href="../../java/util/Locale.html#java.util.Locale:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.Locale.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/lang/String.html#java.lang.String:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.lang.String.equals
 </a>
 </div>
 </li>
@@ -3630,8 +3507,15 @@ java.util.Collections$SetFromMap.equals
 </li>
 <li>
 <div>
-<a href="../../java/util/Collections$EmptyList.html#java.util.Collections$EmptyList:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.Collections$EmptyList.equals
+<a href="../../java/util/Hashtable.html#java.util.Hashtable:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.util.Hashtable.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/util/calendar/CalendarDate.html#sun.util.calendar.CalendarDate:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+sun.util.calendar.CalendarDate.equals
 </a>
 </div>
 </li>
@@ -3651,148 +3535,15 @@ java.util.IdentityHashMap$EntryIterator$Entry.equals
 </li>
 <li>
 <div>
-<a href="../../java/net/Inet4Address.html#java.net.Inet4Address:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.net.Inet4Address.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/DecimalFormat.html#java.text.DecimalFormat:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.text.DecimalFormat.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Date.html#java.util.Date:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.Date.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/nio/charset/Charset.html#java.nio.charset.Charset:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.nio.charset.Charset.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/PropertyPermission.html#java.util.PropertyPermission:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.PropertyPermission.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/Object.html#java.lang.Object:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.lang.Object.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/AbstractList.html#java.util.AbstractList:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.AbstractList.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/IdentityHashMap.html#java.util.IdentityHashMap:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.IdentityHashMap.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/util/locale/InternalLocaleBuilder$CaseInsensitiveString.html#sun.util.locale.InternalLocaleBuilder$CaseInsensitiveString:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-sun.util.locale.InternalLocaleBuilder$CaseInsensitiveString.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Locale.html#java.util.Locale:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.Locale.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/String.html#java.lang.String:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.lang.String.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/io/File.html#java.io.File:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.io.File.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Collections$UnmodifiableSet.html#java.util.Collections$UnmodifiableSet:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.Collections$UnmodifiableSet.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/nio/CharBuffer.html#java.nio.CharBuffer:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.nio.CharBuffer.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/DateFormatSymbols.html#java.text.DateFormatSymbols:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.text.DateFormatSymbols.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/lang/Character.html#java.lang.Character:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.lang.Character.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/text/DecimalFormatSymbols.html#java.text.DecimalFormatSymbols:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.text.DecimalFormatSymbols.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../java/util/Hashtable.html#java.util.Hashtable:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-java.util.Hashtable.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/util/calendar/CalendarDate.html#sun.util.calendar.CalendarDate:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-sun.util.calendar.CalendarDate.equals
-</a>
-</div>
-</li>
-<li>
-<div>
-<a href="../../sun/util/calendar/ZoneInfo.html#sun.util.calendar.ZoneInfo:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
-sun.util.calendar.ZoneInfo.equals
-</a>
-</div>
-</li>
-<li>
-<div>
 <a href="../../sun/misc/Signal.html#sun.misc.Signal:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
 sun.misc.Signal.equals
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../java/net/Inet4Address.html#java.net.Inet4Address:equals:java.lang.ObjectZ" title="bool equals(java.lang.Object)">
+java.net.Inet4Address.equals
 </a>
 </div>
 </li>
@@ -3982,50 +3733,26 @@ goto -36
 </ol>
 </div>
 <div class="method">
-<a name="sun.util.PreHashedMap:init:java.lang.Object.-void" href="#">
+<a name="sun.util.PreHashedMap:&lt;init&gt;:IIIIvoid" href="#">
 
 </a>
 <div class="method_signature">
-protected abstract 
-void
- 
-<span>
-init
-</span>
-(
-<a href="../../java/lang/Object.html">
-java.lang.Object
-</a>
-[]
- 0
-)
-;
-<ul class="annot">
-<li>
-Abstract Method
-</li>
-</ul>
-</div>
-
-<ol>
-</ol>
-</div>
-<div class="method">
-<a name="sun.util.PreHashedMap:access$000:sun.util.PreHashedMapI" href="#">
-
-</a>
-<div class="method_signature">
- static 
-int
- 
+protected 
 <span class="methodname clickable" onclick="showInfoList(this)">
-access$000
+PreHashedMap
 </span>
 (
-<a href="PreHashedMap.html">
-sun.util.PreHashedMap
-</a>
- 0
+int
+ 1
+, 
+int
+ 2
+, 
+int
+ 3
+, 
+int
+ 4
 )
 ;
 <ul class="annot">
@@ -4039,15 +3766,22 @@ Parsed
 <ul class="clickable">
 <li>
 <div>
-<a href="../../sun/util/PreHashedMap$2.html#sun.util.PreHashedMap$2:size:I" title="int size()">
-sun.util.PreHashedMap$2.size()
+<a href="../../sun/nio/cs/StandardCharsets$Classes.html#sun.nio.cs.StandardCharsets$Classes:&lt;init&gt;:void" title="void &lt;init&gt;()">
+sun.nio.cs.StandardCharsets$Classes.&lt;init&gt;()
 </a>
 </div>
 </li>
 <li>
 <div>
-<a href="../../sun/util/PreHashedMap$1.html#sun.util.PreHashedMap$1:size:I" title="int size()">
-sun.util.PreHashedMap$1.size()
+<a href="../../sun/nio/cs/StandardCharsets$Aliases.html#sun.nio.cs.StandardCharsets$Aliases:&lt;init&gt;:void" title="void &lt;init&gt;()">
+sun.nio.cs.StandardCharsets$Aliases.&lt;init&gt;()
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/nio/cs/StandardCharsets$Cache.html#sun.nio.cs.StandardCharsets$Cache:&lt;init&gt;:void" title="void &lt;init&gt;()">
+sun.nio.cs.StandardCharsets$Cache.&lt;init&gt;()
 </a>
 </div>
 </li>
@@ -4064,7 +3798,81 @@ aload  0
 <li value="1">
 <div class="instruction">
 <span>
-getfield 
+invokespecial 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void &lt;init&gt;()">
+java.util.AbstractMap.&lt;init&gt;
+</span>
+</span>
+<span>
+(
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../java/util/AbstractMap.html#java.util.AbstractMap:&lt;init&gt;:void" title="void &lt;init&gt;()">
+java.util.AbstractMap.&lt;init&gt;
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="4">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="5">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="6">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.util.PreHashedMap:rows:I">
+sun.util.PreHashedMap.rows
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="9">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="10">
+<div class="instruction">
+<span>
+iload  2
+</span>
+</div>
+</li>
+<li value="11">
+<div class="instruction">
+<span>
+putfield 
 </span>
 <span>
 <a href="#sun.util.PreHashedMap:size:I">
@@ -4079,10 +3887,202 @@ int
 </span>
 </div>
 </li>
-<li value="4">
+<li value="14">
 <div class="instruction">
 <span>
-ireturn
+aload  0
+</span>
+</div>
+</li>
+<li value="15">
+<div class="instruction">
+<span>
+iload  3
+</span>
+</div>
+</li>
+<li value="16">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.util.PreHashedMap:shift:I">
+sun.util.PreHashedMap.shift
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="19">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="20">
+<div class="instruction">
+<span>
+iload  4
+</span>
+</div>
+</li>
+<li value="22">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.util.PreHashedMap:mask:I">
+sun.util.PreHashedMap.mask
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+int
+</span>
+</div>
+</li>
+<li value="25">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="26">
+<div class="instruction">
+<span>
+iload  1
+</span>
+</div>
+</li>
+<li value="27">
+<div class="instruction">
+<span>
+anewarray 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+</span>
+</div>
+</li>
+<li value="30">
+<div class="instruction">
+<span>
+putfield 
+</span>
+<span>
+<a href="#sun.util.PreHashedMap:ht:java.lang.Object.-">
+sun.util.PreHashedMap.ht
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
+</span>
+</div>
+</li>
+<li value="33">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="34">
+<div class="instruction">
+<span>
+aload  0
+</span>
+</div>
+</li>
+<li value="35">
+<div class="instruction">
+<span>
+getfield 
+</span>
+<span>
+<a href="#sun.util.PreHashedMap:ht:java.lang.Object.-">
+sun.util.PreHashedMap.ht
+</a>
+</span>
+<span>
+ : 
+</span>
+<span>
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
+</span>
+</div>
+</li>
+<li value="38">
+<div class="instruction">
+<span>
+invokevirtual 
+</span>
+<span>
+void
+</span>
+<span class="parameter clickable" onclick="showInfoList(this)">
+<span title="void init(java.lang.Object[])">
+sun.util.PreHashedMap.init
+</span>
+</span>
+<span>
+(
+<a href="../../java/lang/Object.html">
+java.lang.Object
+</a>
+[]
+)
+</span>
+<ul class="clickable">
+<li>
+<div>
+<a href="../../sun/nio/cs/StandardCharsets$Cache.html#sun.nio.cs.StandardCharsets$Cache:init:java.lang.Object.-void" title="void init(java.lang.Object[])">
+sun.nio.cs.StandardCharsets$Cache.init
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/nio/cs/StandardCharsets$Classes.html#sun.nio.cs.StandardCharsets$Classes:init:java.lang.Object.-void" title="void init(java.lang.Object[])">
+sun.nio.cs.StandardCharsets$Classes.init
+</a>
+</div>
+</li>
+<li>
+<div>
+<a href="../../sun/nio/cs/StandardCharsets$Aliases.html#sun.nio.cs.StandardCharsets$Aliases:init:java.lang.Object.-void" title="void init(java.lang.Object[])">
+sun.nio.cs.StandardCharsets$Aliases.init
+</a>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li value="41">
+<div class="instruction">
+<span>
+return
 </span>
 </div>
 </li>
