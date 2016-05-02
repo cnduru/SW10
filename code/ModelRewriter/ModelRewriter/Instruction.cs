@@ -17,10 +17,21 @@ namespace ModelRewriter
 
         public Instruction(string code)
         {
-            var pcStr = new Regex("^[0-9]+").Match(code).ToString();
-            pc = Convert.ToInt32(pcStr);
-            instArgs = code.Replace(pcStr+".","").Split(null).ToList();
-            instArgs.RemoveAll(str => String.IsNullOrEmpty(str));
+            var catchMatch= new Regex("catch start: ([0-9]+);");
+            var pcMatch = new Regex("^[0-9]+").Match(code);//.ToString();
+
+            if(pcMatch.Success)
+            {
+                pc = Convert.ToInt32(pcMatch.ToString());
+                instArgs = code.Replace(pcMatch.ToString()+".","").Split(null).ToList();
+                instArgs.RemoveAll(str => String.IsNullOrEmpty(str));
+            }else
+            {
+                // for exceptions
+                MatchCollection matches = catchMatch.Matches(code);
+                instArgs.Add("catch");
+                instArgs.Add(matches[0].Groups[1].Value);
+            }
         }
     }
 }

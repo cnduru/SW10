@@ -23,6 +23,7 @@ namespace ModelRewriter
         public Location InitialLocation = new Location();
         public List<Location> Locations = new List<Location>();
         public List<Transition> Transitions = new List<Transition>();
+        private JClass classSelf;
         //public List<Transition> faultTransitions = new List<Transition>();
         // should probably be removed
         public string localDeclarations = "";
@@ -75,11 +76,17 @@ namespace ModelRewriter
             return transitionsList; 
         }
 
-        public Template(List<string> method, string methodName)
+        public Template(List<string> method, JClass self, int catchIndex)
         {
-            name = methodName;
+            classSelf = self;
+            name = self.Name + "_" + JClass.FirstNonKeyword(method.First());
+
             Locations = ResolveLocations(method);
-            ResolveCode();
+            
+            // instruction switch case
+            ResolveCode(catchIndex);
+
+
             localDeclarations = @"const int os_size = 10;
 const int locs_size = 10;
 int os[os_size]; 
@@ -254,7 +261,7 @@ bool ifeq(){
         }
 
         //Magic happens here!
-        private void ResolveCode()
+        private void ResolveCode(int catchIndex)
         {
             var timeGuard = "t == 1";
             var newLocs = new List<Location>();
@@ -281,6 +288,7 @@ bool ifeq(){
                         Transitions.Add(new Transition(loc, PCToLocation(0), labels));
                         continue; //clean up later
                     }
+
                     labels = new List<Label>()
                     {
                         new Label
@@ -517,6 +525,11 @@ bool ifeq(){
                     case "invokestatic":
                         var waiterS = new Location(loc);
                         Transitions.AddRange(InvokeStatic(loc, waiterS, NextLocation(loc)));
+
+                        var lbls = Template.makeLabels("gu", "exceptionOccurred == true", "osp = 0");
+                        Transitions.Add(new Transition(waiterS, PCToLocation(classSelf.catchPCs[catchIndex]), lbls));
+
+
                         newLocs.Add(waiterS);
                         break;
 
@@ -699,6 +712,21 @@ bool ifeq(){
                         
                         Transitions.Add(new Transition(loc, Locations[Locations.Count - 1], labels));
 
+                        break;
+                    case "goto":
+                        labels = new List<Label>()
+                        {
+                            new Label
+                            { 
+                                content = "exceptionOccurred = true", kind = "assignment"
+                            },
+                            new Label
+                            { 
+                                content = timeGuard, kind = "guard"
+                            }
+                        };
+
+                        Transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + Convert.ToInt32(instArg[1])), labels, -50));
                         break;
                     default:
                         labels = new List<Label>()
