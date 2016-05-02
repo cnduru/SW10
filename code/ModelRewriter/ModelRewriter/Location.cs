@@ -118,7 +118,7 @@ namespace ModelRewriter
 
         private void parseInst(int count, string instLine){
             inst = new Instruction(instLine);
-            name = "pc" + instLine.Replace("( ", "").Replace(" )", "").Replace("<", "").Replace(">", "")
+            name = "pc" + instLine.Replace("(", "").Replace(")", "").Replace("<", "").Replace(">", "")
                 .Replace(",", "").Replace(" ", "_").Replace(".", "_").Replace(":", "_").Replace("__", "_");
             Label = new Label{
                 content = "t <= " + Constants.instTime, 

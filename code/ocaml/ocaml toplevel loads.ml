@@ -22,9 +22,9 @@ open Sawja_pack
 open JProgram;;
 
 (* Setup here! *)
-let jar_file = "java/virtual.jar"
-let main_class = "Virtual"
-let output = "output/virtual"
+let jar_file = "java/Example.jar"
+let main_class = "Example"
+let output = "output/simple_purse"
 
 let (prta,instantiated_classes) =
   JRTA.parse_program 

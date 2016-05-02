@@ -169,9 +169,9 @@ namespace ModelRewriter
                 };
             foreach (var word in sig.Split(' '))
             {
-                if (!javaKeywords.Contains(word))
+                if (!javaKeywords.Contains(word) && word != "")
                 {
-                    return word;
+                    return word.Split('(').First();
                 }
             }
             return null;
