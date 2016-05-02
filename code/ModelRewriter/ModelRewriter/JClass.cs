@@ -88,12 +88,12 @@ namespace ModelRewriter
                 else if (inst.IsMatch(line))
                 {
                     curMethod.Add(line);
-                    catchPCs.Add(-1);
                 }else if(exception.IsMatch(line))
                 {
                     Match match = exception.Match(line);
                     if (match.Success)
                     {
+                        catchPCs.Remove(catchPCs.Last());
                         catchPCs.Add(Convert.ToInt32(match.Groups[1].Value));
                     }
                 }
