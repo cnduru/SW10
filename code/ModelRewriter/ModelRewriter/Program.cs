@@ -14,9 +14,10 @@ namespace ModelRewriter
                 switch (args[0])
                 {
                     case "b":
-                        new JParser(args.Skip(1));
+                        //new JParser(args.Skip(1));
                         //new JParser(new List<string>() { "exlinesDup.txt" });
-                        //new JParser(new List<string>() { "virtual/AClass.txt", "virtual/BClass.txt" });
+                        //new JParser(new List<string>() { "virtual/Virtual.txt", "virtual/Aclass.txt", "virtual/Bclass.txt" });
+                        new JParser(new List<string>(){ "simple_purse/Example.txt"});
                         new Rewriter("new3.xml");
                         break;
                     default:
