@@ -742,6 +742,10 @@ bool ifeq(){
 
                         Transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + Convert.ToInt32(instArg[1])), labels, -50));
                         break;
+                    case "ifcmpne":
+                        List<Label> labs = Template.makeLabels("gu", timeGuard + " && ", "");
+                        Transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + Convert.ToInt32(instArg[1])), labels, -50));
+                        break;
                     default:
                         labels = new List<Label>()
                         {
