@@ -17,6 +17,7 @@ namespace ModelRewriter
 
         public string Name;
         public List<List<string>> Methods;
+        public List<int> catchPCs;
 
         public JClass(string filePath)
         {
@@ -69,9 +70,12 @@ namespace ModelRewriter
         {
             var methods = new List<List<string>>();
             List<string> curMethod = new List<string>();
+            catchPCs = new List<int>();
 
             var methodStart = new Regex("\\(.+\\;");
-            var inst = new Regex("^([0-9]+\\.)"); 
+            var inst = new Regex("^([0-9]+\\.)");
+            var exception = new Regex("catch start: ([0-9]+);");
+
             foreach(var line in jbc) 
             {
                 if (methodStart.IsMatch(line))
@@ -79,10 +83,19 @@ namespace ModelRewriter
                     curMethod = new List<string>();
                     curMethod.Add(line);
                     methods.Add(curMethod);
+                    catchPCs.Add(-1);
                 }
                 else if (inst.IsMatch(line))
                 {
                     curMethod.Add(line);
+                }else if(exception.IsMatch(line))
+                {
+                    Match match = exception.Match(line);
+                    if (match.Success)
+                    {
+                        catchPCs.Remove(catchPCs.Last());
+                        catchPCs.Add(Convert.ToInt32(match.Groups[1].Value));
+                    }
                 }
             }
             return methods;

@@ -14,8 +14,8 @@ namespace ModelRewriter
             UppaalModel uml;
             // countermeasure parameter has to fit UPPAAL rewrite mode - e.g. "pc" for PCFault and "heap" for heap fault
             // should we handle Uppaal model generation without faults?
-            uml = new UppaalModel(path, "pc");
-            uml.rewritePCFault("pcRewrite.xml");
+            //uml = new UppaalModel(path, "pc");
+            //uml.rewritePCFault("pcRewrite.xml");
 
             uml = new UppaalModel(path, "heap");
             uml.rewriteHeapFault("heapRewrite.xml");

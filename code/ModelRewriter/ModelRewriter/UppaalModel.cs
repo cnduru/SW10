@@ -128,10 +128,11 @@ namespace ModelRewriter
         //Adds method templates from jbc
         public void AddTemplates(JClass cls)
         {
-            foreach (var m in cls.Methods)
+            for(int i = 0; i < cls.Methods.Count; i++)// (var m in cls.Methods)
             {
+                var m = cls.Methods[i];
                 var methodName = JClass.FirstNonKeyword(m.First());
-                templates.Add(new Template(m, cls.Name + "_" + methodName));
+                templates.Add(new Template(m, cls, i));
 
                 if (!JParser.MethodNames.Contains(methodName))
                 {

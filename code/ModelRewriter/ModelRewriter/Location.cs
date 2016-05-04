@@ -117,7 +117,14 @@ namespace ModelRewriter
         }
 
         private void parseInst(int count, string instLine){
+
+            /*if(instLine.Contains("try"))
+            {
+                instLine = "exception catch";
+            }*/
+
             inst = new Instruction(instLine);
+            
             name = "pc" + instLine.Replace("(", "").Replace(")", "").Replace("<", "").Replace(">", "")
                 .Replace(",", "").Replace(" ", "_").Replace(".", "_").Replace(":", "_").Replace("__", "_");
             Label = new Label{
