@@ -10,6 +10,9 @@ r = tree.xpath("//div[@class='classname']")[0]
 #Class Name
 output = [r.text.replace("\n","")]
 
+fields = "".join(tree.xpath("//span[@class='field_signature']//text()")).replace("\n","").split(';')
+output.extend(fields)
+
 for method in tree.xpath(".//div[@class='method']"):
     r = ""
     for para in method.xpath("./div[@class='method_signature']//text()"):
@@ -31,9 +34,3 @@ for method in tree.xpath(".//div[@class='method']"):
 with open(argv[2], "w") as f:
     for e in output:
         f.write(e + "\n")
-
-
-
-
-
-

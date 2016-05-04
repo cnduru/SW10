@@ -133,12 +133,13 @@ namespace ModelRewriter
 
         public void FindAloc()
         {
-            Inits = GetAloc(GetCTOR());
+            Inits = new List<string>() { Name };
+            Inits.AddRange(GetAloc(GetCTOR()));
         } 
 
         public static List<string> GetAloc(List<string> method)
         {
-            var aloc = new Regex("new ([a-zA-Z][a-zA-Z0-9]*)");
+            var aloc = new Regex("new +[a-zA-Z][a-zA-Z0-9]*");
             var inits = new List<string>();
 
             // temp fix for exception
@@ -150,7 +151,7 @@ namespace ModelRewriter
                 if (aloc.IsMatch(line))
                 {
                     var cls = aloc.Match(line).ToString().Split(new string[] { "new " }, StringSplitOptions.None).Last();
-                    inits.Add(cls);
+                    inits.Add(cls.Replace(" ", ""));
                 }
             };
             return inits;
