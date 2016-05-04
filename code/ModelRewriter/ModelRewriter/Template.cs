@@ -647,7 +647,7 @@ bool ifeq(){
                             { 
                                 content = string.Format("locs[{0}] = os[osp], osp_dec(1)", instArg[1]), 
                                 kind = "assignment"
-                            }
+                            },
                             new Label
                             { 
                                 content = timeGuard, kind = "guard"
@@ -724,10 +724,15 @@ bool ifeq(){
                         Transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + Convert.ToInt32(instArg[1])), labels, -50));
                         break;
                     case "ifcmpne":
-                        List<Label> labs = Template.makeLabels("gu", 
+                        List<Label> labJump = Template.makeLabels("gu", 
                                                                timeGuard + " && os[osp - 1] != os[osp]",
                                                                "osp_dec(2)");
-                        Transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + Convert.ToInt32(instArg[1])), labels, -50));
+                        List<Label> labNoJump = Template.makeLabels("gu",
+                                                               timeGuard + " && os[osp - 1] == os[osp]",
+                                                               "osp_dec(2)");
+
+                        Transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + Convert.ToInt32(instArg[1])), labJump, -50));
+                        Transitions.Add(new Transition(loc, NextLocation(loc), labNoJump, -50));
                         break;
                     default:
                         labels = new List<Label>()
