@@ -647,12 +647,7 @@ bool ifeq(){
                             { 
                                 content = string.Format("locs[{0}] = os[osp], osp_dec(1)", instArg[1]), 
                                 kind = "assignment"
-                            },
-                            new Label
-                            { 
-                                content = "osp_dec(1)", 
-                                kind = "assignment"
-                            },
+                            }
                             new Label
                             { 
                                 content = timeGuard, kind = "guard"
@@ -670,7 +665,7 @@ bool ifeq(){
                             },
                             new Label
                             { 
-                                content = "osp_dec(1)", 
+                                content = "osp_dec(2)", 
                                 kind = "assignment"
                             }
                         };
@@ -683,7 +678,7 @@ bool ifeq(){
                             },
                             new Label
                             { 
-                                content = "osp_dec(1)", 
+                                content = "osp_dec(2)", 
                                 kind = "assignment"
                             }
                         };
@@ -729,7 +724,9 @@ bool ifeq(){
                         Transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + Convert.ToInt32(instArg[1])), labels, -50));
                         break;
                     case "ifcmpne":
-                        List<Label> labs = Template.makeLabels("gu", timeGuard + " && ", "");
+                        List<Label> labs = Template.makeLabels("gu", 
+                                                               timeGuard + " && os[osp - 1] != os[osp]",
+                                                               "osp_dec(2)");
                         Transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + Convert.ToInt32(instArg[1])), labels, -50));
                         break;
                     default:
