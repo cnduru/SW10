@@ -25,7 +25,7 @@ public class Example
 
         if(count < pinLength) throw new Exception();
 
-        if(check() == 0)
+        if(isInvalid() != false)
         {
             triesRemaining = getTriesRemaining();
             throw new Exception();
@@ -33,9 +33,9 @@ public class Example
     }
 
 
-    private int check()
+    private boolean isInvalid()
     {
-        return 0;
+        return true;
     }
 
     private short setIncomingAndReceive()
