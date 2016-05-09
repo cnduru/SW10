@@ -384,11 +384,18 @@ bool ifeq(){
                         break;
 
                     case "putfield":
+                        Transitions.Add(new Transition(loc, NextLocation(loc), makeLabels("gu",
+                            timeGuard,
+                            String.Format("osp_dec(2), H[os[osp] + {0}] = os[osp + 1] ", 
+                                classSelf.Fields.FindIndex(x => x.Split(' ').Last() == instArg[1].Split('.').Last()) + 1))));
                         break;
 
                     case "getfield":
+                        Transitions.Add(new Transition(loc, NextLocation(loc), makeLabels("gu",
+                            timeGuard,
+                            String.Format("os[osp - 1] = H[os[osp - 1] + {0}]", 
+                                classSelf.Fields.FindIndex(x => x.Split(' ').Last() == instArg[1].Split('.').Last()) + 1))));
                         break;
-
                     case "iconst":
                         /* Pushes a constant value to the opstack
                          * Opstack: .. -> .. , n
