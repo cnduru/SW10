@@ -1,4 +1,5 @@
 Class Example
+
  private int  check ();  Concrete Method   Parsed      Example.processVerifyPIN()    
 0.  iconst 0
 1.  ireturn
@@ -25,16 +26,15 @@ Class Example
 25.  athrow
 26.  aload  0
 27.  invokespecial  int  Example.check ()
-30.  iconst 1
-31.  ifcmpne 16
-34.  aload  0
-35.  invokespecial  int  Example.getTriesRemaining ()
-38.  istore  3
-39.  new  java.lang.Exception
-42.  dup
-43.  invokespecial  void  java.lang.Exception.<init> ()
-46.  athrow
-47.  return
+30.  ifne 16
+33.  aload  0
+34.  invokespecial  int  Example.getTriesRemaining ()
+37.  istore  3
+38.  new  java.lang.Exception
+41.  dup
+42.  invokespecial  void  java.lang.Exception.<init> ()
+45.  athrow
+46.  return
  public static void  main ( java.lang.String [] 0);  Concrete Method   Parsed  
 0.  new  Example
 3.  dup
