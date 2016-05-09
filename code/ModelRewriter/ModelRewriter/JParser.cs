@@ -60,12 +60,13 @@ namespace ModelRewriter
         private List<string> AllocateHeap(List<string> allocs, List<JClass> jClasses)
         {
             var heap = new List<string>();
+            heap.AddRange(allocs);
+         
             foreach (var clsName in allocs)
             {
                 var cls = jClasses.Where(x => x.Name == clsName).ToList().First();
-                heap.Add(cls.Name);
                 heap.AddRange(cls.Fields.Select(x => cls.Name + "_" + x));
-                heap.AddRange(AllocateHeap(cls.Inits, jClasses));
+                heap.AddRange(AllocateHeap(cls.Inits.Skip(1).ToList(), jClasses));
             }
             return heap;
         }
@@ -82,12 +83,11 @@ namespace ModelRewriter
             return -1;
         }
 
-        public static int GetMethodIndex(List<string> method)
+        public static int GetMethodIndex(string method)
         {
             var name = JClass.GetMethodName(method).Split('_').Last();
             return MethodNames.FindIndex(x => x == name);
         }
-
 	}
 }
 

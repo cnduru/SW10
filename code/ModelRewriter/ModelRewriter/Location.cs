@@ -48,8 +48,8 @@ namespace ModelRewriter
             y = caller.y + Constants.LabelOffsetY * 2;
             x = Constants.LabelOffsetX * 10;
             Label = new Label{
-                content = "t <= 5", 
-                kind = "invariant", 
+                content = "1", 
+                kind = "exponentialrate", 
                 y = y,
                 x = Constants.LabelOffsetX * 10 - 70               
             };

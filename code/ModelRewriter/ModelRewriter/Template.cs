@@ -205,7 +205,7 @@ bool ifeq(){
         public Template(List<string> method){
             name = "Virtual";
 
-            //initLoc
+            //init Loc
             var initLoc = new Location("Invoke", 0 ,0);
             InitialLocation = initLoc;
             Locations.Add(initLoc);
@@ -220,6 +220,13 @@ bool ifeq(){
                 makeLabels("yu", "cVirtual?", "clID = H[par0]")
             ));
                 
+            //Error loc
+            var errorLoc = new Location("Error", 200, 50);
+            Locations.Add(errorLoc);
+            Transitions.Add(new Transition(resolveLoc, errorLoc,
+                makeLabels("g","clID == 0")
+            ));
+
             var returnerLoc = new Location("Returner", -100, 300);
             returnerLoc.Urgent = true;
             Locations.Add(returnerLoc);
@@ -231,7 +238,7 @@ bool ifeq(){
             {
                 var mLoc = new Location(method[i], i*200, 200);
                 var sigCheck = String.Format("signature(clID, {0}, {1})", 
-                    JParser.GetMethodIndex(method).ToString(),
+                    JParser.GetMethodIndex(method[i]).ToString(),
                     JParser.getClassID(mLoc.name.Split('_').First()));
                 Locations.Add(mLoc);
                 Transitions.Add(new Transition(resolveLoc, mLoc, makeLabels("gy",
@@ -245,7 +252,7 @@ bool ifeq(){
             }
 
             Transitions.Add(new Transition(resolveLoc, resolveLoc, makeLabels("gu", 
-                String.Format("!({0})",String.Join(" || ", SignaChecks)),
+                String.Format("clID != 0 && !({0})",String.Join(" || ", SignaChecks)),
                 "clID = classHierarchy[clID]"
             )));
         }
@@ -376,6 +383,19 @@ bool ifeq(){
                         Transitions.Add(new Transition(loc, NextLocation(loc), labels));
                         break;
 
+                    case "putfield":
+                        Transitions.Add(new Transition(loc, NextLocation(loc), makeLabels("gu",
+                            timeGuard,
+                            String.Format("osp_dec(2), H[os[osp] + {0}] = os[osp + 1] ", 
+                                classSelf.Fields.FindIndex(x => x.Split(' ').Last() == instArg[1].Split('.').Last()) + 1))));
+                        break;
+
+                    case "getfield":
+                        Transitions.Add(new Transition(loc, NextLocation(loc), makeLabels("gu",
+                            timeGuard,
+                            String.Format("os[osp - 1] = H[os[osp - 1] + {0}]", 
+                                classSelf.Fields.FindIndex(x => x.Split(' ').Last() == instArg[1].Split('.').Last()) + 1))));
+                        break;
                     case "iconst":
                         /* Pushes a constant value to the opstack
                          * Opstack: .. -> .. , n
@@ -581,6 +601,7 @@ bool ifeq(){
                         if (name.Split('_').Last() == "main")
                         {
                             var endLoc = new Location(loc);
+                            endLoc.name = "Done";
                             endLoc.Label = new Label
                             {
                                 content = "1", 
@@ -818,13 +839,7 @@ bool ifeq(){
                     });
             }
             res.Add(new Transition(caller, waiter, call));
-            res.Add(new Transition(waiter, waiter, new List<Label>
-                    {
-                        new Label
-                        {
-                            content = "t == " + Constants.maxInstTime.ToString(), kind = "guard"
-                        }
-                    }));
+
             res.Add(new Transition(waiter, next, wait));
 
             return res;
