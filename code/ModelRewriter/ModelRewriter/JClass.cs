@@ -173,7 +173,7 @@ namespace ModelRewriter
         public static string FirstNonKeyword(string sig)
         {
             List<string> javaKeywords = new List<string>
-                {"abstract", "assert", "boolean", "break", "byte", "case", 
+                {"abstract", "assert", "bool", "boolean", "break", "byte", "case", 
                     "catch", "char", "class", "const", "continue", "default", "do", "double", "else", 
                     "enum", "extends", "final", "finally", "float", "for", "goto", "if", "implements", 
                     "import", "instanceof", "int", "interface", "long", "native", "new", "package", 
