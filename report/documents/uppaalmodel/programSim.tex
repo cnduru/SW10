@@ -1,4 +1,5 @@
 \subsection{Program Simulation}
+\kri{simulation or modelling}
 The program simulation is based on \jcl semantics, most Java bytecodes can be translated directly to \jcl at the loss of type information.\\
 \kri{what does it mean for us?}
 When representing Java bytecode in UPPAAL we have chosen to represent an instruction, such as \texttt{aload a} and \texttt{dup}, as UPPAAL locations. 
@@ -80,7 +81,30 @@ In the update on the edge seen below the guard, we simulate the data flow by ass
 For the majority of instructions the program counter is set to the next instruction after execution, but for a jump with \texttt{goto a} the edge goes to the instruction with the program counter corresponding with value of \texttt{a}.
 
 Conditionals such as \texttt{if\_cmpeq a} is the only instruction that is modelled by a location having two outgoing edges , one to the next instruction and one for the program counter of a. On these edges the guard is used to determine which of the edges is to be traversed. \kri{insert example}
-\subsubsection{Method Calls}\label{subsubsec:method}
+
+\subsection{Method Calls}\label{subsubsec:method}
+Method calls covers the Java bytecode instructions: \texttt{invokestatic} for static calls, \texttt{invokespecial} for class constructors and private calls, and \texttt{invokevirtual} virtual calls. To illustrate how these instructions are modelled we use the following java code sample:
+\begin{lstlisting}[caption={\texttt{Bclass} extents \texttt{Aclass}, \texttt{Aclass} implements the methods foo and bar, and \texttt{Bclass} overwrites foo.}]
+public class Virtual{
+  public Aclass a;
+  public Aclass b;
+
+  public Virtual(){
+    a = new Aclass();
+    b = new Bclass();
+    int ia = a.foo() + a.bar();
+    int ib = b.foo() + b.bar();
+  }
+}
+\end{lstlisting}
+The sample includes the bytecode instructions \texttt{invokespecial} and \texttt{invokevirtual}.
+\texttt{invokestatic} is omitted as \texttt{invokestatic} and \texttt{invokespecial} are nearly identical, with the only difference being if a object reference from the operand stack is parsed as a parameter.
+As such all methods call can be divided into two categories, virtual and static.  \\
+
+These categories are defined in the Java specification: ``Virtual methods are instance methods that are resolved dynamically. The set includes all public, protected and package-visible instance methods. Private instance methods and all constructors are not virtual methods, but instead are resolved statically during compilation.'' \cite[chap. 4.3.7.6]{java_card_spec}
+
+\subsubsection{Static Methods}
+\kri{omskriv}
 Method calls are represented by three additions to the model. These additions consist of locations, but they do not have any associated program counter since they are not a part of the original program.\\
 
 % special case for main
