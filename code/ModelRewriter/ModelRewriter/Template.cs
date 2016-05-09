@@ -618,7 +618,7 @@ bool ifeq(){
                         {
                             new Label
                             { 
-                                content = "osp_inc(), os[osp] = os[osp - 1]", 
+                                content = "osp_inc(), os[osp - 1] = os[osp - 2]", 
                                 kind = "assignment"
                             },
                             new Label
