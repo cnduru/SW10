@@ -104,19 +104,24 @@ As such all methods call can be divided into two categories, virtual and static.
 These categories are defined in the Java specification: ``Virtual methods are instance methods that are resolved dynamically. The set includes all public, protected and package-visible instance methods. Private instance methods and all constructors are not virtual methods, but instead are resolved statically during compilation.'' \cite[chap. 4.3.7.6]{java_card_spec}
 
 \subsubsection{Static Methods}
-\kri{omskriv}
 Static method calls are represented by three additions to the model. These additions consist of locations, but they do not have any associated program counter since they are not a part of the original program.\\
 
-\kri{change caption}
 % caller
 The first is a new location in the caller for every method call it performs. This makes it possible to simulate parameter passing from the caller, as well as control transfer when waiting for a callee to return control to the caller after a method call. The simulation of the caller remains in this location until the callee returns control, after its simulation has finished. This control transfer is modelled with a synchronisation on the edge going from the new state in the caller and back to its original control flow.\ch{insert ref to figure}~\\
 
-\begin{figure}[H]
+% callee
+The second is an addition of one additional location in every template. The first, initial, location serves dual purposes: it enables the control transfer from the caller to itself by synchronisation, and simulates passing of arguments into the method from the caller. \\
+
+% main case and return
+The third is the edge from the \texttt{return} instruction. For main the edge goes to a \textit{Done} location, where the simulation ends up when it has finished its simulation. For other templates this is where control is transferred back to the caller and the edge goes to the initial location.
+\ch{show how parameters are passed in figure}
+
+\begin{figure}
 \centering
 \begin{subfigure}{\textwidth}
   \begin{lstlisting}
   ...
-  9.  invokespecial void Aclass.<init> ( )
+   9. invokespecial void Aclass.<init> ( )
   12. putfield Virtual.a : Aclass
   ...
   \end{lstlisting}
@@ -136,12 +141,6 @@ The first is a new location in the caller for every method call it performs. Thi
 \label{fig:invokespecial}
 \end{figure}
 
-% callee
-The second is an addition of one additional location in every template. The first, initial, location serves dual purposes: it enables the control transfer from the caller to itself by synchronisation, and simulates passing of arguments into the method from the caller. \\
-
-% main case and return
-The third is the edge from the \texttt{return} instruction. For main the edge goes to a \textit{Done} location, where the simulation ends up when it has finished its simulation. For other templates this is where control is transferred back to the caller and the edge goes to the initial location.
-\ch{show how parameters are passed in figure}
 
 \subsubsection{Virtual Methods}
 
@@ -165,3 +164,6 @@ Under normal execution there is to difference between the two approaches, but th
 Our approach is the operand stack pointer and assume that the virtual machine will detect out of bounds. As such under a PC\_FAULT a former value of might be read instead of the current one.
 
 The Java Virtual Machine assumes that ``There are no operand stack overflows or underflows'' \cite[c. 4.10]{java_spec} which is checked by the verifier.
+=======
+\ch{rewrite this}
+>>>>>>> 1b39bbdd092bd67afc556b1744f64f7a5b4478c4
