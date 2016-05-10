@@ -1,0 +1,45 @@
+The experiments are performed on a code sample from a selected part of the \jc samples\ch{ref?}\ch{put code in appendix?}, where some parts, mainly variables and methods have been mocked since it was not necessary to model the complete samples.\\\\
+In order to determine whether the implemented countermeasures do indeed provide improved protection against bit flips, compared to unprotected code, experiments are needed. These are performed with the modelling tool UPPAAL, which is described in \cref{chap:upp}.\\\\
+The experiments will be run according to two criteria, to determine whether a fault affecting security has happened. Below, these criteria and their related UPPAAL queries are listed
+
+\begin{itemize}
+\item The simulation can reach the main template's \textit{done} location without an exception occuring
+	\begin{itemize}
+	\item \texttt{Pr[<= 100] (<> done \&\& !exceptionOccurred)}
+	\end{itemize}
+\item The simulation can reach the main template's \textit{done} location without a operand stack fault happening
+	\begin{itemize}
+	\item
+	\end{itemize}
+\end{itemize}
+
+The results in the table are listed in the following format in the extreme left column: Code version + (attack)
+
+
+
+
+
+
+
+
+
+\begin{table}
+    \begin{tabular}{l|l|l}
+    ~         & \texttt{Pr[$\leq$ 100] ($<>$ done \&\& !exceptionOccurred)} & ~ \\ \hline
+    Base      & ~                                                                                    & ~ \\
+    Base + PC & ~                                                                                    & ~ \\
+    Base + OP & ~                                                                                    & ~ \\
+    Base + H  & ~                                                                                    & ~ \\
+    Base + L  & ~                                                                                    & ~ \\
+    CD        & ~                                                                                    & ~ \\
+    CD + PC   & ~                                                                                    & ~ \\
+    CD + OP   & ~                                                                                    & ~ \\
+    CD + H    & ~                                                                                    & ~ \\
+    CD + L    & ~                                                                                    & ~ \\
+    CGI       & ~                                                                                    & ~ \\
+    CGI + PC  & ~                                                                                    & ~ \\
+    CGI + OP  & ~                                                                                    & ~ \\
+    CGI + H   & ~                                                                                    & ~ \\
+    CGI + L   & ~                                                                                    & ~ \\
+    \end{tabular}
+\end{table}
