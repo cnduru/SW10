@@ -23,7 +23,17 @@ namespace ModelRewriter
                 var jClass = new JClass(p);
                 ClassNames.Add(jClass.Name);
                 jClasses.Add(jClass);
+
+                foreach (var method in jClass.Methods)
+                {
+                    var methodName = JClass.FirstNonKeyword(method.First());
+                    if (!MethodNames.Contains(methodName))
+                    {
+                        MethodNames.Add(methodName);
+                    }
+                }
             }
+
             foreach (var jClass in jClasses)
             {
                 model.AddTemplates(jClass);

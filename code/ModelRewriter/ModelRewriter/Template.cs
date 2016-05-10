@@ -524,12 +524,14 @@ bool ifeq(){
                         break;
                     case "invokevirtual":
                         var waiterV = new Location(loc);
-                        var param = loc.inst.instArgs.Skip(3).Where(p => p != "(" && p != ")").ToList();
-                        labels = makeLabels("gyu", 
-                                timeGuard,
-                                "cVirtual!",
-                                String.Format("osp_dec({0}), par0 = os[osp]", param.Count + 1) //TODO t=0 ? also parameters
-                            );
+                        var param = loc.inst.instArgs.Skip(3).Where(p =>  p != "()" && p != "(" && p != ")").ToList();
+                        labels = makeLabels("gyu",
+                            timeGuard,
+                            "cVirtual!",
+                            String.Format("osp_dec({0}), par0 = os[osp], meID = {1}", 
+                                param.Count + 1, 
+                                JParser.GetMethodIndex(instArg[2].Replace(".", "_")))
+                        );
                         newLocs.Add(waiterV);
                         Transitions.Add(new Transition(loc, waiterV, labels));
 
@@ -782,7 +784,7 @@ bool ifeq(){
             {
                 methodName = methodClassName;
             }
-            var param = caller.inst.instArgs.Skip(3).Where(p => p != "(" && p != ")").ToList();
+            var param = caller.inst.instArgs.Skip(3).Where(p => p != "()" && p != "(" && p != ")").ToList();
             bool included = JParser.ClassNames.Contains(methodClassName);
 
             var res = new List<Transition>();
@@ -798,7 +800,7 @@ bool ifeq(){
             {
                 call.Add(new Label
                     {
-                        content = String.Format("osp_dec({0}), t = 0", param.Count + objRef), 
+                        content = String.Format("osp_dec({0}), t = 0, par0 = os[osp]", param.Count + objRef), 
                         kind = "assignment"
                     });
                 call.Add(new Label

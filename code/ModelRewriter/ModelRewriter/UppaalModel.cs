@@ -81,7 +81,6 @@ namespace ModelRewriter
                 
             gloDecBuild.Append("bool done = false;\n");
             gloDecBuild.Append("bool opstack_fault = false;\n");
-            gloDecBuild.Append("int clID = 0;\n");
 
             gloDecBuild.Append(
                 "const int classFields[4] = {0, 3, 1, 1};\n\n" +
@@ -128,16 +127,9 @@ namespace ModelRewriter
         //Adds method templates from jbc
         public void AddTemplates(JClass cls)
         {
-            for(int i = 0; i < cls.Methods.Count; i++)// (var m in cls.Methods)
+            for(int i = 0; i < cls.Methods.Count; i++)
             {
-                var m = cls.Methods[i];
-                var methodName = JClass.FirstNonKeyword(m.First());
-                templates.Add(new Template(m, cls, i));
-
-                if (!JParser.MethodNames.Contains(methodName))
-                {
-                    JParser.MethodNames.Add(methodName);
-                }
+                templates.Add(new Template(cls.Methods[i], cls, i));               
             }
         }
 
@@ -154,19 +146,20 @@ namespace ModelRewriter
                     }
                 }
             }
+            if (methods.Count == 0)
+            {
+                return;
+            }
             templates.Add(new Template(methods));
 
             extraGlobalDec.Append("\n" +
-                "const int classHierarchy[4] = {0, 0, 0, 2};");
-
-            extraGlobalDec.Append("\n" +
-                "const int classImpl[4] = {0, 0, 3, 3};");
-            extraGlobalDec.Append("\n" +
+                "int clID = -1;\n" +
+                "int meID = -1;\n" +
+                "const int classHierarchy[4] = {0, 0, 0, 2};\n" +
                 "bool signature(int classID, int methodID, int methodClassID)\n" +
                 "{\n" +
-                "    return methodID < classImpl[classID] ^ (1 << (methodID - 1)) \n" +
-                "        && classID == methodClassID;\n" +
-                "}\n");
+                "    return meID == methodID && classID == methodClassID;\n" +
+                "}");
 
         }
 
