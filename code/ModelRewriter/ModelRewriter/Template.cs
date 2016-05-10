@@ -547,12 +547,23 @@ bool ifeq(){
                     case "invokestatic":
                         var waiterS = new Location(loc);
                         Transitions.AddRange(InvokeStatic(loc, waiterS, NextLocation(loc)));
-
-                        var lbls = Template.makeLabels("gu", "exceptionOccurred == true", "osp = 0");
-                        Transitions.Add(new Transition(waiterS, PCToLocation(classSelf.catchPCs[catchIndex]), lbls));
-
-
                         newLocs.Add(waiterS);
+
+                        string methodName = instArg[2].Split('.').Last();
+                        string methodClassName = instArg[2].Split('.').First();
+                        if (!JParser.ClassNames.Contains(methodClassName))
+                        {
+                            break;
+                        }
+                        if (methodName == "<init>")
+                        {
+                            methodName = methodClassName;
+                        }
+                        var lbls = Template.makeLabels("guy", 
+                            "exceptionOccurred == true",
+                            "osp = 0",
+                            String.Format("c{0}?", methodClassName + "_" + methodName));
+                        Transitions.Add(new Transition(waiterS, PCToLocation(classSelf.catchPCs[catchIndex]), lbls));
                         break;
 
                     case "ldc":
@@ -586,7 +597,7 @@ bool ifeq(){
                             },
                             new Label
                             { 
-                                content = String.Format("par0 = os[osp], osp = 0, t = 0, done = true",
+                                content = String.Format("par0 = os[osp], osp = 0, t = 0",
                                     CP.Add(String.Join(" ", instArg.Skip(1)))), 
                                 kind = "assignment"
                             },
@@ -716,28 +727,19 @@ bool ifeq(){
 
                         break;
                     case "athrow":
-                        labels = new List<Label>()
-                        {
-                            new Label
-                            { 
-                                content = "exceptionOccurred = true", kind = "assignment"
-                            },
-                            new Label
-                            { 
-                                content = timeGuard, kind = "guard"
-                            }
-                        };
+                        labels = Template.makeLabels("guy", 
+                            timeGuard,
+                            "exceptionOccurred = true",
+                            String.Format("c{0}!", name)
+                            );
                         
-                        Transitions.Add(new Transition(loc, Locations[Locations.Count - 1], labels));
+                        
+                        Transitions.Add(new Transition(loc, PCToLocation(-1), labels, -100));
 
                         break;
                     case "goto":
                         labels = new List<Label>()
                         {
-                            new Label
-                            { 
-                                content = "exceptionOccurred = true", kind = "assignment"
-                            },
                             new Label
                             { 
                                 content = timeGuard, kind = "guard"
@@ -747,10 +749,10 @@ bool ifeq(){
                         Transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + Convert.ToInt32(instArg[1])), labels, -50));
                         break;
                     case "ifcmpne":
-                        List<Label> labJump = Template.makeLabels("gu", 
+                        List<Label> labJump = makeLabels("gu", 
                                                                timeGuard + " && os[osp - 1] != os[osp]",
                                                                "osp_dec(2)");
-                        List<Label> labNoJump = Template.makeLabels("gu",
+                        List<Label> labNoJump = makeLabels("gu",
                                                                timeGuard + " && os[osp - 1] == os[osp]",
                                                                "osp_dec(2)");
 
@@ -823,7 +825,7 @@ bool ifeq(){
                     });
                 wait.Add(new Label
                     {
-                        content = "t == 5", kind = "guard" 
+                        content = "t == 5 && !exceptionOccurred", kind = "guard" 
                     });
             }
             if (ret)

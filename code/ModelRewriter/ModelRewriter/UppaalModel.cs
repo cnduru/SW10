@@ -24,7 +24,7 @@ namespace ModelRewriter
 		string system;
 		string queries;
 
-        private StringBuilder extraGlobalDec = new StringBuilder();
+        private StringBuilder virtualGlobalDec = new StringBuilder();
 
         //var fields = new Dictionary<string, List<string>();
 
@@ -70,7 +70,10 @@ namespace ModelRewriter
                 gloDecBuild.Append("int par" + i + ";\n");
             }
             //Invoke channel hack
-            methods.Add("Virtual");
+            if (virtualGlobalDec.Length > 0)
+            {
+                methods.Add("Virtual");
+            }
             //Method channels
             foreach (var mName in methods)
             {
@@ -79,7 +82,6 @@ namespace ModelRewriter
             }
             sysBuild.Append("system " + String.Join(",", methods.Select(x => "i" + x)) + ";\n");
                 
-            gloDecBuild.Append("bool done = false;\n");
             gloDecBuild.Append("bool opstack_fault = false;\n");
 
             gloDecBuild.Append(
@@ -94,7 +96,7 @@ namespace ModelRewriter
                 "}");
 
 
-            globalDeclarations = gloDecBuild.ToString() + "\n\n" + extraGlobalDec.ToString();
+            globalDeclarations = gloDecBuild.ToString() + "\n\n" + virtualGlobalDec.ToString();
             system = sysBuild.ToString();
 
 
@@ -152,7 +154,7 @@ namespace ModelRewriter
             }
             templates.Add(new Template(methods));
 
-            extraGlobalDec.Append("\n" +
+            virtualGlobalDec.Append("\n" +
                 "int clID = -1;\n" +
                 "int meID = -1;\n" +
                 "const int classHierarchy[4] = {0, 0, 0, 2};\n" +
