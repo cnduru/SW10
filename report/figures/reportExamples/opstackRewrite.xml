@@ -89,11 +89,7 @@ bool ifeq(){
         return os[osp - 1] == 0;
     }
     return false;
-}
-
-int osPos;
-int osBitPos;
-</declaration>
+}</declaration>
 		<location id="id0" x="0" y="-65">
 			<name x="20" y="-78">check</name>
 			<label kind="exponentialrate" x="-70" y="-65">1</label>
@@ -192,11 +188,7 @@ bool ifeq(){
         return os[osp - 1] == 0;
     }
     return false;
-}
-
-int osPos;
-int osBitPos;
-</declaration>
+}</declaration>
 		<location id="id3" x="0" y="-65">
 			<name x="20" y="-78">Example</name>
 			<label kind="exponentialrate" x="-70" y="-65">1</label>
@@ -398,9 +390,6 @@ bool ifeq(){
     }
     return false;
 }
-
-int osPos;
-int osBitPos;
 </declaration>
 		<location id="id11" x="0" y="-65">
 			<name x="20" y="-78">processVerifyPIN</name>
@@ -1085,9 +1074,6 @@ bool ifeq(){
     }
     return false;
 }
-
-int osPos;
-int osBitPos;
 </declaration>
 		<location id="id43" x="0" y="-65">
 			<name x="20" y="-78">main</name>
@@ -1308,20 +1294,17 @@ bool ifeq(){
     }
     return false;
 }
-
-int osPos;
-int osBitPos;
 </declaration>
 		<location id="id53" x="0" y="-161">
 			<name x="20" y="-174">getTriesRemaining</name>
 			<label kind="exponentialrate" x="-34" y="-170">1</label>
 		</location>
 		<location id="id54" x="0" y="8">
-			<name x="34" y="-26">pc0_iconst_2</name>
+			<name x="17" y="0">pc0_iconst_2</name>
 			<label kind="invariant" x="-53" y="-1">t &lt;= 1</label>
 		</location>
 		<location id="id55" x="0" y="187">
-			<name x="-85" y="170">pc1_ireturn</name>
+			<name x="17" y="187">pc1_ireturn</name>
 			<label kind="invariant" x="-85" y="187">t &lt;= 1</label>
 		</location>
 		<init ref="id53"/>
@@ -1349,9 +1332,9 @@ int osBitPos;
 		<transition>
 			<source ref="id54"/>
 			<target ref="id54"/>
-			<label kind="select" x="25" y="-1">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
-			<label kind="guard" x="-51" y="-42">faultTime &lt;= globalClock</label>
-			<label kind="assignment" x="-51" y="-59">os[osPos] ^= 1 &lt;&lt; osBitPos</label>
+			<label kind="select" x="34" y="-17">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="34" y="-34">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="34" y="-51">os[osPos] ^= 1 &lt;&lt; osBitPos</label>
 			<nail x="-30" y="-22"/>
 			<nail x="30" y="-22"/>
 		</transition>
@@ -1410,11 +1393,7 @@ bool ifeq(){
         return os[osp - 1] == 0;
     }
     return false;
-}
-
-int osPos;
-int osBitPos;
-</declaration>
+}</declaration>
 		<location id="id56" x="0" y="-65">
 			<name x="20" y="-78">setIncomingAndReceive</name>
 			<label kind="exponentialrate" x="-70" y="-65">1</label>
@@ -1504,7 +1483,6 @@ int osBitPos;
 		<transition>
 			<source ref="id60"/>
 			<target ref="id60"/>
-			<label kind="guard" x="20" y="100">!()</label>
 			<label kind="assignment" x="20" y="113">clID = classHierarchy[clID]</label>
 			<nail x="-30" y="70"/>
 			<nail x="30" y="70"/>
@@ -1512,11 +1490,6 @@ int osBitPos;
 	</template>
 	<template>
 		<name>FaultInj</name>
-		<declaration>
-
-int osPos;
-int osBitPos;
-</declaration>
 		<location id="id62" x="-17" y="-85">
 		</location>
 		<location id="id63" x="-144" y="-85">

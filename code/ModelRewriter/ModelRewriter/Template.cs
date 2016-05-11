@@ -12,6 +12,7 @@ using System.Dynamic;
 using System.Collections.Specialized;
 using System.Net.Mime;
 using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 
 namespace ModelRewriter
@@ -815,6 +816,10 @@ bool ifeq(){
                         content = String.Format("c{0}?", methodClassName + "_" + methodName), 
                         kind = "synchronisation"
                     });
+                wait.Add(new Label
+                    {
+                        content = "!exceptionOccurred", kind = "guard" 
+                    });
             }
             else
             {
@@ -951,16 +956,25 @@ bool ifeq(){
 
             foreach (Location originalLocation in Locations)
             {
+                if (originalLocation.pc != null)
+                {
+                    foreach (var item in Transitions.FindAll(t => t.source.id == originalLocation.id))
+                    {
+                        item.grds.content += " && faultAt > globalClock";
+                    }
+                }
+
+
                 foreach (var loc in originalLocation.reachableLocs)
                 {
                     // add fault guard
                     Transition tr = new Transition(originalLocation, loc);
-                    tr.grds.content += "faultAt == globalClock";
+                    tr.grds.content += "faultAt <= globalClock";
                     tr.grds.x = -100;
                     tr.grds.y = loc.y;
 
                     // add fault update so only one fault happens each run
-                    tr.asms.content += "faultAt = -1, t = 0";
+                    tr.asms.content += "faultAt = 1000, t = 0";
                     tr.asms.x = -130;
                     tr.asms.y = loc.y + 30;
 
