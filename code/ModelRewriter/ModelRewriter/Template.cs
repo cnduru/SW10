@@ -789,7 +789,6 @@ bool ifeq(){
             }
             var param = caller.inst.instArgs.Skip(3).Where(p => p != "()" && p != "(" && p != ")").ToList();
             bool included = JParser.ClassNames.Contains(methodClassName);
-
             var res = new List<Transition>();
             var call = new List<Label>()
             {
@@ -968,7 +967,8 @@ bool ifeq(){
                 foreach (var loc in originalLocation.reachableLocs)
                 {
                     // add fault guard
-                    Transition tr = new Transition(originalLocation, loc);
+                    Transition tr = new Transition(originalLocation, loc, new List<Label>(), 
+                        Convert.ToInt32(originalLocation.pc) < Convert.ToInt32(loc.pc)? -300 : -250);
                     tr.grds.content += "faultAt <= globalClock";
                     tr.grds.x = -100;
                     tr.grds.y = loc.y;
@@ -977,6 +977,8 @@ bool ifeq(){
                     tr.asms.content += "faultAt = 1000, t = 0";
                     tr.asms.x = -130;
                     tr.asms.y = loc.y + 30;
+
+
 
                     tlist.Add(tr);
                 }
