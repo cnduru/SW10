@@ -160,23 +160,5 @@ This is based on \texttt{methodLookup} from the \texttt{invokevirtual} semantics
 \label{fig:invokevirtual}
 \end{figure}
 
-\section{Modelling a Fault Injection}
-\ch{we should also show how we have modelled a fault in the heap/stack}
-To simulate a single bit flip occurring in the program's execution a special fault template is introduced. The template calculates a random value between $0$ and the maximum possible global clock value, which represents when in the programs execution a fault happens. The random value is assigned to a global variable in the UPPAAL system.\\\\
-Every instruction in the Java bytecode is represented by a location, and has an associated program counter. There are edges from each location going to the locations which can be reached if one bit is flipped in the program counter. These edges have guards which check whether the time the fault is injected, corresponds to the global clock at the time the model simulation is at that particular edge. If it is, the guard will allow the edge to be traversed. There are no fault edges going back to the added locations described in \cref{subsubsec:method}, since these are not a part of the original program and therefore do not have an associated program counter.
-\begin{figure}[H]
-\centering
-\includegraphics{figures/fault.PNG}
-\caption{The UPPAAL template which performs a bit flip in the program counter}
-\end{figure}\ch{update figure to use fault at between 0 and global clock}
 
 
-\subsection{Opstack complications}
-Under normal execution the value of the operand stack pointer can be known at compile  time. This leaves us with two ways to simulate it, use a operand stack pointer to point at the top element or staticly define the opstack element to be accessed for each instruction.
-
-Under normal execution there is to difference between the two approaches, but then introducing fault models as PC\_Fault and INST\_Fault it is possible to change the behaviour. This can let the operand stack pointer point to a value an instruction never would access or in the extreme case go out of bounds for the method.
-
-Our approach is the operand stack pointer and assume that the virtual machine will detect out of bounds. As such under a PC\_FAULT a former value of might be read instead of the current one.
-
-The Java Virtual Machine assumes that ``There are no operand stack overflows or underflows'' \cite[c. 4.10]{java_spec} which is checked by the verifier.
-\ch{rewrite this}
