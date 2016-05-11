@@ -6,6 +6,7 @@ When representing Java bytecode in UPPAAL we have chosen to represent an instruc
 This implies that a change in the program counter is a change of the location. 
 In turn this means that when an instruction is to be executed the change to the program configuration \textit{Conf} from  \cref{sec:semintro} occurs on the edge to next location.
 
+\begin{minipage}{\linewidth}
 \begin{lstlisting}[caption=Java code sample.]
 public class Sample{
     public static void main(String[] args) {
@@ -16,7 +17,8 @@ public class Sample{
     }
 }
 \end{lstlisting}
-
+\end{minipage}
+\begin{minipage}{\linewidth}
 \begin{lstlisting}[caption=Bytecode sample.]
 public static void main(java.lang.String[]);
  Code:
@@ -42,6 +44,7 @@ public static void main(java.lang.String[]);
   31: return        
 
 \end{lstlisting}
+\end{minipage}
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{generated_wip}
