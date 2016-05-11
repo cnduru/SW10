@@ -83,8 +83,8 @@ For the majority of instructions the program counter is set to the next instruct
 Conditionals such as \texttt{if\_cmpeq a} is the only instruction that is modelled by a location having two outgoing edges , one to the next instruction and one for the program counter of a. On these edges the guard is used to determine which of the edges is to be traversed. \kri{insert example}
 
 \subsection{Method Calls}\label{subsubsec:method}
-Method calls covers the Java bytecode instructions: \texttt{invokestatic} for static calls, \texttt{invokespecial} for class constructors and private calls, and \texttt{invokevirtual} virtual calls. To illustrate how these instructions are modelled we use the following java code sample:
-\begin{lstlisting}[caption={\texttt{Bclass} extents \texttt{Aclass}, \texttt{Aclass} implements the methods foo and bar, and \texttt{Bclass} overwrites foo.}\label{lst:virtual}]
+Method calls covers the Java bytecode instructions:~\texttt{invokestatic} for static calls, \texttt{invokespecial} for class constructors and private calls, and \texttt{invokevirtual} virtual calls. To illustrate how these instructions are modelled, we use the Java code sample in \cref{lst:virtual}.
+\begin{lstlisting}[caption={\texttt{Bclass} extends \texttt{Aclass}, \texttt{Aclass} implements the methods foo and bar, and \texttt{Bclass} overwrites foo.}, label={lst:virtual}]
 public class Virtual{
   public Aclass a;
   public Aclass b;
@@ -98,24 +98,19 @@ public class Virtual{
 }
 \end{lstlisting}
 The sample includes the bytecode instructions \texttt{invokespecial} and \texttt{invokevirtual}.
-\texttt{invokestatic} is omitted as \texttt{invokestatic} and \texttt{invokespecial} are nearly identical, with the only difference being if a object reference from the operand stack is parsed as a parameter.
-As such all methods call can be divided into two categories, virtual and static.  \\
-
+\texttt{invokestatic} is omitted as \texttt{invokestatic} and \texttt{invokespecial} are nearly identical, with the only difference being if an object reference from the operand stack is parsed as a parameter.
+As such all methods call can be divided into two categories, virtual and static.\\\\
 These categories are defined in the Java specification: ``Virtual methods are instance methods that are resolved dynamically. The set includes all public, protected and package-visible instance methods. Private instance methods and all constructors are not virtual methods, but instead are resolved statically during compilation.'' \cite[chap. 4.3.7.6]{java_card_spec}
 
 \subsubsection{Static Methods}
-Static method calls are represented by three additions to the model. These additions consist of locations and edges.\\ 
+Static method calls are represented by three additions to the model. These additions consist of locations and edges.\\\\ 
 %, but they do not have any associated program counter since they are not a part of the original program.\\ what?
-
-
 % caller
-The first is a new location in the caller for every method call it performs. This makes it possible to simulate parameter passing from the caller, as well as control transfer when waiting for a callee to return control to the caller after a method call. The simulation of the caller remains in this location until the callee returns control, after its simulation has finished. This control transfer is modelled with a synchronisation on the edge going from the new state in the caller and back to its original control flow, as seen in \cref{fig:invokespecial} b.\\
-
+The first is a new location in the caller for every method call it performs. This makes it possible to simulate parameter passing from the caller, as well as control transfer when waiting for a callee to return control after a method call. The simulation of the caller remains in this location until the callee returns control, after its simulation has finished. This control transfer is modelled with a synchronisation on the edge, going from the new state in the caller and back to its original control flow, as seen in \cref{fig:invokespecial} b.\\\\
 % callee
-The second is an addition of one additional location in every template. The first, initial location, seen in \cref{fig:invokespecial} a, serves dual purposes: it enables the control transfer from the caller to itself by synchronisation, and simulates passing of arguments into the method from the caller. \\
-
+The second is an addition of one additional location in every template. The first, initial location, \texttt{Aclass}, in \cref{fig:invokespecial} c, serves two purposes: it enables the control transfer from the caller to itself by synchronisation, and simulates passing of arguments into the method from the caller.\\\\
 % main case and return
-The third is the edge from the \texttt{return} instruction seen on \cref{fig:invokespecial} c, one of two edges pointing to the \texttt{AClass} initial location, the other being for exceptions which will be covered in \kri{ref to section}. For main the edge goes to a \textit{Done} location, where the simulation ends up when it has finished its simulation. For other templates this is where control is transferred back to the caller and the edge goes to the initial location.
+The third is the edge from the \texttt{return} instruction, seen in \cref{fig:invokespecial} c. This is one of the two edges pointing to the \texttt{AClass} initial location, and the other is for exceptions, which will be covered in \kri{ref to section}. For main, the edge goes to a \textit{Done} location instead of the initial location, where the simulation ends when it has finished. For other templates this is where control is transferred back to the caller, and the edge goes to the initial location.
 
 
 \begin{figure}
@@ -145,15 +140,20 @@ The third is the edge from the \texttt{return} instruction seen on \cref{fig:inv
 
 
 \subsubsection{Virtual Methods}
-Virtual methods are similar to static methods in regards to representation in the method template for caller and callee, but instead of handling control directly to callee method template a template responsible for resolving the virtual call.
-\cref{fig:invokevirtual} is the resolver template generated for the code in \cref{lst:virtual}, there is a total of three virtual methods in this sample and the resolver have a waiting location for each. 
+Virtual methods are similar to static methods in regards to representation in the method template for caller and callee, but instead of handling control directly to callee method templates, a template responsible for resolving the virtual call is inserted for this purpose.
+\cref{fig:invokevirtual} is the resolver template generated for the code in \cref{lst:virtual}, there is a total of three virtual methods in this sample and the resolver has a waiting location for each.\\\\
+Every class is mapped to an integer $clID$ and an array, $classHierarchy$, represents the class hierarchy of the program. The initial location \texttt{Invoke} waits for a synchronisation, after which the location \texttt{Resolver} has an outgoing edge for every possibility, in this sample that is five. There are essentially always three distinct possibilities 
 
+\begin{itemize}
+\item There are no methods and no super where $clID == 0$.
+\item There is a method matching the class and method signature. In this case, call the method.
+\item There are no methods but there is a super class, then assign $clID = classHierarchy[clID]$ and try again.
+\end{itemize}
 
-Every class is mapped to an integer ($clID$) and an array $classHierarchy$ represent the class hierarchy of the program. The initial location \texttt{Invoke} waits for a synchronisation after which the location \texttt{Resolver} have an outgoing edge for every possibility, in this sample that is five. There is essentially always tree distinct possibilities; There is no methods and no super ($clID == 0$), there is a method matching the class and method signature (call the method), or There is no methods but a super class ($clID = classHierarchy[clID]$ and try again).
-This is based on $methodLookup$ from the invokevirtual semantics \cref{app:invokevirtual}. 
+This is based on \texttt{methodLookup} from the \texttt{invokevirtual} semantics \cref{app:invokevirtual}.
 
  
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{invokevirtual.png}
 \caption{Invokevirtual.}
