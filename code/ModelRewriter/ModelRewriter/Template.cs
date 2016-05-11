@@ -828,6 +828,11 @@ bool ifeq(){
                         content = String.Format("osp_dec({0}), t = 0", param.Count + objRef), 
                         kind = "assignment"
                     });
+
+
+                // remove exponential label from non-implemented method call locations
+                waiter.Label = new Label() { kind = "invariant", content = "t <= 5"};
+
                 wait.Add(new Label
                     {
                         content = "t == 5 && !exceptionOccurred", kind = "guard" 
