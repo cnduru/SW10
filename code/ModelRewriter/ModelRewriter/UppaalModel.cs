@@ -479,8 +479,7 @@ namespace ModelRewriter
 
             foreach (var tem in templates)
             {
-                tem.localDeclarations += string.Format("\n\nint {0}Pos;\n", variableName);
-                tem.localDeclarations += string.Format("int {0}BitPos;\n", variableName);
+
 
                 if (!tem.name.Contains("Fault"))
                 {
@@ -503,20 +502,13 @@ namespace ModelRewriter
                                 {
                                     tr.grds.content = "faultTime > globalClock";
                                 }
-
-                                if (tr.sels.content != "")
-                                {
-                                    tr.asms.content += ", faultTime = 200";
-                                }
-                                else
-                                {
-                                    tr.asms.content = "faultTime = 200";
-                                }
                             }
                         }
 
-                        string posString1 = string.Format("{0}[{0}Pos] ^= 1 << {0}BitPos", variableName);
-                        string posString2 = string.Format("{0}Pos:int[0,{0}_size - 1], {0}BitPos:int[0,7]", variableName);
+                        string posString1 = string.Format(
+                            "{0}[{0}Pos] ^= 1 << {0}BitPos, faultTime = 1000", variableName);
+                        string posString2 = string.Format(
+                            "{0}Pos:int[0,{0}_size - 1], {0}BitPos:int[0,7]", variableName);
                         Transition locFaultTrans = new Transition(loc, loc,
                                                       Template.makeLabels("gus", "faultTime <= globalClock",
                                                       posString1,
