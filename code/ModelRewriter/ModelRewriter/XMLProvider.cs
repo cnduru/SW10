@@ -30,8 +30,6 @@ namespace ModelRewriter
         {
             return @"	<template>
 		<name>heapFault</name>
-		<location id=""id2"" x=""25"" y=""-127"">
-		</location>
 		<location id=""id3"" x=""-195"" y=""-17"">
             <label kind=""exponentialrate"" x=""-205"" y=""17"">1</label>
 		</location>
@@ -39,13 +37,6 @@ namespace ModelRewriter
 			<committed/>
 		</location>
 		<init ref=""id4""/>
-		<transition>
-			<source ref=""id3""/>
-			<target ref=""id2""/>
-			<label kind=""select"" x=""51"" y=""-153"">heapIndex:int[0,heap_size - 1]</label>
-			<label kind=""guard"" x=""-177"" y=""-106"">faultClock == faultTime</label>
-			<label kind=""assignment"" x=""51"" y=""-127"">H[heapIndex] ^= 1 &lt;&lt; bitPosHeap, faultClock = 0</label>
-		</transition>
 		<transition>
 			<source ref=""id4""/>
 			<target ref=""id3""/>

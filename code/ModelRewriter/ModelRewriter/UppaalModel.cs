@@ -280,7 +280,7 @@ namespace ModelRewriter
             XElement dataFaultTemplateXML = XElement.Parse(XMLProvider.getHeapFaultTemplate());
             XMLHandler xhl = new XMLHandler();
             Template dataFaultTemplate = xhl.getTemplate(dataFaultTemplateXML);
-            dataFaultTemplate.Locations[2].committed = true;
+            dataFaultTemplate.Locations[1].committed = true;
 
             // todo: generalize this
             globalDeclarations += "\nclock faultClock;\n";
@@ -306,20 +306,26 @@ namespace ModelRewriter
                         continue;
                     }
 
+                    var labs = Template.makeLabels("sgu",
+                               "heapIndex:int[0,heap_size - 1]",
+                               "faultClock >= faultTime",
+                               "H[heapIndex] ^= 1 << bitPosHeap, faultTime = 1000");
+                    Transition heapTransition = new Transition(l, l, labs);
+                    te.Transitions.Add(heapTransition);
+
                     foreach (var l2 in te.Locations)
                     {
-                        if(l.id != l2.id)
+                        if (l.id != l2.id)
                         {
                             foreach (var edge in te.Transitions)
                             {
-                                if(edge.source.id == l.id && edge.target.id == l2.id)
+                                if (edge.source.id == l.id && edge.target.id == l2.id)
                                 {
                                     edge.grds.content += " && faultClock < faultTime";
                                 }
-                            } 
+                            }
                         }
                     }
-
                 }
             }
 
