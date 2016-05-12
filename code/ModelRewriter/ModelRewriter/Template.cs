@@ -899,7 +899,7 @@ bool ifeq(){
             throw new KeyNotFoundException();
         }
 
-        private Location NextLocation(Location current)
+        public Location NextLocation(Location current)
         {
             var orderedLocs = Locations.OrderBy(x => x.inst.pc).ToList();
             foreach (var loc in orderedLocs)
