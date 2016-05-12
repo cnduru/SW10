@@ -579,13 +579,16 @@ bool ifeq(){
                         {
                             methodName = methodClassName;
                         }
+
+                        int classId = classSelf.catchPCs[catchIndex];
+
                         var lbls = makeLabels("guy", 
                             "exceptionOccurred == true",
-                            "osp = 0",
+                            classId != -1 ? "osp_inc()" : "osp = 0",
                             String.Format("c{0}?", methodClassName + "_" + methodName));
                         Transitions.Add(new Transition(waiterS, excepLoc, lbls));
                         lbls = makeLabels("y", String.Format("c{0}!", name));
-                        Transitions.Add(new Transition(excepLoc, PCToLocation(classSelf.catchPCs[catchIndex]), lbls));
+                        Transitions.Add(new Transition(excepLoc, PCToLocation(classId), lbls));
 
 
                         break;
