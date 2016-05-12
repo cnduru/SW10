@@ -126,6 +126,21 @@ bool ifcmpeq(){
     return false;
 }
 
+bool ifcmpge(){
+    if (osp > 1){
+        return os[osp - 2] >= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp > 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
 bool ifeq(){
     if (osp > 1){
         return os[osp - 1] == 0;
@@ -598,7 +613,7 @@ bool ifeq(){
                             },
                             new Label
                             { 
-                                content = String.Format("par0 = os[osp], osp = 0, t = 0",
+                                    content = String.Format("osp_dec(1), par0 = os[osp], osp = 0, t = 0",
                                     CP.Add(String.Join(" ", instArg.Skip(1)))), 
                                 kind = "assignment"
                             },
@@ -662,7 +677,7 @@ bool ifeq(){
                         {
                             new Label
                             { 
-                                content = string.Format("osp_inc(), os[osp] = locs[{0}]", instArg[1]), 
+                                content = string.Format("osp_inc(), os[osp - 1] = locs[{0}]", instArg[1]), 
                                 kind = "assignment"
                             },
                             new Label
@@ -680,7 +695,7 @@ bool ifeq(){
                         {
                             new Label
                             { 
-                                content = string.Format("locs[{0}] = os[osp], osp_dec(1)", instArg[1]), 
+                                    content = string.Format("osp_dec(1), locs[{0}] = os[osp]", instArg[1]), 
                                 kind = "assignment"
                             },
                             new Label
@@ -695,7 +710,7 @@ bool ifeq(){
                         {
                             new Label
                             { 
-                                content = string.Format("{0} && os[osp] < os[osp - 1]", timeGuard), 
+                                content = string.Format("{0} && !ifcmpge()", timeGuard), 
                                 kind = "guard"
                             },
                             new Label
@@ -708,7 +723,7 @@ bool ifeq(){
                         {
                             new Label
                             { 
-                                content = string.Format("{0} && os[osp] >= os[osp - 1]", timeGuard), 
+                                content = string.Format("{0} && ifcmpge()", timeGuard), 
                                 kind = "guard"
                             },
                             new Label
@@ -728,15 +743,20 @@ bool ifeq(){
 
                         break;
                     case "athrow":
-                        labels = Template.makeLabels("guy", 
-                            timeGuard,
-                            "exceptionOccurred = true",
-                            String.Format("c{0}!", name)
-                            );
-                        
-                        
-                        Transitions.Add(new Transition(loc, PCToLocation(-1), labels, -100));
+                        var throwLoc = new Location(loc);
+                        throwLoc.Urgent = true;
+                        newLocs.Add(throwLoc);
 
+                        labels = Template.makeLabels("gu", 
+                            timeGuard,
+                            "exceptionOccurred = true"
+                        );
+                        Transitions.Add(new Transition(loc, throwLoc, labels));
+
+                        labels = Template.makeLabels("y", 
+                            String.Format("c{0}!", name));
+                        
+                        Transitions.Add(new Transition(throwLoc,  PCToLocation(-1), labels));
                         break;
                     case "goto":
                         labels = new List<Label>()
@@ -751,11 +771,11 @@ bool ifeq(){
                         break;
                     case "ifcmpne":
                         List<Label> labJump = makeLabels("gu", 
-                                                               timeGuard + " && os[osp - 1] != os[osp]",
-                                                               "osp_dec(2)");
+                            timeGuard + " && ifcmpne()",   
+                            "osp_dec(2)");
                         List<Label> labNoJump = makeLabels("gu",
-                                                               timeGuard + " && os[osp - 1] == os[osp]",
-                                                               "osp_dec(2)");
+                            timeGuard + " && !ifcmpne",
+                            "osp_dec(2)");
 
                         Transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + Convert.ToInt32(instArg[1])), labJump, -50));
                         Transitions.Add(new Transition(loc, NextLocation(loc), labNoJump, -50));
