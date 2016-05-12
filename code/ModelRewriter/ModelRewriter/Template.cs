@@ -13,6 +13,7 @@ using System.Collections.Specialized;
 using System.Net.Mime;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
+using System.Security.Policy;
 
 
 namespace ModelRewriter
@@ -571,15 +572,22 @@ bool ifeq(){
                         {
                             break;
                         }
+                        var excepLoc = new Location(waiterS);
+                        excepLoc.Urgent = true;
+                        newLocs.Add(excepLoc);
                         if (methodName == "<init>")
                         {
                             methodName = methodClassName;
                         }
-                        var lbls = Template.makeLabels("guy", 
+                        var lbls = makeLabels("guy", 
                             "exceptionOccurred == true",
                             "osp = 0",
                             String.Format("c{0}?", methodClassName + "_" + methodName));
-                        Transitions.Add(new Transition(waiterS, PCToLocation(classSelf.catchPCs[catchIndex]), lbls));
+                        Transitions.Add(new Transition(waiterS, excepLoc, lbls));
+                        lbls = makeLabels("y", String.Format("c{0}!", name));
+                        Transitions.Add(new Transition(excepLoc, PCToLocation(classSelf.catchPCs[catchIndex]), lbls));
+
+
                         break;
 
                     case "ldc":
@@ -637,6 +645,7 @@ bool ifeq(){
                                 kind = "exponentialrate"
                             };
                             newLocs.Add(endLoc);
+                            labels.RemoveAll(l => l.kind == "assignment");
                             Transitions.Add(new Transition(loc, endLoc, labels));
                             break;
                         }

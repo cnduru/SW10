@@ -33,6 +33,7 @@ namespace ModelRewriter
 		<location id=""id2"" x=""25"" y=""-127"">
 		</location>
 		<location id=""id3"" x=""-195"" y=""-17"">
+            <label kind=""exponentialrate"" x=""-205"" y=""17"">1</label>
 		</location>
 		<location id=""id4"" x=""-586"" y=""-17"">
 			<committed/>

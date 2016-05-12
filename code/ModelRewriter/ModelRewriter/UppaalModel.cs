@@ -284,7 +284,6 @@ namespace ModelRewriter
 
             // todo: generalize this
             globalDeclarations += "\nclock faultClock;\n";
-            globalDeclarations += "int faultTime;\n";
             globalDeclarations += "int bitPosHeap;\n";
             globalDeclarations += "broadcast chan f;\n";
 
