@@ -143,7 +143,7 @@ bool ifcmpne(){
 
 
 bool ifeq(){
-    if (osp > 1){
+    if (osp > 0){
         return os[osp - 1] == 0;
     }
     return false;
@@ -623,12 +623,6 @@ bool ifeq(){
                                 content = timeGuard, kind = "guard"
                             },
                             new Label
-                            { 
-                                    content = String.Format("osp_dec(1), par0 = os[osp], osp = 0, t = 0",
-                                    CP.Add(String.Join(" ", instArg.Skip(1)))), 
-                                kind = "assignment"
-                            },
-                            new Label
                             {
                                 content = String.Format("c{0}!", name), 
                                 kind = "synchronisation"
@@ -638,6 +632,25 @@ bool ifeq(){
                                 content = timeGuard, kind = "guard"
                             }
                         };
+
+                        if (instArg[0] == "ireturn")
+                        {
+                            labels.Add(new Label
+                                { 
+                                    content = String.Format("osp_dec(1), par0 = os[osp], osp = 0, t = 0"),
+                                    kind = "assignment"
+                                });
+                        }
+                        else
+                        {
+                            labels.Add(new Label
+                                { 
+                                    content = String.Format("osp = 0, t = 0"),
+                                    kind = "assignment"
+                                });
+                        }
+                            
+                        
                         if (name.Split('_').Last() == "main")
                         {
                             var endLoc = new Location(loc);
