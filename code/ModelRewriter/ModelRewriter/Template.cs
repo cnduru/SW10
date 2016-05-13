@@ -413,6 +413,7 @@ bool ifeq(){
                             String.Format("os[osp - 1] = H[os[osp - 1] + {0}]", 
                                 classSelf.Fields.FindIndex(x => x.Split(' ').Last() == instArg[1].Split('.').Last()) + 1))));
                         break;
+                    case "bipush":
                     case "iconst":
                         /* Pushes a constant value to the opstack
                          * Opstack: .. -> .. , n
