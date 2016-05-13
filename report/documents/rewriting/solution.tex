@@ -5,10 +5,9 @@ The workflow stages of the solution are illustrated in \cref{fig:workflow}. The 
 
 % burde vi også give mulighed i programmet for bare at få en ``vanilla'' SMC model ud?
 
-\paragraph{Stage 1 - 2} rewrites the original Java class file to include fault injection countermeasures. The output is one or more modified Java class files depending on the number of countermeasures implemented. 
-\paragraph{Stage 2 - 3} provides two options, either one can use the rewritten code to perform static analysis with an analysis tool, or one can parse the code through the solution's parser and generate a UPPAAL SMC model. 
-\paragraph{Stage 3 - 4} modifies the model to include a special fault injection template, which can simulate a fault being injected in the Java program. At this point in the workflow, the model of the rewritten code is also modified to include special synchronisations, guards, updates and locations. These make it possible to verify timed properties of the model and enables the fault template to interact with the model.
-\paragraph{Stage 3,4 - 5} is where the solution recommends a fitting countermeasure for the code, based properties it has verified about the rewritten version(s) of the code. These models serve as the input for stage 5. The recommended countermeasure incurs the least static size overhead of the rewritten Java class file but provides the most protection for the largest possible duration of the program's execution.
+\paragraph{Stage 1 - 3} parses Java bytecode code through the solution's parser and generates a UPPAAL SMC model.
+\paragraph{Stage 2 - 3} parses Java bytecode code, modified with fault countermeasures, through the solution's parser and generates a UPPAAL SMC model.  
+\paragraph{Stage 3 - 4} assesses the performed attacks and countermeasures implemented to reduce vulnerablility, by verifying properties about them.
 
 \begin{figure}[H]
 \centering
