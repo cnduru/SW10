@@ -17,7 +17,7 @@ namespace ModelRewriter
                         //new JParser(args.Skip(1));
                         //new JParser(new List<string>() { "exlinesDup.txt" });
                         //new JParser(new List<string>() { "virtual/Virtual.txt", "virtual/Aclass.txt", "virtual/Bclass.txt" });
-                        new JParser(new List<string>(){ "simple_purse/Example_dup.txt"});
+                        new JParser(new List<string>(){ "simple_purse_cgi/ExampleCGI.txt"});
                         new Rewriter("new3.xml");
                         break;
                     default:

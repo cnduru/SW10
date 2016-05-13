@@ -1,0 +1,143 @@
+Class ExampleCGI
+private static  int callId
+
+ private bool  isInvalid ();  Concrete Method   Parsed      ExampleCGI.processVerifyPIN()    
+0.  getstatic  ExampleCGI.callId  :  int
+3.  iconst 4
+4.  ifcmpeq 11
+7.  new  java.lang.Exception
+10.  dup
+11.  invokespecial  void  java.lang.Exception.<init> ()
+14.  athrow
+15.  iconst 5
+16.  putstatic  ExampleCGI.callId  :  int
+19.  iconst 1
+20.  ireturn
+ public  ExampleCGI ();  Concrete Method   Parsed      ExampleCGI.main(java.lang.String[])    
+0.  aload  0
+1.  invokespecial  void  java.lang.Object.<init> ()
+4.  getstatic  ExampleCGI.callId  :  int
+7.  iconst 1
+8.  ifcmpeq 11
+11.  new  java.lang.Exception
+14.  dup
+15.  invokespecial  void  java.lang.Exception.<init> ()
+18.  athrow
+19.  iconst 2
+20.  putstatic  ExampleCGI.callId  :  int
+23.  aload  0
+24.  invokespecial  void  ExampleCGI.processVerifyPIN ()
+27.  getstatic  ExampleCGI.callId  :  int
+30.  iconst 3
+31.  ifcmpeq 11
+34.  new  java.lang.Exception
+37.  dup
+38.  invokespecial  void  java.lang.Exception.<init> ()
+41.  athrow
+42.  iconst 2
+43.  putstatic  ExampleCGI.callId  :  int
+46.  return
+ private void  processVerifyPIN ();  Concrete Method   Parsed      ExampleCGI.<init>()    
+0.  getstatic  ExampleCGI.callId  :  int
+3.  iconst 2
+4.  ifcmpeq 11
+7.  new  java.lang.Exception
+10.  dup
+11.  invokespecial  void  java.lang.Exception.<init> ()
+14.  athrow
+15.  iconst 4
+16.  istore  1
+17.  sipush 255
+20.  istore  2
+21.  iconst 3
+22.  putstatic  ExampleCGI.callId  :  int
+25.  aload  0
+26.  invokespecial  short  ExampleCGI.setIncomingAndReceive ()
+29.  istore  4
+31.  getstatic  ExampleCGI.callId  :  int
+34.  iconst 4
+35.  ifcmpeq 11
+38.  new  java.lang.Exception
+41.  dup
+42.  invokespecial  void  java.lang.Exception.<init> ()
+45.  athrow
+46.  iload  4
+48.  iload  1
+49.  ifcmpge 11
+52.  new  java.lang.Exception
+55.  dup
+56.  invokespecial  void  java.lang.Exception.<init> ()
+59.  athrow
+60.  iconst 4
+61.  putstatic  ExampleCGI.callId  :  int
+64.  aload  0
+65.  invokespecial  bool  ExampleCGI.isInvalid ()
+68.  ifeq 51
+71.  getstatic  ExampleCGI.callId  :  int
+74.  iconst 5
+75.  ifcmpeq 11
+78.  new  java.lang.Exception
+81.  dup
+82.  invokespecial  void  java.lang.Exception.<init> ()
+85.  athrow
+86.  iconst 5
+87.  putstatic  ExampleCGI.callId  :  int
+90.  aload  0
+91.  invokespecial  int  ExampleCGI.getTriesRemaining ()
+94.  istore  3
+95.  getstatic  ExampleCGI.callId  :  int
+98.  bipush 6
+100.  ifcmpeq 11
+103.  new  java.lang.Exception
+106.  dup
+107.  invokespecial  void  java.lang.Exception.<init> ()
+110.  athrow
+111.  new  java.lang.Exception
+114.  dup
+115.  invokespecial  void  java.lang.Exception.<init> ()
+118.  athrow
+119.  iconst 2
+120.  putstatic  ExampleCGI.callId  :  int
+123.  return
+ public static void  main ( java.lang.String [] 0);  Concrete Method   Parsed  
+0.  iconst 1
+1.  putstatic  ExampleCGI.callId  :  int
+4.  new  ExampleCGI
+7.  dup
+8.  invokespecial  void  ExampleCGI.<init> ()
+11.  astore  1
+12.  getstatic  ExampleCGI.callId  :  int
+15.  iconst 2
+16.  ifcmpeq 11
+19.  new  java.lang.Exception
+22.  dup
+23.  invokespecial  void  java.lang.Exception.<init> ()
+26.  athrow
+27.  goto 4
+30.  astore  1
+31.  return
+try start: 0; try end: 27: catch start: 30; catched type: java.lang.Exception.
+ private int  getTriesRemaining ();  Concrete Method   Parsed      ExampleCGI.processVerifyPIN()    
+0.  getstatic  ExampleCGI.callId  :  int
+3.  iconst 5
+4.  ifcmpeq 11
+7.  new  java.lang.Exception
+10.  dup
+11.  invokespecial  void  java.lang.Exception.<init> ()
+14.  athrow
+15.  bipush 6
+17.  putstatic  ExampleCGI.callId  :  int
+20.  iconst 2
+21.  ireturn
+ private short  setIncomingAndReceive ();  Concrete Method   Parsed      ExampleCGI.processVerifyPIN()    
+0.  getstatic  ExampleCGI.callId  :  int
+3.  iconst 3
+4.  ifcmpeq 11
+7.  new  java.lang.Exception
+10.  dup
+11.  invokespecial  void  java.lang.Exception.<init> ()
+14.  athrow
+15.  iconst 4
+16.  putstatic  ExampleCGI.callId  :  int
+19.  iconst 5
+20.  ireturn

@@ -879,7 +879,7 @@ bool ifeq(){
 
                 wait.Add(new Label
                     {
-                        content = "t == 5 && !exceptionOccurred", kind = "guard" 
+                        content = "t == 5", kind = "guard" 
                     });
             }
             if (ret)
