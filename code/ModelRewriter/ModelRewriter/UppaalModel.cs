@@ -9,6 +9,8 @@ using System.Text.RegularExpressions;
 using System.Text;
 using System.Linq;
 using System.IO;
+using System.Xml.XPath;
+using System.Xml.Schema;
 
 namespace ModelRewriter
 {
@@ -22,7 +24,7 @@ namespace ModelRewriter
         string globalDeclarations;
 		List<Template> templates;
 		string system;
-		string queries;
+        List<string> queries = new List<string>();
 
         private StringBuilder virtualGlobalDec = new StringBuilder();
 
@@ -42,7 +44,8 @@ namespace ModelRewriter
 			var nta =  xml.Element ("nta");
             globalDeclarations = getGlobalDeclarations(nta.Element("declaration").Value);
 			system = getSystem(nta.Element ("system").Value, countermeasure);
-            queries = nta.Element ("queries").Value;
+            queries.AddRange(nta.XPathSelectElements("//queries/query/formula").Select(x => x.Value));
+
 
             XMLHandler xlh = new XMLHandler(xml);
             templates = xlh.getTemplates();//new List<Template>();
@@ -100,7 +103,13 @@ namespace ModelRewriter
             system = sysBuild.ToString();
 
 
-            queries = @"Pr[<= 50] (<> done)";
+            queries.Add(@"A<> iExampleCGI_main.Done && !opstack_fault && exceptionOccurred");
+            queries.Add(@"Pr[<= 100] (<> iExampleCGI_main.Done && !opstack_fault && exceptionOccurred)");
+            queries.Add(@"E<> opstack_fault");
+            queries.Add(@"Pr[<= 100] (<> opstack_fault)");
+            queries.Add(@"E<> iExampleCGI_main.Done && !opstack_fault && !exceptionOccurred");
+            queries.Add(@"Pr[<= 100] (<> iExampleCGI_main.Done && !opstack_fault && !exceptionOccurred)");
+
         }
 
 		//Store UPPAAL model to a file
@@ -119,9 +128,13 @@ namespace ModelRewriter
 
 			nta.Add(BuildXElement("system", system));
             var xqueries = new XElement("queries", "queries");
-            var xquery = new XElement("query", "query");
-            xquery.Add(BuildXElement("formula", queries));
-            xqueries.Add(xquery);
+            foreach (var q in queries)
+            {
+                var xquery = new XElement("query", "query");
+                xquery.Add(BuildXElement("formula", q));
+                xqueries.Add(xquery);
+            }
+
             nta.Add(xqueries);
 			xml.Save(path);
 		}
