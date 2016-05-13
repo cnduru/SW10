@@ -84,7 +84,7 @@ public class Example_cgi
     }
 
 
-    private boolean isInvalid()
+    private boolean isInvalid() throws Exception
     {
         if(callId != 4)
         {
@@ -96,7 +96,7 @@ public class Example_cgi
         return true;
     }
 
-    private short setIncomingAndReceive()
+    private short setIncomingAndReceive() throws Exception
     {
         if(callId != 3)
         {
@@ -107,7 +107,7 @@ public class Example_cgi
         return 5;
     }
 
-    private int getTriesRemaining()
+    private int getTriesRemaining() throws Exception
     {
         if(callId != 5)
         {
