@@ -805,6 +805,22 @@ bool ifeq(){
                         Transitions.Add(new Transition(loc, PCToLocation(loc.inst.pc + Convert.ToInt32(instArg[1])), labJump, -50));
                         Transitions.Add(new Transition(loc, NextLocation(loc), labNoJump, -50));
                         break;
+                    case "putstatic":
+                        labels = new List<Label>()
+                        {
+                            new Label
+                            { 
+                                content = timeGuard, kind = "guard"
+                            },
+                            new Label
+                            { 
+                                content = String.Format("osp_dec(1), cp{0} = os[osp], t = 0",
+                                CP.Add(String.Join(" ", instArg.Skip(1)))), 
+                                kind = "assignment"
+                            }
+                        };
+                        Transitions.Add(new Transition(loc, NextLocation(loc), labels));
+                        break;
                     default:
                         labels = new List<Label>()
                         {
