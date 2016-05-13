@@ -1,6 +1,6 @@
-public class Example 
+public class Example_cgi
 {
-    private int callId;
+    private static int callId;
 
     public static void main(String[] args) {
         try
@@ -8,7 +8,7 @@ public class Example
             callId = 1;
 		    Example hw = new Example();
 
-        if(!(callId == 2)
+        if(!(callId == 2))
         {
             throw new Exception();
         }
@@ -19,7 +19,7 @@ public class Example
         }
     }
 
-    public Example() throws Exception
+    public Example_cgi() throws Exception
     {
         if(callId != 1)
         {
