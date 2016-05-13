@@ -8,7 +8,7 @@ public class ExampleCGI
             callId = 1;
 		    ExampleCGI hw = new ExampleCGI();
 
-        if(!(callId == 2))
+        if(!(callId == 10))
         {
             throw new Exception();
         }
@@ -30,12 +30,12 @@ public class ExampleCGI
 
         processVerifyPIN();
 
-        if(callId != 3)
+        if(callId != 9)
         {
             throw new Exception();
         }
 
-        callId = 2;
+        callId = 10;
     }
 
     private void processVerifyPIN() throws Exception
@@ -60,38 +60,38 @@ public class ExampleCGI
 
         if(count < pinLength) throw new Exception();
 
-        callId = 4;
+        callId = 5;
 
         if(isInvalid() != false)
         {
-            if(callId != 5)
-            {
-                throw new Exception();
-            }
-
-            callId = 5;
-            triesRemaining = getTriesRemaining();
-            
             if(callId != 6)
             {
                 throw new Exception();
             }
 
+            callId = 7;
+            triesRemaining = getTriesRemaining();
+            
+            if(callId != 8)
+            {
+                throw new Exception();
+            }
+
             throw new Exception();
         }
 
-        callId = 2;
+        callId = 9;
     }
 
 
     private boolean isInvalid() throws Exception
     {
-        if(callId != 4)
+        if(callId != 5)
         {
             throw new Exception();
         }
 
-        callId = 5;
+        callId = 6;
 
         return true;
     }
@@ -109,12 +109,12 @@ public class ExampleCGI
 
     private int getTriesRemaining() throws Exception
     {
-        if(callId != 5)
+        if(callId != 7)
         {
             throw new Exception();
         }
 
-        callId = 6;
+        callId = 8;
 
         return 2;
     }
