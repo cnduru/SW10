@@ -3,16 +3,16 @@ private static  int callId
 
  private bool  isInvalid ();  Concrete Method   Parsed      ExampleCGI.processVerifyPIN()    
 0.  getstatic  ExampleCGI.callId  :  int
-3.  iconst 4
+3.  iconst 5
 4.  ifcmpeq 11
 7.  new  java.lang.Exception
 10.  dup
 11.  invokespecial  void  java.lang.Exception.<init> ()
 14.  athrow
-15.  iconst 5
-16.  putstatic  ExampleCGI.callId  :  int
-19.  iconst 1
-20.  ireturn
+15.  bipush 6
+17.  putstatic  ExampleCGI.callId  :  int
+20.  iconst 1
+21.  ireturn
  public  ExampleCGI ();  Concrete Method   Parsed      ExampleCGI.main(java.lang.String[])    
 0.  aload  0
 1.  invokespecial  void  java.lang.Object.<init> ()
@@ -28,15 +28,15 @@ private static  int callId
 23.  aload  0
 24.  invokespecial  void  ExampleCGI.processVerifyPIN ()
 27.  getstatic  ExampleCGI.callId  :  int
-30.  iconst 3
-31.  ifcmpeq 11
-34.  new  java.lang.Exception
-37.  dup
-38.  invokespecial  void  java.lang.Exception.<init> ()
-41.  athrow
-42.  iconst 2
-43.  putstatic  ExampleCGI.callId  :  int
-46.  return
+30.  bipush 9
+32.  ifcmpeq 11
+35.  new  java.lang.Exception
+38.  dup
+39.  invokespecial  void  java.lang.Exception.<init> ()
+42.  athrow
+43.  bipush 10
+45.  putstatic  ExampleCGI.callId  :  int
+48.  return
  private void  processVerifyPIN ();  Concrete Method   Parsed      ExampleCGI.<init>()    
 0.  getstatic  ExampleCGI.callId  :  int
 3.  iconst 2
@@ -68,37 +68,37 @@ private static  int callId
 55.  dup
 56.  invokespecial  void  java.lang.Exception.<init> ()
 59.  athrow
-60.  iconst 4
+60.  iconst 5
 61.  putstatic  ExampleCGI.callId  :  int
 64.  aload  0
 65.  invokespecial  bool  ExampleCGI.isInvalid ()
-68.  ifeq 51
+68.  ifeq 53
 71.  getstatic  ExampleCGI.callId  :  int
-74.  iconst 5
-75.  ifcmpeq 11
-78.  new  java.lang.Exception
-81.  dup
-82.  invokespecial  void  java.lang.Exception.<init> ()
-85.  athrow
-86.  iconst 5
-87.  putstatic  ExampleCGI.callId  :  int
-90.  aload  0
-91.  invokespecial  int  ExampleCGI.getTriesRemaining ()
-94.  istore  3
-95.  getstatic  ExampleCGI.callId  :  int
-98.  bipush 6
-100.  ifcmpeq 11
-103.  new  java.lang.Exception
-106.  dup
-107.  invokespecial  void  java.lang.Exception.<init> ()
-110.  athrow
-111.  new  java.lang.Exception
-114.  dup
-115.  invokespecial  void  java.lang.Exception.<init> ()
-118.  athrow
-119.  iconst 2
-120.  putstatic  ExampleCGI.callId  :  int
-123.  return
+74.  bipush 6
+76.  ifcmpeq 11
+79.  new  java.lang.Exception
+82.  dup
+83.  invokespecial  void  java.lang.Exception.<init> ()
+86.  athrow
+87.  bipush 7
+89.  putstatic  ExampleCGI.callId  :  int
+92.  aload  0
+93.  invokespecial  int  ExampleCGI.getTriesRemaining ()
+96.  istore  3
+97.  getstatic  ExampleCGI.callId  :  int
+100.  bipush 8
+102.  ifcmpeq 11
+105.  new  java.lang.Exception
+108.  dup
+109.  invokespecial  void  java.lang.Exception.<init> ()
+112.  athrow
+113.  new  java.lang.Exception
+116.  dup
+117.  invokespecial  void  java.lang.Exception.<init> ()
+120.  athrow
+121.  bipush 9
+123.  putstatic  ExampleCGI.callId  :  int
+126.  return
  public static void  main ( java.lang.String [] 0);  Concrete Method   Parsed  
 0.  iconst 1
 1.  putstatic  ExampleCGI.callId  :  int
@@ -107,28 +107,28 @@ private static  int callId
 8.  invokespecial  void  ExampleCGI.<init> ()
 11.  astore  1
 12.  getstatic  ExampleCGI.callId  :  int
-15.  iconst 2
-16.  ifcmpeq 11
-19.  new  java.lang.Exception
-22.  dup
-23.  invokespecial  void  java.lang.Exception.<init> ()
-26.  athrow
-27.  goto 4
-30.  astore  1
-31.  return
-try start: 0; try end: 27: catch start: 30; catched type: java.lang.Exception.
+15.  bipush 10
+17.  ifcmpeq 11
+20.  new  java.lang.Exception
+23.  dup
+24.  invokespecial  void  java.lang.Exception.<init> ()
+27.  athrow
+28.  goto 4
+31.  astore  1
+32.  return
+try start: 0; try end: 28: catch start: 31; catched type: java.lang.Exception.
  private int  getTriesRemaining ();  Concrete Method   Parsed      ExampleCGI.processVerifyPIN()    
 0.  getstatic  ExampleCGI.callId  :  int
-3.  iconst 5
-4.  ifcmpeq 11
-7.  new  java.lang.Exception
-10.  dup
-11.  invokespecial  void  java.lang.Exception.<init> ()
-14.  athrow
-15.  bipush 6
-17.  putstatic  ExampleCGI.callId  :  int
-20.  iconst 2
-21.  ireturn
+3.  bipush 7
+5.  ifcmpeq 11
+8.  new  java.lang.Exception
+11.  dup
+12.  invokespecial  void  java.lang.Exception.<init> ()
+15.  athrow
+16.  bipush 8
+18.  putstatic  ExampleCGI.callId  :  int
+21.  iconst 2
+22.  ireturn
  private short  setIncomingAndReceive ();  Concrete Method   Parsed      ExampleCGI.processVerifyPIN()    
 0.  getstatic  ExampleCGI.callId  :  int
 3.  iconst 3
