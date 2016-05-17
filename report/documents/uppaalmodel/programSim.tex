@@ -73,11 +73,9 @@ public static void main(java.lang.String[]);
 \label{fig:uppaal1}
 \end{figure}
 \kri{lav ny model til nyt sample}
-\Cref{fig:uppaal1} show how two Java Bytecode instructions are represented in UPPAAL. On the left we see the Java bytecode, the first line with program counter 0 we have the \texttt{aload 0} instruction. \texttt{aload 0} pushes a reference to the top of the operation stack from local variables at position zero, then increments the operand stack pointer and program counter.
-
+\Cref{fig:uppaal1} show how two Java Bytecode instructions are represented in UPPAAL. On the left we see the Java bytecode, the first line with program counter 0 we have the \texttt{aload 0} instruction. \texttt{aload 0} pushes a reference to the top of the operation stack from local variables at position zero, then increments the operand stack pointer and program counter.\\\\
 %uppaal location edge
-In UPPAAL the location \texttt{pc0\_aload} represent \texttt{aload 0}. The UPPAAL model is seen in \Cref{fig:uppaal1}b. We simulate execution time with the location invariant \texttt{t <= 1}  and guard \texttt{t == 1} on the edge leading to the next location. The guard is found right below the location name right of the edge and invariant is to the left of the edge. In this sample we defined the execution time as 1 time unit.
-
+In UPPAAL the location \texttt{pc0\_aload} represents \texttt{aload 0}. The UPPAAL model is seen in \Cref{fig:uppaal1}b. We simulate execution time with the location invariant \texttt{t <= 1}  and guard \texttt{t == 1} on the edge leading to the next location. The guard is found right below the location name right of the edge and invariant is to the left of the edge. In this sample we defined the execution time as 1 time unit.\\\\
 In the update on the edge seen below the guard, we simulate the data flow by assigning the value of the local variable \texttt{loc0} to the top of the operand stack \texttt{os} represented by operand stack pointer \texttt{osp}. \texttt{osp} is incremented as the operand stack grows, the increment of the program counter is simulated by the edge itself.
 
 \subsubsection{Jumps and Branches}
