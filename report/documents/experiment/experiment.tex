@@ -1,5 +1,5 @@
 \chapter{Experiments}
-In this chapter, experimental results are presented to confirm that implementing code duplication and call graph integrity countermeasures, \cref{sub:faultCounter}, makes Java code more and not less secure. The experiments will also be performed on code which has no countermeasures implemented from the \jc samples found in \cref{chap:samples}.\ch{explain why we chose flip in ifeq and why it might be safer to use ifneq (goto)}.
+In this chapter, experimental results are presented to confirm that implementing code duplication and call graph integrity countermeasures, \cref{sub:faultCounter}, makes Java code more and not less secure. The experiments will also be performed on code which has no countermeasures implemented from the \jc samples found in \cref{chap:samples}.
 %, shown in \cref{lst:exUnmod}. 
 %A bit flip inverts the comparison and the code in \cref{lst:exMod} is the result. The countermeasures are implemented on this, modified, code.\ch{}
 %\begin{lstlisting}[label={lst:exUnmod}, caption=Purse code sample from the \jc samples.]
@@ -19,6 +19,9 @@ In this chapter, experimental results are presented to confirm that implementing
 \input{documents/experiment/codedup}
 \section{Call Graph Integrity}
 \input{documents/experiment/cgi}
+\section{Instruction fault}
+\ch{explain why we chose flip in ifeq and why it might be safer to use ifneq (goto)}.
+\kri{maybe move this as no experiments will be done on it}
 %Opstack pointer assumption is broken\\\\
 %Inst fault og Instruction Differentiation\\\\
 %Code dub\\\\
