@@ -673,7 +673,7 @@ bool ifeq(){
                         {
                             new Label
                             { 
-                                content = "osp_inc(), os[osp - 1] = os[osp - 2]", 
+                                content = "osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]", 
                                 kind = "assignment"
                             },
                             new Label
@@ -817,6 +817,21 @@ bool ifeq(){
                             { 
                                 content = String.Format("osp_dec(1), H[cp{0}] = os[osp], t = 0",
                                 CP.Add(String.Join(" ", instArg.Skip(1)))), 
+                                kind = "assignment"
+                            }
+                        };
+                        Transitions.Add(new Transition(loc, NextLocation(loc), labels));
+                        break;
+                    case "add":
+                        labels = new List<Label>()
+                        {
+                            new Label
+                            { 
+                                content = timeGuard, kind = "guard"
+                            },
+                            new Label
+                            { 
+                                content = "osp_dec(2), osp_inc(), os[osp - 1] = os[osp - 1] + os[osp - 2], t = 0", 
                                 kind = "assignment"
                             }
                         };
