@@ -3,4 +3,6 @@
 % cd
 As expected, the experiment results for CD are identical to the Base since no faults were introduced.\\\\
 % cd + pc
-For CD + PC we expected a change in the attack percentage, since the critical region of the code was offset, which might or might not have enabled new paths to be taken. The duplicated program just so happens to have the same amount of valid paths.
+For CD + PC we expected a change in the attack percentage, since the critical region of the code was offset, which might or might not have enabled new paths to be taken. The duplicated program just so happens to have the same amount of valid paths.\\\\
+% cd + op
+CD + OP successfully protects the code when it is subjected to a bit flip in the operand stack. We attribute this to the fact that code that uses the operand stack, e.g. an \texttt{ifeq} instruction, is duplicated and therefore a flip in a value used is overwritten with a correct value.
