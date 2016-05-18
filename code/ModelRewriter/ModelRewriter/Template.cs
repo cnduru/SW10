@@ -392,7 +392,7 @@ bool ifeq(){
                             },
                             new Label
                             { 
-                                    content = String.Format("osp_inc(), os[osp-1] = cp{0}, t = 0",
+                                    content = String.Format("osp_inc(), os[osp-1] = H[cp{0}], t = 0",
                                     CP.Add(String.Join(" ", instArg.Skip(1)))), 
                                 kind = "assignment"
                             }
