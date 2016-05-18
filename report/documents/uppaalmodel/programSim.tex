@@ -83,6 +83,11 @@ For the majority of instructions the program counter is set to the next instruct
 
 Conditionals such as \texttt{if\_cmpeq a} is the only instruction that is modelled by a location having two outgoing edges , one to the next instruction and one for the program counter of a. On these edges the guard is used to determine which of the edges is to be traversed. \kri{insert example}
 
+\subsubsection{Local Variables and the Heap}
+\ch{merge with operand stack description?}
+\ch{find some place to put these two lines and remove subsubsection}
+Local variables and the heap are both represented as arrays in the UPPAAL model.
+
 \subsection{Method Calls}\label{subsubsec:method}
 Method calls covers the Java bytecode instructions:~\texttt{invokestatic} for static calls, \texttt{invokespecial} for class constructors and private calls, and \texttt{invokevirtual} virtual calls. To illustrate how these instructions are modelled, we use the Java code sample in \cref{lst:virtual}.
 \begin{lstlisting}[caption={\texttt{Bclass} extends \texttt{Aclass}, \texttt{Aclass} implements the methods foo and bar, and \texttt{Bclass} overwrites foo.}, label={lst:virtual}]
