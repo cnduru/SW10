@@ -1,4 +1,4 @@
-The experiments are performed on a code sample from a selected part of the \jc samples\ch{ref?}\ch{put code in appendix?}, where some parts, mainly variables and methods have been mocked since it was not necessary to model the complete samples.\\\\
+The experiments are performed on a code sample from a selected part of the \jc samples \cref{lst:example}, where some parts, mainly variables and methods have been mocked since it was not necessary to model the complete samples.\\\\
 In order to determine whether the implemented countermeasures do indeed provide improved protection against bit flips, compared to unprotected code, experiments are needed. These are performed with the modelling tool UPPAAL, which is described in \cref{chap:upp}.\\\\
 The experiments will be run according to two criteria, to determine whether a fault affecting security has happened. Below, these criteria and their related UPPAAL queries are listed
 
@@ -13,29 +13,3 @@ The experiments will be run according to two criteria, to determine whether a fa
 	\end{itemize}
 \end{itemize}
 
-The results in the table are listed in the following format in the extreme left column: $Code\:version + (attack)$, where content inside the parenthesis is optional.
-
-
-
-\ch{how do we round off numbers?}
-\begin{table}
-    \begin{tabular}{l|l|l|l|l|l|l|l}
-    ~         & No change & No change \% & Crash & Crash \% & Attack & Attack \% \\ \hline
-    Base      & True &\relax[0.990, 1] & False & \relax[0, 0.01] & False & \relax[0, 0.01] ~                                                                                    & ~ \\
-    Base + PC & False & \relax[0.768, 0.778] & True & \relax[0.180, 0.190] & True & [0.037, 0.047]                                                                                   & ~ \\
-    Base + OP & False & [0.990, 1] & False & [0, 0.01] & True & [0, 0.01]                                                                                   & ~ \\
-    Base + H  & True &\relax[0.990, 1] & False & \relax[0, 0.01] & False & \relax[0, 0.01]                                                                                    & ~ \\
-    Base + L  & True &\relax[0.990, 1] & False & \relax[0, 0.01] & False & \relax[0, 0.01]                                                                                    & ~ \\
-    CD        & True &\relax[0.990, 1] & False & \relax[0, 0.01] & False & \relax[0, 0.01]                                                                                    & ~ \\
-    CD + PC   & False & \relax[0.765, 0.775] & True & \relax[0.177, 0.187] & True & [0.043, 0.053]                                                                                & ~ \\
-    CD + OP   & True &\relax[0.990, 1] & False & \relax[0, 0.01] & False & \relax[0, 0.01]                                                                                   & ~ \\
-    CD + H    & True &\relax[0.990, 1] & False & \relax[0, 0.01] & False & \relax[0, 0.01]                                                                                    & ~ \\
-    CD + L    & True &\relax[0.990, 1] & False & \relax[0, 0.01] & False & \relax[0, 0.01]                                                                                    & ~ \\
-    CGI       &  ~                                                                                    & ~ \\
-    CGI + PC  & ~                                                                                 & ~ \\
-    CGI + OP  &                                                                                     & ~ \\
-    CGI + H   & ~                                                                                    & ~ \\
-    CGI + L   & ~                                                                                    & ~ \\
-    \end{tabular}
-    \caption{All experiment results have a confidence of $0.95$}
-\end{table}
