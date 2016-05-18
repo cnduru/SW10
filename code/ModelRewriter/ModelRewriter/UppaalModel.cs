@@ -65,7 +65,7 @@ namespace ModelRewriter
             gloDecBuild.Append("int H[heap_size];\n");
             //ConstantPool
             for (int i = 0; i < cpSize; i++) {
-                gloDecBuild.Append("int cp" + i + ";\n");
+                gloDecBuild.Append("int cp" + i + "= " + (5 + i) + ";\n");
             }
             //Method parameters
             for (int i = 0; i < maxPar; i++)

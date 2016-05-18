@@ -13,7 +13,7 @@ namespace ModelRewriter
         public static List<string> ClassNames = new List<string>();
         public static List<string> MethodNames = new List<string>();
 
-        public JParser(IEnumerable<string> path)
+        public JParser(IEnumerable<string> path, string save)
 		{
             UppaalModel model = new UppaalModel();
             var jClasses = new List<JClass>(); 
@@ -63,8 +63,8 @@ namespace ModelRewriter
             //Add Invoke
             model.AddInvokevirtual(jClasses);
 
-            model.InitDec(heap.Count + 1,3,3, methods); 
-            model.Save("new3.xml");
+            model.InitDec(heap.Count + 10,3,3, methods); 
+            model.Save(save);
 		}
 
         private List<string> AllocateHeap(List<string> allocs, List<JClass> jClasses)
