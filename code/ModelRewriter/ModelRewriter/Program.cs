@@ -14,11 +14,13 @@ namespace ModelRewriter
                 switch (args[0])
                 {
                     case "b":
+                        var target = "CD.xml";
                         //new JParser(args.Skip(1));
                         //new JParser(new List<string>() { "exlinesDup.txt" });
                         //new JParser(new List<string>() { "virtual/Virtual.txt", "virtual/Aclass.txt", "virtual/Bclass.txt" });
-                        new JParser(new List<string>(){ "simple_purse_cgi/ExampleCGI.txt"});
-                        new Rewriter("new3.xml");
+                        //new JParser(new List<string>(){ "simple_purse_cgi/ExampleCGI.txt"});
+                        new JParser(new List<string>(){ "simple_purse/Example_dup.txt"}, target);
+                        new Rewriter(target);
                         break;
                     default:
                         new Rewriter(args[1]);
@@ -27,7 +29,7 @@ namespace ModelRewriter
 			} 
 			else 
 			{
-                new JParser(new List<string>() { "simple_purse_cgi/ExampleCGI.txt" });//"Sample.txt", "A.txt", "B.txt" });
+                new JParser(new List<string>() { "simple_purse_cgi/ExampleCGI.txt" }, "new3.xml");//"Sample.txt", "A.txt", "B.txt" });
                 new Rewriter("new3.xml");//C://Users//Avalon//SW10//code//models//sample.xml");
 			}
         }
