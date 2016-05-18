@@ -1,5 +1,7 @@
 \chapter{UPPAAL and Formal Verification}\label{chap:upp}
 \input{documents/semantics/language/_semantics}
+
+\ch{do we need to describe $\varphi$ mathematically as in \cite[p. 401]{smc}?}
 \section{Property Verification}
 UPPAAL has its own query language used to verify properties of a model\cite[p. 7]{upptut}. The language is a simplified version of timed computation tree logic. UPPAAL's query language consists of \textit{state formulae} and \textit{path formulae}. The path formulae can be categorised into three categories: reachability, safety and liveness. These are described below, and they are summarised in \cref{fig:query}.
 \paragraph{State formulae}
@@ -23,6 +25,13 @@ A variation of this liveness property, is the \textit{leads to} property, writte
 \paragraph{Probability estimation}
 UPPAAL SMC extends the capabilites of UPPAAL, in a way that allows us to reason about a model in terms of not only "yes" and "no", but also the \textit{probability} a model has of entering a certain state. An example could be determining the probability of a model of a Java bytecode program reaching a state of termination. To allow this, UPPAAL SMC extends regular queries, described earlier, to include probabilities. A query which asks the probability that \textit{some} path in a model of the program in \cref{lst:example} can finish within $100$ time units without an operand stack fault and exceptions occurring, would look as follows\\
 $$\texttt{Pr\relax[bound\relax] ($\varphi$)}$$
-where \texttt{bound} denotes a time window within which a property, $\varphi$ is to be verified.
+where \texttt{bound} denotes a bound for a simulation run, within which a property, $\varphi$ is to be verified. A bound can be defined in three ways\cite[p. 402]{smc}
+
+\begin{itemize}
+\item implicitly by time by specifying $\leq M$, where $M$ is a positive integer.
+\item explicitly by cost with $x \leq M$ where $x$ is a specific clock.
+\item by number of discrete steps with $\# <= M$. 
+\end{itemize}
+
 UPPAAL SMC will then calculate the probability of this query being true within a certain confidence, e.g. $\relax[0.689, 0.699]$ indicating $68.9$ to $69.9\%$ probability that the query is satisfied within $x$ runs.
 \ch{do we need refs for this paragraph?}
