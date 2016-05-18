@@ -24,6 +24,7 @@ A variation of this liveness property, is the \textit{leads to} property, writte
 
 \paragraph{Probability estimation}
 UPPAAL SMC extends the capabilites of UPPAAL, in a way that allows us to reason about a model in terms of not only "yes" and "no", but also the \textit{probability} a model has of entering a certain state. An example could be determining the probability of a model of a Java bytecode program reaching a state of termination. To allow this, UPPAAL SMC extends regular queries, described earlier, to include probabilities. A query which asks the probability that \textit{some} path in a model of the program in \cref{lst:example} can finish within $100$ time units without an operand stack fault and exceptions occurring, would look as follows\\
+\ch{fix description of query from old example}
 $$\texttt{Pr\relax[bound\relax] ($\varphi$)}$$
 where \texttt{bound} denotes a bound for a simulation run, within which a property, $\varphi$ is to be verified. A bound can be defined in three ways\cite[p. 402]{smc}
 
