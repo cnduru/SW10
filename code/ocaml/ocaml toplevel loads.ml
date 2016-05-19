@@ -22,9 +22,9 @@ open Sawja_pack
 open JProgram;;
 
 (* Setup here! *)
-let jar_file = "java/ExampleCGI.jar"
-let main_class = "ExampleCGI"
-let output = "output/simple_purse_cgi"
+let jar_file = "java/ExampleCFI.jar"
+let main_class = "ExampleCFI"
+let output = "output/simple_purse"
 
 let (prta,instantiated_classes) =
   JRTA.parse_program 
