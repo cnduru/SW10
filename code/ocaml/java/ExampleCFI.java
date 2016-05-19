@@ -17,7 +17,7 @@ public class ExampleCFI
 		// CFI START
         processVerifyPIN();
 		
-		if(flag != 3)
+		if(flag != 5)
 		{
 			throw new Exception();
 		}
@@ -33,6 +33,8 @@ public class ExampleCFI
 
         short count = setIncomingAndReceive();    // get expected data
 		
+		flag++;
+		
         if(count < pinLength) throw new Exception();
 
         if(isInvalid() != false)
@@ -40,6 +42,7 @@ public class ExampleCFI
             triesRemaining = getTriesRemaining();
             throw new Exception();
         }
+		flag++;
     }
 
 
