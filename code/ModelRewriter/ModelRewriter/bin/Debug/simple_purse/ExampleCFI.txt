@@ -18,7 +18,7 @@ private static  int flag
 4.  aload  0
 5.  invokespecial  void  ExampleCFI.processVerifyPIN ()
 8.  getstatic  ExampleCFI.flag  :  int
-11.  iconst 5
+11.  iconst 2
 12.  ifcmpeq 11
 15.  new  java.lang.Exception
 18.  dup
@@ -26,43 +26,31 @@ private static  int flag
 22.  athrow
 23.  return
  private void  processVerifyPIN ();  Concrete Method   Parsed      ExampleCFI.<init>()    
-0.  getstatic  ExampleCFI.flag  :  int
-3.  iconst 1
-4.  iadd
-5.  putstatic  ExampleCFI.flag  :  int
-8.  iconst 4
-9.  istore  1
-10.  sipush 255
-13.  istore  2
-14.  aload  0
-15.  invokespecial  short  ExampleCFI.setIncomingAndReceive ()
-18.  istore  4
-20.  getstatic  ExampleCFI.flag  :  int
-23.  iconst 1
-24.  iadd
-25.  putstatic  ExampleCFI.flag  :  int
-28.  iload  4
-30.  iload  1
-31.  ifcmpge 11
-34.  new  java.lang.Exception
-37.  dup
-38.  invokespecial  void  java.lang.Exception.<init> ()
-41.  athrow
-42.  aload  0
-43.  invokespecial  bool  ExampleCFI.isInvalid ()
-46.  ifeq 16
-49.  aload  0
-50.  invokespecial  int  ExampleCFI.getTriesRemaining ()
-53.  istore  3
-54.  new  java.lang.Exception
-57.  dup
-58.  invokespecial  void  java.lang.Exception.<init> ()
-61.  athrow
-62.  getstatic  ExampleCFI.flag  :  int
-65.  iconst 1
-66.  iadd
-67.  putstatic  ExampleCFI.flag  :  int
-70.  return
+0.  iconst 4
+1.  istore  1
+2.  sipush 255
+5.  istore  2
+6.  aload  0
+7.  invokespecial  short  ExampleCFI.setIncomingAndReceive ()
+10.  istore  4
+12.  iload  4
+14.  iload  1
+15.  ifcmpge 11
+18.  new  java.lang.Exception
+21.  dup
+22.  invokespecial  void  java.lang.Exception.<init> ()
+25.  athrow
+26.  aload  0
+27.  invokespecial  bool  ExampleCFI.isInvalid ()
+30.  ifeq 16
+33.  aload  0
+34.  invokespecial  int  ExampleCFI.getTriesRemaining ()
+37.  istore  3
+38.  new  java.lang.Exception
+41.  dup
+42.  invokespecial  void  java.lang.Exception.<init> ()
+45.  athrow
+46.  return
  public static void  main ( java.lang.String [] 0);  Concrete Method   Parsed  
 0.  new  ExampleCFI
 3.  dup
