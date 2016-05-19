@@ -1,6 +1,6 @@
 public class ExampleCFI
 {
-	private int flag = 0;
+	private static int flag = 0;
 	
     public static void main(String[] args) {
         try

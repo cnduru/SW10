@@ -822,7 +822,7 @@ bool ifeq(){
                         };
                         Transitions.Add(new Transition(loc, NextLocation(loc), labels));
                         break;
-                    case "add":
+                    case "iadd":
                         labels = new List<Label>()
                         {
                             new Label
@@ -831,7 +831,7 @@ bool ifeq(){
                             },
                             new Label
                             { 
-                                content = "osp_dec(2), osp_inc(), os[osp - 1] = os[osp - 1] + os[osp - 2], t = 0", 
+                                content = "osp_dec(2), osp_inc(), os[osp - 1] = os[osp - 1] + os[osp], t = 0", 
                                 kind = "assignment"
                             }
                         };

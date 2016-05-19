@@ -103,12 +103,12 @@ namespace ModelRewriter
             system = sysBuild.ToString();
 
 
-            queries.Add(@"A<> iExampleCGI_main.Done && !opstack_fault && exceptionOccurred");
-            queries.Add(@"Pr[<= 100] (<> iExampleCGI_main.Done && !opstack_fault && exceptionOccurred)");
+            queries.Add(@"A<> iExampleCFI_main.Done && !opstack_fault && exceptionOccurred");
+            queries.Add(@"Pr[<= 100] (<> iExampleCFI_main.Done && !opstack_fault && exceptionOccurred)");
             queries.Add(@"E<> opstack_fault");
             queries.Add(@"Pr[<= 100] (<> opstack_fault)");
-            queries.Add(@"E<> iExampleCGI_main.Done && !opstack_fault && !exceptionOccurred");
-            queries.Add(@"Pr[<= 100] (<> iExampleCGI_main.Done && !opstack_fault && !exceptionOccurred)");
+            queries.Add(@"E<> iExampleCFI_main.Done && !opstack_fault && !exceptionOccurred");
+            queries.Add(@"Pr[<= 100] (<> iExampleCFI_main.Done && !opstack_fault && !exceptionOccurred)");
 
         }
 
