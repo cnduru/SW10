@@ -1,8 +1,8 @@
 #!/bin/bash
-tag="simple_purse_cgi"
+tag="simple_purse"
 codePath="ocaml/output/"$tag"/"
 outPath="ModelRewriter/ModelRewriter/bin/Debug/"$tag"/"
-cls=("ExampleCGI")
+cls=("ExampleCFI")
 #cls=("Aclass" "Bclass" "Virtual")
 
 for c in ${cls[@]}; do         
