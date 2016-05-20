@@ -14,7 +14,7 @@ namespace ModelRewriter
                 switch (args[0])
                 {
                     case "b":
-                        var target = "CFI2.xml";
+                        var target = "CFI3.xml";
                         //new JParser(args.Skip(1));
                         //new JParser(new List<string>() { "exlinesDup.txt" });
                         //new JParser(new List<string>() { "virtual/Virtual.txt", "virtual/Aclass.txt", "virtual/Bclass.txt" });
