@@ -61,18 +61,20 @@ public class ExampleCGI
 {
     private static int callId;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         try
         {
             callId = 1;
-		    ExampleCGI hw = new ExampleCGI();
+            ExampleCGI hw = new ExampleCGI();
 
         if(!(callId == 2))
         {
             throw new Exception();
         }
 
-        }catch (Exception ex)
+        }
+        catch (Exception ex)
         {
 
         }
@@ -199,12 +201,12 @@ Example.processVerifyPIN()
 8.  return
 
  private void  processVerifyPIN ();  Concrete Method   Parsed      Example.<init>()    
-0.  iconst 4
-1.  istore  1
-2.  sipush 255
-5.  istore  2
-6.  aload  0
-7.  invokespecial  short  Example.setIncomingAndReceive ()
+ 0.  iconst 4
+ 1.  istore  1
+ 2.  sipush 255
+ 5.  istore  2
+ 6.  aload  0
+ 7.  invokespecial  short  Example.setIncomingAndReceive ()
 10.  istore  4
 12.  iload  4
 14.  iload  1
@@ -230,11 +232,11 @@ Example.processVerifyPIN()
 54.  return
 
  public static void  main ( java.lang.String [] 0);  Concrete Method   Parsed  
-0.  new  Example
-3.  dup
-4.  invokespecial  void  Example.<init> ()
-7.  astore  1
-8.  goto 4
+ 0.  new  Example
+ 3.  dup
+ 4.  invokespecial  void  Example.<init> ()
+ 7.  astore  1
+ 8.  goto 4
 11.  astore  1
 12.  return
 
@@ -258,13 +260,15 @@ private short  setIncomingAndReceive ();  Concrete Method   Parsed      Example.
 
 public class ExampleCFI
 {
-	private static int flag = 0;
+    private static int flag = 0;
 	
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         try
         {
-		  ExampleCFI hw = new ExampleCFI();
-        }catch (Exception ex)
+            ExampleCFI hw = new ExampleCFI();
+        }
+        catch (Exception ex)
         {
 
         }
@@ -274,15 +278,15 @@ public class ExampleCFI
     {
         processVerifyPIN();
 		
-		if(flag != 3)
-		{
-			throw new Exception();
-		}
+        if(flag != 3)
+        {
+            throw new Exception();
+        }
     }
 
     private void processVerifyPIN() throws Exception
     {
-		flag++;
+        flag++;
 		
         int pinLength = 4;
         int faultCode = 255;
@@ -302,13 +306,13 @@ public class ExampleCFI
 
     private boolean isInvalid()
     {
-		flag++;
+        flag++;
         return true;
     }
 
     private short setIncomingAndReceive()
     {
-		flag++;
+        flag++;
         return 5;
     }
 
