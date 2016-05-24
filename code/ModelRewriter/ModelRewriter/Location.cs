@@ -36,7 +36,7 @@ namespace ModelRewriter
                 content = "1", 
                 kind = "exponentialrate", 
                 y = y,
-                x = Constants.LabelOffsetX * 10 - 70               
+                x = xc + Constants.LabelOffsetX * 10 - 70               
             };
             id = "nId" + nextID;
             nextID++;
@@ -51,7 +51,7 @@ namespace ModelRewriter
                 content = "1", 
                 kind = "exponentialrate", 
                 y = y,
-                x = Constants.LabelOffsetX * 10 - 70               
+                x = caller.x + Constants.LabelOffsetX * 10 - 70               
             };
 
         }

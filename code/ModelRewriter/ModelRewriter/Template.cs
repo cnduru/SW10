@@ -988,6 +988,7 @@ bool ifeq(){
 
         public void calculateReachableLocations()
         {
+           
             // calculate which states are reachable by a single bit flip
             foreach (Location l in Locations)
             {
@@ -997,6 +998,22 @@ bool ifeq(){
                     {
                         l.reachableLocs.Add(lNext);
                     }
+                }
+            }
+
+            // insert new errror loc
+            var errLoc = new Location("error", -500, Locations.OrderByDescending(l => l.y).First().y / 2);
+            Locations.Add(errLoc);
+
+            foreach (Location l in Locations)
+            {
+                if (l.pc == null)
+                {
+                    continue;
+                }
+                for (int i = l.reachableLocs.Count; i < 8 ; i++)
+                {
+                    l.reachableLocs.Add(errLoc);
                 }
             }
         }
