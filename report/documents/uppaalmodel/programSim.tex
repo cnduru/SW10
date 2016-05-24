@@ -4,12 +4,12 @@ The program simulation is based on \jcl semantics, most Java bytecodes can be tr
 \kri{what does it mean for us?}
 When representing Java bytecode in UPPAAL we have chosen to represent an instruction, such as \texttt{aload a} and \texttt{dup}, as UPPAAL locations. 
 This implies that a change in the program counter is a change of the location. 
-In turn this means that when an instruction is to be executed the change to the program configuration \textit{Conf} from  \cref{sec:semintro} occurs on the edge to next location.
+In turn this means that when an instruction is to be executed, the change to the program configuration \textit{Conf} from  \cref{sec:semintro} occurs on the edge to next location.
 
 \begin{minipage}{\linewidth}
 \begin{lstlisting}[caption=Java code sample.]
 public class Sample{
-    public static void main(String[] args) {
+    public static void main(String[] args){
         for (String a : args)         
         {
             System.out.print(a);
@@ -81,12 +81,10 @@ In the update on the edge seen below the guard, we simulate the data flow by ass
 \subsubsection{Jumps and Branches}
 For the majority of instructions the program counter is set to the next instruction after execution, but for a jump with \texttt{goto a} the edge goes to the instruction with the program counter corresponding with value of \texttt{a}.
 
-Conditionals such as \texttt{if\_cmpeq a} is the only instruction that is modelled by a location having two outgoing edges , one to the next instruction and one for the program counter of a. On these edges the guard is used to determine which of the edges is to be traversed. \kri{insert example}
+Conditionals such as \texttt{if\_cmpeq a}\ch{stream line casing of texttts} is the only instruction that is modelled by a location having two outgoing edges , one to the next instruction and one for the program counter of a. On these edges the guard is used to determine which of the edges is to be traversed. \kri{insert example}
 
-\subsubsection{Local Variables and the Heap}
-\ch{merge with operand stack description?}
-\ch{find some place to put these two lines and remove subsubsection}
-Local variables and the heap are both represented as arrays in the UPPAAL model.
+\subsubsection{The Operand Stack, Local Variables and the Heap}
+To simulate the operand stack, we use an operand stack pointer to point at the next free position in an array. Local variables and the heap are both represented as arrays in the UPPAAL model, but they do not use an explicit pointer to access them since access to these are not necessarily performed in a top-down manner as with the operand stack.
 
 \subsection{Method Calls}\label{subsubsec:method}
 Method calls covers the Java bytecode instructions:~\texttt{invokestatic} for static calls, \texttt{invokespecial} for class constructors and private calls, and \texttt{invokevirtual} virtual calls. To illustrate how these instructions are modelled, we use the Java code sample in \cref{lst:virtual}.

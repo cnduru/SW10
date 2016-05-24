@@ -1,9 +1,8 @@
 \chapter{UPPAAL and Formal Verification}\label{chap:upp}
 \input{documents/semantics/language/_semantics}
 
-\ch{do we need to describe $\varphi$ mathematically as in~\cite[p. 401]{smc}?}
 \section{Property Verification}
-UPPAAL has its own query language used to verify properties of a model~\cite[p. 7]{upptut}. The language is a simplified version of timed computation tree logic. UPPAAL's query language consists of \textit{state formulae} and \textit{path formulae}. The path formulae can be categorised into three categories: reachability, safety and liveness. These are described below, and they are summarised in \cref{fig:query}.
+UPPAAL has its own query language used to verify properties of a model~\cite[p. 204]{upptut}. The language is a simplified version of timed computation tree logic. UPPAAL's query language consists of \textit{state formulae} and \textit{path formulae}. The path formulae can be categorised into three categories: reachability, safety and liveness. These are described below, and they are summarised in \cref{fig:query}.
 \paragraph{State formulae}
 A state formula is an expression which can be evaluated for a state, without looking at the mode, e.g. $i \geq 42$. This formula asks whether it is true that $i$ is greater than or equal to $42$ in a given state. State formulae also allow one to verify whether a process is in a given location using an expression of the form \texttt{P.l}, where \texttt{P} is a process and \texttt{l} is a location in the process.\\\\
 %deadlock special case

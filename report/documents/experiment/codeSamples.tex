@@ -1,25 +1,19 @@
 \label{chap:samples}
 \begin{lstlisting}[caption={Mocked Java example code from the Java Card samples},label={lst:example}]
-// Example.java
-public class Example 
-{
-    public static void main(String[] args) {
-        try
-        {
+public class Example{
+    public static void main(String[] args){
+        try{
 		  Example hw = new Example();
-        }catch (Exception ex)
-        {
+        }catch (Exception ex){
 
         }
     }
 
-    public Example() throws Exception
-    {
+    public Example() throws Exception{
         processVerifyPIN();
     }
 
-    private void processVerifyPIN() throws Exception
-    {
+    private void processVerifyPIN() throws Exception{
         int pinLength = 4;
         int faultCode = 255;
         int triesRemaining;
@@ -28,26 +22,22 @@ public class Example
 
         if(count < pinLength) throw new Exception();
 
-        if(isInvalid() != false)
-        {
+        if(isInvalid() != false){
             triesRemaining = getTriesRemaining();
             throw new Exception();
         }
     }
 
 
-    private boolean isInvalid()
-    {
+    private boolean isInvalid(){
         return true;
     }
 
-    private short setIncomingAndReceive()
-    {
+    private short setIncomingAndReceive(){
         return 5;
     }
 
-    private int getTriesRemaining()
-    {
+    private int getTriesRemaining(){
         return 2;
     }
 }
@@ -56,34 +46,27 @@ public class Example
 \newpage
 
 \begin{lstlisting}[caption={Mocked Java example code from the Java Card samples with the call graph integrity countermeasure implemented},label={lst:exampleCGI}]
-// ExampleCGI.java
-public class ExampleCGI
-{
+public class ExampleCGI{
     private static int callId;
 
-    public static void main(String[] args) 
-    {
-        try
-        {
+    public static void main(String[] args){
+        try{
             callId = 1;
             ExampleCGI hw = new ExampleCGI();
 
-        if(!(callId == 2))
-        {
-            throw new Exception();
-        }
+            if(!(callId == 2))
+            {
+                throw new Exception();
+            }
 
         }
-        catch (Exception ex)
-        {
+        catch (Exception ex){
 
         }
     }
 
-    public ExampleCGI() throws Exception
-    {
-        if(callId != 1)
-        {
+    public ExampleCGI() throws Exception{
+        if(callId != 1){
             throw new Exception();
         }
 
@@ -91,18 +74,15 @@ public class ExampleCGI
 
         processVerifyPIN();
 
-        if(callId != 3)
-        {
+        if(callId != 3){
             throw new Exception();
         }
 
         callId = 2;
     }
 
-    private void processVerifyPIN() throws Exception
-    {
-        if(callId != 2)
-        {
+    private void processVerifyPIN() throws Exception{
+        if(callId != 2){
             throw new Exception();
         }
 
@@ -114,8 +94,7 @@ public class ExampleCGI
 
         short count = setIncomingAndReceive();    // get expected data
 
-        if(callId != 4)
-        {
+        if(callId != 4){
             throw new Exception();
         }
 
@@ -123,18 +102,15 @@ public class ExampleCGI
 
         callId = 4;
 
-        if(isInvalid() != false)
-        {
-            if(callId != 5)
-            {
+        if(isInvalid() != false){
+            if(callId != 5){
                 throw new Exception();
             }
 
             callId = 5;
             triesRemaining = getTriesRemaining();
             
-            if(callId != 6)
-            {
+            if(callId != 6){
                 throw new Exception();
             }
 
@@ -145,10 +121,8 @@ public class ExampleCGI
     }
 
 
-    private boolean isInvalid() throws Exception
-    {
-        if(callId != 4)
-        {
+    private boolean isInvalid() throws Exception{
+        if(callId != 4){
             throw new Exception();
         }
 
@@ -157,10 +131,8 @@ public class ExampleCGI
         return true;
     }
 
-    private short setIncomingAndReceive() throws Exception
-    {
-        if(callId != 3)
-        {
+    private short setIncomingAndReceive() throws Exception{
+        if(callId != 3){
             throw new Exception();
         }
 
@@ -168,10 +140,8 @@ public class ExampleCGI
         return 5;
     }
 
-    private int getTriesRemaining() throws Exception
-    {
-        if(callId != 5)
-        {
+    private int getTriesRemaining() throws Exception{
+        if(callId != 5){
             throw new Exception();
         }
 
@@ -257,35 +227,26 @@ private short  setIncomingAndReceive ();  Concrete Method   Parsed      Example.
 \end{lstlisting}
 
 \begin{lstlisting}[caption={Java code example of the control flow integrity countermeasure},label={lst:examplecfi}]
-
-public class ExampleCFI
-{
+public class ExampleCFI{
     private static int flag = 0;
 	
-    public static void main(String[] args) 
-    {
-        try
-        {
+    public static void main(String[] args){
+        try{
             ExampleCFI hw = new ExampleCFI();
-        }
-        catch (Exception ex)
-        {
+        }catch (Exception ex){
 
         }
     }
 
-    public ExampleCFI() throws Exception
-    {
+    public ExampleCFI() throws Exception{
         processVerifyPIN();
 		
-        if(flag != 3)
-        {
+        if(flag != 3){
             throw new Exception();
         }
     }
 
-    private void processVerifyPIN() throws Exception
-    {
+    private void processVerifyPIN() throws Exception{
         flag++;
 		
         int pinLength = 4;
@@ -296,28 +257,24 @@ public class ExampleCFI
 		
         if(count < pinLength) throw new Exception();
 
-        if(isInvalid() != false)
-        {
+        if(isInvalid() != false){
             triesRemaining = getTriesRemaining();
             throw new Exception();
         }
     }
 
 
-    private boolean isInvalid()
-    {
+    private boolean isInvalid(){
         flag++;
         return true;
     }
 
-    private short setIncomingAndReceive()
-    {
+    private short setIncomingAndReceive(){
         flag++;
         return 5;
     }
 
-    private int getTriesRemaining()
-    {
+    private int getTriesRemaining(){
         return 2;
     }
 
