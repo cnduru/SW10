@@ -1,8 +1,8 @@
-\paragraph{Code Duplication}as described by~\cite[p. 12]{javasec} is a countermeasure which protects against corruption of data at execution time, such as register values. In extension, it can protect against a change in a program's control flow, by duplicating instructions which are used to determine values which affect branching.\ch{is this more like branch duplication? does it really protect besides values used for branching?}
+\paragraph{Code Duplication}as described by~\cite[p. 12]{javasec} is a countermeasure which protects against corruption of data used for branching at execution time, such as local variables. It offers protection against a change in a program's control flow, by duplicating instructions which are used to retrieve values which affect branching.
 
 
 
-An example could be some original program, as the one in \cref{lst:dup0}, which loads two values from local variables (line 1-2), pushes them onto the operand stack and compares them. If the two values are the same, a jump is performed to a code region with sensitive code (line 8-9), which approves a transaction on a credit card.
+An example could be some original program, as the one in~\cref{lst:dup0}, which loads two values from local variables (line 1-2), pushes them onto the operand stack and compares them. If the two values are the same, a jump is performed to a code region with sensitive code (line 8-9), which approves a transaction on a credit card.
 
 
 
