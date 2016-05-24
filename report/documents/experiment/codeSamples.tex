@@ -1,9 +1,7 @@
 \label{chap:samples}
 \begin{lstlisting}[caption={Mocked Java example code from the Java Card samples},label={lst:example}]
-// Example.java
-public class Example 
-{
-    public static void main(String[] args) {
+public class Example{
+    public static void main(String[] args){
         try{
 		  Example hw = new Example();
         }catch (Exception ex){
@@ -48,9 +46,7 @@ public class Example
 \newpage
 
 \begin{lstlisting}[caption={Mocked Java example code from the Java Card samples with the call graph integrity countermeasure implemented},label={lst:exampleCGI}]
-// ExampleCGI.java
-public class ExampleCGI
-{
+public class ExampleCGI{
     private static int callId;
 
     public static void main(String[] args){
@@ -69,8 +65,7 @@ public class ExampleCGI
         }
     }
 
-    public ExampleCGI() throws Exception
-    {
+    public ExampleCGI() throws Exception{
         if(callId != 1){
             throw new Exception();
         }
@@ -232,13 +227,10 @@ private short  setIncomingAndReceive ();  Concrete Method   Parsed      Example.
 \end{lstlisting}
 
 \begin{lstlisting}[caption={Java code example of the control flow integrity countermeasure},label={lst:examplecfi}]
-
-public class ExampleCFI
-{
+public class ExampleCFI{
     private static int flag = 0;
 	
-    public static void main(String[] args) 
-    {
+    public static void main(String[] args){
         try{
             ExampleCFI hw = new ExampleCFI();
         }catch (Exception ex){
@@ -246,8 +238,7 @@ public class ExampleCFI
         }
     }
 
-    public ExampleCFI() throws Exception
-    {
+    public ExampleCFI() throws Exception{
         processVerifyPIN();
 		
         if(flag != 3){
