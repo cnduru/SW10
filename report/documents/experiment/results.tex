@@ -2,7 +2,7 @@ The results in the table are listed in the following format in the extreme left 
 \begin{table}[H]
 \resizebox{\textwidth}{!}{
     \begin{tabular}{l|l|l|l|l|l|l}
-    ~         & No change & No change \% & Crash & Crash \% & Attack & Attack \% \\ \hline
+    Version & No change & No change \% & Crash & Crash \% & Attack & Attack \% \\ \hline
     Base      & True &\relax[0.990, 1] & False & \relax[0, 0.01] & False & \relax[0, 0.01] ~    \\
     Base + PC & False & \relax[0.854, 0.864] & True & \relax[0.108, 0.118] & True & [0.024, 0.034]    \\
     Base + OP & False & [0.990, 1] & False & [0, 0.01] & True & [0, 0.01]    \\
@@ -24,4 +24,4 @@ The results in the table are listed in the following format in the extreme left 
     \caption{All experiment results have a confidence of $0.995$}
 \end{table}
 
-\noindent We do not utilise values from the heap or local variables to determine program flow, therefore Base + H and Base + L have no potential for attack. They are therefore ommitted from the following experiment conclusions.
+\noindent We do not utilise values from the heap or local variables to determine program flow, and as a result heap and local faults have no potential for attack. They are therefore omitted from the following experiment conclusions and the results table, except in the Base.
