@@ -1,7 +1,6 @@
 \subsection{Program Simulation}
 \kri{simulation or modelling}
-The program simulation is based on \jcl semantics, most Java bytecodes can be translated directly to \jcl at the loss of type information.\\
-\kri{what does it mean for us?}
+The program simulation is based on \jcl semantics, most Java bytecodes can be translated directly to \jcl but type information is lost. Because \jcl has operational semantics defined, it eases the implementation of the simulation, since each instruction is clearly defined.\\\\
 When representing Java bytecode in UPPAAL we have chosen to represent an instruction, such as \texttt{aload a} and \texttt{dup}, as UPPAAL locations. 
 This implies that a change in the program counter is a change of the location. 
 In turn this means that when an instruction is to be executed, the change to the program configuration \textit{Conf} from  \cref{sec:semintro} occurs on the edge to next location.
