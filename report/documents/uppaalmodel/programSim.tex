@@ -34,10 +34,18 @@ public static int foo ( int 0 ) ;
 \end{minipage}
 
 \begin{figure}
-\includegraphics[width=\textwidth]{reportExamples/demo1}
-\includegraphics[width=\textwidth]{reportExamples/demo2}
-\caption{Auto generated model, Example of \texttt{foo} method}
-\label{fig:generated_wip}
+\begin{subfigure}{\textwidth}
+	\includegraphics[width=\textwidth]{reportExamples/demo1}
+	\caption{Method call in \texttt{main}.}
+\end{subfigure}
+\begin{subfigure}{\textwidth}
+	\includegraphics[width=\textwidth]{reportExamples/demo2}
+	\caption{the method \texttt{foo}.}
+
+\end{subfigure}
+
+\caption{Auto generated model, Example of \texttt{foo} method.}
+\label{fig:fooMethod}
 \end{figure}
 
 
@@ -63,19 +71,19 @@ public static int foo ( int 0 ) ;
 
 \Cref{fig:uppaal1} shows how two Java Bytecode instructions are represented in UPPAAL. On the left we see the Java bytecode, the first line with program counter 0 we have the \texttt{iload 0} instruction. \texttt{iload 0} pushes a integer to the top of the operation stack from local variables at position zero, then increments the operand stack pointer and program counter.\\\\
 %uppaal location edge
-In UPPAAL the location \texttt{pc0\_iload\_0} represents \texttt{iload 0}. The UPPAAL model is seen in \Cref{fig:uppaal1}b. We simulate execution time with the location invariant \texttt{t <= 1}  and guard \texttt{t == 1} on the edge leading to the next location. The guard is found right below the location name right of the edge and invariant is to the left of the edge. In this sample we defined the execution time as 1 time unit.\\\\
-In the update on the edge seen below the guard, we simulate the data flow by assigning the value of the local variable \texttt{loc0} to the top of the operand stack \texttt{os} represented by operand stack pointer \texttt{osp}. \texttt{osp} is incremented as the operand stack grows, the increment of the program counter is simulated by the edge itself.
+In UPPAAL the location \UPP{pc0\_iload\_0} represents \texttt{iload 0}. The UPPAAL model is seen in \Cref{fig:uppaal1}b. We simulate execution time with the location invariant \UPP{t <= 1} and guard \UPP{t == 1} on the edge leading to the next location. The guard is found right below the location name right of the edge and invariant is to the left of the edge. In this sample we defined the execution time as 1 time unit.\\\\
+In the update on the edge seen below the guard, we simulate the data flow by assigning the value of the local variable \UPP{loc0} to the top of the operand stack \UPP{os} represented by operand stack pointer \UPP{osp}. \UPP{osp} is incremented as the operand stack grows, the increment of the program counter is simulated by the edge itself.
 
 \subsubsection{Jumps and Branches}
-For the majority of instructions the program counter is set to the next instruction after execution, but for a jump with \texttt{goto a} the edge goes to the instruction with the program counter corresponding with value of \texttt{a}.
+For the majority of instructions the program counter is set to the next instruction after execution, but for a jump with \texttt{goto a} the edge goes to the instruction with the program counter corresponding with value of \texttt{a} as seen in \Cref{fig:fooMethod}.
 
-Conditionals such as \texttt{if\_cmpeq a}\ch{stream line casing of texttts} is the only instruction that is modelled by a location having two outgoing edges , one to the next instruction and one for the program counter of a. On these edges the guard is used to determine which of the edges is to be traversed. \kri{insert example}
+Conditionals such as \texttt{if\_cmpeq a} is modelled by a location having two outgoing edges, see \Cref{uppaal1}, one to the next instruction and one for the program counter of with and offset of \texttt{a}. On these edges the guard is used to determine which of the edges is to be traversed.
 
 \subsubsection{The Operand Stack, Local Variables and the Heap}
 To simulate the operand stack, we use an operand stack pointer to point at the next free position in an array. Local variables and the heap are both represented as arrays in the UPPAAL model, but they do not use an explicit pointer to access them since access to these are not necessarily performed in a top-down manner as with the operand stack.
 
 \subsection{Method Calls}\label{subsubsec:method}
-Method calls covers the Java bytecode instructions:~\texttt{invokestatic} for static calls, \texttt{invokespecial} for class constructors and private calls, and \texttt{invokevirtual} virtual calls. To illustrate how these instructions are modelled, we use the Java code sample in \cref{lst:virtual}.
+Method calls covers the Java bytecode instructions: \texttt{invokestatic} for static calls, \texttt{invokespecial} for class constructors and private calls, and \texttt{invokevirtual} virtual calls. To illustrate how these instructions are modelled, we use the Java code sample in \cref{lst:virtual}.
 \begin{lstlisting}[caption={\texttt{Bclass} extends \texttt{Aclass}, \texttt{Aclass} implements the methods foo and bar, and \texttt{Bclass} overwrites foo.}, label={lst:virtual}]
 public class Virtual{
   public Aclass a;
@@ -134,7 +142,7 @@ The third is the edge from the \texttt{return} instruction, seen in \cref{fig:in
 \subsubsection{Virtual Methods}
 Virtual methods are similar to static methods in regards to representation in the method template for caller and callee, but instead of handling control directly to callee method templates, a template responsible for resolving the virtual call is inserted for this purpose.
 \cref{fig:invokevirtual} is the resolver template generated for the code in \cref{lst:virtual}, there is a total of three virtual methods in this sample and the resolver has a waiting location for each.\\\\
-Every class is mapped to an integer $clID$ and an array, $classHierarchy$, represents the class hierarchy of the program. The initial location \texttt{Invoke} waits for a synchronisation, after which the location \texttt{Resolver} has an outgoing edge for every possibility, in this sample that is five. There are essentially always three distinct possibilities 
+Every class is mapped to an integer $clID$ and an array, $classHierarchy$, represents the class hierarchy of the program. The initial location \UPP{Invoke} waits for a synchronisation, after which the location \UPP{Resolver} has an outgoing edge for every possibility, in this sample that is five. There are essentially always three distinct possibilities 
 
 \begin{itemize}
 \item There are no methods and no super where $clID == 0$.
@@ -142,7 +150,7 @@ Every class is mapped to an integer $clID$ and an array, $classHierarchy$, repre
 \item There are no methods but there is a super class, then assign $clID = classHierarchy[clID]$ and try again.
 \end{itemize}
 
-This is based on \texttt{methodLookup} from the \texttt{invokevirtual} semantics \cref{app:invokevirtual}.
+This is based on $methodLookup$ from the \texttt{INVOKEVIRTUAL} semantics \cref{app:invokevirtual}.
 
  
 \begin{figure}[H]
