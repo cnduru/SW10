@@ -19,7 +19,7 @@ namespace ModelRewriter
         public string pc  { get; set; }
         public List<Location> reachableLocs = new List<Location>();
         public bool Urgent { get; set; }
-        public bool committed { get; set; }
+        public bool Committed { get; set; }
         public Label Label;
         public string Guid;
 
@@ -94,7 +94,7 @@ namespace ModelRewriter
                 return locationElement;
             }
 
-            if (committed)
+            if (Committed)
             {
                 locationElement.Add(new XElement("committed"));
                 return locationElement;

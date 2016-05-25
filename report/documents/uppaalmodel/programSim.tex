@@ -9,10 +9,13 @@ In turn this means that when an instruction is to be executed, the change to the
 \begin{minipage}{\linewidth}
 \begin{lstlisting}[caption=Java code sample.]
 public class Sample{
-    public static void main(String[] args){
-        for (String a : args)         
-        {
-            System.out.print(a);
+    public class Sample{
+        public static void main(String[] args) {
+            install();
+            foo(3);
+        }
+        public static int foo(int i){
+            return i != 0 ? 1 : 2;
         }
     }
 }
@@ -20,47 +23,32 @@ public class Sample{
 \end{minipage}
 \begin{minipage}{\linewidth}
 \begin{lstlisting}[caption=Bytecode sample.]
-public static void main(java.lang.String[]);
- Code:
-   0: aload_0       
-   1: astore_1      
-   2: aload_1       
-   3: arraylength   
-   4: istore_2      
-   5: iconst_0      
-   6: istore_3      
-   7: iload_3       
-   8: iload_2       
-   9: if_icmpge     31
-  12: aload_1       
-  13: iload_3       
-  14: aaload        
-  15: astore        4
-  17: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
-  20: aload         4
-  22: invokevirtual #3                  // Method java/io/PrintStream.print:(Ljava/lang/String;)V
-  25: iinc          3, 1
-  28: goto          7
-  31: return        
-
+public static int foo ( int 0 ) ;
+   0. iload 0
+   1. ifeq 7
+   4. iconst 1
+   5. goto 4
+   8. iconst 2
+   9. ireturn
 \end{lstlisting}
 \end{minipage}
 
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{generated_wip}
-\caption{Auto generated model, work in progress.}
+\begin{figure}
+\includegraphics[width=\textwidth]{reportExamples/demo1}
+\includegraphics[width=\textwidth]{reportExamples/demo2}
+\caption{Auto generated model, Example of \texttt{foo} method}
 \label{fig:generated_wip}
 \end{figure}
-\kri{update the model for the new sample}
+
 
 \subsubsection{Simple Instructions}
 \begin{figure}[H]
 \centering
 \begin{subfigure}{.3\textwidth}
   \begin{lstlisting}
-  0. aload 0
-  1. arraylength
-  ...
+0. iload 0
+1. ifeq 7
+...
   \end{lstlisting}
   \caption{Java Bytecode Sample.}
 \end{subfigure} 
@@ -72,10 +60,10 @@ public static void main(java.lang.String[]);
 \caption{Java bytecode and corresponding UPPAAL model.}
 \label{fig:uppaal1}
 \end{figure}
-\kri{lav ny model til nyt sample}
-\Cref{fig:uppaal1} show how two Java Bytecode instructions are represented in UPPAAL. On the left we see the Java bytecode, the first line with program counter 0 we have the \texttt{aload 0} instruction. \texttt{aload 0} pushes a reference to the top of the operation stack from local variables at position zero, then increments the operand stack pointer and program counter.\\\\
+
+\Cref{fig:uppaal1} show how two Java Bytecode instructions are represented in UPPAAL. On the left we see the Java bytecode, the first line with program counter 0 we have the \texttt{iload 0} instruction. \texttt{iload 0} pushes a integer to the top of the operation stack from local variables at position zero, then increments the operand stack pointer and program counter.\\\\
 %uppaal location edge
-In UPPAAL the location \texttt{pc0\_aload} represents \texttt{aload 0}. The UPPAAL model is seen in \Cref{fig:uppaal1}b. We simulate execution time with the location invariant \texttt{t <= 1}  and guard \texttt{t == 1} on the edge leading to the next location. The guard is found right below the location name right of the edge and invariant is to the left of the edge. In this sample we defined the execution time as 1 time unit.\\\\
+In UPPAAL the location \texttt{pc0\_iload\_0} represents \texttt{iload 0}. The UPPAAL model is seen in \Cref{fig:uppaal1}b. We simulate execution time with the location invariant \texttt{t <= 1}  and guard \texttt{t == 1} on the edge leading to the next location. The guard is found right below the location name right of the edge and invariant is to the left of the edge. In this sample we defined the execution time as 1 time unit.\\\\
 In the update on the edge seen below the guard, we simulate the data flow by assigning the value of the local variable \texttt{loc0} to the top of the operand stack \texttt{os} represented by operand stack pointer \texttt{osp}. \texttt{osp} is incremented as the operand stack grows, the increment of the program counter is simulated by the edge itself.
 
 \subsubsection{Jumps and Branches}

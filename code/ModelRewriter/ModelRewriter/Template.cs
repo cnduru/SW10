@@ -404,14 +404,15 @@ bool ifeq(){
                         Transitions.Add(new Transition(loc, NextLocation(loc), makeLabels("gu",
                             timeGuard,
                             String.Format("osp_dec(2), H[os[osp] + {0}] = os[osp + 1] ", 
-                                classSelf.Fields.FindIndex(x => x.Split(' ').Last() == instArg[1].Split('.').Last()) + 1))));
+                                classSelf.Fields.FindIndex(x => x.Split(' ').Last() == instArg[1].Split('.').Last() + ";") + 1))));
                         break;
 
                     case "getfield":
                         Transitions.Add(new Transition(loc, NextLocation(loc), makeLabels("gu",
                             timeGuard,
                             String.Format("os[osp - 1] = H[os[osp - 1] + {0}]", 
-                                classSelf.Fields.FindIndex(x => x.Split(' ').Last() == instArg[1].Split('.').Last()) + 1))));
+                                classSelf.Fields.FindIndex(x => x.Split(' ').Last() == instArg[1].Split('.').Last()+ ";") + 1))));
+                        //lamda compares the name of: public int <name>; with class.<name>
                         break;
                     case "bipush":
                     case "iconst":
@@ -542,7 +543,7 @@ bool ifeq(){
                         break;
                     case "invokevirtual":
                         var waiterV = new Location(loc);
-                        var param = loc.inst.instArgs.Skip(3).Where(p =>  p != "()" && p != "(" && p != ")").ToList();
+                        var param = loc.inst.instArgs.Skip(3).Where(p => p != "()" && p != "(" && p != ")").ToList();
                         labels = makeLabels("gyu",
                             timeGuard,
                             "cVirtual!",
@@ -560,38 +561,15 @@ bool ifeq(){
                         }
                         labels = makeLabels("yu", "cVirtual?", virReturn);
                         Transitions.Add(new Transition(waiterV, NextLocation(loc), labels));
+
+                        newLocs.Add(addExceptionLoc(waiterV, catchIndex, instArg));
                         break;    
                     case "invokespecial":
                     case "invokestatic":
                         var waiterS = new Location(loc);
                         Transitions.AddRange(InvokeStatic(loc, waiterS, NextLocation(loc)));
                         newLocs.Add(waiterS);
-
-                        string methodName = instArg[2].Split('.').Last();
-                        string methodClassName = instArg[2].Split('.').First();
-                        if (!JParser.ClassNames.Contains(methodClassName))
-                        {
-                            break;
-                        }
-                        var excepLoc = new Location(waiterS);
-                        excepLoc.Urgent = true;
-                        newLocs.Add(excepLoc);
-                        if (methodName == "<init>")
-                        {
-                            methodName = methodClassName;
-                        }
-
-                        int classId = classSelf.catchPCs[catchIndex];
-
-                        var lbls = makeLabels("guy", 
-                            "exceptionOccurred == true",
-                            classId != -1 ? "osp_inc()" : "osp = 0",
-                            String.Format("c{0}?", methodClassName + "_" + methodName));
-                        Transitions.Add(new Transition(waiterS, excepLoc, lbls));
-                        lbls = makeLabels("y", String.Format("c{0}!", name));
-                        Transitions.Add(new Transition(excepLoc, PCToLocation(classId), lbls));
-
-
+                        newLocs.Add(addExceptionLoc(waiterS, catchIndex, instArg));
                         break;
 
                     case "ldc":
@@ -851,6 +829,7 @@ bool ifeq(){
                         break;
                 }
             }
+            newLocs.RemoveAll(x => x == null);
             Locations.AddRange(newLocs);
         }
 
@@ -934,6 +913,33 @@ bool ifeq(){
 
             return res;
         }
+
+        private Location addExceptionLoc(Location waiter, int catchIndex, List<string> instArg){
+            string methodName = instArg[2].Split('.').Last();
+            string methodClassName = instArg[2].Split('.').First();
+            if (!JParser.ClassNames.Contains(methodClassName))
+            {
+                return null;
+            }
+            var excepLoc = new Location(waiter);
+            excepLoc.Committed = true;
+            if (methodName == "<init>")
+            {
+                methodName = methodClassName;
+            }
+
+            int classId = classSelf.catchPCs[catchIndex];
+
+            Transitions.Add(new Transition(waiter, excepLoc, 
+                makeLabels("guy", 
+                    "exceptionOccurred == true",
+                    classId != -1 ? "osp_inc()" : "osp = 0",
+                    String.Format("c{0}?", methodClassName + "_" + methodName))));
+            Transitions.Add(new Transition(excepLoc, PCToLocation(classId), 
+                makeLabels("y", String.Format("c{0}!", name))));
+            return excepLoc;
+        }
+
 
         private Location PCToLocation(int pc)
         {
