@@ -281,7 +281,7 @@ namespace ModelRewriter
             XMLHandler xhl = new XMLHandler();
 
             Template faultTemplate = xhl.getTemplate(faultTemplateXML);
-            faultTemplate.Locations[1].committed = true;
+            faultTemplate.Locations[1].Committed = true;
             templates.Add(faultTemplate);
 
             Save(path);
@@ -293,7 +293,7 @@ namespace ModelRewriter
             XElement dataFaultTemplateXML = XElement.Parse(XMLProvider.getHeapFaultTemplate());
             XMLHandler xhl = new XMLHandler();
             Template dataFaultTemplate = xhl.getTemplate(dataFaultTemplateXML);
-            dataFaultTemplate.Locations[1].committed = true;
+            dataFaultTemplate.Locations[1].Committed = true;
 
             // todo: generalize this
             globalDeclarations += "\nclock faultClock;\n";
@@ -447,7 +447,7 @@ namespace ModelRewriter
             XElement instFaultTemplateXML = XElement.Parse(XMLProvider.getInstructionFaultTemplate());
             XMLHandler xhl = new XMLHandler();
             Template instFaultTemplate = xhl.getTemplate(instFaultTemplateXML);
-            instFaultTemplate.Locations[1].committed = true;
+            instFaultTemplate.Locations[1].Committed = true;
 
             // define number range for fault number
             Label selectFaultIdLabel = new Label(){content = string.Format("i:int[0,{0}]", XMLHandler.idCount), kind = "select", x = -110, y = -127};
