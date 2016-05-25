@@ -76,7 +76,7 @@ In the update on the edge seen below the guard, we simulate the data flow by ass
 \subsubsection{Jumps and Branches}
 For the majority of instructions the program counter is set to the next instruction after execution, but for a jump with \texttt{goto a} the edge goes to the instruction with the program counter corresponding with value of \texttt{a} as seen in \Cref{fig:fooMethod}.
 
-Conditionals such as \texttt{if\_cmpeq a} is modelled by a location having two outgoing edges, see \Cref{uppaal1}, one to the next instruction and one for the program counter of with and offset of \texttt{a}. On these edges the guard is used to determine which of the edges is to be traversed.
+Conditionals such as \texttt{if\_cmpeq a} are modelled by a location having two outgoing edges, see \Cref{uppaal1}, one to the next instruction and one for the program counter of with and offset of \texttt{a}. On these edges the guard is used to determine which of the edges is to be traversed.
 
 \subsubsection{The Operand Stack, Local Variables and the Heap}
 To simulate the operand stack, we use an operand stack pointer to point at the next free position in an array. Local variables and the heap are both represented as arrays in the UPPAAL model, but they do not use an explicit pointer to access them since access to these are not necessarily performed in a top-down manner as with the operand stack.
@@ -149,7 +149,7 @@ Every class is mapped to an integer $clID$ and an array, $classHierarchy$, repre
 \item There are no methods but there is a super class, then assign $clID = classHierarchy[clID]$ and try again.
 \end{itemize}
 
-This is based on $methodLookup$ from the \texttt{INVOKEVIRTUAL} semantics \cref{app:invokevirtual}.
+This is based on $methodLookup$ from the \texttt{INVOKEVIRTUAL} semantics from \cref{app:invokevirtual}.
 
  
 \begin{figure}[H]
