@@ -82,7 +82,7 @@ Conditionals such as \texttt{if\_cmpeq a} are modelled by a location having two 
 To simulate the operand stack, we use an operand stack pointer to point at the next free position in an array. Local variables and the heap are both represented as arrays in the UPPAAL model, but they do not use an explicit pointer to access them since access to these are not necessarily performed in a top-down manner as with the operand stack.
 
 \subsection{Method Calls}\label{subsubsec:method}
-Method calls covers the Java bytecode instructions: \texttt{invokestatic} for static calls, \texttt{invokespecial} for class constructors and private calls, and \texttt{invokevirtual} virtual calls. To illustrate how these instructions are modelled, we use the Java code sample in \cref{lst:virtual}.
+Method calls cover the Java bytecode instructions: \texttt{invokestatic} for static calls, \texttt{invokespecial} for class constructors and private calls, and \texttt{invokevirtual} for virtual calls. To illustrate how these instructions are modelled, we use the Java code sample in \cref{lst:virtual}.
 \begin{lstlisting}[caption={\texttt{Bclass} extends \texttt{Aclass}, \texttt{Aclass} implements the methods foo and bar, and \texttt{Bclass} overwrites foo.}, label={lst:virtual}]
 public class Virtual{
   public Aclass a;
@@ -97,9 +97,8 @@ public class Virtual{
 }
 \end{lstlisting}
 The sample includes the bytecode instructions \texttt{invokespecial} and \texttt{invokevirtual}.
-\texttt{invokestatic} are omitted as \texttt{invokestatic} and \texttt{invokespecial} are nearly identical, with the only difference being if an object reference from the operand stack is parsed as a parameter.
-As such all methods call can be divided into two categories, virtual and static.\\\\
-These categories are defined in the Java specification: ``Virtual methods are instance methods that are resolved dynamically. The set includes all public, protected and package-visible instance methods. Private instance methods and all constructors are not virtual methods, but instead are resolved statically during compilation.''~\cite[chap. 4.3.7.6]{java_card_spec}
+\texttt{invokestatic} are omitted as \texttt{invokestatic} and \texttt{invokespecial} are nearly identical, the only difference being whether an object reference from the operand stack is passed as a parameter.
+As such, all method calls can be divided into two categories, virtual and static.
 
 \subsubsection{Static Methods}
 Static method calls, as shown in \cref{fig:invokespecial}a, are represented by three additions to the model. These additions consist of locations and edges.\\\\ 
