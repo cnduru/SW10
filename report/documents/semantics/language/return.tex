@@ -10,7 +10,7 @@ ops' \neq \epsilon \semsp
 ops' = (x'_0, \ldots, x'_n) \semsp
 ops'' = (x_0, \ldots, x_n, x'_n)} 
 {CP, P \vdash \langle H, (CS, \langle mid, loc, ops, pc \rangle, \langle mid', loc', ops', pc' \rangle)\rangle \Rightarrow}$$
-$$ \langle H, (CS, \langle mid, loc, ops'', pc + 1 \rangle)\rangle$$
+$$ \langle H, (CS, \langle mid, loc, ops'', pc + 3 \rangle)\rangle$$
 
 In following case, where the operand stack is empty, it will return without adding an element to the previous frame's operand stack.
 
@@ -18,7 +18,7 @@ $$\inference[RETURN VOID]{
 inst(P,mid',pc') = \texttt{RETURN} \semsp
 ops' = \epsilon }
 {CP, P \vdash \langle H, (CS, \langle mid, loc, ops, pc \rangle, \langle mid', loc', ops', pc' \rangle)\rangle \Rightarrow}$$
-$$ \langle H, (CS, \langle mid, loc, ops, pc + 1 \rangle)\rangle$$
+$$ \langle H, (CS, \langle mid, loc, ops, pc + 3 \rangle)\rangle$$
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../../master"
