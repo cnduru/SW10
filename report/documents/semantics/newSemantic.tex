@@ -1,7 +1,9 @@
 \subsection{Expanding \jcl}
 \jcl created and formalised by \cite{javasec}, seen in \cref{sec:semintro}, has been expanded upon in this report. The original semantics\ch{streamline to either "operational semantics" or "semantics" across all of the report} did not describe private method calls and exceptions. In the following, these additions are made.
 
-\subsubsection{\texttt{INVOKESPECIAL}}
+\subsubsection{INVOKESPECIAL}
+\texttt{INVOKESPECIAL} is used to call a private method.
+
 $$\inference[INVOKESPECIAL]{
 inst(P,mid,pc) = \texttt{INVOKESPECIAL }mid' \semsp 
 CP(mid') = pn \semnl \\
@@ -12,7 +14,9 @@ loc' = [0 \mapsto objr, 1 \mapsto p_{1}, \ldots, pn \mapsto p_{pn}])}
 $$\langle H, (CS, \langle mid, loc, ops', pc \rangle, \langle mid', loc', \epsilon, 0 \rangle)\rangle$$
 
 
-\subsubsection{\texttt{Exceptions}}
+\subsubsection{THROW}
+\texttt{THROW} describes when an exception is thrown. There are two cases handled, when the \texttt{catch} block is found in the same stack frame as the \texttt{throw}, and when it is found in another stack frame, i.e. its invoker. The \texttt{exceptionLookup} method handles these two cases: If the \texttt{catch} is found in the current stack frame, the program counter is set to the location of the exception handling code, the operand stack is cleared, the objr reference is pushed back onto the stack and execution continues as per the \jc Virtual Machine v2.2 specification~\cite[JcvmSpec p. 151]{jcvm}. If no appropriate handling block is found in the current stack frame, the frame is popped and the stack frame of its invoker is reinstated and the exception rethrown.\\~\\
+
 $CS = (CS', \langle mid, loc, ops, pc \rangle)$ \\ 
 $ops = (x_0, \ldots, x_n, objr)$\vspace{5px} \\
 $exceptionLookup(P, CS) = $ \vspace{-10px} \\
