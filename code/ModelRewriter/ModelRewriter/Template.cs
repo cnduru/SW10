@@ -234,7 +234,7 @@ bool ifeq(){
             Locations.Add(resolveLoc);
 
             Transitions.Add(new Transition(initLoc, resolveLoc,
-                makeLabels("yu", "cVirtual?", "clID = H[par0]")
+                makeLabels("yu", "cVirtual?", "clID = H(par0)")
             ));
                 
             //Error loc
@@ -270,7 +270,7 @@ bool ifeq(){
 
             Transitions.Add(new Transition(resolveLoc, resolveLoc, makeLabels("gu", 
                 String.Format("clID != 0 && !({0})",String.Join(" || ", SignaChecks)),
-                "clID = classHierarchy[clID]"
+                "clID = classHierarchy(clID)"
             )));
         }
 
@@ -373,7 +373,7 @@ bool ifeq(){
                             },
                             new Label
                             { 
-                                content = "os[osp] = H[os[osp]], t = 0", kind = "assignment"
+                                    content = "os[osp] = H(os[osp]), t = 0", kind = "assignment"
                             }
                         };
                         Transitions.Add(new Transition(loc, NextLocation(loc), labels));
@@ -392,7 +392,7 @@ bool ifeq(){
                             },
                             new Label
                             { 
-                                    content = String.Format("osp_inc(), os[osp-1] = H[cp{0}], t = 0",
+                                    content = String.Format("osp_inc(), os[osp-1] = H(cp{0}), t = 0",
                                     CP.Add(String.Join(" ", instArg.Skip(1)))), 
                                 kind = "assignment"
                             }
@@ -403,15 +403,15 @@ bool ifeq(){
                     case "putfield":
                         Transitions.Add(new Transition(loc, NextLocation(loc), makeLabels("gu",
                             timeGuard,
-                            String.Format("osp_dec(2), H[os[osp] + {0}] = os[osp + 1] ", 
-                                classSelf.Fields.FindIndex(x => x.Split(' ').Last() == instArg[1].Split('.').Last() + ";") + 1))));
+                            String.Format("osp_dec(2), setH(os[osp] + {0}, os[osp + 1])", 
+                                classSelf.Fields.FindIndex(x => x.Split(' ').Last() == instArg[1].Split('.').Last()) + 1))));
                         break;
 
                     case "getfield":
                         Transitions.Add(new Transition(loc, NextLocation(loc), makeLabels("gu",
                             timeGuard,
-                            String.Format("os[osp - 1] = H[os[osp - 1] + {0}]", 
-                                classSelf.Fields.FindIndex(x => x.Split(' ').Last() == instArg[1].Split('.').Last()+ ";") + 1))));
+                            String.Format("os[osp - 1] = H(os[osp - 1] + {0})", 
+                                classSelf.Fields.FindIndex(x => x.Split(' ').Last() == instArg[1].Split('.').Last()) + 1))));
                         //lamda compares the name of: public int <name>; with class.<name>
                         break;
                     case "bipush":
@@ -793,7 +793,7 @@ bool ifeq(){
                             },
                             new Label
                             { 
-                                content = String.Format("osp_dec(1), H[cp{0}] = os[osp], t = 0",
+                                    content = String.Format("osp_dec(1), H(cp{0}) = os[osp], t = 0",
                                 CP.Add(String.Join(" ", instArg.Skip(1)))), 
                                 kind = "assignment"
                             }
