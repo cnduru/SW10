@@ -2,7 +2,8 @@
 \jcl created and formalised by \cite{javasec}, seen in \cref{sec:semintro}, has been expanded upon in this report. The original semantics\ch{streamline to either "operational semantics" or "semantics" across all of the report} did not describe private method calls and exceptions. In the following, these additions are made.
 
 \subsubsection{INVOKESPECIAL}
-\texttt{INVOKESPECIAL} is used to call a private method.
+\texttt{INVOKESPECIAL} invokes a private method. Before the invoke, the operand stack contains an object reference and arguments to pass to the invoked method. These are consumed by the invoke. The reference is then stored in the local variables followed by the parameters. Additionally, a new stack frame with an empty operand stack and a program counter set to $0$, is added to the call stack. 
+% % difference between invokestatic and invokespecial?
 
 $$\inference[INVOKESPECIAL]{
 inst(P,mid,pc) = \texttt{INVOKESPECIAL }mid' \semsp 
@@ -15,9 +16,9 @@ $$\langle H, (CS, \langle mid, loc, ops', pc \rangle, \langle mid', loc', \epsil
 
 
 \subsubsection{THROW}
-\texttt{THROW} describes when an exception is thrown. There are two cases handled, when the \texttt{catch} block is found in the same stack frame as the \texttt{throw}, and when it is found in another stack frame, i.e. its invoker. The \texttt{exceptionLookup} method handles these two cases: If the \texttt{catch} is found in the current stack frame, the program counter is set to the location of the exception handling code, the operand stack is cleared, the objr reference is pushed back onto the stack and execution continues as per the \jc Virtual Machine v2.2 specification~\cite[JcvmSpec p. 151]{jcvm}. If no appropriate handling block is found in the current stack frame, the frame is popped and the stack frame of its invoker is reinstated and the exception rethrown.\\~\\
+\texttt{THROW} describes when an exception is thrown. There are two cases handled, when the \texttt{catch} block is found in the same stack frame as the \texttt{throw}, and when it is found in another stack frame, i.e. its invoker. The \texttt{exceptionLookup} method handles these two cases: If the \texttt{catch} is found in the current stack frame, the program counter is set to the location of the exception handling code, the operand stack is cleared, the objr reference is pushed back onto the stack and execution continues as per the \jc Virtual Machine v2.2 specification~\cite[JcvmSpec p. 151]{jcvm}. If no appropriate handling block is found in the current stack frame, the frame is popped and the stack frame of its invoker is reinstated and the exception rethrown.\vspace{10px}
 
-$CS = (CS', \langle mid, loc, ops, pc \rangle)$ \\ 
+\noindent$CS = (CS', \langle mid, loc, ops, pc \rangle)$ \\ 
 $ops = (x_0, \ldots, x_n, objr)$\vspace{5px} \\
 $exceptionLookup(P, CS) = $ \vspace{-10px} \\
 \[
