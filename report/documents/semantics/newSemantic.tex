@@ -1,5 +1,7 @@
-\section{Expanding \jcl}
+\subsection{Expanding \jcl}
+\jcl created and formalised by \cite{javasec}, seen in \cref{sec:semintro}, has been expanded upon in this report. The original semantics\ch{streamline to either "operational semantics" or "semantics" across all of the report} did not describe private method calls and exceptions. In the following, these additions are made.
 
+\subsubsection{\texttt{INVOKESPECIAL}}
 $$\inference[INVOKESPECIAL]{
 inst(P,mid,pc) = \texttt{INVOKESPECIAL }mid' \semsp 
 CP(mid') = pn \semnl \\
@@ -10,8 +12,7 @@ loc' = [0 \mapsto objr, 1 \mapsto p_{1}, \ldots, pn \mapsto p_{pn}])}
 $$\langle H, (CS, \langle mid, loc, ops', pc \rangle, \langle mid', loc', \epsilon, 0 \rangle)\rangle$$
 
 
-\subsection{Exception}
-\kri{beskriv}
+\subsubsection{\texttt{Exceptions}}
 $CS = (CS', \langle mid, loc, ops, pc \rangle)$ \\ 
 $ops = (x_0, \ldots, x_n, objr)$\vspace{5px} \\
 $exceptionLookup(P, CS) = $ \vspace{-10px} \\
