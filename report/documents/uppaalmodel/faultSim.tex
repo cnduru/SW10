@@ -10,7 +10,8 @@ Every instruction in the Java bytecode is represented by a location, and has an 
 \includegraphics{figures/fault.PNG}
 \caption{The UPPAAL template which selects when to perform a bit flip in the program counter}
 \label{fig:faultTime}
-\end{figure}\ch{update figure to use fault at between 0 and global clock}
+\end{figure}
+\ch{update figure to use fault at between 0 and global clock}
 
 \subsection{Data Faults}
 % locals and opstack
@@ -23,7 +24,7 @@ The edges have a guard, $faultTime \leq globalClock$, determined by the special 
 The fault itself is introduced by the update $os\lbrack osPos \rbrack\:\hat{}= 1 \ll osBitPos$, which flips bit \UPP{osBitPos} of value \UPP{osPos} in the operand stack.
 \UPP{osBitPos} is a random value between $0$ and $7$, which denotes which bit should be flipped. \UPP{osPos} is a random value between $0$ and the maximum size of the operand stack. 
 After a fault has been introduced, the variable \UPP{faultTime} is set to a value higher than the maximum value of the global clock, to ensure only one fault happens per simulation.\\\\
-Our approaches to modelling faults in the operand stack, heap and local variables are similar and only one of them is therefore described.\ch{is this enough or should we tell more about how the heap modelling works?}
+Our approaches to modelling faults in the operand stack, heap and local variables are similar and only one of them is therefore described.
 % % % % %
 \begin{figure}[H]
 \centering
