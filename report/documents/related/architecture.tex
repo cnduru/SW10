@@ -3,24 +3,27 @@
 Applets installed on a \jc, see \cref{subsec:jcinstall}, run in the \jc Virtual machine (JCVM) on the smart card. The JCVM runs on top of the operating system, as illustrated in \cref{fig:architecture},
 % jcvm supports dialect of java byte code
 and supports a dialect of Java bytecode.\\\\
-% feature not in java: firewall:
-%     multiple apps in same memory, separation needed for security, address space, sharable interface to use objects from others, each object has owner, accept request context switch, result returned
-The JCVM offers features not found in Java virtual machines, such as a firewall. Since multiple applets reside side by side on the \jc, it is vital to protect each applet's memory from other applets. If this was not done, another applet could freely alter the memory of another applet, altering its behaviour. If an applet needs an object from another, an applet can implement a sharable interface to expose selected objects. If the request is granted, the JCVM will perform a context switch, and the applet in which the object is residing will run the requested operation on the object. After the operation has completed, the result is returned to the requesting applet.\\\\
-% %
-% transactions and card tear
-As mentioned in \cref{subsec:smartcard}, the \jc does not have its own power supply and applets must be protected from tears - an unexpected loss of power when a card is removed from a terminal. The the mechanism provided is transactions, which allow a region of code to be atomically executed. If a tear occurs while an applet is executing in this region, operations performed by it are rolled back. This is useful in cases such as a credit card withdrawal process. If a card tear occurs after an internal balance is decremented, but before the withdrawal is registered, someone could potentially purchase items without actually paying. If the code region the payment specific code was protected by the transaction mechanism, the card tear would have no effect.\\\\
+
+
 % %
 % jcvm smaller than jvm because of card limitations
 % limited amount of data types and objects allowed
 % to give an idea ... numbers
 % more space than on cards if supported?
+The hardware itself is limited and as a result, it is necessary that the JCVM is small in size. Most cards have $1.2$kB of RAM, $32-48$kB EEPROM and $16$kB EEPROM\ch{cite}. To save resources, only a limited number of data types are supported, such as \texttt{short} and optionally integers while others such as \texttt{string} and \texttt{double} are not. If \texttt{string} and \texttt{double} was to be supported, code for performing string manipulation and floating point arithmetic would hav eto be included, which would take up valuable space.
 
-
+% feature not in java: firewall:
+%     multiple apps in same memory, separation needed for security, address space, sharable interface to use objects from others, each object has owner, accept request context switch, result returned
+The JCVM offers features not found in Java virtual machines, such as a firewall. Since multiple applets reside side by side on the \jc, it is vital to protect each applet's memory from other applets. If this was not done, another applet could freely alter the memory of another applet, altering its behaviour. If an applet needs an object from another, an applet can implement a sharable interface to expose selected objects. If the request is granted, the JCVM will perform a context switch, and the applet in which the object is residing will run the requested operation on the object. After the operation has completed, the result is returned to the requesting applet.\\\\
+% %
+% transactions and card tear
+As mentioned in \cref{subsec:smartcard}, the \jc does not have its own power supply and applets must be protected from tears - an unexpected loss of power when a card is removed from a terminal. The the mechanism provided is transactions, which allow a region of code to be atomically executed. If a tear occurs while an applet is executing in this region, operations performed by it are rolled back. This is useful in cases such as a credit card withdrawal process. If a card tear occurs after an internal balance is decremented, but before the withdrawal is registered, someone could potentially purchase items without actually paying. If the code region the payment specific code was protected by the transaction mechanism, the card tear would have no effect.
 
 % jc framework:
 % jc specific interfaces and classes, e.g.....
 % vendor specific:
 % specific used by banking 
+
 
 \begin{figure}[H]
 \centering
