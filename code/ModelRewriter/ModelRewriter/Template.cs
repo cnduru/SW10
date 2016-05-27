@@ -815,6 +815,21 @@ bool ifeq(){
                         };
                         Transitions.Add(new Transition(loc, NextLocation(loc), labels));
                         break;
+                    case "pop":
+                                                labels = new List<Label>()
+                        {
+                            new Label
+                            { 
+                                content = timeGuard, kind = "guard"
+                            },
+                            new Label
+                            { 
+                                content = "osp_dec(1), t = 0", 
+                                kind = "assignment"
+                            }
+                        };
+                        Transitions.Add(new Transition(loc, NextLocation(loc), labels));
+                        break;
                     default:
                         labels = new List<Label>()
                         {
