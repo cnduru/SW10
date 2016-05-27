@@ -2,21 +2,23 @@ public class Virtual{
   public Aclass a;
   public Aclass b;
 
+  public static int flag = 0;
+
   public static void main(String[] args) 
   {
-    install();
+      install();
   }
 
   public static void install()
   {
-    new Virtual();
+      new Virtual();
   }
 
   public Virtual()
   {
-    a = new Aclass();
-    b = new Bclass();
-    int ia = a.foo() + a.bar();
-    int ib = b.foo() + b.bar();
+      a = new Aclass();
+      b = new Bclass();
+      int ia = a.foo() + a.bar();
+      int ib = b.foo() + b.bar();
   }
 }
