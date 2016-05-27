@@ -3,9 +3,10 @@
 It supports the many of features of Java bytecode such as classes and method invocation which is showcased in \Cref{app:sample1}. 
 A brief overview of the instructions can be seen in \cref{tab:instr}.\\
 
-\noindent , has been expanded upon in this report. 
-The original semantics did not describe private method calls and exceptions. 
-In the following \jcl is expanded to support invocation of private methods and constructors.
+\noindent Program errors are not resented in \jcl, it is assumed that if no rule is legal the virtual machine will exit, e.g. if the current instruction is resolved to be \texttt{LOAD } $i$ and the parameter $i$ is not part of the domain for the $Local$ function for the top elements of the call stack, the rule would not be legal. \\\\
+\jcl has been expanded upon in this report. 
+The original semantics did not capture the notion of private method calls and exceptions. 
+In the following \jcl is expanded with rules for \texttt{INVOKESPECIAL} and \texttt{THROW}, to support invocation of private methods and exceptions, respectively.
 
 \begin{table}
 \centering
