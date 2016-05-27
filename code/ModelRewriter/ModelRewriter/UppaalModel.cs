@@ -54,6 +54,7 @@ namespace ModelRewriter
         //Sets dec, sys, and queries
         public void InitDec(int heapSize, int cpSize, int maxPar, List<string> methods)
         {
+            heapSize += cpSize;
             var gloDecBuild = new StringBuilder();
             var sysBuild = new StringBuilder();
             gloDecBuild.Append("clock t;\n");
@@ -76,7 +77,7 @@ namespace ModelRewriter
                 "}\n");
             //ConstantPool
             for (int i = 0; i < cpSize; i++) {
-                gloDecBuild.Append("int cp" + i + "= " + (5 + i) + ";\n");
+                gloDecBuild.Append("int cp" + i + "= " + (1 + i) + ";\n");
             }
             //Method parameters
             for (int i = 0; i < maxPar; i++)
@@ -107,7 +108,7 @@ namespace ModelRewriter
                 "    exceptionOccurred = true;" +
                 "    return 0;" +
                 "}\n\n" +
-                "int heapPointer = 1;\n" +
+                "int heapPointer = "+ (cpSize + 1) +";\n" +
                 "int alocNew(int classID){\n" +
                 "    int ref = heapPointer;\n" +
                 "    if(classID < 0) return -1;\n" +
@@ -127,10 +128,14 @@ namespace ModelRewriter
             queries.Add(@"Pr[<= 100] (<> opstack_fault)");
             queries.Add(@"E<> iExampleCFI_main.Done && !opstack_fault && !exceptionOccurred");
             queries.Add(@"Pr[<= 100] (<> iExampleCFI_main.Done && !opstack_fault && !exceptionOccurred)");
-
+            queries.Add("");
             queries.Add(@"A<> iVirtual_Virtual.pc58__return && !opstack_fault && !exceptionOccurred && iVirtual_Virtual.locs[1] == 3  && iVirtual_Virtual.locs[2] == 5");
             queries.Add(@"E<> iVirtual_Virtual.pc58__return && !opstack_fault && !exceptionOccurred && !(iVirtual_Virtual.locs[1] == 3  && iVirtual_Virtual.locs[2] == 5)");
             queries.Add(@"Pr[<= 100] (<> iVirtual_Virtual.pc58__return && !opstack_fault && !exceptionOccurred && !(iVirtual_Virtual.locs[1] == 3  && iVirtual_Virtual.locs[2] == 5))");
+            queries.Add("");
+            queries.Add(@"A<> iVirtualCGI_VirtualCGI.pc122_return && !opstack_fault && !exceptionOccurred && iVirtualCGI_VirtualCGI.locs[1] == 3  && iVirtualCGI_VirtualCGI.locs[2] == 5");
+            queries.Add(@"E<> iVirtualCGI_VirtualCGI.pc122_return && !opstack_fault && !exceptionOccurred && !(iVirtualCGI_VirtualCGI.locs[1] == 3  && iVirtualCGI_VirtualCGI.locs[2] == 5)");
+            queries.Add(@"Pr[<= 100] (<> iVirtualCGI_VirtualCGI.pc122_return && !opstack_fault && !exceptionOccurred && !(iVirtualCGI_VirtualCGI.locs[1] == 3  && iVirtualCGI_VirtualCGI.locs[2] == 5))");
 
         }
 
