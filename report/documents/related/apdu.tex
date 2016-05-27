@@ -1,4 +1,4 @@
-\subsection{APDU Packets}\label{subsec:apdu}
+\subsubsection{APDU Packets}\label{subsec:apdu}
 Communication between a smart card and a terminal is done via packets called Application Protocol Data Units (APDU). There are two types of communication packets: command and response. The structure of the packets can be seen in \cref{tab:apduCommand} and \cref{tab:apduResponse}, respectively.\\\\
 The command APDU has four mandatory header bytes (CLA, INS, P1, P2), some optional command data. $L_{c}$ encodes the length of the command data, and $L_{e}$ encodes the maximum number of bytes expected in the response APDU.\\\\
 The response apdu has optional response data followed by two mandatory status bytes (SW1, SW2) indicating the status of the command request sent to the card.
