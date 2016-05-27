@@ -937,7 +937,7 @@ bool ifeq(){
                 return null;
             }
             var excepLoc = new Location(waiter);
-            excepLoc.Committed = true;
+            excepLoc.Urgent = true;
             if (methodName == "<init>")
             {
                 methodName = methodClassName;
@@ -948,7 +948,7 @@ bool ifeq(){
             Transitions.Add(new Transition(waiter, excepLoc, 
                 makeLabels("guy", 
                     "exceptionOccurred == true",
-                    classId != -1 ? "osp_inc()" : "osp = 0",
+                    classId != -1 ? "osp_inc(), t = 0" : "osp = 0, t = 0",
                     String.Format("c{0}?", methodClassName + "_" + methodName))));
             Transitions.Add(new Transition(excepLoc, PCToLocation(classId), 
                 makeLabels("y", String.Format("c{0}!", name))));
