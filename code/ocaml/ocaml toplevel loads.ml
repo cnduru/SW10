@@ -22,9 +22,9 @@ open Sawja_pack
 open JProgram;;
 
 (* Setup here! *)
-let jar_file = "java/ExampleCFI.jar"
-let main_class = "ExampleCFI"
-let output = "output/simple_purse"
+let jar_file = "java/invokeVirtual/CFI/Virtual_CFI.jar"
+let main_class = "Virtual"
+let output = "output/virtualCFI"
 
 let (prta,instantiated_classes) =
   JRTA.parse_program 

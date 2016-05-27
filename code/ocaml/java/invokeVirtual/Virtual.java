@@ -1,6 +1,7 @@
 public class Virtual{
   public Aclass a;
   public Aclass b;
+  public static int callId;
 
   public static void main(String[] args) 
   {
