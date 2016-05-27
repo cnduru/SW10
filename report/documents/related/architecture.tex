@@ -10,7 +10,7 @@ and supports a dialect of Java bytecode.\\\\
 % limited amount of data types and objects allowed
 % to give an idea ... numbers
 % more space than on cards if supported?
-The hardware itself is limited and as a result, it is necessary that the JCVM is small in size. Most cards have $1.2$kB of RAM, $32-48$kB EEPROM and $16$kB EEPROM\ch{cite}. To save resources, only a limited number of data types are supported, such as \texttt{short} and optionally integers while others such as \texttt{string} and \texttt{double} are not. If \texttt{string} and \texttt{double} was to be supported, code for performing string manipulation and floating point arithmetic would hav eto be included, which would take up valuable space.
+The hardware itself is limited and as a result, it is necessary that the JCVM is small in size. Most cards have $1.2$kB of RAM, $32-48$kB EEPROM and $16$kB EEPROM, based on \cite[Sec. 2.1]{java_card_spec}. To save resources, only a limited number of data types are supported, such as \texttt{short} and optionally integers while others such as \texttt{string} and \texttt{double} are not. If \texttt{string} and \texttt{double} was to be supported, code for performing string manipulation and floating point arithmetic would hav eto be included, which would take up valuable space.
 
 % feature not in java: firewall:
 %     multiple apps in same memory, separation needed for security, address space, sharable interface to use objects from others, each object has owner, accept request context switch, result returned
