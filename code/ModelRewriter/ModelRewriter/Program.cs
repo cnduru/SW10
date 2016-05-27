@@ -29,8 +29,8 @@ namespace ModelRewriter
 			} 
 			else 
 			{
-                new JParser(new List<string>() { "simple_purse_cgi/ExampleCGI.txt" }, "new3.xml");//"Sample.txt", "A.txt", "B.txt" });
-                new Rewriter("new3.xml");//C://Users//Avalon//SW10//code//models//sample.xml");
+                new JParser(new List<string>() { "virtualCFI/Virtual.txt", "virtualCFI/Aclass.txt", "virtualCFI/Bclass.txt" }, "vir_CFI.xml");//"Sample.txt", "A.txt", "B.txt" });
+                new Rewriter("vir_CFI.xml");//C://Users//Avalon//SW10//code//models//sample.xml");
 			}
         }
     }

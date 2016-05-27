@@ -793,7 +793,7 @@ bool ifeq(){
                             },
                             new Label
                             { 
-                                    content = String.Format("osp_dec(1), H(cp{0}) = os[osp], t = 0",
+                                    content = String.Format("osp_dec(1), setH(cp{0}, os[osp]), t = 0",
                                 CP.Add(String.Join(" ", instArg.Skip(1)))), 
                                 kind = "assignment"
                             }
@@ -810,6 +810,21 @@ bool ifeq(){
                             new Label
                             { 
                                 content = "osp_dec(2), osp_inc(), os[osp - 1] = os[osp - 1] + os[osp], t = 0", 
+                                kind = "assignment"
+                            }
+                        };
+                        Transitions.Add(new Transition(loc, NextLocation(loc), labels));
+                        break;
+                    case "pop":
+                                                labels = new List<Label>()
+                        {
+                            new Label
+                            { 
+                                content = timeGuard, kind = "guard"
+                            },
+                            new Label
+                            { 
+                                content = "osp_dec(1), t = 0", 
                                 kind = "assignment"
                             }
                         };
@@ -922,7 +937,7 @@ bool ifeq(){
                 return null;
             }
             var excepLoc = new Location(waiter);
-            excepLoc.Committed = true;
+            excepLoc.Urgent = true;
             if (methodName == "<init>")
             {
                 methodName = methodClassName;
@@ -933,7 +948,7 @@ bool ifeq(){
             Transitions.Add(new Transition(waiter, excepLoc, 
                 makeLabels("guy", 
                     "exceptionOccurred == true",
-                    classId != -1 ? "osp_inc()" : "osp = 0",
+                    classId != -1 ? "osp_inc(), t = 0" : "osp = 0, t = 0",
                     String.Format("c{0}?", methodClassName + "_" + methodName))));
             Transitions.Add(new Transition(excepLoc, PCToLocation(classId), 
                 makeLabels("y", String.Format("c{0}!", name))));
