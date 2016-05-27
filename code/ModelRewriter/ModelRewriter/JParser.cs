@@ -56,14 +56,14 @@ namespace ModelRewriter
                 jClass.FindAloc();
             }
 
-            var heap = AllocateHeap(JClass.GetAloc(jClasses.First().GetMethod("install")), jClasses);
+            //var heap = AllocateHeap(JClass.GetAloc(jClasses.First().GetMethod("install")), jClasses);
                 
 
 
             //Add Invoke
             model.AddInvokevirtual(jClasses);
 
-            model.InitDec(heap.Count + 10,3,3, methods); 
+            model.InitDec(10,3,3, methods); 
             model.Save(save);
 		}
 
