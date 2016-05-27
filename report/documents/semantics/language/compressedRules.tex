@@ -1,10 +1,17 @@
-\subsection{\jcl}
-\ch{what do we do with this table?}
-\begin{table}[H]
+\section{\jcl}
+\jcl is a small language based on Java Card bytecode. Just as Java Card \jcl is a stack based language with a heap. \jcl was created and formalised in \cite{javasec}, and the semantics can be seen in \cref{sec:semintro}
+It supports the many of features of Java bytecode such as classes and method invocation which is showcased in \Cref{app:sample1}. 
+A brief overview of the instructions can be seen in \cref{tab:instr}.\\
+
+\noindent , has been expanded upon in this report. 
+The original semantics did not describe private method calls and exceptions. 
+In the following \jcl is expanded to support invocation of private methods and constructors.
+
+\begin{table}
 \centering
+\begin{tabular}{p{.30\textwidth}|p{.63\textwidth}}
 \label{tab:instr}
-\begin{tabular}{p{.25\textwidth}|p{.75\textwidth}}
-\textbf{Rule}			  & \textbf{Description} \\ \hline
+\textbf{Rule / Instruction}			  & \textbf{Description} \\ \hline
 NOP             		  & No operation. Only increments the program counter. \\ \hline
 PUSH \textit{v}           & Pushes parameter \textit{v} on top of the stack. \\ \hline
 POP             		  & Removes and discards top element of the stack.\\ \hline
@@ -12,19 +19,17 @@ ADD             		  & Adds the two top elements of the stack and pushes the resu
 DUP             		  & Duplicates the top element of the stack and pushes it onto the stack. \\ \hline
 GOTO \textit{a}           & Jumps to a certain address in the program.  \\ \hline
 IF\_CMPEQ \textit{a}   	  & Compares the two top stack elements and performs a conditional jump to \textit{a}  \\ \hline
-INVOKE\_STATIC     		  & Calls a static method.  \\ \hline
-INVOKE\_VIRTUAL 		  & ...  \\ \hline
-INVOKE\_SPECIAL			  & ...  \\ \hline
+INVOKESTATIC \textit{mid}    		  & Calls a static method.  \\ \hline
+INVOKEVIRTUAL \textit{mid}		  & Calls a virtual method.  \\ \hline
 RETURN                    & Returns from a method. If the stack is non-empty the top value is returned.   \\ \hline
-PUT\_STATIC \textit{fid}  & Writes the top value of the stack to a class variable on the heap.  \\ \hline
-GET\_STATIC \textit{fid}  & Pushes a class variable from the heap onto the stack. \\ \hline
+PUTSTATIC \textit{fid}  & Writes the top value of the stack to a class variable on the heap.  \\ \hline
+GETSTATIC \textit{fid}  & Pushes a class variable from the heap onto the stack. \\ \hline
 LOAD \textit{i}           & Loads a local variable onto the stack.  \\ \hline
 STORE \textit{i}          & Stores a value from the stack in a local variable.\\ \hline
-PUT\_FIELD \textit{fid}   & Stores a value from the top of the stack and stores it in a field in an object.   \\ \hline
-GET\_FIELD \textit{fid}	  & Reads a field in an object and pushes it onto the stack. \\ \hline
+PUTFIELD \textit{fid}   & Stores a value from the top of the stack and stores it in a field in an object.   \\ \hline
+GETFIELD \textit{fid}	  & Reads a field in an object and pushes it onto the stack. \\ \hline
 NEW   		              & Creates an object on the heap and pushes a reference to it onto the stack.  \\ \hline  
 \end{tabular}
 \caption{\jcl semantics with a short description. Note that stack refers to the operand stack.}
 \end{table}
-
 \input{documents/semantics/newSemantic}
