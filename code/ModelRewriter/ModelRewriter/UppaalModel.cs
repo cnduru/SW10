@@ -62,7 +62,18 @@ namespace ModelRewriter
 
             //HEAP
             gloDecBuild.Append(String.Format("const int heap_size = {0};\n",heapSize));
-            gloDecBuild.Append("int H[heap_size];\n");
+            gloDecBuild.Append("int _H[heap_size];\n");
+            gloDecBuild.Append("int H(int i)\n" +
+                "{\n" +
+                "    if (i < heap_size) return _H[i];\n" +
+                "    exceptionOccurred = true;\n" +
+                "    return 0;\n" +
+                "}\n");
+            gloDecBuild.Append("void setH(int i, int v)\n" +
+                "{\n" +
+                "    if (i < heap_size) _H[i] = v;\n" +
+                "    else exceptionOccurred = true;\n" +
+                "}\n");
             //ConstantPool
             for (int i = 0; i < cpSize; i++) {
                 gloDecBuild.Append("int cp" + i + "= " + (5 + i) + ";\n");
@@ -88,13 +99,20 @@ namespace ModelRewriter
             gloDecBuild.Append("bool opstack_fault = false;\n");
 
             gloDecBuild.Append(
-                "const int classFields[4] = {0, 3, 1, 1};\n\n" +
+                "const int classCount = 4;\n" +
+                "const int _classFields[classCount] = {0, 3, 1, 1};\n" +
+                "int classFields(int i)\n" +
+                "{\n" +
+                "    if (i < classCount) return _classFields[i];\n" +
+                "    exceptionOccurred = true;" +
+                "    return 0;" +
+                "}\n\n" +
                 "int heapPointer = 1;\n" +
-                "int alocNew(int classID){\n"+
+                "int alocNew(int classID){\n" +
                 "    int ref = heapPointer;\n" +
                 "    if(classID < 0) return -1;\n" +
-                "    H[ref] = classID;\n" +
-                "    heapPointer += classFields[classID];\n" +
+                "    setH(ref, classID);\n" +
+                "    heapPointer += classFields(classID);\n" +
                 "    return ref;\n" +
                 "}");
 
@@ -109,6 +127,10 @@ namespace ModelRewriter
             queries.Add(@"Pr[<= 100] (<> opstack_fault)");
             queries.Add(@"E<> iExampleCFI_main.Done && !opstack_fault && !exceptionOccurred");
             queries.Add(@"Pr[<= 100] (<> iExampleCFI_main.Done && !opstack_fault && !exceptionOccurred)");
+
+            queries.Add(@"A<> iVirtual_Virtual.pc58__return && !opstack_fault && !exceptionOccurred && iVirtual_Virtual.locs[1] == 3  && iVirtual_Virtual.locs[2] == 5");
+            queries.Add(@"E<> iVirtual_Virtual.pc58__return && !opstack_fault && !exceptionOccurred && !(iVirtual_Virtual.locs[1] == 3  && iVirtual_Virtual.locs[2] == 5)");
+            queries.Add(@"Pr[<= 100] (<> iVirtual_Virtual.pc58__return && !opstack_fault && !exceptionOccurred && !(iVirtual_Virtual.locs[1] == 3  && iVirtual_Virtual.locs[2] == 5))");
 
         }
 
@@ -170,11 +192,17 @@ namespace ModelRewriter
             virtualGlobalDec.Append("\n" +
                 "int clID = -1;\n" +
                 "int meID = -1;\n" +
-                "const int classHierarchy[4] = {0, 0, 0, 2};\n" +
+                "const int _classHierarchy[classCount] = {0, 0, 0, 2};\n" +
+                "int classHierarchy(int i)\n" +
+                "{\n" +
+                "    if (i < classCount) return _classHierarchy[i];\n" +
+                "    exceptionOccurred = true;\n" +
+                "    return 0;\n" +
+                "}\n" +
                 "bool signature(int classID, int methodID, int methodClassID)\n" +
                 "{\n" +
                 "    return meID == methodID && classID == methodClassID;\n" +
-                "}");
+                "}\n");
 
         }
 
@@ -320,9 +348,9 @@ namespace ModelRewriter
                     }
 
                     var labs = Template.makeLabels("sgu",
-                               "heapIndex:int[0,heap_size - 1]",
-                               "faultClock >= faultTime",
-                               "H[heapIndex] ^= 1 << bitPosHeap, faultTime = 1000");
+                        "heapIndex:int[0,heap_size - 1]",
+                        "faultClock >= faultTime",
+                        "setH(heapIndex, H(heapIndex) ^ 1 << bitPosHeap), faultTime = 1000");
                     Transition heapTransition = new Transition(l, l, labs);
                     te.Transitions.Add(heapTransition);
 
