@@ -126,7 +126,8 @@ namespace ModelRewriter
             inst = new Instruction(instLine);
             
             name = "pc" + instLine.Replace("(", "").Replace(")", "").Replace("<", "").Replace(">", "")
-                .Replace(",", "").Replace(" ", "_").Replace(".", "_").Replace(":", "_").Replace("__", "_");
+                .Replace(",", "").Replace(" ", "_").Replace(".", "_").Replace(":", "_")
+                .Replace("__", "_").Replace("-","");
             Label = new Label{
                 content = "t <= " + Constants.instTime, 
                 kind = "invariant", 
