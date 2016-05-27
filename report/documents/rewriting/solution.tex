@@ -1,13 +1,11 @@
 \section{Proposed Solution}
-We propose a solution which can convert a Java class file to a UPPAAL SMC model, rewrite it to insert fault injection attack countermeasures and recommend one of these countermeasures. The point of the conversion to a model, is to be able to provide guarantees about certain properties of the program. This makes sense when the Java class file is rewritten and countermeasures are inserted, since it is then possible to guarantee that the program has not become less secure with respect to certain properties.\\
-
+We propose a solution which can convert a Java class file to a UPPAAL SMC model, rewrite it to insert fault injection attack countermeasures and recommend one of these countermeasures. The point of the conversion to a model, is to be able to provide guarantees about certain properties of the program. This makes sense when the Java class file is rewritten and countermeasures are inserted, since it is then possible to guarantee that the program has not become less secure with respect to certain properties.\\\\
 The workflow stages of the solution are illustrated in \cref{fig:workflow_new}. The stages are labelled with numbers 1-5. Their purposes are detailed in the following.
 
 % burde vi også give mulighed i programmet for bare at få en ``vanilla'' SMC model ud?
 
-\paragraph{Stage 1 - 3} parses Java bytecode code through the solution's parser and generates a UPPAAL SMC model.
-\paragraph{Stage 2 - 3} parses Java bytecode code, modified with fault countermeasures, through the solution's parser and generates a UPPAAL SMC model.  
-\paragraph{Stage 3 - 4} assesses the performed attacks and countermeasures implemented to reduce vulnerablility, by verifying properties about them.
+\paragraph{Stage 1 - 2} parses Java bytecode through the solution's parser and generates a UPPAAL SMC model. This code can be either unmodified code or code implemented with countermeasures.  
+\paragraph{Stage 2 - 3} assesses the attacks performed and countermeasures implemented, to evaluate vulnerablility and countermeasure effectiveness.
 \begin{figure}[H]
 \centering
 \def\svgwidth{\columnwidth}
@@ -15,5 +13,3 @@ The workflow stages of the solution are illustrated in \cref{fig:workflow_new}. 
 \caption{The workflow of the solution, from Java bytecode to UPPAAL SMC model}
 \label{fig:workflow_new}
 \end{figure}
-\kri{update text to new figure}
-
