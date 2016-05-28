@@ -22,9 +22,9 @@ open Sawja_pack
 open JProgram;;
 
 (* Setup here! *)
-let jar_file = "java/invokeVirtual/CFI/Virtual_CFI.jar"
-let main_class = "Virtual"
-let output = "output/virtualCFI"
+let jar_file = "java/invokeVirtual/CGI/virtualCGI.jar"
+let main_class = "VirtualCGI"
+let output = "output/virtual"
 
 let (prta,instantiated_classes) =
   JRTA.parse_program 
