@@ -1,16 +1,15 @@
 The experiments are performed on a code sample from a selected part of the \jc samples seen in \cref{lst:example}, where some parts, mainly variables and methods have been mocked since it was not necessary to model the complete samples.\\\\
 In order to determine whether the implemented countermeasures do indeed provide improved protection against bit flips, compared to unprotected code, experiments are needed. These are performed with the modelling tool UPPAAL, which is described in \cref{chap:upp}.\\\\
-The experiments will be run according to two criteria, to determine whether a fault affecting security has happened. Below, these criteria and their related UPPAAL queries are listed
+% % % % %
+% describe program
+% what are criteria? error, success, attack..
+The code sample is responsible for validating the PIN code, and in our experiments we will see how a bit flip can affect the validation. Experiments will be run according to three criteria: \textit{No change}, \textit{Crash} and \textit{Attack}. We define \textit{No change} as when the associated fault model never has any effect on the validation. \textit{Crash} is defined as when the program reaches an illegal state, e.g. a misaligned operand stack or an illegal program counter. \textit{Attack} is defined as when the validation is bypassed and the program remains in a legal state. Below, the types of queries and their purpose used are listed:
 
 \begin{itemize}
-\item The simulation can reach the main template's \textit{done} location without an exception occuring
-	\begin{itemize}
-	\item \texttt{Pr[<= 100] (<> done \&\& !exceptionOccurred)}
-	\end{itemize}
-\item The simulation can reach the main template's \textit{done} location without a operand stack fault happening
-	\begin{itemize}
-	\item
-	\end{itemize}
+\item No change: A \textbf{liveness} query checks whether the program can terminate in the correct state.
+\item Crash: A \textbf{reachability} query checks whether an \textit{error} can occur.
+\item Attack: A \textbf{reachability} query checks whether the program can terminate successfully when an attack has occurred.
+\item Probabilities: For each state formula, a \textbf{probability} query is also run.
 \end{itemize}
 
-We assume that a bit flip will occur within $80$ time units of program start. Through experiments, we discovered this number is greater than any of the individually modelled programs. Additionally, the models are created in such a way that each instruction execution takes $1$ time unit. This ensures a bitflip to occur within either one of the program's simulation runs, while the probability of affecting single instruction in any of the modelled programs are the same. The bit flip may or may not have an effect, depending on whether it occurs between program start and program end, or outside.
+\noindent We assume that a bit flip will occur within $80$ time units of program start. Through experiments, we discovered this number is greater than any of the individually modelled programs. Additionally, the models are created in such a way that each instruction execution takes $1$ time unit. This ensures a bitflip to occur within either one of the program's simulation runs, while the probability of affecting single instruction in any of the modelled programs are the same. The bit flip may or may not have an effect, depending on whether it occurs between program start and program end, or outside.
