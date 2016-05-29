@@ -14,12 +14,12 @@ namespace ModelRewriter
                 switch (args[0])
                 {
                     case "b":
-                        var target = "xCFI.xml";
+                        var target = "xCFI1.xml";
                         //new JParser(args.Skip(1), target);
                         //new JParser(new List<string>() { "exlinesDup.txt" });
                         //new JParser(new List<string>() { "virtual/VirtualCGI.txt", "virtual/AclassCGI.txt", "virtual/BclassCGI.txt" }, target);
                         //new JParser(new List<string>(){ "simple_purse/Example_dup.txt"}, target);
-                        new JParser(new List<string>(){ "simple_purse/ExampleCFI.txt"}, target);
+                        new JParser(new List<string>(){ "simple_purse/ExampleCFI1.txt"}, target);
                         new Rewriter(target);
                         break;
                     default:
