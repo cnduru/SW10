@@ -1,1 +1,23 @@
-test
+\begin{table}[H]
+\resizebox{\textwidth}{!}{
+    \begin{tabular}{l|l|l|l|l|l|l}
+    Version & No change & No change \% & Crash & Crash \% & Attack & Attack \% \\ \hline
+    Base      & True  & \relax[0.990, 1] & False & \relax[0, 0.01] & False & \relax[0, 0.01]    \\
+    Base + PC & False & \relax[0.385, 0.395] & True & \relax[0.607, 0.617] & True & [0.023, 0.032]  \\
+    Base + OP & False & \relax[0.961, 0.971] & True & [0.005, 0.015] & True & [0.013, 0.023] \\
+    Base + H  & False & \relax[0.912, 0.922] & True & \relax[0.053, 0.063] & True & \relax[0.004, 0.014] \\
+    Base + L  & False & \relax[0.966, 0.976] & True & \relax[0.014, 0.024] & True & \relax[0.004, 0.014] \\
+    CGI       & True  & \relax[0.990, 1] & False & \relax[0, 0.01] & False & \relax[0, 0.01]    \\%todo
+    CGI + PC  & False & \relax[0.640, 0.650] & True & \relax[0.342, 0.352] & True & [0.004, 0.014]    \\%todo
+    CGI + OP  & False & \relax[0.990, 1] & False & [4,4e-5, 0.001] & True & [0, 0.001]    \\%todo
+    CGI + H   & True  & \relax[0.990, 1] & False & \relax[0, 0.001] & False & \relax[0, 0.001]    \\%todo
+    CGI + L   & True  & \relax[0.990, 1] & False & \relax[0, 0.001] & False & \relax[0, 0.001]    \\%todo
+    CFI       & True  & \relax[0.990, 1] & False & \relax[0, 0.01] & False & \relax[0, 0.01]    \\%todo
+    CFI + PC  & False & \relax[0.640, 0.650] & True & \relax[0.342, 0.352] & True & [0.004, 0.014]    \\%todo
+    CFI + OP  & False & \relax[0.990, 1] & False & [4,4e-5, 0.001] & True & [0, 0.001]    \\%todo
+    CFI + H   & True  & \relax[0.990, 1] & False & \relax[0, 0.001] & False & \relax[0, 0.001]    \\%todo
+    CFI + L   & True  & \relax[0.990, 1] & False & \relax[0, 0.001] & False & \relax[0, 0.001]    \\%todo
+
+    \end{tabular}}
+    \caption{All experiment results have a confidence of $0.995$}
+\end{table}
