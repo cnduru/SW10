@@ -1,6 +1,6 @@
 % base
 In the Base case, where no fault was introduced, the progam ran as expected.\\\\
 % base + pc
-In the case of Base + PC, interesting results emerge. In $10.8\% - 11.8\%$ of runs, a crash occurred. This happens when the operand stack becomes unaligned, e.g. because the program counter is changed to an address containing an instruction which consumes two stack elements, but the original instruction only consumes one.\\\\
+In the case of Base + PC, there is a change in the crash and attack probabilities. The changes are likely due to two cases: When the operand stack becomes unaligned, e.g. because the program counter is changed to an address containing an instruction which consumes two stack elements, but the original instruction only consumes one. Or when a bit flip changes the program counter to an invalid value.\\\\
 % base + op
-The results for Base + OP show that it is possible to perform a successful attack, but the probability is small at $\leq 1\%$.\\\\
+The results for Base + OP show that an attack is possible, however the probability simulation is not able to distinguish it from the Base case. This could be due to the fact, that the simulation did not enconter a run where an attack was possible.\\\\
