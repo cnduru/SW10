@@ -1,0 +1,3026 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+	<declaration>clock t;
+bool exceptionOccurred;
+const int heap_size = 13;
+int _H[heap_size];
+int H(int i)
+{
+    if (i &lt; heap_size) return _H[i];
+    exceptionOccurred = true;
+    return 0;
+}
+void setH(int i, int v)
+{
+    if (i &lt; heap_size) _H[i] = v;
+    else exceptionOccurred = true;
+}
+int cp0= 1;
+int cp1= 2;
+int cp2= 3;
+int par0;
+int par1;
+int par2;
+broadcast chan cVirtualCGI_VirtualCGI;
+broadcast chan cVirtualCGI_install;
+broadcast chan cVirtualCGI_main;
+broadcast chan cAclassCGI_bar;
+broadcast chan cAclassCGI_AclassCGI;
+broadcast chan cAclassCGI_foo;
+broadcast chan cBclassCGI_BclassCGI;
+broadcast chan cBclassCGI_foo;
+broadcast chan cVirtual;
+bool opstack_fault = false;
+const int classCount = 4;
+const int _classFields[classCount] = {0, 4, 1, 1};
+int classFields(int i)
+{
+    if (i &lt; classCount) return _classFields[i];
+    exceptionOccurred = true;    return 0;}
+
+int heapPointer = 4;
+int alocNew(int classID){
+    int ref = heapPointer;
+    if(classID &lt; 0) return -1;
+    setH(ref, classID);
+    heapPointer += classFields(classID);
+    return ref;
+}
+
+
+int clID = -1;
+int meID = -1;
+const int _classHierarchy[classCount] = {0, 0, 0, 2};
+int classHierarchy(int i)
+{
+    if (i &lt; classCount) return _classHierarchy[i];
+    exceptionOccurred = true;
+    return 0;
+}
+bool signature(int classID, int methodID, int methodClassID)
+{
+    return meID == methodID &amp;&amp; classID == methodClassID;
+}
+
+int faultAt = 0;
+clock globalClock;
+int faultTime;</declaration>
+	<template>
+		<name>VirtualCGI_VirtualCGI</name>
+		<declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+		<location id="id0" x="0" y="-65">
+			<name x="20" y="-78">VirtualCGI</name>
+			<label kind="exponentialrate" x="-70" y="-65">1</label>
+		</location>
+		<location id="id1" x="0" y="0">
+			<name x="20" y="-13">pc0__aload_0</name>
+			<label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+		</location>
+		<location id="id2" x="0" y="65">
+			<name x="20" y="52">pc1__invokespecial_void_java_lang_Object_init_</name>
+			<label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+		</location>
+		<location id="id3" x="0" y="130">
+			<name x="20" y="117">pc4__aload_0</name>
+			<label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+		</location>
+		<location id="id4" x="0" y="195">
+			<name x="20" y="182">pc5__new_AclassCGI</name>
+			<label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+		</location>
+		<location id="id5" x="0" y="260">
+			<name x="20" y="247">pc8__dup</name>
+			<label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+		</location>
+		<location id="id6" x="0" y="325">
+			<name x="20" y="312">pc9__invokespecial_void_AclassCGI_init_</name>
+			<label kind="invariant" x="-70" y="325">t &lt;= 1</label>
+		</location>
+		<location id="id7" x="0" y="390">
+			<name x="20" y="377">pc12__putfield_VirtualCGI_a___AclassCGI</name>
+			<label kind="invariant" x="-70" y="390">t &lt;= 1</label>
+		</location>
+		<location id="id8" x="0" y="455">
+			<name x="20" y="442">pc15__aload_0</name>
+			<label kind="invariant" x="-70" y="455">t &lt;= 1</label>
+		</location>
+		<location id="id9" x="0" y="520">
+			<name x="20" y="507">pc16__new_BclassCGI</name>
+			<label kind="invariant" x="-70" y="520">t &lt;= 1</label>
+		</location>
+		<location id="id10" x="0" y="585">
+			<name x="20" y="572">pc19__dup</name>
+			<label kind="invariant" x="-70" y="585">t &lt;= 1</label>
+		</location>
+		<location id="id11" x="0" y="650">
+			<name x="20" y="637">pc20__invokespecial_void_BclassCGI_init_</name>
+			<label kind="invariant" x="-70" y="650">t &lt;= 1</label>
+		</location>
+		<location id="id12" x="0" y="715">
+			<name x="20" y="702">pc23__putfield_VirtualCGI_b___AclassCGI</name>
+			<label kind="invariant" x="-70" y="715">t &lt;= 1</label>
+		</location>
+		<location id="id13" x="0" y="780">
+			<name x="20" y="767">pc26__bipush_30</name>
+			<label kind="invariant" x="-70" y="780">t &lt;= 1</label>
+		</location>
+		<location id="id14" x="0" y="845">
+			<name x="20" y="832">pc28__putstatic_VirtualCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="845">t &lt;= 1</label>
+		</location>
+		<location id="id15" x="0" y="910">
+			<name x="20" y="897">pc31__aload_0</name>
+			<label kind="invariant" x="-70" y="910">t &lt;= 1</label>
+		</location>
+		<location id="id16" x="0" y="975">
+			<name x="20" y="962">pc32__getfield_VirtualCGI_a___AclassCGI</name>
+			<label kind="invariant" x="-70" y="975">t &lt;= 1</label>
+		</location>
+		<location id="id17" x="0" y="1040">
+			<name x="20" y="1027">pc35__invokevirtual_int_AclassCGI_foo_</name>
+			<label kind="invariant" x="-70" y="1040">t &lt;= 1</label>
+		</location>
+		<location id="id18" x="0" y="1105">
+			<name x="20" y="1092">pc38__getstatic_VirtualCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="1105">t &lt;= 1</label>
+		</location>
+		<location id="id19" x="0" y="1170">
+			<name x="20" y="1157">pc41__bipush_40</name>
+			<label kind="invariant" x="-70" y="1170">t &lt;= 1</label>
+		</location>
+		<location id="id20" x="0" y="1235">
+			<name x="20" y="1222">pc43__ifcmpeq_6</name>
+			<label kind="invariant" x="-70" y="1235">t &lt;= 1</label>
+		</location>
+		<location id="id21" x="0" y="1300">
+			<name x="20" y="1287">pc46__bipush_10</name>
+			<label kind="invariant" x="-70" y="1300">t &lt;= 1</label>
+		</location>
+		<location id="id22" x="0" y="1365">
+			<name x="20" y="1352">pc48__istore_1</name>
+			<label kind="invariant" x="-70" y="1365">t &lt;= 1</label>
+		</location>
+		<location id="id23" x="0" y="1430">
+			<name x="20" y="1417">pc49__bipush_31</name>
+			<label kind="invariant" x="-70" y="1430">t &lt;= 1</label>
+		</location>
+		<location id="id24" x="0" y="1495">
+			<name x="20" y="1482">pc51__putstatic_VirtualCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="1495">t &lt;= 1</label>
+		</location>
+		<location id="id25" x="0" y="1560">
+			<name x="20" y="1547">pc54__aload_0</name>
+			<label kind="invariant" x="-70" y="1560">t &lt;= 1</label>
+		</location>
+		<location id="id26" x="0" y="1625">
+			<name x="20" y="1612">pc55__getfield_VirtualCGI_a___AclassCGI</name>
+			<label kind="invariant" x="-70" y="1625">t &lt;= 1</label>
+		</location>
+		<location id="id27" x="0" y="1690">
+			<name x="20" y="1677">pc58__invokevirtual_int_AclassCGI_bar_</name>
+			<label kind="invariant" x="-70" y="1690">t &lt;= 1</label>
+		</location>
+		<location id="id28" x="0" y="1755">
+			<name x="20" y="1742">pc61__iadd</name>
+			<label kind="invariant" x="-70" y="1755">t &lt;= 1</label>
+		</location>
+		<location id="id29" x="0" y="1820">
+			<name x="20" y="1807">pc62__istore_1</name>
+			<label kind="invariant" x="-70" y="1820">t &lt;= 1</label>
+		</location>
+		<location id="id30" x="0" y="1885">
+			<name x="20" y="1872">pc63__getstatic_VirtualCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="1885">t &lt;= 1</label>
+		</location>
+		<location id="id31" x="0" y="1950">
+			<name x="20" y="1937">pc66__bipush_41</name>
+			<label kind="invariant" x="-70" y="1950">t &lt;= 1</label>
+		</location>
+		<location id="id32" x="0" y="2015">
+			<name x="20" y="2002">pc68__ifcmpeq_6</name>
+			<label kind="invariant" x="-70" y="2015">t &lt;= 1</label>
+		</location>
+		<location id="id33" x="0" y="2080">
+			<name x="20" y="2067">pc71__bipush_10</name>
+			<label kind="invariant" x="-70" y="2080">t &lt;= 1</label>
+		</location>
+		<location id="id34" x="0" y="2145">
+			<name x="20" y="2132">pc73__istore_1</name>
+			<label kind="invariant" x="-70" y="2145">t &lt;= 1</label>
+		</location>
+		<location id="id35" x="0" y="2210">
+			<name x="20" y="2197">pc74__bipush_30</name>
+			<label kind="invariant" x="-70" y="2210">t &lt;= 1</label>
+		</location>
+		<location id="id36" x="0" y="2275">
+			<name x="20" y="2262">pc76__putstatic_VirtualCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="2275">t &lt;= 1</label>
+		</location>
+		<location id="id37" x="0" y="2340">
+			<name x="20" y="2327">pc79__aload_0</name>
+			<label kind="invariant" x="-70" y="2340">t &lt;= 1</label>
+		</location>
+		<location id="id38" x="0" y="2405">
+			<name x="20" y="2392">pc80__getfield_VirtualCGI_b___AclassCGI</name>
+			<label kind="invariant" x="-70" y="2405">t &lt;= 1</label>
+		</location>
+		<location id="id39" x="0" y="2470">
+			<name x="20" y="2457">pc83__invokevirtual_int_AclassCGI_foo_</name>
+			<label kind="invariant" x="-70" y="2470">t &lt;= 1</label>
+		</location>
+		<location id="id40" x="0" y="2535">
+			<name x="20" y="2522">pc86__getstatic_VirtualCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="2535">t &lt;= 1</label>
+		</location>
+		<location id="id41" x="0" y="2600">
+			<name x="20" y="2587">pc89__bipush_40</name>
+			<label kind="invariant" x="-70" y="2600">t &lt;= 1</label>
+		</location>
+		<location id="id42" x="0" y="2665">
+			<name x="20" y="2652">pc91__ifcmpeq_6</name>
+			<label kind="invariant" x="-70" y="2665">t &lt;= 1</label>
+		</location>
+		<location id="id43" x="0" y="2730">
+			<name x="20" y="2717">pc94__bipush_10</name>
+			<label kind="invariant" x="-70" y="2730">t &lt;= 1</label>
+		</location>
+		<location id="id44" x="0" y="2795">
+			<name x="20" y="2782">pc96__istore_1</name>
+			<label kind="invariant" x="-70" y="2795">t &lt;= 1</label>
+		</location>
+		<location id="id45" x="0" y="2860">
+			<name x="20" y="2847">pc97__bipush_31</name>
+			<label kind="invariant" x="-70" y="2860">t &lt;= 1</label>
+		</location>
+		<location id="id46" x="0" y="2925">
+			<name x="20" y="2912">pc99__putstatic_VirtualCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="2925">t &lt;= 1</label>
+		</location>
+		<location id="id47" x="0" y="2990">
+			<name x="20" y="2977">pc102_aload_0</name>
+			<label kind="invariant" x="-70" y="2990">t &lt;= 1</label>
+		</location>
+		<location id="id48" x="0" y="3055">
+			<name x="20" y="3042">pc103_getfield_VirtualCGI_b___AclassCGI</name>
+			<label kind="invariant" x="-70" y="3055">t &lt;= 1</label>
+		</location>
+		<location id="id49" x="0" y="3120">
+			<name x="20" y="3107">pc106_invokevirtual_int_AclassCGI_bar_</name>
+			<label kind="invariant" x="-70" y="3120">t &lt;= 1</label>
+		</location>
+		<location id="id50" x="0" y="3185">
+			<name x="20" y="3172">pc109_iadd</name>
+			<label kind="invariant" x="-70" y="3185">t &lt;= 1</label>
+		</location>
+		<location id="id51" x="0" y="3250">
+			<name x="20" y="3237">pc110_istore_2</name>
+			<label kind="invariant" x="-70" y="3250">t &lt;= 1</label>
+		</location>
+		<location id="id52" x="0" y="3315">
+			<name x="20" y="3302">pc111_getstatic_VirtualCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="3315">t &lt;= 1</label>
+		</location>
+		<location id="id53" x="0" y="3380">
+			<name x="20" y="3367">pc114_bipush_41</name>
+			<label kind="invariant" x="-70" y="3380">t &lt;= 1</label>
+		</location>
+		<location id="id54" x="0" y="3445">
+			<name x="20" y="3432">pc116_ifcmpeq_6</name>
+			<label kind="invariant" x="-70" y="3445">t &lt;= 1</label>
+		</location>
+		<location id="id55" x="0" y="3510">
+			<name x="20" y="3497">pc119_bipush_10</name>
+			<label kind="invariant" x="-70" y="3510">t &lt;= 1</label>
+		</location>
+		<location id="id56" x="0" y="3575">
+			<name x="20" y="3562">pc121_istore_2</name>
+			<label kind="invariant" x="-70" y="3575">t &lt;= 1</label>
+		</location>
+		<location id="id57" x="0" y="3640">
+			<name x="20" y="3627">pc122_return</name>
+			<label kind="invariant" x="-70" y="3640">t &lt;= 1</label>
+		</location>
+		<location id="id58" x="200" y="91">
+			<label kind="invariant" x="0" y="0">t &lt;= 5</label>
+		</location>
+		<location id="id59" x="200" y="351">
+			<label kind="exponentialrate" x="130" y="351">1</label>
+		</location>
+		<location id="id60" x="200" y="377">
+			<label kind="exponentialrate" x="330" y="377">1</label>
+			<urgent/>
+		</location>
+		<location id="id61" x="200" y="676">
+			<label kind="exponentialrate" x="130" y="676">1</label>
+		</location>
+		<location id="id62" x="200" y="702">
+			<label kind="exponentialrate" x="330" y="702">1</label>
+			<urgent/>
+		</location>
+		<location id="id63" x="200" y="1066">
+			<label kind="exponentialrate" x="130" y="1066">1</label>
+		</location>
+		<location id="id64" x="200" y="1092">
+			<label kind="exponentialrate" x="330" y="1092">1</label>
+			<urgent/>
+		</location>
+		<location id="id65" x="200" y="1716">
+			<label kind="exponentialrate" x="130" y="1716">1</label>
+		</location>
+		<location id="id66" x="200" y="1742">
+			<label kind="exponentialrate" x="330" y="1742">1</label>
+			<urgent/>
+		</location>
+		<location id="id67" x="200" y="2496">
+			<label kind="exponentialrate" x="130" y="2496">1</label>
+		</location>
+		<location id="id68" x="200" y="2522">
+			<label kind="exponentialrate" x="330" y="2522">1</label>
+			<urgent/>
+		</location>
+		<location id="id69" x="200" y="3146">
+			<label kind="exponentialrate" x="130" y="3146">1</label>
+		</location>
+		<location id="id70" x="200" y="3172">
+			<label kind="exponentialrate" x="330" y="3172">1</label>
+			<urgent/>
+		</location>
+		<init ref="id0"/>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id1"/>
+			<label kind="guard" x="20" y="-65">t == 1</label>
+			<label kind="synchronisation" x="20" y="-52">cVirtualCGI_VirtualCGI?</label>
+			<label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id2"/>
+			<label kind="guard" x="20" y="0">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="13">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id58"/>
+			<label kind="guard" x="20" y="65">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="78">osp_dec(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id58"/>
+			<target ref="id3"/>
+			<label kind="guard" x="20" y="91">t == 5</label>
+			<label kind="assignment" x="20" y="104">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id4"/>
+			<label kind="guard" x="20" y="130">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="143">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id5"/>
+			<label kind="guard" x="20" y="195">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="208">osp_inc(), os[osp-1] = alocNew(2), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id6"/>
+			<label kind="guard" x="20" y="273">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="260">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id59"/>
+			<label kind="guard" x="20" y="325">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="351">cAclassCGI_AclassCGI!</label>
+			<label kind="assignment" x="20" y="338">osp_dec(1), t = 0, par0 = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id59"/>
+			<target ref="id7"/>
+			<label kind="guard" x="20" y="364">!exceptionOccurred</label>
+			<label kind="synchronisation" x="20" y="351">cAclassCGI_AclassCGI?</label>
+			<label kind="assignment" x="20" y="377">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id59"/>
+			<target ref="id60"/>
+			<label kind="guard" x="20" y="351">exceptionOccurred == true</label>
+			<label kind="synchronisation" x="20" y="377">cAclassCGI_AclassCGI?</label>
+			<label kind="assignment" x="20" y="364">osp = 0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id60"/>
+			<target ref="id0"/>
+			<label kind="synchronisation" x="20" y="377">cVirtualCGI_VirtualCGI!</label>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id8"/>
+			<label kind="guard" x="20" y="390">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="403">osp_dec(2), setH(os[osp] + 2, os[osp + 1])</label>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id9"/>
+			<label kind="guard" x="20" y="455">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="468">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id10"/>
+			<label kind="guard" x="20" y="520">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="533">osp_inc(), os[osp-1] = alocNew(3), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id10"/>
+			<target ref="id11"/>
+			<label kind="guard" x="20" y="598">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="585">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+		</transition>
+		<transition>
+			<source ref="id11"/>
+			<target ref="id61"/>
+			<label kind="guard" x="20" y="650">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="676">cBclassCGI_BclassCGI!</label>
+			<label kind="assignment" x="20" y="663">osp_dec(1), t = 0, par0 = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id61"/>
+			<target ref="id12"/>
+			<label kind="guard" x="20" y="689">!exceptionOccurred</label>
+			<label kind="synchronisation" x="20" y="676">cBclassCGI_BclassCGI?</label>
+			<label kind="assignment" x="20" y="702">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id61"/>
+			<target ref="id62"/>
+			<label kind="guard" x="20" y="676">exceptionOccurred == true</label>
+			<label kind="synchronisation" x="20" y="702">cBclassCGI_BclassCGI?</label>
+			<label kind="assignment" x="20" y="689">osp = 0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id62"/>
+			<target ref="id0"/>
+			<label kind="synchronisation" x="20" y="702">cVirtualCGI_VirtualCGI!</label>
+		</transition>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id13"/>
+			<label kind="guard" x="20" y="715">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="728">osp_dec(2), setH(os[osp] + 1, os[osp + 1])</label>
+		</transition>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id14"/>
+			<label kind="guard" x="20" y="780">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="793">osp_inc(), os[osp - 1] = 30, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id14"/>
+			<target ref="id15"/>
+			<label kind="guard" x="20" y="845">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="858">osp_dec(1), setH(cp0, os[osp]), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id16"/>
+			<label kind="guard" x="20" y="910">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="923">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id16"/>
+			<target ref="id17"/>
+			<label kind="guard" x="20" y="975">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="988">os[osp - 1] = H(os[osp - 1] + 2)</label>
+		</transition>
+		<transition>
+			<source ref="id17"/>
+			<target ref="id63"/>
+			<label kind="guard" x="20" y="1040">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="1053">cVirtual!</label>
+			<label kind="assignment" x="20" y="1066">osp_dec(1), par0 = os[osp], meID = 5</label>
+		</transition>
+		<transition>
+			<source ref="id63"/>
+			<target ref="id18"/>
+			<label kind="synchronisation" x="20" y="1066">cVirtual?</label>
+			<label kind="assignment" x="20" y="1079">t = 0, os[osp] = par0, osp_inc()</label>
+		</transition>
+		<transition>
+			<source ref="id63"/>
+			<target ref="id64"/>
+			<label kind="guard" x="20" y="1066">exceptionOccurred == true</label>
+			<label kind="synchronisation" x="20" y="1092">cAclassCGI_foo?</label>
+			<label kind="assignment" x="20" y="1079">osp = 0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id64"/>
+			<target ref="id0"/>
+			<label kind="synchronisation" x="20" y="1092">cVirtualCGI_VirtualCGI!</label>
+		</transition>
+		<transition>
+			<source ref="id18"/>
+			<target ref="id19"/>
+			<label kind="guard" x="20" y="1105">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1118">osp_inc(), os[osp-1] = H(cp0), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id19"/>
+			<target ref="id20"/>
+			<label kind="guard" x="20" y="1170">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1183">osp_inc(), os[osp - 1] = 40, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id20"/>
+			<target ref="id23"/>
+			<label kind="guard" x="20" y="1235">t == 1 &amp;&amp; ifcmpeq() &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1248">osp_dec(2), t = 0</label>
+			<nail x="-50" y="1332"/>
+		</transition>
+		<transition>
+			<source ref="id20"/>
+			<target ref="id21"/>
+			<label kind="guard" x="20" y="1235">t == 1 &amp;&amp; !ifcmpeq() &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1248">opstack_fault = osp &lt; 2 ? true : opstack_fault, osp_dec(2), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id21"/>
+			<target ref="id22"/>
+			<label kind="guard" x="20" y="1300">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1313">osp_inc(), os[osp - 1] = -10, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id22"/>
+			<target ref="id23"/>
+			<label kind="guard" x="20" y="1378">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1365">osp_dec(1), locs[1] = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id23"/>
+			<target ref="id24"/>
+			<label kind="guard" x="20" y="1430">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1443">osp_inc(), os[osp - 1] = 31, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id24"/>
+			<target ref="id25"/>
+			<label kind="guard" x="20" y="1495">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1508">osp_dec(1), setH(cp0, os[osp]), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id25"/>
+			<target ref="id26"/>
+			<label kind="guard" x="20" y="1560">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1573">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id26"/>
+			<target ref="id27"/>
+			<label kind="guard" x="20" y="1625">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1638">os[osp - 1] = H(os[osp - 1] + 2)</label>
+		</transition>
+		<transition>
+			<source ref="id27"/>
+			<target ref="id65"/>
+			<label kind="guard" x="20" y="1690">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="1703">cVirtual!</label>
+			<label kind="assignment" x="20" y="1716">osp_dec(1), par0 = os[osp], meID = 3</label>
+		</transition>
+		<transition>
+			<source ref="id65"/>
+			<target ref="id28"/>
+			<label kind="synchronisation" x="20" y="1716">cVirtual?</label>
+			<label kind="assignment" x="20" y="1729">t = 0, os[osp] = par0, osp_inc()</label>
+		</transition>
+		<transition>
+			<source ref="id65"/>
+			<target ref="id66"/>
+			<label kind="guard" x="20" y="1716">exceptionOccurred == true</label>
+			<label kind="synchronisation" x="20" y="1742">cAclassCGI_bar?</label>
+			<label kind="assignment" x="20" y="1729">osp = 0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id66"/>
+			<target ref="id0"/>
+			<label kind="synchronisation" x="20" y="1742">cVirtualCGI_VirtualCGI!</label>
+		</transition>
+		<transition>
+			<source ref="id28"/>
+			<target ref="id29"/>
+			<label kind="guard" x="20" y="1755">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1768">osp_dec(2), osp_inc(), os[osp - 1] = os[osp - 1] + os[osp], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id29"/>
+			<target ref="id30"/>
+			<label kind="guard" x="20" y="1833">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1820">osp_dec(1), locs[1] = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id30"/>
+			<target ref="id31"/>
+			<label kind="guard" x="20" y="1885">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1898">osp_inc(), os[osp-1] = H(cp0), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id31"/>
+			<target ref="id32"/>
+			<label kind="guard" x="20" y="1950">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1963">osp_inc(), os[osp - 1] = 41, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id32"/>
+			<target ref="id35"/>
+			<label kind="guard" x="20" y="2015">t == 1 &amp;&amp; ifcmpeq() &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2028">osp_dec(2), t = 0</label>
+			<nail x="-50" y="2112"/>
+		</transition>
+		<transition>
+			<source ref="id32"/>
+			<target ref="id33"/>
+			<label kind="guard" x="20" y="2015">t == 1 &amp;&amp; !ifcmpeq() &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2028">opstack_fault = osp &lt; 2 ? true : opstack_fault, osp_dec(2), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id33"/>
+			<target ref="id34"/>
+			<label kind="guard" x="20" y="2080">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2093">osp_inc(), os[osp - 1] = -10, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id34"/>
+			<target ref="id35"/>
+			<label kind="guard" x="20" y="2158">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2145">osp_dec(1), locs[1] = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id35"/>
+			<target ref="id36"/>
+			<label kind="guard" x="20" y="2210">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2223">osp_inc(), os[osp - 1] = 30, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id36"/>
+			<target ref="id37"/>
+			<label kind="guard" x="20" y="2275">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2288">osp_dec(1), setH(cp0, os[osp]), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id37"/>
+			<target ref="id38"/>
+			<label kind="guard" x="20" y="2340">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2353">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id38"/>
+			<target ref="id39"/>
+			<label kind="guard" x="20" y="2405">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2418">os[osp - 1] = H(os[osp - 1] + 1)</label>
+		</transition>
+		<transition>
+			<source ref="id39"/>
+			<target ref="id67"/>
+			<label kind="guard" x="20" y="2470">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="2483">cVirtual!</label>
+			<label kind="assignment" x="20" y="2496">osp_dec(1), par0 = os[osp], meID = 5</label>
+		</transition>
+		<transition>
+			<source ref="id67"/>
+			<target ref="id40"/>
+			<label kind="synchronisation" x="20" y="2496">cVirtual?</label>
+			<label kind="assignment" x="20" y="2509">t = 0, os[osp] = par0, osp_inc()</label>
+		</transition>
+		<transition>
+			<source ref="id67"/>
+			<target ref="id68"/>
+			<label kind="guard" x="20" y="2496">exceptionOccurred == true</label>
+			<label kind="synchronisation" x="20" y="2522">cAclassCGI_foo?</label>
+			<label kind="assignment" x="20" y="2509">osp = 0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id68"/>
+			<target ref="id0"/>
+			<label kind="synchronisation" x="20" y="2522">cVirtualCGI_VirtualCGI!</label>
+		</transition>
+		<transition>
+			<source ref="id40"/>
+			<target ref="id41"/>
+			<label kind="guard" x="20" y="2535">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2548">osp_inc(), os[osp-1] = H(cp0), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id41"/>
+			<target ref="id42"/>
+			<label kind="guard" x="20" y="2600">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2613">osp_inc(), os[osp - 1] = 40, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id42"/>
+			<target ref="id45"/>
+			<label kind="guard" x="20" y="2665">t == 1 &amp;&amp; ifcmpeq() &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2678">osp_dec(2), t = 0</label>
+			<nail x="-50" y="2762"/>
+		</transition>
+		<transition>
+			<source ref="id42"/>
+			<target ref="id43"/>
+			<label kind="guard" x="20" y="2665">t == 1 &amp;&amp; !ifcmpeq() &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2678">opstack_fault = osp &lt; 2 ? true : opstack_fault, osp_dec(2), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id43"/>
+			<target ref="id44"/>
+			<label kind="guard" x="20" y="2730">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2743">osp_inc(), os[osp - 1] = -10, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id44"/>
+			<target ref="id45"/>
+			<label kind="guard" x="20" y="2808">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2795">osp_dec(1), locs[1] = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id45"/>
+			<target ref="id46"/>
+			<label kind="guard" x="20" y="2860">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2873">osp_inc(), os[osp - 1] = 31, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id46"/>
+			<target ref="id47"/>
+			<label kind="guard" x="20" y="2925">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2938">osp_dec(1), setH(cp0, os[osp]), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id47"/>
+			<target ref="id48"/>
+			<label kind="guard" x="20" y="2990">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="3003">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id48"/>
+			<target ref="id49"/>
+			<label kind="guard" x="20" y="3055">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="3068">os[osp - 1] = H(os[osp - 1] + 1)</label>
+		</transition>
+		<transition>
+			<source ref="id49"/>
+			<target ref="id69"/>
+			<label kind="guard" x="20" y="3120">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="3133">cVirtual!</label>
+			<label kind="assignment" x="20" y="3146">osp_dec(1), par0 = os[osp], meID = 3</label>
+		</transition>
+		<transition>
+			<source ref="id69"/>
+			<target ref="id50"/>
+			<label kind="synchronisation" x="20" y="3146">cVirtual?</label>
+			<label kind="assignment" x="20" y="3159">t = 0, os[osp] = par0, osp_inc()</label>
+		</transition>
+		<transition>
+			<source ref="id69"/>
+			<target ref="id70"/>
+			<label kind="guard" x="20" y="3146">exceptionOccurred == true</label>
+			<label kind="synchronisation" x="20" y="3172">cAclassCGI_bar?</label>
+			<label kind="assignment" x="20" y="3159">osp = 0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id70"/>
+			<target ref="id0"/>
+			<label kind="synchronisation" x="20" y="3172">cVirtualCGI_VirtualCGI!</label>
+		</transition>
+		<transition>
+			<source ref="id50"/>
+			<target ref="id51"/>
+			<label kind="guard" x="20" y="3185">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="3198">osp_dec(2), osp_inc(), os[osp - 1] = os[osp - 1] + os[osp], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id51"/>
+			<target ref="id52"/>
+			<label kind="guard" x="20" y="3263">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="3250">osp_dec(1), locs[2] = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id52"/>
+			<target ref="id53"/>
+			<label kind="guard" x="20" y="3315">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="3328">osp_inc(), os[osp-1] = H(cp0), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id53"/>
+			<target ref="id54"/>
+			<label kind="guard" x="20" y="3380">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="3393">osp_inc(), os[osp - 1] = 41, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id54"/>
+			<target ref="id57"/>
+			<label kind="guard" x="20" y="3445">t == 1 &amp;&amp; ifcmpeq() &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="3458">osp_dec(2), t = 0</label>
+			<nail x="-50" y="3542"/>
+		</transition>
+		<transition>
+			<source ref="id54"/>
+			<target ref="id55"/>
+			<label kind="guard" x="20" y="3445">t == 1 &amp;&amp; !ifcmpeq() &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="3458">opstack_fault = osp &lt; 2 ? true : opstack_fault, osp_dec(2), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id55"/>
+			<target ref="id56"/>
+			<label kind="guard" x="20" y="3510">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="3523">osp_inc(), os[osp - 1] = -10, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id56"/>
+			<target ref="id57"/>
+			<label kind="guard" x="20" y="3588">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="3575">osp_dec(1), locs[2] = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id57"/>
+			<target ref="id0"/>
+			<label kind="guard" x="20" y="3640">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="3653">cVirtualCGI_VirtualCGI!</label>
+			<label kind="assignment" x="20" y="3679">osp = 0, t = 0</label>
+			<nail x="-100" y="1787"/>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id1"/>
+			<label kind="select" x="20" y="26">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="0">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="13">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="-30"/>
+			<nail x="30" y="-30"/>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id2"/>
+			<label kind="select" x="20" y="91">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="65">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="78">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="35"/>
+			<nail x="30" y="35"/>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id3"/>
+			<label kind="select" x="20" y="156">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="130">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="143">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="100"/>
+			<nail x="30" y="100"/>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id4"/>
+			<label kind="select" x="20" y="221">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="195">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="208">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="165"/>
+			<nail x="30" y="165"/>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id5"/>
+			<label kind="select" x="20" y="286">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="260">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="273">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="230"/>
+			<nail x="30" y="230"/>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id6"/>
+			<label kind="select" x="20" y="351">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="325">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="338">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="295"/>
+			<nail x="30" y="295"/>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id7"/>
+			<label kind="select" x="20" y="416">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="390">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="403">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="360"/>
+			<nail x="30" y="360"/>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id8"/>
+			<label kind="select" x="20" y="481">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="455">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="468">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="425"/>
+			<nail x="30" y="425"/>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id9"/>
+			<label kind="select" x="20" y="546">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="520">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="533">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="490"/>
+			<nail x="30" y="490"/>
+		</transition>
+		<transition>
+			<source ref="id10"/>
+			<target ref="id10"/>
+			<label kind="select" x="20" y="611">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="585">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="598">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="555"/>
+			<nail x="30" y="555"/>
+		</transition>
+		<transition>
+			<source ref="id11"/>
+			<target ref="id11"/>
+			<label kind="select" x="20" y="676">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="650">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="663">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="620"/>
+			<nail x="30" y="620"/>
+		</transition>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id12"/>
+			<label kind="select" x="20" y="741">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="715">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="728">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="685"/>
+			<nail x="30" y="685"/>
+		</transition>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id13"/>
+			<label kind="select" x="20" y="806">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="780">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="793">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="750"/>
+			<nail x="30" y="750"/>
+		</transition>
+		<transition>
+			<source ref="id14"/>
+			<target ref="id14"/>
+			<label kind="select" x="20" y="871">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="845">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="858">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="815"/>
+			<nail x="30" y="815"/>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id15"/>
+			<label kind="select" x="20" y="936">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="910">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="923">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="880"/>
+			<nail x="30" y="880"/>
+		</transition>
+		<transition>
+			<source ref="id16"/>
+			<target ref="id16"/>
+			<label kind="select" x="20" y="1001">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="975">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="988">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="945"/>
+			<nail x="30" y="945"/>
+		</transition>
+		<transition>
+			<source ref="id17"/>
+			<target ref="id17"/>
+			<label kind="select" x="20" y="1066">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="1040">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="1053">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="1010"/>
+			<nail x="30" y="1010"/>
+		</transition>
+		<transition>
+			<source ref="id18"/>
+			<target ref="id18"/>
+			<label kind="select" x="20" y="1131">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="1105">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="1118">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="1075"/>
+			<nail x="30" y="1075"/>
+		</transition>
+		<transition>
+			<source ref="id19"/>
+			<target ref="id19"/>
+			<label kind="select" x="20" y="1196">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="1170">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="1183">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="1140"/>
+			<nail x="30" y="1140"/>
+		</transition>
+		<transition>
+			<source ref="id20"/>
+			<target ref="id20"/>
+			<label kind="select" x="20" y="1261">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="1235">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="1248">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="1205"/>
+			<nail x="30" y="1205"/>
+		</transition>
+		<transition>
+			<source ref="id21"/>
+			<target ref="id21"/>
+			<label kind="select" x="20" y="1326">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="1300">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="1313">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="1270"/>
+			<nail x="30" y="1270"/>
+		</transition>
+		<transition>
+			<source ref="id22"/>
+			<target ref="id22"/>
+			<label kind="select" x="20" y="1391">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="1365">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="1378">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="1335"/>
+			<nail x="30" y="1335"/>
+		</transition>
+		<transition>
+			<source ref="id23"/>
+			<target ref="id23"/>
+			<label kind="select" x="20" y="1456">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="1430">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="1443">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="1400"/>
+			<nail x="30" y="1400"/>
+		</transition>
+		<transition>
+			<source ref="id24"/>
+			<target ref="id24"/>
+			<label kind="select" x="20" y="1521">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="1495">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="1508">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="1465"/>
+			<nail x="30" y="1465"/>
+		</transition>
+		<transition>
+			<source ref="id25"/>
+			<target ref="id25"/>
+			<label kind="select" x="20" y="1586">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="1560">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="1573">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="1530"/>
+			<nail x="30" y="1530"/>
+		</transition>
+		<transition>
+			<source ref="id26"/>
+			<target ref="id26"/>
+			<label kind="select" x="20" y="1651">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="1625">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="1638">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="1595"/>
+			<nail x="30" y="1595"/>
+		</transition>
+		<transition>
+			<source ref="id27"/>
+			<target ref="id27"/>
+			<label kind="select" x="20" y="1716">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="1690">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="1703">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="1660"/>
+			<nail x="30" y="1660"/>
+		</transition>
+		<transition>
+			<source ref="id28"/>
+			<target ref="id28"/>
+			<label kind="select" x="20" y="1781">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="1755">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="1768">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="1725"/>
+			<nail x="30" y="1725"/>
+		</transition>
+		<transition>
+			<source ref="id29"/>
+			<target ref="id29"/>
+			<label kind="select" x="20" y="1846">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="1820">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="1833">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="1790"/>
+			<nail x="30" y="1790"/>
+		</transition>
+		<transition>
+			<source ref="id30"/>
+			<target ref="id30"/>
+			<label kind="select" x="20" y="1911">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="1885">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="1898">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="1855"/>
+			<nail x="30" y="1855"/>
+		</transition>
+		<transition>
+			<source ref="id31"/>
+			<target ref="id31"/>
+			<label kind="select" x="20" y="1976">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="1950">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="1963">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="1920"/>
+			<nail x="30" y="1920"/>
+		</transition>
+		<transition>
+			<source ref="id32"/>
+			<target ref="id32"/>
+			<label kind="select" x="20" y="2041">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="2015">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="2028">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="1985"/>
+			<nail x="30" y="1985"/>
+		</transition>
+		<transition>
+			<source ref="id33"/>
+			<target ref="id33"/>
+			<label kind="select" x="20" y="2106">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="2080">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="2093">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="2050"/>
+			<nail x="30" y="2050"/>
+		</transition>
+		<transition>
+			<source ref="id34"/>
+			<target ref="id34"/>
+			<label kind="select" x="20" y="2171">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="2145">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="2158">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="2115"/>
+			<nail x="30" y="2115"/>
+		</transition>
+		<transition>
+			<source ref="id35"/>
+			<target ref="id35"/>
+			<label kind="select" x="20" y="2236">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="2210">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="2223">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="2180"/>
+			<nail x="30" y="2180"/>
+		</transition>
+		<transition>
+			<source ref="id36"/>
+			<target ref="id36"/>
+			<label kind="select" x="20" y="2301">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="2275">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="2288">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="2245"/>
+			<nail x="30" y="2245"/>
+		</transition>
+		<transition>
+			<source ref="id37"/>
+			<target ref="id37"/>
+			<label kind="select" x="20" y="2366">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="2340">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="2353">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="2310"/>
+			<nail x="30" y="2310"/>
+		</transition>
+		<transition>
+			<source ref="id38"/>
+			<target ref="id38"/>
+			<label kind="select" x="20" y="2431">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="2405">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="2418">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="2375"/>
+			<nail x="30" y="2375"/>
+		</transition>
+		<transition>
+			<source ref="id39"/>
+			<target ref="id39"/>
+			<label kind="select" x="20" y="2496">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="2470">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="2483">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="2440"/>
+			<nail x="30" y="2440"/>
+		</transition>
+		<transition>
+			<source ref="id40"/>
+			<target ref="id40"/>
+			<label kind="select" x="20" y="2561">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="2535">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="2548">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="2505"/>
+			<nail x="30" y="2505"/>
+		</transition>
+		<transition>
+			<source ref="id41"/>
+			<target ref="id41"/>
+			<label kind="select" x="20" y="2626">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="2600">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="2613">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="2570"/>
+			<nail x="30" y="2570"/>
+		</transition>
+		<transition>
+			<source ref="id42"/>
+			<target ref="id42"/>
+			<label kind="select" x="20" y="2691">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="2665">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="2678">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="2635"/>
+			<nail x="30" y="2635"/>
+		</transition>
+		<transition>
+			<source ref="id43"/>
+			<target ref="id43"/>
+			<label kind="select" x="20" y="2756">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="2730">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="2743">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="2700"/>
+			<nail x="30" y="2700"/>
+		</transition>
+		<transition>
+			<source ref="id44"/>
+			<target ref="id44"/>
+			<label kind="select" x="20" y="2821">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="2795">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="2808">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="2765"/>
+			<nail x="30" y="2765"/>
+		</transition>
+		<transition>
+			<source ref="id45"/>
+			<target ref="id45"/>
+			<label kind="select" x="20" y="2886">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="2860">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="2873">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="2830"/>
+			<nail x="30" y="2830"/>
+		</transition>
+		<transition>
+			<source ref="id46"/>
+			<target ref="id46"/>
+			<label kind="select" x="20" y="2951">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="2925">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="2938">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="2895"/>
+			<nail x="30" y="2895"/>
+		</transition>
+		<transition>
+			<source ref="id47"/>
+			<target ref="id47"/>
+			<label kind="select" x="20" y="3016">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="2990">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="3003">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="2960"/>
+			<nail x="30" y="2960"/>
+		</transition>
+		<transition>
+			<source ref="id48"/>
+			<target ref="id48"/>
+			<label kind="select" x="20" y="3081">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="3055">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="3068">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="3025"/>
+			<nail x="30" y="3025"/>
+		</transition>
+		<transition>
+			<source ref="id49"/>
+			<target ref="id49"/>
+			<label kind="select" x="20" y="3146">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="3120">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="3133">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="3090"/>
+			<nail x="30" y="3090"/>
+		</transition>
+		<transition>
+			<source ref="id50"/>
+			<target ref="id50"/>
+			<label kind="select" x="20" y="3211">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="3185">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="3198">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="3155"/>
+			<nail x="30" y="3155"/>
+		</transition>
+		<transition>
+			<source ref="id51"/>
+			<target ref="id51"/>
+			<label kind="select" x="20" y="3276">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="3250">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="3263">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="3220"/>
+			<nail x="30" y="3220"/>
+		</transition>
+		<transition>
+			<source ref="id52"/>
+			<target ref="id52"/>
+			<label kind="select" x="20" y="3341">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="3315">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="3328">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="3285"/>
+			<nail x="30" y="3285"/>
+		</transition>
+		<transition>
+			<source ref="id53"/>
+			<target ref="id53"/>
+			<label kind="select" x="20" y="3406">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="3380">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="3393">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="3350"/>
+			<nail x="30" y="3350"/>
+		</transition>
+		<transition>
+			<source ref="id54"/>
+			<target ref="id54"/>
+			<label kind="select" x="20" y="3471">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="3445">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="3458">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="3415"/>
+			<nail x="30" y="3415"/>
+		</transition>
+		<transition>
+			<source ref="id55"/>
+			<target ref="id55"/>
+			<label kind="select" x="20" y="3536">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="3510">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="3523">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="3480"/>
+			<nail x="30" y="3480"/>
+		</transition>
+		<transition>
+			<source ref="id56"/>
+			<target ref="id56"/>
+			<label kind="select" x="20" y="3601">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="3575">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="3588">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="3545"/>
+			<nail x="30" y="3545"/>
+		</transition>
+		<transition>
+			<source ref="id57"/>
+			<target ref="id57"/>
+			<label kind="select" x="20" y="3666">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="3640">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="3653">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="3610"/>
+			<nail x="30" y="3610"/>
+		</transition>
+	</template>
+	<template>
+		<name>VirtualCGI_install</name>
+		<declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+		<location id="id71" x="0" y="-65">
+			<name x="20" y="-78">install</name>
+			<label kind="exponentialrate" x="-70" y="-65">1</label>
+		</location>
+		<location id="id72" x="0" y="0">
+			<name x="20" y="-13">pc0__new_VirtualCGI</name>
+			<label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+		</location>
+		<location id="id73" x="0" y="65">
+			<name x="20" y="52">pc3__dup</name>
+			<label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+		</location>
+		<location id="id74" x="0" y="130">
+			<name x="20" y="117">pc4__invokespecial_void_VirtualCGI_init_</name>
+			<label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+		</location>
+		<location id="id75" x="0" y="195">
+			<name x="20" y="182">pc7__pop</name>
+			<label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+		</location>
+		<location id="id76" x="0" y="260">
+			<name x="20" y="247">pc8__return</name>
+			<label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+		</location>
+		<location id="id77" x="200" y="156">
+			<label kind="exponentialrate" x="130" y="156">1</label>
+		</location>
+		<location id="id78" x="200" y="182">
+			<label kind="exponentialrate" x="330" y="182">1</label>
+			<urgent/>
+		</location>
+		<init ref="id71"/>
+		<transition>
+			<source ref="id71"/>
+			<target ref="id72"/>
+			<label kind="guard" x="20" y="-65">t == 1</label>
+			<label kind="synchronisation" x="20" y="-52">cVirtualCGI_install?</label>
+			<label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id72"/>
+			<target ref="id73"/>
+			<label kind="guard" x="20" y="0">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="13">osp_inc(), os[osp-1] = alocNew(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id73"/>
+			<target ref="id74"/>
+			<label kind="guard" x="20" y="78">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="65">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+		</transition>
+		<transition>
+			<source ref="id74"/>
+			<target ref="id77"/>
+			<label kind="guard" x="20" y="130">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="156">cVirtualCGI_VirtualCGI!</label>
+			<label kind="assignment" x="20" y="143">osp_dec(1), t = 0, par0 = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id77"/>
+			<target ref="id75"/>
+			<label kind="guard" x="20" y="169">!exceptionOccurred</label>
+			<label kind="synchronisation" x="20" y="156">cVirtualCGI_VirtualCGI?</label>
+			<label kind="assignment" x="20" y="182">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id77"/>
+			<target ref="id78"/>
+			<label kind="guard" x="20" y="156">exceptionOccurred == true</label>
+			<label kind="synchronisation" x="20" y="182">cVirtualCGI_VirtualCGI?</label>
+			<label kind="assignment" x="20" y="169">osp = 0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id78"/>
+			<target ref="id71"/>
+			<label kind="synchronisation" x="20" y="182">cVirtualCGI_install!</label>
+		</transition>
+		<transition>
+			<source ref="id75"/>
+			<target ref="id76"/>
+			<label kind="guard" x="20" y="195">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="208">osp_dec(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id76"/>
+			<target ref="id71"/>
+			<label kind="guard" x="20" y="260">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="273">cVirtualCGI_install!</label>
+			<label kind="assignment" x="20" y="299">osp = 0, t = 0</label>
+			<nail x="-100" y="97"/>
+		</transition>
+		<transition>
+			<source ref="id72"/>
+			<target ref="id72"/>
+			<label kind="select" x="20" y="26">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="0">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="13">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="-30"/>
+			<nail x="30" y="-30"/>
+		</transition>
+		<transition>
+			<source ref="id73"/>
+			<target ref="id73"/>
+			<label kind="select" x="20" y="91">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="65">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="78">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="35"/>
+			<nail x="30" y="35"/>
+		</transition>
+		<transition>
+			<source ref="id74"/>
+			<target ref="id74"/>
+			<label kind="select" x="20" y="156">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="130">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="143">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="100"/>
+			<nail x="30" y="100"/>
+		</transition>
+		<transition>
+			<source ref="id75"/>
+			<target ref="id75"/>
+			<label kind="select" x="20" y="221">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="195">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="208">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="165"/>
+			<nail x="30" y="165"/>
+		</transition>
+		<transition>
+			<source ref="id76"/>
+			<target ref="id76"/>
+			<label kind="select" x="20" y="286">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="260">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="273">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="230"/>
+			<nail x="30" y="230"/>
+		</transition>
+	</template>
+	<template>
+		<name>VirtualCGI_main</name>
+		<declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+		<location id="id79" x="0" y="-65">
+			<name x="20" y="-78">main</name>
+			<label kind="exponentialrate" x="-70" y="-65">1</label>
+			<urgent/>
+		</location>
+		<location id="id80" x="0" y="0">
+			<name x="20" y="-13">pc0__invokestatic_void_VirtualCGI_install_</name>
+			<label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+		</location>
+		<location id="id81" x="0" y="65">
+			<name x="20" y="52">pc3__return</name>
+			<label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+		</location>
+		<location id="id82" x="200" y="26">
+			<label kind="exponentialrate" x="130" y="26">1</label>
+		</location>
+		<location id="id83" x="200" y="52">
+			<label kind="exponentialrate" x="330" y="52">1</label>
+			<urgent/>
+		</location>
+		<location id="id84" x="200" y="91">
+			<name x="220" y="78">Done</name>
+			<label kind="exponentialrate" x="0" y="0">1</label>
+		</location>
+		<init ref="id79"/>
+		<transition>
+			<source ref="id79"/>
+			<target ref="id80"/>
+			<label kind="assignment" x="20" y="-65">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id80"/>
+			<target ref="id82"/>
+			<label kind="guard" x="20" y="0">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="26">cVirtualCGI_install!</label>
+			<label kind="assignment" x="20" y="13">osp_dec(0), t = 0, par0 = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id82"/>
+			<target ref="id81"/>
+			<label kind="guard" x="20" y="39">!exceptionOccurred</label>
+			<label kind="synchronisation" x="20" y="26">cVirtualCGI_install?</label>
+			<label kind="assignment" x="20" y="52">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id82"/>
+			<target ref="id83"/>
+			<label kind="guard" x="20" y="26">exceptionOccurred == true</label>
+			<label kind="synchronisation" x="20" y="52">cVirtualCGI_install?</label>
+			<label kind="assignment" x="20" y="39">osp = 0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id83"/>
+			<target ref="id79"/>
+			<label kind="synchronisation" x="20" y="52">cVirtualCGI_main!</label>
+		</transition>
+		<transition>
+			<source ref="id81"/>
+			<target ref="id84"/>
+			<label kind="guard" x="20" y="65">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="78">cVirtualCGI_main!</label>
+		</transition>
+		<transition>
+			<source ref="id80"/>
+			<target ref="id80"/>
+			<label kind="select" x="20" y="26">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="0">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="13">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="-30"/>
+			<nail x="30" y="-30"/>
+		</transition>
+		<transition>
+			<source ref="id81"/>
+			<target ref="id81"/>
+			<label kind="select" x="20" y="91">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="65">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="78">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="35"/>
+			<nail x="30" y="35"/>
+		</transition>
+	</template>
+	<template>
+		<name>AclassCGI_bar</name>
+		<declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+		<location id="id85" x="0" y="-65">
+			<name x="20" y="-78">bar</name>
+			<label kind="exponentialrate" x="-70" y="-65">1</label>
+		</location>
+		<location id="id86" x="0" y="0">
+			<name x="20" y="-13">pc0__getstatic_VirtualCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+		</location>
+		<location id="id87" x="0" y="65">
+			<name x="20" y="52">pc3__bipush_31</name>
+			<label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+		</location>
+		<location id="id88" x="0" y="130">
+			<name x="20" y="117">pc5__ifcmpeq_6</name>
+			<label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+		</location>
+		<location id="id89" x="0" y="195">
+			<name x="20" y="182">pc8__bipush_10</name>
+			<label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+		</location>
+		<location id="id90" x="0" y="260">
+			<name x="20" y="247">pc10__ireturn</name>
+			<label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+		</location>
+		<location id="id91" x="0" y="325">
+			<name x="20" y="312">pc11__bipush_41</name>
+			<label kind="invariant" x="-70" y="325">t &lt;= 1</label>
+		</location>
+		<location id="id92" x="0" y="390">
+			<name x="20" y="377">pc13__putstatic_VirtualCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="390">t &lt;= 1</label>
+		</location>
+		<location id="id93" x="0" y="455">
+			<name x="20" y="442">pc16__iconst_2</name>
+			<label kind="invariant" x="-70" y="455">t &lt;= 1</label>
+		</location>
+		<location id="id94" x="0" y="520">
+			<name x="20" y="507">pc17__ireturn</name>
+			<label kind="invariant" x="-70" y="520">t &lt;= 1</label>
+		</location>
+		<init ref="id85"/>
+		<transition>
+			<source ref="id85"/>
+			<target ref="id86"/>
+			<label kind="guard" x="20" y="-65">t == 1</label>
+			<label kind="synchronisation" x="20" y="-52">cAclassCGI_bar?</label>
+			<label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id86"/>
+			<target ref="id87"/>
+			<label kind="guard" x="20" y="0">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="13">osp_inc(), os[osp-1] = H(cp0), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id87"/>
+			<target ref="id88"/>
+			<label kind="guard" x="20" y="65">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="78">osp_inc(), os[osp - 1] = 31, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id88"/>
+			<target ref="id91"/>
+			<label kind="guard" x="20" y="130">t == 1 &amp;&amp; ifcmpeq() &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="143">osp_dec(2), t = 0</label>
+			<nail x="-50" y="227"/>
+		</transition>
+		<transition>
+			<source ref="id88"/>
+			<target ref="id89"/>
+			<label kind="guard" x="20" y="130">t == 1 &amp;&amp; !ifcmpeq() &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="143">opstack_fault = osp &lt; 2 ? true : opstack_fault, osp_dec(2), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id89"/>
+			<target ref="id90"/>
+			<label kind="guard" x="20" y="195">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="208">osp_inc(), os[osp - 1] = -10, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id90"/>
+			<target ref="id85"/>
+			<label kind="guard" x="20" y="260">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="273">cAclassCGI_bar!</label>
+			<label kind="assignment" x="20" y="299">osp_dec(1), par0 = os[osp], osp = 0, t = 0</label>
+			<nail x="-100" y="97"/>
+		</transition>
+		<transition>
+			<source ref="id91"/>
+			<target ref="id92"/>
+			<label kind="guard" x="20" y="325">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="338">osp_inc(), os[osp - 1] = 41, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id92"/>
+			<target ref="id93"/>
+			<label kind="guard" x="20" y="390">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="403">osp_dec(1), setH(cp0, os[osp]), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id93"/>
+			<target ref="id94"/>
+			<label kind="guard" x="20" y="455">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="468">osp_inc(), os[osp - 1] = 2, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id94"/>
+			<target ref="id85"/>
+			<label kind="guard" x="20" y="520">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="533">cAclassCGI_bar!</label>
+			<label kind="assignment" x="20" y="559">osp_dec(1), par0 = os[osp], osp = 0, t = 0</label>
+			<nail x="-100" y="227"/>
+		</transition>
+		<transition>
+			<source ref="id86"/>
+			<target ref="id86"/>
+			<label kind="select" x="20" y="26">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="0">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="13">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="-30"/>
+			<nail x="30" y="-30"/>
+		</transition>
+		<transition>
+			<source ref="id87"/>
+			<target ref="id87"/>
+			<label kind="select" x="20" y="91">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="65">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="78">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="35"/>
+			<nail x="30" y="35"/>
+		</transition>
+		<transition>
+			<source ref="id88"/>
+			<target ref="id88"/>
+			<label kind="select" x="20" y="156">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="130">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="143">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="100"/>
+			<nail x="30" y="100"/>
+		</transition>
+		<transition>
+			<source ref="id89"/>
+			<target ref="id89"/>
+			<label kind="select" x="20" y="221">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="195">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="208">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="165"/>
+			<nail x="30" y="165"/>
+		</transition>
+		<transition>
+			<source ref="id90"/>
+			<target ref="id90"/>
+			<label kind="select" x="20" y="286">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="260">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="273">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="230"/>
+			<nail x="30" y="230"/>
+		</transition>
+		<transition>
+			<source ref="id91"/>
+			<target ref="id91"/>
+			<label kind="select" x="20" y="351">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="325">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="338">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="295"/>
+			<nail x="30" y="295"/>
+		</transition>
+		<transition>
+			<source ref="id92"/>
+			<target ref="id92"/>
+			<label kind="select" x="20" y="416">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="390">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="403">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="360"/>
+			<nail x="30" y="360"/>
+		</transition>
+		<transition>
+			<source ref="id93"/>
+			<target ref="id93"/>
+			<label kind="select" x="20" y="481">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="455">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="468">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="425"/>
+			<nail x="30" y="425"/>
+		</transition>
+		<transition>
+			<source ref="id94"/>
+			<target ref="id94"/>
+			<label kind="select" x="20" y="546">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="520">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="533">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="490"/>
+			<nail x="30" y="490"/>
+		</transition>
+	</template>
+	<template>
+		<name>AclassCGI_AclassCGI</name>
+		<declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+		<location id="id95" x="0" y="-65">
+			<name x="20" y="-78">AclassCGI</name>
+			<label kind="exponentialrate" x="-70" y="-65">1</label>
+		</location>
+		<location id="id96" x="0" y="0">
+			<name x="20" y="-13">pc0__aload_0</name>
+			<label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+		</location>
+		<location id="id97" x="0" y="65">
+			<name x="20" y="52">pc1__invokespecial_void_java_lang_Object_init_</name>
+			<label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+		</location>
+		<location id="id98" x="0" y="130">
+			<name x="20" y="117">pc4__return</name>
+			<label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+		</location>
+		<location id="id99" x="200" y="91">
+			<label kind="invariant" x="0" y="0">t &lt;= 5</label>
+		</location>
+		<init ref="id95"/>
+		<transition>
+			<source ref="id95"/>
+			<target ref="id96"/>
+			<label kind="guard" x="20" y="-65">t == 1</label>
+			<label kind="synchronisation" x="20" y="-52">cAclassCGI_AclassCGI?</label>
+			<label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id96"/>
+			<target ref="id97"/>
+			<label kind="guard" x="20" y="0">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="13">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id97"/>
+			<target ref="id99"/>
+			<label kind="guard" x="20" y="65">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="78">osp_dec(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id99"/>
+			<target ref="id98"/>
+			<label kind="guard" x="20" y="91">t == 5</label>
+			<label kind="assignment" x="20" y="104">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id98"/>
+			<target ref="id95"/>
+			<label kind="guard" x="20" y="130">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="143">cAclassCGI_AclassCGI!</label>
+			<label kind="assignment" x="20" y="169">osp = 0, t = 0</label>
+			<nail x="-100" y="32"/>
+		</transition>
+		<transition>
+			<source ref="id96"/>
+			<target ref="id96"/>
+			<label kind="select" x="20" y="26">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="0">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="13">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="-30"/>
+			<nail x="30" y="-30"/>
+		</transition>
+		<transition>
+			<source ref="id97"/>
+			<target ref="id97"/>
+			<label kind="select" x="20" y="91">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="65">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="78">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="35"/>
+			<nail x="30" y="35"/>
+		</transition>
+		<transition>
+			<source ref="id98"/>
+			<target ref="id98"/>
+			<label kind="select" x="20" y="156">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="130">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="143">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="100"/>
+			<nail x="30" y="100"/>
+		</transition>
+	</template>
+	<template>
+		<name>AclassCGI_foo</name>
+		<declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+		<location id="id100" x="0" y="-65">
+			<name x="20" y="-78">foo</name>
+			<label kind="exponentialrate" x="-70" y="-65">1</label>
+		</location>
+		<location id="id101" x="0" y="0">
+			<name x="20" y="-13">pc0__getstatic_VirtualCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+		</location>
+		<location id="id102" x="0" y="65">
+			<name x="20" y="52">pc3__bipush_30</name>
+			<label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+		</location>
+		<location id="id103" x="0" y="130">
+			<name x="20" y="117">pc5__ifcmpeq_6</name>
+			<label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+		</location>
+		<location id="id104" x="0" y="195">
+			<name x="20" y="182">pc8__bipush_10</name>
+			<label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+		</location>
+		<location id="id105" x="0" y="260">
+			<name x="20" y="247">pc10__ireturn</name>
+			<label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+		</location>
+		<location id="id106" x="0" y="325">
+			<name x="20" y="312">pc11__bipush_40</name>
+			<label kind="invariant" x="-70" y="325">t &lt;= 1</label>
+		</location>
+		<location id="id107" x="0" y="390">
+			<name x="20" y="377">pc13__putstatic_VirtualCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="390">t &lt;= 1</label>
+		</location>
+		<location id="id108" x="0" y="455">
+			<name x="20" y="442">pc16__iconst_1</name>
+			<label kind="invariant" x="-70" y="455">t &lt;= 1</label>
+		</location>
+		<location id="id109" x="0" y="520">
+			<name x="20" y="507">pc17__ireturn</name>
+			<label kind="invariant" x="-70" y="520">t &lt;= 1</label>
+		</location>
+		<init ref="id100"/>
+		<transition>
+			<source ref="id100"/>
+			<target ref="id101"/>
+			<label kind="guard" x="20" y="-65">t == 1</label>
+			<label kind="synchronisation" x="20" y="-52">cAclassCGI_foo?</label>
+			<label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id101"/>
+			<target ref="id102"/>
+			<label kind="guard" x="20" y="0">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="13">osp_inc(), os[osp-1] = H(cp0), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id102"/>
+			<target ref="id103"/>
+			<label kind="guard" x="20" y="65">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="78">osp_inc(), os[osp - 1] = 30, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id103"/>
+			<target ref="id106"/>
+			<label kind="guard" x="20" y="130">t == 1 &amp;&amp; ifcmpeq() &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="143">osp_dec(2), t = 0</label>
+			<nail x="-50" y="227"/>
+		</transition>
+		<transition>
+			<source ref="id103"/>
+			<target ref="id104"/>
+			<label kind="guard" x="20" y="130">t == 1 &amp;&amp; !ifcmpeq() &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="143">opstack_fault = osp &lt; 2 ? true : opstack_fault, osp_dec(2), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id104"/>
+			<target ref="id105"/>
+			<label kind="guard" x="20" y="195">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="208">osp_inc(), os[osp - 1] = -10, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id105"/>
+			<target ref="id100"/>
+			<label kind="guard" x="20" y="260">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="273">cAclassCGI_foo!</label>
+			<label kind="assignment" x="20" y="299">osp_dec(1), par0 = os[osp], osp = 0, t = 0</label>
+			<nail x="-100" y="97"/>
+		</transition>
+		<transition>
+			<source ref="id106"/>
+			<target ref="id107"/>
+			<label kind="guard" x="20" y="325">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="338">osp_inc(), os[osp - 1] = 40, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id107"/>
+			<target ref="id108"/>
+			<label kind="guard" x="20" y="390">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="403">osp_dec(1), setH(cp0, os[osp]), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id108"/>
+			<target ref="id109"/>
+			<label kind="guard" x="20" y="455">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="468">osp_inc(), os[osp - 1] = 1, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id109"/>
+			<target ref="id100"/>
+			<label kind="guard" x="20" y="520">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="533">cAclassCGI_foo!</label>
+			<label kind="assignment" x="20" y="559">osp_dec(1), par0 = os[osp], osp = 0, t = 0</label>
+			<nail x="-100" y="227"/>
+		</transition>
+		<transition>
+			<source ref="id101"/>
+			<target ref="id101"/>
+			<label kind="select" x="20" y="26">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="0">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="13">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="-30"/>
+			<nail x="30" y="-30"/>
+		</transition>
+		<transition>
+			<source ref="id102"/>
+			<target ref="id102"/>
+			<label kind="select" x="20" y="91">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="65">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="78">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="35"/>
+			<nail x="30" y="35"/>
+		</transition>
+		<transition>
+			<source ref="id103"/>
+			<target ref="id103"/>
+			<label kind="select" x="20" y="156">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="130">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="143">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="100"/>
+			<nail x="30" y="100"/>
+		</transition>
+		<transition>
+			<source ref="id104"/>
+			<target ref="id104"/>
+			<label kind="select" x="20" y="221">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="195">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="208">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="165"/>
+			<nail x="30" y="165"/>
+		</transition>
+		<transition>
+			<source ref="id105"/>
+			<target ref="id105"/>
+			<label kind="select" x="20" y="286">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="260">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="273">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="230"/>
+			<nail x="30" y="230"/>
+		</transition>
+		<transition>
+			<source ref="id106"/>
+			<target ref="id106"/>
+			<label kind="select" x="20" y="351">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="325">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="338">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="295"/>
+			<nail x="30" y="295"/>
+		</transition>
+		<transition>
+			<source ref="id107"/>
+			<target ref="id107"/>
+			<label kind="select" x="20" y="416">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="390">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="403">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="360"/>
+			<nail x="30" y="360"/>
+		</transition>
+		<transition>
+			<source ref="id108"/>
+			<target ref="id108"/>
+			<label kind="select" x="20" y="481">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="455">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="468">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="425"/>
+			<nail x="30" y="425"/>
+		</transition>
+		<transition>
+			<source ref="id109"/>
+			<target ref="id109"/>
+			<label kind="select" x="20" y="546">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="520">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="533">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="490"/>
+			<nail x="30" y="490"/>
+		</transition>
+	</template>
+	<template>
+		<name>BclassCGI_BclassCGI</name>
+		<declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+		<location id="id110" x="0" y="-65">
+			<name x="20" y="-78">BclassCGI</name>
+			<label kind="exponentialrate" x="-70" y="-65">1</label>
+		</location>
+		<location id="id111" x="0" y="0">
+			<name x="20" y="-13">pc0__aload_0</name>
+			<label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+		</location>
+		<location id="id112" x="0" y="65">
+			<name x="20" y="52">pc1__invokespecial_void_AclassCGI_init_</name>
+			<label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+		</location>
+		<location id="id113" x="0" y="130">
+			<name x="20" y="117">pc4__return</name>
+			<label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+		</location>
+		<location id="id114" x="200" y="91">
+			<label kind="exponentialrate" x="130" y="91">1</label>
+		</location>
+		<location id="id115" x="200" y="117">
+			<label kind="exponentialrate" x="330" y="117">1</label>
+			<urgent/>
+		</location>
+		<init ref="id110"/>
+		<transition>
+			<source ref="id110"/>
+			<target ref="id111"/>
+			<label kind="guard" x="20" y="-65">t == 1</label>
+			<label kind="synchronisation" x="20" y="-52">cBclassCGI_BclassCGI?</label>
+			<label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id111"/>
+			<target ref="id112"/>
+			<label kind="guard" x="20" y="0">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="13">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id112"/>
+			<target ref="id114"/>
+			<label kind="guard" x="20" y="65">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="91">cAclassCGI_AclassCGI!</label>
+			<label kind="assignment" x="20" y="78">osp_dec(1), t = 0, par0 = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id114"/>
+			<target ref="id113"/>
+			<label kind="guard" x="20" y="104">!exceptionOccurred</label>
+			<label kind="synchronisation" x="20" y="91">cAclassCGI_AclassCGI?</label>
+			<label kind="assignment" x="20" y="117">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id114"/>
+			<target ref="id115"/>
+			<label kind="guard" x="20" y="91">exceptionOccurred == true</label>
+			<label kind="synchronisation" x="20" y="117">cAclassCGI_AclassCGI?</label>
+			<label kind="assignment" x="20" y="104">osp = 0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id115"/>
+			<target ref="id110"/>
+			<label kind="synchronisation" x="20" y="117">cBclassCGI_BclassCGI!</label>
+		</transition>
+		<transition>
+			<source ref="id113"/>
+			<target ref="id110"/>
+			<label kind="guard" x="20" y="130">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="143">cBclassCGI_BclassCGI!</label>
+			<label kind="assignment" x="20" y="169">osp = 0, t = 0</label>
+			<nail x="-100" y="32"/>
+		</transition>
+		<transition>
+			<source ref="id111"/>
+			<target ref="id111"/>
+			<label kind="select" x="20" y="26">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="0">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="13">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="-30"/>
+			<nail x="30" y="-30"/>
+		</transition>
+		<transition>
+			<source ref="id112"/>
+			<target ref="id112"/>
+			<label kind="select" x="20" y="91">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="65">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="78">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="35"/>
+			<nail x="30" y="35"/>
+		</transition>
+		<transition>
+			<source ref="id113"/>
+			<target ref="id113"/>
+			<label kind="select" x="20" y="156">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="130">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="143">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="100"/>
+			<nail x="30" y="100"/>
+		</transition>
+	</template>
+	<template>
+		<name>BclassCGI_foo</name>
+		<declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+		<location id="id116" x="0" y="-65">
+			<name x="20" y="-78">foo</name>
+			<label kind="exponentialrate" x="-70" y="-65">1</label>
+		</location>
+		<location id="id117" x="0" y="0">
+			<name x="20" y="-13">pc0__getstatic_VirtualCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+		</location>
+		<location id="id118" x="0" y="65">
+			<name x="20" y="52">pc3__bipush_30</name>
+			<label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+		</location>
+		<location id="id119" x="0" y="130">
+			<name x="20" y="117">pc5__ifcmpeq_6</name>
+			<label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+		</location>
+		<location id="id120" x="0" y="195">
+			<name x="20" y="182">pc8__bipush_10</name>
+			<label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+		</location>
+		<location id="id121" x="0" y="260">
+			<name x="20" y="247">pc10__ireturn</name>
+			<label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+		</location>
+		<location id="id122" x="0" y="325">
+			<name x="20" y="312">pc11__bipush_40</name>
+			<label kind="invariant" x="-70" y="325">t &lt;= 1</label>
+		</location>
+		<location id="id123" x="0" y="390">
+			<name x="20" y="377">pc13__putstatic_VirtualCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="390">t &lt;= 1</label>
+		</location>
+		<location id="id124" x="0" y="455">
+			<name x="20" y="442">pc16__iconst_3</name>
+			<label kind="invariant" x="-70" y="455">t &lt;= 1</label>
+		</location>
+		<location id="id125" x="0" y="520">
+			<name x="20" y="507">pc17__ireturn</name>
+			<label kind="invariant" x="-70" y="520">t &lt;= 1</label>
+		</location>
+		<init ref="id116"/>
+		<transition>
+			<source ref="id116"/>
+			<target ref="id117"/>
+			<label kind="guard" x="20" y="-65">t == 1</label>
+			<label kind="synchronisation" x="20" y="-52">cBclassCGI_foo?</label>
+			<label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id117"/>
+			<target ref="id118"/>
+			<label kind="guard" x="20" y="0">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="13">osp_inc(), os[osp-1] = H(cp0), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id118"/>
+			<target ref="id119"/>
+			<label kind="guard" x="20" y="65">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="78">osp_inc(), os[osp - 1] = 30, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id119"/>
+			<target ref="id122"/>
+			<label kind="guard" x="20" y="130">t == 1 &amp;&amp; ifcmpeq() &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="143">osp_dec(2), t = 0</label>
+			<nail x="-50" y="227"/>
+		</transition>
+		<transition>
+			<source ref="id119"/>
+			<target ref="id120"/>
+			<label kind="guard" x="20" y="130">t == 1 &amp;&amp; !ifcmpeq() &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="143">opstack_fault = osp &lt; 2 ? true : opstack_fault, osp_dec(2), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id120"/>
+			<target ref="id121"/>
+			<label kind="guard" x="20" y="195">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="208">osp_inc(), os[osp - 1] = -10, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id121"/>
+			<target ref="id116"/>
+			<label kind="guard" x="20" y="260">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="273">cBclassCGI_foo!</label>
+			<label kind="assignment" x="20" y="299">osp_dec(1), par0 = os[osp], osp = 0, t = 0</label>
+			<nail x="-100" y="97"/>
+		</transition>
+		<transition>
+			<source ref="id122"/>
+			<target ref="id123"/>
+			<label kind="guard" x="20" y="325">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="338">osp_inc(), os[osp - 1] = 40, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id123"/>
+			<target ref="id124"/>
+			<label kind="guard" x="20" y="390">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="403">osp_dec(1), setH(cp0, os[osp]), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id124"/>
+			<target ref="id125"/>
+			<label kind="guard" x="20" y="455">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="assignment" x="20" y="468">osp_inc(), os[osp - 1] = 3, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id125"/>
+			<target ref="id116"/>
+			<label kind="guard" x="20" y="520">t == 1 &amp;&amp; faultTime &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="533">cBclassCGI_foo!</label>
+			<label kind="assignment" x="20" y="559">osp_dec(1), par0 = os[osp], osp = 0, t = 0</label>
+			<nail x="-100" y="227"/>
+		</transition>
+		<transition>
+			<source ref="id117"/>
+			<target ref="id117"/>
+			<label kind="select" x="20" y="26">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="0">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="13">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="-30"/>
+			<nail x="30" y="-30"/>
+		</transition>
+		<transition>
+			<source ref="id118"/>
+			<target ref="id118"/>
+			<label kind="select" x="20" y="91">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="65">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="78">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="35"/>
+			<nail x="30" y="35"/>
+		</transition>
+		<transition>
+			<source ref="id119"/>
+			<target ref="id119"/>
+			<label kind="select" x="20" y="156">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="130">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="143">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="100"/>
+			<nail x="30" y="100"/>
+		</transition>
+		<transition>
+			<source ref="id120"/>
+			<target ref="id120"/>
+			<label kind="select" x="20" y="221">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="195">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="208">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="165"/>
+			<nail x="30" y="165"/>
+		</transition>
+		<transition>
+			<source ref="id121"/>
+			<target ref="id121"/>
+			<label kind="select" x="20" y="286">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="260">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="273">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="230"/>
+			<nail x="30" y="230"/>
+		</transition>
+		<transition>
+			<source ref="id122"/>
+			<target ref="id122"/>
+			<label kind="select" x="20" y="351">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="325">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="338">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="295"/>
+			<nail x="30" y="295"/>
+		</transition>
+		<transition>
+			<source ref="id123"/>
+			<target ref="id123"/>
+			<label kind="select" x="20" y="416">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="390">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="403">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="360"/>
+			<nail x="30" y="360"/>
+		</transition>
+		<transition>
+			<source ref="id124"/>
+			<target ref="id124"/>
+			<label kind="select" x="20" y="481">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="455">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="468">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="425"/>
+			<nail x="30" y="425"/>
+		</transition>
+		<transition>
+			<source ref="id125"/>
+			<target ref="id125"/>
+			<label kind="select" x="20" y="546">osPos:int[0,os_size - 1], osBitPos:int[0,7]</label>
+			<label kind="guard" x="20" y="520">faultTime &lt;= globalClock</label>
+			<label kind="assignment" x="20" y="533">os[osPos] ^= 1 &lt;&lt; osBitPos, faultTime = 1000</label>
+			<nail x="-30" y="490"/>
+			<nail x="30" y="490"/>
+		</transition>
+	</template>
+	<template>
+		<name>Virtual</name>
+		<location id="id126" x="0" y="0">
+			<name x="20" y="-13">Invoke</name>
+			<label kind="exponentialrate" x="130" y="0">1</label>
+		</location>
+		<location id="id127" x="0" y="100">
+			<name x="20" y="87">Resolver</name>
+			<label kind="exponentialrate" x="130" y="100">1</label>
+			<urgent/>
+		</location>
+		<location id="id128" x="200" y="50">
+			<name x="220" y="37">Error</name>
+			<label kind="exponentialrate" x="330" y="50">1</label>
+		</location>
+		<location id="id129" x="-100" y="300">
+			<name x="-80" y="287">Returner</name>
+			<label kind="exponentialrate" x="30" y="300">1</label>
+			<urgent/>
+		</location>
+		<location id="id130" x="0" y="200">
+			<name x="20" y="187">AclassCGI_bar</name>
+			<label kind="exponentialrate" x="130" y="200">1</label>
+		</location>
+		<location id="id131" x="200" y="200">
+			<name x="220" y="187">AclassCGI_foo</name>
+			<label kind="exponentialrate" x="330" y="200">1</label>
+		</location>
+		<location id="id132" x="400" y="200">
+			<name x="420" y="187">BclassCGI_foo</name>
+			<label kind="exponentialrate" x="530" y="200">1</label>
+		</location>
+		<init ref="id126"/>
+		<transition>
+			<source ref="id126"/>
+			<target ref="id127"/>
+			<label kind="synchronisation" x="20" y="0">cVirtual?</label>
+			<label kind="assignment" x="20" y="13">clID = H(par0)</label>
+		</transition>
+		<transition>
+			<source ref="id127"/>
+			<target ref="id128"/>
+			<label kind="guard" x="20" y="100">clID == 0</label>
+		</transition>
+		<transition>
+			<source ref="id129"/>
+			<target ref="id126"/>
+			<label kind="synchronisation" x="20" y="300">cVirtual!</label>
+		</transition>
+		<transition>
+			<source ref="id127"/>
+			<target ref="id130"/>
+			<label kind="guard" x="20" y="100">signature(clID, 3, 2)</label>
+			<label kind="synchronisation" x="20" y="113">cAclassCGI_bar!</label>
+		</transition>
+		<transition>
+			<source ref="id130"/>
+			<target ref="id129"/>
+			<label kind="synchronisation" x="20" y="200">cAclassCGI_bar?</label>
+		</transition>
+		<transition>
+			<source ref="id127"/>
+			<target ref="id131"/>
+			<label kind="guard" x="20" y="100">signature(clID, 5, 2)</label>
+			<label kind="synchronisation" x="20" y="113">cAclassCGI_foo!</label>
+		</transition>
+		<transition>
+			<source ref="id131"/>
+			<target ref="id129"/>
+			<label kind="synchronisation" x="20" y="200">cAclassCGI_foo?</label>
+		</transition>
+		<transition>
+			<source ref="id127"/>
+			<target ref="id132"/>
+			<label kind="guard" x="20" y="100">signature(clID, 5, 3)</label>
+			<label kind="synchronisation" x="20" y="113">cBclassCGI_foo!</label>
+		</transition>
+		<transition>
+			<source ref="id132"/>
+			<target ref="id129"/>
+			<label kind="synchronisation" x="20" y="200">cBclassCGI_foo?</label>
+		</transition>
+		<transition>
+			<source ref="id127"/>
+			<target ref="id127"/>
+			<label kind="guard" x="20" y="100">clID != 0 &amp;&amp; !(signature(clID, 3, 2) || signature(clID, 5, 2) || signature(clID, 5, 3))</label>
+			<label kind="assignment" x="20" y="113">clID = classHierarchy(clID)</label>
+			<nail x="-30" y="70"/>
+			<nail x="30" y="70"/>
+		</transition>
+	</template>
+	<template>
+		<name>FaultInj</name>
+		<location id="id133" x="-17" y="-85">
+			<label kind="exponentialrate" x="-205" y="17">1</label>
+		</location>
+		<location id="id134" x="-144" y="-85">
+			<committed/>
+		</location>
+		<init ref="id134"/>
+		<transition>
+			<source ref="id134"/>
+			<target ref="id133"/>
+			<label kind="select" x="-100" y="-58">i:int[0,80]</label>
+			<label kind="assignment" x="-110" y="-68">faultTime = i</label>
+		</transition>
+	</template>
+	<system>Fault = FaultInj();
+iVirtualCGI_VirtualCGI = VirtualCGI_VirtualCGI();
+iVirtualCGI_install = VirtualCGI_install();
+iVirtualCGI_main = VirtualCGI_main();
+iAclassCGI_bar = AclassCGI_bar();
+iAclassCGI_AclassCGI = AclassCGI_AclassCGI();
+iAclassCGI_foo = AclassCGI_foo();
+iBclassCGI_BclassCGI = BclassCGI_BclassCGI();
+iBclassCGI_foo = BclassCGI_foo();
+iVirtual = Virtual();
+
+system Fault, iVirtualCGI_VirtualCGI, iVirtualCGI_install, iVirtualCGI_main, iAclassCGI_bar, iAclassCGI_AclassCGI, iAclassCGI_foo, iBclassCGI_BclassCGI, iBclassCGI_foo, iVirtual;</system>
+	<queries>
+		<query>
+			<formula>A&lt;&gt; iExampleCFI_main.Done &amp;&amp; !opstack_fault &amp;&amp; exceptionOccurred
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>Pr[&lt;= 100] (&lt;&gt; iExampleCFI_main.Done &amp;&amp; !opstack_fault &amp;&amp; exceptionOccurred)
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; opstack_fault
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>Pr[&lt;= 100] (&lt;&gt; opstack_fault)
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; iExampleCFI_main.Done &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>Pr[&lt;= 100] (&lt;&gt; iExampleCFI_main.Done &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred)
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; iVirtual_Virtual.pc58__return &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred &amp;&amp; iVirtual_Virtual.locs[1] == 3  &amp;&amp; iVirtual_Virtual.locs[2] == 5
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; iVirtual_Virtual.pc58__return &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred &amp;&amp; !(iVirtual_Virtual.locs[1] == 3  &amp;&amp; iVirtual_Virtual.locs[2] == 5)
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>Pr[&lt;= 100] (&lt;&gt; iVirtual_Virtual.pc58__return &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred &amp;&amp; !(iVirtual_Virtual.locs[1] == 3  &amp;&amp; iVirtual_Virtual.locs[2] == 5))
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; iVirtualCGI_VirtualCGI.pc122_return &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred &amp;&amp; iVirtualCGI_VirtualCGI.locs[1] == 3  &amp;&amp; iVirtualCGI_VirtualCGI.locs[2] == 5
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; iVirtualCGI_VirtualCGI.pc122_return &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred &amp;&amp; !(iVirtualCGI_VirtualCGI.locs[1] == 3  &amp;&amp; iVirtualCGI_VirtualCGI.locs[2] == 5)
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>Pr[&lt;= 100] (&lt;&gt; iVirtualCGI_VirtualCGI.pc122_return &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred &amp;&amp; !(iVirtualCGI_VirtualCGI.locs[1] == 3  &amp;&amp; iVirtualCGI_VirtualCGI.locs[2] == 5))
+			</formula>
+			<comment>
+			</comment>
+		</query>
+	</queries>
+</nta>

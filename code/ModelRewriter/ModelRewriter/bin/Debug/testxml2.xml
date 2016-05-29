@@ -1,0 +1,38 @@
+<queries>
+		<query>
+			<formula>A&lt;&gt; iExample_main.Done &amp;&amp; !opstack_fault &amp;&amp; exceptionOccurred
+			</formula>
+			<comment>Everything is good
+			</comment>
+		</query>
+		<query>
+			<formula>Pr[&lt;= 100] (&lt;&gt; iExample_main.Done &amp;&amp; !opstack_fault &amp;&amp; exceptionOccurred)
+			</formula>
+			<comment>Chance of everything being good
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; opstack_fault
+			</formula>
+			<comment>Can it crash
+			</comment>
+		</query>
+		<query>
+			<formula>Pr[&lt;= 100] (&lt;&gt; opstack_fault)
+			</formula>
+			<comment>Chance of crash
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; iExample_main.Done &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred
+			</formula>
+			<comment>An attack is possible
+			</comment>
+		</query>
+		<query>
+			<formula>Pr[&lt;= 100] (&lt;&gt; iExample_main.Done &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred)
+			</formula>
+			<comment>Chance of successful attack
+			</comment>
+		</query>
+	</queries>

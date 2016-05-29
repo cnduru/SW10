@@ -1,0 +1,1286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+	<declaration>clock t;
+bool exceptionOccurred;
+const int heap_size = 13;
+int _H[heap_size];
+int H(int i)
+{
+    if (i &lt; heap_size) return _H[i];
+    exceptionOccurred = true;
+    return 0;
+}
+void setH(int i, int v)
+{
+    if (i &lt; heap_size) _H[i] = v;
+    else exceptionOccurred = true;
+}
+int cp0= 1;
+int cp1= 2;
+int cp2= 3;
+int par0;
+int par1;
+int par2;
+broadcast chan cExample_isInvalid;
+broadcast chan cExample_Example;
+broadcast chan cExample_processVerifyPIN;
+broadcast chan cExample_main;
+broadcast chan cExample_getTriesRemaining;
+broadcast chan cExample_setIncomingAndReceive;
+bool opstack_fault = false;
+const int classCount = 4;
+const int _classFields[classCount] = {0, 3, 1, 1};
+int classFields(int i)
+{
+    if (i &lt; classCount) return _classFields[i];
+    exceptionOccurred = true;    return 0;}
+
+int heapPointer = 4;
+int alocNew(int classID){
+    int ref = heapPointer;
+    if(classID &lt; 0) return -1;
+    setH(ref, classID);
+    heapPointer += classFields(classID);
+    return ref;
+}
+
+</declaration>
+	<template>
+		<name>Example_isInvalid</name>
+		<declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+		<location id="id0" x="0" y="-65">
+			<name x="20" y="-78">isInvalid</name>
+			<label kind="exponentialrate" x="-70" y="-65">1</label>
+		</location>
+		<location id="id1" x="0" y="0">
+			<name x="20" y="-13">pc0__iconst_1</name>
+			<label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+		</location>
+		<location id="id2" x="0" y="65">
+			<name x="20" y="52">pc1__ireturn</name>
+			<label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+		</location>
+		<init ref="id0"/>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id1"/>
+			<label kind="guard" x="20" y="-65">t == 1</label>
+			<label kind="synchronisation" x="20" y="-52">cExample_isInvalid?</label>
+			<label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id2"/>
+			<label kind="guard" x="20" y="0">t == 1</label>
+			<label kind="assignment" x="20" y="13">osp_inc(), os[osp - 1] = 1, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id0"/>
+			<label kind="guard" x="20" y="91">t == 1</label>
+			<label kind="synchronisation" x="20" y="78">cExample_isInvalid!</label>
+			<label kind="assignment" x="20" y="104">osp_dec(1), par0 = os[osp], osp = 0, t = 0</label>
+			<nail x="-100" y="0"/>
+		</transition>
+	</template>
+	<template>
+		<name>Example_Example</name>
+		<declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+		<location id="id3" x="0" y="-65">
+			<name x="20" y="-78">Example</name>
+			<label kind="exponentialrate" x="-70" y="-65">1</label>
+		</location>
+		<location id="id4" x="0" y="0">
+			<name x="20" y="-13">pc0__aload_0</name>
+			<label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+		</location>
+		<location id="id5" x="0" y="65">
+			<name x="20" y="52">pc1__invokespecial_void_java_lang_Object_init_</name>
+			<label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+		</location>
+		<location id="id6" x="0" y="130">
+			<name x="20" y="117">pc4__aload_0</name>
+			<label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+		</location>
+		<location id="id7" x="0" y="195">
+			<name x="20" y="182">pc5__invokespecial_void_Example_processVerifyPIN_</name>
+			<label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+		</location>
+		<location id="id8" x="0" y="260">
+			<name x="20" y="247">pc8__return</name>
+			<label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+		</location>
+		<location id="id9" x="200" y="91">
+			<label kind="invariant" x="0" y="0">t &lt;= 5</label>
+		</location>
+		<location id="id10" x="200" y="221">
+			<label kind="exponentialrate" x="130" y="221">1</label>
+		</location>
+		<location id="id11" x="200" y="247">
+			<label kind="exponentialrate" x="330" y="247">1</label>
+			<urgent/>
+		</location>
+		<init ref="id3"/>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id4"/>
+			<label kind="guard" x="20" y="-65">t == 1</label>
+			<label kind="synchronisation" x="20" y="-52">cExample_Example?</label>
+			<label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id5"/>
+			<label kind="guard" x="20" y="0">t == 1</label>
+			<label kind="assignment" x="20" y="13">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id9"/>
+			<label kind="guard" x="20" y="65">t == 1</label>
+			<label kind="assignment" x="20" y="78">osp_dec(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id6"/>
+			<label kind="guard" x="20" y="91">t == 5</label>
+			<label kind="assignment" x="20" y="104">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id7"/>
+			<label kind="guard" x="20" y="130">t == 1</label>
+			<label kind="assignment" x="20" y="143">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id10"/>
+			<label kind="guard" x="20" y="195">t == 1</label>
+			<label kind="synchronisation" x="20" y="221">cExample_processVerifyPIN!</label>
+			<label kind="assignment" x="20" y="208">osp_dec(1), t = 0, par0 = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id10"/>
+			<target ref="id8"/>
+			<label kind="guard" x="20" y="234">!exceptionOccurred</label>
+			<label kind="synchronisation" x="20" y="221">cExample_processVerifyPIN?</label>
+			<label kind="assignment" x="20" y="247">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id10"/>
+			<target ref="id11"/>
+			<label kind="guard" x="20" y="221">exceptionOccurred == true</label>
+			<label kind="synchronisation" x="20" y="247">cExample_processVerifyPIN?</label>
+			<label kind="assignment" x="20" y="234">osp = 0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id11"/>
+			<target ref="id3"/>
+			<label kind="synchronisation" x="20" y="247">cExample_Example!</label>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id3"/>
+			<label kind="guard" x="20" y="286">t == 1</label>
+			<label kind="synchronisation" x="20" y="273">cExample_Example!</label>
+			<label kind="assignment" x="20" y="299">osp = 0, t = 0</label>
+			<nail x="-100" y="97"/>
+		</transition>
+	</template>
+	<template>
+		<name>Example_processVerifyPIN</name>
+		<declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+		<location id="id12" x="0" y="-65">
+			<name x="20" y="-78">processVerifyPIN</name>
+			<label kind="exponentialrate" x="-70" y="-65">1</label>
+		</location>
+		<location id="id13" x="0" y="0">
+			<name x="20" y="-13">pc0__iconst_4</name>
+			<label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+		</location>
+		<location id="id14" x="0" y="65">
+			<name x="20" y="52">pc1__istore_1</name>
+			<label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+		</location>
+		<location id="id15" x="0" y="130">
+			<name x="20" y="117">pc2__sipush_255</name>
+			<label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+		</location>
+		<location id="id16" x="0" y="195">
+			<name x="20" y="182">pc5__istore_2</name>
+			<label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+		</location>
+		<location id="id17" x="0" y="260">
+			<name x="20" y="247">pc6__aload_0</name>
+			<label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+		</location>
+		<location id="id18" x="0" y="325">
+			<name x="20" y="312">pc7__invokespecial_short_Example_setIncomingAndReceive_</name>
+			<label kind="invariant" x="-70" y="325">t &lt;= 1</label>
+		</location>
+		<location id="id19" x="0" y="390">
+			<name x="20" y="377">pc10__istore_4</name>
+			<label kind="invariant" x="-70" y="390">t &lt;= 1</label>
+		</location>
+		<location id="id20" x="0" y="455">
+			<name x="20" y="442">pc12__iload_4</name>
+			<label kind="invariant" x="-70" y="455">t &lt;= 1</label>
+		</location>
+		<location id="id21" x="0" y="520">
+			<name x="20" y="507">pc14__iload_1</name>
+			<label kind="invariant" x="-70" y="520">t &lt;= 1</label>
+		</location>
+		<location id="id22" x="0" y="585">
+			<name x="20" y="572">pc15__ifcmpge_11</name>
+			<label kind="invariant" x="-70" y="585">t &lt;= 1</label>
+		</location>
+		<location id="id23" x="0" y="650">
+			<name x="20" y="637">pc18__new_java_lang_Exception</name>
+			<label kind="invariant" x="-70" y="650">t &lt;= 1</label>
+		</location>
+		<location id="id24" x="0" y="715">
+			<name x="20" y="702">pc21__dup</name>
+			<label kind="invariant" x="-70" y="715">t &lt;= 1</label>
+		</location>
+		<location id="id25" x="0" y="780">
+			<name x="20" y="767">pc22__invokespecial_void_java_lang_Exception_init_</name>
+			<label kind="invariant" x="-70" y="780">t &lt;= 1</label>
+		</location>
+		<location id="id26" x="0" y="845">
+			<name x="20" y="832">pc25__athrow</name>
+			<label kind="invariant" x="-70" y="845">t &lt;= 1</label>
+		</location>
+		<location id="id27" x="0" y="910">
+			<name x="20" y="897">pc26__aload_0</name>
+			<label kind="invariant" x="-70" y="910">t &lt;= 1</label>
+		</location>
+		<location id="id28" x="0" y="975">
+			<name x="20" y="962">pc27__invokespecial_bool_Example_isInvalid_</name>
+			<label kind="invariant" x="-70" y="975">t &lt;= 1</label>
+		</location>
+		<location id="id29" x="0" y="1040">
+			<name x="20" y="1027">pc30__ifeq_16</name>
+			<label kind="invariant" x="-70" y="1040">t &lt;= 1</label>
+		</location>
+		<location id="id30" x="0" y="1105">
+			<name x="20" y="1092">pc33__aload_0</name>
+			<label kind="invariant" x="-70" y="1105">t &lt;= 1</label>
+		</location>
+		<location id="id31" x="0" y="1170">
+			<name x="20" y="1157">pc34__invokespecial_int_Example_getTriesRemaining_</name>
+			<label kind="invariant" x="-70" y="1170">t &lt;= 1</label>
+		</location>
+		<location id="id32" x="0" y="1235">
+			<name x="20" y="1222">pc37__istore_3</name>
+			<label kind="invariant" x="-70" y="1235">t &lt;= 1</label>
+		</location>
+		<location id="id33" x="0" y="1300">
+			<name x="20" y="1287">pc38__new_java_lang_Exception</name>
+			<label kind="invariant" x="-70" y="1300">t &lt;= 1</label>
+		</location>
+		<location id="id34" x="0" y="1365">
+			<name x="20" y="1352">pc41__dup</name>
+			<label kind="invariant" x="-70" y="1365">t &lt;= 1</label>
+		</location>
+		<location id="id35" x="0" y="1430">
+			<name x="20" y="1417">pc42__invokespecial_void_java_lang_Exception_init_</name>
+			<label kind="invariant" x="-70" y="1430">t &lt;= 1</label>
+		</location>
+		<location id="id36" x="0" y="1495">
+			<name x="20" y="1482">pc45__athrow</name>
+			<label kind="invariant" x="-70" y="1495">t &lt;= 1</label>
+		</location>
+		<location id="id37" x="0" y="1560">
+			<name x="20" y="1547">pc46__aload_0</name>
+			<label kind="invariant" x="-70" y="1560">t &lt;= 1</label>
+		</location>
+		<location id="id38" x="0" y="1625">
+			<name x="20" y="1612">pc47__invokespecial_bool_Example_isInvalid_</name>
+			<label kind="invariant" x="-70" y="1625">t &lt;= 1</label>
+		</location>
+		<location id="id39" x="0" y="1690">
+			<name x="20" y="1677">pc50__ifeq_4</name>
+			<label kind="invariant" x="-70" y="1690">t &lt;= 1</label>
+		</location>
+		<location id="id40" x="0" y="1755">
+			<name x="20" y="1742">pc53__goto_20</name>
+			<label kind="invariant" x="-70" y="1755">t &lt;= 1</label>
+		</location>
+		<location id="id41" x="0" y="1820">
+			<name x="20" y="1807">pc54__return</name>
+			<label kind="invariant" x="-70" y="1820">t &lt;= 1</label>
+		</location>
+		<location id="id42" x="200" y="351">
+			<label kind="exponentialrate" x="130" y="351">1</label>
+		</location>
+		<location id="id43" x="200" y="377">
+			<label kind="exponentialrate" x="330" y="377">1</label>
+			<urgent/>
+		</location>
+		<location id="id44" x="200" y="806">
+			<label kind="invariant" x="0" y="0">t &lt;= 5</label>
+		</location>
+		<location id="id45" x="200" y="871">
+			<label kind="exponentialrate" x="130" y="871">1</label>
+			<urgent/>
+		</location>
+		<location id="id46" x="200" y="1001">
+			<label kind="exponentialrate" x="130" y="1001">1</label>
+		</location>
+		<location id="id47" x="200" y="1027">
+			<label kind="exponentialrate" x="330" y="1027">1</label>
+			<urgent/>
+		</location>
+		<location id="id48" x="200" y="1196">
+			<label kind="exponentialrate" x="130" y="1196">1</label>
+		</location>
+		<location id="id49" x="200" y="1222">
+			<label kind="exponentialrate" x="330" y="1222">1</label>
+			<urgent/>
+		</location>
+		<location id="id50" x="200" y="1456">
+			<label kind="invariant" x="0" y="0">t &lt;= 5</label>
+		</location>
+		<location id="id51" x="200" y="1521">
+			<label kind="exponentialrate" x="130" y="1521">1</label>
+			<urgent/>
+		</location>
+		<location id="id52" x="200" y="1651">
+			<label kind="exponentialrate" x="130" y="1651">1</label>
+		</location>
+		<location id="id53" x="200" y="1677">
+			<label kind="exponentialrate" x="330" y="1677">1</label>
+			<urgent/>
+		</location>
+		<init ref="id12"/>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id13"/>
+			<label kind="guard" x="20" y="-65">t == 1</label>
+			<label kind="synchronisation" x="20" y="-52">cExample_processVerifyPIN?</label>
+			<label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id14"/>
+			<label kind="guard" x="20" y="0">t == 1</label>
+			<label kind="assignment" x="20" y="13">osp_inc(), os[osp - 1] = 4, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id14"/>
+			<target ref="id15"/>
+			<label kind="guard" x="20" y="78">t == 1</label>
+			<label kind="assignment" x="20" y="65">osp_dec(1), locs[1] = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id16"/>
+			<label kind="guard" x="20" y="143">t == 1</label>
+			<label kind="assignment" x="20" y="130">osp_inc(), os[osp] = 255</label>
+		</transition>
+		<transition>
+			<source ref="id16"/>
+			<target ref="id17"/>
+			<label kind="guard" x="20" y="208">t == 1</label>
+			<label kind="assignment" x="20" y="195">osp_dec(1), locs[2] = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id17"/>
+			<target ref="id18"/>
+			<label kind="guard" x="20" y="260">t == 1</label>
+			<label kind="assignment" x="20" y="273">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id18"/>
+			<target ref="id42"/>
+			<label kind="guard" x="20" y="325">t == 1</label>
+			<label kind="synchronisation" x="20" y="351">cExample_setIncomingAndReceive!</label>
+			<label kind="assignment" x="20" y="338">osp_dec(1), t = 0, par0 = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id42"/>
+			<target ref="id19"/>
+			<label kind="guard" x="20" y="364">!exceptionOccurred</label>
+			<label kind="synchronisation" x="20" y="351">cExample_setIncomingAndReceive?</label>
+			<label kind="assignment" x="20" y="377">t = 0, os[osp] = par0, osp_inc()</label>
+		</transition>
+		<transition>
+			<source ref="id42"/>
+			<target ref="id43"/>
+			<label kind="guard" x="20" y="351">exceptionOccurred == true</label>
+			<label kind="synchronisation" x="20" y="377">cExample_setIncomingAndReceive?</label>
+			<label kind="assignment" x="20" y="364">osp = 0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id43"/>
+			<target ref="id12"/>
+			<label kind="synchronisation" x="20" y="377">cExample_processVerifyPIN!</label>
+		</transition>
+		<transition>
+			<source ref="id19"/>
+			<target ref="id20"/>
+			<label kind="guard" x="20" y="403">t == 1</label>
+			<label kind="assignment" x="20" y="390">osp_dec(1), locs[4] = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id20"/>
+			<target ref="id21"/>
+			<label kind="guard" x="20" y="468">t == 1</label>
+			<label kind="assignment" x="20" y="455">osp_inc(), os[osp - 1] = locs[4]</label>
+		</transition>
+		<transition>
+			<source ref="id21"/>
+			<target ref="id22"/>
+			<label kind="guard" x="20" y="533">t == 1</label>
+			<label kind="assignment" x="20" y="520">osp_inc(), os[osp - 1] = locs[1]</label>
+		</transition>
+		<transition>
+			<source ref="id22"/>
+			<target ref="id23"/>
+			<label kind="guard" x="20" y="585">t == 1 &amp;&amp; !ifcmpge()</label>
+			<label kind="assignment" x="20" y="598">osp_dec(2)</label>
+		</transition>
+		<transition>
+			<source ref="id22"/>
+			<target ref="id27"/>
+			<label kind="guard" x="20" y="585">t == 1 &amp;&amp; ifcmpge()</label>
+			<label kind="assignment" x="20" y="598">osp_dec(2)</label>
+			<nail x="-50" y="747"/>
+		</transition>
+		<transition>
+			<source ref="id23"/>
+			<target ref="id24"/>
+			<label kind="guard" x="20" y="650">t == 1</label>
+			<label kind="assignment" x="20" y="663">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id24"/>
+			<target ref="id25"/>
+			<label kind="guard" x="20" y="728">t == 1</label>
+			<label kind="assignment" x="20" y="715">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+		</transition>
+		<transition>
+			<source ref="id25"/>
+			<target ref="id44"/>
+			<label kind="guard" x="20" y="780">t == 1</label>
+			<label kind="assignment" x="20" y="793">osp_dec(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id44"/>
+			<target ref="id26"/>
+			<label kind="guard" x="20" y="806">t == 5</label>
+			<label kind="assignment" x="20" y="819">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id26"/>
+			<target ref="id45"/>
+			<label kind="guard" x="20" y="845">t == 1</label>
+			<label kind="assignment" x="20" y="858">exceptionOccurred = true</label>
+		</transition>
+		<transition>
+			<source ref="id45"/>
+			<target ref="id12"/>
+			<label kind="synchronisation" x="20" y="871">cExample_processVerifyPIN!</label>
+		</transition>
+		<transition>
+			<source ref="id27"/>
+			<target ref="id28"/>
+			<label kind="guard" x="20" y="910">t == 1</label>
+			<label kind="assignment" x="20" y="923">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id28"/>
+			<target ref="id46"/>
+			<label kind="guard" x="20" y="975">t == 1</label>
+			<label kind="synchronisation" x="20" y="1001">cExample_isInvalid!</label>
+			<label kind="assignment" x="20" y="988">osp_dec(1), t = 0, par0 = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id46"/>
+			<target ref="id29"/>
+			<label kind="guard" x="20" y="1014">!exceptionOccurred</label>
+			<label kind="synchronisation" x="20" y="1001">cExample_isInvalid?</label>
+			<label kind="assignment" x="20" y="1027">t = 0, os[osp] = par0, osp_inc()</label>
+		</transition>
+		<transition>
+			<source ref="id46"/>
+			<target ref="id47"/>
+			<label kind="guard" x="20" y="1001">exceptionOccurred == true</label>
+			<label kind="synchronisation" x="20" y="1027">cExample_isInvalid?</label>
+			<label kind="assignment" x="20" y="1014">osp = 0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id47"/>
+			<target ref="id12"/>
+			<label kind="synchronisation" x="20" y="1027">cExample_processVerifyPIN!</label>
+		</transition>
+		<transition>
+			<source ref="id29"/>
+			<target ref="id37"/>
+			<label kind="guard" x="20" y="1040">t == 1 &amp;&amp; ifeq()</label>
+			<label kind="assignment" x="20" y="1053">osp_dec(1), t = 0</label>
+			<nail x="-50" y="1300"/>
+		</transition>
+		<transition>
+			<source ref="id29"/>
+			<target ref="id30"/>
+			<label kind="guard" x="20" y="1040">t == 1 &amp;&amp; !ifeq()</label>
+			<label kind="assignment" x="20" y="1053">opstack_fault = osp &lt; 1 ? true : opstack_fault, osp_dec(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id30"/>
+			<target ref="id31"/>
+			<label kind="guard" x="20" y="1105">t == 1</label>
+			<label kind="assignment" x="20" y="1118">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id31"/>
+			<target ref="id48"/>
+			<label kind="guard" x="20" y="1170">t == 1</label>
+			<label kind="synchronisation" x="20" y="1196">cExample_getTriesRemaining!</label>
+			<label kind="assignment" x="20" y="1183">osp_dec(1), t = 0, par0 = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id48"/>
+			<target ref="id32"/>
+			<label kind="guard" x="20" y="1209">!exceptionOccurred</label>
+			<label kind="synchronisation" x="20" y="1196">cExample_getTriesRemaining?</label>
+			<label kind="assignment" x="20" y="1222">t = 0, os[osp] = par0, osp_inc()</label>
+		</transition>
+		<transition>
+			<source ref="id48"/>
+			<target ref="id49"/>
+			<label kind="guard" x="20" y="1196">exceptionOccurred == true</label>
+			<label kind="synchronisation" x="20" y="1222">cExample_getTriesRemaining?</label>
+			<label kind="assignment" x="20" y="1209">osp = 0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id49"/>
+			<target ref="id12"/>
+			<label kind="synchronisation" x="20" y="1222">cExample_processVerifyPIN!</label>
+		</transition>
+		<transition>
+			<source ref="id32"/>
+			<target ref="id33"/>
+			<label kind="guard" x="20" y="1248">t == 1</label>
+			<label kind="assignment" x="20" y="1235">osp_dec(1), locs[3] = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id33"/>
+			<target ref="id34"/>
+			<label kind="guard" x="20" y="1300">t == 1</label>
+			<label kind="assignment" x="20" y="1313">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id34"/>
+			<target ref="id35"/>
+			<label kind="guard" x="20" y="1378">t == 1</label>
+			<label kind="assignment" x="20" y="1365">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+		</transition>
+		<transition>
+			<source ref="id35"/>
+			<target ref="id50"/>
+			<label kind="guard" x="20" y="1430">t == 1</label>
+			<label kind="assignment" x="20" y="1443">osp_dec(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id50"/>
+			<target ref="id36"/>
+			<label kind="guard" x="20" y="1456">t == 5</label>
+			<label kind="assignment" x="20" y="1469">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id36"/>
+			<target ref="id51"/>
+			<label kind="guard" x="20" y="1495">t == 1</label>
+			<label kind="assignment" x="20" y="1508">exceptionOccurred = true</label>
+		</transition>
+		<transition>
+			<source ref="id51"/>
+			<target ref="id12"/>
+			<label kind="synchronisation" x="20" y="1521">cExample_processVerifyPIN!</label>
+		</transition>
+		<transition>
+			<source ref="id37"/>
+			<target ref="id38"/>
+			<label kind="guard" x="20" y="1560">t == 1</label>
+			<label kind="assignment" x="20" y="1573">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id38"/>
+			<target ref="id52"/>
+			<label kind="guard" x="20" y="1625">t == 1</label>
+			<label kind="synchronisation" x="20" y="1651">cExample_isInvalid!</label>
+			<label kind="assignment" x="20" y="1638">osp_dec(1), t = 0, par0 = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id52"/>
+			<target ref="id39"/>
+			<label kind="guard" x="20" y="1664">!exceptionOccurred</label>
+			<label kind="synchronisation" x="20" y="1651">cExample_isInvalid?</label>
+			<label kind="assignment" x="20" y="1677">t = 0, os[osp] = par0, osp_inc()</label>
+		</transition>
+		<transition>
+			<source ref="id52"/>
+			<target ref="id53"/>
+			<label kind="guard" x="20" y="1651">exceptionOccurred == true</label>
+			<label kind="synchronisation" x="20" y="1677">cExample_isInvalid?</label>
+			<label kind="assignment" x="20" y="1664">osp = 0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id53"/>
+			<target ref="id12"/>
+			<label kind="synchronisation" x="20" y="1677">cExample_processVerifyPIN!</label>
+		</transition>
+		<transition>
+			<source ref="id39"/>
+			<target ref="id41"/>
+			<label kind="guard" x="20" y="1690">t == 1 &amp;&amp; ifeq()</label>
+			<label kind="assignment" x="20" y="1703">osp_dec(1), t = 0</label>
+			<nail x="-50" y="1755"/>
+		</transition>
+		<transition>
+			<source ref="id39"/>
+			<target ref="id40"/>
+			<label kind="guard" x="20" y="1690">t == 1 &amp;&amp; !ifeq()</label>
+			<label kind="assignment" x="20" y="1703">opstack_fault = osp &lt; 1 ? true : opstack_fault, osp_dec(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id40"/>
+			<target ref="id30"/>
+			<label kind="guard" x="20" y="1755">t == 1</label>
+			<nail x="-50" y="1430"/>
+		</transition>
+		<transition>
+			<source ref="id41"/>
+			<target ref="id12"/>
+			<label kind="guard" x="20" y="1846">t == 1</label>
+			<label kind="synchronisation" x="20" y="1833">cExample_processVerifyPIN!</label>
+			<label kind="assignment" x="20" y="1859">osp = 0, t = 0</label>
+			<nail x="-100" y="877"/>
+		</transition>
+	</template>
+	<template>
+		<name>Example_main</name>
+		<declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+		<location id="id54" x="0" y="-65">
+			<name x="20" y="-78">main</name>
+			<label kind="exponentialrate" x="-70" y="-65">1</label>
+			<urgent/>
+		</location>
+		<location id="id55" x="0" y="0">
+			<name x="20" y="-13">pc0__new_Example</name>
+			<label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+		</location>
+		<location id="id56" x="0" y="65">
+			<name x="20" y="52">pc3__dup</name>
+			<label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+		</location>
+		<location id="id57" x="0" y="130">
+			<name x="20" y="117">pc4__invokespecial_void_Example_init_</name>
+			<label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+		</location>
+		<location id="id58" x="0" y="195">
+			<name x="20" y="182">pc7__astore_1</name>
+			<label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+		</location>
+		<location id="id59" x="0" y="260">
+			<name x="20" y="247">pc8__goto_4</name>
+			<label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+		</location>
+		<location id="id60" x="0" y="325">
+			<name x="20" y="312">pc11__astore_1</name>
+			<label kind="invariant" x="-70" y="325">t &lt;= 1</label>
+		</location>
+		<location id="id61" x="0" y="390">
+			<name x="20" y="377">pc12__return</name>
+			<label kind="invariant" x="-70" y="390">t &lt;= 1</label>
+		</location>
+		<location id="id62" x="200" y="156">
+			<label kind="exponentialrate" x="130" y="156">1</label>
+		</location>
+		<location id="id63" x="200" y="182">
+			<label kind="exponentialrate" x="330" y="182">1</label>
+			<urgent/>
+		</location>
+		<location id="id64" x="200" y="416">
+			<name x="220" y="403">Done</name>
+			<label kind="exponentialrate" x="0" y="0">1</label>
+		</location>
+		<init ref="id54"/>
+		<transition>
+			<source ref="id54"/>
+			<target ref="id55"/>
+			<label kind="assignment" x="20" y="-65">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id55"/>
+			<target ref="id56"/>
+			<label kind="guard" x="20" y="0">t == 1</label>
+			<label kind="assignment" x="20" y="13">osp_inc(), os[osp-1] = alocNew(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id56"/>
+			<target ref="id57"/>
+			<label kind="guard" x="20" y="78">t == 1</label>
+			<label kind="assignment" x="20" y="65">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+		</transition>
+		<transition>
+			<source ref="id57"/>
+			<target ref="id62"/>
+			<label kind="guard" x="20" y="130">t == 1</label>
+			<label kind="synchronisation" x="20" y="156">cExample_Example!</label>
+			<label kind="assignment" x="20" y="143">osp_dec(1), t = 0, par0 = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id62"/>
+			<target ref="id58"/>
+			<label kind="guard" x="20" y="169">!exceptionOccurred</label>
+			<label kind="synchronisation" x="20" y="156">cExample_Example?</label>
+			<label kind="assignment" x="20" y="182">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id62"/>
+			<target ref="id63"/>
+			<label kind="guard" x="20" y="156">exceptionOccurred == true</label>
+			<label kind="synchronisation" x="20" y="182">cExample_Example?</label>
+			<label kind="assignment" x="20" y="169">osp_inc(), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id63"/>
+			<target ref="id60"/>
+			<label kind="synchronisation" x="20" y="182">cExample_main!</label>
+		</transition>
+		<transition>
+			<source ref="id58"/>
+			<target ref="id59"/>
+			<label kind="guard" x="20" y="208">t == 1</label>
+			<label kind="assignment" x="20" y="195">osp_dec(1), locs[1] = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id59"/>
+			<target ref="id61"/>
+			<label kind="guard" x="20" y="260">t == 1</label>
+			<nail x="-50" y="325"/>
+		</transition>
+		<transition>
+			<source ref="id60"/>
+			<target ref="id61"/>
+			<label kind="guard" x="20" y="338">t == 1</label>
+			<label kind="assignment" x="20" y="325">osp_dec(1), locs[1] = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id61"/>
+			<target ref="id64"/>
+			<label kind="guard" x="20" y="416">t == 1</label>
+			<label kind="synchronisation" x="20" y="403">cExample_main!</label>
+		</transition>
+	</template>
+	<template>
+		<name>Example_getTriesRemaining</name>
+		<declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+		<location id="id65" x="0" y="-65">
+			<name x="20" y="-78">getTriesRemaining</name>
+			<label kind="exponentialrate" x="-70" y="-65">1</label>
+		</location>
+		<location id="id66" x="0" y="0">
+			<name x="20" y="-13">pc0__iconst_2</name>
+			<label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+		</location>
+		<location id="id67" x="0" y="65">
+			<name x="20" y="52">pc1__ireturn</name>
+			<label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+		</location>
+		<init ref="id65"/>
+		<transition>
+			<source ref="id65"/>
+			<target ref="id66"/>
+			<label kind="guard" x="20" y="-65">t == 1</label>
+			<label kind="synchronisation" x="20" y="-52">cExample_getTriesRemaining?</label>
+			<label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id66"/>
+			<target ref="id67"/>
+			<label kind="guard" x="20" y="0">t == 1</label>
+			<label kind="assignment" x="20" y="13">osp_inc(), os[osp - 1] = 2, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id67"/>
+			<target ref="id65"/>
+			<label kind="guard" x="20" y="91">t == 1</label>
+			<label kind="synchronisation" x="20" y="78">cExample_getTriesRemaining!</label>
+			<label kind="assignment" x="20" y="104">osp_dec(1), par0 = os[osp], osp = 0, t = 0</label>
+			<nail x="-100" y="0"/>
+		</transition>
+	</template>
+	<template>
+		<name>Example_setIncomingAndReceive</name>
+		<declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+		<location id="id68" x="0" y="-65">
+			<name x="20" y="-78">setIncomingAndReceive</name>
+			<label kind="exponentialrate" x="-70" y="-65">1</label>
+		</location>
+		<location id="id69" x="0" y="0">
+			<name x="20" y="-13">pc0__iconst_5</name>
+			<label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+		</location>
+		<location id="id70" x="0" y="65">
+			<name x="20" y="52">pc1__ireturn</name>
+			<label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+		</location>
+		<init ref="id68"/>
+		<transition>
+			<source ref="id68"/>
+			<target ref="id69"/>
+			<label kind="guard" x="20" y="-65">t == 1</label>
+			<label kind="synchronisation" x="20" y="-52">cExample_setIncomingAndReceive?</label>
+			<label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id69"/>
+			<target ref="id70"/>
+			<label kind="guard" x="20" y="0">t == 1</label>
+			<label kind="assignment" x="20" y="13">osp_inc(), os[osp - 1] = 5, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id70"/>
+			<target ref="id68"/>
+			<label kind="guard" x="20" y="91">t == 1</label>
+			<label kind="synchronisation" x="20" y="78">cExample_setIncomingAndReceive!</label>
+			<label kind="assignment" x="20" y="104">osp_dec(1), par0 = os[osp], osp = 0, t = 0</label>
+			<nail x="-100" y="0"/>
+		</transition>
+	</template>
+	<system>iExample_isInvalid = Example_isInvalid();
+iExample_Example = Example_Example();
+iExample_processVerifyPIN = Example_processVerifyPIN();
+iExample_main = Example_main();
+iExample_getTriesRemaining = Example_getTriesRemaining();
+iExample_setIncomingAndReceive = Example_setIncomingAndReceive();
+system iExample_isInvalid,iExample_Example,iExample_processVerifyPIN,iExample_main,iExample_getTriesRemaining,iExample_setIncomingAndReceive;
+</system>
+	<queries>
+		<query>
+			<formula>A&lt;&gt; iExample_main.Done &amp;&amp; !opstack_fault &amp;&amp; exceptionOccurred
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>Pr[&lt;= 100] (&lt;&gt; iExample_main.Done &amp;&amp; !opstack_fault &amp;&amp; exceptionOccurred)
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; opstack_fault
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>Pr[&lt;= 100] (&lt;&gt; opstack_fault)
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; iExample_main.Done &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>Pr[&lt;= 100] (&lt;&gt; iExample_main.Done &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred)
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; iVirtual_Virtual.pc58__return &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred &amp;&amp; iVirtual_Virtual.locs[1] == 3  &amp;&amp; iVirtual_Virtual.locs[2] == 5
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; iVirtual_Virtual.pc58__return &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred &amp;&amp; !(iVirtual_Virtual.locs[1] == 3  &amp;&amp; iVirtual_Virtual.locs[2] == 5)
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>Pr[&lt;= 100] (&lt;&gt; iVirtual_Virtual.pc58__return &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred &amp;&amp; !(iVirtual_Virtual.locs[1] == 3  &amp;&amp; iVirtual_Virtual.locs[2] == 5))
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; iVirtualCGI_VirtualCGI.pc122_return &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred &amp;&amp; iVirtualCGI_VirtualCGI.locs[1] == 3  &amp;&amp; iVirtualCGI_VirtualCGI.locs[2] == 5
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; iVirtualCGI_VirtualCGI.pc122_return &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred &amp;&amp; !(iVirtualCGI_VirtualCGI.locs[1] == 3  &amp;&amp; iVirtualCGI_VirtualCGI.locs[2] == 5)
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>Pr[&lt;= 100] (&lt;&gt; iVirtualCGI_VirtualCGI.pc122_return &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred &amp;&amp; !(iVirtualCGI_VirtualCGI.locs[1] == 3  &amp;&amp; iVirtualCGI_VirtualCGI.locs[2] == 5))
+			</formula>
+			<comment>
+			</comment>
+		</query>
+	</queries>
+</nta>

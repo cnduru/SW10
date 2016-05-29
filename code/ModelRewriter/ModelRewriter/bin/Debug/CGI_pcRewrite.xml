@@ -1,0 +1,4640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+	<declaration>clock t;
+bool exceptionOccurred;
+const int heap_size = 10;
+int H[heap_size];
+int cp0= 5;
+int cp1= 6;
+int cp2= 7;
+int par0;
+int par1;
+int par2;
+broadcast chan cExampleCGI_isInvalid;
+broadcast chan cExampleCGI_ExampleCGI;
+broadcast chan cExampleCGI_processVerifyPIN;
+broadcast chan cExampleCGI_main;
+broadcast chan cExampleCGI_getTriesRemaining;
+broadcast chan cExampleCGI_setIncomingAndReceive;
+bool opstack_fault = false;
+const int classFields[4] = {0, 3, 1, 1};
+
+int heapPointer = 1;
+int alocNew(int classID){
+    int ref = heapPointer;
+    if(classID &lt; 0) return -1;
+    H[ref] = classID;
+    heapPointer += classFields[classID];
+    return ref;
+}
+
+
+int faultAt = 0;
+clock globalClock;
+int faultTime;</declaration>
+	<template>
+		<name>ExampleCGI_isInvalid</name>
+		<declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+		<location id="id0" x="0" y="-65">
+			<name x="20" y="-78">isInvalid</name>
+			<label kind="exponentialrate" x="-70" y="-65">1</label>
+		</location>
+		<location id="id1" x="0" y="0">
+			<name x="20" y="-13">pc0__getstatic_ExampleCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+		</location>
+		<location id="id2" x="0" y="65">
+			<name x="20" y="52">pc3__iconst_5</name>
+			<label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+		</location>
+		<location id="id3" x="0" y="130">
+			<name x="20" y="117">pc4__ifcmpeq_11</name>
+			<label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+		</location>
+		<location id="id4" x="0" y="195">
+			<name x="20" y="182">pc7__new_java_lang_Exception</name>
+			<label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+		</location>
+		<location id="id5" x="0" y="260">
+			<name x="20" y="247">pc10__dup</name>
+			<label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+		</location>
+		<location id="id6" x="0" y="325">
+			<name x="20" y="312">pc11__invokespecial_void_java_lang_Exception_init_</name>
+			<label kind="invariant" x="-70" y="325">t &lt;= 1</label>
+		</location>
+		<location id="id7" x="0" y="390">
+			<name x="20" y="377">pc14__athrow</name>
+			<label kind="invariant" x="-70" y="390">t &lt;= 1</label>
+		</location>
+		<location id="id8" x="0" y="455">
+			<name x="20" y="442">pc15__bipush_6</name>
+			<label kind="invariant" x="-70" y="455">t &lt;= 1</label>
+		</location>
+		<location id="id9" x="0" y="520">
+			<name x="20" y="507">pc17__putstatic_ExampleCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="520">t &lt;= 1</label>
+		</location>
+		<location id="id10" x="0" y="585">
+			<name x="20" y="572">pc20__iconst_1</name>
+			<label kind="invariant" x="-70" y="585">t &lt;= 1</label>
+		</location>
+		<location id="id11" x="0" y="650">
+			<name x="20" y="637">pc21__ireturn</name>
+			<label kind="invariant" x="-70" y="650">t &lt;= 1</label>
+		</location>
+		<location id="id12" x="200" y="351">
+			<label kind="invariant" x="0" y="0">t &lt;= 5</label>
+		</location>
+		<location id="id13" x="200" y="416">
+			<label kind="exponentialrate" x="130" y="416">1</label>
+			<urgent/>
+		</location>
+		<init ref="id0"/>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id1"/>
+			<label kind="guard" x="20" y="-65">t == 1</label>
+			<label kind="synchronisation" x="20" y="-52">cExampleCGI_isInvalid?</label>
+			<label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id2"/>
+			<label kind="guard" x="20" y="0">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="13">osp_inc(), os[osp-1] = H[cp0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id3"/>
+			<label kind="guard" x="20" y="65">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="78">osp_inc(), os[osp - 1] = 5, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id8"/>
+			<label kind="guard" x="20" y="130">t == 1 &amp;&amp; ifcmpeq() &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="143">osp_dec(2), t = 0</label>
+			<nail x="-50" y="292"/>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id4"/>
+			<label kind="guard" x="20" y="130">t == 1 &amp;&amp; !ifcmpeq() &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="143">opstack_fault = osp &lt; 2 ? true : opstack_fault, osp_dec(2), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id5"/>
+			<label kind="guard" x="20" y="195">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="208">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id6"/>
+			<label kind="guard" x="20" y="273">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="260">osp_inc(), os[osp - 1] = os[osp - 2]</label>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id12"/>
+			<label kind="guard" x="20" y="325">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="338">osp_dec(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id7"/>
+			<label kind="guard" x="20" y="351">t == 5</label>
+			<label kind="assignment" x="20" y="364">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id13"/>
+			<label kind="guard" x="20" y="390">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="403">exceptionOccurred = true</label>
+		</transition>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id0"/>
+			<label kind="synchronisation" x="20" y="416">cExampleCGI_isInvalid!</label>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id9"/>
+			<label kind="guard" x="20" y="455">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="468">osp_inc(), os[osp - 1] = 6, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id10"/>
+			<label kind="guard" x="20" y="520">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="533">osp_dec(1), H[cp0] = os[osp], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id10"/>
+			<target ref="id11"/>
+			<label kind="guard" x="20" y="585">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="598">osp_inc(), os[osp - 1] = 1, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id11"/>
+			<target ref="id0"/>
+			<label kind="guard" x="20" y="650">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="663">cExampleCGI_isInvalid!</label>
+			<label kind="assignment" x="20" y="689">osp_dec(1), par0 = os[osp], osp = 0, t = 0</label>
+			<nail x="-100" y="292"/>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id3"/>
+			<label kind="guard" x="-100" y="130">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="160">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="65"/>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id4"/>
+			<label kind="guard" x="-100" y="195">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="225">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="130"/>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id6"/>
+			<label kind="guard" x="-100" y="325">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="355">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="195"/>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id1"/>
+			<label kind="guard" x="-100" y="0">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="30">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="65"/>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id10"/>
+			<label kind="guard" x="-100" y="585">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="615">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="357"/>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id2"/>
+			<label kind="guard" x="-100" y="65">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="95">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="130"/>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id8"/>
+			<label kind="guard" x="-100" y="455">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="485">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="325"/>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id6"/>
+			<label kind="guard" x="-100" y="325">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="355">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="292"/>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id7"/>
+			<label kind="guard" x="-100" y="390">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="420">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="325"/>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id2"/>
+			<label kind="guard" x="-100" y="65">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="95">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="195"/>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id5"/>
+			<label kind="guard" x="-100" y="260">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="290">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="292"/>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id8"/>
+			<label kind="guard" x="-100" y="455">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="485">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="390"/>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id5"/>
+			<label kind="guard" x="-100" y="260">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="290">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="325"/>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id8"/>
+			<label kind="guard" x="-100" y="455">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="485">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="422"/>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id4"/>
+			<label kind="guard" x="-100" y="195">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="225">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="325"/>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id6"/>
+			<label kind="guard" x="-100" y="325">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="355">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="390"/>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id7"/>
+			<label kind="guard" x="-100" y="390">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="420">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="422"/>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id11"/>
+			<label kind="guard" x="-100" y="650">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="680">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="585"/>
+		</transition>
+		<transition>
+			<source ref="id10"/>
+			<target ref="id3"/>
+			<label kind="guard" x="-100" y="130">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="160">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="357"/>
+		</transition>
+		<transition>
+			<source ref="id10"/>
+			<target ref="id11"/>
+			<label kind="guard" x="-100" y="650">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="680">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="617"/>
+		</transition>
+		<transition>
+			<source ref="id11"/>
+			<target ref="id9"/>
+			<label kind="guard" x="-100" y="520">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="550">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="585"/>
+		</transition>
+		<transition>
+			<source ref="id11"/>
+			<target ref="id10"/>
+			<label kind="guard" x="-100" y="585">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="615">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="617"/>
+		</transition>
+	</template>
+	<template>
+		<name>ExampleCGI_ExampleCGI</name>
+		<declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+		<location id="id14" x="0" y="-65">
+			<name x="20" y="-78">ExampleCGI</name>
+			<label kind="exponentialrate" x="-70" y="-65">1</label>
+		</location>
+		<location id="id15" x="0" y="0">
+			<name x="20" y="-13">pc0__aload_0</name>
+			<label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+		</location>
+		<location id="id16" x="0" y="65">
+			<name x="20" y="52">pc1__invokespecial_void_java_lang_Object_init_</name>
+			<label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+		</location>
+		<location id="id17" x="0" y="130">
+			<name x="20" y="117">pc4__getstatic_ExampleCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+		</location>
+		<location id="id18" x="0" y="195">
+			<name x="20" y="182">pc7__iconst_1</name>
+			<label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+		</location>
+		<location id="id19" x="0" y="260">
+			<name x="20" y="247">pc8__ifcmpeq_11</name>
+			<label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+		</location>
+		<location id="id20" x="0" y="325">
+			<name x="20" y="312">pc11__new_java_lang_Exception</name>
+			<label kind="invariant" x="-70" y="325">t &lt;= 1</label>
+		</location>
+		<location id="id21" x="0" y="390">
+			<name x="20" y="377">pc14__dup</name>
+			<label kind="invariant" x="-70" y="390">t &lt;= 1</label>
+		</location>
+		<location id="id22" x="0" y="455">
+			<name x="20" y="442">pc15__invokespecial_void_java_lang_Exception_init_</name>
+			<label kind="invariant" x="-70" y="455">t &lt;= 1</label>
+		</location>
+		<location id="id23" x="0" y="520">
+			<name x="20" y="507">pc18__athrow</name>
+			<label kind="invariant" x="-70" y="520">t &lt;= 1</label>
+		</location>
+		<location id="id24" x="0" y="585">
+			<name x="20" y="572">pc19__iconst_2</name>
+			<label kind="invariant" x="-70" y="585">t &lt;= 1</label>
+		</location>
+		<location id="id25" x="0" y="650">
+			<name x="20" y="637">pc20__putstatic_ExampleCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="650">t &lt;= 1</label>
+		</location>
+		<location id="id26" x="0" y="715">
+			<name x="20" y="702">pc23__aload_0</name>
+			<label kind="invariant" x="-70" y="715">t &lt;= 1</label>
+		</location>
+		<location id="id27" x="0" y="780">
+			<name x="20" y="767">pc24__invokespecial_void_ExampleCGI_processVerifyPIN_</name>
+			<label kind="invariant" x="-70" y="780">t &lt;= 1</label>
+		</location>
+		<location id="id28" x="0" y="845">
+			<name x="20" y="832">pc27__getstatic_ExampleCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="845">t &lt;= 1</label>
+		</location>
+		<location id="id29" x="0" y="910">
+			<name x="20" y="897">pc30__bipush_9</name>
+			<label kind="invariant" x="-70" y="910">t &lt;= 1</label>
+		</location>
+		<location id="id30" x="0" y="975">
+			<name x="20" y="962">pc32__ifcmpeq_11</name>
+			<label kind="invariant" x="-70" y="975">t &lt;= 1</label>
+		</location>
+		<location id="id31" x="0" y="1040">
+			<name x="20" y="1027">pc35__new_java_lang_Exception</name>
+			<label kind="invariant" x="-70" y="1040">t &lt;= 1</label>
+		</location>
+		<location id="id32" x="0" y="1105">
+			<name x="20" y="1092">pc38__dup</name>
+			<label kind="invariant" x="-70" y="1105">t &lt;= 1</label>
+		</location>
+		<location id="id33" x="0" y="1170">
+			<name x="20" y="1157">pc39__invokespecial_void_java_lang_Exception_init_</name>
+			<label kind="invariant" x="-70" y="1170">t &lt;= 1</label>
+		</location>
+		<location id="id34" x="0" y="1235">
+			<name x="20" y="1222">pc42__athrow</name>
+			<label kind="invariant" x="-70" y="1235">t &lt;= 1</label>
+		</location>
+		<location id="id35" x="0" y="1300">
+			<name x="20" y="1287">pc43__bipush_10</name>
+			<label kind="invariant" x="-70" y="1300">t &lt;= 1</label>
+		</location>
+		<location id="id36" x="0" y="1365">
+			<name x="20" y="1352">pc45__putstatic_ExampleCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="1365">t &lt;= 1</label>
+		</location>
+		<location id="id37" x="0" y="1430">
+			<name x="20" y="1417">pc48__return</name>
+			<label kind="invariant" x="-70" y="1430">t &lt;= 1</label>
+		</location>
+		<location id="id38" x="200" y="91">
+			<label kind="invariant" x="0" y="0">t &lt;= 5</label>
+		</location>
+		<location id="id39" x="200" y="481">
+			<label kind="invariant" x="0" y="0">t &lt;= 5</label>
+		</location>
+		<location id="id40" x="200" y="546">
+			<label kind="exponentialrate" x="130" y="546">1</label>
+			<urgent/>
+		</location>
+		<location id="id41" x="200" y="806">
+			<label kind="exponentialrate" x="130" y="806">1</label>
+		</location>
+		<location id="id42" x="200" y="832">
+			<label kind="exponentialrate" x="130" y="832">1</label>
+			<urgent/>
+		</location>
+		<location id="id43" x="200" y="1196">
+			<label kind="invariant" x="0" y="0">t &lt;= 5</label>
+		</location>
+		<location id="id44" x="200" y="1261">
+			<label kind="exponentialrate" x="130" y="1261">1</label>
+			<urgent/>
+		</location>
+		<init ref="id14"/>
+		<transition>
+			<source ref="id14"/>
+			<target ref="id15"/>
+			<label kind="guard" x="20" y="-65">t == 1</label>
+			<label kind="synchronisation" x="20" y="-52">cExampleCGI_ExampleCGI?</label>
+			<label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id16"/>
+			<label kind="guard" x="20" y="0">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="13">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id16"/>
+			<target ref="id38"/>
+			<label kind="guard" x="20" y="65">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="78">osp_dec(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id38"/>
+			<target ref="id17"/>
+			<label kind="guard" x="20" y="91">t == 5</label>
+			<label kind="assignment" x="20" y="104">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id17"/>
+			<target ref="id18"/>
+			<label kind="guard" x="20" y="130">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="143">osp_inc(), os[osp-1] = H[cp0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id18"/>
+			<target ref="id19"/>
+			<label kind="guard" x="20" y="195">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="208">osp_inc(), os[osp - 1] = 1, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id19"/>
+			<target ref="id24"/>
+			<label kind="guard" x="20" y="260">t == 1 &amp;&amp; ifcmpeq() &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="273">osp_dec(2), t = 0</label>
+			<nail x="-50" y="422"/>
+		</transition>
+		<transition>
+			<source ref="id19"/>
+			<target ref="id20"/>
+			<label kind="guard" x="20" y="260">t == 1 &amp;&amp; !ifcmpeq() &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="273">opstack_fault = osp &lt; 2 ? true : opstack_fault, osp_dec(2), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id20"/>
+			<target ref="id21"/>
+			<label kind="guard" x="20" y="325">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="338">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id21"/>
+			<target ref="id22"/>
+			<label kind="guard" x="20" y="403">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="390">osp_inc(), os[osp - 1] = os[osp - 2]</label>
+		</transition>
+		<transition>
+			<source ref="id22"/>
+			<target ref="id39"/>
+			<label kind="guard" x="20" y="455">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="468">osp_dec(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id39"/>
+			<target ref="id23"/>
+			<label kind="guard" x="20" y="481">t == 5</label>
+			<label kind="assignment" x="20" y="494">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id23"/>
+			<target ref="id40"/>
+			<label kind="guard" x="20" y="520">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="533">exceptionOccurred = true</label>
+		</transition>
+		<transition>
+			<source ref="id40"/>
+			<target ref="id14"/>
+			<label kind="synchronisation" x="20" y="546">cExampleCGI_ExampleCGI!</label>
+		</transition>
+		<transition>
+			<source ref="id24"/>
+			<target ref="id25"/>
+			<label kind="guard" x="20" y="585">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="598">osp_inc(), os[osp - 1] = 2, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id25"/>
+			<target ref="id26"/>
+			<label kind="guard" x="20" y="650">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="663">osp_dec(1), H[cp0] = os[osp], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id26"/>
+			<target ref="id27"/>
+			<label kind="guard" x="20" y="715">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="728">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id27"/>
+			<target ref="id41"/>
+			<label kind="guard" x="20" y="780">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="806">cExampleCGI_processVerifyPIN!</label>
+			<label kind="assignment" x="20" y="793">osp_dec(1), t = 0, par0 = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id41"/>
+			<target ref="id28"/>
+			<label kind="guard" x="20" y="819">!exceptionOccurred</label>
+			<label kind="synchronisation" x="20" y="806">cExampleCGI_processVerifyPIN?</label>
+			<label kind="assignment" x="20" y="832">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id41"/>
+			<target ref="id42"/>
+			<label kind="guard" x="20" y="806">exceptionOccurred == true</label>
+			<label kind="synchronisation" x="20" y="832">cExampleCGI_processVerifyPIN?</label>
+			<label kind="assignment" x="20" y="819">osp = 0</label>
+		</transition>
+		<transition>
+			<source ref="id42"/>
+			<target ref="id14"/>
+			<label kind="synchronisation" x="20" y="832">cExampleCGI_ExampleCGI!</label>
+		</transition>
+		<transition>
+			<source ref="id28"/>
+			<target ref="id29"/>
+			<label kind="guard" x="20" y="845">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="858">osp_inc(), os[osp-1] = H[cp0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id29"/>
+			<target ref="id30"/>
+			<label kind="guard" x="20" y="910">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="923">osp_inc(), os[osp - 1] = 9, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id30"/>
+			<target ref="id35"/>
+			<label kind="guard" x="20" y="975">t == 1 &amp;&amp; ifcmpeq() &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="988">osp_dec(2), t = 0</label>
+			<nail x="-50" y="1137"/>
+		</transition>
+		<transition>
+			<source ref="id30"/>
+			<target ref="id31"/>
+			<label kind="guard" x="20" y="975">t == 1 &amp;&amp; !ifcmpeq() &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="988">opstack_fault = osp &lt; 2 ? true : opstack_fault, osp_dec(2), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id31"/>
+			<target ref="id32"/>
+			<label kind="guard" x="20" y="1040">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1053">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id32"/>
+			<target ref="id33"/>
+			<label kind="guard" x="20" y="1118">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1105">osp_inc(), os[osp - 1] = os[osp - 2]</label>
+		</transition>
+		<transition>
+			<source ref="id33"/>
+			<target ref="id43"/>
+			<label kind="guard" x="20" y="1170">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1183">osp_dec(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id43"/>
+			<target ref="id34"/>
+			<label kind="guard" x="20" y="1196">t == 5</label>
+			<label kind="assignment" x="20" y="1209">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id34"/>
+			<target ref="id44"/>
+			<label kind="guard" x="20" y="1235">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1248">exceptionOccurred = true</label>
+		</transition>
+		<transition>
+			<source ref="id44"/>
+			<target ref="id14"/>
+			<label kind="synchronisation" x="20" y="1261">cExampleCGI_ExampleCGI!</label>
+		</transition>
+		<transition>
+			<source ref="id35"/>
+			<target ref="id36"/>
+			<label kind="guard" x="20" y="1300">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1313">osp_inc(), os[osp - 1] = 10, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id36"/>
+			<target ref="id37"/>
+			<label kind="guard" x="20" y="1365">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1378">osp_dec(1), H[cp0] = os[osp], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id37"/>
+			<target ref="id14"/>
+			<label kind="guard" x="20" y="1430">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="1443">cExampleCGI_ExampleCGI!</label>
+			<label kind="assignment" x="20" y="1469">osp = 0, t = 0</label>
+			<nail x="-100" y="682"/>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id16"/>
+			<label kind="guard" x="-100" y="65">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="95">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="32"/>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id17"/>
+			<label kind="guard" x="-100" y="130">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="160">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="65"/>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id19"/>
+			<label kind="guard" x="-100" y="260">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="290">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="130"/>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id30"/>
+			<label kind="guard" x="-100" y="975">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1005">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="487"/>
+		</transition>
+		<transition>
+			<source ref="id16"/>
+			<target ref="id15"/>
+			<label kind="guard" x="-100" y="0">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="30">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="32"/>
+		</transition>
+		<transition>
+			<source ref="id17"/>
+			<target ref="id15"/>
+			<label kind="guard" x="-100" y="0">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="30">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="65"/>
+		</transition>
+		<transition>
+			<source ref="id17"/>
+			<target ref="id25"/>
+			<label kind="guard" x="-100" y="650">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="680">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="390"/>
+		</transition>
+		<transition>
+			<source ref="id18"/>
+			<target ref="id22"/>
+			<label kind="guard" x="-100" y="455">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="485">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="325"/>
+		</transition>
+		<transition>
+			<source ref="id18"/>
+			<target ref="id26"/>
+			<label kind="guard" x="-100" y="715">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="745">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="455"/>
+		</transition>
+		<transition>
+			<source ref="id18"/>
+			<target ref="id33"/>
+			<label kind="guard" x="-100" y="1170">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1200">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="682"/>
+		</transition>
+		<transition>
+			<source ref="id19"/>
+			<target ref="id15"/>
+			<label kind="guard" x="-100" y="0">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="30">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="130"/>
+		</transition>
+		<transition>
+			<source ref="id19"/>
+			<target ref="id27"/>
+			<label kind="guard" x="-100" y="780">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="810">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="520"/>
+		</transition>
+		<transition>
+			<source ref="id20"/>
+			<target ref="id22"/>
+			<label kind="guard" x="-100" y="455">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="485">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="390"/>
+		</transition>
+		<transition>
+			<source ref="id20"/>
+			<target ref="id28"/>
+			<label kind="guard" x="-100" y="845">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="875">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="585"/>
+		</transition>
+		<transition>
+			<source ref="id20"/>
+			<target ref="id35"/>
+			<label kind="guard" x="-100" y="1300">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1330">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="812"/>
+		</transition>
+		<transition>
+			<source ref="id21"/>
+			<target ref="id22"/>
+			<label kind="guard" x="-100" y="455">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="485">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="422"/>
+		</transition>
+		<transition>
+			<source ref="id21"/>
+			<target ref="id29"/>
+			<label kind="guard" x="-100" y="910">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="940">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="650"/>
+		</transition>
+		<transition>
+			<source ref="id22"/>
+			<target ref="id18"/>
+			<label kind="guard" x="-100" y="195">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="225">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="325"/>
+		</transition>
+		<transition>
+			<source ref="id22"/>
+			<target ref="id20"/>
+			<label kind="guard" x="-100" y="325">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="355">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="390"/>
+		</transition>
+		<transition>
+			<source ref="id22"/>
+			<target ref="id21"/>
+			<label kind="guard" x="-100" y="390">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="420">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="422"/>
+		</transition>
+		<transition>
+			<source ref="id23"/>
+			<target ref="id24"/>
+			<label kind="guard" x="-100" y="585">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="615">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="552"/>
+		</transition>
+		<transition>
+			<source ref="id24"/>
+			<target ref="id23"/>
+			<label kind="guard" x="-100" y="520">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="550">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="552"/>
+		</transition>
+		<transition>
+			<source ref="id24"/>
+			<target ref="id26"/>
+			<label kind="guard" x="-100" y="715">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="745">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="650"/>
+		</transition>
+		<transition>
+			<source ref="id24"/>
+			<target ref="id28"/>
+			<label kind="guard" x="-100" y="845">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="875">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="715"/>
+		</transition>
+		<transition>
+			<source ref="id25"/>
+			<target ref="id17"/>
+			<label kind="guard" x="-100" y="130">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="160">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="390"/>
+		</transition>
+		<transition>
+			<source ref="id26"/>
+			<target ref="id18"/>
+			<label kind="guard" x="-100" y="195">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="225">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="455"/>
+		</transition>
+		<transition>
+			<source ref="id26"/>
+			<target ref="id24"/>
+			<label kind="guard" x="-100" y="585">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="615">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="650"/>
+		</transition>
+		<transition>
+			<source ref="id27"/>
+			<target ref="id19"/>
+			<label kind="guard" x="-100" y="260">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="290">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="520"/>
+		</transition>
+		<transition>
+			<source ref="id28"/>
+			<target ref="id20"/>
+			<label kind="guard" x="-100" y="325">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="355">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="585"/>
+		</transition>
+		<transition>
+			<source ref="id28"/>
+			<target ref="id24"/>
+			<label kind="guard" x="-100" y="585">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="615">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="715"/>
+		</transition>
+		<transition>
+			<source ref="id29"/>
+			<target ref="id21"/>
+			<label kind="guard" x="-100" y="390">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="420">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="650"/>
+		</transition>
+		<transition>
+			<source ref="id30"/>
+			<target ref="id15"/>
+			<label kind="guard" x="-100" y="0">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="30">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="487"/>
+		</transition>
+		<transition>
+			<source ref="id30"/>
+			<target ref="id37"/>
+			<label kind="guard" x="-100" y="1430">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1460">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1202"/>
+		</transition>
+		<transition>
+			<source ref="id31"/>
+			<target ref="id33"/>
+			<label kind="guard" x="-100" y="1170">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1200">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1105"/>
+		</transition>
+		<transition>
+			<source ref="id31"/>
+			<target ref="id35"/>
+			<label kind="guard" x="-100" y="1300">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1330">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1170"/>
+		</transition>
+		<transition>
+			<source ref="id32"/>
+			<target ref="id33"/>
+			<label kind="guard" x="-100" y="1170">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1200">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1137"/>
+		</transition>
+		<transition>
+			<source ref="id33"/>
+			<target ref="id18"/>
+			<label kind="guard" x="-100" y="195">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="225">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="682"/>
+		</transition>
+		<transition>
+			<source ref="id33"/>
+			<target ref="id31"/>
+			<label kind="guard" x="-100" y="1040">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1070">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1105"/>
+		</transition>
+		<transition>
+			<source ref="id33"/>
+			<target ref="id32"/>
+			<label kind="guard" x="-100" y="1105">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1135">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1137"/>
+		</transition>
+		<transition>
+			<source ref="id34"/>
+			<target ref="id35"/>
+			<label kind="guard" x="-100" y="1300">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1330">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1267"/>
+		</transition>
+		<transition>
+			<source ref="id35"/>
+			<target ref="id20"/>
+			<label kind="guard" x="-100" y="325">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="355">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="812"/>
+		</transition>
+		<transition>
+			<source ref="id35"/>
+			<target ref="id31"/>
+			<label kind="guard" x="-100" y="1040">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1070">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1170"/>
+		</transition>
+		<transition>
+			<source ref="id35"/>
+			<target ref="id34"/>
+			<label kind="guard" x="-100" y="1235">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1265">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1267"/>
+		</transition>
+		<transition>
+			<source ref="id37"/>
+			<target ref="id30"/>
+			<label kind="guard" x="-100" y="975">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1005">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1202"/>
+		</transition>
+	</template>
+	<template>
+		<name>ExampleCGI_processVerifyPIN</name>
+		<declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+		<location id="id45" x="0" y="-65">
+			<name x="20" y="-78">processVerifyPIN</name>
+			<label kind="exponentialrate" x="-70" y="-65">1</label>
+		</location>
+		<location id="id46" x="0" y="0">
+			<name x="20" y="-13">pc0__getstatic_ExampleCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+		</location>
+		<location id="id47" x="0" y="65">
+			<name x="20" y="52">pc3__iconst_2</name>
+			<label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+		</location>
+		<location id="id48" x="0" y="130">
+			<name x="20" y="117">pc4__ifcmpeq_11</name>
+			<label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+		</location>
+		<location id="id49" x="0" y="195">
+			<name x="20" y="182">pc7__new_java_lang_Exception</name>
+			<label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+		</location>
+		<location id="id50" x="0" y="260">
+			<name x="20" y="247">pc10__dup</name>
+			<label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+		</location>
+		<location id="id51" x="0" y="325">
+			<name x="20" y="312">pc11__invokespecial_void_java_lang_Exception_init_</name>
+			<label kind="invariant" x="-70" y="325">t &lt;= 1</label>
+		</location>
+		<location id="id52" x="0" y="390">
+			<name x="20" y="377">pc14__athrow</name>
+			<label kind="invariant" x="-70" y="390">t &lt;= 1</label>
+		</location>
+		<location id="id53" x="0" y="455">
+			<name x="20" y="442">pc15__iconst_4</name>
+			<label kind="invariant" x="-70" y="455">t &lt;= 1</label>
+		</location>
+		<location id="id54" x="0" y="520">
+			<name x="20" y="507">pc16__istore_1</name>
+			<label kind="invariant" x="-70" y="520">t &lt;= 1</label>
+		</location>
+		<location id="id55" x="0" y="585">
+			<name x="20" y="572">pc17__sipush_255</name>
+			<label kind="invariant" x="-70" y="585">t &lt;= 1</label>
+		</location>
+		<location id="id56" x="0" y="650">
+			<name x="20" y="637">pc20__istore_2</name>
+			<label kind="invariant" x="-70" y="650">t &lt;= 1</label>
+		</location>
+		<location id="id57" x="0" y="715">
+			<name x="20" y="702">pc21__iconst_3</name>
+			<label kind="invariant" x="-70" y="715">t &lt;= 1</label>
+		</location>
+		<location id="id58" x="0" y="780">
+			<name x="20" y="767">pc22__putstatic_ExampleCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="780">t &lt;= 1</label>
+		</location>
+		<location id="id59" x="0" y="845">
+			<name x="20" y="832">pc25__aload_0</name>
+			<label kind="invariant" x="-70" y="845">t &lt;= 1</label>
+		</location>
+		<location id="id60" x="0" y="910">
+			<name x="20" y="897">pc26__invokespecial_short_ExampleCGI_setIncomingAndReceive_</name>
+			<label kind="invariant" x="-70" y="910">t &lt;= 1</label>
+		</location>
+		<location id="id61" x="0" y="975">
+			<name x="20" y="962">pc29__istore_4</name>
+			<label kind="invariant" x="-70" y="975">t &lt;= 1</label>
+		</location>
+		<location id="id62" x="0" y="1040">
+			<name x="20" y="1027">pc31__getstatic_ExampleCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="1040">t &lt;= 1</label>
+		</location>
+		<location id="id63" x="0" y="1105">
+			<name x="20" y="1092">pc34__iconst_4</name>
+			<label kind="invariant" x="-70" y="1105">t &lt;= 1</label>
+		</location>
+		<location id="id64" x="0" y="1170">
+			<name x="20" y="1157">pc35__ifcmpeq_11</name>
+			<label kind="invariant" x="-70" y="1170">t &lt;= 1</label>
+		</location>
+		<location id="id65" x="0" y="1235">
+			<name x="20" y="1222">pc38__new_java_lang_Exception</name>
+			<label kind="invariant" x="-70" y="1235">t &lt;= 1</label>
+		</location>
+		<location id="id66" x="0" y="1300">
+			<name x="20" y="1287">pc41__dup</name>
+			<label kind="invariant" x="-70" y="1300">t &lt;= 1</label>
+		</location>
+		<location id="id67" x="0" y="1365">
+			<name x="20" y="1352">pc42__invokespecial_void_java_lang_Exception_init_</name>
+			<label kind="invariant" x="-70" y="1365">t &lt;= 1</label>
+		</location>
+		<location id="id68" x="0" y="1430">
+			<name x="20" y="1417">pc45__athrow</name>
+			<label kind="invariant" x="-70" y="1430">t &lt;= 1</label>
+		</location>
+		<location id="id69" x="0" y="1495">
+			<name x="20" y="1482">pc46__iload_4</name>
+			<label kind="invariant" x="-70" y="1495">t &lt;= 1</label>
+		</location>
+		<location id="id70" x="0" y="1560">
+			<name x="20" y="1547">pc48__iload_1</name>
+			<label kind="invariant" x="-70" y="1560">t &lt;= 1</label>
+		</location>
+		<location id="id71" x="0" y="1625">
+			<name x="20" y="1612">pc49__ifcmpge_11</name>
+			<label kind="invariant" x="-70" y="1625">t &lt;= 1</label>
+		</location>
+		<location id="id72" x="0" y="1690">
+			<name x="20" y="1677">pc52__new_java_lang_Exception</name>
+			<label kind="invariant" x="-70" y="1690">t &lt;= 1</label>
+		</location>
+		<location id="id73" x="0" y="1755">
+			<name x="20" y="1742">pc55__dup</name>
+			<label kind="invariant" x="-70" y="1755">t &lt;= 1</label>
+		</location>
+		<location id="id74" x="0" y="1820">
+			<name x="20" y="1807">pc56__invokespecial_void_java_lang_Exception_init_</name>
+			<label kind="invariant" x="-70" y="1820">t &lt;= 1</label>
+		</location>
+		<location id="id75" x="0" y="1885">
+			<name x="20" y="1872">pc59__athrow</name>
+			<label kind="invariant" x="-70" y="1885">t &lt;= 1</label>
+		</location>
+		<location id="id76" x="0" y="1950">
+			<name x="20" y="1937">pc60__iconst_5</name>
+			<label kind="invariant" x="-70" y="1950">t &lt;= 1</label>
+		</location>
+		<location id="id77" x="0" y="2015">
+			<name x="20" y="2002">pc61__putstatic_ExampleCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="2015">t &lt;= 1</label>
+		</location>
+		<location id="id78" x="0" y="2080">
+			<name x="20" y="2067">pc64__aload_0</name>
+			<label kind="invariant" x="-70" y="2080">t &lt;= 1</label>
+		</location>
+		<location id="id79" x="0" y="2145">
+			<name x="20" y="2132">pc65__invokespecial_bool_ExampleCGI_isInvalid_</name>
+			<label kind="invariant" x="-70" y="2145">t &lt;= 1</label>
+		</location>
+		<location id="id80" x="0" y="2210">
+			<name x="20" y="2197">pc68__ifeq_53</name>
+			<label kind="invariant" x="-70" y="2210">t &lt;= 1</label>
+		</location>
+		<location id="id81" x="0" y="2275">
+			<name x="20" y="2262">pc71__getstatic_ExampleCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="2275">t &lt;= 1</label>
+		</location>
+		<location id="id82" x="0" y="2340">
+			<name x="20" y="2327">pc74__bipush_6</name>
+			<label kind="invariant" x="-70" y="2340">t &lt;= 1</label>
+		</location>
+		<location id="id83" x="0" y="2405">
+			<name x="20" y="2392">pc76__ifcmpeq_11</name>
+			<label kind="invariant" x="-70" y="2405">t &lt;= 1</label>
+		</location>
+		<location id="id84" x="0" y="2470">
+			<name x="20" y="2457">pc79__new_java_lang_Exception</name>
+			<label kind="invariant" x="-70" y="2470">t &lt;= 1</label>
+		</location>
+		<location id="id85" x="0" y="2535">
+			<name x="20" y="2522">pc82__dup</name>
+			<label kind="invariant" x="-70" y="2535">t &lt;= 1</label>
+		</location>
+		<location id="id86" x="0" y="2600">
+			<name x="20" y="2587">pc83__invokespecial_void_java_lang_Exception_init_</name>
+			<label kind="invariant" x="-70" y="2600">t &lt;= 1</label>
+		</location>
+		<location id="id87" x="0" y="2665">
+			<name x="20" y="2652">pc86__athrow</name>
+			<label kind="invariant" x="-70" y="2665">t &lt;= 1</label>
+		</location>
+		<location id="id88" x="0" y="2730">
+			<name x="20" y="2717">pc87__bipush_7</name>
+			<label kind="invariant" x="-70" y="2730">t &lt;= 1</label>
+		</location>
+		<location id="id89" x="0" y="2795">
+			<name x="20" y="2782">pc89__putstatic_ExampleCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="2795">t &lt;= 1</label>
+		</location>
+		<location id="id90" x="0" y="2860">
+			<name x="20" y="2847">pc92__aload_0</name>
+			<label kind="invariant" x="-70" y="2860">t &lt;= 1</label>
+		</location>
+		<location id="id91" x="0" y="2925">
+			<name x="20" y="2912">pc93__invokespecial_int_ExampleCGI_getTriesRemaining_</name>
+			<label kind="invariant" x="-70" y="2925">t &lt;= 1</label>
+		</location>
+		<location id="id92" x="0" y="2990">
+			<name x="20" y="2977">pc96__istore_3</name>
+			<label kind="invariant" x="-70" y="2990">t &lt;= 1</label>
+		</location>
+		<location id="id93" x="0" y="3055">
+			<name x="20" y="3042">pc97__getstatic_ExampleCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="3055">t &lt;= 1</label>
+		</location>
+		<location id="id94" x="0" y="3120">
+			<name x="20" y="3107">pc100__bipush_8</name>
+			<label kind="invariant" x="-70" y="3120">t &lt;= 1</label>
+		</location>
+		<location id="id95" x="0" y="3185">
+			<name x="20" y="3172">pc102__ifcmpeq_11</name>
+			<label kind="invariant" x="-70" y="3185">t &lt;= 1</label>
+		</location>
+		<location id="id96" x="0" y="3250">
+			<name x="20" y="3237">pc105__new_java_lang_Exception</name>
+			<label kind="invariant" x="-70" y="3250">t &lt;= 1</label>
+		</location>
+		<location id="id97" x="0" y="3315">
+			<name x="20" y="3302">pc108__dup</name>
+			<label kind="invariant" x="-70" y="3315">t &lt;= 1</label>
+		</location>
+		<location id="id98" x="0" y="3380">
+			<name x="20" y="3367">pc109__invokespecial_void_java_lang_Exception_init_</name>
+			<label kind="invariant" x="-70" y="3380">t &lt;= 1</label>
+		</location>
+		<location id="id99" x="0" y="3445">
+			<name x="20" y="3432">pc112__athrow</name>
+			<label kind="invariant" x="-70" y="3445">t &lt;= 1</label>
+		</location>
+		<location id="id100" x="0" y="3510">
+			<name x="20" y="3497">pc113__new_java_lang_Exception</name>
+			<label kind="invariant" x="-70" y="3510">t &lt;= 1</label>
+		</location>
+		<location id="id101" x="0" y="3575">
+			<name x="20" y="3562">pc116__dup</name>
+			<label kind="invariant" x="-70" y="3575">t &lt;= 1</label>
+		</location>
+		<location id="id102" x="0" y="3640">
+			<name x="20" y="3627">pc117__invokespecial_void_java_lang_Exception_init_</name>
+			<label kind="invariant" x="-70" y="3640">t &lt;= 1</label>
+		</location>
+		<location id="id103" x="0" y="3705">
+			<name x="20" y="3692">pc120__athrow</name>
+			<label kind="invariant" x="-70" y="3705">t &lt;= 1</label>
+		</location>
+		<location id="id104" x="0" y="3770">
+			<name x="20" y="3757">pc121__bipush_9</name>
+			<label kind="invariant" x="-70" y="3770">t &lt;= 1</label>
+		</location>
+		<location id="id105" x="0" y="3835">
+			<name x="20" y="3822">pc123__putstatic_ExampleCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="3835">t &lt;= 1</label>
+		</location>
+		<location id="id106" x="0" y="3900">
+			<name x="20" y="3887">pc126__return</name>
+			<label kind="invariant" x="-70" y="3900">t &lt;= 1</label>
+		</location>
+		<location id="id107" x="200" y="351">
+			<label kind="invariant" x="0" y="0">t &lt;= 5</label>
+		</location>
+		<location id="id108" x="200" y="416">
+			<label kind="exponentialrate" x="130" y="416">1</label>
+			<urgent/>
+		</location>
+		<location id="id109" x="200" y="936">
+			<label kind="exponentialrate" x="130" y="936">1</label>
+		</location>
+		<location id="id110" x="200" y="962">
+			<label kind="exponentialrate" x="130" y="962">1</label>
+			<urgent/>
+		</location>
+		<location id="id111" x="200" y="1391">
+			<label kind="invariant" x="0" y="0">t &lt;= 5</label>
+		</location>
+		<location id="id112" x="200" y="1456">
+			<label kind="exponentialrate" x="130" y="1456">1</label>
+			<urgent/>
+		</location>
+		<location id="id113" x="200" y="1846">
+			<label kind="invariant" x="0" y="0">t &lt;= 5</label>
+		</location>
+		<location id="id114" x="200" y="1911">
+			<label kind="exponentialrate" x="130" y="1911">1</label>
+			<urgent/>
+		</location>
+		<location id="id115" x="200" y="2171">
+			<label kind="exponentialrate" x="130" y="2171">1</label>
+		</location>
+		<location id="id116" x="200" y="2197">
+			<label kind="exponentialrate" x="130" y="2197">1</label>
+			<urgent/>
+		</location>
+		<location id="id117" x="200" y="2626">
+			<label kind="invariant" x="0" y="0">t &lt;= 5</label>
+		</location>
+		<location id="id118" x="200" y="2691">
+			<label kind="exponentialrate" x="130" y="2691">1</label>
+			<urgent/>
+		</location>
+		<location id="id119" x="200" y="2951">
+			<label kind="exponentialrate" x="130" y="2951">1</label>
+		</location>
+		<location id="id120" x="200" y="2977">
+			<label kind="exponentialrate" x="130" y="2977">1</label>
+			<urgent/>
+		</location>
+		<location id="id121" x="200" y="3406">
+			<label kind="invariant" x="0" y="0">t &lt;= 5</label>
+		</location>
+		<location id="id122" x="200" y="3471">
+			<label kind="exponentialrate" x="130" y="3471">1</label>
+			<urgent/>
+		</location>
+		<location id="id123" x="200" y="3666">
+			<label kind="invariant" x="0" y="0">t &lt;= 5</label>
+		</location>
+		<location id="id124" x="200" y="3731">
+			<label kind="exponentialrate" x="130" y="3731">1</label>
+			<urgent/>
+		</location>
+		<init ref="id45"/>
+		<transition>
+			<source ref="id45"/>
+			<target ref="id46"/>
+			<label kind="guard" x="20" y="-65">t == 1</label>
+			<label kind="synchronisation" x="20" y="-52">cExampleCGI_processVerifyPIN?</label>
+			<label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id46"/>
+			<target ref="id47"/>
+			<label kind="guard" x="20" y="0">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="13">osp_inc(), os[osp-1] = H[cp0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id47"/>
+			<target ref="id48"/>
+			<label kind="guard" x="20" y="65">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="78">osp_inc(), os[osp - 1] = 2, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id48"/>
+			<target ref="id53"/>
+			<label kind="guard" x="20" y="130">t == 1 &amp;&amp; ifcmpeq() &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="143">osp_dec(2), t = 0</label>
+			<nail x="-50" y="292"/>
+		</transition>
+		<transition>
+			<source ref="id48"/>
+			<target ref="id49"/>
+			<label kind="guard" x="20" y="130">t == 1 &amp;&amp; !ifcmpeq() &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="143">opstack_fault = osp &lt; 2 ? true : opstack_fault, osp_dec(2), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id49"/>
+			<target ref="id50"/>
+			<label kind="guard" x="20" y="195">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="208">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id50"/>
+			<target ref="id51"/>
+			<label kind="guard" x="20" y="273">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="260">osp_dec(1),osp_inc(),osp_inc(), os[osp - 1] = os[osp - 2]</label>
+		</transition>
+		<transition>
+			<source ref="id51"/>
+			<target ref="id107"/>
+			<label kind="guard" x="20" y="325">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="338">osp_dec(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id107"/>
+			<target ref="id52"/>
+			<label kind="guard" x="20" y="351">t == 5</label>
+			<label kind="assignment" x="20" y="364">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id52"/>
+			<target ref="id108"/>
+			<label kind="guard" x="20" y="390">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="403">exceptionOccurred = true</label>
+		</transition>
+		<transition>
+			<source ref="id108"/>
+			<target ref="id45"/>
+			<label kind="synchronisation" x="20" y="416">cExampleCGI_processVerifyPIN!</label>
+		</transition>
+		<transition>
+			<source ref="id53"/>
+			<target ref="id54"/>
+			<label kind="guard" x="20" y="455">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="468">osp_inc(), os[osp - 1] = 4, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id54"/>
+			<target ref="id55"/>
+			<label kind="guard" x="20" y="533">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="520">osp_dec(1), locs[1] = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id55"/>
+			<target ref="id56"/>
+			<label kind="guard" x="20" y="598">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="585">osp_inc(), os[osp] = 255</label>
+		</transition>
+		<transition>
+			<source ref="id56"/>
+			<target ref="id57"/>
+			<label kind="guard" x="20" y="663">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="650">osp_dec(1), locs[2] = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id57"/>
+			<target ref="id58"/>
+			<label kind="guard" x="20" y="715">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="728">osp_inc(), os[osp - 1] = 3, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id58"/>
+			<target ref="id59"/>
+			<label kind="guard" x="20" y="780">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="793">osp_dec(1), H[cp0] = os[osp], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id59"/>
+			<target ref="id60"/>
+			<label kind="guard" x="20" y="845">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="858">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id60"/>
+			<target ref="id109"/>
+			<label kind="guard" x="20" y="910">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="936">cExampleCGI_setIncomingAndReceive!</label>
+			<label kind="assignment" x="20" y="923">osp_dec(1), t = 0, par0 = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id109"/>
+			<target ref="id61"/>
+			<label kind="guard" x="20" y="949">!exceptionOccurred</label>
+			<label kind="synchronisation" x="20" y="936">cExampleCGI_setIncomingAndReceive?</label>
+			<label kind="assignment" x="20" y="962">t = 0, os[osp] = par0, osp_inc()</label>
+		</transition>
+		<transition>
+			<source ref="id109"/>
+			<target ref="id110"/>
+			<label kind="guard" x="20" y="936">exceptionOccurred == true</label>
+			<label kind="synchronisation" x="20" y="962">cExampleCGI_setIncomingAndReceive?</label>
+			<label kind="assignment" x="20" y="949">osp = 0</label>
+		</transition>
+		<transition>
+			<source ref="id110"/>
+			<target ref="id45"/>
+			<label kind="synchronisation" x="20" y="962">cExampleCGI_processVerifyPIN!</label>
+		</transition>
+		<transition>
+			<source ref="id61"/>
+			<target ref="id62"/>
+			<label kind="guard" x="20" y="988">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="975">osp_dec(1), locs[4] = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id62"/>
+			<target ref="id63"/>
+			<label kind="guard" x="20" y="1040">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1053">osp_inc(), os[osp-1] = H[cp0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id63"/>
+			<target ref="id64"/>
+			<label kind="guard" x="20" y="1105">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1118">osp_inc(), os[osp - 1] = 4, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id64"/>
+			<target ref="id69"/>
+			<label kind="guard" x="20" y="1170">t == 1 &amp;&amp; ifcmpeq() &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1183">osp_dec(2), t = 0</label>
+			<nail x="-50" y="1332"/>
+		</transition>
+		<transition>
+			<source ref="id64"/>
+			<target ref="id65"/>
+			<label kind="guard" x="20" y="1170">t == 1 &amp;&amp; !ifcmpeq() &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1183">opstack_fault = osp &lt; 2 ? true : opstack_fault, osp_dec(2), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id65"/>
+			<target ref="id66"/>
+			<label kind="guard" x="20" y="1235">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1248">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id66"/>
+			<target ref="id67"/>
+			<label kind="guard" x="20" y="1313">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1300">osp_inc(), os[osp - 1] = os[osp - 2]</label>
+		</transition>
+		<transition>
+			<source ref="id67"/>
+			<target ref="id111"/>
+			<label kind="guard" x="20" y="1365">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1378">osp_dec(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id111"/>
+			<target ref="id68"/>
+			<label kind="guard" x="20" y="1391">t == 5</label>
+			<label kind="assignment" x="20" y="1404">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id68"/>
+			<target ref="id112"/>
+			<label kind="guard" x="20" y="1430">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1443">exceptionOccurred = true</label>
+		</transition>
+		<transition>
+			<source ref="id112"/>
+			<target ref="id45"/>
+			<label kind="synchronisation" x="20" y="1456">cExampleCGI_processVerifyPIN!</label>
+		</transition>
+		<transition>
+			<source ref="id69"/>
+			<target ref="id70"/>
+			<label kind="guard" x="20" y="1508">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1495">osp_inc(), os[osp - 1] = locs[4]</label>
+		</transition>
+		<transition>
+			<source ref="id70"/>
+			<target ref="id71"/>
+			<label kind="guard" x="20" y="1573">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1560">osp_inc(), os[osp - 1] = locs[1]</label>
+		</transition>
+		<transition>
+			<source ref="id71"/>
+			<target ref="id72"/>
+			<label kind="guard" x="20" y="1625">t == 1 &amp;&amp; !ifcmpge() &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1638">osp_dec(2)</label>
+		</transition>
+		<transition>
+			<source ref="id71"/>
+			<target ref="id76"/>
+			<label kind="guard" x="20" y="1625">t == 1 &amp;&amp; ifcmpge() &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1638">osp_dec(2)</label>
+			<nail x="-50" y="1787"/>
+		</transition>
+		<transition>
+			<source ref="id72"/>
+			<target ref="id73"/>
+			<label kind="guard" x="20" y="1690">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1703">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id73"/>
+			<target ref="id74"/>
+			<label kind="guard" x="20" y="1768">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1755">osp_inc(), os[osp - 1] = os[osp - 2]</label>
+		</transition>
+		<transition>
+			<source ref="id74"/>
+			<target ref="id113"/>
+			<label kind="guard" x="20" y="1820">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1833">osp_dec(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id113"/>
+			<target ref="id75"/>
+			<label kind="guard" x="20" y="1846">t == 5</label>
+			<label kind="assignment" x="20" y="1859">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id75"/>
+			<target ref="id114"/>
+			<label kind="guard" x="20" y="1885">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1898">exceptionOccurred = true</label>
+		</transition>
+		<transition>
+			<source ref="id114"/>
+			<target ref="id45"/>
+			<label kind="synchronisation" x="20" y="1911">cExampleCGI_processVerifyPIN!</label>
+		</transition>
+		<transition>
+			<source ref="id76"/>
+			<target ref="id77"/>
+			<label kind="guard" x="20" y="1950">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="1963">osp_inc(), os[osp - 1] = 5, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id77"/>
+			<target ref="id78"/>
+			<label kind="guard" x="20" y="2015">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2028">osp_dec(1), H[cp0] = os[osp], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id78"/>
+			<target ref="id79"/>
+			<label kind="guard" x="20" y="2080">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2093">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id79"/>
+			<target ref="id115"/>
+			<label kind="guard" x="20" y="2145">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="2171">cExampleCGI_isInvalid!</label>
+			<label kind="assignment" x="20" y="2158">osp_dec(1), t = 0, par0 = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id115"/>
+			<target ref="id80"/>
+			<label kind="guard" x="20" y="2184">!exceptionOccurred</label>
+			<label kind="synchronisation" x="20" y="2171">cExampleCGI_isInvalid?</label>
+			<label kind="assignment" x="20" y="2197">t = 0, os[osp] = par0, osp_inc()</label>
+		</transition>
+		<transition>
+			<source ref="id115"/>
+			<target ref="id116"/>
+			<label kind="guard" x="20" y="2171">exceptionOccurred == true</label>
+			<label kind="synchronisation" x="20" y="2197">cExampleCGI_isInvalid?</label>
+			<label kind="assignment" x="20" y="2184">osp = 0</label>
+		</transition>
+		<transition>
+			<source ref="id116"/>
+			<target ref="id45"/>
+			<label kind="synchronisation" x="20" y="2197">cExampleCGI_processVerifyPIN!</label>
+		</transition>
+		<transition>
+			<source ref="id80"/>
+			<target ref="id104"/>
+			<label kind="guard" x="20" y="2210">t == 1 &amp;&amp; ifeq() &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2223">osp_dec(1), t = 0</label>
+			<nail x="-50" y="2990"/>
+		</transition>
+		<transition>
+			<source ref="id80"/>
+			<target ref="id81"/>
+			<label kind="guard" x="20" y="2210">t == 1 &amp;&amp; !ifeq() &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2223">opstack_fault = osp &lt; 1 ? true : opstack_fault, osp_dec(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id81"/>
+			<target ref="id82"/>
+			<label kind="guard" x="20" y="2275">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2288">osp_inc(), os[osp-1] = H[cp0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id82"/>
+			<target ref="id83"/>
+			<label kind="guard" x="20" y="2340">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2353">osp_inc(), os[osp - 1] = 6, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id83"/>
+			<target ref="id88"/>
+			<label kind="guard" x="20" y="2405">t == 1 &amp;&amp; ifcmpeq() &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2418">osp_dec(2), t = 0</label>
+			<nail x="-50" y="2567"/>
+		</transition>
+		<transition>
+			<source ref="id83"/>
+			<target ref="id84"/>
+			<label kind="guard" x="20" y="2405">t == 1 &amp;&amp; !ifcmpeq() &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2418">opstack_fault = osp &lt; 2 ? true : opstack_fault, osp_dec(2), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id84"/>
+			<target ref="id85"/>
+			<label kind="guard" x="20" y="2470">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2483">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id85"/>
+			<target ref="id86"/>
+			<label kind="guard" x="20" y="2548">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2535">osp_inc(), os[osp - 1] = os[osp - 2]</label>
+		</transition>
+		<transition>
+			<source ref="id86"/>
+			<target ref="id117"/>
+			<label kind="guard" x="20" y="2600">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2613">osp_dec(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id117"/>
+			<target ref="id87"/>
+			<label kind="guard" x="20" y="2626">t == 5</label>
+			<label kind="assignment" x="20" y="2639">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id87"/>
+			<target ref="id118"/>
+			<label kind="guard" x="20" y="2665">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2678">exceptionOccurred = true</label>
+		</transition>
+		<transition>
+			<source ref="id118"/>
+			<target ref="id45"/>
+			<label kind="synchronisation" x="20" y="2691">cExampleCGI_processVerifyPIN!</label>
+		</transition>
+		<transition>
+			<source ref="id88"/>
+			<target ref="id89"/>
+			<label kind="guard" x="20" y="2730">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2743">osp_inc(), os[osp - 1] = 7, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id89"/>
+			<target ref="id90"/>
+			<label kind="guard" x="20" y="2795">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2808">osp_dec(1), H[cp0] = os[osp], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id90"/>
+			<target ref="id91"/>
+			<label kind="guard" x="20" y="2860">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2873">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id91"/>
+			<target ref="id119"/>
+			<label kind="guard" x="20" y="2925">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="2951">cExampleCGI_getTriesRemaining!</label>
+			<label kind="assignment" x="20" y="2938">osp_dec(1), t = 0, par0 = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id119"/>
+			<target ref="id92"/>
+			<label kind="guard" x="20" y="2964">!exceptionOccurred</label>
+			<label kind="synchronisation" x="20" y="2951">cExampleCGI_getTriesRemaining?</label>
+			<label kind="assignment" x="20" y="2977">t = 0, os[osp] = par0, osp_inc()</label>
+		</transition>
+		<transition>
+			<source ref="id119"/>
+			<target ref="id120"/>
+			<label kind="guard" x="20" y="2951">exceptionOccurred == true</label>
+			<label kind="synchronisation" x="20" y="2977">cExampleCGI_getTriesRemaining?</label>
+			<label kind="assignment" x="20" y="2964">osp = 0</label>
+		</transition>
+		<transition>
+			<source ref="id120"/>
+			<target ref="id45"/>
+			<label kind="synchronisation" x="20" y="2977">cExampleCGI_processVerifyPIN!</label>
+		</transition>
+		<transition>
+			<source ref="id92"/>
+			<target ref="id93"/>
+			<label kind="guard" x="20" y="3003">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="2990">osp_dec(1), locs[3] = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id93"/>
+			<target ref="id94"/>
+			<label kind="guard" x="20" y="3055">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="3068">osp_inc(), os[osp-1] = H[cp0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id94"/>
+			<target ref="id95"/>
+			<label kind="guard" x="20" y="3120">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="3133">osp_inc(), os[osp - 1] = 8, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id95"/>
+			<target ref="id100"/>
+			<label kind="guard" x="20" y="3185">t == 1 &amp;&amp; ifcmpeq() &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="3198">osp_dec(2), t = 0</label>
+			<nail x="-50" y="3347"/>
+		</transition>
+		<transition>
+			<source ref="id95"/>
+			<target ref="id96"/>
+			<label kind="guard" x="20" y="3185">t == 1 &amp;&amp; !ifcmpeq() &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="3198">opstack_fault = osp &lt; 2 ? true : opstack_fault, osp_dec(2), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id96"/>
+			<target ref="id97"/>
+			<label kind="guard" x="20" y="3250">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="3263">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id97"/>
+			<target ref="id98"/>
+			<label kind="guard" x="20" y="3328">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="3315">osp_inc(), os[osp - 1] = os[osp - 2]</label>
+		</transition>
+		<transition>
+			<source ref="id98"/>
+			<target ref="id121"/>
+			<label kind="guard" x="20" y="3380">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="3393">osp_dec(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id121"/>
+			<target ref="id99"/>
+			<label kind="guard" x="20" y="3406">t == 5</label>
+			<label kind="assignment" x="20" y="3419">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id99"/>
+			<target ref="id122"/>
+			<label kind="guard" x="20" y="3445">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="3458">exceptionOccurred = true</label>
+		</transition>
+		<transition>
+			<source ref="id122"/>
+			<target ref="id45"/>
+			<label kind="synchronisation" x="20" y="3471">cExampleCGI_processVerifyPIN!</label>
+		</transition>
+		<transition>
+			<source ref="id100"/>
+			<target ref="id101"/>
+			<label kind="guard" x="20" y="3510">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="3523">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id101"/>
+			<target ref="id102"/>
+			<label kind="guard" x="20" y="3588">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="3575">osp_inc(), os[osp - 1] = os[osp - 2]</label>
+		</transition>
+		<transition>
+			<source ref="id102"/>
+			<target ref="id123"/>
+			<label kind="guard" x="20" y="3640">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="3653">osp_dec(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id123"/>
+			<target ref="id103"/>
+			<label kind="guard" x="20" y="3666">t == 5</label>
+			<label kind="assignment" x="20" y="3679">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id103"/>
+			<target ref="id124"/>
+			<label kind="guard" x="20" y="3705">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="3718">exceptionOccurred = true</label>
+		</transition>
+		<transition>
+			<source ref="id124"/>
+			<target ref="id45"/>
+			<label kind="synchronisation" x="20" y="3731">cExampleCGI_processVerifyPIN!</label>
+		</transition>
+		<transition>
+			<source ref="id104"/>
+			<target ref="id105"/>
+			<label kind="guard" x="20" y="3770">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="3783">osp_inc(), os[osp - 1] = 9, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id105"/>
+			<target ref="id106"/>
+			<label kind="guard" x="20" y="3835">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="3848">osp_dec(1), H[cp0] = os[osp], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id106"/>
+			<target ref="id45"/>
+			<label kind="guard" x="20" y="3900">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="3913">cExampleCGI_processVerifyPIN!</label>
+			<label kind="assignment" x="20" y="3939">osp = 0, t = 0</label>
+			<nail x="-100" y="1917"/>
+		</transition>
+		<transition>
+			<source ref="id46"/>
+			<target ref="id48"/>
+			<label kind="guard" x="-100" y="130">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="160">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="65"/>
+		</transition>
+		<transition>
+			<source ref="id46"/>
+			<target ref="id54"/>
+			<label kind="guard" x="-100" y="520">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="550">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="260"/>
+		</transition>
+		<transition>
+			<source ref="id46"/>
+			<target ref="id78"/>
+			<label kind="guard" x="-100" y="2080">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2110">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1040"/>
+		</transition>
+		<transition>
+			<source ref="id47"/>
+			<target ref="id49"/>
+			<label kind="guard" x="-100" y="195">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="225">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="130"/>
+		</transition>
+		<transition>
+			<source ref="id47"/>
+			<target ref="id51"/>
+			<label kind="guard" x="-100" y="325">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="355">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="195"/>
+		</transition>
+		<transition>
+			<source ref="id47"/>
+			<target ref="id64"/>
+			<label kind="guard" x="-100" y="1170">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1200">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="617"/>
+		</transition>
+		<transition>
+			<source ref="id48"/>
+			<target ref="id46"/>
+			<label kind="guard" x="-100" y="0">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="30">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="65"/>
+		</transition>
+		<transition>
+			<source ref="id48"/>
+			<target ref="id56"/>
+			<label kind="guard" x="-100" y="650">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="680">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="390"/>
+		</transition>
+		<transition>
+			<source ref="id48"/>
+			<target ref="id80"/>
+			<label kind="guard" x="-100" y="2210">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2240">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1170"/>
+		</transition>
+		<transition>
+			<source ref="id49"/>
+			<target ref="id47"/>
+			<label kind="guard" x="-100" y="65">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="95">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="130"/>
+		</transition>
+		<transition>
+			<source ref="id49"/>
+			<target ref="id53"/>
+			<label kind="guard" x="-100" y="455">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="485">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="325"/>
+		</transition>
+		<transition>
+			<source ref="id49"/>
+			<target ref="id81"/>
+			<label kind="guard" x="-100" y="2275">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2305">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1235"/>
+		</transition>
+		<transition>
+			<source ref="id50"/>
+			<target ref="id51"/>
+			<label kind="guard" x="-100" y="325">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="355">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="292"/>
+		</transition>
+		<transition>
+			<source ref="id50"/>
+			<target ref="id52"/>
+			<label kind="guard" x="-100" y="390">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="420">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="325"/>
+		</transition>
+		<transition>
+			<source ref="id50"/>
+			<target ref="id60"/>
+			<label kind="guard" x="-100" y="910">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="940">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="585"/>
+		</transition>
+		<transition>
+			<source ref="id50"/>
+			<target ref="id67"/>
+			<label kind="guard" x="-100" y="1365">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1395">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="812"/>
+		</transition>
+		<transition>
+			<source ref="id50"/>
+			<target ref="id82"/>
+			<label kind="guard" x="-100" y="2340">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2370">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1300"/>
+		</transition>
+		<transition>
+			<source ref="id51"/>
+			<target ref="id47"/>
+			<label kind="guard" x="-100" y="65">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="95">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="195"/>
+		</transition>
+		<transition>
+			<source ref="id51"/>
+			<target ref="id50"/>
+			<label kind="guard" x="-100" y="260">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="290">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="292"/>
+		</transition>
+		<transition>
+			<source ref="id51"/>
+			<target ref="id53"/>
+			<label kind="guard" x="-100" y="455">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="485">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="390"/>
+		</transition>
+		<transition>
+			<source ref="id52"/>
+			<target ref="id50"/>
+			<label kind="guard" x="-100" y="260">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="290">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="325"/>
+		</transition>
+		<transition>
+			<source ref="id52"/>
+			<target ref="id53"/>
+			<label kind="guard" x="-100" y="455">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="485">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="422"/>
+		</transition>
+		<transition>
+			<source ref="id52"/>
+			<target ref="id69"/>
+			<label kind="guard" x="-100" y="1495">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1525">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="942"/>
+		</transition>
+		<transition>
+			<source ref="id53"/>
+			<target ref="id49"/>
+			<label kind="guard" x="-100" y="195">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="225">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="325"/>
+		</transition>
+		<transition>
+			<source ref="id53"/>
+			<target ref="id51"/>
+			<label kind="guard" x="-100" y="325">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="355">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="390"/>
+		</transition>
+		<transition>
+			<source ref="id53"/>
+			<target ref="id52"/>
+			<label kind="guard" x="-100" y="390">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="420">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="422"/>
+		</transition>
+		<transition>
+			<source ref="id53"/>
+			<target ref="id62"/>
+			<label kind="guard" x="-100" y="1040">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1070">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="747"/>
+		</transition>
+		<transition>
+			<source ref="id53"/>
+			<target ref="id84"/>
+			<label kind="guard" x="-100" y="2470">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2500">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1462"/>
+		</transition>
+		<transition>
+			<source ref="id54"/>
+			<target ref="id46"/>
+			<label kind="guard" x="-100" y="0">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="30">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="260"/>
+		</transition>
+		<transition>
+			<source ref="id54"/>
+			<target ref="id55"/>
+			<label kind="guard" x="-100" y="585">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="615">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="552"/>
+		</transition>
+		<transition>
+			<source ref="id54"/>
+			<target ref="id56"/>
+			<label kind="guard" x="-100" y="650">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="680">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="585"/>
+		</transition>
+		<transition>
+			<source ref="id54"/>
+			<target ref="id70"/>
+			<label kind="guard" x="-100" y="1560">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1590">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1040"/>
+		</transition>
+		<transition>
+			<source ref="id55"/>
+			<target ref="id54"/>
+			<label kind="guard" x="-100" y="520">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="550">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="552"/>
+		</transition>
+		<transition>
+			<source ref="id55"/>
+			<target ref="id57"/>
+			<label kind="guard" x="-100" y="715">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="745">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="650"/>
+		</transition>
+		<transition>
+			<source ref="id55"/>
+			<target ref="id59"/>
+			<label kind="guard" x="-100" y="845">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="875">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="715"/>
+		</transition>
+		<transition>
+			<source ref="id55"/>
+			<target ref="id71"/>
+			<label kind="guard" x="-100" y="1625">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1655">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1105"/>
+		</transition>
+		<transition>
+			<source ref="id56"/>
+			<target ref="id48"/>
+			<label kind="guard" x="-100" y="130">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="160">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="390"/>
+		</transition>
+		<transition>
+			<source ref="id56"/>
+			<target ref="id54"/>
+			<label kind="guard" x="-100" y="520">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="550">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="585"/>
+		</transition>
+		<transition>
+			<source ref="id56"/>
+			<target ref="id57"/>
+			<label kind="guard" x="-100" y="715">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="745">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="682"/>
+		</transition>
+		<transition>
+			<source ref="id56"/>
+			<target ref="id58"/>
+			<label kind="guard" x="-100" y="780">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="810">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="715"/>
+		</transition>
+		<transition>
+			<source ref="id56"/>
+			<target ref="id72"/>
+			<label kind="guard" x="-100" y="1690">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1720">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1170"/>
+		</transition>
+		<transition>
+			<source ref="id57"/>
+			<target ref="id55"/>
+			<label kind="guard" x="-100" y="585">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="615">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="650"/>
+		</transition>
+		<transition>
+			<source ref="id57"/>
+			<target ref="id56"/>
+			<label kind="guard" x="-100" y="650">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="680">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="682"/>
+		</transition>
+		<transition>
+			<source ref="id57"/>
+			<target ref="id61"/>
+			<label kind="guard" x="-100" y="975">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1005">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="845"/>
+		</transition>
+		<transition>
+			<source ref="id58"/>
+			<target ref="id56"/>
+			<label kind="guard" x="-100" y="650">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="680">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="715"/>
+		</transition>
+		<transition>
+			<source ref="id58"/>
+			<target ref="id87"/>
+			<label kind="guard" x="-100" y="2665">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2695">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1722"/>
+		</transition>
+		<transition>
+			<source ref="id59"/>
+			<target ref="id55"/>
+			<label kind="guard" x="-100" y="585">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="615">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="715"/>
+		</transition>
+		<transition>
+			<source ref="id59"/>
+			<target ref="id61"/>
+			<label kind="guard" x="-100" y="975">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1005">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="910"/>
+		</transition>
+		<transition>
+			<source ref="id59"/>
+			<target ref="id89"/>
+			<label kind="guard" x="-100" y="2795">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2825">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1820"/>
+		</transition>
+		<transition>
+			<source ref="id60"/>
+			<target ref="id50"/>
+			<label kind="guard" x="-100" y="260">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="290">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="585"/>
+		</transition>
+		<transition>
+			<source ref="id61"/>
+			<target ref="id57"/>
+			<label kind="guard" x="-100" y="715">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="745">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="845"/>
+		</transition>
+		<transition>
+			<source ref="id61"/>
+			<target ref="id59"/>
+			<label kind="guard" x="-100" y="845">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="875">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="910"/>
+		</transition>
+		<transition>
+			<source ref="id61"/>
+			<target ref="id62"/>
+			<label kind="guard" x="-100" y="1040">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1070">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1007"/>
+		</transition>
+		<transition>
+			<source ref="id61"/>
+			<target ref="id77"/>
+			<label kind="guard" x="-100" y="2015">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2045">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1495"/>
+		</transition>
+		<transition>
+			<source ref="id61"/>
+			<target ref="id91"/>
+			<label kind="guard" x="-100" y="2925">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2955">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1950"/>
+		</transition>
+		<transition>
+			<source ref="id62"/>
+			<target ref="id53"/>
+			<label kind="guard" x="-100" y="455">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="485">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="747"/>
+		</transition>
+		<transition>
+			<source ref="id62"/>
+			<target ref="id61"/>
+			<label kind="guard" x="-100" y="975">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1005">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1007"/>
+		</transition>
+		<transition>
+			<source ref="id63"/>
+			<target ref="id64"/>
+			<label kind="guard" x="-100" y="1170">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1200">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1137"/>
+		</transition>
+		<transition>
+			<source ref="id63"/>
+			<target ref="id65"/>
+			<label kind="guard" x="-100" y="1235">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1265">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1170"/>
+		</transition>
+		<transition>
+			<source ref="id63"/>
+			<target ref="id67"/>
+			<label kind="guard" x="-100" y="1365">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1395">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1235"/>
+		</transition>
+		<transition>
+			<source ref="id64"/>
+			<target ref="id47"/>
+			<label kind="guard" x="-100" y="65">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="95">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="617"/>
+		</transition>
+		<transition>
+			<source ref="id64"/>
+			<target ref="id63"/>
+			<label kind="guard" x="-100" y="1105">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1135">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1137"/>
+		</transition>
+		<transition>
+			<source ref="id65"/>
+			<target ref="id63"/>
+			<label kind="guard" x="-100" y="1105">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1135">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1170"/>
+		</transition>
+		<transition>
+			<source ref="id65"/>
+			<target ref="id69"/>
+			<label kind="guard" x="-100" y="1495">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1525">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1365"/>
+		</transition>
+		<transition>
+			<source ref="id65"/>
+			<target ref="id95"/>
+			<label kind="guard" x="-100" y="3185">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3215">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="2210"/>
+		</transition>
+		<transition>
+			<source ref="id66"/>
+			<target ref="id68"/>
+			<label kind="guard" x="-100" y="1430">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1460">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1365"/>
+		</transition>
+		<transition>
+			<source ref="id66"/>
+			<target ref="id96"/>
+			<label kind="guard" x="-100" y="3250">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3280">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="2275"/>
+		</transition>
+		<transition>
+			<source ref="id67"/>
+			<target ref="id50"/>
+			<label kind="guard" x="-100" y="260">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="290">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="812"/>
+		</transition>
+		<transition>
+			<source ref="id67"/>
+			<target ref="id63"/>
+			<label kind="guard" x="-100" y="1105">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1135">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1235"/>
+		</transition>
+		<transition>
+			<source ref="id67"/>
+			<target ref="id69"/>
+			<label kind="guard" x="-100" y="1495">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1525">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1430"/>
+		</transition>
+		<transition>
+			<source ref="id68"/>
+			<target ref="id66"/>
+			<label kind="guard" x="-100" y="1300">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1330">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1365"/>
+		</transition>
+		<transition>
+			<source ref="id68"/>
+			<target ref="id77"/>
+			<label kind="guard" x="-100" y="2015">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2045">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1722"/>
+		</transition>
+		<transition>
+			<source ref="id68"/>
+			<target ref="id98"/>
+			<label kind="guard" x="-100" y="3380">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3410">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="2405"/>
+		</transition>
+		<transition>
+			<source ref="id69"/>
+			<target ref="id52"/>
+			<label kind="guard" x="-100" y="390">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="420">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="942"/>
+		</transition>
+		<transition>
+			<source ref="id69"/>
+			<target ref="id65"/>
+			<label kind="guard" x="-100" y="1235">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1265">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1365"/>
+		</transition>
+		<transition>
+			<source ref="id69"/>
+			<target ref="id67"/>
+			<label kind="guard" x="-100" y="1365">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1395">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1430"/>
+		</transition>
+		<transition>
+			<source ref="id70"/>
+			<target ref="id54"/>
+			<label kind="guard" x="-100" y="520">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="550">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1040"/>
+		</transition>
+		<transition>
+			<source ref="id70"/>
+			<target ref="id71"/>
+			<label kind="guard" x="-100" y="1625">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1655">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1592"/>
+		</transition>
+		<transition>
+			<source ref="id70"/>
+			<target ref="id72"/>
+			<label kind="guard" x="-100" y="1690">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1720">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1625"/>
+		</transition>
+		<transition>
+			<source ref="id70"/>
+			<target ref="id74"/>
+			<label kind="guard" x="-100" y="1820">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1850">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1690"/>
+		</transition>
+		<transition>
+			<source ref="id70"/>
+			<target ref="id99"/>
+			<label kind="guard" x="-100" y="3445">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3475">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="2502"/>
+		</transition>
+		<transition>
+			<source ref="id71"/>
+			<target ref="id55"/>
+			<label kind="guard" x="-100" y="585">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="615">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1105"/>
+		</transition>
+		<transition>
+			<source ref="id71"/>
+			<target ref="id70"/>
+			<label kind="guard" x="-100" y="1560">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1590">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1592"/>
+		</transition>
+		<transition>
+			<source ref="id71"/>
+			<target ref="id100"/>
+			<label kind="guard" x="-100" y="3510">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3540">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="2567"/>
+		</transition>
+		<transition>
+			<source ref="id72"/>
+			<target ref="id56"/>
+			<label kind="guard" x="-100" y="650">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="680">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1170"/>
+		</transition>
+		<transition>
+			<source ref="id72"/>
+			<target ref="id70"/>
+			<label kind="guard" x="-100" y="1560">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1590">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1625"/>
+		</transition>
+		<transition>
+			<source ref="id72"/>
+			<target ref="id76"/>
+			<label kind="guard" x="-100" y="1950">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1980">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1820"/>
+		</transition>
+		<transition>
+			<source ref="id72"/>
+			<target ref="id101"/>
+			<label kind="guard" x="-100" y="3575">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3605">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="2632"/>
+		</transition>
+		<transition>
+			<source ref="id74"/>
+			<target ref="id70"/>
+			<label kind="guard" x="-100" y="1560">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1590">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1690"/>
+		</transition>
+		<transition>
+			<source ref="id74"/>
+			<target ref="id76"/>
+			<label kind="guard" x="-100" y="1950">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1980">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1885"/>
+		</transition>
+		<transition>
+			<source ref="id74"/>
+			<target ref="id103"/>
+			<label kind="guard" x="-100" y="3705">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3735">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="2762"/>
+		</transition>
+		<transition>
+			<source ref="id75"/>
+			<target ref="id105"/>
+			<label kind="guard" x="-100" y="3835">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3865">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="2860"/>
+		</transition>
+		<transition>
+			<source ref="id76"/>
+			<target ref="id72"/>
+			<label kind="guard" x="-100" y="1690">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1720">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1820"/>
+		</transition>
+		<transition>
+			<source ref="id76"/>
+			<target ref="id74"/>
+			<label kind="guard" x="-100" y="1820">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1850">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1885"/>
+		</transition>
+		<transition>
+			<source ref="id76"/>
+			<target ref="id77"/>
+			<label kind="guard" x="-100" y="2015">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2045">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="1982"/>
+		</transition>
+		<transition>
+			<source ref="id77"/>
+			<target ref="id61"/>
+			<label kind="guard" x="-100" y="975">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1005">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1495"/>
+		</transition>
+		<transition>
+			<source ref="id77"/>
+			<target ref="id68"/>
+			<label kind="guard" x="-100" y="1430">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1460">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1722"/>
+		</transition>
+		<transition>
+			<source ref="id77"/>
+			<target ref="id76"/>
+			<label kind="guard" x="-100" y="1950">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1980">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1982"/>
+		</transition>
+		<transition>
+			<source ref="id78"/>
+			<target ref="id46"/>
+			<label kind="guard" x="-100" y="0">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="30">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1040"/>
+		</transition>
+		<transition>
+			<source ref="id78"/>
+			<target ref="id79"/>
+			<label kind="guard" x="-100" y="2145">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2175">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="2112"/>
+		</transition>
+		<transition>
+			<source ref="id78"/>
+			<target ref="id80"/>
+			<label kind="guard" x="-100" y="2210">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2240">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="2145"/>
+		</transition>
+		<transition>
+			<source ref="id78"/>
+			<target ref="id92"/>
+			<label kind="guard" x="-100" y="2990">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3020">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="2535"/>
+		</transition>
+		<transition>
+			<source ref="id79"/>
+			<target ref="id78"/>
+			<label kind="guard" x="-100" y="2080">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2110">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="2112"/>
+		</transition>
+		<transition>
+			<source ref="id79"/>
+			<target ref="id93"/>
+			<label kind="guard" x="-100" y="3055">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3085">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="2600"/>
+		</transition>
+		<transition>
+			<source ref="id80"/>
+			<target ref="id48"/>
+			<label kind="guard" x="-100" y="130">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="160">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1170"/>
+		</transition>
+		<transition>
+			<source ref="id80"/>
+			<target ref="id78"/>
+			<label kind="guard" x="-100" y="2080">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2110">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="2145"/>
+		</transition>
+		<transition>
+			<source ref="id80"/>
+			<target ref="id83"/>
+			<label kind="guard" x="-100" y="2405">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2435">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="2307"/>
+		</transition>
+		<transition>
+			<source ref="id80"/>
+			<target ref="id94"/>
+			<label kind="guard" x="-100" y="3120">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3150">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="2665"/>
+		</transition>
+		<transition>
+			<source ref="id81"/>
+			<target ref="id49"/>
+			<label kind="guard" x="-100" y="195">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="225">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1235"/>
+		</transition>
+		<transition>
+			<source ref="id81"/>
+			<target ref="id84"/>
+			<label kind="guard" x="-100" y="2470">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2500">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="2372"/>
+		</transition>
+		<transition>
+			<source ref="id81"/>
+			<target ref="id88"/>
+			<label kind="guard" x="-100" y="2730">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2760">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="2502"/>
+		</transition>
+		<transition>
+			<source ref="id82"/>
+			<target ref="id50"/>
+			<label kind="guard" x="-100" y="260">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="290">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1300"/>
+		</transition>
+		<transition>
+			<source ref="id83"/>
+			<target ref="id80"/>
+			<label kind="guard" x="-100" y="2210">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2240">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="2307"/>
+		</transition>
+		<transition>
+			<source ref="id83"/>
+			<target ref="id90"/>
+			<label kind="guard" x="-100" y="2860">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2890">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="2632"/>
+		</transition>
+		<transition>
+			<source ref="id83"/>
+			<target ref="id97"/>
+			<label kind="guard" x="-100" y="3315">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3345">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="2860"/>
+		</transition>
+		<transition>
+			<source ref="id84"/>
+			<target ref="id53"/>
+			<label kind="guard" x="-100" y="455">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="485">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1462"/>
+		</transition>
+		<transition>
+			<source ref="id84"/>
+			<target ref="id81"/>
+			<label kind="guard" x="-100" y="2275">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2305">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="2372"/>
+		</transition>
+		<transition>
+			<source ref="id85"/>
+			<target ref="id86"/>
+			<label kind="guard" x="-100" y="2600">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2630">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="2567"/>
+		</transition>
+		<transition>
+			<source ref="id85"/>
+			<target ref="id87"/>
+			<label kind="guard" x="-100" y="2665">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2695">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="2600"/>
+		</transition>
+		<transition>
+			<source ref="id86"/>
+			<target ref="id85"/>
+			<label kind="guard" x="-100" y="2535">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2565">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="2567"/>
+		</transition>
+		<transition>
+			<source ref="id86"/>
+			<target ref="id88"/>
+			<label kind="guard" x="-100" y="2730">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2760">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="2665"/>
+		</transition>
+		<transition>
+			<source ref="id87"/>
+			<target ref="id58"/>
+			<label kind="guard" x="-100" y="780">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="810">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1722"/>
+		</transition>
+		<transition>
+			<source ref="id87"/>
+			<target ref="id85"/>
+			<label kind="guard" x="-100" y="2535">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2565">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="2600"/>
+		</transition>
+		<transition>
+			<source ref="id87"/>
+			<target ref="id88"/>
+			<label kind="guard" x="-100" y="2730">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2760">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="2697"/>
+		</transition>
+		<transition>
+			<source ref="id88"/>
+			<target ref="id81"/>
+			<label kind="guard" x="-100" y="2275">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2305">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="2502"/>
+		</transition>
+		<transition>
+			<source ref="id88"/>
+			<target ref="id86"/>
+			<label kind="guard" x="-100" y="2600">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2630">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="2665"/>
+		</transition>
+		<transition>
+			<source ref="id88"/>
+			<target ref="id87"/>
+			<label kind="guard" x="-100" y="2665">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2695">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="2697"/>
+		</transition>
+		<transition>
+			<source ref="id89"/>
+			<target ref="id59"/>
+			<label kind="guard" x="-100" y="845">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="875">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1820"/>
+		</transition>
+		<transition>
+			<source ref="id89"/>
+			<target ref="id91"/>
+			<label kind="guard" x="-100" y="2925">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2955">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="2860"/>
+		</transition>
+		<transition>
+			<source ref="id89"/>
+			<target ref="id104"/>
+			<label kind="guard" x="-100" y="3770">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3800">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="3282"/>
+		</transition>
+		<transition>
+			<source ref="id90"/>
+			<target ref="id83"/>
+			<label kind="guard" x="-100" y="2405">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2435">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="2632"/>
+		</transition>
+		<transition>
+			<source ref="id90"/>
+			<target ref="id91"/>
+			<label kind="guard" x="-100" y="2925">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2955">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="2892"/>
+		</transition>
+		<transition>
+			<source ref="id91"/>
+			<target ref="id61"/>
+			<label kind="guard" x="-100" y="975">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1005">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="1950"/>
+		</transition>
+		<transition>
+			<source ref="id91"/>
+			<target ref="id89"/>
+			<label kind="guard" x="-100" y="2795">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2825">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="2860"/>
+		</transition>
+		<transition>
+			<source ref="id91"/>
+			<target ref="id90"/>
+			<label kind="guard" x="-100" y="2860">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2890">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="2892"/>
+		</transition>
+		<transition>
+			<source ref="id92"/>
+			<target ref="id78"/>
+			<label kind="guard" x="-100" y="2080">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2110">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="2535"/>
+		</transition>
+		<transition>
+			<source ref="id92"/>
+			<target ref="id93"/>
+			<label kind="guard" x="-100" y="3055">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3085">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="3022"/>
+		</transition>
+		<transition>
+			<source ref="id92"/>
+			<target ref="id94"/>
+			<label kind="guard" x="-100" y="3120">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3150">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="3055"/>
+		</transition>
+		<transition>
+			<source ref="id92"/>
+			<target ref="id99"/>
+			<label kind="guard" x="-100" y="3445">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3475">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="3217"/>
+		</transition>
+		<transition>
+			<source ref="id93"/>
+			<target ref="id79"/>
+			<label kind="guard" x="-100" y="2145">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2175">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="2600"/>
+		</transition>
+		<transition>
+			<source ref="id93"/>
+			<target ref="id92"/>
+			<label kind="guard" x="-100" y="2990">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3020">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="3022"/>
+		</transition>
+		<transition>
+			<source ref="id93"/>
+			<target ref="id96"/>
+			<label kind="guard" x="-100" y="3250">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3280">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="3152"/>
+		</transition>
+		<transition>
+			<source ref="id93"/>
+			<target ref="id100"/>
+			<label kind="guard" x="-100" y="3510">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3540">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="3282"/>
+		</transition>
+		<transition>
+			<source ref="id94"/>
+			<target ref="id80"/>
+			<label kind="guard" x="-100" y="2210">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2240">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="2665"/>
+		</transition>
+		<transition>
+			<source ref="id94"/>
+			<target ref="id92"/>
+			<label kind="guard" x="-100" y="2990">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3020">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="3055"/>
+		</transition>
+		<transition>
+			<source ref="id94"/>
+			<target ref="id95"/>
+			<label kind="guard" x="-100" y="3185">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3215">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="3152"/>
+		</transition>
+		<transition>
+			<source ref="id94"/>
+			<target ref="id97"/>
+			<label kind="guard" x="-100" y="3315">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3345">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="3217"/>
+		</transition>
+		<transition>
+			<source ref="id94"/>
+			<target ref="id101"/>
+			<label kind="guard" x="-100" y="3575">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3605">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="3347"/>
+		</transition>
+		<transition>
+			<source ref="id95"/>
+			<target ref="id65"/>
+			<label kind="guard" x="-100" y="1235">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1265">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="2210"/>
+		</transition>
+		<transition>
+			<source ref="id95"/>
+			<target ref="id94"/>
+			<label kind="guard" x="-100" y="3120">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3150">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="3152"/>
+		</transition>
+		<transition>
+			<source ref="id96"/>
+			<target ref="id66"/>
+			<label kind="guard" x="-100" y="1300">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1330">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="2275"/>
+		</transition>
+		<transition>
+			<source ref="id96"/>
+			<target ref="id93"/>
+			<label kind="guard" x="-100" y="3055">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3085">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="3152"/>
+		</transition>
+		<transition>
+			<source ref="id96"/>
+			<target ref="id98"/>
+			<label kind="guard" x="-100" y="3380">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3410">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="3315"/>
+		</transition>
+		<transition>
+			<source ref="id96"/>
+			<target ref="id104"/>
+			<label kind="guard" x="-100" y="3770">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3800">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="3510"/>
+		</transition>
+		<transition>
+			<source ref="id97"/>
+			<target ref="id83"/>
+			<label kind="guard" x="-100" y="2405">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2435">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="2860"/>
+		</transition>
+		<transition>
+			<source ref="id97"/>
+			<target ref="id94"/>
+			<label kind="guard" x="-100" y="3120">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3150">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="3217"/>
+		</transition>
+		<transition>
+			<source ref="id97"/>
+			<target ref="id98"/>
+			<label kind="guard" x="-100" y="3380">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3410">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="3347"/>
+		</transition>
+		<transition>
+			<source ref="id98"/>
+			<target ref="id68"/>
+			<label kind="guard" x="-100" y="1430">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1460">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="2405"/>
+		</transition>
+		<transition>
+			<source ref="id98"/>
+			<target ref="id96"/>
+			<label kind="guard" x="-100" y="3250">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3280">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="3315"/>
+		</transition>
+		<transition>
+			<source ref="id98"/>
+			<target ref="id97"/>
+			<label kind="guard" x="-100" y="3315">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3345">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="3347"/>
+		</transition>
+		<transition>
+			<source ref="id99"/>
+			<target ref="id70"/>
+			<label kind="guard" x="-100" y="1560">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1590">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="2502"/>
+		</transition>
+		<transition>
+			<source ref="id99"/>
+			<target ref="id92"/>
+			<label kind="guard" x="-100" y="2990">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3020">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="3217"/>
+		</transition>
+		<transition>
+			<source ref="id99"/>
+			<target ref="id100"/>
+			<label kind="guard" x="-100" y="3510">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3540">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="3477"/>
+		</transition>
+		<transition>
+			<source ref="id99"/>
+			<target ref="id101"/>
+			<label kind="guard" x="-100" y="3575">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3605">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="3510"/>
+		</transition>
+		<transition>
+			<source ref="id99"/>
+			<target ref="id103"/>
+			<label kind="guard" x="-100" y="3705">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3735">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="3575"/>
+		</transition>
+		<transition>
+			<source ref="id100"/>
+			<target ref="id71"/>
+			<label kind="guard" x="-100" y="1625">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1655">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="2567"/>
+		</transition>
+		<transition>
+			<source ref="id100"/>
+			<target ref="id93"/>
+			<label kind="guard" x="-100" y="3055">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3085">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="3282"/>
+		</transition>
+		<transition>
+			<source ref="id100"/>
+			<target ref="id99"/>
+			<label kind="guard" x="-100" y="3445">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3475">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="3477"/>
+		</transition>
+		<transition>
+			<source ref="id100"/>
+			<target ref="id102"/>
+			<label kind="guard" x="-100" y="3640">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3670">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="3575"/>
+		</transition>
+		<transition>
+			<source ref="id100"/>
+			<target ref="id104"/>
+			<label kind="guard" x="-100" y="3770">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3800">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="3640"/>
+		</transition>
+		<transition>
+			<source ref="id101"/>
+			<target ref="id72"/>
+			<label kind="guard" x="-100" y="1690">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1720">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="2632"/>
+		</transition>
+		<transition>
+			<source ref="id101"/>
+			<target ref="id94"/>
+			<label kind="guard" x="-100" y="3120">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3150">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="3347"/>
+		</transition>
+		<transition>
+			<source ref="id101"/>
+			<target ref="id99"/>
+			<label kind="guard" x="-100" y="3445">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3475">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="3510"/>
+		</transition>
+		<transition>
+			<source ref="id101"/>
+			<target ref="id102"/>
+			<label kind="guard" x="-100" y="3640">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3670">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="3607"/>
+		</transition>
+		<transition>
+			<source ref="id102"/>
+			<target ref="id100"/>
+			<label kind="guard" x="-100" y="3510">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3540">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="3575"/>
+		</transition>
+		<transition>
+			<source ref="id102"/>
+			<target ref="id101"/>
+			<label kind="guard" x="-100" y="3575">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3605">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="3607"/>
+		</transition>
+		<transition>
+			<source ref="id103"/>
+			<target ref="id74"/>
+			<label kind="guard" x="-100" y="1820">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1850">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="2762"/>
+		</transition>
+		<transition>
+			<source ref="id103"/>
+			<target ref="id99"/>
+			<label kind="guard" x="-100" y="3445">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3475">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="3575"/>
+		</transition>
+		<transition>
+			<source ref="id103"/>
+			<target ref="id104"/>
+			<label kind="guard" x="-100" y="3770">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3800">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="3737"/>
+		</transition>
+		<transition>
+			<source ref="id104"/>
+			<target ref="id89"/>
+			<label kind="guard" x="-100" y="2795">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="2825">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="3282"/>
+		</transition>
+		<transition>
+			<source ref="id104"/>
+			<target ref="id96"/>
+			<label kind="guard" x="-100" y="3250">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3280">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="3510"/>
+		</transition>
+		<transition>
+			<source ref="id104"/>
+			<target ref="id100"/>
+			<label kind="guard" x="-100" y="3510">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3540">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="3640"/>
+		</transition>
+		<transition>
+			<source ref="id104"/>
+			<target ref="id103"/>
+			<label kind="guard" x="-100" y="3705">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3735">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="3737"/>
+		</transition>
+		<transition>
+			<source ref="id104"/>
+			<target ref="id105"/>
+			<label kind="guard" x="-100" y="3835">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3865">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="3802"/>
+		</transition>
+		<transition>
+			<source ref="id105"/>
+			<target ref="id75"/>
+			<label kind="guard" x="-100" y="1885">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1915">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="2860"/>
+		</transition>
+		<transition>
+			<source ref="id105"/>
+			<target ref="id104"/>
+			<label kind="guard" x="-100" y="3770">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="3800">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="3802"/>
+		</transition>
+	</template>
+	<template>
+		<name>ExampleCGI_main</name>
+		<declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+		<location id="id125" x="0" y="-65">
+			<name x="20" y="-78">main</name>
+			<label kind="exponentialrate" x="-70" y="-65">1</label>
+			<urgent/>
+		</location>
+		<location id="id126" x="0" y="0">
+			<name x="20" y="-13">pc0__iconst_1</name>
+			<label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+		</location>
+		<location id="id127" x="0" y="65">
+			<name x="20" y="52">pc1__putstatic_ExampleCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+		</location>
+		<location id="id128" x="0" y="130">
+			<name x="20" y="117">pc4__new_ExampleCGI</name>
+			<label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+		</location>
+		<location id="id129" x="0" y="195">
+			<name x="20" y="182">pc7__dup</name>
+			<label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+		</location>
+		<location id="id130" x="0" y="260">
+			<name x="20" y="247">pc8__invokespecial_void_ExampleCGI_init_</name>
+			<label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+		</location>
+		<location id="id131" x="0" y="325">
+			<name x="20" y="312">pc11__astore_1</name>
+			<label kind="invariant" x="-70" y="325">t &lt;= 1</label>
+		</location>
+		<location id="id132" x="0" y="390">
+			<name x="20" y="377">pc12__getstatic_ExampleCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="390">t &lt;= 1</label>
+		</location>
+		<location id="id133" x="0" y="455">
+			<name x="20" y="442">pc15__bipush_10</name>
+			<label kind="invariant" x="-70" y="455">t &lt;= 1</label>
+		</location>
+		<location id="id134" x="0" y="520">
+			<name x="20" y="507">pc17__ifcmpeq_11</name>
+			<label kind="invariant" x="-70" y="520">t &lt;= 1</label>
+		</location>
+		<location id="id135" x="0" y="585">
+			<name x="20" y="572">pc20__new_java_lang_Exception</name>
+			<label kind="invariant" x="-70" y="585">t &lt;= 1</label>
+		</location>
+		<location id="id136" x="0" y="650">
+			<name x="20" y="637">pc23__dup</name>
+			<label kind="invariant" x="-70" y="650">t &lt;= 1</label>
+		</location>
+		<location id="id137" x="0" y="715">
+			<name x="20" y="702">pc24__invokespecial_void_java_lang_Exception_init_</name>
+			<label kind="invariant" x="-70" y="715">t &lt;= 1</label>
+		</location>
+		<location id="id138" x="0" y="780">
+			<name x="20" y="767">pc27__athrow</name>
+			<label kind="invariant" x="-70" y="780">t &lt;= 1</label>
+		</location>
+		<location id="id139" x="0" y="845">
+			<name x="20" y="832">pc28__goto_4</name>
+			<label kind="invariant" x="-70" y="845">t &lt;= 1</label>
+		</location>
+		<location id="id140" x="0" y="910">
+			<name x="20" y="897">pc31__astore_1</name>
+			<label kind="invariant" x="-70" y="910">t &lt;= 1</label>
+		</location>
+		<location id="id141" x="0" y="975">
+			<name x="20" y="962">pc32__return</name>
+			<label kind="invariant" x="-70" y="975">t &lt;= 1</label>
+		</location>
+		<location id="id142" x="200" y="286">
+			<label kind="exponentialrate" x="130" y="286">1</label>
+		</location>
+		<location id="id143" x="200" y="312">
+			<label kind="exponentialrate" x="130" y="312">1</label>
+			<urgent/>
+		</location>
+		<location id="id144" x="200" y="741">
+			<label kind="invariant" x="0" y="0">t &lt;= 5</label>
+		</location>
+		<location id="id145" x="200" y="806">
+			<label kind="exponentialrate" x="130" y="806">1</label>
+			<urgent/>
+		</location>
+		<location id="id146" x="200" y="1001">
+			<name x="220" y="988">Done</name>
+			<label kind="exponentialrate" x="0" y="0">1</label>
+		</location>
+		<init ref="id125"/>
+		<transition>
+			<source ref="id125"/>
+			<target ref="id126"/>
+			<label kind="assignment" x="20" y="-65">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id126"/>
+			<target ref="id127"/>
+			<label kind="guard" x="20" y="0">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="13">osp_inc(), os[osp - 1] = 1, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id127"/>
+			<target ref="id128"/>
+			<label kind="guard" x="20" y="65">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="78">osp_dec(1), H[cp0] = os[osp], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id128"/>
+			<target ref="id129"/>
+			<label kind="guard" x="20" y="130">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="143">osp_inc(), os[osp-1] = alocNew(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id129"/>
+			<target ref="id130"/>
+			<label kind="guard" x="20" y="208">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="195">osp_inc(), os[osp - 1] = os[osp - 2]</label>
+		</transition>
+		<transition>
+			<source ref="id130"/>
+			<target ref="id142"/>
+			<label kind="guard" x="20" y="260">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="286">cExampleCGI_ExampleCGI!</label>
+			<label kind="assignment" x="20" y="273">osp_dec(1), t = 0, par0 = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id142"/>
+			<target ref="id131"/>
+			<label kind="guard" x="20" y="299">!exceptionOccurred</label>
+			<label kind="synchronisation" x="20" y="286">cExampleCGI_ExampleCGI?</label>
+			<label kind="assignment" x="20" y="312">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id142"/>
+			<target ref="id143"/>
+			<label kind="guard" x="20" y="286">exceptionOccurred == true</label>
+			<label kind="synchronisation" x="20" y="312">cExampleCGI_ExampleCGI?</label>
+			<label kind="assignment" x="20" y="299">osp_inc()</label>
+		</transition>
+		<transition>
+			<source ref="id143"/>
+			<target ref="id140"/>
+			<label kind="synchronisation" x="20" y="312">cExampleCGI_main!</label>
+		</transition>
+		<transition>
+			<source ref="id131"/>
+			<target ref="id132"/>
+			<label kind="guard" x="20" y="338">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="325">osp_dec(1), locs[1] = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id132"/>
+			<target ref="id133"/>
+			<label kind="guard" x="20" y="390">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="403">osp_inc(), os[osp-1] = H[cp0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id133"/>
+			<target ref="id134"/>
+			<label kind="guard" x="20" y="455">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="468">osp_inc(), os[osp - 1] = 10, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id134"/>
+			<target ref="id139"/>
+			<label kind="guard" x="20" y="520">t == 1 &amp;&amp; ifcmpeq() &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="533">osp_dec(2), t = 0</label>
+			<nail x="-50" y="682"/>
+		</transition>
+		<transition>
+			<source ref="id134"/>
+			<target ref="id135"/>
+			<label kind="guard" x="20" y="520">t == 1 &amp;&amp; !ifcmpeq() &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="533">opstack_fault = osp &lt; 2 ? true : opstack_fault, osp_dec(2), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id135"/>
+			<target ref="id136"/>
+			<label kind="guard" x="20" y="585">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="598">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id136"/>
+			<target ref="id137"/>
+			<label kind="guard" x="20" y="663">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="650">osp_inc(), os[osp - 1] = os[osp - 2]</label>
+		</transition>
+		<transition>
+			<source ref="id137"/>
+			<target ref="id144"/>
+			<label kind="guard" x="20" y="715">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="728">osp_dec(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id144"/>
+			<target ref="id138"/>
+			<label kind="guard" x="20" y="741">t == 5</label>
+			<label kind="assignment" x="20" y="754">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id138"/>
+			<target ref="id145"/>
+			<label kind="guard" x="20" y="780">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="793">exceptionOccurred = true</label>
+		</transition>
+		<transition>
+			<source ref="id145"/>
+			<target ref="id125"/>
+			<label kind="synchronisation" x="20" y="806">cExampleCGI_main!</label>
+		</transition>
+		<transition>
+			<source ref="id139"/>
+			<target ref="id141"/>
+			<label kind="guard" x="20" y="845">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<nail x="-50" y="910"/>
+		</transition>
+		<transition>
+			<source ref="id140"/>
+			<target ref="id141"/>
+			<label kind="guard" x="20" y="923">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="910">osp_dec(1), locs[1] = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id141"/>
+			<target ref="id146"/>
+			<label kind="guard" x="20" y="975">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="988">cExampleCGI_main!</label>
+		</transition>
+		<transition>
+			<source ref="id126"/>
+			<target ref="id127"/>
+			<label kind="guard" x="-100" y="65">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="95">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="32"/>
+		</transition>
+		<transition>
+			<source ref="id126"/>
+			<target ref="id128"/>
+			<label kind="guard" x="-100" y="130">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="160">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="65"/>
+		</transition>
+		<transition>
+			<source ref="id126"/>
+			<target ref="id130"/>
+			<label kind="guard" x="-100" y="260">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="290">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="130"/>
+		</transition>
+		<transition>
+			<source ref="id126"/>
+			<target ref="id141"/>
+			<label kind="guard" x="-100" y="975">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="1005">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="487"/>
+		</transition>
+		<transition>
+			<source ref="id127"/>
+			<target ref="id126"/>
+			<label kind="guard" x="-100" y="0">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="30">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="32"/>
+		</transition>
+		<transition>
+			<source ref="id127"/>
+			<target ref="id134"/>
+			<label kind="guard" x="-100" y="520">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="550">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="292"/>
+		</transition>
+		<transition>
+			<source ref="id128"/>
+			<target ref="id126"/>
+			<label kind="guard" x="-100" y="0">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="30">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="65"/>
+		</transition>
+		<transition>
+			<source ref="id128"/>
+			<target ref="id132"/>
+			<label kind="guard" x="-100" y="390">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="420">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="260"/>
+		</transition>
+		<transition>
+			<source ref="id128"/>
+			<target ref="id135"/>
+			<label kind="guard" x="-100" y="585">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="615">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="357"/>
+		</transition>
+		<transition>
+			<source ref="id129"/>
+			<target ref="id133"/>
+			<label kind="guard" x="-100" y="455">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="485">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="325"/>
+		</transition>
+		<transition>
+			<source ref="id129"/>
+			<target ref="id136"/>
+			<label kind="guard" x="-100" y="650">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="680">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="422"/>
+		</transition>
+		<transition>
+			<source ref="id130"/>
+			<target ref="id126"/>
+			<label kind="guard" x="-100" y="0">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="30">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="130"/>
+		</transition>
+		<transition>
+			<source ref="id130"/>
+			<target ref="id132"/>
+			<label kind="guard" x="-100" y="390">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="420">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="325"/>
+		</transition>
+		<transition>
+			<source ref="id130"/>
+			<target ref="id137"/>
+			<label kind="guard" x="-100" y="715">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="745">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="487"/>
+		</transition>
+		<transition>
+			<source ref="id131"/>
+			<target ref="id133"/>
+			<label kind="guard" x="-100" y="455">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="485">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="390"/>
+		</transition>
+		<transition>
+			<source ref="id131"/>
+			<target ref="id138"/>
+			<label kind="guard" x="-100" y="780">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="810">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="552"/>
+		</transition>
+		<transition>
+			<source ref="id132"/>
+			<target ref="id128"/>
+			<label kind="guard" x="-100" y="130">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="160">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="260"/>
+		</transition>
+		<transition>
+			<source ref="id132"/>
+			<target ref="id130"/>
+			<label kind="guard" x="-100" y="260">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="290">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="325"/>
+		</transition>
+		<transition>
+			<source ref="id132"/>
+			<target ref="id139"/>
+			<label kind="guard" x="-100" y="845">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="875">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="617"/>
+		</transition>
+		<transition>
+			<source ref="id133"/>
+			<target ref="id129"/>
+			<label kind="guard" x="-100" y="195">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="225">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="325"/>
+		</transition>
+		<transition>
+			<source ref="id133"/>
+			<target ref="id131"/>
+			<label kind="guard" x="-100" y="325">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="355">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="390"/>
+		</transition>
+		<transition>
+			<source ref="id133"/>
+			<target ref="id140"/>
+			<label kind="guard" x="-100" y="910">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="940">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="682"/>
+		</transition>
+		<transition>
+			<source ref="id134"/>
+			<target ref="id127"/>
+			<label kind="guard" x="-100" y="65">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="95">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="292"/>
+		</transition>
+		<transition>
+			<source ref="id135"/>
+			<target ref="id128"/>
+			<label kind="guard" x="-100" y="130">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="160">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="357"/>
+		</transition>
+		<transition>
+			<source ref="id135"/>
+			<target ref="id139"/>
+			<label kind="guard" x="-100" y="845">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="875">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="715"/>
+		</transition>
+		<transition>
+			<source ref="id136"/>
+			<target ref="id129"/>
+			<label kind="guard" x="-100" y="195">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="225">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="422"/>
+		</transition>
+		<transition>
+			<source ref="id136"/>
+			<target ref="id140"/>
+			<label kind="guard" x="-100" y="910">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="940">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="780"/>
+		</transition>
+		<transition>
+			<source ref="id137"/>
+			<target ref="id130"/>
+			<label kind="guard" x="-100" y="260">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="290">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="487"/>
+		</transition>
+		<transition>
+			<source ref="id137"/>
+			<target ref="id139"/>
+			<label kind="guard" x="-100" y="845">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="875">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="780"/>
+		</transition>
+		<transition>
+			<source ref="id138"/>
+			<target ref="id131"/>
+			<label kind="guard" x="-100" y="325">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="355">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="552"/>
+		</transition>
+		<transition>
+			<source ref="id138"/>
+			<target ref="id140"/>
+			<label kind="guard" x="-100" y="910">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="940">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="845"/>
+		</transition>
+		<transition>
+			<source ref="id139"/>
+			<target ref="id132"/>
+			<label kind="guard" x="-100" y="390">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="420">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="617"/>
+		</transition>
+		<transition>
+			<source ref="id139"/>
+			<target ref="id135"/>
+			<label kind="guard" x="-100" y="585">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="615">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="715"/>
+		</transition>
+		<transition>
+			<source ref="id139"/>
+			<target ref="id137"/>
+			<label kind="guard" x="-100" y="715">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="745">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="780"/>
+		</transition>
+		<transition>
+			<source ref="id140"/>
+			<target ref="id133"/>
+			<label kind="guard" x="-100" y="455">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="485">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="682"/>
+		</transition>
+		<transition>
+			<source ref="id140"/>
+			<target ref="id136"/>
+			<label kind="guard" x="-100" y="650">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="680">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="780"/>
+		</transition>
+		<transition>
+			<source ref="id140"/>
+			<target ref="id138"/>
+			<label kind="guard" x="-100" y="780">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="810">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="845"/>
+		</transition>
+		<transition>
+			<source ref="id141"/>
+			<target ref="id126"/>
+			<label kind="guard" x="-100" y="0">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="30">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="487"/>
+		</transition>
+	</template>
+	<template>
+		<name>ExampleCGI_getTriesRemaining</name>
+		<declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+		<location id="id147" x="0" y="-65">
+			<name x="20" y="-78">getTriesRemaining</name>
+			<label kind="exponentialrate" x="-70" y="-65">1</label>
+		</location>
+		<location id="id148" x="0" y="0">
+			<name x="20" y="-13">pc0__getstatic_ExampleCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+		</location>
+		<location id="id149" x="0" y="65">
+			<name x="20" y="52">pc3__bipush_7</name>
+			<label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+		</location>
+		<location id="id150" x="0" y="130">
+			<name x="20" y="117">pc5__ifcmpeq_11</name>
+			<label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+		</location>
+		<location id="id151" x="0" y="195">
+			<name x="20" y="182">pc8__new_java_lang_Exception</name>
+			<label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+		</location>
+		<location id="id152" x="0" y="260">
+			<name x="20" y="247">pc11__dup</name>
+			<label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+		</location>
+		<location id="id153" x="0" y="325">
+			<name x="20" y="312">pc12__invokespecial_void_java_lang_Exception_init_</name>
+			<label kind="invariant" x="-70" y="325">t &lt;= 1</label>
+		</location>
+		<location id="id154" x="0" y="390">
+			<name x="20" y="377">pc15__athrow</name>
+			<label kind="invariant" x="-70" y="390">t &lt;= 1</label>
+		</location>
+		<location id="id155" x="0" y="455">
+			<name x="20" y="442">pc16__bipush_8</name>
+			<label kind="invariant" x="-70" y="455">t &lt;= 1</label>
+		</location>
+		<location id="id156" x="0" y="520">
+			<name x="20" y="507">pc18__putstatic_ExampleCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="520">t &lt;= 1</label>
+		</location>
+		<location id="id157" x="0" y="585">
+			<name x="20" y="572">pc21__iconst_2</name>
+			<label kind="invariant" x="-70" y="585">t &lt;= 1</label>
+		</location>
+		<location id="id158" x="0" y="650">
+			<name x="20" y="637">pc22__ireturn</name>
+			<label kind="invariant" x="-70" y="650">t &lt;= 1</label>
+		</location>
+		<location id="id159" x="200" y="351">
+			<label kind="invariant" x="0" y="0">t &lt;= 5</label>
+		</location>
+		<location id="id160" x="200" y="416">
+			<label kind="exponentialrate" x="130" y="416">1</label>
+			<urgent/>
+		</location>
+		<init ref="id147"/>
+		<transition>
+			<source ref="id147"/>
+			<target ref="id148"/>
+			<label kind="guard" x="20" y="-65">t == 1</label>
+			<label kind="synchronisation" x="20" y="-52">cExampleCGI_getTriesRemaining?</label>
+			<label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id148"/>
+			<target ref="id149"/>
+			<label kind="guard" x="20" y="0">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="13">osp_inc(), os[osp-1] = H[cp0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id149"/>
+			<target ref="id150"/>
+			<label kind="guard" x="20" y="65">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="78">osp_inc(), os[osp - 1] = 7, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id150"/>
+			<target ref="id155"/>
+			<label kind="guard" x="20" y="130">t == 1 &amp;&amp; ifcmpeq() &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="143">osp_dec(2), t = 0</label>
+			<nail x="-50" y="292"/>
+		</transition>
+		<transition>
+			<source ref="id150"/>
+			<target ref="id151"/>
+			<label kind="guard" x="20" y="130">t == 1 &amp;&amp; !ifcmpeq() &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="143">opstack_fault = osp &lt; 2 ? true : opstack_fault, osp_dec(2), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id151"/>
+			<target ref="id152"/>
+			<label kind="guard" x="20" y="195">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="208">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id152"/>
+			<target ref="id153"/>
+			<label kind="guard" x="20" y="273">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="260">osp_inc(), os[osp - 1] = os[osp - 2]</label>
+		</transition>
+		<transition>
+			<source ref="id153"/>
+			<target ref="id159"/>
+			<label kind="guard" x="20" y="325">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="338">osp_dec(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id159"/>
+			<target ref="id154"/>
+			<label kind="guard" x="20" y="351">t == 5</label>
+			<label kind="assignment" x="20" y="364">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id154"/>
+			<target ref="id160"/>
+			<label kind="guard" x="20" y="390">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="403">exceptionOccurred = true</label>
+		</transition>
+		<transition>
+			<source ref="id160"/>
+			<target ref="id147"/>
+			<label kind="synchronisation" x="20" y="416">cExampleCGI_getTriesRemaining!</label>
+		</transition>
+		<transition>
+			<source ref="id155"/>
+			<target ref="id156"/>
+			<label kind="guard" x="20" y="455">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="468">osp_inc(), os[osp - 1] = 8, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id156"/>
+			<target ref="id157"/>
+			<label kind="guard" x="20" y="520">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="533">osp_dec(1), H[cp0] = os[osp], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id157"/>
+			<target ref="id158"/>
+			<label kind="guard" x="20" y="585">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="598">osp_inc(), os[osp - 1] = 2, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id158"/>
+			<target ref="id147"/>
+			<label kind="guard" x="20" y="650">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="663">cExampleCGI_getTriesRemaining!</label>
+			<label kind="assignment" x="20" y="689">osp_dec(1), par0 = os[osp], osp = 0, t = 0</label>
+			<nail x="-100" y="292"/>
+		</transition>
+		<transition>
+			<source ref="id148"/>
+			<target ref="id151"/>
+			<label kind="guard" x="-100" y="195">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="225">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="97"/>
+		</transition>
+		<transition>
+			<source ref="id148"/>
+			<target ref="id155"/>
+			<label kind="guard" x="-100" y="455">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="485">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="227"/>
+		</transition>
+		<transition>
+			<source ref="id149"/>
+			<target ref="id152"/>
+			<label kind="guard" x="-100" y="260">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="290">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="162"/>
+		</transition>
+		<transition>
+			<source ref="id150"/>
+			<target ref="id157"/>
+			<label kind="guard" x="-100" y="585">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="615">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="357"/>
+		</transition>
+		<transition>
+			<source ref="id151"/>
+			<target ref="id148"/>
+			<label kind="guard" x="-100" y="0">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="30">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="97"/>
+		</transition>
+		<transition>
+			<source ref="id151"/>
+			<target ref="id153"/>
+			<label kind="guard" x="-100" y="325">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="355">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="260"/>
+		</transition>
+		<transition>
+			<source ref="id152"/>
+			<target ref="id149"/>
+			<label kind="guard" x="-100" y="65">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="95">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="162"/>
+		</transition>
+		<transition>
+			<source ref="id152"/>
+			<target ref="id154"/>
+			<label kind="guard" x="-100" y="390">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="420">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="325"/>
+		</transition>
+		<transition>
+			<source ref="id153"/>
+			<target ref="id151"/>
+			<label kind="guard" x="-100" y="195">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="225">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="260"/>
+		</transition>
+		<transition>
+			<source ref="id154"/>
+			<target ref="id152"/>
+			<label kind="guard" x="-100" y="260">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="290">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="325"/>
+		</transition>
+		<transition>
+			<source ref="id155"/>
+			<target ref="id148"/>
+			<label kind="guard" x="-100" y="0">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="30">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="227"/>
+		</transition>
+		<transition>
+			<source ref="id155"/>
+			<target ref="id156"/>
+			<label kind="guard" x="-100" y="520">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="550">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="487"/>
+		</transition>
+		<transition>
+			<source ref="id156"/>
+			<target ref="id155"/>
+			<label kind="guard" x="-100" y="455">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="485">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="487"/>
+		</transition>
+		<transition>
+			<source ref="id156"/>
+			<target ref="id158"/>
+			<label kind="guard" x="-100" y="650">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="680">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="585"/>
+		</transition>
+		<transition>
+			<source ref="id157"/>
+			<target ref="id150"/>
+			<label kind="guard" x="-100" y="130">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="160">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="357"/>
+		</transition>
+		<transition>
+			<source ref="id158"/>
+			<target ref="id156"/>
+			<label kind="guard" x="-100" y="520">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="550">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="585"/>
+		</transition>
+	</template>
+	<template>
+		<name>ExampleCGI_setIncomingAndReceive</name>
+		<declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+		<location id="id161" x="0" y="-65">
+			<name x="20" y="-78">setIncomingAndReceive</name>
+			<label kind="exponentialrate" x="-70" y="-65">1</label>
+		</location>
+		<location id="id162" x="0" y="0">
+			<name x="20" y="-13">pc0__getstatic_ExampleCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+		</location>
+		<location id="id163" x="0" y="65">
+			<name x="20" y="52">pc3__iconst_3</name>
+			<label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+		</location>
+		<location id="id164" x="0" y="130">
+			<name x="20" y="117">pc4__ifcmpeq_11</name>
+			<label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+		</location>
+		<location id="id165" x="0" y="195">
+			<name x="20" y="182">pc7__new_java_lang_Exception</name>
+			<label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+		</location>
+		<location id="id166" x="0" y="260">
+			<name x="20" y="247">pc10__dup</name>
+			<label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+		</location>
+		<location id="id167" x="0" y="325">
+			<name x="20" y="312">pc11__invokespecial_void_java_lang_Exception_init_</name>
+			<label kind="invariant" x="-70" y="325">t &lt;= 1</label>
+		</location>
+		<location id="id168" x="0" y="390">
+			<name x="20" y="377">pc14__athrow</name>
+			<label kind="invariant" x="-70" y="390">t &lt;= 1</label>
+		</location>
+		<location id="id169" x="0" y="455">
+			<name x="20" y="442">pc15__iconst_4</name>
+			<label kind="invariant" x="-70" y="455">t &lt;= 1</label>
+		</location>
+		<location id="id170" x="0" y="520">
+			<name x="20" y="507">pc16__putstatic_ExampleCGI_callId___int</name>
+			<label kind="invariant" x="-70" y="520">t &lt;= 1</label>
+		</location>
+		<location id="id171" x="0" y="585">
+			<name x="20" y="572">pc19__iconst_5</name>
+			<label kind="invariant" x="-70" y="585">t &lt;= 1</label>
+		</location>
+		<location id="id172" x="0" y="650">
+			<name x="20" y="637">pc20__ireturn</name>
+			<label kind="invariant" x="-70" y="650">t &lt;= 1</label>
+		</location>
+		<location id="id173" x="200" y="351">
+			<label kind="invariant" x="0" y="0">t &lt;= 5</label>
+		</location>
+		<location id="id174" x="200" y="416">
+			<label kind="exponentialrate" x="130" y="416">1</label>
+			<urgent/>
+		</location>
+		<init ref="id161"/>
+		<transition>
+			<source ref="id161"/>
+			<target ref="id162"/>
+			<label kind="guard" x="20" y="-65">t == 1</label>
+			<label kind="synchronisation" x="20" y="-52">cExampleCGI_setIncomingAndReceive?</label>
+			<label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id162"/>
+			<target ref="id163"/>
+			<label kind="guard" x="20" y="0">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="13">osp_inc(), os[osp-1] = H[cp0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id163"/>
+			<target ref="id164"/>
+			<label kind="guard" x="20" y="65">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="78">osp_inc(), os[osp - 1] = 3, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id164"/>
+			<target ref="id169"/>
+			<label kind="guard" x="20" y="130">t == 1 &amp;&amp; ifcmpeq() &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="143">osp_dec(2), t = 0</label>
+			<nail x="-50" y="292"/>
+		</transition>
+		<transition>
+			<source ref="id164"/>
+			<target ref="id165"/>
+			<label kind="guard" x="20" y="130">t == 1 &amp;&amp; !ifcmpeq() &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="143">opstack_fault = osp &lt; 2 ? true : opstack_fault, osp_dec(2), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id165"/>
+			<target ref="id166"/>
+			<label kind="guard" x="20" y="195">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="208">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id166"/>
+			<target ref="id167"/>
+			<label kind="guard" x="20" y="273">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="260">osp_inc(), os[osp - 1] = os[osp - 2]</label>
+		</transition>
+		<transition>
+			<source ref="id167"/>
+			<target ref="id173"/>
+			<label kind="guard" x="20" y="325">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="338">osp_dec(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id173"/>
+			<target ref="id168"/>
+			<label kind="guard" x="20" y="351">t == 5</label>
+			<label kind="assignment" x="20" y="364">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id168"/>
+			<target ref="id174"/>
+			<label kind="guard" x="20" y="390">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="403">exceptionOccurred = true</label>
+		</transition>
+		<transition>
+			<source ref="id174"/>
+			<target ref="id161"/>
+			<label kind="synchronisation" x="20" y="416">cExampleCGI_setIncomingAndReceive!</label>
+		</transition>
+		<transition>
+			<source ref="id169"/>
+			<target ref="id170"/>
+			<label kind="guard" x="20" y="455">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="468">osp_inc(), os[osp - 1] = 4, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id170"/>
+			<target ref="id171"/>
+			<label kind="guard" x="20" y="520">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="533">osp_dec(1), H[cp0] = os[osp], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id171"/>
+			<target ref="id172"/>
+			<label kind="guard" x="20" y="585">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="assignment" x="20" y="598">osp_inc(), os[osp - 1] = 5, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id172"/>
+			<target ref="id161"/>
+			<label kind="guard" x="20" y="650">t == 1 &amp;&amp; faultAt &gt; globalClock</label>
+			<label kind="synchronisation" x="20" y="663">cExampleCGI_setIncomingAndReceive!</label>
+			<label kind="assignment" x="20" y="689">osp_dec(1), par0 = os[osp], osp = 0, t = 0</label>
+			<nail x="-100" y="292"/>
+		</transition>
+		<transition>
+			<source ref="id162"/>
+			<target ref="id164"/>
+			<label kind="guard" x="-100" y="130">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="160">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="65"/>
+		</transition>
+		<transition>
+			<source ref="id162"/>
+			<target ref="id170"/>
+			<label kind="guard" x="-100" y="520">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="550">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="260"/>
+		</transition>
+		<transition>
+			<source ref="id163"/>
+			<target ref="id165"/>
+			<label kind="guard" x="-100" y="195">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="225">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="130"/>
+		</transition>
+		<transition>
+			<source ref="id163"/>
+			<target ref="id167"/>
+			<label kind="guard" x="-100" y="325">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="355">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="195"/>
+		</transition>
+		<transition>
+			<source ref="id163"/>
+			<target ref="id171"/>
+			<label kind="guard" x="-100" y="585">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="615">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="325"/>
+		</transition>
+		<transition>
+			<source ref="id164"/>
+			<target ref="id162"/>
+			<label kind="guard" x="-100" y="0">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="30">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="65"/>
+		</transition>
+		<transition>
+			<source ref="id164"/>
+			<target ref="id172"/>
+			<label kind="guard" x="-100" y="650">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="680">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="390"/>
+		</transition>
+		<transition>
+			<source ref="id165"/>
+			<target ref="id163"/>
+			<label kind="guard" x="-100" y="65">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="95">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="130"/>
+		</transition>
+		<transition>
+			<source ref="id165"/>
+			<target ref="id169"/>
+			<label kind="guard" x="-100" y="455">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="485">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="325"/>
+		</transition>
+		<transition>
+			<source ref="id166"/>
+			<target ref="id167"/>
+			<label kind="guard" x="-100" y="325">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="355">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="292"/>
+		</transition>
+		<transition>
+			<source ref="id166"/>
+			<target ref="id168"/>
+			<label kind="guard" x="-100" y="390">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="420">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="325"/>
+		</transition>
+		<transition>
+			<source ref="id167"/>
+			<target ref="id163"/>
+			<label kind="guard" x="-100" y="65">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="95">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="195"/>
+		</transition>
+		<transition>
+			<source ref="id167"/>
+			<target ref="id166"/>
+			<label kind="guard" x="-100" y="260">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="290">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="292"/>
+		</transition>
+		<transition>
+			<source ref="id167"/>
+			<target ref="id169"/>
+			<label kind="guard" x="-100" y="455">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="485">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="390"/>
+		</transition>
+		<transition>
+			<source ref="id168"/>
+			<target ref="id166"/>
+			<label kind="guard" x="-100" y="260">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="290">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="325"/>
+		</transition>
+		<transition>
+			<source ref="id168"/>
+			<target ref="id169"/>
+			<label kind="guard" x="-100" y="455">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="485">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="422"/>
+		</transition>
+		<transition>
+			<source ref="id169"/>
+			<target ref="id165"/>
+			<label kind="guard" x="-100" y="195">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="225">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="325"/>
+		</transition>
+		<transition>
+			<source ref="id169"/>
+			<target ref="id167"/>
+			<label kind="guard" x="-100" y="325">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="355">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="390"/>
+		</transition>
+		<transition>
+			<source ref="id169"/>
+			<target ref="id168"/>
+			<label kind="guard" x="-100" y="390">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="420">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="422"/>
+		</transition>
+		<transition>
+			<source ref="id170"/>
+			<target ref="id162"/>
+			<label kind="guard" x="-100" y="0">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="30">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="260"/>
+		</transition>
+		<transition>
+			<source ref="id170"/>
+			<target ref="id172"/>
+			<label kind="guard" x="-100" y="650">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="680">faultAt = 1000, t = 0</label>
+			<nail x="-300" y="585"/>
+		</transition>
+		<transition>
+			<source ref="id171"/>
+			<target ref="id163"/>
+			<label kind="guard" x="-100" y="65">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="95">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="325"/>
+		</transition>
+		<transition>
+			<source ref="id172"/>
+			<target ref="id164"/>
+			<label kind="guard" x="-100" y="130">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="160">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="390"/>
+		</transition>
+		<transition>
+			<source ref="id172"/>
+			<target ref="id170"/>
+			<label kind="guard" x="-100" y="520">faultAt &lt;= globalClock</label>
+			<label kind="assignment" x="-130" y="550">faultAt = 1000, t = 0</label>
+			<nail x="-250" y="585"/>
+		</transition>
+	</template>
+	<template>
+		<name>FaultInj</name>
+		<location id="id175" x="-17" y="-85">
+			<label kind="exponentialrate" x="-27" y="-51">1</label>
+		</location>
+		<location id="id176" x="-144" y="-85">
+			<committed/>
+		</location>
+		<init ref="id176"/>
+		<transition>
+			<source ref="id176"/>
+			<target ref="id175"/>
+			<label kind="select" x="-110" y="-127">i:int[0,80]</label>
+			<label kind="assignment" x="-110" y="-68">faultAt = i</label>
+		</transition>
+	</template>
+	<system>Fault = FaultInj();
+iExampleCGI_isInvalid = ExampleCGI_isInvalid();
+iExampleCGI_ExampleCGI = ExampleCGI_ExampleCGI();
+iExampleCGI_processVerifyPIN = ExampleCGI_processVerifyPIN();
+iExampleCGI_main = ExampleCGI_main();
+iExampleCGI_getTriesRemaining = ExampleCGI_getTriesRemaining();
+iExampleCGI_setIncomingAndReceive = ExampleCGI_setIncomingAndReceive();
+
+system Fault, iExampleCGI_isInvalid, iExampleCGI_ExampleCGI, iExampleCGI_processVerifyPIN, iExampleCGI_main, iExampleCGI_getTriesRemaining, iExampleCGI_setIncomingAndReceive;</system>
+	<queries>
+		<query>
+			<formula>A&lt;&gt; iExampleCGI_main.Done &amp;&amp; !opstack_fault &amp;&amp; exceptionOccurred
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>Pr[&lt;= 100] (&lt;&gt; iExampleCGI_main.Done &amp;&amp; !opstack_fault &amp;&amp; exceptionOccurred)
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; opstack_fault
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>Pr[&lt;= 100] (&lt;&gt; opstack_fault)
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; iExampleCGI_main.Done &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>Pr[&lt;= 100] (&lt;&gt; iExampleCGI_main.Done &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred)
+			</formula>
+			<comment>
+			</comment>
+		</query>
+	</queries>
+</nta>

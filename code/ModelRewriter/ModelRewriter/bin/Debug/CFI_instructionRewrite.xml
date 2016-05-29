@@ -1,0 +1,1713 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC "-//Uppaal Team//DTD Flat System 1.1//EN" "http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd"[]>
+<nta>
+  <declaration>clock t;
+bool exceptionOccurred;
+const int heap_size = 10;
+int H[heap_size];
+int cp0= 5;
+int cp1= 6;
+int cp2= 7;
+int par0;
+int par1;
+int par2;
+broadcast chan cExampleCFI_isInvalid;
+broadcast chan cExampleCFI_ExampleCFI;
+broadcast chan cExampleCFI_processVerifyPIN;
+broadcast chan cExampleCFI_main;
+broadcast chan cExampleCFI_getTriesRemaining;
+broadcast chan cExampleCFI_setIncomingAndReceive;
+bool opstack_fault = false;
+const int classFields[4] = {0, 3, 1, 1};
+
+int heapPointer = 1;
+int alocNew(int classID){
+    int ref = heapPointer;
+    if(classID &lt; 0) return -1;
+    H[ref] = classID;
+    heapPointer += classFields[classID];
+    return ref;
+}
+
+
+int faultAt = 0;
+clock globalClock;
+int faultTime;
+int faultAtId;
+</declaration>
+  <template>
+    <name>ExampleCFI_isInvalid</name>
+    <declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+    <location id="id-1" x="0" y="-65">
+      <name x="20" y="-78">isInvalid</name>
+      <label kind="exponentialrate" x="-70" y="-65">1</label>
+    </location>
+    <location id="id0" x="0" y="0">
+      <name x="20" y="-13">pc0__getstatic_ExampleCFI_flag___int</name>
+      <label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+    </location>
+    <location id="id1" x="0" y="65">
+      <name x="20" y="52">pc3__iconst_1</name>
+      <label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+    </location>
+    <location id="id2" x="0" y="130">
+      <name x="20" y="117">pc4__iadd</name>
+      <label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+    </location>
+    <location id="id3" x="0" y="195">
+      <name x="20" y="182">pc5__putstatic_ExampleCFI_flag___int</name>
+      <label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+    </location>
+    <location id="id4" x="0" y="260">
+      <name x="20" y="247">pc8__iconst_1</name>
+      <label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+    </location>
+    <location id="id5" x="0" y="325">
+      <name x="20" y="312">pc9__ireturn</name>
+      <label kind="invariant" x="-70" y="325">t &lt;= 1</label>
+    </location>
+    <location id="id9999" x="-400" y="200">
+      <name x="-380" y="187">error</name>
+    </location>
+    <init ref="id-1" />
+    <transition>
+      <source ref="id-1" />
+      <target ref="id0" />
+      <label kind="guard" x="20" y="-65">t == 1</label>
+      <label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+      <label kind="synchronisation" x="20" y="-52">cExampleCFI_isInvalid?</label>
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id1" />
+      <label kind="guard" x="20" y="0">t == 1 &amp;&amp; faultAtId != 265</label>
+      <label kind="assignment" x="20" y="13">osp_inc(), os[osp-1] = H[cp0], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id2" />
+      <label kind="guard" x="20" y="65">t == 1 &amp;&amp; faultAtId != 266</label>
+      <label kind="assignment" x="20" y="78">osp_inc(), os[osp - 1] = 1, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id3" />
+      <label kind="guard" x="20" y="130">t == 1 &amp;&amp; faultAtId != 267</label>
+      <label kind="assignment" x="20" y="143">osp_dec(2), osp_inc(), os[osp - 1] = os[osp - 1] + os[osp], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id3" />
+      <target ref="id4" />
+      <label kind="guard" x="20" y="195">t == 1 &amp;&amp; faultAtId != 268</label>
+      <label kind="assignment" x="20" y="208">osp_dec(1), H[cp0] = os[osp], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id4" />
+      <target ref="id5" />
+      <label kind="guard" x="20" y="260">t == 1 &amp;&amp; faultAtId != 269</label>
+      <label kind="assignment" x="20" y="273">osp_inc(), os[osp - 1] = 1, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id5" />
+      <target ref="id-1" />
+      <label kind="guard" x="20" y="325">t == 1 &amp;&amp; faultAtId != 270</label>
+      <label kind="assignment" x="20" y="364">osp_dec(1), par0 = os[osp], osp = 0, t = 0</label>
+      <label kind="synchronisation" x="20" y="338">cExampleCFI_isInvalid!</label>
+      <nail x="-100" y="130" />
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="0">faultAtId == 265</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id2" />
+      <label kind="guard" x="20" y="0">faultAtId == 266</label>
+      <nail x="-50" y="-35" />
+      <nail x="-90" y="-35" />
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="130">faultAtId == 267</label>
+    </transition>
+    <transition>
+      <source ref="id3" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="195">faultAtId == 268</label>
+    </transition>
+    <transition>
+      <source ref="id4" />
+      <target ref="id5" />
+      <label kind="guard" x="20" y="0">faultAtId == 269</label>
+      <nail x="-50" y="160" />
+      <nail x="-90" y="160" />
+    </transition>
+  </template>
+  <template>
+    <name>ExampleCFI_ExampleCFI</name>
+    <declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+    <location id="id-1" x="0" y="-65">
+      <name x="20" y="-78">ExampleCFI</name>
+      <label kind="exponentialrate" x="-70" y="-65">1</label>
+    </location>
+    <location id="id0" x="0" y="0">
+      <name x="20" y="-13">pc0__aload_0</name>
+      <label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+    </location>
+    <location id="id1" x="0" y="65">
+      <name x="20" y="52">pc1__invokespecial_void_java_lang_Object_init_</name>
+      <label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+    </location>
+    <location id="id2" x="0" y="130">
+      <name x="20" y="117">pc4__aload_0</name>
+      <label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+    </location>
+    <location id="id3" x="0" y="195">
+      <name x="20" y="182">pc5__invokespecial_void_ExampleCFI_processVerifyPIN_</name>
+      <label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+    </location>
+    <location id="id4" x="0" y="260">
+      <name x="20" y="247">pc8__getstatic_ExampleCFI_flag___int</name>
+      <label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+    </location>
+    <location id="id5" x="0" y="325">
+      <name x="20" y="312">pc11__iconst_3</name>
+      <label kind="invariant" x="-70" y="325">t &lt;= 1</label>
+    </location>
+    <location id="id6" x="0" y="390">
+      <name x="20" y="377">pc12__ifcmpeq_11</name>
+      <label kind="invariant" x="-70" y="390">t &lt;= 1</label>
+    </location>
+    <location id="id7" x="0" y="455">
+      <name x="20" y="442">pc15__new_java_lang_Exception</name>
+      <label kind="invariant" x="-70" y="455">t &lt;= 1</label>
+    </location>
+    <location id="id8" x="0" y="520">
+      <name x="20" y="507">pc18__dup</name>
+      <label kind="invariant" x="-70" y="520">t &lt;= 1</label>
+    </location>
+    <location id="id9" x="0" y="585">
+      <name x="20" y="572">pc19__invokespecial_void_java_lang_Exception_init_</name>
+      <label kind="invariant" x="-70" y="585">t &lt;= 1</label>
+    </location>
+    <location id="id10" x="0" y="650">
+      <name x="20" y="637">pc22__athrow</name>
+      <label kind="invariant" x="-70" y="650">t &lt;= 1</label>
+    </location>
+    <location id="id11" x="0" y="715">
+      <name x="20" y="702">pc23__return</name>
+      <label kind="invariant" x="-70" y="715">t &lt;= 1</label>
+    </location>
+    <location id="id1a" x="200" y="91">
+      <name x="220" y="78"></name>
+      <label kind="invariant" x="0" y="0">t &lt;= 5</label>
+    </location>
+    <location id="id3a" x="200" y="221">
+      <name x="220" y="208"></name>
+      <label kind="exponentialrate" x="130" y="221">1</label>
+    </location>
+    <location id="id3aa" x="200" y="247">
+      <name x="220" y="234"></name>
+      <label kind="exponentialrate" x="130" y="247">1</label>
+      <urgent />
+    </location>
+    <location id="id9a" x="200" y="611">
+      <name x="220" y="598"></name>
+      <label kind="invariant" x="0" y="0">t &lt;= 5</label>
+    </location>
+    <location id="id10a" x="200" y="676">
+      <name x="220" y="663"></name>
+      <label kind="exponentialrate" x="130" y="676">1</label>
+      <urgent />
+    </location>
+    <location id="id9999" x="-400" y="200">
+      <name x="-380" y="187">error</name>
+    </location>
+    <init ref="id-1" />
+    <transition>
+      <source ref="id-1" />
+      <target ref="id0" />
+      <label kind="guard" x="20" y="-65">t == 1</label>
+      <label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+      <label kind="synchronisation" x="20" y="-52">cExampleCFI_ExampleCFI?</label>
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id1" />
+      <label kind="guard" x="20" y="0">t == 1 &amp;&amp; faultAtId != 272</label>
+      <label kind="assignment" x="20" y="13"> osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id1a" />
+      <label kind="guard" x="20" y="65">t == 1 &amp;&amp; faultAtId != 273</label>
+      <label kind="assignment" x="20" y="78">osp_dec(1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id1a" />
+      <target ref="id2" />
+      <label kind="guard" x="20" y="91">t == 5</label>
+      <label kind="assignment" x="20" y="104">t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id3" />
+      <label kind="guard" x="20" y="130">t == 1 &amp;&amp; faultAtId != 274</label>
+      <label kind="assignment" x="20" y="143"> osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id3" />
+      <target ref="id3a" />
+      <label kind="guard" x="20" y="195">t == 1 &amp;&amp; faultAtId != 275</label>
+      <label kind="assignment" x="20" y="208">osp_dec(1), t = 0, par0 = os[osp]</label>
+      <label kind="synchronisation" x="20" y="221">cExampleCFI_processVerifyPIN!</label>
+    </transition>
+    <transition>
+      <source ref="id3a" />
+      <target ref="id4" />
+      <label kind="guard" x="20" y="234">!exceptionOccurred</label>
+      <label kind="assignment" x="20" y="247">t = 0</label>
+      <label kind="synchronisation" x="20" y="221">cExampleCFI_processVerifyPIN?</label>
+    </transition>
+    <transition>
+      <source ref="id3a" />
+      <target ref="id3aa" />
+      <label kind="guard" x="20" y="221">exceptionOccurred == true</label>
+      <label kind="assignment" x="20" y="234">osp = 0</label>
+      <label kind="synchronisation" x="20" y="247">cExampleCFI_processVerifyPIN?</label>
+    </transition>
+    <transition>
+      <source ref="id3aa" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="247">cExampleCFI_ExampleCFI!</label>
+    </transition>
+    <transition>
+      <source ref="id4" />
+      <target ref="id5" />
+      <label kind="guard" x="20" y="260">t == 1 &amp;&amp; faultAtId != 276</label>
+      <label kind="assignment" x="20" y="273">osp_inc(), os[osp-1] = H[cp0], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id5" />
+      <target ref="id6" />
+      <label kind="guard" x="20" y="325">t == 1 &amp;&amp; faultAtId != 277</label>
+      <label kind="assignment" x="20" y="338">osp_inc(), os[osp - 1] = 3, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id6" />
+      <target ref="id11" />
+      <label kind="guard" x="20" y="390">t == 1 &amp;&amp; ifcmpeq() &amp;&amp; faultAtId != 278</label>
+      <label kind="assignment" x="20" y="403">osp_dec(2), t = 0</label>
+      <nail x="-50" y="552" />
+    </transition>
+    <transition>
+      <source ref="id6" />
+      <target ref="id7" />
+      <label kind="guard" x="20" y="390">t == 1 &amp;&amp; !ifcmpeq() &amp;&amp; faultAtId != 278</label>
+      <label kind="assignment" x="20" y="403">opstack_fault = osp &lt; 2 ? true : opstack_fault, osp_dec(2), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id7" />
+      <target ref="id8" />
+      <label kind="guard" x="20" y="455">t == 1 &amp;&amp; faultAtId != 279</label>
+      <label kind="assignment" x="20" y="468">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id8" />
+      <target ref="id9" />
+      <label kind="guard" x="20" y="533">t == 1 &amp;&amp; faultAtId != 280</label>
+      <label kind="assignment" x="20" y="520">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+    </transition>
+    <transition>
+      <source ref="id9" />
+      <target ref="id9a" />
+      <label kind="guard" x="20" y="585">t == 1 &amp;&amp; faultAtId != 281</label>
+      <label kind="assignment" x="20" y="598">osp_dec(1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id9a" />
+      <target ref="id10" />
+      <label kind="guard" x="20" y="611">t == 5</label>
+      <label kind="assignment" x="20" y="624">t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id10" />
+      <target ref="id10a" />
+      <label kind="guard" x="20" y="650">t == 1 &amp;&amp; faultAtId != 282</label>
+      <label kind="assignment" x="20" y="663">exceptionOccurred = true</label>
+    </transition>
+    <transition>
+      <source ref="id10a" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="676">cExampleCFI_ExampleCFI!</label>
+    </transition>
+    <transition>
+      <source ref="id11" />
+      <target ref="id-1" />
+      <label kind="guard" x="20" y="715">t == 1 &amp;&amp; faultAtId != 283</label>
+      <label kind="assignment" x="20" y="754">osp = 0, t = 0</label>
+      <label kind="synchronisation" x="20" y="728">cExampleCFI_ExampleCFI!</label>
+      <nail x="-100" y="325" />
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="0">faultAtId == 272</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="65">faultAtId == 273</label>
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="130">faultAtId == 274</label>
+    </transition>
+    <transition>
+      <source ref="id3" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="195">faultAtId == 275</label>
+    </transition>
+    <transition>
+      <source ref="id4" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="260">faultAtId == 276</label>
+    </transition>
+    <transition>
+      <source ref="id5" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="325">faultAtId == 277</label>
+    </transition>
+    <transition>
+      <source ref="id6" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="390">faultAtId == 278</label>
+    </transition>
+    <transition>
+      <source ref="id7" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="455">faultAtId == 279</label>
+    </transition>
+    <transition>
+      <source ref="id8" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="520">faultAtId == 280</label>
+    </transition>
+    <transition>
+      <source ref="id9" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="585">faultAtId == 281</label>
+    </transition>
+    <transition>
+      <source ref="id10" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="650">faultAtId == 282</label>
+    </transition>
+    <transition>
+      <source ref="id11" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="715">faultAtId == 283</label>
+    </transition>
+  </template>
+  <template>
+    <name>ExampleCFI_processVerifyPIN</name>
+    <declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+    <location id="id-1" x="0" y="-65">
+      <name x="20" y="-78">processVerifyPIN</name>
+      <label kind="exponentialrate" x="-70" y="-65">1</label>
+    </location>
+    <location id="id0" x="0" y="0">
+      <name x="20" y="-13">pc0__getstatic_ExampleCFI_flag___int</name>
+      <label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+    </location>
+    <location id="id1" x="0" y="65">
+      <name x="20" y="52">pc3__iconst_1</name>
+      <label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+    </location>
+    <location id="id2" x="0" y="130">
+      <name x="20" y="117">pc4__iadd</name>
+      <label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+    </location>
+    <location id="id3" x="0" y="195">
+      <name x="20" y="182">pc5__putstatic_ExampleCFI_flag___int</name>
+      <label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+    </location>
+    <location id="id4" x="0" y="260">
+      <name x="20" y="247">pc8__iconst_4</name>
+      <label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+    </location>
+    <location id="id5" x="0" y="325">
+      <name x="20" y="312">pc9__istore_1</name>
+      <label kind="invariant" x="-70" y="325">t &lt;= 1</label>
+    </location>
+    <location id="id6" x="0" y="390">
+      <name x="20" y="377">pc10__sipush_255</name>
+      <label kind="invariant" x="-70" y="390">t &lt;= 1</label>
+    </location>
+    <location id="id7" x="0" y="455">
+      <name x="20" y="442">pc13__istore_2</name>
+      <label kind="invariant" x="-70" y="455">t &lt;= 1</label>
+    </location>
+    <location id="id8" x="0" y="520">
+      <name x="20" y="507">pc14__aload_0</name>
+      <label kind="invariant" x="-70" y="520">t &lt;= 1</label>
+    </location>
+    <location id="id9" x="0" y="585">
+      <name x="20" y="572">pc15__invokespecial_short_ExampleCFI_setIncomingAndReceive_</name>
+      <label kind="invariant" x="-70" y="585">t &lt;= 1</label>
+    </location>
+    <location id="id10" x="0" y="650">
+      <name x="20" y="637">pc18__istore_4</name>
+      <label kind="invariant" x="-70" y="650">t &lt;= 1</label>
+    </location>
+    <location id="id11" x="0" y="715">
+      <name x="20" y="702">pc20__iload_4</name>
+      <label kind="invariant" x="-70" y="715">t &lt;= 1</label>
+    </location>
+    <location id="id12" x="0" y="780">
+      <name x="20" y="767">pc22__iload_1</name>
+      <label kind="invariant" x="-70" y="780">t &lt;= 1</label>
+    </location>
+    <location id="id13" x="0" y="845">
+      <name x="20" y="832">pc23__ifcmpge_11</name>
+      <label kind="invariant" x="-70" y="845">t &lt;= 1</label>
+    </location>
+    <location id="id14" x="0" y="910">
+      <name x="20" y="897">pc26__new_java_lang_Exception</name>
+      <label kind="invariant" x="-70" y="910">t &lt;= 1</label>
+    </location>
+    <location id="id15" x="0" y="975">
+      <name x="20" y="962">pc29__dup</name>
+      <label kind="invariant" x="-70" y="975">t &lt;= 1</label>
+    </location>
+    <location id="id16" x="0" y="1040">
+      <name x="20" y="1027">pc30__invokespecial_void_java_lang_Exception_init_</name>
+      <label kind="invariant" x="-70" y="1040">t &lt;= 1</label>
+    </location>
+    <location id="id17" x="0" y="1105">
+      <name x="20" y="1092">pc33__athrow</name>
+      <label kind="invariant" x="-70" y="1105">t &lt;= 1</label>
+    </location>
+    <location id="id18" x="0" y="1170">
+      <name x="20" y="1157">pc34__aload_0</name>
+      <label kind="invariant" x="-70" y="1170">t &lt;= 1</label>
+    </location>
+    <location id="id19" x="0" y="1235">
+      <name x="20" y="1222">pc35__invokespecial_bool_ExampleCFI_isInvalid_</name>
+      <label kind="invariant" x="-70" y="1235">t &lt;= 1</label>
+    </location>
+    <location id="id20" x="0" y="1300">
+      <name x="20" y="1287">pc38__ifeq_16</name>
+      <label kind="invariant" x="-70" y="1300">t &lt;= 1</label>
+    </location>
+    <location id="id21" x="0" y="1365">
+      <name x="20" y="1352">pc41__aload_0</name>
+      <label kind="invariant" x="-70" y="1365">t &lt;= 1</label>
+    </location>
+    <location id="id22" x="0" y="1430">
+      <name x="20" y="1417">pc42__invokespecial_int_ExampleCFI_getTriesRemaining_</name>
+      <label kind="invariant" x="-70" y="1430">t &lt;= 1</label>
+    </location>
+    <location id="id23" x="0" y="1495">
+      <name x="20" y="1482">pc45__istore_3</name>
+      <label kind="invariant" x="-70" y="1495">t &lt;= 1</label>
+    </location>
+    <location id="id24" x="0" y="1560">
+      <name x="20" y="1547">pc46__new_java_lang_Exception</name>
+      <label kind="invariant" x="-70" y="1560">t &lt;= 1</label>
+    </location>
+    <location id="id25" x="0" y="1625">
+      <name x="20" y="1612">pc49__dup</name>
+      <label kind="invariant" x="-70" y="1625">t &lt;= 1</label>
+    </location>
+    <location id="id26" x="0" y="1690">
+      <name x="20" y="1677">pc50__invokespecial_void_java_lang_Exception_init_</name>
+      <label kind="invariant" x="-70" y="1690">t &lt;= 1</label>
+    </location>
+    <location id="id27" x="0" y="1755">
+      <name x="20" y="1742">pc53__athrow</name>
+      <label kind="invariant" x="-70" y="1755">t &lt;= 1</label>
+    </location>
+    <location id="id28" x="0" y="1820">
+      <name x="20" y="1807">pc54__return</name>
+      <label kind="invariant" x="-70" y="1820">t &lt;= 1</label>
+    </location>
+    <location id="id9a" x="200" y="611">
+      <name x="220" y="598"></name>
+      <label kind="exponentialrate" x="130" y="611">1</label>
+    </location>
+    <location id="id9aa" x="200" y="637">
+      <name x="220" y="624"></name>
+      <label kind="exponentialrate" x="130" y="637">1</label>
+      <urgent />
+    </location>
+    <location id="id16a" x="200" y="1066">
+      <name x="220" y="1053"></name>
+      <label kind="invariant" x="0" y="0">t &lt;= 5</label>
+    </location>
+    <location id="id17a" x="200" y="1131">
+      <name x="220" y="1118"></name>
+      <label kind="exponentialrate" x="130" y="1131">1</label>
+      <urgent />
+    </location>
+    <location id="id19a" x="200" y="1261">
+      <name x="220" y="1248"></name>
+      <label kind="exponentialrate" x="130" y="1261">1</label>
+    </location>
+    <location id="id19aa" x="200" y="1287">
+      <name x="220" y="1274"></name>
+      <label kind="exponentialrate" x="130" y="1287">1</label>
+      <urgent />
+    </location>
+    <location id="id22a" x="200" y="1456">
+      <name x="220" y="1443"></name>
+      <label kind="exponentialrate" x="130" y="1456">1</label>
+    </location>
+    <location id="id22aa" x="200" y="1482">
+      <name x="220" y="1469"></name>
+      <label kind="exponentialrate" x="130" y="1482">1</label>
+      <urgent />
+    </location>
+    <location id="id26a" x="200" y="1716">
+      <name x="220" y="1703"></name>
+      <label kind="invariant" x="0" y="0">t &lt;= 5</label>
+    </location>
+    <location id="id27a" x="200" y="1781">
+      <name x="220" y="1768"></name>
+      <label kind="exponentialrate" x="130" y="1781">1</label>
+      <urgent />
+    </location>
+    <location id="id9999" x="-400" y="200">
+      <name x="-380" y="187">error</name>
+    </location>
+    <init ref="id-1" />
+    <transition>
+      <source ref="id-1" />
+      <target ref="id0" />
+      <label kind="guard" x="20" y="-65">t == 1</label>
+      <label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+      <label kind="synchronisation" x="20" y="-52">cExampleCFI_processVerifyPIN?</label>
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id1" />
+      <label kind="guard" x="20" y="0">t == 1 &amp;&amp; faultAtId != 290</label>
+      <label kind="assignment" x="20" y="13">osp_inc(), os[osp-1] = H[cp0], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id2" />
+      <label kind="guard" x="20" y="65">t == 1 &amp;&amp; faultAtId != 291</label>
+      <label kind="assignment" x="20" y="78">osp_inc(), os[osp - 1] = 1, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id3" />
+      <label kind="guard" x="20" y="130">t == 1 &amp;&amp; faultAtId != 292</label>
+      <label kind="assignment" x="20" y="143">osp_dec(2), osp_inc(), os[osp - 1] = os[osp - 1] + os[osp], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id3" />
+      <target ref="id4" />
+      <label kind="guard" x="20" y="195">t == 1 &amp;&amp; faultAtId != 293</label>
+      <label kind="assignment" x="20" y="208">osp_dec(1), H[cp0] = os[osp], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id4" />
+      <target ref="id5" />
+      <label kind="guard" x="20" y="260">t == 1 &amp;&amp; faultAtId != 294</label>
+      <label kind="assignment" x="20" y="273">osp_inc(), os[osp - 1] = 4, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id5" />
+      <target ref="id6" />
+      <label kind="guard" x="20" y="338">t == 1 &amp;&amp; faultAtId != 295</label>
+      <label kind="assignment" x="20" y="325">osp_dec(1), locs[1] = os[osp]</label>
+    </transition>
+    <transition>
+      <source ref="id6" />
+      <target ref="id7" />
+      <label kind="guard" x="20" y="403">t == 1 &amp;&amp; faultAtId != 296</label>
+      <label kind="assignment" x="20" y="390">osp_inc(), os[osp] = 255</label>
+    </transition>
+    <transition>
+      <source ref="id7" />
+      <target ref="id8" />
+      <label kind="guard" x="20" y="468">t == 1 &amp;&amp; faultAtId != 297</label>
+      <label kind="assignment" x="20" y="455">osp_dec(1), locs[2] = os[osp]</label>
+    </transition>
+    <transition>
+      <source ref="id8" />
+      <target ref="id9" />
+      <label kind="guard" x="20" y="520">t == 1 &amp;&amp; faultAtId != 298</label>
+      <label kind="assignment" x="20" y="533"> osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id9" />
+      <target ref="id9a" />
+      <label kind="guard" x="20" y="585">t == 1 &amp;&amp; faultAtId != 299</label>
+      <label kind="assignment" x="20" y="598">osp_dec(1), t = 0, par0 = os[osp]</label>
+      <label kind="synchronisation" x="20" y="611">cExampleCFI_setIncomingAndReceive!</label>
+    </transition>
+    <transition>
+      <source ref="id9a" />
+      <target ref="id10" />
+      <label kind="guard" x="20" y="624">!exceptionOccurred</label>
+      <label kind="assignment" x="20" y="637">t = 0, os[osp] = par0, osp_inc()</label>
+      <label kind="synchronisation" x="20" y="611">cExampleCFI_setIncomingAndReceive?</label>
+    </transition>
+    <transition>
+      <source ref="id9a" />
+      <target ref="id9aa" />
+      <label kind="guard" x="20" y="611">exceptionOccurred == true</label>
+      <label kind="assignment" x="20" y="624">osp = 0</label>
+      <label kind="synchronisation" x="20" y="637">cExampleCFI_setIncomingAndReceive?</label>
+    </transition>
+    <transition>
+      <source ref="id9aa" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="637">cExampleCFI_processVerifyPIN!</label>
+    </transition>
+    <transition>
+      <source ref="id10" />
+      <target ref="id11" />
+      <label kind="guard" x="20" y="663">t == 1 &amp;&amp; faultAtId != 300</label>
+      <label kind="assignment" x="20" y="650">osp_dec(1), locs[4] = os[osp]</label>
+    </transition>
+    <transition>
+      <source ref="id11" />
+      <target ref="id12" />
+      <label kind="guard" x="20" y="728">t == 1 &amp;&amp; faultAtId != 301</label>
+      <label kind="assignment" x="20" y="715">osp_inc(), os[osp - 1] = locs[4]</label>
+    </transition>
+    <transition>
+      <source ref="id12" />
+      <target ref="id13" />
+      <label kind="guard" x="20" y="793">t == 1 &amp;&amp; faultAtId != 302</label>
+      <label kind="assignment" x="20" y="780">osp_inc(), os[osp - 1] = locs[1]</label>
+    </transition>
+    <transition>
+      <source ref="id13" />
+      <target ref="id14" />
+      <label kind="guard" x="20" y="845">t == 1 &amp;&amp; !ifcmpge() &amp;&amp; faultAtId != 303</label>
+      <label kind="assignment" x="20" y="858">osp_dec(2)</label>
+    </transition>
+    <transition>
+      <source ref="id13" />
+      <target ref="id18" />
+      <label kind="guard" x="20" y="845">t == 1 &amp;&amp; ifcmpge() &amp;&amp; faultAtId != 303</label>
+      <label kind="assignment" x="20" y="858">osp_dec(2)</label>
+      <nail x="-50" y="1007" />
+    </transition>
+    <transition>
+      <source ref="id14" />
+      <target ref="id15" />
+      <label kind="guard" x="20" y="910">t == 1 &amp;&amp; faultAtId != 304</label>
+      <label kind="assignment" x="20" y="923">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id15" />
+      <target ref="id16" />
+      <label kind="guard" x="20" y="988">t == 1 &amp;&amp; faultAtId != 305</label>
+      <label kind="assignment" x="20" y="975">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+    </transition>
+    <transition>
+      <source ref="id16" />
+      <target ref="id16a" />
+      <label kind="guard" x="20" y="1040">t == 1 &amp;&amp; faultAtId != 306</label>
+      <label kind="assignment" x="20" y="1053">osp_dec(1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id16a" />
+      <target ref="id17" />
+      <label kind="guard" x="20" y="1066">t == 5</label>
+      <label kind="assignment" x="20" y="1079">t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id17" />
+      <target ref="id17a" />
+      <label kind="guard" x="20" y="1105">t == 1 &amp;&amp; faultAtId != 307</label>
+      <label kind="assignment" x="20" y="1118">exceptionOccurred = true</label>
+    </transition>
+    <transition>
+      <source ref="id17a" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="1131">cExampleCFI_processVerifyPIN!</label>
+    </transition>
+    <transition>
+      <source ref="id18" />
+      <target ref="id19" />
+      <label kind="guard" x="20" y="1170">t == 1 &amp;&amp; faultAtId != 308</label>
+      <label kind="assignment" x="20" y="1183"> osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id19" />
+      <target ref="id19a" />
+      <label kind="guard" x="20" y="1235">t == 1 &amp;&amp; faultAtId != 309</label>
+      <label kind="assignment" x="20" y="1248">osp_dec(1), t = 0, par0 = os[osp]</label>
+      <label kind="synchronisation" x="20" y="1261">cExampleCFI_isInvalid!</label>
+    </transition>
+    <transition>
+      <source ref="id19a" />
+      <target ref="id20" />
+      <label kind="guard" x="20" y="1274">!exceptionOccurred</label>
+      <label kind="assignment" x="20" y="1287">t = 0, os[osp] = par0, osp_inc()</label>
+      <label kind="synchronisation" x="20" y="1261">cExampleCFI_isInvalid?</label>
+    </transition>
+    <transition>
+      <source ref="id19a" />
+      <target ref="id19aa" />
+      <label kind="guard" x="20" y="1261">exceptionOccurred == true</label>
+      <label kind="assignment" x="20" y="1274">osp = 0</label>
+      <label kind="synchronisation" x="20" y="1287">cExampleCFI_isInvalid?</label>
+    </transition>
+    <transition>
+      <source ref="id19aa" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="1287">cExampleCFI_processVerifyPIN!</label>
+    </transition>
+    <transition>
+      <source ref="id20" />
+      <target ref="id28" />
+      <label kind="guard" x="20" y="1300">t == 1 &amp;&amp; ifeq() &amp;&amp; faultAtId != 310</label>
+      <label kind="assignment" x="20" y="1313">osp_dec(1), t = 0</label>
+      <nail x="-50" y="1560" />
+    </transition>
+    <transition>
+      <source ref="id20" />
+      <target ref="id21" />
+      <label kind="guard" x="20" y="1300">t == 1 &amp;&amp; !ifeq() &amp;&amp; faultAtId != 310</label>
+      <label kind="assignment" x="20" y="1313">opstack_fault = osp &lt; 1 ? true : opstack_fault, osp_dec(1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id21" />
+      <target ref="id22" />
+      <label kind="guard" x="20" y="1365">t == 1 &amp;&amp; faultAtId != 311</label>
+      <label kind="assignment" x="20" y="1378"> osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id22" />
+      <target ref="id22a" />
+      <label kind="guard" x="20" y="1430">t == 1 &amp;&amp; faultAtId != 312</label>
+      <label kind="assignment" x="20" y="1443">osp_dec(1), t = 0, par0 = os[osp]</label>
+      <label kind="synchronisation" x="20" y="1456">cExampleCFI_getTriesRemaining!</label>
+    </transition>
+    <transition>
+      <source ref="id22a" />
+      <target ref="id23" />
+      <label kind="guard" x="20" y="1469">!exceptionOccurred</label>
+      <label kind="assignment" x="20" y="1482">t = 0, os[osp] = par0, osp_inc()</label>
+      <label kind="synchronisation" x="20" y="1456">cExampleCFI_getTriesRemaining?</label>
+    </transition>
+    <transition>
+      <source ref="id22a" />
+      <target ref="id22aa" />
+      <label kind="guard" x="20" y="1456">exceptionOccurred == true</label>
+      <label kind="assignment" x="20" y="1469">osp = 0</label>
+      <label kind="synchronisation" x="20" y="1482">cExampleCFI_getTriesRemaining?</label>
+    </transition>
+    <transition>
+      <source ref="id22aa" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="1482">cExampleCFI_processVerifyPIN!</label>
+    </transition>
+    <transition>
+      <source ref="id23" />
+      <target ref="id24" />
+      <label kind="guard" x="20" y="1508">t == 1 &amp;&amp; faultAtId != 313</label>
+      <label kind="assignment" x="20" y="1495">osp_dec(1), locs[3] = os[osp]</label>
+    </transition>
+    <transition>
+      <source ref="id24" />
+      <target ref="id25" />
+      <label kind="guard" x="20" y="1560">t == 1 &amp;&amp; faultAtId != 314</label>
+      <label kind="assignment" x="20" y="1573">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id25" />
+      <target ref="id26" />
+      <label kind="guard" x="20" y="1638">t == 1 &amp;&amp; faultAtId != 315</label>
+      <label kind="assignment" x="20" y="1625">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+    </transition>
+    <transition>
+      <source ref="id26" />
+      <target ref="id26a" />
+      <label kind="guard" x="20" y="1690">t == 1 &amp;&amp; faultAtId != 316</label>
+      <label kind="assignment" x="20" y="1703">osp_dec(1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id26a" />
+      <target ref="id27" />
+      <label kind="guard" x="20" y="1716">t == 5</label>
+      <label kind="assignment" x="20" y="1729">t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id27" />
+      <target ref="id27a" />
+      <label kind="guard" x="20" y="1755">t == 1 &amp;&amp; faultAtId != 317</label>
+      <label kind="assignment" x="20" y="1768">exceptionOccurred = true</label>
+    </transition>
+    <transition>
+      <source ref="id27a" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="1781">cExampleCFI_processVerifyPIN!</label>
+    </transition>
+    <transition>
+      <source ref="id28" />
+      <target ref="id-1" />
+      <label kind="guard" x="20" y="1820">t == 1 &amp;&amp; faultAtId != 318</label>
+      <label kind="assignment" x="20" y="1859">osp = 0, t = 0</label>
+      <label kind="synchronisation" x="20" y="1833">cExampleCFI_processVerifyPIN!</label>
+      <nail x="-100" y="877" />
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="0">faultAtId == 290</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id2" />
+      <label kind="guard" x="20" y="0">faultAtId == 291</label>
+      <nail x="-50" y="-35" />
+      <nail x="-90" y="-35" />
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="130">faultAtId == 292</label>
+    </transition>
+    <transition>
+      <source ref="id3" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="195">faultAtId == 293</label>
+    </transition>
+    <transition>
+      <source ref="id4" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="260">faultAtId == 294</label>
+    </transition>
+    <transition>
+      <source ref="id5" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="325">faultAtId == 295</label>
+    </transition>
+    <transition>
+      <source ref="id6" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="390">faultAtId == 296</label>
+    </transition>
+    <transition>
+      <source ref="id7" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="455">faultAtId == 297</label>
+    </transition>
+    <transition>
+      <source ref="id8" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="520">faultAtId == 298</label>
+    </transition>
+    <transition>
+      <source ref="id9" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="585">faultAtId == 299</label>
+    </transition>
+    <transition>
+      <source ref="id10" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="650">faultAtId == 300</label>
+    </transition>
+    <transition>
+      <source ref="id11" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="715">faultAtId == 301</label>
+    </transition>
+    <transition>
+      <source ref="id12" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="780">faultAtId == 302</label>
+    </transition>
+    <transition>
+      <source ref="id13" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="845">faultAtId == 303</label>
+    </transition>
+    <transition>
+      <source ref="id14" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="910">faultAtId == 304</label>
+    </transition>
+    <transition>
+      <source ref="id15" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="975">faultAtId == 305</label>
+    </transition>
+    <transition>
+      <source ref="id16" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="1040">faultAtId == 306</label>
+    </transition>
+    <transition>
+      <source ref="id17" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="1105">faultAtId == 307</label>
+    </transition>
+    <transition>
+      <source ref="id18" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="1170">faultAtId == 308</label>
+    </transition>
+    <transition>
+      <source ref="id19" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="1235">faultAtId == 309</label>
+    </transition>
+    <transition>
+      <source ref="id20" />
+      <target ref="id28" />
+      <label kind="guard" x="20" y="0">faultAtId == 310</label>
+      <nail x="-50" y="1200" />
+      <nail x="-90" y="1200" />
+    </transition>
+    <transition>
+      <source ref="id20" />
+      <target ref="id21" />
+      <label kind="guard" x="20" y="0">faultAtId == 310</label>
+      <nail x="-50" y="1200" />
+      <nail x="-90" y="1200" />
+    </transition>
+    <transition>
+      <source ref="id21" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="1365">faultAtId == 311</label>
+    </transition>
+    <transition>
+      <source ref="id22" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="1430">faultAtId == 312</label>
+    </transition>
+    <transition>
+      <source ref="id23" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="1495">faultAtId == 313</label>
+    </transition>
+    <transition>
+      <source ref="id24" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="1560">faultAtId == 314</label>
+    </transition>
+    <transition>
+      <source ref="id25" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="1625">faultAtId == 315</label>
+    </transition>
+    <transition>
+      <source ref="id26" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="1690">faultAtId == 316</label>
+    </transition>
+    <transition>
+      <source ref="id27" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="1755">faultAtId == 317</label>
+    </transition>
+    <transition>
+      <source ref="id28" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="1820">faultAtId == 318</label>
+    </transition>
+  </template>
+  <template>
+    <name>ExampleCFI_main</name>
+    <declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+    <location id="id-1" x="0" y="-65">
+      <name x="20" y="-78">main</name>
+      <label kind="exponentialrate" x="-70" y="-65">1</label>
+      <urgent />
+    </location>
+    <location id="id0" x="0" y="0">
+      <name x="20" y="-13">pc0__new_ExampleCFI</name>
+      <label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+    </location>
+    <location id="id1" x="0" y="65">
+      <name x="20" y="52">pc3__dup</name>
+      <label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+    </location>
+    <location id="id2" x="0" y="130">
+      <name x="20" y="117">pc4__invokespecial_void_ExampleCFI_init_</name>
+      <label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+    </location>
+    <location id="id3" x="0" y="195">
+      <name x="20" y="182">pc7__astore_1</name>
+      <label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+    </location>
+    <location id="id4" x="0" y="260">
+      <name x="20" y="247">pc8__goto_4</name>
+      <label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+    </location>
+    <location id="id5" x="0" y="325">
+      <name x="20" y="312">pc11__astore_1</name>
+      <label kind="invariant" x="-70" y="325">t &lt;= 1</label>
+    </location>
+    <location id="id6" x="0" y="390">
+      <name x="20" y="377">pc12__return</name>
+      <label kind="invariant" x="-70" y="390">t &lt;= 1</label>
+    </location>
+    <location id="id2a" x="200" y="156">
+      <name x="220" y="143"></name>
+      <label kind="exponentialrate" x="130" y="156">1</label>
+    </location>
+    <location id="id2aa" x="200" y="182">
+      <name x="220" y="169"></name>
+      <label kind="exponentialrate" x="130" y="182">1</label>
+      <urgent />
+    </location>
+    <location id="id6a" x="200" y="416">
+      <name x="220" y="403">Done</name>
+      <label kind="exponentialrate" x="0" y="0">1</label>
+    </location>
+    <location id="id9999" x="-400" y="200">
+      <name x="-380" y="187">error</name>
+    </location>
+    <init ref="id-1" />
+    <transition>
+      <source ref="id-1" />
+      <target ref="id0" />
+      <label kind="assignment" x="20" y="-65">t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id1" />
+      <label kind="guard" x="20" y="0">t == 1 &amp;&amp; faultAtId != 330</label>
+      <label kind="assignment" x="20" y="13">osp_inc(), os[osp-1] = alocNew(1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id2" />
+      <label kind="guard" x="20" y="78">t == 1 &amp;&amp; faultAtId != 331</label>
+      <label kind="assignment" x="20" y="65">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id2a" />
+      <label kind="guard" x="20" y="130">t == 1 &amp;&amp; faultAtId != 332</label>
+      <label kind="assignment" x="20" y="143">osp_dec(1), t = 0, par0 = os[osp]</label>
+      <label kind="synchronisation" x="20" y="156">cExampleCFI_ExampleCFI!</label>
+    </transition>
+    <transition>
+      <source ref="id2a" />
+      <target ref="id3" />
+      <label kind="guard" x="20" y="169">!exceptionOccurred</label>
+      <label kind="assignment" x="20" y="182">t = 0</label>
+      <label kind="synchronisation" x="20" y="156">cExampleCFI_ExampleCFI?</label>
+    </transition>
+    <transition>
+      <source ref="id2a" />
+      <target ref="id2aa" />
+      <label kind="guard" x="20" y="156">exceptionOccurred == true</label>
+      <label kind="assignment" x="20" y="169">osp_inc()</label>
+      <label kind="synchronisation" x="20" y="182">cExampleCFI_ExampleCFI?</label>
+    </transition>
+    <transition>
+      <source ref="id2aa" />
+      <target ref="id5" />
+      <label kind="synchronisation" x="20" y="182">cExampleCFI_main!</label>
+    </transition>
+    <transition>
+      <source ref="id3" />
+      <target ref="id4" />
+      <label kind="guard" x="20" y="208">t == 1 &amp;&amp; faultAtId != 333</label>
+      <label kind="assignment" x="20" y="195">osp_dec(1), locs[1] = os[osp]</label>
+    </transition>
+    <transition>
+      <source ref="id4" />
+      <target ref="id6" />
+      <label kind="guard" x="20" y="260">t == 1 &amp;&amp; faultAtId != 334</label>
+      <nail x="-50" y="325" />
+    </transition>
+    <transition>
+      <source ref="id5" />
+      <target ref="id6" />
+      <label kind="guard" x="20" y="338">t == 1 &amp;&amp; faultAtId != 335</label>
+      <label kind="assignment" x="20" y="325">osp_dec(1), locs[1] = os[osp]</label>
+    </transition>
+    <transition>
+      <source ref="id6" />
+      <target ref="id6a" />
+      <label kind="guard" x="20" y="390">t == 1 &amp;&amp; faultAtId != 336</label>
+      <label kind="synchronisation" x="20" y="403">cExampleCFI_main!</label>
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="0">faultAtId == 330</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="65">faultAtId == 331</label>
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="130">faultAtId == 332</label>
+    </transition>
+    <transition>
+      <source ref="id3" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="195">faultAtId == 333</label>
+    </transition>
+    <transition>
+      <source ref="id4" />
+      <target ref="id6" />
+      <label kind="guard" x="20" y="0">faultAtId == 334</label>
+      <nail x="-50" y="160" />
+      <nail x="-90" y="160" />
+    </transition>
+    <transition>
+      <source ref="id5" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="325">faultAtId == 335</label>
+    </transition>
+    <transition>
+      <source ref="id6" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="390">faultAtId == 336</label>
+    </transition>
+  </template>
+  <template>
+    <name>ExampleCFI_getTriesRemaining</name>
+    <declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+    <location id="id-1" x="0" y="-65">
+      <name x="20" y="-78">getTriesRemaining</name>
+      <label kind="exponentialrate" x="-70" y="-65">1</label>
+    </location>
+    <location id="id0" x="0" y="0">
+      <name x="20" y="-13">pc0__iconst_2</name>
+      <label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+    </location>
+    <location id="id1" x="0" y="65">
+      <name x="20" y="52">pc1__ireturn</name>
+      <label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+    </location>
+    <location id="id9999" x="-400" y="200">
+      <name x="-380" y="187">error</name>
+    </location>
+    <init ref="id-1" />
+    <transition>
+      <source ref="id-1" />
+      <target ref="id0" />
+      <label kind="guard" x="20" y="-65">t == 1</label>
+      <label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+      <label kind="synchronisation" x="20" y="-52">cExampleCFI_getTriesRemaining?</label>
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id1" />
+      <label kind="guard" x="20" y="0">t == 1 &amp;&amp; faultAtId != 341</label>
+      <label kind="assignment" x="20" y="13">osp_inc(), os[osp - 1] = 2, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id-1" />
+      <label kind="guard" x="20" y="65">t == 1 &amp;&amp; faultAtId != 342</label>
+      <label kind="assignment" x="20" y="104">osp_dec(1), par0 = os[osp], osp = 0, t = 0</label>
+      <label kind="synchronisation" x="20" y="78">cExampleCFI_getTriesRemaining!</label>
+      <nail x="-100" y="0" />
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id1" />
+      <label kind="guard" x="20" y="0">faultAtId == 341</label>
+      <nail x="-50" y="-100" />
+      <nail x="-90" y="-100" />
+    </transition>
+  </template>
+  <template>
+    <name>ExampleCFI_setIncomingAndReceive</name>
+    <declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+    <location id="id-1" x="0" y="-65">
+      <name x="20" y="-78">setIncomingAndReceive</name>
+      <label kind="exponentialrate" x="-70" y="-65">1</label>
+    </location>
+    <location id="id0" x="0" y="0">
+      <name x="20" y="-13">pc0__getstatic_ExampleCFI_flag___int</name>
+      <label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+    </location>
+    <location id="id1" x="0" y="65">
+      <name x="20" y="52">pc3__iconst_1</name>
+      <label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+    </location>
+    <location id="id2" x="0" y="130">
+      <name x="20" y="117">pc4__iadd</name>
+      <label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+    </location>
+    <location id="id3" x="0" y="195">
+      <name x="20" y="182">pc5__putstatic_ExampleCFI_flag___int</name>
+      <label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+    </location>
+    <location id="id4" x="0" y="260">
+      <name x="20" y="247">pc8__iconst_5</name>
+      <label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+    </location>
+    <location id="id5" x="0" y="325">
+      <name x="20" y="312">pc9__ireturn</name>
+      <label kind="invariant" x="-70" y="325">t &lt;= 1</label>
+    </location>
+    <location id="id9999" x="-400" y="200">
+      <name x="-380" y="187">error</name>
+    </location>
+    <init ref="id-1" />
+    <transition>
+      <source ref="id-1" />
+      <target ref="id0" />
+      <label kind="guard" x="20" y="-65">t == 1</label>
+      <label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+      <label kind="synchronisation" x="20" y="-52">cExampleCFI_setIncomingAndReceive?</label>
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id1" />
+      <label kind="guard" x="20" y="0">t == 1 &amp;&amp; faultAtId != 344</label>
+      <label kind="assignment" x="20" y="13">osp_inc(), os[osp-1] = H[cp0], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id2" />
+      <label kind="guard" x="20" y="65">t == 1 &amp;&amp; faultAtId != 345</label>
+      <label kind="assignment" x="20" y="78">osp_inc(), os[osp - 1] = 1, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id3" />
+      <label kind="guard" x="20" y="130">t == 1 &amp;&amp; faultAtId != 346</label>
+      <label kind="assignment" x="20" y="143">osp_dec(2), osp_inc(), os[osp - 1] = os[osp - 1] + os[osp], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id3" />
+      <target ref="id4" />
+      <label kind="guard" x="20" y="195">t == 1 &amp;&amp; faultAtId != 347</label>
+      <label kind="assignment" x="20" y="208">osp_dec(1), H[cp0] = os[osp], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id4" />
+      <target ref="id5" />
+      <label kind="guard" x="20" y="260">t == 1 &amp;&amp; faultAtId != 348</label>
+      <label kind="assignment" x="20" y="273">osp_inc(), os[osp - 1] = 5, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id5" />
+      <target ref="id-1" />
+      <label kind="guard" x="20" y="325">t == 1 &amp;&amp; faultAtId != 349</label>
+      <label kind="assignment" x="20" y="364">osp_dec(1), par0 = os[osp], osp = 0, t = 0</label>
+      <label kind="synchronisation" x="20" y="338">cExampleCFI_setIncomingAndReceive!</label>
+      <nail x="-100" y="130" />
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="0">faultAtId == 344</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id2" />
+      <label kind="guard" x="20" y="0">faultAtId == 345</label>
+      <nail x="-50" y="-35" />
+      <nail x="-90" y="-35" />
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="130">faultAtId == 346</label>
+    </transition>
+    <transition>
+      <source ref="id3" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="195">faultAtId == 347</label>
+    </transition>
+    <transition>
+      <source ref="id4" />
+      <target ref="id9999" />
+      <label kind="guard" x="20" y="260">faultAtId == 348</label>
+    </transition>
+  </template>
+  <template>
+    <name>InstFaultInj</name>
+    <declaration></declaration>
+    <location id="id0" x="-17" y="-85">
+      <name x="3" y="-98" />
+    </location>
+    <location id="id1" x="-144" y="-85">
+      <name x="-124" y="-98" />
+      <committed />
+    </location>
+    <init ref="id1" />
+    <transition>
+      <source ref="id1" />
+      <target ref="id0" />
+      <label kind="select" x="-110" y="-127">i:int[0,352]</label>
+      <label kind="assignment" x="-110" y="-68">faultAtId = i</label>
+    </transition>
+  </template>
+  <system>Fault = InstFaultInj();
+iExampleCFI_isInvalid = ExampleCFI_isInvalid();
+iExampleCFI_ExampleCFI = ExampleCFI_ExampleCFI();
+iExampleCFI_processVerifyPIN = ExampleCFI_processVerifyPIN();
+iExampleCFI_main = ExampleCFI_main();
+iExampleCFI_getTriesRemaining = ExampleCFI_getTriesRemaining();
+iExampleCFI_setIncomingAndReceive = ExampleCFI_setIncomingAndReceive();
+
+system Fault, iExampleCFI_isInvalid, iExampleCFI_ExampleCFI, iExampleCFI_processVerifyPIN, iExampleCFI_main, iExampleCFI_getTriesRemaining, iExampleCFI_setIncomingAndReceive;</system>
+  <queries>queries<query>query<formula>A&lt;&gt; iExampleCFI_main.Done &amp;&amp; !opstack_fault &amp;&amp; exceptionOccurred</formula></query><query>query<formula>Pr[&lt;= 100] (&lt;&gt; iExampleCFI_main.Done &amp;&amp; !opstack_fault &amp;&amp; exceptionOccurred)</formula></query><query>query<formula>E&lt;&gt; opstack_fault</formula></query><query>query<formula>Pr[&lt;= 100] (&lt;&gt; opstack_fault)</formula></query><query>query<formula>E&lt;&gt; iExampleCFI_main.Done &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred</formula></query><query>query<formula>Pr[&lt;= 100] (&lt;&gt; iExampleCFI_main.Done &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred)</formula></query></queries>
+</nta>

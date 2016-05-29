@@ -1,0 +1,1541 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC "-//Uppaal Team//DTD Flat System 1.1//EN" "http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd"[]>
+<nta>
+  <declaration>clock t;
+bool exceptionOccurred;
+const int heap_size = 15;
+int _H[heap_size];
+int H(int i)
+{
+    if (i &lt; heap_size) return _H[i];
+    exceptionOccurred = true;
+    return 0;
+}
+void setH(int i, int v)
+{
+    if (i &lt; heap_size) _H[i] = v;
+    else exceptionOccurred = true;
+}
+int cp0= 5;
+int cp1= 6;
+int cp2= 7;
+int par0;
+int par1;
+int par2;
+broadcast chan cVirtual_Virtual;
+broadcast chan cVirtual_install;
+broadcast chan cVirtual_main;
+broadcast chan cAclass_bar;
+broadcast chan cAclass_Aclass;
+broadcast chan cAclass_foo;
+broadcast chan cBclass_Bclass;
+broadcast chan cBclass_foo;
+broadcast chan cVirtual;
+bool opstack_fault = false;
+const int classCount = 4;
+const int _classFields[classCount] = {0, 3, 1, 1};
+int classFields(int i)
+{
+    if (i &lt; classCount) return _classFields[i];
+    exceptionOccurred = true;    return 0;}
+
+int heapPointer = 1;
+int alocNew(int classID){
+    int ref = heapPointer;
+    if(classID &lt; 0) return -1;
+    setH(ref, classID);
+    heapPointer += classFields(classID);
+    return ref;
+}
+
+
+int clID = -1;
+int meID = -1;
+const int _classHierarchy[classCount] = {0, 0, 0, 2};
+int classHierarchy(int i)
+{
+    if (i &lt; classCount) return _classHierarchy[i];
+    exceptionOccurred = true;
+    return 0;
+}
+bool signature(int classID, int methodID, int methodClassID)
+{
+    return meID == methodID &amp;&amp; classID == methodClassID;
+}
+</declaration>
+  <template>
+    <name>Virtual_Virtual</name>
+    <declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+    <location id="id-1" x="0" y="-65">
+      <name x="20" y="-78">Virtual</name>
+      <label kind="exponentialrate" x="-70" y="-65">1</label>
+    </location>
+    <location id="id0" x="0" y="0">
+      <name x="20" y="-13">pc0__aload_0</name>
+      <label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+    </location>
+    <location id="id1" x="0" y="65">
+      <name x="20" y="52">pc1__invokespecial_void_java_lang_Object_init_</name>
+      <label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+    </location>
+    <location id="id2" x="0" y="130">
+      <name x="20" y="117">pc4__aload_0</name>
+      <label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+    </location>
+    <location id="id3" x="0" y="195">
+      <name x="20" y="182">pc5__new_Aclass</name>
+      <label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+    </location>
+    <location id="id4" x="0" y="260">
+      <name x="20" y="247">pc8__dup</name>
+      <label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+    </location>
+    <location id="id5" x="0" y="325">
+      <name x="20" y="312">pc9__invokespecial_void_Aclass_init_</name>
+      <label kind="invariant" x="-70" y="325">t &lt;= 1</label>
+    </location>
+    <location id="id6" x="0" y="390">
+      <name x="20" y="377">pc12__putfield_Virtual_a___Aclass</name>
+      <label kind="invariant" x="-70" y="390">t &lt;= 1</label>
+    </location>
+    <location id="id7" x="0" y="455">
+      <name x="20" y="442">pc15__aload_0</name>
+      <label kind="invariant" x="-70" y="455">t &lt;= 1</label>
+    </location>
+    <location id="id8" x="0" y="520">
+      <name x="20" y="507">pc16__new_Bclass</name>
+      <label kind="invariant" x="-70" y="520">t &lt;= 1</label>
+    </location>
+    <location id="id9" x="0" y="585">
+      <name x="20" y="572">pc19__dup</name>
+      <label kind="invariant" x="-70" y="585">t &lt;= 1</label>
+    </location>
+    <location id="id10" x="0" y="650">
+      <name x="20" y="637">pc20__invokespecial_void_Bclass_init_</name>
+      <label kind="invariant" x="-70" y="650">t &lt;= 1</label>
+    </location>
+    <location id="id11" x="0" y="715">
+      <name x="20" y="702">pc23__putfield_Virtual_b___Aclass</name>
+      <label kind="invariant" x="-70" y="715">t &lt;= 1</label>
+    </location>
+    <location id="id12" x="0" y="780">
+      <name x="20" y="767">pc26__aload_0</name>
+      <label kind="invariant" x="-70" y="780">t &lt;= 1</label>
+    </location>
+    <location id="id13" x="0" y="845">
+      <name x="20" y="832">pc27__getfield_Virtual_a___Aclass</name>
+      <label kind="invariant" x="-70" y="845">t &lt;= 1</label>
+    </location>
+    <location id="id14" x="0" y="910">
+      <name x="20" y="897">pc30__invokevirtual_int_Aclass_foo_</name>
+      <label kind="invariant" x="-70" y="910">t &lt;= 1</label>
+    </location>
+    <location id="id15" x="0" y="975">
+      <name x="20" y="962">pc33__aload_0</name>
+      <label kind="invariant" x="-70" y="975">t &lt;= 1</label>
+    </location>
+    <location id="id16" x="0" y="1040">
+      <name x="20" y="1027">pc34__getfield_Virtual_a___Aclass</name>
+      <label kind="invariant" x="-70" y="1040">t &lt;= 1</label>
+    </location>
+    <location id="id17" x="0" y="1105">
+      <name x="20" y="1092">pc37__invokevirtual_int_Aclass_bar_</name>
+      <label kind="invariant" x="-70" y="1105">t &lt;= 1</label>
+    </location>
+    <location id="id18" x="0" y="1170">
+      <name x="20" y="1157">pc40__iadd</name>
+      <label kind="invariant" x="-70" y="1170">t &lt;= 1</label>
+    </location>
+    <location id="id19" x="0" y="1235">
+      <name x="20" y="1222">pc41__istore_1</name>
+      <label kind="invariant" x="-70" y="1235">t &lt;= 1</label>
+    </location>
+    <location id="id20" x="0" y="1300">
+      <name x="20" y="1287">pc42__aload_0</name>
+      <label kind="invariant" x="-70" y="1300">t &lt;= 1</label>
+    </location>
+    <location id="id21" x="0" y="1365">
+      <name x="20" y="1352">pc43__getfield_Virtual_b___Aclass</name>
+      <label kind="invariant" x="-70" y="1365">t &lt;= 1</label>
+    </location>
+    <location id="id22" x="0" y="1430">
+      <name x="20" y="1417">pc46__invokevirtual_int_Aclass_foo_</name>
+      <label kind="invariant" x="-70" y="1430">t &lt;= 1</label>
+    </location>
+    <location id="id23" x="0" y="1495">
+      <name x="20" y="1482">pc49__aload_0</name>
+      <label kind="invariant" x="-70" y="1495">t &lt;= 1</label>
+    </location>
+    <location id="id24" x="0" y="1560">
+      <name x="20" y="1547">pc50__getfield_Virtual_b___Aclass</name>
+      <label kind="invariant" x="-70" y="1560">t &lt;= 1</label>
+    </location>
+    <location id="id25" x="0" y="1625">
+      <name x="20" y="1612">pc53__invokevirtual_int_Aclass_bar_</name>
+      <label kind="invariant" x="-70" y="1625">t &lt;= 1</label>
+    </location>
+    <location id="id26" x="0" y="1690">
+      <name x="20" y="1677">pc56__iadd</name>
+      <label kind="invariant" x="-70" y="1690">t &lt;= 1</label>
+    </location>
+    <location id="id27" x="0" y="1755">
+      <name x="20" y="1742">pc57__istore_2</name>
+      <label kind="invariant" x="-70" y="1755">t &lt;= 1</label>
+    </location>
+    <location id="id28" x="0" y="1820">
+      <name x="20" y="1807">pc58__return</name>
+      <label kind="invariant" x="-70" y="1820">t &lt;= 1</label>
+    </location>
+    <location id="id1a" x="200" y="91">
+      <name x="220" y="78" />
+      <label kind="invariant" x="0" y="0">t &lt;= 5</label>
+    </location>
+    <location id="id5a" x="200" y="351">
+      <name x="220" y="338" />
+      <label kind="exponentialrate" x="130" y="351">1</label>
+    </location>
+    <location id="id5aa" x="200" y="377">
+      <name x="220" y="364" />
+      <label kind="exponentialrate" x="330" y="377">1</label>
+      <committed />
+    </location>
+    <location id="id10a" x="200" y="676">
+      <name x="220" y="663" />
+      <label kind="exponentialrate" x="130" y="676">1</label>
+    </location>
+    <location id="id10aa" x="200" y="702">
+      <name x="220" y="689" />
+      <label kind="exponentialrate" x="330" y="702">1</label>
+      <committed />
+    </location>
+    <location id="id14a" x="200" y="936">
+      <name x="220" y="923" />
+      <label kind="exponentialrate" x="130" y="936">1</label>
+    </location>
+    <location id="id14aa" x="200" y="962">
+      <name x="220" y="949" />
+      <label kind="exponentialrate" x="330" y="962">1</label>
+      <committed />
+    </location>
+    <location id="id17a" x="200" y="1131">
+      <name x="220" y="1118" />
+      <label kind="exponentialrate" x="130" y="1131">1</label>
+    </location>
+    <location id="id17aa" x="200" y="1157">
+      <name x="220" y="1144" />
+      <label kind="exponentialrate" x="330" y="1157">1</label>
+      <committed />
+    </location>
+    <location id="id22a" x="200" y="1456">
+      <name x="220" y="1443" />
+      <label kind="exponentialrate" x="130" y="1456">1</label>
+    </location>
+    <location id="id22aa" x="200" y="1482">
+      <name x="220" y="1469" />
+      <label kind="exponentialrate" x="330" y="1482">1</label>
+      <committed />
+    </location>
+    <location id="id25a" x="200" y="1651">
+      <name x="220" y="1638" />
+      <label kind="exponentialrate" x="130" y="1651">1</label>
+    </location>
+    <location id="id25aa" x="200" y="1677">
+      <name x="220" y="1664" />
+      <label kind="exponentialrate" x="330" y="1677">1</label>
+      <committed />
+    </location>
+    <init ref="id-1" />
+    <transition>
+      <source ref="id-1" />
+      <target ref="id0" />
+      <label kind="guard" x="20" y="-65">t == 1</label>
+      <label kind="synchronisation" x="20" y="-52">cVirtual_Virtual?</label>
+      <label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id1" />
+      <label kind="guard" x="20" y="0">t == 1</label>
+      <label kind="assignment" x="20" y="13"> osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id1a" />
+      <label kind="guard" x="20" y="65">t == 1</label>
+      <label kind="assignment" x="20" y="78">osp_dec(1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id1a" />
+      <target ref="id2" />
+      <label kind="guard" x="20" y="91">t == 5</label>
+      <label kind="assignment" x="20" y="104">t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id3" />
+      <label kind="guard" x="20" y="130">t == 1</label>
+      <label kind="assignment" x="20" y="143"> osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id3" />
+      <target ref="id4" />
+      <label kind="guard" x="20" y="195">t == 1</label>
+      <label kind="assignment" x="20" y="208">osp_inc(), os[osp-1] = alocNew(2), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id4" />
+      <target ref="id5" />
+      <label kind="assignment" x="20" y="260">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+      <label kind="guard" x="20" y="273">t == 1</label>
+    </transition>
+    <transition>
+      <source ref="id5" />
+      <target ref="id5a" />
+      <label kind="guard" x="20" y="325">t == 1</label>
+      <label kind="assignment" x="20" y="338">osp_dec(1), t = 0, par0 = os[osp]</label>
+      <label kind="synchronisation" x="20" y="351">cAclass_Aclass!</label>
+    </transition>
+    <transition>
+      <source ref="id5a" />
+      <target ref="id6" />
+      <label kind="synchronisation" x="20" y="351">cAclass_Aclass?</label>
+      <label kind="guard" x="20" y="364">!exceptionOccurred</label>
+      <label kind="assignment" x="20" y="377">t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id5a" />
+      <target ref="id5aa" />
+      <label kind="guard" x="20" y="351">exceptionOccurred == true</label>
+      <label kind="assignment" x="20" y="364">osp = 0</label>
+      <label kind="synchronisation" x="20" y="377">cAclass_Aclass?</label>
+    </transition>
+    <transition>
+      <source ref="id5aa" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="377">cVirtual_Virtual!</label>
+    </transition>
+    <transition>
+      <source ref="id6" />
+      <target ref="id7" />
+      <label kind="guard" x="20" y="390">t == 1</label>
+      <label kind="assignment" x="20" y="403">osp_dec(2), setH(os[osp] + 2, os[osp + 1])</label>
+    </transition>
+    <transition>
+      <source ref="id7" />
+      <target ref="id8" />
+      <label kind="guard" x="20" y="455">t == 1</label>
+      <label kind="assignment" x="20" y="468"> osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id8" />
+      <target ref="id9" />
+      <label kind="guard" x="20" y="520">t == 1</label>
+      <label kind="assignment" x="20" y="533">osp_inc(), os[osp-1] = alocNew(3), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id9" />
+      <target ref="id10" />
+      <label kind="assignment" x="20" y="585">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+      <label kind="guard" x="20" y="598">t == 1</label>
+    </transition>
+    <transition>
+      <source ref="id10" />
+      <target ref="id10a" />
+      <label kind="guard" x="20" y="650">t == 1</label>
+      <label kind="assignment" x="20" y="663">osp_dec(1), t = 0, par0 = os[osp]</label>
+      <label kind="synchronisation" x="20" y="676">cBclass_Bclass!</label>
+    </transition>
+    <transition>
+      <source ref="id10a" />
+      <target ref="id11" />
+      <label kind="synchronisation" x="20" y="676">cBclass_Bclass?</label>
+      <label kind="guard" x="20" y="689">!exceptionOccurred</label>
+      <label kind="assignment" x="20" y="702">t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id10a" />
+      <target ref="id10aa" />
+      <label kind="guard" x="20" y="676">exceptionOccurred == true</label>
+      <label kind="assignment" x="20" y="689">osp = 0</label>
+      <label kind="synchronisation" x="20" y="702">cBclass_Bclass?</label>
+    </transition>
+    <transition>
+      <source ref="id10aa" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="702">cVirtual_Virtual!</label>
+    </transition>
+    <transition>
+      <source ref="id11" />
+      <target ref="id12" />
+      <label kind="guard" x="20" y="715">t == 1</label>
+      <label kind="assignment" x="20" y="728">osp_dec(2), setH(os[osp] + 1, os[osp + 1])</label>
+    </transition>
+    <transition>
+      <source ref="id12" />
+      <target ref="id13" />
+      <label kind="guard" x="20" y="780">t == 1</label>
+      <label kind="assignment" x="20" y="793"> osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id13" />
+      <target ref="id14" />
+      <label kind="guard" x="20" y="845">t == 1</label>
+      <label kind="assignment" x="20" y="858">os[osp - 1] = H(os[osp - 1] + 2)</label>
+    </transition>
+    <transition>
+      <source ref="id14" />
+      <target ref="id14a" />
+      <label kind="guard" x="20" y="910">t == 1</label>
+      <label kind="synchronisation" x="20" y="923">cVirtual!</label>
+      <label kind="assignment" x="20" y="936">osp_dec(1), par0 = os[osp], meID = 5</label>
+    </transition>
+    <transition>
+      <source ref="id14a" />
+      <target ref="id15" />
+      <label kind="synchronisation" x="20" y="936">cVirtual?</label>
+      <label kind="assignment" x="20" y="949">t = 0, os[osp] = par0, osp_inc()</label>
+    </transition>
+    <transition>
+      <source ref="id14a" />
+      <target ref="id14aa" />
+      <label kind="guard" x="20" y="936">exceptionOccurred == true</label>
+      <label kind="assignment" x="20" y="949">osp = 0</label>
+      <label kind="synchronisation" x="20" y="962">cAclass_foo?</label>
+    </transition>
+    <transition>
+      <source ref="id14aa" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="962">cVirtual_Virtual!</label>
+    </transition>
+    <transition>
+      <source ref="id15" />
+      <target ref="id16" />
+      <label kind="guard" x="20" y="975">t == 1</label>
+      <label kind="assignment" x="20" y="988"> osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id16" />
+      <target ref="id17" />
+      <label kind="guard" x="20" y="1040">t == 1</label>
+      <label kind="assignment" x="20" y="1053">os[osp - 1] = H(os[osp - 1] + 2)</label>
+    </transition>
+    <transition>
+      <source ref="id17" />
+      <target ref="id17a" />
+      <label kind="guard" x="20" y="1105">t == 1</label>
+      <label kind="synchronisation" x="20" y="1118">cVirtual!</label>
+      <label kind="assignment" x="20" y="1131">osp_dec(1), par0 = os[osp], meID = 3</label>
+    </transition>
+    <transition>
+      <source ref="id17a" />
+      <target ref="id18" />
+      <label kind="synchronisation" x="20" y="1131">cVirtual?</label>
+      <label kind="assignment" x="20" y="1144">t = 0, os[osp] = par0, osp_inc()</label>
+    </transition>
+    <transition>
+      <source ref="id17a" />
+      <target ref="id17aa" />
+      <label kind="guard" x="20" y="1131">exceptionOccurred == true</label>
+      <label kind="assignment" x="20" y="1144">osp = 0</label>
+      <label kind="synchronisation" x="20" y="1157">cAclass_bar?</label>
+    </transition>
+    <transition>
+      <source ref="id17aa" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="1157">cVirtual_Virtual!</label>
+    </transition>
+    <transition>
+      <source ref="id18" />
+      <target ref="id19" />
+      <label kind="guard" x="20" y="1170">t == 1</label>
+      <label kind="assignment" x="20" y="1183">osp_dec(2), osp_inc(), os[osp - 1] = os[osp - 1] + os[osp], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id19" />
+      <target ref="id20" />
+      <label kind="assignment" x="20" y="1235">osp_dec(1), locs[1] = os[osp]</label>
+      <label kind="guard" x="20" y="1248">t == 1</label>
+    </transition>
+    <transition>
+      <source ref="id20" />
+      <target ref="id21" />
+      <label kind="guard" x="20" y="1300">t == 1</label>
+      <label kind="assignment" x="20" y="1313"> osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id21" />
+      <target ref="id22" />
+      <label kind="guard" x="20" y="1365">t == 1</label>
+      <label kind="assignment" x="20" y="1378">os[osp - 1] = H(os[osp - 1] + 1)</label>
+    </transition>
+    <transition>
+      <source ref="id22" />
+      <target ref="id22a" />
+      <label kind="guard" x="20" y="1430">t == 1</label>
+      <label kind="synchronisation" x="20" y="1443">cVirtual!</label>
+      <label kind="assignment" x="20" y="1456">osp_dec(1), par0 = os[osp], meID = 5</label>
+    </transition>
+    <transition>
+      <source ref="id22a" />
+      <target ref="id23" />
+      <label kind="synchronisation" x="20" y="1456">cVirtual?</label>
+      <label kind="assignment" x="20" y="1469">t = 0, os[osp] = par0, osp_inc()</label>
+    </transition>
+    <transition>
+      <source ref="id22a" />
+      <target ref="id22aa" />
+      <label kind="guard" x="20" y="1456">exceptionOccurred == true</label>
+      <label kind="assignment" x="20" y="1469">osp = 0</label>
+      <label kind="synchronisation" x="20" y="1482">cAclass_foo?</label>
+    </transition>
+    <transition>
+      <source ref="id22aa" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="1482">cVirtual_Virtual!</label>
+    </transition>
+    <transition>
+      <source ref="id23" />
+      <target ref="id24" />
+      <label kind="guard" x="20" y="1495">t == 1</label>
+      <label kind="assignment" x="20" y="1508"> osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id24" />
+      <target ref="id25" />
+      <label kind="guard" x="20" y="1560">t == 1</label>
+      <label kind="assignment" x="20" y="1573">os[osp - 1] = H(os[osp - 1] + 1)</label>
+    </transition>
+    <transition>
+      <source ref="id25" />
+      <target ref="id25a" />
+      <label kind="guard" x="20" y="1625">t == 1</label>
+      <label kind="synchronisation" x="20" y="1638">cVirtual!</label>
+      <label kind="assignment" x="20" y="1651">osp_dec(1), par0 = os[osp], meID = 3</label>
+    </transition>
+    <transition>
+      <source ref="id25a" />
+      <target ref="id26" />
+      <label kind="synchronisation" x="20" y="1651">cVirtual?</label>
+      <label kind="assignment" x="20" y="1664">t = 0, os[osp] = par0, osp_inc()</label>
+    </transition>
+    <transition>
+      <source ref="id25a" />
+      <target ref="id25aa" />
+      <label kind="guard" x="20" y="1651">exceptionOccurred == true</label>
+      <label kind="assignment" x="20" y="1664">osp = 0</label>
+      <label kind="synchronisation" x="20" y="1677">cAclass_bar?</label>
+    </transition>
+    <transition>
+      <source ref="id25aa" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="1677">cVirtual_Virtual!</label>
+    </transition>
+    <transition>
+      <source ref="id26" />
+      <target ref="id27" />
+      <label kind="guard" x="20" y="1690">t == 1</label>
+      <label kind="assignment" x="20" y="1703">osp_dec(2), osp_inc(), os[osp - 1] = os[osp - 1] + os[osp], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id27" />
+      <target ref="id28" />
+      <label kind="assignment" x="20" y="1755">osp_dec(1), locs[2] = os[osp]</label>
+      <label kind="guard" x="20" y="1768">t == 1</label>
+    </transition>
+    <transition>
+      <source ref="id28" />
+      <target ref="id-1" />
+      <label kind="guard" x="20" y="1820">t == 1</label>
+      <label kind="synchronisation" x="20" y="1833">cVirtual_Virtual!</label>
+      <label kind="guard" x="20" y="1846">t == 1</label>
+      <label kind="assignment" x="20" y="1859">osp = 0, t = 0</label>
+      <nail x="-100" y="877" />
+    </transition>
+  </template>
+  <template>
+    <name>Virtual_install</name>
+    <declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+    <location id="id-1" x="0" y="-65">
+      <name x="20" y="-78">install</name>
+      <label kind="exponentialrate" x="-70" y="-65">1</label>
+    </location>
+    <location id="id0" x="0" y="0">
+      <name x="20" y="-13">pc0__new_Virtual</name>
+      <label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+    </location>
+    <location id="id1" x="0" y="65">
+      <name x="20" y="52">pc3__dup</name>
+      <label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+    </location>
+    <location id="id2" x="0" y="130">
+      <name x="20" y="117">pc4__invokespecial_void_Virtual_init_</name>
+      <label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+    </location>
+    <location id="id3" x="0" y="195">
+      <name x="20" y="182">pc7__pop___NOT_IMPLEMENTED___NOT_IMPLEMENTED___NOT_IMPLEMENTED</name>
+      <label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+    </location>
+    <location id="id4" x="0" y="260">
+      <name x="20" y="247">pc8__return</name>
+      <label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+    </location>
+    <location id="id2a" x="200" y="156">
+      <name x="220" y="143" />
+      <label kind="exponentialrate" x="130" y="156">1</label>
+    </location>
+    <location id="id2aa" x="200" y="182">
+      <name x="220" y="169" />
+      <label kind="exponentialrate" x="330" y="182">1</label>
+      <committed />
+    </location>
+    <init ref="id-1" />
+    <transition>
+      <source ref="id-1" />
+      <target ref="id0" />
+      <label kind="guard" x="20" y="-65">t == 1</label>
+      <label kind="synchronisation" x="20" y="-52">cVirtual_install?</label>
+      <label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id1" />
+      <label kind="guard" x="20" y="0">t == 1</label>
+      <label kind="assignment" x="20" y="13">osp_inc(), os[osp-1] = alocNew(1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id2" />
+      <label kind="assignment" x="20" y="65">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+      <label kind="guard" x="20" y="78">t == 1</label>
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id2a" />
+      <label kind="guard" x="20" y="130">t == 1</label>
+      <label kind="assignment" x="20" y="143">osp_dec(1), t = 0, par0 = os[osp]</label>
+      <label kind="synchronisation" x="20" y="156">cVirtual_Virtual!</label>
+    </transition>
+    <transition>
+      <source ref="id2a" />
+      <target ref="id3" />
+      <label kind="synchronisation" x="20" y="156">cVirtual_Virtual?</label>
+      <label kind="guard" x="20" y="169">!exceptionOccurred</label>
+      <label kind="assignment" x="20" y="182">t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id2a" />
+      <target ref="id2aa" />
+      <label kind="guard" x="20" y="156">exceptionOccurred == true</label>
+      <label kind="assignment" x="20" y="169">osp = 0</label>
+      <label kind="synchronisation" x="20" y="182">cVirtual_Virtual?</label>
+    </transition>
+    <transition>
+      <source ref="id2aa" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="182">cVirtual_install!</label>
+    </transition>
+    <transition>
+      <source ref="id3" />
+      <target ref="id4" />
+      <label kind="guard" x="20" y="195">t == 1</label>
+    </transition>
+    <transition>
+      <source ref="id4" />
+      <target ref="id-1" />
+      <label kind="guard" x="20" y="260">t == 1</label>
+      <label kind="synchronisation" x="20" y="273">cVirtual_install!</label>
+      <label kind="guard" x="20" y="286">t == 1</label>
+      <label kind="assignment" x="20" y="299">osp = 0, t = 0</label>
+      <nail x="-100" y="97" />
+    </transition>
+  </template>
+  <template>
+    <name>Virtual_main</name>
+    <declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+    <location id="id-1" x="0" y="-65">
+      <name x="20" y="-78">main</name>
+      <label kind="exponentialrate" x="-70" y="-65">1</label>
+      <urgent />
+    </location>
+    <location id="id0" x="0" y="0">
+      <name x="20" y="-13">pc0__invokestatic_void_Virtual_install_</name>
+      <label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+    </location>
+    <location id="id1" x="0" y="65">
+      <name x="20" y="52">pc3__return</name>
+      <label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+    </location>
+    <location id="id0a" x="200" y="26">
+      <name x="220" y="13" />
+      <label kind="exponentialrate" x="130" y="26">1</label>
+    </location>
+    <location id="id0aa" x="200" y="52">
+      <name x="220" y="39" />
+      <label kind="exponentialrate" x="330" y="52">1</label>
+      <committed />
+    </location>
+    <location id="id1a" x="200" y="91">
+      <name x="220" y="78">Done</name>
+      <label kind="exponentialrate" x="0" y="0">1</label>
+    </location>
+    <init ref="id-1" />
+    <transition>
+      <source ref="id-1" />
+      <target ref="id0" />
+      <label kind="assignment" x="20" y="-65">t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id0a" />
+      <label kind="guard" x="20" y="0">t == 1</label>
+      <label kind="assignment" x="20" y="13">osp_dec(0), t = 0, par0 = os[osp]</label>
+      <label kind="synchronisation" x="20" y="26">cVirtual_install!</label>
+    </transition>
+    <transition>
+      <source ref="id0a" />
+      <target ref="id1" />
+      <label kind="synchronisation" x="20" y="26">cVirtual_install?</label>
+      <label kind="guard" x="20" y="39">!exceptionOccurred</label>
+      <label kind="assignment" x="20" y="52">t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id0a" />
+      <target ref="id0aa" />
+      <label kind="guard" x="20" y="26">exceptionOccurred == true</label>
+      <label kind="assignment" x="20" y="39">osp = 0</label>
+      <label kind="synchronisation" x="20" y="52">cVirtual_install?</label>
+    </transition>
+    <transition>
+      <source ref="id0aa" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="52">cVirtual_main!</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id1a" />
+      <label kind="guard" x="20" y="65">t == 1</label>
+      <label kind="synchronisation" x="20" y="78">cVirtual_main!</label>
+      <label kind="guard" x="20" y="91">t == 1</label>
+    </transition>
+  </template>
+  <template>
+    <name>Aclass_bar</name>
+    <declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+    <location id="id-1" x="0" y="-65">
+      <name x="20" y="-78">bar</name>
+      <label kind="exponentialrate" x="-70" y="-65">1</label>
+    </location>
+    <location id="id0" x="0" y="0">
+      <name x="20" y="-13">pc0__iconst_2</name>
+      <label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+    </location>
+    <location id="id1" x="0" y="65">
+      <name x="20" y="52">pc1__ireturn</name>
+      <label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+    </location>
+    <init ref="id-1" />
+    <transition>
+      <source ref="id-1" />
+      <target ref="id0" />
+      <label kind="guard" x="20" y="-65">t == 1</label>
+      <label kind="synchronisation" x="20" y="-52">cAclass_bar?</label>
+      <label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id1" />
+      <label kind="guard" x="20" y="0">t == 1</label>
+      <label kind="assignment" x="20" y="13">osp_inc(), os[osp - 1] = 2, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id-1" />
+      <label kind="guard" x="20" y="65">t == 1</label>
+      <label kind="synchronisation" x="20" y="78">cAclass_bar!</label>
+      <label kind="guard" x="20" y="91">t == 1</label>
+      <label kind="assignment" x="20" y="104">osp_dec(1), par0 = os[osp], osp = 0, t = 0</label>
+      <nail x="-100" y="0" />
+    </transition>
+  </template>
+  <template>
+    <name>Aclass_Aclass</name>
+    <declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+    <location id="id-1" x="0" y="-65">
+      <name x="20" y="-78">Aclass</name>
+      <label kind="exponentialrate" x="-70" y="-65">1</label>
+    </location>
+    <location id="id0" x="0" y="0">
+      <name x="20" y="-13">pc0__aload_0</name>
+      <label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+    </location>
+    <location id="id1" x="0" y="65">
+      <name x="20" y="52">pc1__invokespecial_void_java_lang_Object_init_</name>
+      <label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+    </location>
+    <location id="id2" x="0" y="130">
+      <name x="20" y="117">pc4__return</name>
+      <label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+    </location>
+    <location id="id1a" x="200" y="91">
+      <name x="220" y="78" />
+      <label kind="invariant" x="0" y="0">t &lt;= 5</label>
+    </location>
+    <init ref="id-1" />
+    <transition>
+      <source ref="id-1" />
+      <target ref="id0" />
+      <label kind="guard" x="20" y="-65">t == 1</label>
+      <label kind="synchronisation" x="20" y="-52">cAclass_Aclass?</label>
+      <label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id1" />
+      <label kind="guard" x="20" y="0">t == 1</label>
+      <label kind="assignment" x="20" y="13"> osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id1a" />
+      <label kind="guard" x="20" y="65">t == 1</label>
+      <label kind="assignment" x="20" y="78">osp_dec(1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id1a" />
+      <target ref="id2" />
+      <label kind="guard" x="20" y="91">t == 5</label>
+      <label kind="assignment" x="20" y="104">t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id-1" />
+      <label kind="guard" x="20" y="130">t == 1</label>
+      <label kind="synchronisation" x="20" y="143">cAclass_Aclass!</label>
+      <label kind="guard" x="20" y="156">t == 1</label>
+      <label kind="assignment" x="20" y="169">osp = 0, t = 0</label>
+      <nail x="-100" y="32" />
+    </transition>
+  </template>
+  <template>
+    <name>Aclass_foo</name>
+    <declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+    <location id="id-1" x="0" y="-65">
+      <name x="20" y="-78">foo</name>
+      <label kind="exponentialrate" x="-70" y="-65">1</label>
+    </location>
+    <location id="id0" x="0" y="0">
+      <name x="20" y="-13">pc0__iconst_1</name>
+      <label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+    </location>
+    <location id="id1" x="0" y="65">
+      <name x="20" y="52">pc1__ireturn</name>
+      <label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+    </location>
+    <init ref="id-1" />
+    <transition>
+      <source ref="id-1" />
+      <target ref="id0" />
+      <label kind="guard" x="20" y="-65">t == 1</label>
+      <label kind="synchronisation" x="20" y="-52">cAclass_foo?</label>
+      <label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id1" />
+      <label kind="guard" x="20" y="0">t == 1</label>
+      <label kind="assignment" x="20" y="13">osp_inc(), os[osp - 1] = 1, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id-1" />
+      <label kind="guard" x="20" y="65">t == 1</label>
+      <label kind="synchronisation" x="20" y="78">cAclass_foo!</label>
+      <label kind="guard" x="20" y="91">t == 1</label>
+      <label kind="assignment" x="20" y="104">osp_dec(1), par0 = os[osp], osp = 0, t = 0</label>
+      <nail x="-100" y="0" />
+    </transition>
+  </template>
+  <template>
+    <name>Bclass_Bclass</name>
+    <declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+    <location id="id-1" x="0" y="-65">
+      <name x="20" y="-78">Bclass</name>
+      <label kind="exponentialrate" x="-70" y="-65">1</label>
+    </location>
+    <location id="id0" x="0" y="0">
+      <name x="20" y="-13">pc0__aload_0</name>
+      <label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+    </location>
+    <location id="id1" x="0" y="65">
+      <name x="20" y="52">pc1__invokespecial_void_Aclass_init_</name>
+      <label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+    </location>
+    <location id="id2" x="0" y="130">
+      <name x="20" y="117">pc4__return</name>
+      <label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+    </location>
+    <location id="id1a" x="200" y="91">
+      <name x="220" y="78" />
+      <label kind="exponentialrate" x="130" y="91">1</label>
+    </location>
+    <location id="id1aa" x="200" y="117">
+      <name x="220" y="104" />
+      <label kind="exponentialrate" x="330" y="117">1</label>
+      <committed />
+    </location>
+    <init ref="id-1" />
+    <transition>
+      <source ref="id-1" />
+      <target ref="id0" />
+      <label kind="guard" x="20" y="-65">t == 1</label>
+      <label kind="synchronisation" x="20" y="-52">cBclass_Bclass?</label>
+      <label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id1" />
+      <label kind="guard" x="20" y="0">t == 1</label>
+      <label kind="assignment" x="20" y="13"> osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id1a" />
+      <label kind="guard" x="20" y="65">t == 1</label>
+      <label kind="assignment" x="20" y="78">osp_dec(1), t = 0, par0 = os[osp]</label>
+      <label kind="synchronisation" x="20" y="91">cAclass_Aclass!</label>
+    </transition>
+    <transition>
+      <source ref="id1a" />
+      <target ref="id2" />
+      <label kind="synchronisation" x="20" y="91">cAclass_Aclass?</label>
+      <label kind="guard" x="20" y="104">!exceptionOccurred</label>
+      <label kind="assignment" x="20" y="117">t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id1a" />
+      <target ref="id1aa" />
+      <label kind="guard" x="20" y="91">exceptionOccurred == true</label>
+      <label kind="assignment" x="20" y="104">osp = 0</label>
+      <label kind="synchronisation" x="20" y="117">cAclass_Aclass?</label>
+    </transition>
+    <transition>
+      <source ref="id1aa" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="117">cBclass_Bclass!</label>
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id-1" />
+      <label kind="guard" x="20" y="130">t == 1</label>
+      <label kind="synchronisation" x="20" y="143">cBclass_Bclass!</label>
+      <label kind="guard" x="20" y="156">t == 1</label>
+      <label kind="assignment" x="20" y="169">osp = 0, t = 0</label>
+      <nail x="-100" y="32" />
+    </transition>
+  </template>
+  <template>
+    <name>Bclass_foo</name>
+    <declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+    <location id="id-1" x="0" y="-65">
+      <name x="20" y="-78">foo</name>
+      <label kind="exponentialrate" x="-70" y="-65">1</label>
+    </location>
+    <location id="id0" x="0" y="0">
+      <name x="20" y="-13">pc0__iconst_3</name>
+      <label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+    </location>
+    <location id="id1" x="0" y="65">
+      <name x="20" y="52">pc1__ireturn</name>
+      <label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+    </location>
+    <init ref="id-1" />
+    <transition>
+      <source ref="id-1" />
+      <target ref="id0" />
+      <label kind="guard" x="20" y="-65">t == 1</label>
+      <label kind="synchronisation" x="20" y="-52">cBclass_foo?</label>
+      <label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id1" />
+      <label kind="guard" x="20" y="0">t == 1</label>
+      <label kind="assignment" x="20" y="13">osp_inc(), os[osp - 1] = 3, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id-1" />
+      <label kind="guard" x="20" y="65">t == 1</label>
+      <label kind="synchronisation" x="20" y="78">cBclass_foo!</label>
+      <label kind="guard" x="20" y="91">t == 1</label>
+      <label kind="assignment" x="20" y="104">osp_dec(1), par0 = os[osp], osp = 0, t = 0</label>
+      <nail x="-100" y="0" />
+    </transition>
+  </template>
+  <template>
+    <name>Virtual</name>
+    <declaration></declaration>
+    <location id="nId0" x="0" y="0">
+      <name x="20" y="-13">Invoke</name>
+      <label kind="exponentialrate" x="130" y="0">1</label>
+    </location>
+    <location id="nId1" x="0" y="100">
+      <name x="20" y="87">Resolver</name>
+      <label kind="exponentialrate" x="130" y="100">1</label>
+      <urgent />
+    </location>
+    <location id="nId2" x="200" y="50">
+      <name x="220" y="37">Error</name>
+      <label kind="exponentialrate" x="330" y="50">1</label>
+    </location>
+    <location id="nId3" x="-100" y="300">
+      <name x="-80" y="287">Returner</name>
+      <label kind="exponentialrate" x="30" y="300">1</label>
+      <urgent />
+    </location>
+    <location id="nId4" x="0" y="200">
+      <name x="20" y="187">Aclass_bar</name>
+      <label kind="exponentialrate" x="130" y="200">1</label>
+    </location>
+    <location id="nId5" x="200" y="200">
+      <name x="220" y="187">Aclass_foo</name>
+      <label kind="exponentialrate" x="330" y="200">1</label>
+    </location>
+    <location id="nId6" x="400" y="200">
+      <name x="420" y="187">Bclass_foo</name>
+      <label kind="exponentialrate" x="530" y="200">1</label>
+    </location>
+    <init ref="nId0" />
+    <transition>
+      <source ref="nId0" />
+      <target ref="nId1" />
+      <label kind="synchronisation" x="20" y="0">cVirtual?</label>
+      <label kind="assignment" x="20" y="13">clID = H(par0)</label>
+    </transition>
+    <transition>
+      <source ref="nId1" />
+      <target ref="nId2" />
+      <label kind="guard" x="20" y="100">clID == 0</label>
+    </transition>
+    <transition>
+      <source ref="nId3" />
+      <target ref="nId0" />
+      <label kind="synchronisation" x="20" y="300">cVirtual!</label>
+    </transition>
+    <transition>
+      <source ref="nId1" />
+      <target ref="nId4" />
+      <label kind="guard" x="20" y="100">signature(clID, 3, 2)</label>
+      <label kind="synchronisation" x="20" y="113">cAclass_bar!</label>
+    </transition>
+    <transition>
+      <source ref="nId4" />
+      <target ref="nId3" />
+      <label kind="synchronisation" x="20" y="200">cAclass_bar?</label>
+    </transition>
+    <transition>
+      <source ref="nId1" />
+      <target ref="nId5" />
+      <label kind="guard" x="20" y="100">signature(clID, 5, 2)</label>
+      <label kind="synchronisation" x="20" y="113">cAclass_foo!</label>
+    </transition>
+    <transition>
+      <source ref="nId5" />
+      <target ref="nId3" />
+      <label kind="synchronisation" x="20" y="200">cAclass_foo?</label>
+    </transition>
+    <transition>
+      <source ref="nId1" />
+      <target ref="nId6" />
+      <label kind="guard" x="20" y="100">signature(clID, 5, 3)</label>
+      <label kind="synchronisation" x="20" y="113">cBclass_foo!</label>
+    </transition>
+    <transition>
+      <source ref="nId6" />
+      <target ref="nId3" />
+      <label kind="synchronisation" x="20" y="200">cBclass_foo?</label>
+    </transition>
+    <transition>
+      <source ref="nId1" />
+      <target ref="nId1" />
+      <label kind="guard" x="20" y="100">clID != 0 &amp;&amp; !(signature(clID, 3, 2) || signature(clID, 5, 2) || signature(clID, 5, 3))</label>
+      <label kind="assignment" x="20" y="113">clID = classHierarchy(clID)</label>
+    </transition>
+  </template>
+  <system>iVirtual_Virtual = Virtual_Virtual();
+iVirtual_install = Virtual_install();
+iVirtual_main = Virtual_main();
+iAclass_bar = Aclass_bar();
+iAclass_Aclass = Aclass_Aclass();
+iAclass_foo = Aclass_foo();
+iBclass_Bclass = Bclass_Bclass();
+iBclass_foo = Bclass_foo();
+iVirtual = Virtual();
+system iVirtual_Virtual,iVirtual_install,iVirtual_main,iAclass_bar,iAclass_Aclass,iAclass_foo,iBclass_Bclass,iBclass_foo,iVirtual;
+</system>
+  <queries>queries<query>query<formula>A&lt;&gt; iExampleCFI_main.Done &amp;&amp; !opstack_fault &amp;&amp; exceptionOccurred</formula></query><query>query<formula>Pr[&lt;= 100] (&lt;&gt; iExampleCFI_main.Done &amp;&amp; !opstack_fault &amp;&amp; exceptionOccurred)</formula></query><query>query<formula>E&lt;&gt; opstack_fault</formula></query><query>query<formula>Pr[&lt;= 100] (&lt;&gt; opstack_fault)</formula></query><query>query<formula>E&lt;&gt; iExampleCFI_main.Done &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred</formula></query><query>query<formula>Pr[&lt;= 100] (&lt;&gt; iExampleCFI_main.Done &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred)</formula></query><query>query<formula>A&lt;&gt; iVirtual_Virtual.pc58__return &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred &amp;&amp; iVirtual_Virtual.locs[1] == 3  &amp;&amp; iVirtual_Virtual.locs[2] == 5</formula></query><query>query<formula>E&lt;&gt; iVirtual_Virtual.pc58__return &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred &amp;&amp; !(iVirtual_Virtual.locs[1] == 3  &amp;&amp; iVirtual_Virtual.locs[2] == 5)</formula></query><query>query<formula>Pr[&lt;= 100] (&lt;&gt; iVirtual_Virtual.pc58__return &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred &amp;&amp; !(iVirtual_Virtual.locs[1] == 3  &amp;&amp; iVirtual_Virtual.locs[2] == 5))</formula></query></queries>
+</nta>

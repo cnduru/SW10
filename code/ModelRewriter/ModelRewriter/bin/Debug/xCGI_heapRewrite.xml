@@ -1,0 +1,3282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC "-//Uppaal Team//DTD Flat System 1.1//EN" "http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd"[]>
+<nta>
+  <declaration>clock t;
+bool exceptionOccurred;
+const int heap_size = 13;
+int _H[heap_size];
+int H(int i)
+{
+    if (i &lt; heap_size) return _H[i];
+    exceptionOccurred = true;
+    return 0;
+}
+void setH(int i, int v)
+{
+    if (i &lt; heap_size) _H[i] = v;
+    else exceptionOccurred = true;
+}
+int cp0= 1;
+int cp1= 2;
+int cp2= 3;
+int par0;
+int par1;
+int par2;
+broadcast chan cExampleCGI_isInvalid;
+broadcast chan cExampleCGI_ExampleCGI;
+broadcast chan cExampleCGI_processVerifyPIN;
+broadcast chan cExampleCGI_main;
+broadcast chan cExampleCGI_getTriesRemaining;
+broadcast chan cExampleCGI_setIncomingAndReceive;
+bool opstack_fault = false;
+const int classCount = 4;
+const int _classFields[classCount] = {0, 3, 1, 1};
+int classFields(int i)
+{
+    if (i &lt; classCount) return _classFields[i];
+    exceptionOccurred = true;    return 0;}
+
+int heapPointer = 4;
+int alocNew(int classID){
+    int ref = heapPointer;
+    if(classID &lt; 0) return -1;
+    setH(ref, classID);
+    heapPointer += classFields(classID);
+    return ref;
+}
+
+
+int faultAt = 0;
+clock globalClock;
+int faultTime;
+clock faultClock;
+int bitPosHeap;
+broadcast chan f;
+</declaration>
+  <template>
+    <name>ExampleCGI_isInvalid</name>
+    <declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+    <location id="id-1" x="0" y="-65">
+      <name x="20" y="-78">isInvalid</name>
+      <label kind="exponentialrate" x="-70" y="-65">1</label>
+    </location>
+    <location id="id0" x="0" y="0">
+      <name x="20" y="-13">pc0__getstatic_ExampleCGI_callId___int</name>
+      <label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+    </location>
+    <location id="id1" x="0" y="65">
+      <name x="20" y="52">pc3__iconst_5</name>
+      <label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+    </location>
+    <location id="id2" x="0" y="130">
+      <name x="20" y="117">pc4__ifcmpeq_11</name>
+      <label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+    </location>
+    <location id="id3" x="0" y="195">
+      <name x="20" y="182">pc7__new_java_lang_Exception</name>
+      <label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+    </location>
+    <location id="id4" x="0" y="260">
+      <name x="20" y="247">pc10__dup</name>
+      <label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+    </location>
+    <location id="id5" x="0" y="325">
+      <name x="20" y="312">pc11__invokespecial_void_java_lang_Exception_init_</name>
+      <label kind="invariant" x="-70" y="325">t &lt;= 1</label>
+    </location>
+    <location id="id6" x="0" y="390">
+      <name x="20" y="377">pc14__athrow</name>
+      <label kind="invariant" x="-70" y="390">t &lt;= 1</label>
+    </location>
+    <location id="id7" x="0" y="455">
+      <name x="20" y="442">pc15__bipush_6</name>
+      <label kind="invariant" x="-70" y="455">t &lt;= 1</label>
+    </location>
+    <location id="id8" x="0" y="520">
+      <name x="20" y="507">pc17__putstatic_ExampleCGI_callId___int</name>
+      <label kind="invariant" x="-70" y="520">t &lt;= 1</label>
+    </location>
+    <location id="id9" x="0" y="585">
+      <name x="20" y="572">pc20__iconst_1</name>
+      <label kind="invariant" x="-70" y="585">t &lt;= 1</label>
+    </location>
+    <location id="id10" x="0" y="650">
+      <name x="20" y="637">pc21__ireturn</name>
+      <label kind="invariant" x="-70" y="650">t &lt;= 1</label>
+    </location>
+    <location id="id5a" x="200" y="351">
+      <name x="220" y="338"></name>
+      <label kind="invariant" x="0" y="0">t &lt;= 5</label>
+    </location>
+    <location id="id6a" x="200" y="416">
+      <name x="220" y="403"></name>
+      <label kind="exponentialrate" x="130" y="416">1</label>
+      <urgent />
+    </location>
+    <init ref="id-1" />
+    <transition>
+      <source ref="id-1" />
+      <target ref="id0" />
+      <label kind="guard" x="20" y="-65">t == 1</label>
+      <label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+      <label kind="synchronisation" x="20" y="-52">cExampleCGI_isInvalid?</label>
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id1" />
+      <label kind="guard" x="20" y="0">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="13">osp_inc(), os[osp-1] = H(cp0), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id2" />
+      <label kind="guard" x="20" y="65">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="78">osp_inc(), os[osp - 1] = 5, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id7" />
+      <label kind="guard" x="20" y="130">t == 1 &amp;&amp; ifcmpeq() &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="143">osp_dec(2), t = 0</label>
+      <nail x="-50" y="292" />
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id3" />
+      <label kind="guard" x="20" y="130">t == 1 &amp;&amp; !ifcmpeq() &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="143">opstack_fault = osp &lt; 2 ? true : opstack_fault, osp_dec(2), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id3" />
+      <target ref="id4" />
+      <label kind="guard" x="20" y="195">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="208">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id4" />
+      <target ref="id5" />
+      <label kind="guard" x="20" y="273">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="260">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+    </transition>
+    <transition>
+      <source ref="id5" />
+      <target ref="id5a" />
+      <label kind="guard" x="20" y="325">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="338">osp_dec(1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id5a" />
+      <target ref="id6" />
+      <label kind="guard" x="20" y="351">t == 5</label>
+      <label kind="assignment" x="20" y="364">t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id6" />
+      <target ref="id6a" />
+      <label kind="guard" x="20" y="390">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="403">exceptionOccurred = true</label>
+    </transition>
+    <transition>
+      <source ref="id6a" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="416">cExampleCGI_isInvalid!</label>
+    </transition>
+    <transition>
+      <source ref="id7" />
+      <target ref="id8" />
+      <label kind="guard" x="20" y="455">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="468">osp_inc(), os[osp - 1] = 6, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id8" />
+      <target ref="id9" />
+      <label kind="guard" x="20" y="520">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="533">osp_dec(1), setH(cp0, os[osp]), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id9" />
+      <target ref="id10" />
+      <label kind="guard" x="20" y="585">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="598">osp_inc(), os[osp - 1] = 1, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id10" />
+      <target ref="id-1" />
+      <label kind="guard" x="20" y="650">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="689">osp_dec(1), par0 = os[osp], osp = 0, t = 0</label>
+      <label kind="synchronisation" x="20" y="663">cExampleCGI_isInvalid!</label>
+      <nail x="-100" y="292" />
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id0" />
+      <label kind="select" x="20" y="0">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="13">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="26">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id1" />
+      <label kind="select" x="20" y="65">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="78">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="91">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id2" />
+      <label kind="select" x="20" y="130">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="143">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="156">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id3" />
+      <target ref="id3" />
+      <label kind="select" x="20" y="195">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="208">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="221">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id4" />
+      <target ref="id4" />
+      <label kind="select" x="20" y="260">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="273">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="286">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id5" />
+      <target ref="id5" />
+      <label kind="select" x="20" y="325">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="338">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="351">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id6" />
+      <target ref="id6" />
+      <label kind="select" x="20" y="390">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="403">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="416">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id7" />
+      <target ref="id7" />
+      <label kind="select" x="20" y="455">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="468">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="481">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id8" />
+      <target ref="id8" />
+      <label kind="select" x="20" y="520">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="533">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="546">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id9" />
+      <target ref="id9" />
+      <label kind="select" x="20" y="585">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="598">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="611">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id10" />
+      <target ref="id10" />
+      <label kind="select" x="20" y="650">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="663">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="676">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+  </template>
+  <template>
+    <name>ExampleCGI_ExampleCGI</name>
+    <declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+    <location id="id-1" x="0" y="-65">
+      <name x="20" y="-78">ExampleCGI</name>
+      <label kind="exponentialrate" x="-70" y="-65">1</label>
+    </location>
+    <location id="id0" x="0" y="0">
+      <name x="20" y="-13">pc0__aload_0</name>
+      <label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+    </location>
+    <location id="id1" x="0" y="65">
+      <name x="20" y="52">pc1__invokespecial_void_java_lang_Object_init_</name>
+      <label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+    </location>
+    <location id="id2" x="0" y="130">
+      <name x="20" y="117">pc4__getstatic_ExampleCGI_callId___int</name>
+      <label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+    </location>
+    <location id="id3" x="0" y="195">
+      <name x="20" y="182">pc7__iconst_1</name>
+      <label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+    </location>
+    <location id="id4" x="0" y="260">
+      <name x="20" y="247">pc8__ifcmpeq_11</name>
+      <label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+    </location>
+    <location id="id5" x="0" y="325">
+      <name x="20" y="312">pc11__new_java_lang_Exception</name>
+      <label kind="invariant" x="-70" y="325">t &lt;= 1</label>
+    </location>
+    <location id="id6" x="0" y="390">
+      <name x="20" y="377">pc14__dup</name>
+      <label kind="invariant" x="-70" y="390">t &lt;= 1</label>
+    </location>
+    <location id="id7" x="0" y="455">
+      <name x="20" y="442">pc15__invokespecial_void_java_lang_Exception_init_</name>
+      <label kind="invariant" x="-70" y="455">t &lt;= 1</label>
+    </location>
+    <location id="id8" x="0" y="520">
+      <name x="20" y="507">pc18__athrow</name>
+      <label kind="invariant" x="-70" y="520">t &lt;= 1</label>
+    </location>
+    <location id="id9" x="0" y="585">
+      <name x="20" y="572">pc19__iconst_2</name>
+      <label kind="invariant" x="-70" y="585">t &lt;= 1</label>
+    </location>
+    <location id="id10" x="0" y="650">
+      <name x="20" y="637">pc20__putstatic_ExampleCGI_callId___int</name>
+      <label kind="invariant" x="-70" y="650">t &lt;= 1</label>
+    </location>
+    <location id="id11" x="0" y="715">
+      <name x="20" y="702">pc23__aload_0</name>
+      <label kind="invariant" x="-70" y="715">t &lt;= 1</label>
+    </location>
+    <location id="id12" x="0" y="780">
+      <name x="20" y="767">pc24__invokespecial_void_ExampleCGI_processVerifyPIN_</name>
+      <label kind="invariant" x="-70" y="780">t &lt;= 1</label>
+    </location>
+    <location id="id13" x="0" y="845">
+      <name x="20" y="832">pc27__getstatic_ExampleCGI_callId___int</name>
+      <label kind="invariant" x="-70" y="845">t &lt;= 1</label>
+    </location>
+    <location id="id14" x="0" y="910">
+      <name x="20" y="897">pc30__bipush_9</name>
+      <label kind="invariant" x="-70" y="910">t &lt;= 1</label>
+    </location>
+    <location id="id15" x="0" y="975">
+      <name x="20" y="962">pc32__ifcmpeq_11</name>
+      <label kind="invariant" x="-70" y="975">t &lt;= 1</label>
+    </location>
+    <location id="id16" x="0" y="1040">
+      <name x="20" y="1027">pc35__new_java_lang_Exception</name>
+      <label kind="invariant" x="-70" y="1040">t &lt;= 1</label>
+    </location>
+    <location id="id17" x="0" y="1105">
+      <name x="20" y="1092">pc38__dup</name>
+      <label kind="invariant" x="-70" y="1105">t &lt;= 1</label>
+    </location>
+    <location id="id18" x="0" y="1170">
+      <name x="20" y="1157">pc39__invokespecial_void_java_lang_Exception_init_</name>
+      <label kind="invariant" x="-70" y="1170">t &lt;= 1</label>
+    </location>
+    <location id="id19" x="0" y="1235">
+      <name x="20" y="1222">pc42__athrow</name>
+      <label kind="invariant" x="-70" y="1235">t &lt;= 1</label>
+    </location>
+    <location id="id20" x="0" y="1300">
+      <name x="20" y="1287">pc43__bipush_10</name>
+      <label kind="invariant" x="-70" y="1300">t &lt;= 1</label>
+    </location>
+    <location id="id21" x="0" y="1365">
+      <name x="20" y="1352">pc45__putstatic_ExampleCGI_callId___int</name>
+      <label kind="invariant" x="-70" y="1365">t &lt;= 1</label>
+    </location>
+    <location id="id22" x="0" y="1430">
+      <name x="20" y="1417">pc48__return</name>
+      <label kind="invariant" x="-70" y="1430">t &lt;= 1</label>
+    </location>
+    <location id="id1a" x="200" y="91">
+      <name x="220" y="78"></name>
+      <label kind="invariant" x="0" y="0">t &lt;= 5</label>
+    </location>
+    <location id="id7a" x="200" y="481">
+      <name x="220" y="468"></name>
+      <label kind="invariant" x="0" y="0">t &lt;= 5</label>
+    </location>
+    <location id="id8a" x="200" y="546">
+      <name x="220" y="533"></name>
+      <label kind="exponentialrate" x="130" y="546">1</label>
+      <urgent />
+    </location>
+    <location id="id12a" x="200" y="806">
+      <name x="220" y="793"></name>
+      <label kind="exponentialrate" x="130" y="806">1</label>
+    </location>
+    <location id="id12aa" x="200" y="832">
+      <name x="220" y="819"></name>
+      <label kind="exponentialrate" x="330" y="832">1</label>
+      <urgent />
+    </location>
+    <location id="id18a" x="200" y="1196">
+      <name x="220" y="1183"></name>
+      <label kind="invariant" x="0" y="0">t &lt;= 5</label>
+    </location>
+    <location id="id19a" x="200" y="1261">
+      <name x="220" y="1248"></name>
+      <label kind="exponentialrate" x="130" y="1261">1</label>
+      <urgent />
+    </location>
+    <init ref="id-1" />
+    <transition>
+      <source ref="id-1" />
+      <target ref="id0" />
+      <label kind="guard" x="20" y="-65">t == 1</label>
+      <label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+      <label kind="synchronisation" x="20" y="-52">cExampleCGI_ExampleCGI?</label>
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id1" />
+      <label kind="guard" x="20" y="0">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="13"> osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id1a" />
+      <label kind="guard" x="20" y="65">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="78">osp_dec(1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id1a" />
+      <target ref="id2" />
+      <label kind="guard" x="20" y="91">t == 5</label>
+      <label kind="assignment" x="20" y="104">t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id3" />
+      <label kind="guard" x="20" y="130">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="143">osp_inc(), os[osp-1] = H(cp0), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id3" />
+      <target ref="id4" />
+      <label kind="guard" x="20" y="195">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="208">osp_inc(), os[osp - 1] = 1, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id4" />
+      <target ref="id9" />
+      <label kind="guard" x="20" y="260">t == 1 &amp;&amp; ifcmpeq() &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="273">osp_dec(2), t = 0</label>
+      <nail x="-50" y="422" />
+    </transition>
+    <transition>
+      <source ref="id4" />
+      <target ref="id5" />
+      <label kind="guard" x="20" y="260">t == 1 &amp;&amp; !ifcmpeq() &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="273">opstack_fault = osp &lt; 2 ? true : opstack_fault, osp_dec(2), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id5" />
+      <target ref="id6" />
+      <label kind="guard" x="20" y="325">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="338">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id6" />
+      <target ref="id7" />
+      <label kind="guard" x="20" y="403">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="390">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+    </transition>
+    <transition>
+      <source ref="id7" />
+      <target ref="id7a" />
+      <label kind="guard" x="20" y="455">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="468">osp_dec(1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id7a" />
+      <target ref="id8" />
+      <label kind="guard" x="20" y="481">t == 5</label>
+      <label kind="assignment" x="20" y="494">t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id8" />
+      <target ref="id8a" />
+      <label kind="guard" x="20" y="520">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="533">exceptionOccurred = true</label>
+    </transition>
+    <transition>
+      <source ref="id8a" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="546">cExampleCGI_ExampleCGI!</label>
+    </transition>
+    <transition>
+      <source ref="id9" />
+      <target ref="id10" />
+      <label kind="guard" x="20" y="585">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="598">osp_inc(), os[osp - 1] = 2, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id10" />
+      <target ref="id11" />
+      <label kind="guard" x="20" y="650">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="663">osp_dec(1), setH(cp0, os[osp]), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id11" />
+      <target ref="id12" />
+      <label kind="guard" x="20" y="715">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="728"> osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id12" />
+      <target ref="id12a" />
+      <label kind="guard" x="20" y="780">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="793">osp_dec(1), t = 0, par0 = os[osp]</label>
+      <label kind="synchronisation" x="20" y="806">cExampleCGI_processVerifyPIN!</label>
+    </transition>
+    <transition>
+      <source ref="id12a" />
+      <target ref="id13" />
+      <label kind="guard" x="20" y="819">!exceptionOccurred</label>
+      <label kind="assignment" x="20" y="832">t = 0</label>
+      <label kind="synchronisation" x="20" y="806">cExampleCGI_processVerifyPIN?</label>
+    </transition>
+    <transition>
+      <source ref="id12a" />
+      <target ref="id12aa" />
+      <label kind="guard" x="20" y="806">exceptionOccurred == true</label>
+      <label kind="assignment" x="20" y="819">osp = 0, t = 0</label>
+      <label kind="synchronisation" x="20" y="832">cExampleCGI_processVerifyPIN?</label>
+    </transition>
+    <transition>
+      <source ref="id12aa" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="832">cExampleCGI_ExampleCGI!</label>
+    </transition>
+    <transition>
+      <source ref="id13" />
+      <target ref="id14" />
+      <label kind="guard" x="20" y="845">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="858">osp_inc(), os[osp-1] = H(cp0), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id14" />
+      <target ref="id15" />
+      <label kind="guard" x="20" y="910">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="923">osp_inc(), os[osp - 1] = 9, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id15" />
+      <target ref="id20" />
+      <label kind="guard" x="20" y="975">t == 1 &amp;&amp; ifcmpeq() &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="988">osp_dec(2), t = 0</label>
+      <nail x="-50" y="1137" />
+    </transition>
+    <transition>
+      <source ref="id15" />
+      <target ref="id16" />
+      <label kind="guard" x="20" y="975">t == 1 &amp;&amp; !ifcmpeq() &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="988">opstack_fault = osp &lt; 2 ? true : opstack_fault, osp_dec(2), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id16" />
+      <target ref="id17" />
+      <label kind="guard" x="20" y="1040">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="1053">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id17" />
+      <target ref="id18" />
+      <label kind="guard" x="20" y="1118">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="1105">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+    </transition>
+    <transition>
+      <source ref="id18" />
+      <target ref="id18a" />
+      <label kind="guard" x="20" y="1170">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="1183">osp_dec(1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id18a" />
+      <target ref="id19" />
+      <label kind="guard" x="20" y="1196">t == 5</label>
+      <label kind="assignment" x="20" y="1209">t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id19" />
+      <target ref="id19a" />
+      <label kind="guard" x="20" y="1235">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="1248">exceptionOccurred = true</label>
+    </transition>
+    <transition>
+      <source ref="id19a" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="1261">cExampleCGI_ExampleCGI!</label>
+    </transition>
+    <transition>
+      <source ref="id20" />
+      <target ref="id21" />
+      <label kind="guard" x="20" y="1300">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="1313">osp_inc(), os[osp - 1] = 10, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id21" />
+      <target ref="id22" />
+      <label kind="guard" x="20" y="1365">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="1378">osp_dec(1), setH(cp0, os[osp]), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id22" />
+      <target ref="id-1" />
+      <label kind="guard" x="20" y="1430">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="1469">osp = 0, t = 0</label>
+      <label kind="synchronisation" x="20" y="1443">cExampleCGI_ExampleCGI!</label>
+      <nail x="-100" y="682" />
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id0" />
+      <label kind="select" x="20" y="0">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="13">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="26">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id1" />
+      <label kind="select" x="20" y="65">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="78">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="91">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id2" />
+      <label kind="select" x="20" y="130">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="143">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="156">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id3" />
+      <target ref="id3" />
+      <label kind="select" x="20" y="195">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="208">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="221">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id4" />
+      <target ref="id4" />
+      <label kind="select" x="20" y="260">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="273">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="286">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id5" />
+      <target ref="id5" />
+      <label kind="select" x="20" y="325">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="338">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="351">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id6" />
+      <target ref="id6" />
+      <label kind="select" x="20" y="390">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="403">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="416">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id7" />
+      <target ref="id7" />
+      <label kind="select" x="20" y="455">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="468">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="481">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id8" />
+      <target ref="id8" />
+      <label kind="select" x="20" y="520">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="533">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="546">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id9" />
+      <target ref="id9" />
+      <label kind="select" x="20" y="585">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="598">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="611">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id10" />
+      <target ref="id10" />
+      <label kind="select" x="20" y="650">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="663">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="676">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id11" />
+      <target ref="id11" />
+      <label kind="select" x="20" y="715">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="728">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="741">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id12" />
+      <target ref="id12" />
+      <label kind="select" x="20" y="780">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="793">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="806">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id13" />
+      <target ref="id13" />
+      <label kind="select" x="20" y="845">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="858">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="871">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id14" />
+      <target ref="id14" />
+      <label kind="select" x="20" y="910">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="923">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="936">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id15" />
+      <target ref="id15" />
+      <label kind="select" x="20" y="975">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="988">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="1001">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id16" />
+      <target ref="id16" />
+      <label kind="select" x="20" y="1040">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="1053">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="1066">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id17" />
+      <target ref="id17" />
+      <label kind="select" x="20" y="1105">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="1118">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="1131">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id18" />
+      <target ref="id18" />
+      <label kind="select" x="20" y="1170">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="1183">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="1196">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id19" />
+      <target ref="id19" />
+      <label kind="select" x="20" y="1235">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="1248">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="1261">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id20" />
+      <target ref="id20" />
+      <label kind="select" x="20" y="1300">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="1313">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="1326">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id21" />
+      <target ref="id21" />
+      <label kind="select" x="20" y="1365">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="1378">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="1391">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id22" />
+      <target ref="id22" />
+      <label kind="select" x="20" y="1430">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="1443">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="1456">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+  </template>
+  <template>
+    <name>ExampleCGI_processVerifyPIN</name>
+    <declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+    <location id="id-1" x="0" y="-65">
+      <name x="20" y="-78">processVerifyPIN</name>
+      <label kind="exponentialrate" x="-70" y="-65">1</label>
+    </location>
+    <location id="id0" x="0" y="0">
+      <name x="20" y="-13">pc0__getstatic_ExampleCGI_callId___int</name>
+      <label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+    </location>
+    <location id="id1" x="0" y="65">
+      <name x="20" y="52">pc3__iconst_2</name>
+      <label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+    </location>
+    <location id="id2" x="0" y="130">
+      <name x="20" y="117">pc4__ifcmpeq_11</name>
+      <label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+    </location>
+    <location id="id3" x="0" y="195">
+      <name x="20" y="182">pc7__new_java_lang_Exception</name>
+      <label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+    </location>
+    <location id="id4" x="0" y="260">
+      <name x="20" y="247">pc10__dup</name>
+      <label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+    </location>
+    <location id="id5" x="0" y="325">
+      <name x="20" y="312">pc11__invokespecial_void_java_lang_Exception_init_</name>
+      <label kind="invariant" x="-70" y="325">t &lt;= 1</label>
+    </location>
+    <location id="id6" x="0" y="390">
+      <name x="20" y="377">pc14__athrow</name>
+      <label kind="invariant" x="-70" y="390">t &lt;= 1</label>
+    </location>
+    <location id="id7" x="0" y="455">
+      <name x="20" y="442">pc15__iconst_4</name>
+      <label kind="invariant" x="-70" y="455">t &lt;= 1</label>
+    </location>
+    <location id="id8" x="0" y="520">
+      <name x="20" y="507">pc16__istore_1</name>
+      <label kind="invariant" x="-70" y="520">t &lt;= 1</label>
+    </location>
+    <location id="id9" x="0" y="585">
+      <name x="20" y="572">pc17__sipush_255</name>
+      <label kind="invariant" x="-70" y="585">t &lt;= 1</label>
+    </location>
+    <location id="id10" x="0" y="650">
+      <name x="20" y="637">pc20__istore_2</name>
+      <label kind="invariant" x="-70" y="650">t &lt;= 1</label>
+    </location>
+    <location id="id11" x="0" y="715">
+      <name x="20" y="702">pc21__iconst_3</name>
+      <label kind="invariant" x="-70" y="715">t &lt;= 1</label>
+    </location>
+    <location id="id12" x="0" y="780">
+      <name x="20" y="767">pc22__putstatic_ExampleCGI_callId___int</name>
+      <label kind="invariant" x="-70" y="780">t &lt;= 1</label>
+    </location>
+    <location id="id13" x="0" y="845">
+      <name x="20" y="832">pc25__aload_0</name>
+      <label kind="invariant" x="-70" y="845">t &lt;= 1</label>
+    </location>
+    <location id="id14" x="0" y="910">
+      <name x="20" y="897">pc26__invokespecial_short_ExampleCGI_setIncomingAndReceive_</name>
+      <label kind="invariant" x="-70" y="910">t &lt;= 1</label>
+    </location>
+    <location id="id15" x="0" y="975">
+      <name x="20" y="962">pc29__istore_4</name>
+      <label kind="invariant" x="-70" y="975">t &lt;= 1</label>
+    </location>
+    <location id="id16" x="0" y="1040">
+      <name x="20" y="1027">pc31__getstatic_ExampleCGI_callId___int</name>
+      <label kind="invariant" x="-70" y="1040">t &lt;= 1</label>
+    </location>
+    <location id="id17" x="0" y="1105">
+      <name x="20" y="1092">pc34__iconst_4</name>
+      <label kind="invariant" x="-70" y="1105">t &lt;= 1</label>
+    </location>
+    <location id="id18" x="0" y="1170">
+      <name x="20" y="1157">pc35__ifcmpeq_11</name>
+      <label kind="invariant" x="-70" y="1170">t &lt;= 1</label>
+    </location>
+    <location id="id19" x="0" y="1235">
+      <name x="20" y="1222">pc38__new_java_lang_Exception</name>
+      <label kind="invariant" x="-70" y="1235">t &lt;= 1</label>
+    </location>
+    <location id="id20" x="0" y="1300">
+      <name x="20" y="1287">pc41__dup</name>
+      <label kind="invariant" x="-70" y="1300">t &lt;= 1</label>
+    </location>
+    <location id="id21" x="0" y="1365">
+      <name x="20" y="1352">pc42__invokespecial_void_java_lang_Exception_init_</name>
+      <label kind="invariant" x="-70" y="1365">t &lt;= 1</label>
+    </location>
+    <location id="id22" x="0" y="1430">
+      <name x="20" y="1417">pc45__athrow</name>
+      <label kind="invariant" x="-70" y="1430">t &lt;= 1</label>
+    </location>
+    <location id="id23" x="0" y="1495">
+      <name x="20" y="1482">pc46__iload_4</name>
+      <label kind="invariant" x="-70" y="1495">t &lt;= 1</label>
+    </location>
+    <location id="id24" x="0" y="1560">
+      <name x="20" y="1547">pc48__iload_1</name>
+      <label kind="invariant" x="-70" y="1560">t &lt;= 1</label>
+    </location>
+    <location id="id25" x="0" y="1625">
+      <name x="20" y="1612">pc49__ifcmpge_11</name>
+      <label kind="invariant" x="-70" y="1625">t &lt;= 1</label>
+    </location>
+    <location id="id26" x="0" y="1690">
+      <name x="20" y="1677">pc52__new_java_lang_Exception</name>
+      <label kind="invariant" x="-70" y="1690">t &lt;= 1</label>
+    </location>
+    <location id="id27" x="0" y="1755">
+      <name x="20" y="1742">pc55__dup</name>
+      <label kind="invariant" x="-70" y="1755">t &lt;= 1</label>
+    </location>
+    <location id="id28" x="0" y="1820">
+      <name x="20" y="1807">pc56__invokespecial_void_java_lang_Exception_init_</name>
+      <label kind="invariant" x="-70" y="1820">t &lt;= 1</label>
+    </location>
+    <location id="id29" x="0" y="1885">
+      <name x="20" y="1872">pc59__athrow</name>
+      <label kind="invariant" x="-70" y="1885">t &lt;= 1</label>
+    </location>
+    <location id="id30" x="0" y="1950">
+      <name x="20" y="1937">pc60__iconst_5</name>
+      <label kind="invariant" x="-70" y="1950">t &lt;= 1</label>
+    </location>
+    <location id="id31" x="0" y="2015">
+      <name x="20" y="2002">pc61__putstatic_ExampleCGI_callId___int</name>
+      <label kind="invariant" x="-70" y="2015">t &lt;= 1</label>
+    </location>
+    <location id="id32" x="0" y="2080">
+      <name x="20" y="2067">pc64__aload_0</name>
+      <label kind="invariant" x="-70" y="2080">t &lt;= 1</label>
+    </location>
+    <location id="id33" x="0" y="2145">
+      <name x="20" y="2132">pc65__invokespecial_bool_ExampleCGI_isInvalid_</name>
+      <label kind="invariant" x="-70" y="2145">t &lt;= 1</label>
+    </location>
+    <location id="id34" x="0" y="2210">
+      <name x="20" y="2197">pc68__ifeq_53</name>
+      <label kind="invariant" x="-70" y="2210">t &lt;= 1</label>
+    </location>
+    <location id="id35" x="0" y="2275">
+      <name x="20" y="2262">pc71__getstatic_ExampleCGI_callId___int</name>
+      <label kind="invariant" x="-70" y="2275">t &lt;= 1</label>
+    </location>
+    <location id="id36" x="0" y="2340">
+      <name x="20" y="2327">pc74__bipush_6</name>
+      <label kind="invariant" x="-70" y="2340">t &lt;= 1</label>
+    </location>
+    <location id="id37" x="0" y="2405">
+      <name x="20" y="2392">pc76__ifcmpeq_11</name>
+      <label kind="invariant" x="-70" y="2405">t &lt;= 1</label>
+    </location>
+    <location id="id38" x="0" y="2470">
+      <name x="20" y="2457">pc79__new_java_lang_Exception</name>
+      <label kind="invariant" x="-70" y="2470">t &lt;= 1</label>
+    </location>
+    <location id="id39" x="0" y="2535">
+      <name x="20" y="2522">pc82__dup</name>
+      <label kind="invariant" x="-70" y="2535">t &lt;= 1</label>
+    </location>
+    <location id="id40" x="0" y="2600">
+      <name x="20" y="2587">pc83__invokespecial_void_java_lang_Exception_init_</name>
+      <label kind="invariant" x="-70" y="2600">t &lt;= 1</label>
+    </location>
+    <location id="id41" x="0" y="2665">
+      <name x="20" y="2652">pc86__athrow</name>
+      <label kind="invariant" x="-70" y="2665">t &lt;= 1</label>
+    </location>
+    <location id="id42" x="0" y="2730">
+      <name x="20" y="2717">pc87__bipush_7</name>
+      <label kind="invariant" x="-70" y="2730">t &lt;= 1</label>
+    </location>
+    <location id="id43" x="0" y="2795">
+      <name x="20" y="2782">pc89__putstatic_ExampleCGI_callId___int</name>
+      <label kind="invariant" x="-70" y="2795">t &lt;= 1</label>
+    </location>
+    <location id="id44" x="0" y="2860">
+      <name x="20" y="2847">pc92__aload_0</name>
+      <label kind="invariant" x="-70" y="2860">t &lt;= 1</label>
+    </location>
+    <location id="id45" x="0" y="2925">
+      <name x="20" y="2912">pc93__invokespecial_int_ExampleCGI_getTriesRemaining_</name>
+      <label kind="invariant" x="-70" y="2925">t &lt;= 1</label>
+    </location>
+    <location id="id46" x="0" y="2990">
+      <name x="20" y="2977">pc96__istore_3</name>
+      <label kind="invariant" x="-70" y="2990">t &lt;= 1</label>
+    </location>
+    <location id="id47" x="0" y="3055">
+      <name x="20" y="3042">pc97__getstatic_ExampleCGI_callId___int</name>
+      <label kind="invariant" x="-70" y="3055">t &lt;= 1</label>
+    </location>
+    <location id="id48" x="0" y="3120">
+      <name x="20" y="3107">pc100__bipush_8</name>
+      <label kind="invariant" x="-70" y="3120">t &lt;= 1</label>
+    </location>
+    <location id="id49" x="0" y="3185">
+      <name x="20" y="3172">pc102__ifcmpeq_11</name>
+      <label kind="invariant" x="-70" y="3185">t &lt;= 1</label>
+    </location>
+    <location id="id50" x="0" y="3250">
+      <name x="20" y="3237">pc105__new_java_lang_Exception</name>
+      <label kind="invariant" x="-70" y="3250">t &lt;= 1</label>
+    </location>
+    <location id="id51" x="0" y="3315">
+      <name x="20" y="3302">pc108__dup</name>
+      <label kind="invariant" x="-70" y="3315">t &lt;= 1</label>
+    </location>
+    <location id="id52" x="0" y="3380">
+      <name x="20" y="3367">pc109__invokespecial_void_java_lang_Exception_init_</name>
+      <label kind="invariant" x="-70" y="3380">t &lt;= 1</label>
+    </location>
+    <location id="id53" x="0" y="3445">
+      <name x="20" y="3432">pc112__athrow</name>
+      <label kind="invariant" x="-70" y="3445">t &lt;= 1</label>
+    </location>
+    <location id="id54" x="0" y="3510">
+      <name x="20" y="3497">pc113__new_java_lang_Exception</name>
+      <label kind="invariant" x="-70" y="3510">t &lt;= 1</label>
+    </location>
+    <location id="id55" x="0" y="3575">
+      <name x="20" y="3562">pc116__dup</name>
+      <label kind="invariant" x="-70" y="3575">t &lt;= 1</label>
+    </location>
+    <location id="id56" x="0" y="3640">
+      <name x="20" y="3627">pc117__invokespecial_void_java_lang_Exception_init_</name>
+      <label kind="invariant" x="-70" y="3640">t &lt;= 1</label>
+    </location>
+    <location id="id57" x="0" y="3705">
+      <name x="20" y="3692">pc120__athrow</name>
+      <label kind="invariant" x="-70" y="3705">t &lt;= 1</label>
+    </location>
+    <location id="id58" x="0" y="3770">
+      <name x="20" y="3757">pc121__bipush_9</name>
+      <label kind="invariant" x="-70" y="3770">t &lt;= 1</label>
+    </location>
+    <location id="id59" x="0" y="3835">
+      <name x="20" y="3822">pc123__putstatic_ExampleCGI_callId___int</name>
+      <label kind="invariant" x="-70" y="3835">t &lt;= 1</label>
+    </location>
+    <location id="id60" x="0" y="3900">
+      <name x="20" y="3887">pc126__return</name>
+      <label kind="invariant" x="-70" y="3900">t &lt;= 1</label>
+    </location>
+    <location id="id5a" x="200" y="351">
+      <name x="220" y="338"></name>
+      <label kind="invariant" x="0" y="0">t &lt;= 5</label>
+    </location>
+    <location id="id6a" x="200" y="416">
+      <name x="220" y="403"></name>
+      <label kind="exponentialrate" x="130" y="416">1</label>
+      <urgent />
+    </location>
+    <location id="id14a" x="200" y="936">
+      <name x="220" y="923"></name>
+      <label kind="exponentialrate" x="130" y="936">1</label>
+    </location>
+    <location id="id14aa" x="200" y="962">
+      <name x="220" y="949"></name>
+      <label kind="exponentialrate" x="330" y="962">1</label>
+      <urgent />
+    </location>
+    <location id="id21a" x="200" y="1391">
+      <name x="220" y="1378"></name>
+      <label kind="invariant" x="0" y="0">t &lt;= 5</label>
+    </location>
+    <location id="id22a" x="200" y="1456">
+      <name x="220" y="1443"></name>
+      <label kind="exponentialrate" x="130" y="1456">1</label>
+      <urgent />
+    </location>
+    <location id="id28a" x="200" y="1846">
+      <name x="220" y="1833"></name>
+      <label kind="invariant" x="0" y="0">t &lt;= 5</label>
+    </location>
+    <location id="id29a" x="200" y="1911">
+      <name x="220" y="1898"></name>
+      <label kind="exponentialrate" x="130" y="1911">1</label>
+      <urgent />
+    </location>
+    <location id="id33a" x="200" y="2171">
+      <name x="220" y="2158"></name>
+      <label kind="exponentialrate" x="130" y="2171">1</label>
+    </location>
+    <location id="id33aa" x="200" y="2197">
+      <name x="220" y="2184"></name>
+      <label kind="exponentialrate" x="330" y="2197">1</label>
+      <urgent />
+    </location>
+    <location id="id40a" x="200" y="2626">
+      <name x="220" y="2613"></name>
+      <label kind="invariant" x="0" y="0">t &lt;= 5</label>
+    </location>
+    <location id="id41a" x="200" y="2691">
+      <name x="220" y="2678"></name>
+      <label kind="exponentialrate" x="130" y="2691">1</label>
+      <urgent />
+    </location>
+    <location id="id45a" x="200" y="2951">
+      <name x="220" y="2938"></name>
+      <label kind="exponentialrate" x="130" y="2951">1</label>
+    </location>
+    <location id="id45aa" x="200" y="2977">
+      <name x="220" y="2964"></name>
+      <label kind="exponentialrate" x="330" y="2977">1</label>
+      <urgent />
+    </location>
+    <location id="id52a" x="200" y="3406">
+      <name x="220" y="3393"></name>
+      <label kind="invariant" x="0" y="0">t &lt;= 5</label>
+    </location>
+    <location id="id53a" x="200" y="3471">
+      <name x="220" y="3458"></name>
+      <label kind="exponentialrate" x="130" y="3471">1</label>
+      <urgent />
+    </location>
+    <location id="id56a" x="200" y="3666">
+      <name x="220" y="3653"></name>
+      <label kind="invariant" x="0" y="0">t &lt;= 5</label>
+    </location>
+    <location id="id57a" x="200" y="3731">
+      <name x="220" y="3718"></name>
+      <label kind="exponentialrate" x="130" y="3731">1</label>
+      <urgent />
+    </location>
+    <init ref="id-1" />
+    <transition>
+      <source ref="id-1" />
+      <target ref="id0" />
+      <label kind="guard" x="20" y="-65">t == 1</label>
+      <label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+      <label kind="synchronisation" x="20" y="-52">cExampleCGI_processVerifyPIN?</label>
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id1" />
+      <label kind="guard" x="20" y="0">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="13">osp_inc(), os[osp-1] = H(cp0), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id2" />
+      <label kind="guard" x="20" y="65">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="78">osp_inc(), os[osp - 1] = 2, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id7" />
+      <label kind="guard" x="20" y="130">t == 1 &amp;&amp; ifcmpeq() &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="143">osp_dec(2), t = 0</label>
+      <nail x="-50" y="292" />
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id3" />
+      <label kind="guard" x="20" y="130">t == 1 &amp;&amp; !ifcmpeq() &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="143">opstack_fault = osp &lt; 2 ? true : opstack_fault, osp_dec(2), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id3" />
+      <target ref="id4" />
+      <label kind="guard" x="20" y="195">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="208">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id4" />
+      <target ref="id5" />
+      <label kind="guard" x="20" y="273">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="260">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+    </transition>
+    <transition>
+      <source ref="id5" />
+      <target ref="id5a" />
+      <label kind="guard" x="20" y="325">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="338">osp_dec(1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id5a" />
+      <target ref="id6" />
+      <label kind="guard" x="20" y="351">t == 5</label>
+      <label kind="assignment" x="20" y="364">t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id6" />
+      <target ref="id6a" />
+      <label kind="guard" x="20" y="390">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="403">exceptionOccurred = true</label>
+    </transition>
+    <transition>
+      <source ref="id6a" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="416">cExampleCGI_processVerifyPIN!</label>
+    </transition>
+    <transition>
+      <source ref="id7" />
+      <target ref="id8" />
+      <label kind="guard" x="20" y="455">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="468">osp_inc(), os[osp - 1] = 4, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id8" />
+      <target ref="id9" />
+      <label kind="guard" x="20" y="533">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="520">osp_dec(1), locs[1] = os[osp]</label>
+    </transition>
+    <transition>
+      <source ref="id9" />
+      <target ref="id10" />
+      <label kind="guard" x="20" y="598">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="585">osp_inc(), os[osp] = 255</label>
+    </transition>
+    <transition>
+      <source ref="id10" />
+      <target ref="id11" />
+      <label kind="guard" x="20" y="663">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="650">osp_dec(1), locs[2] = os[osp]</label>
+    </transition>
+    <transition>
+      <source ref="id11" />
+      <target ref="id12" />
+      <label kind="guard" x="20" y="715">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="728">osp_inc(), os[osp - 1] = 3, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id12" />
+      <target ref="id13" />
+      <label kind="guard" x="20" y="780">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="793">osp_dec(1), setH(cp0, os[osp]), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id13" />
+      <target ref="id14" />
+      <label kind="guard" x="20" y="845">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="858"> osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id14" />
+      <target ref="id14a" />
+      <label kind="guard" x="20" y="910">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="923">osp_dec(1), t = 0, par0 = os[osp]</label>
+      <label kind="synchronisation" x="20" y="936">cExampleCGI_setIncomingAndReceive!</label>
+    </transition>
+    <transition>
+      <source ref="id14a" />
+      <target ref="id15" />
+      <label kind="guard" x="20" y="949">!exceptionOccurred</label>
+      <label kind="assignment" x="20" y="962">t = 0, os[osp] = par0, osp_inc()</label>
+      <label kind="synchronisation" x="20" y="936">cExampleCGI_setIncomingAndReceive?</label>
+    </transition>
+    <transition>
+      <source ref="id14a" />
+      <target ref="id14aa" />
+      <label kind="guard" x="20" y="936">exceptionOccurred == true</label>
+      <label kind="assignment" x="20" y="949">osp = 0, t = 0</label>
+      <label kind="synchronisation" x="20" y="962">cExampleCGI_setIncomingAndReceive?</label>
+    </transition>
+    <transition>
+      <source ref="id14aa" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="962">cExampleCGI_processVerifyPIN!</label>
+    </transition>
+    <transition>
+      <source ref="id15" />
+      <target ref="id16" />
+      <label kind="guard" x="20" y="988">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="975">osp_dec(1), locs[4] = os[osp]</label>
+    </transition>
+    <transition>
+      <source ref="id16" />
+      <target ref="id17" />
+      <label kind="guard" x="20" y="1040">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="1053">osp_inc(), os[osp-1] = H(cp0), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id17" />
+      <target ref="id18" />
+      <label kind="guard" x="20" y="1105">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="1118">osp_inc(), os[osp - 1] = 4, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id18" />
+      <target ref="id23" />
+      <label kind="guard" x="20" y="1170">t == 1 &amp;&amp; ifcmpeq() &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="1183">osp_dec(2), t = 0</label>
+      <nail x="-50" y="1332" />
+    </transition>
+    <transition>
+      <source ref="id18" />
+      <target ref="id19" />
+      <label kind="guard" x="20" y="1170">t == 1 &amp;&amp; !ifcmpeq() &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="1183">opstack_fault = osp &lt; 2 ? true : opstack_fault, osp_dec(2), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id19" />
+      <target ref="id20" />
+      <label kind="guard" x="20" y="1235">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="1248">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id20" />
+      <target ref="id21" />
+      <label kind="guard" x="20" y="1313">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="1300">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+    </transition>
+    <transition>
+      <source ref="id21" />
+      <target ref="id21a" />
+      <label kind="guard" x="20" y="1365">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="1378">osp_dec(1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id21a" />
+      <target ref="id22" />
+      <label kind="guard" x="20" y="1391">t == 5</label>
+      <label kind="assignment" x="20" y="1404">t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id22" />
+      <target ref="id22a" />
+      <label kind="guard" x="20" y="1430">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="1443">exceptionOccurred = true</label>
+    </transition>
+    <transition>
+      <source ref="id22a" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="1456">cExampleCGI_processVerifyPIN!</label>
+    </transition>
+    <transition>
+      <source ref="id23" />
+      <target ref="id24" />
+      <label kind="guard" x="20" y="1508">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="1495">osp_inc(), os[osp - 1] = locs[4]</label>
+    </transition>
+    <transition>
+      <source ref="id24" />
+      <target ref="id25" />
+      <label kind="guard" x="20" y="1573">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="1560">osp_inc(), os[osp - 1] = locs[1]</label>
+    </transition>
+    <transition>
+      <source ref="id25" />
+      <target ref="id26" />
+      <label kind="guard" x="20" y="1625">t == 1 &amp;&amp; !ifcmpge() &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="1638">osp_dec(2)</label>
+    </transition>
+    <transition>
+      <source ref="id25" />
+      <target ref="id30" />
+      <label kind="guard" x="20" y="1625">t == 1 &amp;&amp; ifcmpge() &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="1638">osp_dec(2)</label>
+      <nail x="-50" y="1787" />
+    </transition>
+    <transition>
+      <source ref="id26" />
+      <target ref="id27" />
+      <label kind="guard" x="20" y="1690">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="1703">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id27" />
+      <target ref="id28" />
+      <label kind="guard" x="20" y="1768">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="1755">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+    </transition>
+    <transition>
+      <source ref="id28" />
+      <target ref="id28a" />
+      <label kind="guard" x="20" y="1820">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="1833">osp_dec(1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id28a" />
+      <target ref="id29" />
+      <label kind="guard" x="20" y="1846">t == 5</label>
+      <label kind="assignment" x="20" y="1859">t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id29" />
+      <target ref="id29a" />
+      <label kind="guard" x="20" y="1885">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="1898">exceptionOccurred = true</label>
+    </transition>
+    <transition>
+      <source ref="id29a" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="1911">cExampleCGI_processVerifyPIN!</label>
+    </transition>
+    <transition>
+      <source ref="id30" />
+      <target ref="id31" />
+      <label kind="guard" x="20" y="1950">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="1963">osp_inc(), os[osp - 1] = 5, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id31" />
+      <target ref="id32" />
+      <label kind="guard" x="20" y="2015">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="2028">osp_dec(1), setH(cp0, os[osp]), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id32" />
+      <target ref="id33" />
+      <label kind="guard" x="20" y="2080">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="2093"> osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id33" />
+      <target ref="id33a" />
+      <label kind="guard" x="20" y="2145">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="2158">osp_dec(1), t = 0, par0 = os[osp]</label>
+      <label kind="synchronisation" x="20" y="2171">cExampleCGI_isInvalid!</label>
+    </transition>
+    <transition>
+      <source ref="id33a" />
+      <target ref="id34" />
+      <label kind="guard" x="20" y="2184">!exceptionOccurred</label>
+      <label kind="assignment" x="20" y="2197">t = 0, os[osp] = par0, osp_inc()</label>
+      <label kind="synchronisation" x="20" y="2171">cExampleCGI_isInvalid?</label>
+    </transition>
+    <transition>
+      <source ref="id33a" />
+      <target ref="id33aa" />
+      <label kind="guard" x="20" y="2171">exceptionOccurred == true</label>
+      <label kind="assignment" x="20" y="2184">osp = 0, t = 0</label>
+      <label kind="synchronisation" x="20" y="2197">cExampleCGI_isInvalid?</label>
+    </transition>
+    <transition>
+      <source ref="id33aa" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="2197">cExampleCGI_processVerifyPIN!</label>
+    </transition>
+    <transition>
+      <source ref="id34" />
+      <target ref="id58" />
+      <label kind="guard" x="20" y="2210">t == 1 &amp;&amp; ifeq() &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="2223">osp_dec(1), t = 0</label>
+      <nail x="-50" y="2990" />
+    </transition>
+    <transition>
+      <source ref="id34" />
+      <target ref="id35" />
+      <label kind="guard" x="20" y="2210">t == 1 &amp;&amp; !ifeq() &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="2223">opstack_fault = osp &lt; 1 ? true : opstack_fault, osp_dec(1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id35" />
+      <target ref="id36" />
+      <label kind="guard" x="20" y="2275">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="2288">osp_inc(), os[osp-1] = H(cp0), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id36" />
+      <target ref="id37" />
+      <label kind="guard" x="20" y="2340">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="2353">osp_inc(), os[osp - 1] = 6, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id37" />
+      <target ref="id42" />
+      <label kind="guard" x="20" y="2405">t == 1 &amp;&amp; ifcmpeq() &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="2418">osp_dec(2), t = 0</label>
+      <nail x="-50" y="2567" />
+    </transition>
+    <transition>
+      <source ref="id37" />
+      <target ref="id38" />
+      <label kind="guard" x="20" y="2405">t == 1 &amp;&amp; !ifcmpeq() &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="2418">opstack_fault = osp &lt; 2 ? true : opstack_fault, osp_dec(2), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id38" />
+      <target ref="id39" />
+      <label kind="guard" x="20" y="2470">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="2483">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id39" />
+      <target ref="id40" />
+      <label kind="guard" x="20" y="2548">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="2535">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+    </transition>
+    <transition>
+      <source ref="id40" />
+      <target ref="id40a" />
+      <label kind="guard" x="20" y="2600">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="2613">osp_dec(1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id40a" />
+      <target ref="id41" />
+      <label kind="guard" x="20" y="2626">t == 5</label>
+      <label kind="assignment" x="20" y="2639">t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id41" />
+      <target ref="id41a" />
+      <label kind="guard" x="20" y="2665">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="2678">exceptionOccurred = true</label>
+    </transition>
+    <transition>
+      <source ref="id41a" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="2691">cExampleCGI_processVerifyPIN!</label>
+    </transition>
+    <transition>
+      <source ref="id42" />
+      <target ref="id43" />
+      <label kind="guard" x="20" y="2730">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="2743">osp_inc(), os[osp - 1] = 7, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id43" />
+      <target ref="id44" />
+      <label kind="guard" x="20" y="2795">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="2808">osp_dec(1), setH(cp0, os[osp]), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id44" />
+      <target ref="id45" />
+      <label kind="guard" x="20" y="2860">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="2873"> osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id45" />
+      <target ref="id45a" />
+      <label kind="guard" x="20" y="2925">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="2938">osp_dec(1), t = 0, par0 = os[osp]</label>
+      <label kind="synchronisation" x="20" y="2951">cExampleCGI_getTriesRemaining!</label>
+    </transition>
+    <transition>
+      <source ref="id45a" />
+      <target ref="id46" />
+      <label kind="guard" x="20" y="2964">!exceptionOccurred</label>
+      <label kind="assignment" x="20" y="2977">t = 0, os[osp] = par0, osp_inc()</label>
+      <label kind="synchronisation" x="20" y="2951">cExampleCGI_getTriesRemaining?</label>
+    </transition>
+    <transition>
+      <source ref="id45a" />
+      <target ref="id45aa" />
+      <label kind="guard" x="20" y="2951">exceptionOccurred == true</label>
+      <label kind="assignment" x="20" y="2964">osp = 0, t = 0</label>
+      <label kind="synchronisation" x="20" y="2977">cExampleCGI_getTriesRemaining?</label>
+    </transition>
+    <transition>
+      <source ref="id45aa" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="2977">cExampleCGI_processVerifyPIN!</label>
+    </transition>
+    <transition>
+      <source ref="id46" />
+      <target ref="id47" />
+      <label kind="guard" x="20" y="3003">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="2990">osp_dec(1), locs[3] = os[osp]</label>
+    </transition>
+    <transition>
+      <source ref="id47" />
+      <target ref="id48" />
+      <label kind="guard" x="20" y="3055">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="3068">osp_inc(), os[osp-1] = H(cp0), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id48" />
+      <target ref="id49" />
+      <label kind="guard" x="20" y="3120">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="3133">osp_inc(), os[osp - 1] = 8, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id49" />
+      <target ref="id54" />
+      <label kind="guard" x="20" y="3185">t == 1 &amp;&amp; ifcmpeq() &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="3198">osp_dec(2), t = 0</label>
+      <nail x="-50" y="3347" />
+    </transition>
+    <transition>
+      <source ref="id49" />
+      <target ref="id50" />
+      <label kind="guard" x="20" y="3185">t == 1 &amp;&amp; !ifcmpeq() &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="3198">opstack_fault = osp &lt; 2 ? true : opstack_fault, osp_dec(2), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id50" />
+      <target ref="id51" />
+      <label kind="guard" x="20" y="3250">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="3263">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id51" />
+      <target ref="id52" />
+      <label kind="guard" x="20" y="3328">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="3315">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+    </transition>
+    <transition>
+      <source ref="id52" />
+      <target ref="id52a" />
+      <label kind="guard" x="20" y="3380">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="3393">osp_dec(1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id52a" />
+      <target ref="id53" />
+      <label kind="guard" x="20" y="3406">t == 5</label>
+      <label kind="assignment" x="20" y="3419">t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id53" />
+      <target ref="id53a" />
+      <label kind="guard" x="20" y="3445">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="3458">exceptionOccurred = true</label>
+    </transition>
+    <transition>
+      <source ref="id53a" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="3471">cExampleCGI_processVerifyPIN!</label>
+    </transition>
+    <transition>
+      <source ref="id54" />
+      <target ref="id55" />
+      <label kind="guard" x="20" y="3510">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="3523">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id55" />
+      <target ref="id56" />
+      <label kind="guard" x="20" y="3588">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="3575">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+    </transition>
+    <transition>
+      <source ref="id56" />
+      <target ref="id56a" />
+      <label kind="guard" x="20" y="3640">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="3653">osp_dec(1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id56a" />
+      <target ref="id57" />
+      <label kind="guard" x="20" y="3666">t == 5</label>
+      <label kind="assignment" x="20" y="3679">t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id57" />
+      <target ref="id57a" />
+      <label kind="guard" x="20" y="3705">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="3718">exceptionOccurred = true</label>
+    </transition>
+    <transition>
+      <source ref="id57a" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="3731">cExampleCGI_processVerifyPIN!</label>
+    </transition>
+    <transition>
+      <source ref="id58" />
+      <target ref="id59" />
+      <label kind="guard" x="20" y="3770">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="3783">osp_inc(), os[osp - 1] = 9, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id59" />
+      <target ref="id60" />
+      <label kind="guard" x="20" y="3835">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="3848">osp_dec(1), setH(cp0, os[osp]), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id60" />
+      <target ref="id-1" />
+      <label kind="guard" x="20" y="3900">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="3939">osp = 0, t = 0</label>
+      <label kind="synchronisation" x="20" y="3913">cExampleCGI_processVerifyPIN!</label>
+      <nail x="-100" y="1917" />
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id0" />
+      <label kind="select" x="20" y="0">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="13">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="26">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id1" />
+      <label kind="select" x="20" y="65">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="78">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="91">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id2" />
+      <label kind="select" x="20" y="130">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="143">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="156">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id3" />
+      <target ref="id3" />
+      <label kind="select" x="20" y="195">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="208">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="221">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id4" />
+      <target ref="id4" />
+      <label kind="select" x="20" y="260">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="273">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="286">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id5" />
+      <target ref="id5" />
+      <label kind="select" x="20" y="325">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="338">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="351">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id6" />
+      <target ref="id6" />
+      <label kind="select" x="20" y="390">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="403">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="416">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id7" />
+      <target ref="id7" />
+      <label kind="select" x="20" y="455">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="468">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="481">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id8" />
+      <target ref="id8" />
+      <label kind="select" x="20" y="520">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="533">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="546">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id9" />
+      <target ref="id9" />
+      <label kind="select" x="20" y="585">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="598">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="611">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id10" />
+      <target ref="id10" />
+      <label kind="select" x="20" y="650">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="663">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="676">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id11" />
+      <target ref="id11" />
+      <label kind="select" x="20" y="715">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="728">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="741">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id12" />
+      <target ref="id12" />
+      <label kind="select" x="20" y="780">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="793">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="806">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id13" />
+      <target ref="id13" />
+      <label kind="select" x="20" y="845">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="858">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="871">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id14" />
+      <target ref="id14" />
+      <label kind="select" x="20" y="910">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="923">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="936">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id15" />
+      <target ref="id15" />
+      <label kind="select" x="20" y="975">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="988">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="1001">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id16" />
+      <target ref="id16" />
+      <label kind="select" x="20" y="1040">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="1053">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="1066">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id17" />
+      <target ref="id17" />
+      <label kind="select" x="20" y="1105">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="1118">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="1131">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id18" />
+      <target ref="id18" />
+      <label kind="select" x="20" y="1170">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="1183">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="1196">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id19" />
+      <target ref="id19" />
+      <label kind="select" x="20" y="1235">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="1248">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="1261">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id20" />
+      <target ref="id20" />
+      <label kind="select" x="20" y="1300">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="1313">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="1326">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id21" />
+      <target ref="id21" />
+      <label kind="select" x="20" y="1365">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="1378">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="1391">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id22" />
+      <target ref="id22" />
+      <label kind="select" x="20" y="1430">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="1443">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="1456">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id23" />
+      <target ref="id23" />
+      <label kind="select" x="20" y="1495">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="1508">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="1521">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id24" />
+      <target ref="id24" />
+      <label kind="select" x="20" y="1560">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="1573">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="1586">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id25" />
+      <target ref="id25" />
+      <label kind="select" x="20" y="1625">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="1638">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="1651">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id26" />
+      <target ref="id26" />
+      <label kind="select" x="20" y="1690">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="1703">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="1716">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id27" />
+      <target ref="id27" />
+      <label kind="select" x="20" y="1755">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="1768">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="1781">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id28" />
+      <target ref="id28" />
+      <label kind="select" x="20" y="1820">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="1833">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="1846">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id29" />
+      <target ref="id29" />
+      <label kind="select" x="20" y="1885">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="1898">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="1911">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id30" />
+      <target ref="id30" />
+      <label kind="select" x="20" y="1950">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="1963">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="1976">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id31" />
+      <target ref="id31" />
+      <label kind="select" x="20" y="2015">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="2028">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="2041">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id32" />
+      <target ref="id32" />
+      <label kind="select" x="20" y="2080">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="2093">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="2106">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id33" />
+      <target ref="id33" />
+      <label kind="select" x="20" y="2145">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="2158">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="2171">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id34" />
+      <target ref="id34" />
+      <label kind="select" x="20" y="2210">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="2223">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="2236">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id35" />
+      <target ref="id35" />
+      <label kind="select" x="20" y="2275">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="2288">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="2301">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id36" />
+      <target ref="id36" />
+      <label kind="select" x="20" y="2340">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="2353">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="2366">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id37" />
+      <target ref="id37" />
+      <label kind="select" x="20" y="2405">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="2418">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="2431">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id38" />
+      <target ref="id38" />
+      <label kind="select" x="20" y="2470">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="2483">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="2496">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id39" />
+      <target ref="id39" />
+      <label kind="select" x="20" y="2535">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="2548">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="2561">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id40" />
+      <target ref="id40" />
+      <label kind="select" x="20" y="2600">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="2613">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="2626">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id41" />
+      <target ref="id41" />
+      <label kind="select" x="20" y="2665">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="2678">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="2691">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id42" />
+      <target ref="id42" />
+      <label kind="select" x="20" y="2730">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="2743">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="2756">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id43" />
+      <target ref="id43" />
+      <label kind="select" x="20" y="2795">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="2808">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="2821">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id44" />
+      <target ref="id44" />
+      <label kind="select" x="20" y="2860">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="2873">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="2886">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id45" />
+      <target ref="id45" />
+      <label kind="select" x="20" y="2925">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="2938">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="2951">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id46" />
+      <target ref="id46" />
+      <label kind="select" x="20" y="2990">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="3003">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="3016">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id47" />
+      <target ref="id47" />
+      <label kind="select" x="20" y="3055">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="3068">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="3081">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id48" />
+      <target ref="id48" />
+      <label kind="select" x="20" y="3120">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="3133">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="3146">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id49" />
+      <target ref="id49" />
+      <label kind="select" x="20" y="3185">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="3198">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="3211">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id50" />
+      <target ref="id50" />
+      <label kind="select" x="20" y="3250">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="3263">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="3276">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id51" />
+      <target ref="id51" />
+      <label kind="select" x="20" y="3315">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="3328">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="3341">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id52" />
+      <target ref="id52" />
+      <label kind="select" x="20" y="3380">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="3393">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="3406">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id53" />
+      <target ref="id53" />
+      <label kind="select" x="20" y="3445">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="3458">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="3471">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id54" />
+      <target ref="id54" />
+      <label kind="select" x="20" y="3510">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="3523">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="3536">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id55" />
+      <target ref="id55" />
+      <label kind="select" x="20" y="3575">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="3588">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="3601">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id56" />
+      <target ref="id56" />
+      <label kind="select" x="20" y="3640">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="3653">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="3666">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id57" />
+      <target ref="id57" />
+      <label kind="select" x="20" y="3705">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="3718">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="3731">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id58" />
+      <target ref="id58" />
+      <label kind="select" x="20" y="3770">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="3783">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="3796">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id59" />
+      <target ref="id59" />
+      <label kind="select" x="20" y="3835">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="3848">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="3861">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id60" />
+      <target ref="id60" />
+      <label kind="select" x="20" y="3900">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="3913">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="3926">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+  </template>
+  <template>
+    <name>ExampleCGI_main</name>
+    <declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+    <location id="id-1" x="0" y="-65">
+      <name x="20" y="-78">main</name>
+      <label kind="exponentialrate" x="-70" y="-65">1</label>
+      <urgent />
+    </location>
+    <location id="id0" x="0" y="0">
+      <name x="20" y="-13">pc0__iconst_1</name>
+      <label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+    </location>
+    <location id="id1" x="0" y="65">
+      <name x="20" y="52">pc1__putstatic_ExampleCGI_callId___int</name>
+      <label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+    </location>
+    <location id="id2" x="0" y="130">
+      <name x="20" y="117">pc4__new_ExampleCGI</name>
+      <label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+    </location>
+    <location id="id3" x="0" y="195">
+      <name x="20" y="182">pc7__dup</name>
+      <label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+    </location>
+    <location id="id4" x="0" y="260">
+      <name x="20" y="247">pc8__invokespecial_void_ExampleCGI_init_</name>
+      <label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+    </location>
+    <location id="id5" x="0" y="325">
+      <name x="20" y="312">pc11__astore_1</name>
+      <label kind="invariant" x="-70" y="325">t &lt;= 1</label>
+    </location>
+    <location id="id6" x="0" y="390">
+      <name x="20" y="377">pc12__getstatic_ExampleCGI_callId___int</name>
+      <label kind="invariant" x="-70" y="390">t &lt;= 1</label>
+    </location>
+    <location id="id7" x="0" y="455">
+      <name x="20" y="442">pc15__bipush_10</name>
+      <label kind="invariant" x="-70" y="455">t &lt;= 1</label>
+    </location>
+    <location id="id8" x="0" y="520">
+      <name x="20" y="507">pc17__ifcmpeq_11</name>
+      <label kind="invariant" x="-70" y="520">t &lt;= 1</label>
+    </location>
+    <location id="id9" x="0" y="585">
+      <name x="20" y="572">pc20__new_java_lang_Exception</name>
+      <label kind="invariant" x="-70" y="585">t &lt;= 1</label>
+    </location>
+    <location id="id10" x="0" y="650">
+      <name x="20" y="637">pc23__dup</name>
+      <label kind="invariant" x="-70" y="650">t &lt;= 1</label>
+    </location>
+    <location id="id11" x="0" y="715">
+      <name x="20" y="702">pc24__invokespecial_void_java_lang_Exception_init_</name>
+      <label kind="invariant" x="-70" y="715">t &lt;= 1</label>
+    </location>
+    <location id="id12" x="0" y="780">
+      <name x="20" y="767">pc27__athrow</name>
+      <label kind="invariant" x="-70" y="780">t &lt;= 1</label>
+    </location>
+    <location id="id13" x="0" y="845">
+      <name x="20" y="832">pc28__goto_4</name>
+      <label kind="invariant" x="-70" y="845">t &lt;= 1</label>
+    </location>
+    <location id="id14" x="0" y="910">
+      <name x="20" y="897">pc31__astore_1</name>
+      <label kind="invariant" x="-70" y="910">t &lt;= 1</label>
+    </location>
+    <location id="id15" x="0" y="975">
+      <name x="20" y="962">pc32__return</name>
+      <label kind="invariant" x="-70" y="975">t &lt;= 1</label>
+    </location>
+    <location id="id4a" x="200" y="286">
+      <name x="220" y="273"></name>
+      <label kind="exponentialrate" x="130" y="286">1</label>
+    </location>
+    <location id="id4aa" x="200" y="312">
+      <name x="220" y="299"></name>
+      <label kind="exponentialrate" x="330" y="312">1</label>
+      <urgent />
+    </location>
+    <location id="id11a" x="200" y="741">
+      <name x="220" y="728"></name>
+      <label kind="invariant" x="0" y="0">t &lt;= 5</label>
+    </location>
+    <location id="id12a" x="200" y="806">
+      <name x="220" y="793"></name>
+      <label kind="exponentialrate" x="130" y="806">1</label>
+      <urgent />
+    </location>
+    <location id="id15a" x="200" y="1001">
+      <name x="220" y="988">Done</name>
+      <label kind="exponentialrate" x="0" y="0">1</label>
+    </location>
+    <init ref="id-1" />
+    <transition>
+      <source ref="id-1" />
+      <target ref="id0" />
+      <label kind="assignment" x="20" y="-65">t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id1" />
+      <label kind="guard" x="20" y="0">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="13">osp_inc(), os[osp - 1] = 1, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id2" />
+      <label kind="guard" x="20" y="65">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="78">osp_dec(1), setH(cp0, os[osp]), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id3" />
+      <label kind="guard" x="20" y="130">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="143">osp_inc(), os[osp-1] = alocNew(1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id3" />
+      <target ref="id4" />
+      <label kind="guard" x="20" y="208">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="195">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+    </transition>
+    <transition>
+      <source ref="id4" />
+      <target ref="id4a" />
+      <label kind="guard" x="20" y="260">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="273">osp_dec(1), t = 0, par0 = os[osp]</label>
+      <label kind="synchronisation" x="20" y="286">cExampleCGI_ExampleCGI!</label>
+    </transition>
+    <transition>
+      <source ref="id4a" />
+      <target ref="id5" />
+      <label kind="guard" x="20" y="299">!exceptionOccurred</label>
+      <label kind="assignment" x="20" y="312">t = 0</label>
+      <label kind="synchronisation" x="20" y="286">cExampleCGI_ExampleCGI?</label>
+    </transition>
+    <transition>
+      <source ref="id4a" />
+      <target ref="id4aa" />
+      <label kind="guard" x="20" y="286">exceptionOccurred == true</label>
+      <label kind="assignment" x="20" y="299">osp_inc(), t = 0</label>
+      <label kind="synchronisation" x="20" y="312">cExampleCGI_ExampleCGI?</label>
+    </transition>
+    <transition>
+      <source ref="id4aa" />
+      <target ref="id14" />
+      <label kind="synchronisation" x="20" y="312">cExampleCGI_main!</label>
+    </transition>
+    <transition>
+      <source ref="id5" />
+      <target ref="id6" />
+      <label kind="guard" x="20" y="338">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="325">osp_dec(1), locs[1] = os[osp]</label>
+    </transition>
+    <transition>
+      <source ref="id6" />
+      <target ref="id7" />
+      <label kind="guard" x="20" y="390">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="403">osp_inc(), os[osp-1] = H(cp0), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id7" />
+      <target ref="id8" />
+      <label kind="guard" x="20" y="455">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="468">osp_inc(), os[osp - 1] = 10, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id8" />
+      <target ref="id13" />
+      <label kind="guard" x="20" y="520">t == 1 &amp;&amp; ifcmpeq() &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="533">osp_dec(2), t = 0</label>
+      <nail x="-50" y="682" />
+    </transition>
+    <transition>
+      <source ref="id8" />
+      <target ref="id9" />
+      <label kind="guard" x="20" y="520">t == 1 &amp;&amp; !ifcmpeq() &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="533">opstack_fault = osp &lt; 2 ? true : opstack_fault, osp_dec(2), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id9" />
+      <target ref="id10" />
+      <label kind="guard" x="20" y="585">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="598">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id10" />
+      <target ref="id11" />
+      <label kind="guard" x="20" y="663">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="650">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+    </transition>
+    <transition>
+      <source ref="id11" />
+      <target ref="id11a" />
+      <label kind="guard" x="20" y="715">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="728">osp_dec(1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id11a" />
+      <target ref="id12" />
+      <label kind="guard" x="20" y="741">t == 5</label>
+      <label kind="assignment" x="20" y="754">t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id12" />
+      <target ref="id12a" />
+      <label kind="guard" x="20" y="780">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="793">exceptionOccurred = true</label>
+    </transition>
+    <transition>
+      <source ref="id12a" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="806">cExampleCGI_main!</label>
+    </transition>
+    <transition>
+      <source ref="id13" />
+      <target ref="id15" />
+      <label kind="guard" x="20" y="845">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <nail x="-50" y="910" />
+    </transition>
+    <transition>
+      <source ref="id14" />
+      <target ref="id15" />
+      <label kind="guard" x="20" y="923">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="910">osp_dec(1), locs[1] = os[osp]</label>
+    </transition>
+    <transition>
+      <source ref="id15" />
+      <target ref="id15a" />
+      <label kind="guard" x="20" y="975">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="synchronisation" x="20" y="988">cExampleCGI_main!</label>
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id0" />
+      <label kind="select" x="20" y="0">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="13">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="26">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id1" />
+      <label kind="select" x="20" y="65">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="78">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="91">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id2" />
+      <label kind="select" x="20" y="130">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="143">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="156">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id3" />
+      <target ref="id3" />
+      <label kind="select" x="20" y="195">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="208">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="221">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id4" />
+      <target ref="id4" />
+      <label kind="select" x="20" y="260">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="273">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="286">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id5" />
+      <target ref="id5" />
+      <label kind="select" x="20" y="325">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="338">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="351">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id6" />
+      <target ref="id6" />
+      <label kind="select" x="20" y="390">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="403">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="416">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id7" />
+      <target ref="id7" />
+      <label kind="select" x="20" y="455">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="468">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="481">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id8" />
+      <target ref="id8" />
+      <label kind="select" x="20" y="520">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="533">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="546">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id9" />
+      <target ref="id9" />
+      <label kind="select" x="20" y="585">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="598">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="611">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id10" />
+      <target ref="id10" />
+      <label kind="select" x="20" y="650">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="663">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="676">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id11" />
+      <target ref="id11" />
+      <label kind="select" x="20" y="715">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="728">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="741">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id12" />
+      <target ref="id12" />
+      <label kind="select" x="20" y="780">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="793">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="806">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id13" />
+      <target ref="id13" />
+      <label kind="select" x="20" y="845">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="858">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="871">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id14" />
+      <target ref="id14" />
+      <label kind="select" x="20" y="910">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="923">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="936">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id15" />
+      <target ref="id15" />
+      <label kind="select" x="20" y="975">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="988">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="1001">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+  </template>
+  <template>
+    <name>ExampleCGI_getTriesRemaining</name>
+    <declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+    <location id="id-1" x="0" y="-65">
+      <name x="20" y="-78">getTriesRemaining</name>
+      <label kind="exponentialrate" x="-70" y="-65">1</label>
+    </location>
+    <location id="id0" x="0" y="0">
+      <name x="20" y="-13">pc0__getstatic_ExampleCGI_callId___int</name>
+      <label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+    </location>
+    <location id="id1" x="0" y="65">
+      <name x="20" y="52">pc3__bipush_7</name>
+      <label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+    </location>
+    <location id="id2" x="0" y="130">
+      <name x="20" y="117">pc5__ifcmpeq_11</name>
+      <label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+    </location>
+    <location id="id3" x="0" y="195">
+      <name x="20" y="182">pc8__new_java_lang_Exception</name>
+      <label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+    </location>
+    <location id="id4" x="0" y="260">
+      <name x="20" y="247">pc11__dup</name>
+      <label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+    </location>
+    <location id="id5" x="0" y="325">
+      <name x="20" y="312">pc12__invokespecial_void_java_lang_Exception_init_</name>
+      <label kind="invariant" x="-70" y="325">t &lt;= 1</label>
+    </location>
+    <location id="id6" x="0" y="390">
+      <name x="20" y="377">pc15__athrow</name>
+      <label kind="invariant" x="-70" y="390">t &lt;= 1</label>
+    </location>
+    <location id="id7" x="0" y="455">
+      <name x="20" y="442">pc16__bipush_8</name>
+      <label kind="invariant" x="-70" y="455">t &lt;= 1</label>
+    </location>
+    <location id="id8" x="0" y="520">
+      <name x="20" y="507">pc18__putstatic_ExampleCGI_callId___int</name>
+      <label kind="invariant" x="-70" y="520">t &lt;= 1</label>
+    </location>
+    <location id="id9" x="0" y="585">
+      <name x="20" y="572">pc21__iconst_2</name>
+      <label kind="invariant" x="-70" y="585">t &lt;= 1</label>
+    </location>
+    <location id="id10" x="0" y="650">
+      <name x="20" y="637">pc22__ireturn</name>
+      <label kind="invariant" x="-70" y="650">t &lt;= 1</label>
+    </location>
+    <location id="id5a" x="200" y="351">
+      <name x="220" y="338"></name>
+      <label kind="invariant" x="0" y="0">t &lt;= 5</label>
+    </location>
+    <location id="id6a" x="200" y="416">
+      <name x="220" y="403"></name>
+      <label kind="exponentialrate" x="130" y="416">1</label>
+      <urgent />
+    </location>
+    <init ref="id-1" />
+    <transition>
+      <source ref="id-1" />
+      <target ref="id0" />
+      <label kind="guard" x="20" y="-65">t == 1</label>
+      <label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+      <label kind="synchronisation" x="20" y="-52">cExampleCGI_getTriesRemaining?</label>
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id1" />
+      <label kind="guard" x="20" y="0">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="13">osp_inc(), os[osp-1] = H(cp0), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id2" />
+      <label kind="guard" x="20" y="65">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="78">osp_inc(), os[osp - 1] = 7, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id7" />
+      <label kind="guard" x="20" y="130">t == 1 &amp;&amp; ifcmpeq() &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="143">osp_dec(2), t = 0</label>
+      <nail x="-50" y="292" />
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id3" />
+      <label kind="guard" x="20" y="130">t == 1 &amp;&amp; !ifcmpeq() &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="143">opstack_fault = osp &lt; 2 ? true : opstack_fault, osp_dec(2), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id3" />
+      <target ref="id4" />
+      <label kind="guard" x="20" y="195">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="208">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id4" />
+      <target ref="id5" />
+      <label kind="guard" x="20" y="273">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="260">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+    </transition>
+    <transition>
+      <source ref="id5" />
+      <target ref="id5a" />
+      <label kind="guard" x="20" y="325">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="338">osp_dec(1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id5a" />
+      <target ref="id6" />
+      <label kind="guard" x="20" y="351">t == 5</label>
+      <label kind="assignment" x="20" y="364">t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id6" />
+      <target ref="id6a" />
+      <label kind="guard" x="20" y="390">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="403">exceptionOccurred = true</label>
+    </transition>
+    <transition>
+      <source ref="id6a" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="416">cExampleCGI_getTriesRemaining!</label>
+    </transition>
+    <transition>
+      <source ref="id7" />
+      <target ref="id8" />
+      <label kind="guard" x="20" y="455">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="468">osp_inc(), os[osp - 1] = 8, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id8" />
+      <target ref="id9" />
+      <label kind="guard" x="20" y="520">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="533">osp_dec(1), setH(cp0, os[osp]), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id9" />
+      <target ref="id10" />
+      <label kind="guard" x="20" y="585">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="598">osp_inc(), os[osp - 1] = 2, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id10" />
+      <target ref="id-1" />
+      <label kind="guard" x="20" y="650">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="689">osp_dec(1), par0 = os[osp], osp = 0, t = 0</label>
+      <label kind="synchronisation" x="20" y="663">cExampleCGI_getTriesRemaining!</label>
+      <nail x="-100" y="292" />
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id0" />
+      <label kind="select" x="20" y="0">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="13">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="26">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id1" />
+      <label kind="select" x="20" y="65">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="78">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="91">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id2" />
+      <label kind="select" x="20" y="130">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="143">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="156">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id3" />
+      <target ref="id3" />
+      <label kind="select" x="20" y="195">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="208">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="221">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id4" />
+      <target ref="id4" />
+      <label kind="select" x="20" y="260">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="273">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="286">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id5" />
+      <target ref="id5" />
+      <label kind="select" x="20" y="325">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="338">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="351">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id6" />
+      <target ref="id6" />
+      <label kind="select" x="20" y="390">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="403">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="416">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id7" />
+      <target ref="id7" />
+      <label kind="select" x="20" y="455">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="468">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="481">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id8" />
+      <target ref="id8" />
+      <label kind="select" x="20" y="520">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="533">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="546">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id9" />
+      <target ref="id9" />
+      <label kind="select" x="20" y="585">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="598">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="611">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id10" />
+      <target ref="id10" />
+      <label kind="select" x="20" y="650">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="663">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="676">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+  </template>
+  <template>
+    <name>ExampleCGI_setIncomingAndReceive</name>
+    <declaration>const int os_size = 10;
+const int locs_size = 10;
+int os[os_size]; 
+int osp = 0;
+int locs[locs_size];
+
+void osp_inc(){
+    if (osp &gt;= os_size - 1){
+        opstack_fault = true;
+        return;
+    }
+    osp++;
+    return;
+}
+
+void osp_dec(int i){
+    if (osp &lt; i){
+        opstack_fault = true;
+        return;
+    }
+    osp -= i;
+    return;
+}
+
+bool ifcmpme(){
+    if (osp &gt; 1){
+        return os[osp-2] &gt;= os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpeq(){
+    if (osp &gt; 1){
+        return os[osp-2] == os[osp - 1];
+    }
+    return false;
+}
+
+bool ifcmpge(){
+    if (osp &gt; 1){
+        return os[osp - 2] &gt;= os[osp - 1] ;
+    }
+    return false;
+}
+
+bool ifcmpne(){
+    if (osp &gt; 1){
+        return os[osp - 2] != os[osp - 1] ;
+    }
+    return false;
+}
+
+
+bool ifeq(){
+    if (osp &gt; 0){
+        return os[osp - 1] == 0;
+    }
+    return false;
+}</declaration>
+    <location id="id-1" x="0" y="-65">
+      <name x="20" y="-78">setIncomingAndReceive</name>
+      <label kind="exponentialrate" x="-70" y="-65">1</label>
+    </location>
+    <location id="id0" x="0" y="0">
+      <name x="20" y="-13">pc0__getstatic_ExampleCGI_callId___int</name>
+      <label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+    </location>
+    <location id="id1" x="0" y="65">
+      <name x="20" y="52">pc3__iconst_3</name>
+      <label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+    </location>
+    <location id="id2" x="0" y="130">
+      <name x="20" y="117">pc4__ifcmpeq_11</name>
+      <label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+    </location>
+    <location id="id3" x="0" y="195">
+      <name x="20" y="182">pc7__new_java_lang_Exception</name>
+      <label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+    </location>
+    <location id="id4" x="0" y="260">
+      <name x="20" y="247">pc10__dup</name>
+      <label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+    </location>
+    <location id="id5" x="0" y="325">
+      <name x="20" y="312">pc11__invokespecial_void_java_lang_Exception_init_</name>
+      <label kind="invariant" x="-70" y="325">t &lt;= 1</label>
+    </location>
+    <location id="id6" x="0" y="390">
+      <name x="20" y="377">pc14__athrow</name>
+      <label kind="invariant" x="-70" y="390">t &lt;= 1</label>
+    </location>
+    <location id="id7" x="0" y="455">
+      <name x="20" y="442">pc15__iconst_4</name>
+      <label kind="invariant" x="-70" y="455">t &lt;= 1</label>
+    </location>
+    <location id="id8" x="0" y="520">
+      <name x="20" y="507">pc16__putstatic_ExampleCGI_callId___int</name>
+      <label kind="invariant" x="-70" y="520">t &lt;= 1</label>
+    </location>
+    <location id="id9" x="0" y="585">
+      <name x="20" y="572">pc19__iconst_5</name>
+      <label kind="invariant" x="-70" y="585">t &lt;= 1</label>
+    </location>
+    <location id="id10" x="0" y="650">
+      <name x="20" y="637">pc20__ireturn</name>
+      <label kind="invariant" x="-70" y="650">t &lt;= 1</label>
+    </location>
+    <location id="id5a" x="200" y="351">
+      <name x="220" y="338"></name>
+      <label kind="invariant" x="0" y="0">t &lt;= 5</label>
+    </location>
+    <location id="id6a" x="200" y="416">
+      <name x="220" y="403"></name>
+      <label kind="exponentialrate" x="130" y="416">1</label>
+      <urgent />
+    </location>
+    <init ref="id-1" />
+    <transition>
+      <source ref="id-1" />
+      <target ref="id0" />
+      <label kind="guard" x="20" y="-65">t == 1</label>
+      <label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+      <label kind="synchronisation" x="20" y="-52">cExampleCGI_setIncomingAndReceive?</label>
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id1" />
+      <label kind="guard" x="20" y="0">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="13">osp_inc(), os[osp-1] = H(cp0), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id2" />
+      <label kind="guard" x="20" y="65">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="78">osp_inc(), os[osp - 1] = 3, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id7" />
+      <label kind="guard" x="20" y="130">t == 1 &amp;&amp; ifcmpeq() &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="143">osp_dec(2), t = 0</label>
+      <nail x="-50" y="292" />
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id3" />
+      <label kind="guard" x="20" y="130">t == 1 &amp;&amp; !ifcmpeq() &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="143">opstack_fault = osp &lt; 2 ? true : opstack_fault, osp_dec(2), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id3" />
+      <target ref="id4" />
+      <label kind="guard" x="20" y="195">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="208">osp_inc(), os[osp-1] = alocNew(-1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id4" />
+      <target ref="id5" />
+      <label kind="guard" x="20" y="273">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="260">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+    </transition>
+    <transition>
+      <source ref="id5" />
+      <target ref="id5a" />
+      <label kind="guard" x="20" y="325">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="338">osp_dec(1), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id5a" />
+      <target ref="id6" />
+      <label kind="guard" x="20" y="351">t == 5</label>
+      <label kind="assignment" x="20" y="364">t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id6" />
+      <target ref="id6a" />
+      <label kind="guard" x="20" y="390">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="403">exceptionOccurred = true</label>
+    </transition>
+    <transition>
+      <source ref="id6a" />
+      <target ref="id-1" />
+      <label kind="synchronisation" x="20" y="416">cExampleCGI_setIncomingAndReceive!</label>
+    </transition>
+    <transition>
+      <source ref="id7" />
+      <target ref="id8" />
+      <label kind="guard" x="20" y="455">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="468">osp_inc(), os[osp - 1] = 4, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id8" />
+      <target ref="id9" />
+      <label kind="guard" x="20" y="520">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="533">osp_dec(1), setH(cp0, os[osp]), t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id9" />
+      <target ref="id10" />
+      <label kind="guard" x="20" y="585">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="598">osp_inc(), os[osp - 1] = 5, t = 0</label>
+    </transition>
+    <transition>
+      <source ref="id10" />
+      <target ref="id-1" />
+      <label kind="guard" x="20" y="650">t == 1 &amp;&amp; faultClock &lt; faultTime</label>
+      <label kind="assignment" x="20" y="689">osp_dec(1), par0 = os[osp], osp = 0, t = 0</label>
+      <label kind="synchronisation" x="20" y="663">cExampleCGI_setIncomingAndReceive!</label>
+      <nail x="-100" y="292" />
+    </transition>
+    <transition>
+      <source ref="id0" />
+      <target ref="id0" />
+      <label kind="select" x="20" y="0">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="13">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="26">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id1" />
+      <target ref="id1" />
+      <label kind="select" x="20" y="65">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="78">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="91">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id2" />
+      <target ref="id2" />
+      <label kind="select" x="20" y="130">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="143">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="156">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id3" />
+      <target ref="id3" />
+      <label kind="select" x="20" y="195">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="208">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="221">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id4" />
+      <target ref="id4" />
+      <label kind="select" x="20" y="260">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="273">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="286">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id5" />
+      <target ref="id5" />
+      <label kind="select" x="20" y="325">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="338">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="351">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id6" />
+      <target ref="id6" />
+      <label kind="select" x="20" y="390">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="403">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="416">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id7" />
+      <target ref="id7" />
+      <label kind="select" x="20" y="455">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="468">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="481">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id8" />
+      <target ref="id8" />
+      <label kind="select" x="20" y="520">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="533">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="546">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id9" />
+      <target ref="id9" />
+      <label kind="select" x="20" y="585">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="598">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="611">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+    <transition>
+      <source ref="id10" />
+      <target ref="id10" />
+      <label kind="select" x="20" y="650">heapIndex:int[0,heap_size - 1]</label>
+      <label kind="guard" x="20" y="663">faultClock &gt;= faultTime</label>
+      <label kind="assignment" x="20" y="676">setH(heapIndex, H(heapIndex) ^ 1 &lt;&lt; bitPosHeap), faultTime = 1000</label>
+    </transition>
+  </template>
+  <template>
+    <name>heapFault</name>
+    <declaration></declaration>
+    <location id="id3" x="-195" y="-17">
+      <name x="-175" y="-30" />
+      <label kind="exponentialrate" x="-205" y="17">1</label>
+    </location>
+    <location id="id4" x="-586" y="-17">
+      <name x="-566" y="-30" />
+      <committed />
+    </location>
+    <init ref="id4" />
+    <transition>
+      <source ref="id4" />
+      <target ref="id3" />
+      <label kind="select" x="-493" y="-42">i:int[0,80], ii:int[0,7]</label>
+      <label kind="assignment" x="-493" y="-17">faultTime = i, bitPosHeap = ii</label>
+    </transition>
+  </template>
+  <system>Fault = heapFault();
+iExampleCGI_isInvalid = ExampleCGI_isInvalid();
+iExampleCGI_ExampleCGI = ExampleCGI_ExampleCGI();
+iExampleCGI_processVerifyPIN = ExampleCGI_processVerifyPIN();
+iExampleCGI_main = ExampleCGI_main();
+iExampleCGI_getTriesRemaining = ExampleCGI_getTriesRemaining();
+iExampleCGI_setIncomingAndReceive = ExampleCGI_setIncomingAndReceive();
+
+system Fault, iExampleCGI_isInvalid, iExampleCGI_ExampleCGI, iExampleCGI_processVerifyPIN, iExampleCGI_main, iExampleCGI_getTriesRemaining, iExampleCGI_setIncomingAndReceive;</system>
+  <queries>queries<query>query<formula>A&lt;&gt; iExampleCFI_main.Done &amp;&amp; !opstack_fault &amp;&amp; exceptionOccurred</formula></query><query>query<formula>Pr[&lt;= 100] (&lt;&gt; iExampleCFI_main.Done &amp;&amp; !opstack_fault &amp;&amp; exceptionOccurred)</formula></query><query>query<formula>E&lt;&gt; opstack_fault</formula></query><query>query<formula>Pr[&lt;= 100] (&lt;&gt; opstack_fault)</formula></query><query>query<formula>E&lt;&gt; iExampleCFI_main.Done &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred</formula></query><query>query<formula>Pr[&lt;= 100] (&lt;&gt; iExampleCFI_main.Done &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred)</formula></query><query>query<formula></formula></query><query>query<formula>A&lt;&gt; iVirtual_Virtual.pc58__return &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred &amp;&amp; iVirtual_Virtual.locs[1] == 3  &amp;&amp; iVirtual_Virtual.locs[2] == 5</formula></query><query>query<formula>E&lt;&gt; iVirtual_Virtual.pc58__return &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred &amp;&amp; !(iVirtual_Virtual.locs[1] == 3  &amp;&amp; iVirtual_Virtual.locs[2] == 5)</formula></query><query>query<formula>Pr[&lt;= 100] (&lt;&gt; iVirtual_Virtual.pc58__return &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred &amp;&amp; !(iVirtual_Virtual.locs[1] == 3  &amp;&amp; iVirtual_Virtual.locs[2] == 5))</formula></query><query>query<formula></formula></query><query>query<formula>A&lt;&gt; iVirtualCGI_VirtualCGI.pc122_return &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred &amp;&amp; iVirtualCGI_VirtualCGI.locs[1] == 3  &amp;&amp; iVirtualCGI_VirtualCGI.locs[2] == 5</formula></query><query>query<formula>E&lt;&gt; iVirtualCGI_VirtualCGI.pc122_return &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred &amp;&amp; !(iVirtualCGI_VirtualCGI.locs[1] == 3  &amp;&amp; iVirtualCGI_VirtualCGI.locs[2] == 5)</formula></query><query>query<formula>Pr[&lt;= 100] (&lt;&gt; iVirtualCGI_VirtualCGI.pc122_return &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred &amp;&amp; !(iVirtualCGI_VirtualCGI.locs[1] == 3  &amp;&amp; iVirtualCGI_VirtualCGI.locs[2] == 5))</formula></query></queries>
+</nta>
