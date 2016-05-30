@@ -2,7 +2,7 @@
 As described by~\cite{mksb} is a countermeasure which protects against corruption of data used for branching at execution time, such as local variables. It offers protection against changes in a program's control flow, by duplicating instructions which are used to retrieve values, that affect branching.\\\\
 An example could be a program, as seen in~\cref{lst:dup0}, which loads two values from local variables, program counter (pc) 1-2, pushes them onto the operand stack and compares them. If the two values are the same, a jump is performed to a code region with sensitive code (pc 8-9), which approves a transaction on a credit card. Now, assume that a bit flip has occurred in a condition variable in pc 2. Before the flip, the rejection code would have been executed, but after the flip \texttt{acceptTransaction} is executed. When code duplication is implemented, as in~\cref{lst:dup1}, redundant instructions are inserted. In pc 8-9, the values of the local variables are loaded again and pushed onto the operand stack. Afterwards, the comparison is performed again, and another jump is made to the sensitive code region in pc 15-16. It should be noted that this particular duplication only protects against a \textit{single} bit flip in the original portion of the code. If a second bit flip occurs in the duplicated part of the code to affect the jump, the program can still execute \texttt{acceptTransaction}, even though it should not.\\\\
 
-\begin{minipage}{\linewidth}
+
 \begin{lstlisting}[caption={Original program without code duplication implemented. The code is written in \jcl.},numbers=none, label={lst:dup0}]
 ...
 1: LOAD 1;
@@ -13,9 +13,9 @@ An example could be a program, as seen in~\cref{lst:dup0}, which loads two value
 9: INVOKEVIRTUAL 12;  // acceptTransaction();
 ...
 \end{lstlisting}
-\end{minipage}
 
-\begin{minipage}{\linewidth}
+\newpage
+
 \begin{lstlisting}[caption={Modified program with code duplication implemented. The code is written in \jcl.},numbers=none, label={lst:dup1}]
 ...
 1: LOAD 1;
@@ -30,4 +30,4 @@ An example could be a program, as seen in~\cref{lst:dup0}, which loads two value
 16: INVOKEVIRTUAL 12;  // acceptTransaction();
 ...
 \end{lstlisting}
-\end{minipage}
+

@@ -1,7 +1,7 @@
-\subsection{Call Flow Integrity} 
+\subsection{Control Flow Integrity} 
 As described by~\cite{agl}, is a technique which allows a programmer to annotate code to denote sensitive regions. The programmer then inserts flag variables which increment a counter, as shown in \cref{lst:examplecfisnip1}. It is also possible to insert verification points where the counter is checked to verify the flag value, shown in \cref{lst:examplecfisnip}. The idea is that if a change in the call graph occurs, e.g. a method call is skipped because of a fault in the program counter, the flag will have the wrong value. A full implementation on the code sample can be seen in \cref{lst:examplecfi}.
 
-\begin{lstlisting}[caption={Java code example of the control flow integrity countermeasure incrementing the control flow flag.},label={lst:examplecfisnip1}]
+\begin{lstlisting}[caption={Java code example of the control flow integrity countermeasure incrementing the control flow flag.},numbers=none,label={lst:examplecfisnip1}]
 0.  GETSTATIC 3
 3.  PUSH 1
 4.  ADD
@@ -9,7 +9,7 @@ As described by~\cite{agl}, is a technique which allows a programmer to annotate
 ...
 \end{lstlisting}
 
-\begin{lstlisting}[caption={Java code example of the control flow integrity countermeasure checking the control flow flag.},label={lst:examplecfisnip}]
+\begin{lstlisting}[caption={Java code example of the control flow integrity countermeasure checking the control flow flag.},numbers=none,label={lst:examplecfisnip}]
 ...
  4.  LOAD  0
  5.  INVOKESPECIAL 32   // processVerifyPIN()
