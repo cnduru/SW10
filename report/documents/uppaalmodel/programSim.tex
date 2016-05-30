@@ -1,34 +1,24 @@
 \subsection{Program Conversion}\label{sec:programConversion}
-The program Conversion is based on \jcl semantics, most Java bytecodes can be translated directly to \jcl but type information is lost. Because \jcl has operational semantics defined, it eases the implementation of the simulation, since each instruction is clearly defined.\\\\
-When representing Java bytecode in UPPAAL we have chosen to represent. A Java method is represented by a template and method invocation is done by channels. This representation restricts the possibilities of recursion, and we must know the maximum memory usage for variables doing execution.
-These limitations, while very restrictive for general Java, are already considered good practice for Java Card programming, due the limited hardware, as discussed in \cref{subsec:smartcard}.
-An program instruction, such as \texttt{ALOAD a} and \texttt{DUB}, as UPPAAL locations, this implies that a change in the program counter is a change of the location. 
-In turn this means that when an instruction is to be executed, the change to the program configuration \textit{Conf} from  \cref{sec:semintro} occurs on the edge to next location.
+The program conversion is based on \jcl semantics, most Java bytecode instructions can be translated directly to \jcl, but type information is lost. Because \jcl has operational semantics defined, it eases the implementation of the simulation, since each instruction is clearly defined.\\\\
+A Java method is represented by a template and method invocation is done by channels. This representation restricts the possibilities of recursion, and additionally the maximum memory usage must be known for allocation purposes. 
+These limitations, while very restrictive for general Java, are already considered good practice for Java Card programming due the limited hardware, as discussed in \cref{subsec:smartcard}.
+A program instruction, such as \texttt{ALOAD a} and \texttt{DUP} are represented as UPPAAL locations, this implies that a change in the program counter results in a change of location. 
+In turn, this means that when an instruction is executed, the change to the program configuration \textit{Conf} from \cref{sec:semintro} occurs on the edge to the next location.
 
 \begin{minipage}{\linewidth}
-\begin{lstlisting}[caption=Java code sample.]
+\begin{lstlisting}[caption={Java code sample to be converted to a UPPAAL model.}, label={lst:ternary}]
 public class Sample{
     public class Sample{
         public static void main(String[] args) {
             install();
             foo(3);
         }
+        
         public static int foo(int i){
             return i != 0 ? 1 : 2;
         }
     }
 }
-\end{lstlisting}
-\end{minipage}
-\begin{minipage}{\linewidth}
-\begin{lstlisting}[caption=Bytecode sample.]
-public static int foo ( int 0 ) ;
-   0. iload 0
-   1. ifeq 7
-   4. iconst 1
-   5. goto 4
-   8. iconst 2
-   9. ireturn
 \end{lstlisting}
 \end{minipage}
 
@@ -43,7 +33,7 @@ public static int foo ( int 0 ) ;
 	\label{fig:uppaal3}
 \end{subfigure}
 
-\caption{Auto generated model, Example of \texttt{foo} method.}
+\caption{Auto generated model of the \texttt{foo} method from \cref{lst:ternary}}
 \label{fig:fooMethod}
 \end{figure}
 
@@ -68,20 +58,21 @@ public static int foo ( int 0 ) ;
 \label{fig:uppaal1}
 \end{figure}
 
-\Cref{fig:uppaal1} shows how two Java Bytecode instructions are represented in UPPAAL. On the left we see the Java bytecode, the first line with program counter 0 we have the \texttt{iload 0} instruction. \texttt{iload 0} pushes a integer to the top of the operation stack from local variables at position zero, then increments the operand stack pointer and program counter.\\\\
-%uppaal location edge
-In UPPAAL the location \UPP{pc0\_iload\_0} represents \texttt{iload 0}. The UPPAAL model is seen in \Cref{fig:uppaal1}b. We simulate execution time with the location invariant \UPP{t <= 1} and guard \UPP{t == 1} on the edge leading to the next location. The guard is found right below the location name right of the edge and invariant is to the left of the edge. In this sample we defined the execution time as 1 time unit.\\\\
-In the update on the edge seen below the guard, we simulate the data flow by assigning the value of the local variable \UPP{loc0} to the top of the operand stack \UPP{os} represented by operand stack pointer \UPP{osp}. \UPP{osp} is incremented as the operand stack grows, the increment of the program counter is simulated by the edge itself.
+\Cref{fig:uppaal1} shows how two Java bytecode instructions are represented in UPPAAL. On the left we see the Java bytecode. In the first line with pc 0, we have the \texttt{iload 0} instruction. \texttt{iload 0} pushes an integer from local variables at position zero on top of the operand stack, and increments the operand stack pointer and program counter.
+In UPPAAL the location \UPP{pc0\_iload\_0} represents \texttt{iload 0}. The UPPAAL model is seen in \Cref{fig:uppaal1}b.\\\\
+% %
+We have decided each non-library instruction to take $1$ time unit, this is simulated with the location invariant \UPP{t <= 1} and guard \UPP{t == 1} on the edge leading to the next location. The guard is found below the location name, right of the edge and invariant is to the left of the edge. In this sample we defined the execution time as 1 time unit.\\\\
+In the update on the edge seen below the guard, we simulate the data flow by assigning the value of the local variable, \UPP{locs\relax[0\relax]}, to the element at the top of the operand stack, \UPP{os}, represented by operand stack pointer, \UPP{osp}. \UPP{osp} is incremented as the operand stack grows and the increment of the program counter is simulated by the edge itself.
 
 \subsubsection{Jumps and Branches}
-For the majority of instructions the program counter is set to the next instruction after execution, but for a jump with \texttt{goto a} the edge goes to the instruction with the program counter corresponding with value of \texttt{a} as seen in \Cref{fig:fooMethod}.
-
-Conditionals such as \texttt{if\_cmpeq a} are modelled by a location having two outgoing edges, see \Cref{fig:uppaal1}, one to the next instruction and one for the program counter of with and offset of \texttt{a}. On these edges the guard is used to determine which of the edges is to be traversed.
+For the majority of instructions the program counter is set to the next instruction after execution, but for a jump with \texttt{goto a} the edge goes to the instruction with the program counter corresponding to the value of \texttt{a}, as seen in \Cref{fig:fooMethod}.\\\\
+% %
+Conditionals such as \texttt{if\_cmpeq a} are modelled by a location having two outgoing edges, see \Cref{fig:uppaal1}, one to the next instruction and one to a the location with a program counter with an offset of \texttt{a}. On these edges, the guard is used to determine which of the edges is to be traversed.
 
 \subsubsection{The Operand Stack, Local Variables and the Heap}
 To simulate the operand stack, we use an operand stack pointer to point at the next free position in an array. Local variables and the heap are both represented as arrays in the UPPAAL model, but they do not use an explicit pointer to access them since access to these are not necessarily performed in a top-down manner as with the operand stack.
 
-\subsection{Method Calls}\label{subsubsec:method}
+\subsubsection{Method Calls}\label{subsubsec:method}
 Method calls cover the Java bytecode instructions: \texttt{invokestatic} for static calls, \texttt{invokespecial} for class constructors and private calls, and \texttt{invokevirtual} for virtual calls. To illustrate how these instructions are modelled, we use the Java code sample in \cref{lst:virtual}.
 \begin{lstlisting}[caption={\texttt{Bclass} extends \texttt{Aclass}, \texttt{Aclass} implements the methods foo and bar, and \texttt{Bclass} overwrites foo.}, label={lst:virtual}]
 public class Virtual{
