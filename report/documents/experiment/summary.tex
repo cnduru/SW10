@@ -4,7 +4,8 @@ The experiments show that code duplication protects the particular code sample b
 A fault model we did not include is instruction parameter faults, such as flipping a bit in the target address of a \texttt{goto} or method index in an invoke. This could cause a change in the call graph. Additionally, if the examples had used virtual methods, there would be a chance of calling a method based on the wrong class id, caused by a bit flip. Call graph integrity would catch both of these cases.\\\\
 % CGI
 %CFI & CFI2
-In general, the CFI and CFI2 provide the best protection compared to the static size overhead. The CGI countermeasure adds an overhead larger than both CD, CFI and CFI2. The countermeasure seemed to have little to no effect on the two code samples\ch{why? and which types of programs would it work better on?}. CD provided a reasonable amount of protection, and incurred little overhead compared to Base. \cref{tab:staticSize} shows a comparison of the static bytecode size compared to Base, which is 1.0.
+In general, the CFI and CFI2 provide the best protection compared to the static size overhead. The CGI countermeasure adds an overhead larger than both CD, CFI and CFI2. CGI seemed to have little to no effect on the two code samples, which was due to the fact that few of the faults modelled could affect a method call. Fault models where we expect CGI to have a greater effect are bit flips in method identifier, see PFF\_M \cref{sec:pff}, bit flips in bytecode instruction parameters and bit flips during the method invokation.\\\\
+CD provided a reasonable amount of protection, and incurred little overhead compared to Base. \cref{tab:staticSize} shows a comparison of the static bytecode size compared to Base.
 
 % virtual
 \begin{table}[H]
@@ -15,6 +16,6 @@ In general, the CFI and CFI2 provide the best protection compared to the static 
 \hline Invoke & - & 1.48 & - & 1.98 \\ 
 \hline 
 \end{tabular} 
-    \caption{Static bytecode size of each Base with implemented countermeasures, compared to Base.}
+    \caption{Relative bytecode size of each Base with implemented countermeasures, compared to Base. Base is 1.0.}
 \label{tab:staticSize}
 \end{table}
