@@ -1,5 +1,5 @@
 % code dup
-The experiments show that code duplication protects the particular code sample better than call graph integrity. This is because none of the faults introduced, alter the call graph itself, they only change the program flow from one path to an already existing path.\\\\
+It would seem that code duplication and control flow integrity protect the \jc purse sample code better than call graph integrity. This is because none of the faults introduced alter the call graph itself, they only change the program flow from one path to an already existing path.\\\\
 % inst fault parameter
 A fault model we did not include is instruction parameter faults, such as flipping a bit in the target address of a \texttt{goto} or method index in an invoke. This could cause a change in the call graph. Additionally, if the examples had used virtual methods, there would be a chance of calling a method based on the wrong class id, caused by a bit flip. Call graph integrity would catch both of these cases.\\\\
 % CGI
