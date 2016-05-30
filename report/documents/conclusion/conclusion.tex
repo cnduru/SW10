@@ -1,20 +1,12 @@
 \chapter{Conclusion}
-
-%UPPAAL
-	%quick and scaleable
-	%hard to tell results apart
-
-	
-	%missing for the model
-		%wordsize
-		%data types
-		%Array
-		
-
+In this report an overview of the \jc platform as well as attacks and countermeasures, aimed at the platform is presented. The primary focus is on bit flips, and how they can affect static and running behaviour of programs.\\\\
+% %
+Our previous work~\cite{javasec} argued that it is difficult to measure and compare the effectiveness of countermeasures. We have tried to offer a solution to this problem by providing an automated approach for converting Java bytecode to UPPAAL SMC models, which allows us to test properties of a model, in its query language. We present an approach to model all major features of the Java bytecode language in UPPAAL. The logic in our model conversion is based on \jcl semantics, which we have expanded upon with additional rules.\\\\
+% %
+We have based our conversion on the Java static analysis tool \textit{Sawja}'s native Java bytecode representation. In extension, we have investigated its call graph generation functionality, which is useful for automatic implementation of control flow based countermeasures.\\\\
+% %
 %Experiments
-
-	%Many small methods, seems safer but might be due to our fault models
-
+In our experiments, we used our tool to construct models based on two code samples, and four fault models. Three fault injection countermeasures were also modelled for each code sample, and UPPAAL queries were then used to assess various properties of the models which has given us a basis for comparison of the countermeasures.
 
 \section{Future Work}
 
@@ -25,3 +17,4 @@
 
 \ch{mention how instruction fault could be modelled and why we haven't included it in our experiments (we didn't want to model the entire instruction set)}
 \input{documents/rewriting/sawja}
+\ch{mention that an extension to fault model could improve measurements}
