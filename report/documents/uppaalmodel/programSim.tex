@@ -1,8 +1,8 @@
-\subsection{Program Simulation}
-
-The program simulation is based on \jcl semantics, most Java bytecodes can be translated directly to \jcl but type information is lost. Because \jcl has operational semantics defined, it eases the implementation of the simulation, since each instruction is clearly defined.\\\\
-When representing Java bytecode in UPPAAL we have chosen to represent an instruction, such as \texttt{aload a} and \texttt{dup}, as UPPAAL locations. 
-This implies that a change in the program counter is a change of the location. 
+\subsection{Program Conversion}\label{sec:programConversion}
+The program Conversion is based on \jcl semantics, most Java bytecodes can be translated directly to \jcl but type information is lost. Because \jcl has operational semantics defined, it eases the implementation of the simulation, since each instruction is clearly defined.\\\\
+When representing Java bytecode in UPPAAL we have chosen to represent. A Java method is represented by a template and method invocation is done by channels. This representation restricts the possibilities of recursion, and we must know the maximum memory usage for variables doing execution.
+These limitations, while very restrictive for general Java, are already considered good practice for Java Card programming, due the limited hardware, as discussed in \cref{subsec:smartcard}.
+An program instruction, such as \texttt{ALOAD a} and \texttt{DUB}, as UPPAAL locations, this implies that a change in the program counter is a change of the location. 
 In turn this means that when an instruction is to be executed, the change to the program configuration \textit{Conf} from  \cref{sec:semintro} occurs on the edge to next location.
 
 \begin{minipage}{\linewidth}
@@ -148,7 +148,7 @@ Every class is mapped to an integer $clID$ and an array, $classHierarchy$, repre
 \item There are no methods but there is a super class, then assign $clID = classHierarchy[clID]$ and try again.
 \end{itemize}
 
-This is based on $methodLookup$ from the \texttt{INVOKEVIRTUAL} semantics from \cref{app:invokevirtual}.
+This is based on $methodLookup$ from the \texttt{INVOKEVIRTUAL} semantics from \cref{app:invokevirtual}. The usage of template for resolving method calls have similar limitation as representing a template as a method, discussed in \cref{sec:programConversion}. It pose a problem when calling virtual methods from within a virtual method, but it can be handling by instantiating a instant of the lookup template for each virtual method, this however might scale poorly.
 
  
 \begin{figure}[H]
