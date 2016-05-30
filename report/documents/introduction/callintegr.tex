@@ -1,8 +1,9 @@
-\subsection{Call Graph Integrity} as described by~\cite[p. 12]{javasec}, is a countermeasure which attempts to detect changes in the call graph of a program, e.g. caused by a bit flip. The idea is to have a unique id set by every caller before a call, which is checked by every callee to see if the call was made from a legal caller. This also works the other way around from callee to caller, where the the callee sets a unique id which is checked by the caller upon return.\\\\
-In \cref{lst:dupCall0}, an example of the caller is shown. In line 5 the unique caller id is set and in line 6 it is loaded into a class variable containing the id of the current caller. In line 7 the method shown in \cref{lst:dupCall1} is called. The caller id, 42, stored on the heap just before the method call, and the assigned id of the caller is already stored in another variable in memory are pushed onto the stack in lines 1 and 2 of \ref{lst:dupCall1}. They are then compared in line 2, and if the stored value is equal to the value set by the caller, the call graph integrity has been verified and the sensitive code beginning at line 8 is executed. Note that these examples do not show the callee setting a unique id to be verified upon return to the caller. An example of this can be seen in \cref{lst:exampleCGI}
+\subsection{Call Graph Integrity} 
+As described by~\cite{mksb}, is a countermeasure which attempts to detect changes in the call graph of a program, e.g. caused by a bit flip. The idea is to have a unique id set by every caller before a call, which is checked by every callee to see if the call was made from a legal caller. This also works the other way around from callee to caller, where the the callee sets a unique id which is checked by the caller upon return.\\\\
+In \cref{lst:dupCall0}, an example of the caller is shown. In pc 5 the unique caller id is pushed onto the stack and in pc 7 it is loaded into a class variable containing the id of the current caller. In pc 7 the method shown in \cref{lst:dupCall1} is called. The caller id, 42, stored on the heap just before the method call, and the assigned id of the caller, already stored in another variable in memory are pushed onto the stack in pc 1 and 3 of \ref{lst:dupCall1}. They are then compared in pc 2, and if the stored value is equal to the value set by the caller, the call graph integrity has been verified and the sensitive code beginning at pc 15 is executed. Note that these examples do not show the callee setting a unique id to be verified upon return to the caller. An example of this can be seen in \cref{lst:exampleCGI}
 
 \begin{minipage}{\linewidth}
-\begin{lstlisting}[caption={Caller with call graph integrity implemented. The code is written in \jcl. Note that for simplicity, the numbers in the left side are line numbers and do not denote the program counter values.}, label={lst:dupCall0}]
+\begin{lstlisting}[caption={Caller with call graph integrity implemented. The code is written in \jcl.},numbers=none, label={lst:dupCall0}]
 ...
 5: PUSH 42; 
 7: PUTSTATIC 2;
@@ -12,7 +13,7 @@ In \cref{lst:dupCall0}, an example of the caller is shown. In line 5 the unique 
 \end{minipage}
 
 \begin{minipage}{\linewidth}
-\begin{lstlisting}[caption={Callee with call graph integrity implemented. The code is written in \jcl. Note that for simplicity, the numbers in the left side are line numbers and do not denote the program counter values.}, label={lst:dupCall1}]
+\begin{lstlisting}[caption={Callee with call graph integrity implemented. The code is written in \jcl.},numbers=none, label={lst:dupCall1}]
 1: GETSTATIC 2
 3: PUSH 42;
 5: IF_CMPEQ 15
