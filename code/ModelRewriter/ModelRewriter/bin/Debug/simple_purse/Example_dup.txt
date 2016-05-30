@@ -24,21 +24,30 @@ Class Example
 21.  dup
 22.  invokespecial  void  java.lang.Exception.<init> ()
 25.  athrow
-26.  aload  0
-27.  invokespecial  bool  Example.isInvalid ()
-30.  ifeq 16
-33.  aload  0
-34.  invokespecial  int  Example.getTriesRemaining ()
-37.  istore  3
-38.  new  java.lang.Exception
-41.  dup
-42.  invokespecial  void  java.lang.Exception.<init> ()
-45.  athrow
-46.  aload  0
-47.  invokespecial  bool  Example.isInvalid ()
-50.  ifeq 4
-53.  goto -20
-54.  return
+
+26.  iload  4
+28.  iload  1
+29.  ifcmpge 11
+
+32.  new  java.lang.Exception
+35.  dup
+36.  invokespecial  void  java.lang.Exception.<init> ()
+39.  athrow
+40.  aload  0
+41.  invokespecial  bool  Example.isInvalid ()
+44.  ifeq 16
+47.  aload  0
+48.  invokespecial  int  Example.getTriesRemaining ()
+51.  istore  3
+52.  new  java.lang.Exception
+55.  dup
+56.  invokespecial  void  java.lang.Exception.<init> ()
+59.  athrow
+60.  aload  0
+61.  invokespecial  bool  Example.isInvalid ()
+64.  ifeq 6
+67.  goto -15
+70.  return
  public static void  main ( java.lang.String [] 0);  Concrete Method   Parsed  
 0.  new  Example
 3.  dup

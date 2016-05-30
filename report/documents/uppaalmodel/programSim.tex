@@ -34,13 +34,13 @@ public static int foo ( int 0 ) ;
 
 \begin{figure}
 \begin{subfigure}{\textwidth}
-	\includegraphics[width=\textwidth]{reportExamples/demo1}
+	\includegraphics[width=\textwidth]{invokefoo.PNG}
 	\caption{Method call in \texttt{main}.}
 \end{subfigure}
 \begin{subfigure}{\textwidth}
-	\includegraphics[width=\textwidth]{reportExamples/demo2}
+	\includegraphics[width=\textwidth]{foomethod.PNG}
 	\caption{the method \texttt{foo}.}
-
+	\label{fig:uppaal3}
 \end{subfigure}
 
 \caption{Auto generated model, Example of \texttt{foo} method.}
@@ -61,7 +61,7 @@ public static int foo ( int 0 ) ;
 \end{subfigure} 
 \hspace{10px}
 \begin{subfigure}{.6\textwidth}
-  \includegraphics[width=\textwidth]{UPPAAL1.png}
+  \includegraphics[width=\textwidth]{ifeq.PNG}
   \caption{Generated model from Sample.}
 \end{subfigure}
 \caption{Java bytecode and corresponding UPPAAL model.}
@@ -153,22 +153,18 @@ This is based on $methodLookup$ from the \texttt{INVOKEVIRTUAL} semantics from \
  
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{invokevirtual.png}
+\includegraphics[width=\textwidth]{invoke.PNG}
 \caption{Invokevirtual.}
 \label{fig:invokevirtual}
 \end{figure}
 
 \subsubsection{Exceptions}
 \label{sec:exceptions}
-Exceptions are handled by \texttt{try catch} blocks which does not have a corresponding bytecode instruction, instead they are defined at the end of a method as seen in \cref{lst:exception}, \texttt{0, 8, 11} represents the corresponding program counters (pc). When exceptions are thrown by the \texttt{athrow} instruction, there are two outcomes, either there is some exception handling covering the \texttt{athrow} defined in the current method, in which case the execution continues from the \texttt{catch start} pc. If there is no exception handling covering the \texttt{athrow}, the top stack frame will be poped and the process repeat, no handling and the new top frame is poped. On \jc an unhandled exception by the applet can be used to indicate an error such as \textit{no access}.
+Exceptions are handled by \texttt{try catch} blocks which does not have a corresponding bytecode instruction, instead they are defined at the end of a method as seen in \cref{lst:exception}, \texttt{0, 8, 11} represents the corresponding program counters (pc).
+When exceptions are thrown by the \texttt{athrow} instruction, there are two outcomes, either there is some exception handling covering the \texttt{athrow} defined in the current method, in which case the execution continues from the \texttt{catch start} pc. 
+If there is no exception handling covering the \texttt{athrow}, the top stack frame will be poped and the process repeat, no handling and the new top frame is poped. On \jc an unhandled exception by the applet can be used to indicate an error such as \textit{no access}.\\
 
-\begin{figure}[H]
-\kri{insert figure}
-\label{fig:uppaal2}
-\caption{Model showing exception throwing and handling.}
-\end{figure}
-
-As seen in \cref{fig:uppaal2}a, the \UPP{athrow} location have an edge to a new location, this is required to set a flag for \textit{exception occurred} before synchronising passing control back to the caller. In \cref{fig:uppaal2}b the caller is shown and if the \textit{exception occurred} flag is set when amusing control, it will follow the edge to, in this example, the catch pc instruction. It is also possible for the \UPP{athrow} location to have an edge to a \texttt{catch} pc instruction, depending on the exception definition.
+\noindent The \UPP{athrow} location have an edge to a new location, this is required to set a flag for \textit{exception occurred} before synchronising passing control back to the caller. In \cref{fig:uppaal3}a the caller is shown and if the \textit{exception occurred} flag is set when amusing control, it will follow the edge to, in this example, the initial instruction. It is also possible for the \UPP{athrow} location to have an edge to a \texttt{catch} pc instruction, depending on the exception definition.
 
 
 
