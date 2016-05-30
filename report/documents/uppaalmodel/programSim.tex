@@ -65,15 +65,15 @@ We have decided each non-library instruction to take $1$ time unit, this is simu
 In the update on the edge seen below the guard, we simulate the data flow by assigning the value of the local variable, \UPP{locs\relax[0\relax]}, to the element at the top of the operand stack, \UPP{os}, represented by operand stack pointer, \UPP{osp}. \UPP{osp} is incremented as the operand stack grows and the increment of the program counter is simulated by the edge itself.
 
 \subsubsection{Jumps and Branches}
-For the majority of instructions the program counter is set to the next instruction after execution, but for a jump with \texttt{goto a} the edge goes to the instruction with the program counter corresponding to the value of \texttt{a}, as seen in \Cref{fig:fooMethod}.\\\\
+For the majority of instructions, the program counter is set to the next instruction after execution. For a jump with \texttt{goto a}, however, the edge goes to the instruction with the program counter corresponding to the value of \texttt{a}, as seen in \Cref{fig:fooMethod}.\\\\
 % %
-Conditionals such as \texttt{if\_cmpeq a} are modelled by a location having two outgoing edges, see \Cref{fig:uppaal1}, one to the next instruction and one to a the location with a program counter with an offset of \texttt{a}. On these edges, the guard is used to determine which of the edges is to be traversed.
+Conditionals such as \texttt{if\_cmpeq a} are modelled by a location having two outgoing edges, see \Cref{fig:uppaal1}, one to the next instruction and one to the location associated with the current program counter plus offset \textit{a}. On these edges, the guard is used to determine which of the edges is to be traversed.
 
 \subsubsection{The Operand Stack, Local Variables and the Heap}
-To simulate the operand stack, we use an operand stack pointer to point at the next free position in an array. Local variables and the heap are both represented as arrays in the UPPAAL model, but they do not use an explicit pointer to access them since access to these are not necessarily performed in a top-down manner as with the operand stack.
+To simulate the operand stack, we use an operand stack pointer to point to the next free position in an array. Local variables and the heap are both represented as arrays in the UPPAAL model, but they do not use an explicit pointer to access them since access to these are not necessarily performed in a top-down manner, as with the operand stack.
 
 \subsubsection{Method Calls}\label{subsubsec:method}
-Method calls cover the Java bytecode instructions: \texttt{invokestatic} for static calls, \texttt{invokespecial} for class constructors and private calls, and \texttt{invokevirtual} for virtual calls. To illustrate how these instructions are modelled, we use the Java code sample in \cref{lst:virtual}.
+Method calls cover the following Java bytecode instructions: \texttt{invokestatic} for static calls, \texttt{invokespecial} for class constructors and private calls, and \texttt{invokevirtual} for virtual calls. To illustrate how these instructions are modelled, we use the Java code sample in \cref{lst:virtual}.
 \begin{lstlisting}[caption={\texttt{Bclass} extends \texttt{Aclass}, \texttt{Aclass} implements the methods foo and bar, and \texttt{Bclass} overwrites foo.}, label={lst:virtual}]
 public class Virtual{
   public Aclass a;
@@ -88,7 +88,7 @@ public class Virtual{
 }
 \end{lstlisting}
 The sample includes the bytecode instructions \texttt{invokespecial} and \texttt{invokevirtual}.
-\texttt{invokestatic} are omitted as \texttt{invokestatic} and \texttt{invokespecial} are nearly identical, the only difference being whether an object reference from the operand stack is passed as a parameter.
+\texttt{invokestatic} is omitted as \texttt{invokestatic} and \texttt{invokespecial} are nearly identical, the only difference is whether an object reference from the operand stack is passed as a parameter to the callee.
 As such, all method calls can be divided into two categories, virtual and static.
 
 \subsubsection{Static Methods}
@@ -135,11 +135,11 @@ Every class is mapped to an integer $clID$ and an array, $classHierarchy$, repre
 
 \begin{itemize}
 \item There are no methods and no super where $clID == 0$.
-\item There is a method matching the class and method signature. In this case, call the method.
+\item There is a method matching the class and method signature - in this case, call the method.
 \item There are no methods but there is a super class, then assign $clID = classHierarchy[clID]$ and try again.
 \end{itemize}
 
-This is based on $methodLookup$ from the \texttt{INVOKEVIRTUAL} semantics from \cref{app:invokevirtual}. The usage of template for resolving method calls have similar limitation as representing a template as a method, discussed in \cref{sec:programConversion}. It pose a problem when calling virtual methods from within a virtual method, but it can be handling by instantiating a instant of the lookup template for each virtual method, this however might scale poorly.
+\noindent This is based on $methodLookup$ from the \texttt{INVOKEVIRTUAL} semantics in \cref{app:invokevirtual}. The usage of template for resolving method calls have similar limitation as representing a template as a method, discussed in \cref{sec:programConversion}. It pose a problem when calling virtual methods from within a virtual method, but it can be handling by instantiating a instant of the lookup template for each virtual method, this however might scale poorly.
 
  
 \begin{figure}[H]
@@ -151,16 +151,13 @@ This is based on $methodLookup$ from the \texttt{INVOKEVIRTUAL} semantics from \
 
 \subsubsection{Exceptions}
 \label{sec:exceptions}
-Exceptions are handled by \texttt{try catch} blocks which does not have a corresponding bytecode instruction, instead they are defined at the end of a method as seen in \cref{lst:exception}, \texttt{0, 8, 11} represents the corresponding program counters (pc).
+Exceptions are handled by \texttt{try catch} blocks which do not have a corresponding bytecode instruction, instead they are defined at the end of a method as seen in \cref{lst:exception}, \texttt{0, 8, 11} represent the corresponding program counters.
 When exceptions are thrown by the \texttt{athrow} instruction, there are two outcomes, either there is some exception handling covering the \texttt{athrow} defined in the current method, in which case the execution continues from the \texttt{catch start} pc. 
-If there is no exception handling covering the \texttt{athrow}, the top stack frame will be poped and the process repeat, no handling and the new top frame is poped. On \jc an unhandled exception by the applet can be used to indicate an error such as \textit{no access}.\\
+If there is no exception handling covering the \texttt{athrow} in the current method, the top stack frame will be popped and the process exception rethrown in its caller. On \jc an unhandled exception thrown by an applet can be used to indicate an error such as \textit{no access}.\\
 
-\noindent The \UPP{athrow} location have an edge to a new location, this is required to set a flag for \textit{exception occurred} before synchronising passing control back to the caller. In \cref{fig:uppaal3}a the caller is shown and if the \textit{exception occurred} flag is set when amusing control, it will follow the edge to, in this example, the initial instruction. It is also possible for the \UPP{athrow} location to have an edge to a \texttt{catch} pc instruction, depending on the exception definition.
+\noindent The \UPP{athrow} location has an edge to a new location. The edge is required to set an \textit{exception occurred} flag before passing control back to the caller by synchronisation. In \cref{fig:fooMethod}a the caller is shown, and if the \textit{exception occurred} flag is set when assuming control, it will follow the edge to, in this example, the initial instruction. It is also possible for the \UPP{athrow} location to have an edge to a \texttt{catch} instruction, depending on whether an appropriate exception definition exists.
 
-
-
-
-\begin{figure}
+\begin{figure}[H]
   \begin{lstlisting}
 ....
 try start: 0; try end: 8: catch start: 11; catched type: java.lang.Exception.

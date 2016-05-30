@@ -1,9 +1,8 @@
 \subsection{Fault Modelling}
-We focus on three faults: program counter, data fault and static instruction fault where program counter and data fault is considered transient faults and static instruction fault is considered a persistent fault as described in \cref{sec:faultsce}.
+We focus on three faults: program counter fault, data fault and static instruction fault where program counter and data fault are considered transient, and static instruction fault is considered persistent, as described in \cref{sec:faultsce}.
 
 \subsubsection{Program Counter Fault}
-
-To model a single bit flip occurring in the program's execution a special fault template is introduced, illustrated in \cref{fig:faultTime}. The template selects a random value between $0$ and the maximum possible global clock value, which represents when in the programs execution a fault happens. The random value is assigned to a global variable in the UPPAAL system.\\\\
+To model a single bit flip occurring in the program's execution, a special fault template is introduced, illustrated in \cref{fig:faultTime}. The template selects a random value between $0$ and the maximum possible global clock value, which represents when in the program's execution a fault happens. The random value is assigned to a global variable in the UPPAAL system.\\\\
 Every instruction in the Java bytecode is represented by a location, and has an associated program counter. There are edges from each location going to the locations which can be reached if one bit is flipped in the program counter. These edges have guards which check whether the time the fault is injected, corresponds to the global clock at the time the model simulation is at that particular edge. If it is, the guard will allow the edge to be traversed. There are no fault edges going back to the added locations described in \cref{subsubsec:method}, since these are not a part of the original program and therefore do not have an associated program counter.
 \begin{figure}[H]
 \centering
@@ -11,21 +10,20 @@ Every instruction in the Java bytecode is represented by a location, and has an 
 \caption{The UPPAAL template which selects when to perform a bit flip in the program counter}
 \label{fig:faultTime}
 \end{figure}
-\ch{update figure to use fault at between 0 and global clock}
 
 \subsubsection{Data Faults}
 % locals and opstack
-To introduce data fault for the operand stack a special template selects when a fault should be introduced into the operand stack. 
-This happens in the same way as in the \textit{program counter} fault described earlier, illustrated in \cref{fig:faultTime}. 
+To model a data fault being injected into the operand stack, a special template selects when a fault should be injected into the operand stack. 
+This happens in the same way as in the program counter fault described earlier, illustrated in \cref{fig:faultTime}. 
 The selected value is between $0$ and the maximum possible runtime of the program.
-\cref{fig:opstackFlip} shows how a method called \texttt{getTriesRemaining}, in which a bit flip in the operand stack occurs.
-Edges going back to the locations \texttt{pc0\_iconst\_2} and \texttt{pc0\_iconst\_2} are where the faults are introduced, these are added by the solution and are not a part of an unaltered model of a program. 
+\cref{fig:opstackFlip} shows a method \texttt{getTriesRemaining}, in which a bit flip in the operand stack occurs.
+Edges going back to the locations \texttt{pc0\_iconst\_2} and \texttt{pc0\_iconst\_2} are where the faults are introduced. These are added by the solution and are not a part of an unaltered model of a program. 
 The edges have a guard, $faultTime \leq globalClock$, determined by the special template, which only allows a fault to happen if the program execution has executed for a certain amount of time. 
-The fault itself is introduced by the update $os\lbrack osPos \rbrack\:\hat{}= 1 \ll osBitPos$, which flips bit \UPP{osBitPos} of value \UPP{osPos} in the operand stack.
+The fault itself is introduced by the update $os\lbrack osPos \rbrack\:\hat{}= 1 \ll osBitPos$, which flips bit \UPP{osBitPos} of value at position \UPP{osPos} in the operand stack.
 \UPP{osBitPos} is a random value between $0$ and $7$, which denotes which bit should be flipp
 ed. \UPP{osPos} is a random value between $0$ and the maximum size of the operand stack. 
 After a fault has been introduced, the variable \UPP{faultTime} is set to a value higher than the maximum value of the global clock, to ensure only one fault happens per simulation.\\\\
-Our approaches to modelling faults in the operand stack, heap and local variables are similar and only one of them is therefore described.
+Our approaches to modelling faults in the operand stack, heap and local variables are similar and therefore only one of them is described.
 % 	% % % %
 \begin{figure}[H]
 \centering
