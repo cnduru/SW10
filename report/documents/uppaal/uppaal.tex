@@ -17,12 +17,12 @@ A variation of this liveness property, is the \textit{leads to} property, writte
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{queries.PNG}
-\caption{Illustration of the different property verification queries in UPPAAL. Taken from~\cite[p. 8]{upptut}}.
+\caption{Illustration of the different property verification queries in UPPAAL. Taken from~\cite[p. 8]{upptut}.}
 \label{fig:query}
 \end{figure}
 
 \paragraph{Probability estimation}
-UPPAAL SMC extends the capabilites of UPPAAL, in a way that allows us to reason about a model in terms of not only "yes" and "no", but also the \textit{probability} a model has of entering a certain state. An example could be determining the probability of a model of a Java bytecode program reaching a state of termination. To allow this, UPPAAL SMC extends regular queries, described earlier, to include probabilities. A probability query looks as follows:
+UPPAAL SMC extends the capabilites of UPPAAL, in a way that allows us to reason about a model in terms of not only "yes" and "no", but also the \textit{probability} a model has of entering a certain state. An example could be determining the probability a Java bytecode program model has of reaching a state of termination. To allow this, UPPAAL SMC extends regular queries, described earlier, to include probabilities. A probability query looks as follows:
 $$\texttt{Pr\relax[bound\relax] ($\varphi$)}$$
 where \texttt{bound} denotes a bound for a simulation run, within which a property, $\varphi$ is to be verified. A bound can be defined in three ways~\cite[p. 402]{smc}
 
@@ -31,4 +31,4 @@ where \texttt{bound} denotes a bound for a simulation run, within which a proper
 \item explicitly by cost with $x \leq M$ where $x$ is a specific clock.
 \item by number of discrete steps with $\# \leq M$.\\
 \end{itemize}
-\noindent UPPAAL SMC will then calculate the probability of this query being true within a certain confidence, indicating probability that the query is satisfied within $x$ runs. The strength of probability queries is that in contrast to verification queries, they can easily be scaled depending on the desired precision and will give an answer, even on very large models.
+\noindent UPPAAL SMC will then calculate the probability of this query being true within $x$ runs and some confidence. The strength of probability queries is that in contrast to verification queries, they can easily be scaled depending on the desired precision and will give an answer, even on very large models.
