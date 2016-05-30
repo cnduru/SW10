@@ -1,3 +1,0 @@
-\subsection{Sawja's Call Graph Representation}
-The tool Sawja, described in \cref{sec:sawja} can be used to automate the call graph integrity countermeasure. An analysis of the call graph shows which methods are callable, which should have unique ids and which should be grouped as is the case in \cref{lst:javaorig}. Since it is not possible to know which of the \texttt{bar} methods are called, the caller id which they check when called from \texttt{foo} are the same.\\\\
-In addition, the control flow integrity countermeasure can also be automated by analysing the call graph. It enables the flag counter to be correctly incremented through a call graph analysis, which will then be used to determine the flag values to check before and after each method call.

@@ -1,20 +1,21 @@
 \chapter{Conclusion}
 In this report an overview of the \jc platform as well as attacks and countermeasures, aimed at the platform is presented. The primary focus is on bit flips, and how they can affect static and running behaviour of programs.\\\\
 % %
-Our previous work~\cite{javasec} argued that it is difficult to measure and compare the effectiveness of countermeasures. We have tried to offer a solution to this problem by providing an automated approach for converting Java bytecode to UPPAAL SMC models, which allows us to test properties of a model, in its query language. We present an approach to model all major features of the Java bytecode language in UPPAAL. The logic in our model conversion is based on \jcl semantics, which we have expanded upon with additional rules.\\\\
+Our previous work~\cite{javasec} argued that it is difficult to measure and compare the effectiveness of countermeasures. We have tried to offer a solution to this problem by providing an automated approach for converting Java bytecode to UPPAAL SMC models, which allows us to test properties of a model, in its query language. We present an approach to model all major features of the Java bytecode language in UPPAAL. Our solution has some limitations, however. For example, it does not allow recursive calls and flips in method identifiers, which could be interesting to investigate in regards to countermeasures, e.g. causing endless recursion. The logic in our model conversion is based on \jcl semantics, which we have expanded upon with additional rules.\\\\
 % %
 We have based our conversion on the Java static analysis tool \textit{Sawja}'s native Java bytecode representation. In extension, we have investigated its call graph generation functionality, which is useful for automatic implementation of control flow based countermeasures.\\\\
 % %
 %Experiments
-In our experiments, we used our tool to construct models based on two code samples, and four fault models. Three fault injection countermeasures were also modelled for each code sample, and UPPAAL queries were then used to assess various properties of the models which has given us a basis for comparison of the countermeasures.
-
+In our experiments, we used our tool to construct models based on two code samples, and four fault models. Three fault injection countermeasures were also modelled for each code sample, and UPPAAL queries were then used to assess various properties of the models which has given us a basis for comparison of the countermeasures. A proof of concept instruction fault model was also modelled in UPPAAL for a few instructions, such as \texttt{ifeq} and \texttt{goto}.\\\\
+\ch{add afrunding}
 \section{Future Work}
 
 %inst fault, %Javacard inst bit encoding
 %parameter fault etc
 
 %multi path in program
-
-\ch{mention how instruction fault could be modelled and why we haven't included it in our experiments (we didn't want to model the entire instruction set)}
-\input{documents/rewriting/sawja}
-\ch{mention that an extension to fault model could improve measurements}
+% %
+The fault models should be extended by adding new fault models, to enable better assessment of countermeasures, for example control flow based countermeasures, such as call graph integrity. In addition, an analysis could be made to determine each attack's probability of success, relative to each other, to aid in countermeasure selection. This would allow us to rank the fault models in terms of attack difficulty, which could be used in the selection of an appropriate countermeasure. Furthermore, further investigation of $Sawja$'s static analysis capabilities could prove useful in assessing countermeasures. We have not created a fault model for bit flips in the constant pool since $Sawja$'s bytecode representation hides the constant pool implementation. Since the constant pool has potential for allowing attacks, it would make sense to look into this.\\\\
+% %
+More experimentation could be done to investigate which UPPAAL representation is most appropriate. For example, a single template approach where an entire program is modelled in one template, would simplify  the implementation of invoke and bit flips in the method identifier.
+\ch{add more?}
