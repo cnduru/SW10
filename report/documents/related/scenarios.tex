@@ -1,17 +1,13 @@
-We consider two general categories of faults that can occur to a \jc: \textit{persistent} and \textit{transient} faults. The main difference between these is that the persistent faults will affect the program every run, while the transient faults will only be present for a limited amount of time. Faults can occur when hardware is exposed to radiation sources, e.g. infrared light, laser, heat, physical abuse or cosmic radiation from space. 
+We consider two general categories of faults that can occur to a \jc: \textit{persistent} and \textit{transient} faults. The main difference between these is that the persistent faults will affect the program every run, while the transient faults will only be present for a limited amount of time. Faults can occur when hardware is exposed to radiation sources, e.g. infrared light, laser, heat or cosmic radiation from space. 
 % % %
-Persistent faults in a piece of hardware, such as system memory, can occur in several way, suchas as a directed fault injection, e.g. a laser beam, targeting a persistent part of memory, such as the EEPROM of a \jc. This could cause a bit flip in a value that is persistent across power-ups, and thus cause a persistent fault since the wrong value will always be used. If one wishes to create a persistent fault, precision is important, both to strike a persistent part of memory, but also to affect the correct value.\\
-
+Persistent faults in a piece of hardware, such as system, can occur in several ways, such as as a directed fault injection, e.g. a laser beam, targeting a persistent part of memory, such as the EEPROM of a \jc. This could cause a bit flip in a value that is persistent across power-ups, and thus cause a persistent fault since the wrong value will always be used. If one wishes to create a persistent fault, precision is important, both to strike a persistent part of memory, but also to affect the correct value.\\\\
+% % 
+Transient faults do not cause permanent damage to the hardware. They can cause a temporary bit flip, resulting in a corrupted value, changed control flow causing unintended behaviour, or a crash of the hardware. The altered behaviour will disappear and the fault injection will have to be performed again, if the effect is to be reproduced.
 % % %
-% % % what about other ways?
-
-% % %
-Transient faults do not cause any permanent damage to the hardware. They can cause a temporary bit flip, resulting in a corrupted value, changed control flow to cause unintended behaviour, or a crash of the hardware. The altered behavior will disappear and the fault injection will have to be performed again, if the effect is to be reproduced.
-% % %
-Nonetheless, both persistent and transient faults can have fatal consequences, if they strike at the right time and the right place, e.g. for an attacker trying to change a programs control flow and thus execute a sensitive piece of code. 
-
-The two categories of fault injection are thus sensitive to two variables, \textit{time} and \textit{place}, to different degrees. For example, an attacker who is trying to alter a constant in a program on a chipped access card, is able to work on the card in private surroundings. He can remove the protective layer on the chip and induce a persistent error on the card. Since the card is offline, the timing of the fault injection does not matter because he can only affect static values on the chip. The fault will still be present when the card is powered on at a later time. 
-
+Nonetheless, both persistent and transient faults can have fatal consequences, if they strike at the right time and the right place, e.g. for an attacker trying to change a program's control flow and thus execute a sensitive piece of code.\\\\
+% %
+The two categories of fault injection are thus sensitive to two variables, \textit{time} and \textit{place}, to different degrees. For example, an attacker who is trying to alter a constant in a program on a chipped access card, is able to work on the card in private surroundings. He can remove the protective layer on the chip and induce a persistent error on the card. Since the card is offline, the timing of the fault injection does not matter because he can only affect static values on the chip. The fault will still be present when the card is powered on at a later time.\\\\
+% %
 On the other hand, an attacker who wants to change transient properties such as program flow dependent on a non-constant value, is very dependent on both timing and precision of his attack. He has to affect the correct place in memory at just the right time in the program's execution to alter the program flow. \cref{tab:dependencies} illustrates the dependencies of persistent and transient fault injections.
 
 \begin{table}[h!]
@@ -22,9 +18,10 @@ On the other hand, an attacker who wants to change transient properties such as 
 \hline Precision & X & X \\ 
 \hline 
 \end{tabular} 
-\caption{Table showing dependencies of induced faults}
+\caption{Table showing dependencies of induced faults.}
 \label{tab:dependencies}
 \end{table}
 
-It is important to note that when attacking the chip offline, the attacker only has access to persistently stored values. When attacking the card in online mode, the attacker also has access to run-time related values, such as user input values stored on the operand stack.\\\\
-It is also interesting to note that an attacker performing a fault injection on the chip while it is offline, has to leave the card in an uncorrupted state, since it will not boot up correctly if e.g. the \textit{install()} method, described in~\cref{subsec:jcinstall}, of a \jc was hit by the fault injection, thus corrupting it. This is another reasion \textit{precision} is important. When performing a fault injection on a card which is online, the attacker can strike both persistent values and run-time values. The attacker additionally does not have to leave the card in an uncorrupted state as he would have to when injecting a fault on an offline card. The reason for this is that the attacker might only need to flip a particular bit in e.g. a response APDU packet, see \cref{subsec:apdu}, or an operand stack value, to trick a card terminal into accepting a transaction. After the card has sent the manipulated packet, the attacker does not care whether the card crashes since the purpose of the attack has been served.
+\noindent It is important to note that when attacking the chip offline, the attacker only has access to persistently stored values. When attacking the card in online mode, the attacker also has access to run-time related values, such as user input values stored on the operand stack.\\\\
+It is also interesting to note that an attacker performing a fault injection on the chip while it is offline, has to leave the card in an uncorrupted state, since it will not boot up correctly if e.g. the \textit{select} method, described in~\cref{subsec:jcinstall}\ch{adapt ref to select method in platform}, of a \jc was hit by the fault injection, thus corrupting it. This is another reason \textit{precision} is important. When performing a fault injection on a card which is online, the attacker can strike both persistent values and run-time values. The attacker additionally does not have to leave the card in an uncorrupted state as he would have to when injecting a fault on an offline card. The reason is that the attacker might only need to flip a particular bit in e.g. a response APDU packet, see \cref{subsec:apdu}, or an operand stack value, to trick a card terminal into accepting a transaction. After the card has sent the manipulated packet, the attacker does not care whether the card crashes since the purpose of the attack has been served.\\\\
+% %
