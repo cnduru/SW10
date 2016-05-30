@@ -1,25 +1,24 @@
 \section{\jcl}
-\jcl is a small language based on Java Card bytecode. Just as Java Card \jcl is a stack based language with a heap. \jcl was created and formalised in \cite{javasec}, and the semantics can be seen in \cref{sec:semintro}
-It supports the many of features of Java bytecode such as classes and method invocation which is showcased in \Cref{app:sample1}. 
+\jcl is a small language based on Java Card bytecode. Just as Java Card, \jcl is a stack based language with a heap. \jcl was created and formalised in \cite{javasec}, and the semantics can be seen in \cref{sec:semintro}
+It supports the majority of features of Java bytecode such as classes and method invocation, which are shown in \Cref{app:sample1}. 
 A brief overview of the instructions can be seen in \cref{tab:instr}.\\
 
-\noindent Program errors are not resented in \jcl, it is assumed that if no rule is legal the virtual machine will exit, e.g. if the current instruction is resolved to be \texttt{LOAD } $i$ and the parameter $i$ is not part of the domain for the $Local$ function for the top elements of the call stack, the rule would not be legal. \\\\
-\jcl has been expanded upon in this report. 
-The original semantics did not capture the notion of private method calls and exceptions. 
-In the following \jcl is expanded with rules for \texttt{INVOKESPECIAL} and \texttt{THROW}, to support invocation of private methods and exceptions, respectively.
-
-\begin{table}
+\noindent Program errors are not defined in \jcl, since it is assumed that if no legal rule is defined, the virtual machine will exit, e.g. if the current instruction is resolved to be \texttt{LOAD} $i$ and the parameter $i$ is not part of the domain for the $Local$ function, representing local variables, e.g. there is no variable defined for $i$.\\\\
+The original semantics did not capture the notion of private method calls and exceptions, \jcl is therefore expanded with rules for \texttt{INVOKESPECIAL} and \texttt{THROW}, to support invocation of private methods and exceptions.
+\kri{fix height}
+\begin{table}[H]
 \centering
 \begin{tabular}{p{.30\textwidth}|p{.63\textwidth}}
 \label{tab:instr}
-\textbf{Rule / Instruction}			  & \textbf{Description} \\ \hline
+ & \\
+\textbf{Rule / Instruction}	  & \textbf{Description} \\ \hline
 NOP             		  & No operation. Only increments the program counter. \\ \hline
 PUSH \textit{v}           & Pushes parameter \textit{v} on top of the stack. \\ \hline
 POP             		  & Removes and discards top element of the stack.\\ \hline
 ADD             		  & Adds the two top elements of the stack and pushes the result back onto the stack.  \\ \hline
 DUP             		  & Duplicates the top element of the stack and pushes it onto the stack. \\ \hline
 GOTO \textit{a}           & Jumps to a certain address in the program.  \\ \hline
-IF\_CMPEQ \textit{a}   	  & Compares the two top stack elements and performs a conditional jump to \textit{a}  \\ \hline
+IF\_CMPEQ \textit{a}   	  & Compares the two top stack elements and performs a conditional jump to \textit{a}.  \\ \hline
 INVOKESTATIC \textit{mid}    		  & Calls a static method.  \\ \hline
 INVOKEVIRTUAL \textit{mid}		  & Calls a virtual method.  \\ \hline
 RETURN                    & Returns from a method. If the stack is non-empty the top value is returned.   \\ \hline
@@ -31,6 +30,6 @@ PUTFIELD \textit{fid}   & Stores a value from the top of the stack and stores it
 GETFIELD \textit{fid}	  & Reads a field in an object and pushes it onto the stack. \\ \hline
 NEW   		              & Creates an object on the heap and pushes a reference to it onto the stack.  \\ \hline  
 \end{tabular}
-\caption{\jcl semantics with a short description. Note that stack refers to the operand stack.}
+\caption{Compact description of \jcl  semantics. Note that stack refers to the operand stack.}
 \end{table}
 \input{documents/semantics/newSemantic}
