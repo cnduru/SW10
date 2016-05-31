@@ -1,6 +1,4 @@
 Similar to CGI + PC, CFI + PC also has an increased crash probability, but without an increased attack probability compared to Base. 
-It was expected that CFI might reduce the probability of a pc fault attack, as it introduces checks to confirm that important code has been run. 
-\kri{make sure this is understandable}
-We suspect the reason for this is the structure of the code, as there is no sensitive region where flags can be rechecked and bypassing the methods doing the validation is enough to be considered a successful attack.
-
+It was expected that CFI might reduce the probability of a pc fault attack, as it introduces checks to confirm that important code has been run. We suspect the reason for this, is the structure of the code as the flag is only checked once in the experiment, and bypassing this check is enough for a run to be considered a successful attack.\\\\
+% %
 CFI + OP shows no differences compared to base + OP. As expected, control flow integrity does not protect against errors in the operand stack. 
