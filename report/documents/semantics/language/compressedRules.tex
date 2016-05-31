@@ -5,7 +5,7 @@ A brief overview of the instructions can be seen in \cref{tab:instr}.\\
 
 \noindent Program errors are not defined in \jcl, since it is assumed that if no legal rule is defined, the virtual machine will exit, e.g. if the current instruction is resolved to be \texttt{LOAD} $i$ and the parameter $i$ is not part of the domain for the $Local$ function, representing local variables, e.g. there is no variable defined for $i$.\\\\
 The original semantics did not capture the notion of private method calls and exceptions, \jcl is therefore expanded with rules for \texttt{INVOKESPECIAL} and \texttt{THROW}, to support invocation of private methods and exceptions.
-\kri{fix height}
+
 \begin{table}[H]
 \centering
 \begin{tabular}{p{.30\textwidth}|p{.63\textwidth}}
