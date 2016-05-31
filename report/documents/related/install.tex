@@ -1,7 +1,7 @@
 \subsubsection{The Install Method}\label{subsec:jcinstall}
-The \texttt{install} method creates an instance of the \texttt{Applet} subclass~\cite[p. 65]{java_card_spec}. Depending on the application of the card, this method is called \textit{once} in a card's life time, from either the manufacturer's or card distributor's side, after which applet installation on the card is disabled. Examples of such cards are SIM cards, since it could pose a security risk to allow other applets, than those intended to be on the card, to be installed.\\\\
+The \texttt{install} method creates an instance of the \texttt{Applet} subclass~\cite[api p. 65]{java_card_spec}. Depending on the application of the card, this method is called \textit{once} in a card's life time, from either the manufacturer's or card distributor's side, after which applet installation on the card is disabled. Examples of such cards are SIM cards, since it could pose a security risk to allow other applets, than those intended to be on the card, to be installed.\\\\
 The install method should perform all necessary initialisations and must perform a call to the \texttt{register} method. If the call is not performed successfully, or an exception is thrown before the call, the installation is not considered successful. If the installation fails, the Java Card runtime environment performs the necessary clean up actions when control is returned to it. After a successful installation, the applet can be selected with the \texttt{select APDU} command.
 
 
-\subsubsection{The Select Method}\label{subsec:jcinstall}
-The \texttt{select} method is used inform for initialising  
+\subsubsection{The Select Method}\label{subsec:jcselect}
+The \texttt{select} method is used inform the applet that it has been selected~\cite[api p. 68]{java_card_spec}. If initialisation is required before processing the APDU, it should be done in this method. \texttt{Select} returns \textit{true} to indicate success and it is ready to process the APDU.
