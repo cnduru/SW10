@@ -1,0 +1,13 @@
+\subsubsection{Field of Bit}
+The Field of Bit countermeasure described by~\cite{evsmc}, detects changes in instructions from executable to readable, and vice versa. It uses custom annotations to denote sensitive code regions, which means that the JCVM must be modified for the countermeasure to work. It can detect two changes:
+
+\begin{itemize}
+\item An increase in the number of operands for an instruction
+\item A decrease in the number of operands for an instruction
+\end{itemize}
+% %
+\noindent Off-card, a Java class file is processed and a Field of Bit (FoB) is created. It contains information about program counter values and whether the data at that value are executable or readable. The FoB is saved as a custom component in the class file.\\\\
+% %
+When a method is interpreted on-card, if a Field of Bit annotation is detected by the JCVM, it checks the method's byte array for inconsistencies with the FoB. For example, if an instruction is being executed, its parameters are checked in relation to the FoB at their respective locations. If one of the parameters were bit flipped from being readable to being executable, it would cause a discrepancy, and an error would be detected. In the same way, a bit flip causing an executable instruction to become readable would also be caught.\\\\
+% %
+The weakness of this countermeasure is that it cannot detect if an instruction is replace by one with the same number of operands, e.g. \texttt{ifeq a} (one operand) replaced by \texttt{goto a} (one operand). This is called an indistinguishable replacement, but~\cite[p. 54]{evsmc} states that the probability of this in a \jc application is $10\%$.
