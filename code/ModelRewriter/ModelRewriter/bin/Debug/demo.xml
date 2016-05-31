@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE nta PUBLIC "-//Uppaal Team//DTD Flat System 1.1//EN" "http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd"[]>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
 <nta>
-  <declaration>clock t;
+	<declaration>clock t;
 bool exceptionOccurred;
 const int heap_size = 20;
 int H[heap_size];
@@ -40,9 +40,9 @@ bool signature(int classID, int methodID, int methodClassID)
 {
     return meID == methodID &amp;&amp; classID == methodClassID;
 }</declaration>
-  <template>
-    <name>Sample_Sample</name>
-    <declaration>const int os_size = 10;
+	<template>
+		<name>Sample_Sample</name>
+		<declaration>const int os_size = 10;
 const int locs_size = 10;
 int os[os_size]; 
 int osp = 0;
@@ -101,357 +101,346 @@ bool ifeq(){
     }
     return false;
 }</declaration>
-    <location id="id-1" x="0" y="-65">
-      <name x="20" y="-78"></name>
-      <label kind="exponentialrate" x="-70" y="-65">1</label>
-    </location>
-    <location id="id0" x="0" y="0">
-      <name x="20" y="-13">pc0__aload_0</name>
-      <label kind="invariant" x="-70" y="0">t &lt;= 1</label>
-    </location>
-    <location id="id1" x="0" y="65">
-      <name x="20" y="52">pc1__invokespecial_void_java_lang_Object_init_</name>
-      <label kind="invariant" x="-70" y="65">t &lt;= 1</label>
-    </location>
-    <location id="id2" x="0" y="130">
-      <name x="20" y="117">pc4__aload_0</name>
-      <label kind="invariant" x="-70" y="130">t &lt;= 1</label>
-    </location>
-    <location id="id3" x="0" y="195">
-      <name x="20" y="182">pc5__new_A</name>
-      <label kind="invariant" x="-70" y="195">t &lt;= 1</label>
-    </location>
-    <location id="id4" x="0" y="260">
-      <name x="20" y="247">pc8__dup</name>
-      <label kind="invariant" x="-70" y="260">t &lt;= 1</label>
-    </location>
-    <location id="id5" x="0" y="325">
-      <name x="20" y="312">pc9__invokespecial_void_A_init_</name>
-      <label kind="invariant" x="-70" y="325">t &lt;= 1</label>
-    </location>
-    <location id="id6" x="0" y="390">
-      <name x="20" y="377">pc12_putfield_Sample_a__A</name>
-      <label kind="invariant" x="-70" y="390">t &lt;= 1</label>
-    </location>
-    <location id="id7" x="0" y="455">
-      <name x="20" y="442">pc15_aload_0</name>
-      <label kind="invariant" x="-70" y="455">t &lt;= 1</label>
-    </location>
-    <location id="id8" x="0" y="520">
-      <name x="20" y="507">pc16_new_B</name>
-      <label kind="invariant" x="-70" y="520">t &lt;= 1</label>
-    </location>
-    <location id="id9" x="0" y="585">
-      <name x="20" y="572">pc19_dup</name>
-      <label kind="invariant" x="-70" y="585">t &lt;= 1</label>
-    </location>
-    <location id="id10" x="0" y="650">
-      <name x="20" y="637">pc20_invokespecial_void_B_init_</name>
-      <label kind="invariant" x="-70" y="650">t &lt;= 1</label>
-    </location>
-    <location id="id11" x="0" y="715">
-      <name x="20" y="702">pc23_putfield_Sample_b__A</name>
-      <label kind="invariant" x="-70" y="715">t &lt;= 1</label>
-    </location>
-    <location id="id12" x="0" y="780">
-      <name x="20" y="767">pc26_aload_0</name>
-      <label kind="invariant" x="-70" y="780">t &lt;= 1</label>
-    </location>
-    <location id="id13" x="0" y="845">
-      <name x="20" y="832">pc27_getfield_Sample_a__A</name>
-      <label kind="invariant" x="-70" y="845">t &lt;= 1</label>
-    </location>
-    <location id="id14" x="0" y="910">
-      <name x="20" y="897">pc30_invokevirtual_int_A_foo_</name>
-      <label kind="invariant" x="-70" y="910">t &lt;= 1</label>
-    </location>
-    <location id="id15" x="0" y="975">
-      <name x="20" y="962">pc33_pop___NOT_IMPLEMENTED___NOT_IMPLEMENTED___NOT_IMPLEMENTED</name>
-      <label kind="invariant" x="-70" y="975">t &lt;= 1</label>
-    </location>
-    <location id="id16" x="0" y="1040">
-      <name x="20" y="1027">pc34_aload_0</name>
-      <label kind="invariant" x="-70" y="1040">t &lt;= 1</label>
-    </location>
-    <location id="id17" x="0" y="1105">
-      <name x="20" y="1092">pc35_getfield_Sample_b__A</name>
-      <label kind="invariant" x="-70" y="1105">t &lt;= 1</label>
-    </location>
-    <location id="id18" x="0" y="1170">
-      <name x="20" y="1157">pc38_invokevirtual_int_A_foo_</name>
-      <label kind="invariant" x="-70" y="1170">t &lt;= 1</label>
-    </location>
-    <location id="id19" x="0" y="1235">
-      <name x="20" y="1222">pc41_pop___NOT_IMPLEMENTED___NOT_IMPLEMENTED___NOT_IMPLEMENTED</name>
-      <label kind="invariant" x="-70" y="1235">t &lt;= 1</label>
-    </location>
-    <location id="id20" x="0" y="1300">
-      <name x="20" y="1287">pc42_return</name>
-      <label kind="invariant" x="-70" y="1300">t &lt;= 1</label>
-    </location>
-    <location id="id1a" x="200" y="91">
-      <name x="220" y="78" />
-      <label kind="invariant" x="0" y="0">t &lt;= 5</label>
-    </location>
-    <location id="id5a" x="200" y="351">
-      <name x="220" y="338" />
-      <label kind="exponentialrate" x="130" y="351">1</label>
-    </location>
-    <location id="id5aa" x="200" y="377">
-      <name x="220" y="364" />
-      <label kind="exponentialrate" x="330" y="377">1</label>
-      <committed />
-    </location>
-    <location id="id10a" x="200" y="676">
-      <name x="220" y="663" />
-      <label kind="exponentialrate" x="130" y="676">1</label>
-    </location>
-    <location id="id10aa" x="200" y="702">
-      <name x="220" y="689" />
-      <label kind="exponentialrate" x="330" y="702">1</label>
-      <committed />
-    </location>
-    <location id="id14a" x="200" y="936">
-      <name x="220" y="923" />
-      <label kind="exponentialrate" x="130" y="936">1</label>
-    </location>
-    <location id="id14aa" x="200" y="962">
-      <name x="220" y="949" />
-      <label kind="exponentialrate" x="330" y="962">1</label>
-      <committed />
-    </location>
-    <location id="id18a" x="200" y="1196">
-      <name x="220" y="1183" />
-      <label kind="exponentialrate" x="130" y="1196">1</label>
-    </location>
-    <location id="id18aa" x="200" y="1222">
-      <name x="220" y="1209" />
-      <label kind="exponentialrate" x="330" y="1222">1</label>
-      <committed />
-    </location>
-    <init ref="id-1" />
-    <transition>
-      <source ref="id-1" />
-      <target ref="id0" />
-      <label kind="guard" x="20" y="-65">t == 1</label>
-      <label kind="synchronisation" x="20" y="-52">cSample_Sample?</label>
-      <label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id0" />
-      <target ref="id1" />
-      <label kind="guard" x="20" y="0">t == 1</label>
-      <label kind="assignment" x="20" y="13"> osp_inc(), os[osp - 1] = locs[0], t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id1" />
-      <target ref="id1a" />
-      <label kind="guard" x="20" y="65">t == 1</label>
-      <label kind="assignment" x="20" y="78">osp_dec(1), t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id1a" />
-      <target ref="id2" />
-      <label kind="guard" x="20" y="91">t == 5</label>
-      <label kind="assignment" x="20" y="104">t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id2" />
-      <target ref="id3" />
-      <label kind="guard" x="20" y="130">t == 1</label>
-      <label kind="assignment" x="20" y="143"> osp_inc(), os[osp - 1] = locs[0], t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id3" />
-      <target ref="id4" />
-      <label kind="guard" x="20" y="195">t == 1</label>
-      <label kind="assignment" x="20" y="208">osp_inc(), os[osp-1] = alocNew(2), t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id4" />
-      <target ref="id5" />
-      <label kind="assignment" x="20" y="260">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
-      <label kind="guard" x="20" y="273">t == 1</label>
-    </transition>
-    <transition>
-      <source ref="id5" />
-      <target ref="id5a" />
-      <label kind="guard" x="20" y="325">t == 1</label>
-      <label kind="assignment" x="20" y="338">osp_dec(1), t = 0, par0 = os[osp]</label>
-      <label kind="synchronisation" x="20" y="351">cA_A!</label>
-    </transition>
-    <transition>
-      <source ref="id5a" />
-      <target ref="id6" />
-      <label kind="synchronisation" x="20" y="351">cA_A?</label>
-      <label kind="guard" x="20" y="364">!exceptionOccurred</label>
-      <label kind="assignment" x="20" y="377">t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id5a" />
-      <target ref="id5aa" />
-      <label kind="guard" x="20" y="351">exceptionOccurred == true</label>
-      <label kind="assignment" x="20" y="364">osp = 0</label>
-      <label kind="synchronisation" x="20" y="377">cA_A?</label>
-    </transition>
-    <transition>
-      <source ref="id5aa" />
-      <target ref="id-1" />
-      <label kind="synchronisation" x="20" y="377">cSample_Sample!</label>
-    </transition>
-    <transition>
-      <source ref="id6" />
-      <target ref="id7" />
-      <label kind="guard" x="20" y="390">t == 1</label>
-      <label kind="assignment" x="20" y="403">osp_dec(2), H[os[osp] + 2] = os[osp + 1] </label>
-    </transition>
-    <transition>
-      <source ref="id7" />
-      <target ref="id8" />
-      <label kind="guard" x="20" y="455">t == 1</label>
-      <label kind="assignment" x="20" y="468"> osp_inc(), os[osp - 1] = locs[0], t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id8" />
-      <target ref="id9" />
-      <label kind="guard" x="20" y="520">t == 1</label>
-      <label kind="assignment" x="20" y="533">osp_inc(), os[osp-1] = alocNew(3), t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id9" />
-      <target ref="id10" />
-      <label kind="assignment" x="20" y="585">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
-      <label kind="guard" x="20" y="598">t == 1</label>
-    </transition>
-    <transition>
-      <source ref="id10" />
-      <target ref="id10a" />
-      <label kind="guard" x="20" y="650">t == 1</label>
-      <label kind="assignment" x="20" y="663">osp_dec(1), t = 0, par0 = os[osp]</label>
-      <label kind="synchronisation" x="20" y="676">cB_B!</label>
-    </transition>
-    <transition>
-      <source ref="id10a" />
-      <target ref="id11" />
-      <label kind="synchronisation" x="20" y="676">cB_B?</label>
-      <label kind="guard" x="20" y="689">!exceptionOccurred</label>
-      <label kind="assignment" x="20" y="702">t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id10a" />
-      <target ref="id10aa" />
-      <label kind="guard" x="20" y="676">exceptionOccurred == true</label>
-      <label kind="assignment" x="20" y="689">osp = 0</label>
-      <label kind="synchronisation" x="20" y="702">cB_B?</label>
-    </transition>
-    <transition>
-      <source ref="id10aa" />
-      <target ref="id-1" />
-      <label kind="synchronisation" x="20" y="702">cSample_Sample!</label>
-    </transition>
-    <transition>
-      <source ref="id11" />
-      <target ref="id12" />
-      <label kind="guard" x="20" y="715">t == 1</label>
-      <label kind="assignment" x="20" y="728">osp_dec(2), H[os[osp] + 1] = os[osp + 1] </label>
-    </transition>
-    <transition>
-      <source ref="id12" />
-      <target ref="id13" />
-      <label kind="guard" x="20" y="780">t == 1</label>
-      <label kind="assignment" x="20" y="793"> osp_inc(), os[osp - 1] = locs[0], t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id13" />
-      <target ref="id14" />
-      <label kind="guard" x="20" y="845">t == 1</label>
-      <label kind="assignment" x="20" y="858">os[osp - 1] = H[os[osp - 1] + 2]</label>
-    </transition>
-    <transition>
-      <source ref="id14" />
-      <target ref="id14a" />
-      <label kind="guard" x="20" y="910">t == 1</label>
-      <label kind="synchronisation" x="20" y="923">cVirtual!</label>
-      <label kind="assignment" x="20" y="936">osp_dec(1), par0 = os[osp], meID = 3</label>
-    </transition>
-    <transition>
-      <source ref="id14a" />
-      <target ref="id15" />
-      <label kind="synchronisation" x="20" y="936">cVirtual?</label>
-      <label kind="assignment" x="20" y="949">t = 0, os[osp] = par0, osp_inc()</label>
-    </transition>
-    <transition>
-      <source ref="id14a" />
-      <target ref="id14aa" />
-      <label kind="guard" x="20" y="936">exceptionOccurred == true</label>
-      <label kind="assignment" x="20" y="949">osp = 0</label>
-      <label kind="synchronisation" x="20" y="962">cA_foo?</label>
-    </transition>
-    <transition>
-      <source ref="id14aa" />
-      <target ref="id-1" />
-      <label kind="synchronisation" x="20" y="962">cSample_Sample!</label>
-    </transition>
-    <transition>
-      <source ref="id15" />
-      <target ref="id16" />
-      <label kind="guard" x="20" y="975">t == 1</label>
-    </transition>
-    <transition>
-      <source ref="id16" />
-      <target ref="id17" />
-      <label kind="guard" x="20" y="1040">t == 1</label>
-      <label kind="assignment" x="20" y="1053"> osp_inc(), os[osp - 1] = locs[0], t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id17" />
-      <target ref="id18" />
-      <label kind="guard" x="20" y="1105">t == 1</label>
-      <label kind="assignment" x="20" y="1118">os[osp - 1] = H[os[osp - 1] + 1]</label>
-    </transition>
-    <transition>
-      <source ref="id18" />
-      <target ref="id18a" />
-      <label kind="guard" x="20" y="1170">t == 1</label>
-      <label kind="synchronisation" x="20" y="1183">cVirtual!</label>
-      <label kind="assignment" x="20" y="1196">osp_dec(1), par0 = os[osp], meID = 3</label>
-    </transition>
-    <transition>
-      <source ref="id18a" />
-      <target ref="id19" />
-      <label kind="synchronisation" x="20" y="1196">cVirtual?</label>
-      <label kind="assignment" x="20" y="1209">t = 0, os[osp] = par0, osp_inc()</label>
-    </transition>
-    <transition>
-      <source ref="id18a" />
-      <target ref="id18aa" />
-      <label kind="guard" x="20" y="1196">exceptionOccurred == true</label>
-      <label kind="assignment" x="20" y="1209">osp = 0</label>
-      <label kind="synchronisation" x="20" y="1222">cA_foo?</label>
-    </transition>
-    <transition>
-      <source ref="id18aa" />
-      <target ref="id-1" />
-      <label kind="synchronisation" x="20" y="1222">cSample_Sample!</label>
-    </transition>
-    <transition>
-      <source ref="id19" />
-      <target ref="id20" />
-      <label kind="guard" x="20" y="1235">t == 1</label>
-    </transition>
-    <transition>
-      <source ref="id20" />
-      <target ref="id-1" />
-      <label kind="guard" x="20" y="1300">t == 1</label>
-      <label kind="synchronisation" x="20" y="1313">cSample_Sample!</label>
-      <label kind="guard" x="20" y="1326">t == 1</label>
-      <label kind="assignment" x="20" y="1339">osp = 0, t = 0</label>
-      <nail x="-100" y="617" />
-    </transition>
-  </template>
-  <template>
-    <name>Sample_install</name>
-    <declaration>const int os_size = 10;
+		<location id="id0" x="0" y="-65">
+			<label kind="exponentialrate" x="-70" y="-65">1</label>
+		</location>
+		<location id="id1" x="0" y="0">
+			<name x="20" y="-13">pc0__aload_0</name>
+			<label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+		</location>
+		<location id="id2" x="0" y="65">
+			<name x="20" y="52">pc1__invokespecial_void_java_lang_Object_init_</name>
+			<label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+		</location>
+		<location id="id3" x="0" y="130">
+			<name x="20" y="117">pc4__aload_0</name>
+			<label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+		</location>
+		<location id="id4" x="0" y="195">
+			<name x="20" y="182">pc5__new_A</name>
+			<label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+		</location>
+		<location id="id5" x="0" y="260">
+			<name x="20" y="247">pc8__dup</name>
+			<label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+		</location>
+		<location id="id6" x="0" y="325">
+			<name x="20" y="312">pc9__invokespecial_void_A_init_</name>
+			<label kind="invariant" x="-70" y="325">t &lt;= 1</label>
+		</location>
+		<location id="id7" x="0" y="390">
+			<name x="20" y="377">pc12_putfield_Sample_a__A</name>
+			<label kind="invariant" x="-70" y="390">t &lt;= 1</label>
+		</location>
+		<location id="id8" x="0" y="455">
+			<name x="20" y="442">pc15_aload_0</name>
+			<label kind="invariant" x="-70" y="455">t &lt;= 1</label>
+		</location>
+		<location id="id9" x="0" y="520">
+			<name x="20" y="507">pc16_new_B</name>
+			<label kind="invariant" x="-70" y="520">t &lt;= 1</label>
+		</location>
+		<location id="id10" x="0" y="585">
+			<name x="20" y="572">pc19_dup</name>
+			<label kind="invariant" x="-70" y="585">t &lt;= 1</label>
+		</location>
+		<location id="id11" x="0" y="650">
+			<name x="20" y="637">pc20_invokespecial_void_B_init_</name>
+			<label kind="invariant" x="-70" y="650">t &lt;= 1</label>
+		</location>
+		<location id="id12" x="0" y="715">
+			<name x="20" y="702">pc23_putfield_Sample_b__A</name>
+			<label kind="invariant" x="-70" y="715">t &lt;= 1</label>
+		</location>
+		<location id="id13" x="0" y="780">
+			<name x="20" y="767">pc26_aload_0</name>
+			<label kind="invariant" x="-70" y="780">t &lt;= 1</label>
+		</location>
+		<location id="id14" x="0" y="845">
+			<name x="20" y="832">pc27_getfield_Sample_a__A</name>
+			<label kind="invariant" x="-70" y="845">t &lt;= 1</label>
+		</location>
+		<location id="id15" x="0" y="910">
+			<name x="20" y="897">pc30_invokevirtual_int_A_foo_</name>
+			<label kind="invariant" x="-70" y="910">t &lt;= 1</label>
+		</location>
+		<location id="id16" x="0" y="975">
+			<name x="20" y="962">pc33_pop___NOT_IMPLEMENTED___NOT_IMPLEMENTED___NOT_IMPLEMENTED</name>
+			<label kind="invariant" x="-70" y="975">t &lt;= 1</label>
+		</location>
+		<location id="id17" x="0" y="1040">
+			<name x="20" y="1027">pc34_aload_0</name>
+			<label kind="invariant" x="-70" y="1040">t &lt;= 1</label>
+		</location>
+		<location id="id18" x="0" y="1105">
+			<name x="20" y="1092">pc35_getfield_Sample_b__A</name>
+			<label kind="invariant" x="-70" y="1105">t &lt;= 1</label>
+		</location>
+		<location id="id19" x="0" y="1170">
+			<name x="20" y="1157">pc38_invokevirtual_int_A_foo_</name>
+			<label kind="invariant" x="-70" y="1170">t &lt;= 1</label>
+		</location>
+		<location id="id20" x="0" y="1235">
+			<name x="20" y="1222">pc41_pop___NOT_IMPLEMENTED___NOT_IMPLEMENTED___NOT_IMPLEMENTED</name>
+			<label kind="invariant" x="-70" y="1235">t &lt;= 1</label>
+		</location>
+		<location id="id21" x="0" y="1300">
+			<name x="20" y="1287">pc42_return</name>
+			<label kind="invariant" x="-70" y="1300">t &lt;= 1</label>
+		</location>
+		<location id="id22" x="200" y="91">
+			<label kind="invariant" x="0" y="0">t &lt;= 5</label>
+		</location>
+		<location id="id23" x="200" y="351">
+			<label kind="exponentialrate" x="130" y="351">1</label>
+		</location>
+		<location id="id24" x="200" y="377">
+			<label kind="exponentialrate" x="330" y="377">1</label>
+			<committed/>
+		</location>
+		<location id="id25" x="200" y="676">
+			<label kind="exponentialrate" x="130" y="676">1</label>
+		</location>
+		<location id="id26" x="200" y="702">
+			<label kind="exponentialrate" x="330" y="702">1</label>
+			<committed/>
+		</location>
+		<location id="id27" x="200" y="936">
+			<label kind="exponentialrate" x="130" y="936">1</label>
+		</location>
+		<location id="id28" x="200" y="962">
+			<label kind="exponentialrate" x="330" y="962">1</label>
+			<committed/>
+		</location>
+		<location id="id29" x="200" y="1196">
+			<label kind="exponentialrate" x="130" y="1196">1</label>
+		</location>
+		<location id="id30" x="200" y="1222">
+			<label kind="exponentialrate" x="330" y="1222">1</label>
+			<committed/>
+		</location>
+		<init ref="id0"/>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id1"/>
+			<label kind="guard" x="20" y="-65">t == 1</label>
+			<label kind="synchronisation" x="20" y="-52">cSample_Sample?</label>
+			<label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id2"/>
+			<label kind="guard" x="20" y="0">t == 1</label>
+			<label kind="assignment" x="20" y="13">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id22"/>
+			<label kind="guard" x="20" y="65">t == 1</label>
+			<label kind="assignment" x="20" y="78">osp_dec(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id22"/>
+			<target ref="id3"/>
+			<label kind="guard" x="20" y="91">t == 5</label>
+			<label kind="assignment" x="20" y="104">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id4"/>
+			<label kind="guard" x="20" y="130">t == 1</label>
+			<label kind="assignment" x="20" y="143">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id5"/>
+			<label kind="guard" x="20" y="195">t == 1</label>
+			<label kind="assignment" x="20" y="208">osp_inc(), os[osp-1] = alocNew(2), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id6"/>
+			<label kind="guard" x="20" y="273">t == 1</label>
+			<label kind="assignment" x="20" y="260">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id23"/>
+			<label kind="guard" x="20" y="325">t == 1</label>
+			<label kind="synchronisation" x="20" y="351">cA_A!</label>
+			<label kind="assignment" x="20" y="338">osp_dec(1), t = 0, par0 = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id23"/>
+			<target ref="id7"/>
+			<label kind="guard" x="20" y="364">!exceptionOccurred</label>
+			<label kind="synchronisation" x="20" y="351">cA_A?</label>
+			<label kind="assignment" x="20" y="377">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id23"/>
+			<target ref="id24"/>
+			<label kind="guard" x="20" y="351">exceptionOccurred == true</label>
+			<label kind="synchronisation" x="20" y="377">cA_A?</label>
+			<label kind="assignment" x="20" y="364">osp = 0</label>
+		</transition>
+		<transition>
+			<source ref="id24"/>
+			<target ref="id0"/>
+			<label kind="synchronisation" x="20" y="377">cSample_Sample!</label>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id8"/>
+			<label kind="guard" x="20" y="390">t == 1</label>
+			<label kind="assignment" x="20" y="403">osp_dec(2), H[os[osp] + 2] = os[osp + 1]</label>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id9"/>
+			<label kind="guard" x="20" y="455">t == 1</label>
+			<label kind="assignment" x="20" y="468">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id10"/>
+			<label kind="guard" x="20" y="520">t == 1</label>
+			<label kind="assignment" x="20" y="533">osp_inc(), os[osp-1] = alocNew(3), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id10"/>
+			<target ref="id11"/>
+			<label kind="guard" x="20" y="598">t == 1</label>
+			<label kind="assignment" x="20" y="585">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+		</transition>
+		<transition>
+			<source ref="id11"/>
+			<target ref="id25"/>
+			<label kind="guard" x="20" y="650">t == 1</label>
+			<label kind="synchronisation" x="20" y="676">cB_B!</label>
+			<label kind="assignment" x="20" y="663">osp_dec(1), t = 0, par0 = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id25"/>
+			<target ref="id12"/>
+			<label kind="guard" x="20" y="689">!exceptionOccurred</label>
+			<label kind="synchronisation" x="20" y="676">cB_B?</label>
+			<label kind="assignment" x="20" y="702">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id25"/>
+			<target ref="id26"/>
+			<label kind="guard" x="20" y="676">exceptionOccurred == true</label>
+			<label kind="synchronisation" x="20" y="702">cB_B?</label>
+			<label kind="assignment" x="20" y="689">osp = 0</label>
+		</transition>
+		<transition>
+			<source ref="id26"/>
+			<target ref="id0"/>
+			<label kind="synchronisation" x="20" y="702">cSample_Sample!</label>
+		</transition>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id13"/>
+			<label kind="guard" x="20" y="715">t == 1</label>
+			<label kind="assignment" x="20" y="728">osp_dec(2), H[os[osp] + 1] = os[osp + 1]</label>
+		</transition>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id14"/>
+			<label kind="guard" x="20" y="780">t == 1</label>
+			<label kind="assignment" x="20" y="793">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id14"/>
+			<target ref="id15"/>
+			<label kind="guard" x="20" y="845">t == 1</label>
+			<label kind="assignment" x="20" y="858">os[osp - 1] = H[os[osp - 1] + 2]</label>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id27"/>
+			<label kind="guard" x="20" y="910">t == 1</label>
+			<label kind="synchronisation" x="20" y="923">cVirtual!</label>
+			<label kind="assignment" x="20" y="936">osp_dec(1), par0 = os[osp], meID = 3</label>
+		</transition>
+		<transition>
+			<source ref="id27"/>
+			<target ref="id16"/>
+			<label kind="synchronisation" x="20" y="936">cVirtual?</label>
+			<label kind="assignment" x="20" y="949">t = 0, os[osp] = par0, osp_inc()</label>
+		</transition>
+		<transition>
+			<source ref="id27"/>
+			<target ref="id28"/>
+			<label kind="guard" x="20" y="936">exceptionOccurred == true</label>
+			<label kind="synchronisation" x="20" y="962">cA_foo?</label>
+			<label kind="assignment" x="20" y="949">osp = 0</label>
+		</transition>
+		<transition>
+			<source ref="id28"/>
+			<target ref="id0"/>
+			<label kind="synchronisation" x="20" y="962">cSample_Sample!</label>
+		</transition>
+		<transition>
+			<source ref="id16"/>
+			<target ref="id17"/>
+			<label kind="guard" x="20" y="975">t == 1</label>
+		</transition>
+		<transition>
+			<source ref="id17"/>
+			<target ref="id18"/>
+			<label kind="guard" x="20" y="1040">t == 1</label>
+			<label kind="assignment" x="20" y="1053">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id18"/>
+			<target ref="id19"/>
+			<label kind="guard" x="20" y="1105">t == 1</label>
+			<label kind="assignment" x="20" y="1118">os[osp - 1] = H[os[osp - 1] + 1]</label>
+		</transition>
+		<transition>
+			<source ref="id19"/>
+			<target ref="id29"/>
+			<label kind="guard" x="20" y="1170">t == 1</label>
+			<label kind="synchronisation" x="20" y="1183">cVirtual!</label>
+			<label kind="assignment" x="20" y="1196">osp_dec(1), par0 = os[osp], meID = 3</label>
+		</transition>
+		<transition>
+			<source ref="id29"/>
+			<target ref="id20"/>
+			<label kind="synchronisation" x="20" y="1196">cVirtual?</label>
+			<label kind="assignment" x="20" y="1209">t = 0, os[osp] = par0, osp_inc()</label>
+		</transition>
+		<transition>
+			<source ref="id29"/>
+			<target ref="id30"/>
+			<label kind="guard" x="20" y="1196">exceptionOccurred == true</label>
+			<label kind="synchronisation" x="20" y="1222">cA_foo?</label>
+			<label kind="assignment" x="20" y="1209">osp = 0</label>
+		</transition>
+		<transition>
+			<source ref="id30"/>
+			<target ref="id0"/>
+			<label kind="synchronisation" x="20" y="1222">cSample_Sample!</label>
+		</transition>
+		<transition>
+			<source ref="id20"/>
+			<target ref="id21"/>
+			<label kind="guard" x="20" y="1235">t == 1</label>
+		</transition>
+		<transition>
+			<source ref="id21"/>
+			<target ref="id0"/>
+			<label kind="guard" x="20" y="1326">t == 1</label>
+			<label kind="synchronisation" x="20" y="1313">cSample_Sample!</label>
+			<label kind="assignment" x="20" y="1339">osp = 0, t = 0</label>
+			<nail x="-100" y="617"/>
+		</transition>
+	</template>
+	<template>
+		<name>Sample_install</name>
+		<declaration>const int os_size = 10;
 const int locs_size = 10;
 int os[os_size]; 
 int osp = 0;
@@ -510,103 +499,100 @@ bool ifeq(){
     }
     return false;
 }</declaration>
-    <location id="id-1" x="0" y="-65">
-      <name x="20" y="-78">install</name>
-      <label kind="exponentialrate" x="-70" y="-65">1</label>
-    </location>
-    <location id="id0" x="0" y="0">
-      <name x="20" y="-13">pc0__new_Sample</name>
-      <label kind="invariant" x="-70" y="0">t &lt;= 1</label>
-    </location>
-    <location id="id1" x="0" y="65">
-      <name x="20" y="52">pc3__dup</name>
-      <label kind="invariant" x="-70" y="65">t &lt;= 1</label>
-    </location>
-    <location id="id2" x="0" y="130">
-      <name x="20" y="117">pc4__invokespecial_void_Sample_init_</name>
-      <label kind="invariant" x="-70" y="130">t &lt;= 1</label>
-    </location>
-    <location id="id3" x="0" y="195">
-      <name x="20" y="182">pc7__pop___NOT_IMPLEMENTED___NOT_IMPLEMENTED___NOT_IMPLEMENTED</name>
-      <label kind="invariant" x="-70" y="195">t &lt;= 1</label>
-    </location>
-    <location id="id4" x="0" y="260">
-      <name x="20" y="247">pc8__return</name>
-      <label kind="invariant" x="-70" y="260">t &lt;= 1</label>
-    </location>
-    <location id="id2a" x="200" y="156">
-      <name x="220" y="143" />
-      <label kind="exponentialrate" x="130" y="156">1</label>
-    </location>
-    <location id="id2aa" x="200" y="182">
-      <name x="220" y="169" />
-      <label kind="exponentialrate" x="330" y="182">1</label>
-      <committed />
-    </location>
-    <init ref="id-1" />
-    <transition>
-      <source ref="id-1" />
-      <target ref="id0" />
-      <label kind="guard" x="20" y="-65">t == 1</label>
-      <label kind="synchronisation" x="20" y="-52">cSample_install?</label>
-      <label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id0" />
-      <target ref="id1" />
-      <label kind="guard" x="20" y="0">t == 1</label>
-      <label kind="assignment" x="20" y="13">osp_inc(), os[osp-1] = alocNew(1), t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id1" />
-      <target ref="id2" />
-      <label kind="assignment" x="20" y="65">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
-      <label kind="guard" x="20" y="78">t == 1</label>
-    </transition>
-    <transition>
-      <source ref="id2" />
-      <target ref="id2a" />
-      <label kind="guard" x="20" y="130">t == 1</label>
-      <label kind="assignment" x="20" y="143">osp_dec(1), t = 0, par0 = os[osp]</label>
-      <label kind="synchronisation" x="20" y="156">cSample_Sample!</label>
-    </transition>
-    <transition>
-      <source ref="id2a" />
-      <target ref="id3" />
-      <label kind="synchronisation" x="20" y="156">cSample_Sample?</label>
-      <label kind="guard" x="20" y="169">!exceptionOccurred</label>
-      <label kind="assignment" x="20" y="182">t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id2a" />
-      <target ref="id2aa" />
-      <label kind="guard" x="20" y="156">exceptionOccurred == true</label>
-      <label kind="assignment" x="20" y="169">osp = 0</label>
-      <label kind="synchronisation" x="20" y="182">cSample_Sample?</label>
-    </transition>
-    <transition>
-      <source ref="id2aa" />
-      <target ref="id-1" />
-      <label kind="synchronisation" x="20" y="182">cSample_install!</label>
-    </transition>
-    <transition>
-      <source ref="id3" />
-      <target ref="id4" />
-      <label kind="guard" x="20" y="195">t == 1</label>
-    </transition>
-    <transition>
-      <source ref="id4" />
-      <target ref="id-1" />
-      <label kind="guard" x="20" y="260">t == 1</label>
-      <label kind="synchronisation" x="20" y="273">cSample_install!</label>
-      <label kind="guard" x="20" y="286">t == 1</label>
-      <label kind="assignment" x="20" y="299">osp = 0, t = 0</label>
-      <nail x="-100" y="97" />
-    </transition>
-  </template>
-  <template>
-    <name>Sample_main</name>
-    <declaration>const int os_size = 10;
+		<location id="id31" x="0" y="-65">
+			<name x="20" y="-78">install</name>
+			<label kind="exponentialrate" x="-70" y="-65">1</label>
+		</location>
+		<location id="id32" x="0" y="0">
+			<name x="20" y="-13">pc0__new_Sample</name>
+			<label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+		</location>
+		<location id="id33" x="0" y="65">
+			<name x="20" y="52">pc3__dup</name>
+			<label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+		</location>
+		<location id="id34" x="0" y="130">
+			<name x="20" y="117">pc4__invokespecial_void_Sample_init_</name>
+			<label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+		</location>
+		<location id="id35" x="0" y="195">
+			<name x="20" y="182">pc7__pop___NOT_IMPLEMENTED___NOT_IMPLEMENTED___NOT_IMPLEMENTED</name>
+			<label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+		</location>
+		<location id="id36" x="0" y="260">
+			<name x="20" y="247">pc8__return</name>
+			<label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+		</location>
+		<location id="id37" x="200" y="156">
+			<label kind="exponentialrate" x="130" y="156">1</label>
+		</location>
+		<location id="id38" x="200" y="182">
+			<label kind="exponentialrate" x="330" y="182">1</label>
+			<committed/>
+		</location>
+		<init ref="id31"/>
+		<transition>
+			<source ref="id31"/>
+			<target ref="id32"/>
+			<label kind="guard" x="20" y="-65">t == 1</label>
+			<label kind="synchronisation" x="20" y="-52">cSample_install?</label>
+			<label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id32"/>
+			<target ref="id33"/>
+			<label kind="guard" x="20" y="0">t == 1</label>
+			<label kind="assignment" x="20" y="13">osp_inc(), os[osp-1] = alocNew(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id33"/>
+			<target ref="id34"/>
+			<label kind="guard" x="20" y="78">t == 1</label>
+			<label kind="assignment" x="20" y="65">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+		</transition>
+		<transition>
+			<source ref="id34"/>
+			<target ref="id37"/>
+			<label kind="guard" x="20" y="130">t == 1</label>
+			<label kind="synchronisation" x="20" y="156">cSample_Sample!</label>
+			<label kind="assignment" x="20" y="143">osp_dec(1), t = 0, par0 = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id37"/>
+			<target ref="id35"/>
+			<label kind="guard" x="20" y="169">!exceptionOccurred</label>
+			<label kind="synchronisation" x="20" y="156">cSample_Sample?</label>
+			<label kind="assignment" x="20" y="182">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id37"/>
+			<target ref="id38"/>
+			<label kind="guard" x="20" y="156">exceptionOccurred == true</label>
+			<label kind="synchronisation" x="20" y="182">cSample_Sample?</label>
+			<label kind="assignment" x="20" y="169">osp = 0</label>
+		</transition>
+		<transition>
+			<source ref="id38"/>
+			<target ref="id31"/>
+			<label kind="synchronisation" x="20" y="182">cSample_install!</label>
+		</transition>
+		<transition>
+			<source ref="id35"/>
+			<target ref="id36"/>
+			<label kind="guard" x="20" y="195">t == 1</label>
+		</transition>
+		<transition>
+			<source ref="id36"/>
+			<target ref="id31"/>
+			<label kind="guard" x="20" y="286">t == 1</label>
+			<label kind="synchronisation" x="20" y="273">cSample_install!</label>
+			<label kind="assignment" x="20" y="299">osp = 0, t = 0</label>
+			<nail x="-100" y="97"/>
+		</transition>
+	</template>
+	<template>
+		<name>Sample_main</name>
+		<declaration>const int os_size = 10;
 const int locs_size = 10;
 int os[os_size]; 
 int osp = 0;
@@ -665,133 +651,136 @@ bool ifeq(){
     }
     return false;
 }</declaration>
-    <location id="id-1" x="0" y="-65">
-      <name x="20" y="-78">main</name>
-      <label kind="exponentialrate" x="-70" y="-65">1</label>
-      <urgent />
-    </location>
-    <location id="id0" x="0" y="0">
-      <name x="20" y="-13">pc0__invokestatic_void_Sample_install_</name>
-      <label kind="invariant" x="-70" y="0">t &lt;= 1</label>
-    </location>
-    <location id="id1" x="0" y="65">
-      <name x="20" y="52">pc3__iconst_3</name>
-      <label kind="invariant" x="-70" y="65">t &lt;= 1</label>
-    </location>
-    <location id="id2" x="0" y="130">
-      <name x="20" y="117">pc4__invokestatic_int_Sample_foo_int_</name>
-      <label kind="invariant" x="-70" y="130">t &lt;= 1</label>
-    </location>
-    <location id="id3" x="0" y="195">
-      <name x="20" y="182">pc7__pop___NOT_IMPLEMENTED___NOT_IMPLEMENTED___NOT_IMPLEMENTED</name>
-      <label kind="invariant" x="-70" y="195">t &lt;= 1</label>
-    </location>
-    <location id="id4" x="0" y="260">
-      <name x="20" y="247">pc8__return</name>
-      <label kind="invariant" x="-70" y="260">t &lt;= 1</label>
-    </location>
-    <location id="id0a" x="200" y="26">
-      <name x="220" y="13" />
-      <label kind="exponentialrate" x="130" y="26">1</label>
-    </location>
-    <location id="id0aa" x="200" y="52">
-      <name x="220" y="39" />
-      <label kind="exponentialrate" x="330" y="52">1</label>
-      <committed />
-    </location>
-    <location id="id2a" x="200" y="156">
-      <name x="220" y="143" />
-      <label kind="exponentialrate" x="130" y="156">1</label>
-    </location>
-    <location id="id2aa" x="200" y="182">
-      <name x="220" y="169" />
-      <label kind="exponentialrate" x="330" y="182">1</label>
-      <committed />
-    </location>
-    <location id="id4a" x="200" y="286">
-      <name x="220" y="273">Done</name>
-      <label kind="exponentialrate" x="0" y="0">1</label>
-    </location>
-    <init ref="id-1" />
-    <transition>
-      <source ref="id-1" />
-      <target ref="id0" />
-      <label kind="assignment" x="20" y="-65">t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id0" />
-      <target ref="id0a" />
-      <label kind="guard" x="20" y="0">t == 1</label>
-      <label kind="assignment" x="20" y="13">osp_dec(0), t = 0, par0 = os[osp]</label>
-      <label kind="synchronisation" x="20" y="26">cSample_install!</label>
-    </transition>
-    <transition>
-      <source ref="id0a" />
-      <target ref="id1" />
-      <label kind="synchronisation" x="20" y="26">cSample_install?</label>
-      <label kind="guard" x="20" y="39">!exceptionOccurred</label>
-      <label kind="assignment" x="20" y="52">t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id0a" />
-      <target ref="id0aa" />
-      <label kind="guard" x="20" y="26">exceptionOccurred == true</label>
-      <label kind="assignment" x="20" y="39">osp = 0</label>
-      <label kind="synchronisation" x="20" y="52">cSample_install?</label>
-    </transition>
-    <transition>
-      <source ref="id0aa" />
-      <target ref="id-1" />
-      <label kind="synchronisation" x="20" y="52">cSample_main!</label>
-    </transition>
-    <transition>
-      <source ref="id1" />
-      <target ref="id2" />
-      <label kind="guard" x="20" y="65">t == 1</label>
-      <label kind="assignment" x="20" y="78">osp_inc(), os[osp - 1] = 3, t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id2" />
-      <target ref="id2a" />
-      <label kind="guard" x="20" y="130">t == 1</label>
-      <label kind="assignment" x="20" y="143">osp_dec(1), t = 0, par0 = os[osp]</label>
-      <label kind="synchronisation" x="20" y="156">cSample_foo!</label>
-    </transition>
-    <transition>
-      <source ref="id2a" />
-      <target ref="id3" />
-      <label kind="synchronisation" x="20" y="156">cSample_foo?</label>
-      <label kind="guard" x="20" y="169">!exceptionOccurred</label>
-      <label kind="assignment" x="20" y="182">t = 0, os[osp] = par0, osp_inc()</label>
-    </transition>
-    <transition>
-      <source ref="id2a" />
-      <target ref="id2aa" />
-      <label kind="guard" x="20" y="156">exceptionOccurred == true</label>
-      <label kind="assignment" x="20" y="169">osp = 0</label>
-      <label kind="synchronisation" x="20" y="182">cSample_foo?</label>
-    </transition>
-    <transition>
-      <source ref="id2aa" />
-      <target ref="id-1" />
-      <label kind="synchronisation" x="20" y="182">cSample_main!</label>
-    </transition>
-    <transition>
-      <source ref="id3" />
-      <target ref="id4" />
-      <label kind="guard" x="20" y="195">t == 1</label>
-    </transition>
-    <transition>
-      <source ref="id4" />
-      <target ref="id4a" />
-      <label kind="guard" x="20" y="260">t == 1</label>
-      <label kind="synchronisation" x="20" y="273">cSample_main!</label>
-      <label kind="guard" x="20" y="286">t == 1</label>
-    </transition>
-  </template>
-  <template>
-    <name>Sample_foo</name>
-    <declaration>const int os_size = 10;
+		<location id="id39" x="0" y="-65">
+			<name x="20" y="-78">main</name>
+			<label kind="exponentialrate" x="-70" y="-65">1</label>
+			<urgent/>
+		</location>
+		<location id="id40" x="0" y="0">
+			<name x="20" y="-13">pc0__invokestatic_void_Sample_install_</name>
+			<label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+		</location>
+		<location id="id41" x="0" y="65">
+			<name x="20" y="52">pc3__iconst_3</name>
+			<label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+		</location>
+		<location id="id42" x="0" y="130">
+			<name x="17" y="93">pc4__invokestatic_int_Sample_foo_int_</name>
+			<label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+		</location>
+		<location id="id43" x="0" y="212">
+			<name x="20" y="199">pc7__pop_</name>
+			<label kind="invariant" x="-70" y="212">t &lt;= 1</label>
+		</location>
+		<location id="id44" x="0" y="260">
+			<name x="20" y="247">pc8__return</name>
+			<label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+		</location>
+		<location id="id45" x="200" y="26">
+			<label kind="exponentialrate" x="130" y="26">1</label>
+		</location>
+		<location id="id46" x="200" y="52">
+			<label kind="exponentialrate" x="330" y="52">1</label>
+			<committed/>
+		</location>
+		<location id="id47" x="195" y="161">
+			<label kind="exponentialrate" x="170" y="170">1</label>
+		</location>
+		<location id="id48" x="382" y="127">
+			<label kind="exponentialrate" x="512" y="127">1</label>
+			<committed/>
+		</location>
+		<location id="id49" x="200" y="286">
+			<name x="220" y="273">Done</name>
+			<label kind="exponentialrate" x="0" y="0">1</label>
+		</location>
+		<init ref="id39"/>
+		<transition>
+			<source ref="id39"/>
+			<target ref="id40"/>
+			<label kind="assignment" x="20" y="-65">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id40"/>
+			<target ref="id45"/>
+			<label kind="guard" x="20" y="0">t == 1</label>
+			<label kind="synchronisation" x="20" y="26">cSample_install!</label>
+			<label kind="assignment" x="20" y="13">osp_dec(0), t = 0, par0 = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id45"/>
+			<target ref="id41"/>
+			<label kind="guard" x="20" y="39">!exceptionOccurred</label>
+			<label kind="synchronisation" x="20" y="26">cSample_install?</label>
+			<label kind="assignment" x="20" y="52">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id45"/>
+			<target ref="id46"/>
+			<label kind="guard" x="20" y="26">exceptionOccurred == true</label>
+			<label kind="synchronisation" x="20" y="52">cSample_install?</label>
+			<label kind="assignment" x="20" y="39">osp = 0</label>
+		</transition>
+		<transition>
+			<source ref="id46"/>
+			<target ref="id39"/>
+			<label kind="synchronisation" x="20" y="52">cSample_main!</label>
+		</transition>
+		<transition>
+			<source ref="id41"/>
+			<target ref="id42"/>
+			<label kind="guard" x="20" y="65">t == 1</label>
+			<label kind="assignment" x="42" y="34">osp_inc(), os[osp - 1] = 3, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id42"/>
+			<target ref="id47"/>
+			<label kind="guard" x="17" y="110">t == 1</label>
+			<label kind="synchronisation" x="59" y="110">cSample_foo!</label>
+			<label kind="assignment" x="17" y="127">osp_dec(1), t = 0, par0 = os[osp]</label>
+			<nail x="17" y="153"/>
+			<nail x="170" y="153"/>
+		</transition>
+		<transition>
+			<source ref="id47"/>
+			<target ref="id43"/>
+			<label kind="guard" x="-136" y="144">!exceptionOccurred</label>
+			<label kind="synchronisation" x="-136" y="161">cSample_foo?</label>
+			<label kind="assignment" x="-136" y="178">osp_inc(), t = 0, 
+os[osp] = par0</label>
+			<nail x="170" y="170"/>
+			<nail x="0" y="170"/>
+		</transition>
+		<transition>
+			<source ref="id47"/>
+			<target ref="id48"/>
+			<label kind="guard" x="229" y="161">exceptionOccurred</label>
+			<label kind="synchronisation" x="229" y="178">cSample_foo?</label>
+			<label kind="assignment" x="229" y="195">osp = 0</label>
+			<nail x="221" y="161"/>
+			<nail x="382" y="161"/>
+		</transition>
+		<transition>
+			<source ref="id48"/>
+			<target ref="id39"/>
+			<label kind="synchronisation" x="391" y="85">cSample_main!</label>
+			<nail x="382" y="8"/>
+		</transition>
+		<transition>
+			<source ref="id43"/>
+			<target ref="id44"/>
+			<label kind="guard" x="25" y="229">t == 1</label>
+		</transition>
+		<transition>
+			<source ref="id44"/>
+			<target ref="id49"/>
+			<label kind="guard" x="20" y="286">t == 1</label>
+			<label kind="synchronisation" x="20" y="273">cSample_main!</label>
+		</transition>
+	</template>
+	<template>
+		<name>Sample_foo</name>
+		<declaration>const int os_size = 10;
 const int locs_size = 10;
 int os[os_size]; 
 int osp = 0;
@@ -850,92 +839,94 @@ bool ifeq(){
     }
     return false;
 }</declaration>
-    <location id="id-1" x="0" y="-65">
-      <name x="20" y="-78">foo</name>
-      <label kind="exponentialrate" x="-70" y="-65">1</label>
-    </location>
-    <location id="id0" x="0" y="0">
-      <name x="20" y="-13">pc0__iload_0</name>
-      <label kind="invariant" x="-70" y="0">t &lt;= 1</label>
-    </location>
-    <location id="id1" x="0" y="65">
-      <name x="20" y="52">pc1__ifeq_7</name>
-      <label kind="invariant" x="-70" y="65">t &lt;= 1</label>
-    </location>
-    <location id="id2" x="0" y="130">
-      <name x="20" y="117">pc4__iconst_1</name>
-      <label kind="invariant" x="-70" y="130">t &lt;= 1</label>
-    </location>
-    <location id="id3" x="0" y="195">
-      <name x="20" y="182">pc5__goto_4</name>
-      <label kind="invariant" x="-70" y="195">t &lt;= 1</label>
-    </location>
-    <location id="id4" x="0" y="260">
-      <name x="20" y="247">pc8__iconst_2</name>
-      <label kind="invariant" x="-70" y="260">t &lt;= 1</label>
-    </location>
-    <location id="id5" x="0" y="325">
-      <name x="20" y="312">pc9__ireturn</name>
-      <label kind="invariant" x="-70" y="325">t &lt;= 1</label>
-    </location>
-    <init ref="id-1" />
-    <transition>
-      <source ref="id-1" />
-      <target ref="id0" />
-      <label kind="guard" x="20" y="-65">t == 1</label>
-      <label kind="synchronisation" x="20" y="-52">cSample_foo?</label>
-      <label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id0" />
-      <target ref="id1" />
-      <label kind="assignment" x="20" y="0">osp_inc(), os[osp - 1] = locs[0]</label>
-      <label kind="guard" x="20" y="13">t == 1</label>
-    </transition>
-    <transition>
-      <source ref="id1" />
-      <target ref="id4" />
-      <label kind="guard" x="20" y="65">t == 1 &amp;&amp; ifeq()</label>
-      <label kind="assignment" x="20" y="78">osp_dec(1), t = 0</label>
-      <nail x="-50" y="162" />
-    </transition>
-    <transition>
-      <source ref="id1" />
-      <target ref="id2" />
-      <label kind="guard" x="20" y="65">t == 1 &amp;&amp; !ifeq()</label>
-      <label kind="assignment" x="20" y="78">opstack_fault = osp &lt; 1 ? true : opstack_fault, osp_dec(1), t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id2" />
-      <target ref="id3" />
-      <label kind="guard" x="20" y="130">t == 1</label>
-      <label kind="assignment" x="20" y="143">osp_inc(), os[osp - 1] = 1, t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id3" />
-      <target ref="id5" />
-      <label kind="guard" x="20" y="195">t == 1</label>
-      <nail x="-50" y="260" />
-    </transition>
-    <transition>
-      <source ref="id4" />
-      <target ref="id5" />
-      <label kind="guard" x="20" y="260">t == 1</label>
-      <label kind="assignment" x="20" y="273">osp_inc(), os[osp - 1] = 2, t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id5" />
-      <target ref="id-1" />
-      <label kind="guard" x="20" y="325">t == 1</label>
-      <label kind="synchronisation" x="20" y="338">cSample_foo!</label>
-      <label kind="guard" x="20" y="351">t == 1</label>
-      <label kind="assignment" x="20" y="364">osp_dec(1), par0 = os[osp], osp = 0, t = 0</label>
-      <nail x="-100" y="130" />
-    </transition>
-  </template>
-  <template>
-    <name>A_A</name>
-    <declaration>const int os_size = 10;
+		<location id="id50" x="0" y="-65">
+			<name x="20" y="-78">foo</name>
+			<label kind="exponentialrate" x="-70" y="-65">1</label>
+		</location>
+		<location id="id51" x="0" y="0">
+			<name x="20" y="-13">pc0__iload_0</name>
+			<label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+		</location>
+		<location id="id52" x="0" y="65">
+			<name x="20" y="52">pc1__ifeq_7</name>
+			<label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+		</location>
+		<location id="id53" x="0" y="130">
+			<name x="20" y="117">pc4__iconst_1</name>
+			<label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+		</location>
+		<location id="id54" x="0" y="195">
+			<name x="20" y="182">pc5__goto_4</name>
+			<label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+		</location>
+		<location id="id55" x="0" y="260">
+			<name x="20" y="247">pc8__iconst_2</name>
+			<label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+		</location>
+		<location id="id56" x="0" y="325">
+			<name x="20" y="312">pc9__ireturn</name>
+			<label kind="invariant" x="-70" y="325">t &lt;= 1</label>
+		</location>
+		<init ref="id50"/>
+		<transition>
+			<source ref="id50"/>
+			<target ref="id51"/>
+			<label kind="guard" x="20" y="-65">t == 1</label>
+			<label kind="synchronisation" x="20" y="-52">cSample_foo?</label>
+			<label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id51"/>
+			<target ref="id52"/>
+			<label kind="guard" x="20" y="13">t == 1</label>
+			<label kind="assignment" x="20" y="0">osp_inc(), os[osp - 1] = locs[0]</label>
+		</transition>
+		<transition>
+			<source ref="id52"/>
+			<target ref="id55"/>
+			<label kind="guard" x="-119" y="85">t == 1 &amp;&amp; ifeq()</label>
+			<label kind="assignment" x="-136" y="102">osp_dec(1), t = 0</label>
+			<nail x="-50" y="162"/>
+		</transition>
+		<transition>
+			<source ref="id52"/>
+			<target ref="id53"/>
+			<label kind="guard" x="20" y="65">t == 1 &amp;&amp; !ifeq()</label>
+			<label kind="assignment" x="20" y="78">opstack_fault = osp &lt; 1 ? true : opstack_fault, osp_dec(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id53"/>
+			<target ref="id54"/>
+			<label kind="guard" x="20" y="130">t == 1</label>
+			<label kind="assignment" x="20" y="143">osp_inc(), os[osp - 1] = 1, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id54"/>
+			<target ref="id56"/>
+			<label kind="guard" x="20" y="195">t == 1</label>
+			<nail x="-50" y="260"/>
+		</transition>
+		<transition>
+			<source ref="id55"/>
+			<target ref="id56"/>
+			<label kind="guard" x="20" y="260">t == 1</label>
+			<label kind="assignment" x="20" y="273">osp_inc(), os[osp - 1] = 2, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id56"/>
+			<target ref="id50"/>
+			<label kind="guard" x="-195" y="255">t == 1</label>
+			<label kind="synchronisation" x="-195" y="272">cSample_foo!</label>
+			<label kind="assignment" x="-195" y="289">osp_dec(1), 
+par0 = os[osp], 
+osp = 0, t = 0</label>
+			<nail x="-144" y="255"/>
+			<nail x="-144" y="8"/>
+		</transition>
+	</template>
+	<template>
+		<name>A_A</name>
+		<declaration>const int os_size = 10;
 const int locs_size = 10;
 int os[os_size]; 
 int osp = 0;
@@ -994,95 +985,93 @@ bool ifeq(){
     }
     return false;
 }</declaration>
-    <location id="id-1" x="0" y="-65">
-      <name x="20" y="-78">A</name>
-      <label kind="exponentialrate" x="-70" y="-65">1</label>
-    </location>
-    <location id="id0" x="0" y="0">
-      <name x="20" y="-13">pc0__aload_0</name>
-      <label kind="invariant" x="-70" y="0">t &lt;= 1</label>
-    </location>
-    <location id="id1" x="0" y="65">
-      <name x="20" y="52">pc1__invokespecial_void_java_lang_Object_init_</name>
-      <label kind="invariant" x="-70" y="65">t &lt;= 1</label>
-    </location>
-    <location id="id2" x="0" y="130">
-      <name x="20" y="117">pc4__aload_0</name>
-      <label kind="invariant" x="-70" y="130">t &lt;= 1</label>
-    </location>
-    <location id="id3" x="0" y="195">
-      <name x="20" y="182">pc5__bipush_10</name>
-      <label kind="invariant" x="-70" y="195">t &lt;= 1</label>
-    </location>
-    <location id="id4" x="0" y="260">
-      <name x="20" y="247">pc7__putfield_A_value__int</name>
-      <label kind="invariant" x="-70" y="260">t &lt;= 1</label>
-    </location>
-    <location id="id5" x="0" y="325">
-      <name x="20" y="312">pc10_return</name>
-      <label kind="invariant" x="-70" y="325">t &lt;= 1</label>
-    </location>
-    <location id="id1a" x="200" y="91">
-      <name x="220" y="78" />
-      <label kind="invariant" x="0" y="0">t &lt;= 5</label>
-    </location>
-    <init ref="id-1" />
-    <transition>
-      <source ref="id-1" />
-      <target ref="id0" />
-      <label kind="guard" x="20" y="-65">t == 1</label>
-      <label kind="synchronisation" x="20" y="-52">cA_A?</label>
-      <label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id0" />
-      <target ref="id1" />
-      <label kind="guard" x="20" y="0">t == 1</label>
-      <label kind="assignment" x="20" y="13"> osp_inc(), os[osp - 1] = locs[0], t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id1" />
-      <target ref="id1a" />
-      <label kind="guard" x="20" y="65">t == 1</label>
-      <label kind="assignment" x="20" y="78">osp_dec(1), t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id1a" />
-      <target ref="id2" />
-      <label kind="guard" x="20" y="91">t == 5</label>
-      <label kind="assignment" x="20" y="104">t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id2" />
-      <target ref="id3" />
-      <label kind="guard" x="20" y="130">t == 1</label>
-      <label kind="assignment" x="20" y="143"> osp_inc(), os[osp - 1] = locs[0], t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id3" />
-      <target ref="id4" />
-      <label kind="guard" x="20" y="195">t == 1</label>
-      <label kind="assignment" x="20" y="208">osp_inc(), os[osp - 1] = 10, t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id4" />
-      <target ref="id5" />
-      <label kind="guard" x="20" y="260">t == 1</label>
-      <label kind="assignment" x="20" y="273">osp_dec(2), H[os[osp] + 1] = os[osp + 1] </label>
-    </transition>
-    <transition>
-      <source ref="id5" />
-      <target ref="id-1" />
-      <label kind="guard" x="20" y="325">t == 1</label>
-      <label kind="synchronisation" x="20" y="338">cA_A!</label>
-      <label kind="guard" x="20" y="351">t == 1</label>
-      <label kind="assignment" x="20" y="364">osp = 0, t = 0</label>
-      <nail x="-100" y="130" />
-    </transition>
-  </template>
-  <template>
-    <name>A_foo</name>
-    <declaration>const int os_size = 10;
+		<location id="id57" x="0" y="-65">
+			<name x="20" y="-78">A</name>
+			<label kind="exponentialrate" x="-70" y="-65">1</label>
+		</location>
+		<location id="id58" x="0" y="0">
+			<name x="20" y="-13">pc0__aload_0</name>
+			<label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+		</location>
+		<location id="id59" x="0" y="65">
+			<name x="20" y="52">pc1__invokespecial_void_java_lang_Object_init_</name>
+			<label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+		</location>
+		<location id="id60" x="0" y="130">
+			<name x="20" y="117">pc4__aload_0</name>
+			<label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+		</location>
+		<location id="id61" x="0" y="195">
+			<name x="20" y="182">pc5__bipush_10</name>
+			<label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+		</location>
+		<location id="id62" x="0" y="260">
+			<name x="20" y="247">pc7__putfield_A_value__int</name>
+			<label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+		</location>
+		<location id="id63" x="0" y="325">
+			<name x="20" y="312">pc10_return</name>
+			<label kind="invariant" x="-70" y="325">t &lt;= 1</label>
+		</location>
+		<location id="id64" x="200" y="91">
+			<label kind="invariant" x="0" y="0">t &lt;= 5</label>
+		</location>
+		<init ref="id57"/>
+		<transition>
+			<source ref="id57"/>
+			<target ref="id58"/>
+			<label kind="guard" x="20" y="-65">t == 1</label>
+			<label kind="synchronisation" x="20" y="-52">cA_A?</label>
+			<label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id58"/>
+			<target ref="id59"/>
+			<label kind="guard" x="20" y="0">t == 1</label>
+			<label kind="assignment" x="20" y="13">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id59"/>
+			<target ref="id64"/>
+			<label kind="guard" x="20" y="65">t == 1</label>
+			<label kind="assignment" x="20" y="78">osp_dec(1), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id64"/>
+			<target ref="id60"/>
+			<label kind="guard" x="20" y="91">t == 5</label>
+			<label kind="assignment" x="20" y="104">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id60"/>
+			<target ref="id61"/>
+			<label kind="guard" x="20" y="130">t == 1</label>
+			<label kind="assignment" x="20" y="143">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id61"/>
+			<target ref="id62"/>
+			<label kind="guard" x="20" y="195">t == 1</label>
+			<label kind="assignment" x="20" y="208">osp_inc(), os[osp - 1] = 10, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id62"/>
+			<target ref="id63"/>
+			<label kind="guard" x="20" y="260">t == 1</label>
+			<label kind="assignment" x="20" y="273">osp_dec(2), H[os[osp] + 1] = os[osp + 1]</label>
+		</transition>
+		<transition>
+			<source ref="id63"/>
+			<target ref="id57"/>
+			<label kind="guard" x="20" y="351">t == 1</label>
+			<label kind="synchronisation" x="20" y="338">cA_A!</label>
+			<label kind="assignment" x="20" y="364">osp = 0, t = 0</label>
+			<nail x="-100" y="130"/>
+		</transition>
+	</template>
+	<template>
+		<name>A_foo</name>
+		<declaration>const int os_size = 10;
 const int locs_size = 10;
 int os[os_size]; 
 int osp = 0;
@@ -1141,45 +1130,44 @@ bool ifeq(){
     }
     return false;
 }</declaration>
-    <location id="id-1" x="0" y="-65">
-      <name x="20" y="-78">foo</name>
-      <label kind="exponentialrate" x="-70" y="-65">1</label>
-    </location>
-    <location id="id0" x="0" y="0">
-      <name x="20" y="-13">pc0__iconst_2</name>
-      <label kind="invariant" x="-70" y="0">t &lt;= 1</label>
-    </location>
-    <location id="id1" x="0" y="65">
-      <name x="20" y="52">pc1__ireturn</name>
-      <label kind="invariant" x="-70" y="65">t &lt;= 1</label>
-    </location>
-    <init ref="id-1" />
-    <transition>
-      <source ref="id-1" />
-      <target ref="id0" />
-      <label kind="guard" x="20" y="-65">t == 1</label>
-      <label kind="synchronisation" x="20" y="-52">cA_foo?</label>
-      <label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id0" />
-      <target ref="id1" />
-      <label kind="guard" x="20" y="0">t == 1</label>
-      <label kind="assignment" x="20" y="13">osp_inc(), os[osp - 1] = 2, t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id1" />
-      <target ref="id-1" />
-      <label kind="guard" x="20" y="65">t == 1</label>
-      <label kind="synchronisation" x="20" y="78">cA_foo!</label>
-      <label kind="guard" x="20" y="91">t == 1</label>
-      <label kind="assignment" x="20" y="104">osp_dec(1), par0 = os[osp], osp = 0, t = 0</label>
-      <nail x="-100" y="0" />
-    </transition>
-  </template>
-  <template>
-    <name>B_B</name>
-    <declaration>const int os_size = 10;
+		<location id="id65" x="0" y="-65">
+			<name x="20" y="-78">foo</name>
+			<label kind="exponentialrate" x="-70" y="-65">1</label>
+		</location>
+		<location id="id66" x="0" y="0">
+			<name x="20" y="-13">pc0__iconst_2</name>
+			<label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+		</location>
+		<location id="id67" x="0" y="65">
+			<name x="20" y="52">pc1__ireturn</name>
+			<label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+		</location>
+		<init ref="id65"/>
+		<transition>
+			<source ref="id65"/>
+			<target ref="id66"/>
+			<label kind="guard" x="20" y="-65">t == 1</label>
+			<label kind="synchronisation" x="20" y="-52">cA_foo?</label>
+			<label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id66"/>
+			<target ref="id67"/>
+			<label kind="guard" x="20" y="0">t == 1</label>
+			<label kind="assignment" x="20" y="13">osp_inc(), os[osp - 1] = 2, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id67"/>
+			<target ref="id65"/>
+			<label kind="guard" x="20" y="91">t == 1</label>
+			<label kind="synchronisation" x="20" y="78">cA_foo!</label>
+			<label kind="assignment" x="20" y="104">osp_dec(1), par0 = os[osp], osp = 0, t = 0</label>
+			<nail x="-100" y="0"/>
+		</transition>
+	</template>
+	<template>
+		<name>B_B</name>
+		<declaration>const int os_size = 10;
 const int locs_size = 10;
 int os[os_size]; 
 int osp = 0;
@@ -1238,163 +1226,158 @@ bool ifeq(){
     }
     return false;
 }</declaration>
-    <location id="id-1" x="0" y="-65">
-      <name x="20" y="-78">B</name>
-      <label kind="exponentialrate" x="-70" y="-65">1</label>
-    </location>
-    <location id="id0" x="0" y="0">
-      <name x="20" y="-13">pc0__aload_0</name>
-      <label kind="invariant" x="-70" y="0">t &lt;= 1</label>
-    </location>
-    <location id="id1" x="0" y="65">
-      <name x="20" y="52">pc1__invokespecial_void_A_init_</name>
-      <label kind="invariant" x="-70" y="65">t &lt;= 1</label>
-    </location>
-    <location id="id2" x="0" y="130">
-      <name x="20" y="117">pc4__aload_0</name>
-      <label kind="invariant" x="-70" y="130">t &lt;= 1</label>
-    </location>
-    <location id="id3" x="0" y="195">
-      <name x="20" y="182">pc5__new_A</name>
-      <label kind="invariant" x="-70" y="195">t &lt;= 1</label>
-    </location>
-    <location id="id4" x="0" y="260">
-      <name x="20" y="247">pc8__dup</name>
-      <label kind="invariant" x="-70" y="260">t &lt;= 1</label>
-    </location>
-    <location id="id5" x="0" y="325">
-      <name x="20" y="312">pc9__invokespecial_void_A_init_</name>
-      <label kind="invariant" x="-70" y="325">t &lt;= 1</label>
-    </location>
-    <location id="id6" x="0" y="390">
-      <name x="20" y="377">pc12_putfield_B_a__A</name>
-      <label kind="invariant" x="-70" y="390">t &lt;= 1</label>
-    </location>
-    <location id="id7" x="0" y="455">
-      <name x="20" y="442">pc15_return</name>
-      <label kind="invariant" x="-70" y="455">t &lt;= 1</label>
-    </location>
-    <location id="id1a" x="200" y="91">
-      <name x="220" y="78" />
-      <label kind="exponentialrate" x="130" y="91">1</label>
-    </location>
-    <location id="id1aa" x="200" y="117">
-      <name x="220" y="104" />
-      <label kind="exponentialrate" x="330" y="117">1</label>
-      <committed />
-    </location>
-    <location id="id5a" x="200" y="351">
-      <name x="220" y="338" />
-      <label kind="exponentialrate" x="130" y="351">1</label>
-    </location>
-    <location id="id5aa" x="200" y="377">
-      <name x="220" y="364" />
-      <label kind="exponentialrate" x="330" y="377">1</label>
-      <committed />
-    </location>
-    <init ref="id-1" />
-    <transition>
-      <source ref="id-1" />
-      <target ref="id0" />
-      <label kind="guard" x="20" y="-65">t == 1</label>
-      <label kind="synchronisation" x="20" y="-52">cB_B?</label>
-      <label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id0" />
-      <target ref="id1" />
-      <label kind="guard" x="20" y="0">t == 1</label>
-      <label kind="assignment" x="20" y="13"> osp_inc(), os[osp - 1] = locs[0], t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id1" />
-      <target ref="id1a" />
-      <label kind="guard" x="20" y="65">t == 1</label>
-      <label kind="assignment" x="20" y="78">osp_dec(1), t = 0, par0 = os[osp]</label>
-      <label kind="synchronisation" x="20" y="91">cA_A!</label>
-    </transition>
-    <transition>
-      <source ref="id1a" />
-      <target ref="id2" />
-      <label kind="synchronisation" x="20" y="91">cA_A?</label>
-      <label kind="guard" x="20" y="104">!exceptionOccurred</label>
-      <label kind="assignment" x="20" y="117">t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id1a" />
-      <target ref="id1aa" />
-      <label kind="guard" x="20" y="91">exceptionOccurred == true</label>
-      <label kind="assignment" x="20" y="104">osp = 0</label>
-      <label kind="synchronisation" x="20" y="117">cA_A?</label>
-    </transition>
-    <transition>
-      <source ref="id1aa" />
-      <target ref="id-1" />
-      <label kind="synchronisation" x="20" y="117">cB_B!</label>
-    </transition>
-    <transition>
-      <source ref="id2" />
-      <target ref="id3" />
-      <label kind="guard" x="20" y="130">t == 1</label>
-      <label kind="assignment" x="20" y="143"> osp_inc(), os[osp - 1] = locs[0], t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id3" />
-      <target ref="id4" />
-      <label kind="guard" x="20" y="195">t == 1</label>
-      <label kind="assignment" x="20" y="208">osp_inc(), os[osp-1] = alocNew(2), t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id4" />
-      <target ref="id5" />
-      <label kind="assignment" x="20" y="260">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
-      <label kind="guard" x="20" y="273">t == 1</label>
-    </transition>
-    <transition>
-      <source ref="id5" />
-      <target ref="id5a" />
-      <label kind="guard" x="20" y="325">t == 1</label>
-      <label kind="assignment" x="20" y="338">osp_dec(1), t = 0, par0 = os[osp]</label>
-      <label kind="synchronisation" x="20" y="351">cA_A!</label>
-    </transition>
-    <transition>
-      <source ref="id5a" />
-      <target ref="id6" />
-      <label kind="synchronisation" x="20" y="351">cA_A?</label>
-      <label kind="guard" x="20" y="364">!exceptionOccurred</label>
-      <label kind="assignment" x="20" y="377">t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id5a" />
-      <target ref="id5aa" />
-      <label kind="guard" x="20" y="351">exceptionOccurred == true</label>
-      <label kind="assignment" x="20" y="364">osp = 0</label>
-      <label kind="synchronisation" x="20" y="377">cA_A?</label>
-    </transition>
-    <transition>
-      <source ref="id5aa" />
-      <target ref="id-1" />
-      <label kind="synchronisation" x="20" y="377">cB_B!</label>
-    </transition>
-    <transition>
-      <source ref="id6" />
-      <target ref="id7" />
-      <label kind="guard" x="20" y="390">t == 1</label>
-      <label kind="assignment" x="20" y="403">osp_dec(2), H[os[osp] + 1] = os[osp + 1] </label>
-    </transition>
-    <transition>
-      <source ref="id7" />
-      <target ref="id-1" />
-      <label kind="guard" x="20" y="455">t == 1</label>
-      <label kind="synchronisation" x="20" y="468">cB_B!</label>
-      <label kind="guard" x="20" y="481">t == 1</label>
-      <label kind="assignment" x="20" y="494">osp = 0, t = 0</label>
-      <nail x="-100" y="195" />
-    </transition>
-  </template>
-  <template>
-    <name>B_foo</name>
-    <declaration>const int os_size = 10;
+		<location id="id68" x="0" y="-65">
+			<name x="20" y="-78">B</name>
+			<label kind="exponentialrate" x="-70" y="-65">1</label>
+		</location>
+		<location id="id69" x="0" y="0">
+			<name x="20" y="-13">pc0__aload_0</name>
+			<label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+		</location>
+		<location id="id70" x="0" y="65">
+			<name x="20" y="52">pc1__invokespecial_void_A_init_</name>
+			<label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+		</location>
+		<location id="id71" x="0" y="130">
+			<name x="20" y="117">pc4__aload_0</name>
+			<label kind="invariant" x="-70" y="130">t &lt;= 1</label>
+		</location>
+		<location id="id72" x="0" y="195">
+			<name x="20" y="182">pc5__new_A</name>
+			<label kind="invariant" x="-70" y="195">t &lt;= 1</label>
+		</location>
+		<location id="id73" x="0" y="260">
+			<name x="20" y="247">pc8__dup</name>
+			<label kind="invariant" x="-70" y="260">t &lt;= 1</label>
+		</location>
+		<location id="id74" x="0" y="325">
+			<name x="20" y="312">pc9__invokespecial_void_A_init_</name>
+			<label kind="invariant" x="-70" y="325">t &lt;= 1</label>
+		</location>
+		<location id="id75" x="0" y="390">
+			<name x="20" y="377">pc12_putfield_B_a__A</name>
+			<label kind="invariant" x="-70" y="390">t &lt;= 1</label>
+		</location>
+		<location id="id76" x="0" y="455">
+			<name x="20" y="442">pc15_return</name>
+			<label kind="invariant" x="-70" y="455">t &lt;= 1</label>
+		</location>
+		<location id="id77" x="200" y="91">
+			<label kind="exponentialrate" x="130" y="91">1</label>
+		</location>
+		<location id="id78" x="200" y="117">
+			<label kind="exponentialrate" x="330" y="117">1</label>
+			<committed/>
+		</location>
+		<location id="id79" x="200" y="351">
+			<label kind="exponentialrate" x="130" y="351">1</label>
+		</location>
+		<location id="id80" x="200" y="377">
+			<label kind="exponentialrate" x="330" y="377">1</label>
+			<committed/>
+		</location>
+		<init ref="id68"/>
+		<transition>
+			<source ref="id68"/>
+			<target ref="id69"/>
+			<label kind="guard" x="20" y="-65">t == 1</label>
+			<label kind="synchronisation" x="20" y="-52">cB_B?</label>
+			<label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id69"/>
+			<target ref="id70"/>
+			<label kind="guard" x="20" y="0">t == 1</label>
+			<label kind="assignment" x="20" y="13">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id70"/>
+			<target ref="id77"/>
+			<label kind="guard" x="20" y="65">t == 1</label>
+			<label kind="synchronisation" x="20" y="91">cA_A!</label>
+			<label kind="assignment" x="20" y="78">osp_dec(1), t = 0, par0 = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id77"/>
+			<target ref="id71"/>
+			<label kind="guard" x="20" y="104">!exceptionOccurred</label>
+			<label kind="synchronisation" x="20" y="91">cA_A?</label>
+			<label kind="assignment" x="20" y="117">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id77"/>
+			<target ref="id78"/>
+			<label kind="guard" x="20" y="91">exceptionOccurred == true</label>
+			<label kind="synchronisation" x="20" y="117">cA_A?</label>
+			<label kind="assignment" x="20" y="104">osp = 0</label>
+		</transition>
+		<transition>
+			<source ref="id78"/>
+			<target ref="id68"/>
+			<label kind="synchronisation" x="20" y="117">cB_B!</label>
+		</transition>
+		<transition>
+			<source ref="id71"/>
+			<target ref="id72"/>
+			<label kind="guard" x="20" y="130">t == 1</label>
+			<label kind="assignment" x="20" y="143">osp_inc(), os[osp - 1] = locs[0], t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id72"/>
+			<target ref="id73"/>
+			<label kind="guard" x="20" y="195">t == 1</label>
+			<label kind="assignment" x="20" y="208">osp_inc(), os[osp-1] = alocNew(2), t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id73"/>
+			<target ref="id74"/>
+			<label kind="guard" x="20" y="273">t == 1</label>
+			<label kind="assignment" x="20" y="260">osp_dec(1), osp_inc(), osp_inc(), os[osp - 1] = os[osp - 2]</label>
+		</transition>
+		<transition>
+			<source ref="id74"/>
+			<target ref="id79"/>
+			<label kind="guard" x="20" y="325">t == 1</label>
+			<label kind="synchronisation" x="20" y="351">cA_A!</label>
+			<label kind="assignment" x="20" y="338">osp_dec(1), t = 0, par0 = os[osp]</label>
+		</transition>
+		<transition>
+			<source ref="id79"/>
+			<target ref="id75"/>
+			<label kind="guard" x="20" y="364">!exceptionOccurred</label>
+			<label kind="synchronisation" x="20" y="351">cA_A?</label>
+			<label kind="assignment" x="20" y="377">t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id79"/>
+			<target ref="id80"/>
+			<label kind="guard" x="20" y="351">exceptionOccurred == true</label>
+			<label kind="synchronisation" x="20" y="377">cA_A?</label>
+			<label kind="assignment" x="20" y="364">osp = 0</label>
+		</transition>
+		<transition>
+			<source ref="id80"/>
+			<target ref="id68"/>
+			<label kind="synchronisation" x="20" y="377">cB_B!</label>
+		</transition>
+		<transition>
+			<source ref="id75"/>
+			<target ref="id76"/>
+			<label kind="guard" x="20" y="390">t == 1</label>
+			<label kind="assignment" x="20" y="403">osp_dec(2), H[os[osp] + 1] = os[osp + 1]</label>
+		</transition>
+		<transition>
+			<source ref="id76"/>
+			<target ref="id68"/>
+			<label kind="guard" x="20" y="481">t == 1</label>
+			<label kind="synchronisation" x="20" y="468">cB_B!</label>
+			<label kind="assignment" x="20" y="494">osp = 0, t = 0</label>
+			<nail x="-100" y="195"/>
+		</transition>
+	</template>
+	<template>
+		<name>B_foo</name>
+		<declaration>const int os_size = 10;
 const int locs_size = 10;
 int os[os_size]; 
 int osp = 0;
@@ -1453,118 +1436,118 @@ bool ifeq(){
     }
     return false;
 }</declaration>
-    <location id="id-1" x="0" y="-65">
-      <name x="20" y="-78">foo</name>
-      <label kind="exponentialrate" x="-70" y="-65">1</label>
-    </location>
-    <location id="id0" x="0" y="0">
-      <name x="20" y="-13">pc0__iconst_3</name>
-      <label kind="invariant" x="-70" y="0">t &lt;= 1</label>
-    </location>
-    <location id="id1" x="0" y="65">
-      <name x="20" y="52">pc1__ireturn</name>
-      <label kind="invariant" x="-70" y="65">t &lt;= 1</label>
-    </location>
-    <init ref="id-1" />
-    <transition>
-      <source ref="id-1" />
-      <target ref="id0" />
-      <label kind="guard" x="20" y="-65">t == 1</label>
-      <label kind="synchronisation" x="20" y="-52">cB_foo?</label>
-      <label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id0" />
-      <target ref="id1" />
-      <label kind="guard" x="20" y="0">t == 1</label>
-      <label kind="assignment" x="20" y="13">osp_inc(), os[osp - 1] = 3, t = 0</label>
-    </transition>
-    <transition>
-      <source ref="id1" />
-      <target ref="id-1" />
-      <label kind="guard" x="20" y="65">t == 1</label>
-      <label kind="synchronisation" x="20" y="78">cB_foo!</label>
-      <label kind="guard" x="20" y="91">t == 1</label>
-      <label kind="assignment" x="20" y="104">osp_dec(1), par0 = os[osp], osp = 0, t = 0</label>
-      <nail x="-100" y="0" />
-    </transition>
-  </template>
-  <template>
-    <name>Virtual</name>
-    <declaration></declaration>
-    <location id="nId0" x="0" y="0">
-      <name x="20" y="-13">Invoke</name>
-      <label kind="exponentialrate" x="130" y="0">1</label>
-    </location>
-    <location id="nId1" x="0" y="100">
-      <name x="20" y="87">Resolver</name>
-      <label kind="exponentialrate" x="130" y="100">1</label>
-      <urgent />
-    </location>
-    <location id="nId2" x="200" y="50">
-      <name x="220" y="37">Error</name>
-      <label kind="exponentialrate" x="330" y="50">1</label>
-    </location>
-    <location id="nId3" x="-100" y="300">
-      <name x="-80" y="287">Returner</name>
-      <label kind="exponentialrate" x="30" y="300">1</label>
-      <urgent />
-    </location>
-    <location id="nId4" x="0" y="200">
-      <name x="20" y="187">A_foo</name>
-      <label kind="exponentialrate" x="130" y="200">1</label>
-    </location>
-    <location id="nId5" x="200" y="200">
-      <name x="220" y="187">B_foo</name>
-      <label kind="exponentialrate" x="330" y="200">1</label>
-    </location>
-    <init ref="nId0" />
-    <transition>
-      <source ref="nId0" />
-      <target ref="nId1" />
-      <label kind="synchronisation" x="20" y="0">cVirtual?</label>
-      <label kind="assignment" x="20" y="13">clID = H[par0]</label>
-    </transition>
-    <transition>
-      <source ref="nId1" />
-      <target ref="nId2" />
-      <label kind="guard" x="20" y="100">clID == 0</label>
-    </transition>
-    <transition>
-      <source ref="nId3" />
-      <target ref="nId0" />
-      <label kind="synchronisation" x="20" y="300">cVirtual!</label>
-    </transition>
-    <transition>
-      <source ref="nId1" />
-      <target ref="nId4" />
-      <label kind="guard" x="20" y="100">signature(clID, 3, 2)</label>
-      <label kind="synchronisation" x="20" y="113">cA_foo!</label>
-    </transition>
-    <transition>
-      <source ref="nId4" />
-      <target ref="nId3" />
-      <label kind="synchronisation" x="20" y="200">cA_foo?</label>
-    </transition>
-    <transition>
-      <source ref="nId1" />
-      <target ref="nId5" />
-      <label kind="guard" x="20" y="100">signature(clID, 3, 3)</label>
-      <label kind="synchronisation" x="20" y="113">cB_foo!</label>
-    </transition>
-    <transition>
-      <source ref="nId5" />
-      <target ref="nId3" />
-      <label kind="synchronisation" x="20" y="200">cB_foo?</label>
-    </transition>
-    <transition>
-      <source ref="nId1" />
-      <target ref="nId1" />
-      <label kind="guard" x="20" y="100">clID != 0 &amp;&amp; !(signature(clID, 3, 2) || signature(clID, 3, 3))</label>
-      <label kind="assignment" x="20" y="113">clID = classHierarchy[clID]</label>
-    </transition>
-  </template>
-  <system>iSample_Sample = Sample_Sample();
+		<location id="id81" x="0" y="-65">
+			<name x="20" y="-78">foo</name>
+			<label kind="exponentialrate" x="-70" y="-65">1</label>
+		</location>
+		<location id="id82" x="0" y="0">
+			<name x="20" y="-13">pc0__iconst_3</name>
+			<label kind="invariant" x="-70" y="0">t &lt;= 1</label>
+		</location>
+		<location id="id83" x="0" y="65">
+			<name x="20" y="52">pc1__ireturn</name>
+			<label kind="invariant" x="-70" y="65">t &lt;= 1</label>
+		</location>
+		<init ref="id81"/>
+		<transition>
+			<source ref="id81"/>
+			<target ref="id82"/>
+			<label kind="guard" x="20" y="-65">t == 1</label>
+			<label kind="synchronisation" x="20" y="-52">cB_foo?</label>
+			<label kind="assignment" x="20" y="-39">locs[0] = par0, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id82"/>
+			<target ref="id83"/>
+			<label kind="guard" x="20" y="0">t == 1</label>
+			<label kind="assignment" x="20" y="13">osp_inc(), os[osp - 1] = 3, t = 0</label>
+		</transition>
+		<transition>
+			<source ref="id83"/>
+			<target ref="id81"/>
+			<label kind="guard" x="20" y="91">t == 1</label>
+			<label kind="synchronisation" x="20" y="78">cB_foo!</label>
+			<label kind="assignment" x="20" y="104">osp_dec(1), par0 = os[osp], osp = 0, t = 0</label>
+			<nail x="-100" y="0"/>
+		</transition>
+	</template>
+	<template>
+		<name>Virtual</name>
+		<location id="id84" x="0" y="0">
+			<name x="20" y="-13">Invoke</name>
+			<label kind="exponentialrate" x="130" y="0">1</label>
+		</location>
+		<location id="id85" x="0" y="100">
+			<name x="20" y="87">Resolver</name>
+			<label kind="exponentialrate" x="130" y="100">1</label>
+			<urgent/>
+		</location>
+		<location id="id86" x="200" y="50">
+			<name x="220" y="37">Error</name>
+			<label kind="exponentialrate" x="330" y="50">1</label>
+		</location>
+		<location id="id87" x="-100" y="300">
+			<name x="-80" y="287">Returner</name>
+			<label kind="exponentialrate" x="30" y="300">1</label>
+			<urgent/>
+		</location>
+		<location id="id88" x="0" y="200">
+			<name x="20" y="187">A_foo</name>
+			<label kind="exponentialrate" x="130" y="200">1</label>
+		</location>
+		<location id="id89" x="200" y="200">
+			<name x="220" y="187">B_foo</name>
+			<label kind="exponentialrate" x="330" y="200">1</label>
+		</location>
+		<init ref="id84"/>
+		<transition>
+			<source ref="id84"/>
+			<target ref="id85"/>
+			<label kind="synchronisation" x="20" y="0">cVirtual?</label>
+			<label kind="assignment" x="20" y="13">clID = H[par0]</label>
+		</transition>
+		<transition>
+			<source ref="id85"/>
+			<target ref="id86"/>
+			<label kind="guard" x="20" y="100">clID == 0</label>
+		</transition>
+		<transition>
+			<source ref="id87"/>
+			<target ref="id84"/>
+			<label kind="synchronisation" x="20" y="300">cVirtual!</label>
+		</transition>
+		<transition>
+			<source ref="id85"/>
+			<target ref="id88"/>
+			<label kind="guard" x="20" y="100">signature(clID, 3, 2)</label>
+			<label kind="synchronisation" x="20" y="113">cA_foo!</label>
+		</transition>
+		<transition>
+			<source ref="id88"/>
+			<target ref="id87"/>
+			<label kind="synchronisation" x="20" y="200">cA_foo?</label>
+		</transition>
+		<transition>
+			<source ref="id85"/>
+			<target ref="id89"/>
+			<label kind="guard" x="20" y="100">signature(clID, 3, 3)</label>
+			<label kind="synchronisation" x="20" y="113">cB_foo!</label>
+		</transition>
+		<transition>
+			<source ref="id89"/>
+			<target ref="id87"/>
+			<label kind="synchronisation" x="20" y="200">cB_foo?</label>
+		</transition>
+		<transition>
+			<source ref="id85"/>
+			<target ref="id85"/>
+			<label kind="guard" x="20" y="100">clID != 0 &amp;&amp; !(signature(clID, 3, 2) || signature(clID, 3, 3))</label>
+			<label kind="assignment" x="20" y="113">clID = classHierarchy[clID]</label>
+			<nail x="-30" y="70"/>
+			<nail x="30" y="70"/>
+		</transition>
+	</template>
+	<system>iSample_Sample = Sample_Sample();
 iSample_install = Sample_install();
 iSample_main = Sample_main();
 iSample_foo = Sample_foo();
@@ -1575,5 +1558,42 @@ iB_foo = B_foo();
 iVirtual = Virtual();
 system iSample_Sample,iSample_install,iSample_main,iSample_foo,iA_A,iA_foo,iB_B,iB_foo,iVirtual;
 </system>
-  <queries>queries<query>query<formula>A&lt;&gt; iExampleCFI_main.Done &amp;&amp; !opstack_fault &amp;&amp; exceptionOccurred</formula></query><query>query<formula>Pr[&lt;= 100] (&lt;&gt; iExampleCFI_main.Done &amp;&amp; !opstack_fault &amp;&amp; exceptionOccurred)</formula></query><query>query<formula>E&lt;&gt; opstack_fault</formula></query><query>query<formula>Pr[&lt;= 100] (&lt;&gt; opstack_fault)</formula></query><query>query<formula>E&lt;&gt; iExampleCFI_main.Done &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred</formula></query><query>query<formula>Pr[&lt;= 100] (&lt;&gt; iExampleCFI_main.Done &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred)</formula></query></queries>
+	<queries>
+		<query>
+			<formula>A&lt;&gt; iExampleCFI_main.Done &amp;&amp; !opstack_fault &amp;&amp; exceptionOccurred
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>Pr[&lt;= 100] (&lt;&gt; iExampleCFI_main.Done &amp;&amp; !opstack_fault &amp;&amp; exceptionOccurred)
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; opstack_fault
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>Pr[&lt;= 100] (&lt;&gt; opstack_fault)
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; iExampleCFI_main.Done &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>Pr[&lt;= 100] (&lt;&gt; iExampleCFI_main.Done &amp;&amp; !opstack_fault &amp;&amp; !exceptionOccurred)
+			</formula>
+			<comment>
+			</comment>
+		</query>
+	</queries>
 </nta>
