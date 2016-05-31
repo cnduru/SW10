@@ -20,6 +20,4 @@ The fault models should be extended by adding new fault models, to enable better
 % %
 Additionally, further exploration of $Sawja$'s static analysis capabilities could prove useful in assessing countermeasures. We have not created a fault model for bit flips in the constant pool since $Sawja$'s bytecode representation hides the constant pool implementation. Since the constant pool has potential for allowing attacks, it would make sense to look into this.\\\\
 % %
-More experimentation could be done to investigate which UPPAAL representation is most appropriate. For example, a single template approach where an entire program is modelled in one template, would simplify  the implementation of invoke and bit flips in the method identifier.
-\ch{add more?}
-\kri{multible bit flip}
+More experimentation could be done to investigate which UPPAAL representation is most appropriate. For example, a single template approach where an entire program is modelled in one template, would simplify  the implementation of invoke and bit flips in the method identifier. The current modelling and their consequent experiments only take single bit flips into account, this could be extended to include multiple bit flips, as malicious attackers could utilise more than a single bit flip to attack an applet.
