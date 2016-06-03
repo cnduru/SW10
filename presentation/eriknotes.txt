@@ -1,0 +1,61 @@
+Slide 19:
+Tak til Kristian!
+Givet fault models (e.g. data fejl på operand stakken) 
+Modellér fejl modellen i UPPAAL 
+Kør denne sammen med en model af Java Card programmet (med og uden countermeasure)
+Brug statistiske data af simuleringer til at afgøre effekten
+
+Slide 20:
+Hvordan vi har brugt det i vores eksempler
+  - Hver location er en instruction
+  - Invarianten for disse er sat til clock x <= 0 fordi tiden er ligemeget i dette tilfælde
+  - Hver edge er gaurded med en expression der sikrer at fejlen sker på det rigtige tidspunkt (random: senere med fault model)
+  - Vi opdaterer diverse data strukturer inkl program counter
+  
+Slide 21:
+Tilfældig instruktion fejlen kan ske på
+Den fejl model vi opererer med i eksemplet
+
+Slide 22:
+Hele example programmet modelleret i UPPAAL uden countermeasure
+Se næste slide for et dyk ned i modellen -> bedre forklaring
+
+Slide 23:
+Ved hver location er der mulighed for at lave en fejl på operand stacken
+Men kun hvis counteren er rigtig
+Derudover hvis den udfører normalt så eksekverer vi ifølge semantikken på edges
+F. eks. invokevirtual_#96
+
+Slide 24:
+Implementeret med Operand Stack countermeasure
+Det vigtige er edges fra metode kaldene til "shutdown"
+Se næste slide for nærmere billede
+
+Slide 25:
+invarianten er opdateret ved load_0 fordi den pusher på stakken
+Før den kan gå videre med invokevirtual tjekker den invariant property
+checkInv()
+Hvis den ikke er overholdt går vi til shutdown og lukker kortet ned
+
+Slide 26:
+Her er modellen med implementeret code duplication
+Proceduren er den samme, der er bare sat ekstra instruktioner ind
+markeret i rød cirkel
+
+Slide 27:
+Vi kører en query der siger:
+Under 1 mill simuleringer, hvad er den estimeret værdi af doneFault (som er en bool (0/1))
+Så hvad er chancen for at en fejl bliver gennemført (vi sætter doneFault = 1) ved 1 mill
+simuleringer, giver os et resultat mellem 1 og 0 som vi regner om til procent
+Stack invariant kommer aldrig derhen hvor man sætter doneFault.
+Og vi halverer chancen ved code duplication (under vores single event fault model)
+
+Slide 28:
+Analysis => tag et program, en fejl model, en semantik og spyt en lignende uppaal model ud som man kan query
+Så kan man se hvor effektiv de forskellige countermeasures er
+
+Implementation => tag et annoteret program og parse det med henblik på at implementere countermeasures af forskellig
+sikkerhed og trade-off mellem tid/memory og sikkerhed
+
+
+(Slut på presentation => nogle spørgsmål?)

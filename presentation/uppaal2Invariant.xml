@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+	<declaration>// Place global declarations here.
+int instCounter = 0;
+int faultAt;
+bool doneFault = false;
+
+// opstack invariant
+int inv = 0;
+
+// opstack and locals
+int op_0, op_1, op_2;
+int loc_0 = 1337, loc_6, loc_7;
+
+clock x;
+
+bool checkInv() {
+    return inv == (op_0 ^ op_1 ^ op_2);
+}</declaration>
+	<template>
+		<name x="5" y="5">uppaaldemo</name>
+		<declaration>// Place local declarations here.
+clock x;
+int instCounter = 0;
+int faultAt;</declaration>
+		<location id="id0" x="-204" y="-40">
+			<name x="-244" y="-24">GETSTATIC</name>
+			<label kind="invariant" x="-188" y="-48">x &lt;= 0</label>
+		</location>
+		<location id="id1" x="-204" y="-144">
+			<name x="-228" y="-176">LOAD</name>
+			<label kind="invariant" x="-188" y="-160">x &lt;= 0</label>
+		</location>
+		<location id="id2" x="170" y="38">
+		</location>
+		<location id="id3" x="170" y="-178">
+			<name x="154" y="-210">Fault</name>
+		</location>
+		<init ref="id1"/>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id0"/>
+			<label kind="guard" x="-164" y="-112">instCounter == faultAt</label>
+			<label kind="assignment" x="-164" y="-96">instCounter++</label>
+			<nail x="-172" y="-112"/>
+			<nail x="-172" y="-80"/>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id0"/>
+			<label kind="guard" x="-396" y="-128">instCounter != faultAt</label>
+			<label kind="assignment" x="-396" y="-112">op_0 = loc_0,
+instCounter++</label>
+			<nail x="-236" y="-112"/>
+			<nail x="-236" y="-80"/>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id3"/>
+			<label kind="select" x="186" y="-82">i : int[0,14]</label>
+			<label kind="guard" x="186" y="-114">instCounter == faultAt</label>
+			<label kind="assignment" x="186" y="-66">op_0 ^= 1 &lt;&lt; i,
+op_1 ^= 1 &lt;&lt; i,
+faultAt = -1</label>
+		</transition>
+	</template>
+	<template>
+		<name>fault</name>
+		<location id="id4" x="-56" y="-16">
+		</location>
+		<location id="id5" x="-208" y="-16">
+			<committed/>
+		</location>
+		<init ref="id5"/>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id4"/>
+			<label kind="select" x="-176" y="-56">i : int[0,11]</label>
+			<label kind="assignment" x="-176" y="-40">faultAt = i</label>
+		</transition>
+	</template>
+	<template>
+		<name>tinyJCL</name>
+		<location id="id6" x="-731" y="85">
+			<name x="-824" y="76">shutdown</name>
+		</location>
+		<location id="id7" x="493" y="-170">
+			<name x="425" y="-153">load_7</name>
+			<label kind="invariant" x="425" y="-136">x &lt;= 0</label>
+		</location>
+		<location id="id8" x="255" y="-170">
+			<name x="230" y="-153">store_7</name>
+			<label kind="invariant" x="230" y="-136">x &lt;= 0</label>
+		</location>
+		<location id="id9" x="8" y="-166">
+			<name x="-51" y="-136">invokevirtual_#97</name>
+			<label kind="invariant" x="-51" y="-119">x &lt;= 0</label>
+		</location>
+		<location id="id10" x="-238" y="-170">
+			<name x="-263" y="-153">load_0_1</name>
+			<label kind="invariant" x="-263" y="-136">x &lt;= 0</label>
+		</location>
+		<location id="id11" x="-411" y="415">
+		</location>
+		<location id="id12" x="-281" y="416">
+			<name x="-264" y="382">return</name>
+			<label kind="invariant" x="-264" y="365">x &lt;= 0</label>
+		</location>
+		<location id="id13" x="-280" y="241">
+			<name x="-273" y="272">goto_27</name>
+			<label kind="invariant" x="-273" y="255">x &lt;= 0</label>
+		</location>
+		<location id="id14" x="-35" y="416">
+			<name x="-83" y="384">invokstatic_#85</name>
+			<label kind="invariant" x="-51" y="369">x &lt;= 0</label>
+		</location>
+		<location id="id15" x="-34" y="241">
+			<name x="-94" y="280">invokestatic_#84</name>
+			<label kind="invariant" x="-94" y="255">x &lt;= 0</label>
+		</location>
+		<location id="id16" x="247" y="243">
+			<name x="152" y="272">if_cmpeq_25</name>
+			<label kind="invariant" x="152" y="255">x &lt;= 0</label>
+		</location>
+		<location id="id17" x="246" y="51">
+			<name x="229" y="9">push_0</name>
+			<label kind="invariant" x="229" y="-8">x &lt;= 0</label>
+		</location>
+		<location id="id18" x="493" y="51">
+			<name x="475" y="84">load_6</name>
+			<label kind="invariant" x="475" y="67">x &lt;= 0</label>
+		</location>
+		<location id="id19" x="-426" y="-174">
+			<name x="-450" y="-206">store_6</name>
+			<label kind="invariant" x="-447" y="-225">x &lt;= 0</label>
+		</location>
+		<location id="id20" x="-647" y="-173">
+			<name x="-646" y="-153">invokevirtual_#96</name>
+			<label kind="invariant" x="-646" y="-136">x &lt;= 0</label>
+		</location>
+		<location id="id21" x="-647" y="-318">
+			<name x="-671" y="-350">load_0</name>
+			<label kind="invariant" x="-666" y="-365">x &lt;= 0</label>
+		</location>
+		<init ref="id21"/>
+		<transition>
+			<source ref="id14"/>
+			<target ref="id6"/>
+			<label kind="guard" x="-620" y="348">!checkInv()</label>
+			<nail x="-178" y="595"/>
+			<nail x="-535" y="595"/>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id6"/>
+			<label kind="guard" x="-297" y="85">!checkInv()</label>
+			<nail x="-93" y="144"/>
+			<nail x="-255" y="144"/>
+			<nail x="-340" y="68"/>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id6"/>
+			<label kind="guard" x="-348" y="-34">!checkInv()</label>
+		</transition>
+		<transition>
+			<source ref="id20"/>
+			<target ref="id6"/>
+			<label kind="guard" x="-773" y="-59">!checkInv()</label>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id7"/>
+			<label kind="select" x="561" y="-306">i : int[0,14]</label>
+			<label kind="guard" x="561" y="-323">instCounter == faultAt</label>
+			<label kind="assignment" x="561" y="-289">op_0 ^= 1 &lt;&lt; i,
+op_1 ^= 1 &lt;&lt; i,
+op_2 ^= 1 &lt;&lt; i,
+faultAt = -1</label>
+			<nail x="519" y="-246"/>
+			<nail x="570" y="-187"/>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id8"/>
+			<label kind="select" x="204" y="-340">i : int[0,14]</label>
+			<label kind="guard" x="204" y="-357">instCounter == faultAt</label>
+			<label kind="assignment" x="204" y="-323">op_0 ^= 1 &lt;&lt; i,
+op_1 ^= 1 &lt;&lt; i,
+op_2 ^= 1 &lt;&lt; i,
+faultAt = -1</label>
+			<nail x="229" y="-238"/>
+			<nail x="280" y="-238"/>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id9"/>
+			<label kind="select" x="-42" y="-348">i : int[0,14]</label>
+			<label kind="guard" x="-42" y="-365">instCounter == faultAt</label>
+			<label kind="assignment" x="-42" y="-331">op_0 ^= 1 &lt;&lt; i,
+op_1 ^= 1 &lt;&lt; i,
+op_2 ^= 1 &lt;&lt; i,
+faultAt = -1</label>
+			<nail x="-17" y="-238"/>
+			<nail x="34" y="-238"/>
+		</transition>
+		<transition>
+			<source ref="id10"/>
+			<target ref="id10"/>
+			<label kind="select" x="-323" y="-348">i : int[0,14]</label>
+			<label kind="guard" x="-323" y="-365">instCounter == faultAt</label>
+			<label kind="assignment" x="-323" y="-331">op_0 ^= 1 &lt;&lt; i,
+op_1 ^= 1 &lt;&lt; i,
+op_2 ^= 1 &lt;&lt; i,
+faultAt = -1</label>
+			<nail x="-272" y="-246"/>
+			<nail x="-212" y="-246"/>
+		</transition>
+		<transition>
+			<source ref="id18"/>
+			<target ref="id17"/>
+			<label kind="guard" x="297" y="-25">instCounter != faultAt</label>
+			<label kind="assignment" x="297" y="-8">op_1 = loc_6,
+inv ^= loc_6,
+instCounter++</label>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id18"/>
+			<label kind="guard" x="510" y="-102">instCounter != faultAt</label>
+			<label kind="assignment" x="510" y="-85">op_0 = loc_7,
+inv ^= loc_7,
+instCounter++</label>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id7"/>
+			<label kind="guard" x="314" y="-255">instCounter != faultAt</label>
+			<label kind="assignment" x="314" y="-229">inv ^= op_0,
+loc_7 = op_0,
+instCounter++</label>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id8"/>
+			<label kind="guard" x="42" y="-263">checkInv() &amp;&amp;
+instCounter != faultAt</label>
+			<label kind="assignment" x="42" y="-229">op_0 = 1234,
+inv ^= 1234,
+instCounter++</label>
+		</transition>
+		<transition>
+			<source ref="id10"/>
+			<target ref="id9"/>
+			<label kind="guard" x="-195" y="-246">instCounter != faultAt</label>
+			<label kind="assignment" x="-195" y="-229">inv ^= loc_0,
+op_0 = loc_0,
+instCounter++</label>
+		</transition>
+		<transition>
+			<source ref="id19"/>
+			<target ref="id10"/>
+			<label kind="guard" x="-408" y="-170">instCounter != faultAt</label>
+			<label kind="assignment" x="-408" y="-153">inv ^= op_0,
+loc_6 = op_0,
+instCounter++</label>
+		</transition>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id11"/>
+		</transition>
+		<transition>
+			<source ref="id16"/>
+			<target ref="id14"/>
+			<label kind="guard" x="212" y="391">instCounter != faultAt
+&amp;&amp; op_1 == op_2</label>
+			<label kind="assignment" x="212" y="423">inv ^= op_0,
+inv ^= op_1,
+inv ^= op_2,
+instCounter++</label>
+			<nail x="250" y="356"/>
+			<nail x="178" y="416"/>
+		</transition>
+		<transition>
+			<source ref="id14"/>
+			<target ref="id12"/>
+			<label kind="guard" x="-238" y="425">checkInv() &amp;&amp;
+instCounter != faultAt</label>
+			<label kind="assignment" x="-238" y="459">instCounter++</label>
+		</transition>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id12"/>
+			<label kind="guard" x="-468" y="297">instCounter != faultAt</label>
+			<label kind="assignment" x="-469" y="313">instCounter++,
+doneFault = true</label>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id13"/>
+			<label kind="guard" x="-246" y="161">checkInv() &amp;&amp;
+instCounter != faultAt</label>
+			<label kind="assignment" x="-246" y="195">instCounter++</label>
+		</transition>
+		<transition>
+			<source ref="id17"/>
+			<target ref="id16"/>
+			<label kind="guard" x="263" y="119">instCounter != faultAt</label>
+			<label kind="assignment" x="263" y="136">op_2 = 0,
+inv ^= 0,
+instCounter++</label>
+		</transition>
+		<transition>
+			<source ref="id16"/>
+			<target ref="id15"/>
+			<label kind="guard" x="51" y="119">instCounter != faultAt
+&amp;&amp; op_1 != op_2</label>
+			<label kind="assignment" x="51" y="161">inv ^= op_0,
+inv ^= op_1,
+inv ^= op_2,
+instCounter++</label>
+		</transition>
+		<transition>
+			<source ref="id20"/>
+			<target ref="id19"/>
+			<label kind="guard" x="-620" y="-263">checkInv() &amp;&amp; 
+instCounter != faultAt</label>
+			<label kind="assignment" x="-620" y="-229">op_0 = 0,
+inv ^= op_0,
+instCounter++</label>
+			<label kind="comments" x="-620" y="-289">Not authorized</label>
+		</transition>
+		<transition>
+			<source ref="id21"/>
+			<target ref="id20"/>
+			<label kind="guard" x="-816" y="-289">instCounter != faultAt</label>
+			<label kind="assignment" x="-765" y="-272">op_0 = loc_0,
+inv ^= loc_0,
+instCounter++</label>
+		</transition>
+		<transition>
+			<source ref="id21"/>
+			<target ref="id21"/>
+			<label kind="select" x="-885" y="-385">i : int[0,14]</label>
+			<label kind="guard" x="-885" y="-402">instCounter == faultAt</label>
+			<label kind="assignment" x="-885" y="-368">op_0 ^= 1 &lt;&lt; i,
+op_1 ^= 1 &lt;&lt; i,
+op_2 ^= 1 &lt;&lt; i,
+faultAt = -1</label>
+			<nail x="-749" y="-299"/>
+			<nail x="-749" y="-350"/>
+		</transition>
+		<transition>
+			<source ref="id20"/>
+			<target ref="id20"/>
+			<label kind="select" x="-953" y="-206">i : int[0,14]</label>
+			<label kind="guard" x="-953" y="-223">instCounter == faultAt</label>
+			<label kind="assignment" x="-953" y="-189">op_0 ^= 1 &lt;&lt; i,
+op_1 ^= 1 &lt;&lt; i,
+op_2 ^= 1 &lt;&lt; i,
+faultAt = -1</label>
+			<nail x="-758" y="-155"/>
+			<nail x="-758" y="-206"/>
+		</transition>
+		<transition>
+			<source ref="id19"/>
+			<target ref="id19"/>
+			<label kind="select" x="-578" y="-93">i : int[0,14]</label>
+			<label kind="guard" x="-578" y="-110">instCounter == faultAt</label>
+			<label kind="assignment" x="-578" y="-76">op_0 ^= 1 &lt;&lt; i,
+op_1 ^= 1 &lt;&lt; i,
+op_2 ^= 1 &lt;&lt; i,
+faultAt = -1</label>
+			<nail x="-433" y="-119"/>
+			<nail x="-493" y="-119"/>
+		</transition>
+		<transition>
+			<source ref="id18"/>
+			<target ref="id18"/>
+			<label kind="select" x="594" y="43">i : int[0,14]</label>
+			<label kind="guard" x="594" y="17">instCounter == faultAt</label>
+			<label kind="assignment" x="594" y="68">op_0 ^= 1 &lt;&lt; i,
+op_1 ^= 1 &lt;&lt; i,
+op_2 ^= 1 &lt;&lt; i,
+faultAt = -1</label>
+			<nail x="586" y="60"/>
+			<nail x="578" y="17"/>
+		</transition>
+		<transition>
+			<source ref="id17"/>
+			<target ref="id17"/>
+			<label kind="select" x="42" y="-34">i : int[0,14]</label>
+			<label kind="guard" x="42" y="-51">instCounter == faultAt</label>
+			<label kind="assignment" x="42" y="-17">op_0 ^= 1 &lt;&lt; i,
+op_1 ^= 1 &lt;&lt; i,
+op_2 ^= 1 &lt;&lt; i,
+faultAt = -1</label>
+			<nail x="187" y="8"/>
+			<nail x="161" y="51"/>
+		</transition>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id13"/>
+			<label kind="select" x="-494" y="119">i : int[0,14]</label>
+			<label kind="guard" x="-494" y="102">instCounter == faultAt</label>
+			<label kind="assignment" x="-494" y="136">op_0 ^= 1 &lt;&lt; i,
+op_1 ^= 1 &lt;&lt; i,
+op_2 ^= 1 &lt;&lt; i,
+faultAt = -1</label>
+			<nail x="-375" y="212"/>
+			<nail x="-324" y="161"/>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id15"/>
+			<label kind="select" x="-136" y="34">i : int[0,14]</label>
+			<label kind="guard" x="-136" y="17">instCounter == faultAt</label>
+			<label kind="assignment" x="-136" y="51">op_0 ^= 1 &lt;&lt; i,
+op_1 ^= 1 &lt;&lt; i,
+op_2 ^= 1 &lt;&lt; i,
+faultAt = -1</label>
+			<nail x="-68" y="127"/>
+			<nail x="-8" y="127"/>
+		</transition>
+		<transition>
+			<source ref="id16"/>
+			<target ref="id16"/>
+			<label kind="select" x="407" y="255">i : int[0,14]</label>
+			<label kind="guard" x="407" y="238">instCounter == faultAt</label>
+			<label kind="assignment" x="407" y="272">op_0 ^= 1 &lt;&lt; i,
+op_1 ^= 1 &lt;&lt; i,
+op_2 ^= 1 &lt;&lt; i,
+faultAt = -1</label>
+			<nail x="398" y="246"/>
+			<nail x="364" y="314"/>
+		</transition>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id12"/>
+			<label kind="select" x="-477" y="493">i : int[0,14]</label>
+			<label kind="guard" x="-477" y="476">instCounter == faultAt</label>
+			<label kind="assignment" x="-477" y="509">op_0 ^= 1 &lt;&lt; i,
+op_1 ^= 1 &lt;&lt; i,
+op_2 ^= 1 &lt;&lt; i,
+faultAt = -1</label>
+			<nail x="-290" y="493"/>
+			<nail x="-341" y="459"/>
+		</transition>
+		<transition>
+			<source ref="id14"/>
+			<target ref="id14"/>
+			<label kind="select" x="-69" y="518">i : int[0,14]</label>
+			<label kind="guard" x="-69" y="501">instCounter == faultAt</label>
+			<label kind="assignment" x="-69" y="534">op_0 ^= 1 &lt;&lt; i,
+op_1 ^= 1 &lt;&lt; i,
+op_2 ^= 1 &lt;&lt; i,
+faultAt = -1</label>
+			<nail x="-1" y="493"/>
+			<nail x="-60" y="493"/>
+		</transition>
+	</template>
+	<system>// Place template instantiations here.
+Fault = fault();
+Tinyjcl = tinyJCL();
+
+// List one or more processes to be composed into a system.
+system Fault, Tinyjcl;</system>
+	<queries>
+		<query>
+			<formula>E[&lt;=3; 1000000] (max : doneFault)
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; doneFault
+			</formula>
+			<comment>
+			</comment>
+		</query>
+	</queries>
+</nta>
