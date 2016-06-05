@@ -4,18 +4,26 @@
 
 % Countermeasures => Vis hvordan et countermeasure kunne vaere implementeret paa det eksempel
 
-\begin{frame}[fragile]{Bite}
-Færøerne transition to smart cards for personal identification
+\begin{frame}[fragile]{Introduction}
+\begin{center}
+	\begin{itemize}
+	\item Smart cards are increasingly being integrated in every day life (credit cards, Rejsekort, etc.)
+	\item The Pharaoe islands are looking to replace NemID as a public login and signature solution
+		\begin{itemize}
+		\item[-] A smart card based solution has been suggested, similar to Estonia's X-Road 
+		\end{itemize}
+	\end{itemize}
+\end{center}
 \end{frame}
 
-\begin{frame}[fragile]{How can faults be introduced?}
+\begin{frame}[fragile]{\large How can faults be introduced and why are they a problem?}
 Faults can come from natural and artificial sources\\~\\
 	\begin{itemize}
-	\item Cosmic radiation
-	\item Electric equipment
+	\item Radiation (cosmic, infrared, atomic, etc.)
 	\item Laser
-	\item Infrared radiation (e.g. light bulb)\\~\\
+    \item Disturbance from electric equipment\\~\\
 	\end{itemize}
+This can present security issues, such as validation bypassing and control of other applets on a smart card
 \end{frame}
 
 \begin{frame}[fragile]{Field of Bit \& Instruction Differentiation}
@@ -30,13 +38,14 @@ Example
 \end{frame}
 
 \begin{frame}[fragile]{Our Solution}
+\begin{center}
 \begin{figure}
-\centering
 \def\svgwidth{1.13\columnwidth}
 \input{figures/workflow_new_blank.tex}
 \caption{The workflow of the solution, from Java bytecode to UPPAAL SMC model and assessment of the modelled program.}
 \label{fig:workflow_new}
 \end{figure}
+\end{center}
 \end{frame}
 
 %\begin{frame}[fragile]{Modelling Multiple Bit Flips in UPPAAL}
