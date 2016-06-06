@@ -8,9 +8,11 @@
 \begin{center}
 	\begin{itemize}
 	\item Smart cards are increasingly being integrated in every day life (credit cards, Rejsekort, etc.)
-	\item The Faroe islands are looking to replace NemID as a public login and signature solution\footnote{https://www.version2.dk/artikel/faeroeerne-traekker-i-bremsen-banker-opgiver-nemid-krav-117941}
+	\item Estonia uses smart cards as national cards \footnote{https://e-estonia.com/component/electronic-id-card/}
 		\begin{itemize}
-		\item[-] A smart card based solution has been suggested, similar to Estonia's X-Road 
+		\item[-] Travel within EU borders
+		\item[-] Health insurance card
+		\item[-] e-Prescriptions
 		\end{itemize}
 	\end{itemize}
 \end{center}
@@ -34,7 +36,38 @@ Two main categories of sources: natural and artificial\\~\\
 \end{frame}
 
 \begin{frame}[fragile]{Field of Bit \& Instruction Differentiation}
-Example
+\begin{minipage}{.45\textwidth}
+\begin{lstlisting}[frame=single]
+...
+ 1: invokespecial #6
+ 4: ifeq 15
+ 7: new           #3
+10: dup
+11: invokespecial #7
+14: athrow
+15: aload_0
+16: invokespecial #8
+...
+\end{lstlisting}
+\end{minipage}%
+\hspace{20px}
+\begin{minipage}{0.45\textwidth}
+\begin{lstlisting}[frame=single]
+...
+ 1: invokespecial #6
+ 4: goto 15
+ 7: new           #3
+10: dup
+11: invokespecial #7
+14: athrow
+15: aload_0
+16: invokespecial #8
+...
+\end{lstlisting}
+\end{minipage}
+\begin{center}
+$ifeq = 0x60,\:goto = 0x70$
+\end{center}
 \end{frame}
 
 \begin{frame}[fragile]{Our Solution}
