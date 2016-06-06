@@ -20,19 +20,31 @@
 
 \begin{frame}[fragile]{\large How can bit flips be introduced and why are they a problem?}
 Bit flips can present security issues, such as validation bypassing and control of other applets on a smart card\\~\\
-Two main categories of sources: natural and artificial\\~\\
+Different sources:\\~\\
 	\begin{itemize}
-	\item Radiation (cosmic, infrared, atomic, etc.)
-	\item Laser
-    \item Disturbance from electric equipment\\~\\
+	\item Cosmic rays
+	\item Packaging
+	\item Lasers
+	\item Heat
+    \item Electrical equipment\\~\\
 	\end{itemize}
+	
+The sources have different levels of precision
 \end{frame}
-
 \begin{frame}[fragile]{Field of Bit \& Instruction Differentiation}
 \begin{itemize}
 \item What if FoB was not implemented in the JCVM?
 \item Mapping of instructions to opcodes could be changed to improve security
 \end{itemize}
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline PC & 4 & 5 & 6 & 7 \\ 
+\hline ifeq & X & R & R & R \\ 
+\hline goto & X & R & R & R \\ 
+\hline 
+\end{tabular} 
+\end{table}
 \end{frame}
 
 \begin{frame}[fragile]{Field of Bit \& Instruction Differentiation}
