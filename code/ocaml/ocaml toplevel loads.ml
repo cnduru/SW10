@@ -22,9 +22,9 @@ open Sawja_pack
 open JProgram;;
 
 (* Setup here! *)
-let jar_file = "java/invokeVirtual/CGI/virtualCGI.jar"
-let main_class = "VirtualCGI"
-let output = "output/virtual"
+let jar_file = "java/uppaal.jar"
+let main_class = "com.uppaal.gui.Main"
+let output = "output/uppaal"
 
 let (prta,instantiated_classes) =
   JRTA.parse_program 
