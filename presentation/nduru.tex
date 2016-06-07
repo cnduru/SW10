@@ -33,7 +33,9 @@ The sources have different levels of precision
 \begin{frame}[fragile]{Field of Bit \& Instruction Differentiation}
 \begin{itemize}
 \item We assume that FoB is implemented in the JCVM
-\item What if FoB was not implemented?
+\begin{itemize}
+\item[-] What if FoB was not implemented?
+\end{itemize}
 \end{itemize}
 \begin{table}
 \centering
@@ -78,13 +80,17 @@ The sources have different levels of precision
 \end{lstlisting}
 \end{minipage}
 \begin{center}
-$ifeq = 0x60,\:goto = 0x70$
+\#8 is a sensitive method.\\~\\$ifeq = 0x60,\:goto = 0x70$
 \end{center}
 \end{frame}
 
 \begin{frame}[fragile]{Field of Bit \& Instruction Differentiation}
 \begin{itemize}
+\item Requires modification of the JCVM
 \item What if FoB was not implemented in the JCVM?
+\begin{itemize}
+\item[-] What if FoB was not implemented?
+\end{itemize}
 \item Mapping of instructions to opcodes could be changed to improve security
 \end{itemize}
 \begin{table}
@@ -119,12 +125,17 @@ $ifeq = 0x60,\:goto = 0x70$
 %\end{frame}
 
 \begin{frame}[fragile]{Extended Solution}
-
+%\begin{figure}
+%\centering
+%\includegraphics[scale=0.65]{figures/workflow.pdf}
+%\caption{\footnotesize The extended solution, consisting of automatic rewriting, UPPAAL SMC model conversion, fault injection and countermeasure recommendation.}
+%\label{test}
+%\end{figure}
 
 \begin{figure}
-\centering
-\includegraphics[scale=0.65]{figures/workflow.pdf}
-\caption{\footnotesize The extended solution, consisting of automatic rewriting, UPPAAL SMC model conversion, fault injection and countermeasure recommendation.}
-\label{test}
+\def\svgwidth{\columnwidth}
+\input{figures/extendedsolution.tex}
+\caption{The workflow of the solution, from Java bytecode to UPPAAL SMC model and assessment of the modelled program.}
+\label{fig:workflow_new}
 \end{figure}
 \end{frame}
