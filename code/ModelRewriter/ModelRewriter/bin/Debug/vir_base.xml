@@ -31,6 +31,7 @@ broadcast chan cAclass_foo;
 broadcast chan cBclass_Bclass;
 broadcast chan cBclass_foo;
 broadcast chan cVirtual;
+broadcast chan crVirtual;
 bool opstack_fault = false;
 const int classCount = 4;
 const int _classFields[classCount] = {0, 3, 1, 1};
@@ -48,7 +49,7 @@ int alocNew(int classID){
     return ref;
 }
 
-
+int next_vid = 0;
 int clID = -1;
 int meID = -1;
 const int _classHierarchy[classCount] = {0, 0, 0, 2};
@@ -437,7 +438,7 @@ bool ifeq(){
 		<transition>
 			<source ref="id35"/>
 			<target ref="id16"/>
-			<label kind="synchronisation" x="20" y="936">cVirtual?</label>
+			<label kind="synchronisation" x="20" y="936">crVirtual?</label>
 			<label kind="assignment" x="20" y="949">t = 0, os[osp] = par0, osp_inc()</label>
 		</transition>
 		<transition>
@@ -474,7 +475,7 @@ bool ifeq(){
 		<transition>
 			<source ref="id37"/>
 			<target ref="id19"/>
-			<label kind="synchronisation" x="20" y="1131">cVirtual?</label>
+			<label kind="synchronisation" x="20" y="1131">crVirtual?</label>
 			<label kind="assignment" x="20" y="1144">t = 0, os[osp] = par0, osp_inc()</label>
 		</transition>
 		<transition>
@@ -523,7 +524,7 @@ bool ifeq(){
 		<transition>
 			<source ref="id39"/>
 			<target ref="id24"/>
-			<label kind="synchronisation" x="20" y="1456">cVirtual?</label>
+			<label kind="synchronisation" x="20" y="1456">crVirtual?</label>
 			<label kind="assignment" x="20" y="1469">t = 0, os[osp] = par0, osp_inc()</label>
 		</transition>
 		<transition>
@@ -560,7 +561,7 @@ bool ifeq(){
 		<transition>
 			<source ref="id41"/>
 			<target ref="id27"/>
-			<label kind="synchronisation" x="20" y="1651">cVirtual?</label>
+			<label kind="synchronisation" x="20" y="1651">crVirtual?</label>
 			<label kind="assignment" x="20" y="1664">t = 0, os[osp] = par0, osp_inc()</label>
 		</transition>
 		<transition>
@@ -1410,18 +1411,19 @@ bool ifeq(){
 	</template>
 	<template>
 		<name>Virtual</name>
+		<parameter>int vid</parameter>
 		<location id="id77" x="0" y="0">
 			<name x="20" y="-13">Invoke</name>
-			<label kind="exponentialrate" x="130" y="0">1</label>
+			<label kind="exponentialrate" x="-25" y="0">1</label>
 		</location>
 		<location id="id78" x="0" y="100">
 			<name x="20" y="87">Resolver</name>
 			<label kind="exponentialrate" x="130" y="100">1</label>
 			<urgent/>
 		</location>
-		<location id="id79" x="200" y="50">
-			<name x="220" y="37">Error</name>
-			<label kind="exponentialrate" x="330" y="50">1</label>
+		<location id="id79" x="204" y="59">
+			<name x="224" y="46">Error</name>
+			<label kind="exponentialrate" x="334" y="59">1</label>
 		</location>
 		<location id="id80" x="-100" y="300">
 			<name x="-80" y="287">Returner</name>
@@ -1444,8 +1446,10 @@ bool ifeq(){
 		<transition>
 			<source ref="id77"/>
 			<target ref="id78"/>
+			<label kind="guard" x="110" y="0">vid == next_vid</label>
 			<label kind="synchronisation" x="20" y="0">cVirtual?</label>
-			<label kind="assignment" x="20" y="13">clID = H(par0)</label>
+			<label kind="assignment" x="20" y="13">clID = H(par0),
+next_vid = (next_vid + 1) % 3</label>
 		</transition>
 		<transition>
 			<source ref="id78"/>
@@ -1457,7 +1461,7 @@ bool ifeq(){
 		<transition>
 			<source ref="id80"/>
 			<target ref="id77"/>
-			<label kind="synchronisation" x="-153" y="255">cVirtual!</label>
+			<label kind="synchronisation" x="-153" y="255">crVirtual!</label>
 			<nail x="-51" y="212"/>
 			<nail x="-51" y="51"/>
 		</transition>
@@ -1470,7 +1474,7 @@ bool ifeq(){
 		<transition>
 			<source ref="id81"/>
 			<target ref="id80"/>
-			<label kind="synchronisation" x="20" y="200">cAclass_bar?</label>
+			<label kind="synchronisation" x="17" y="204">cAclass_bar?</label>
 		</transition>
 		<transition>
 			<source ref="id78"/>
@@ -1483,7 +1487,7 @@ bool ifeq(){
 		<transition>
 			<source ref="id82"/>
 			<target ref="id80"/>
-			<label kind="synchronisation" x="20" y="200">cAclass_foo?</label>
+			<label kind="synchronisation" x="212" y="204">cAclass_foo?</label>
 			<nail x="153" y="246"/>
 			<nail x="-8" y="246"/>
 		</transition>
@@ -1498,20 +1502,20 @@ bool ifeq(){
 		<transition>
 			<source ref="id83"/>
 			<target ref="id80"/>
-			<label kind="synchronisation" x="20" y="200">cBclass_foo?</label>
+			<label kind="synchronisation" x="416" y="204">cBclass_foo?</label>
 			<nail x="340" y="263"/>
 			<nail x="25" y="263"/>
 		</transition>
 		<transition>
 			<source ref="id78"/>
 			<target ref="id78"/>
-			<label kind="guard" x="-229" y="34">clID != 0 
+			<label kind="guard" x="-246" y="34">clID != 0 
 &amp;&amp; !(signature(clID, 3, 2) 
 || signature(clID, 5, 2) 
 || signature(clID, 5, 3))</label>
-			<label kind="assignment" x="-255" y="110">clID = classHierarchy(clID)</label>
-			<nail x="-85" y="136"/>
-			<nail x="-85" y="76"/>
+			<label kind="assignment" x="-272" y="110">clID = classHierarchy(clID)</label>
+			<nail x="-68" y="136"/>
+			<nail x="-68" y="76"/>
 		</transition>
 	</template>
 	<system>iVirtual_Virtual = Virtual_Virtual();
@@ -1522,8 +1526,11 @@ iAclass_Aclass = Aclass_Aclass();
 iAclass_foo = Aclass_foo();
 iBclass_Bclass = Bclass_Bclass();
 iBclass_foo = Bclass_foo();
-iVirtual = Virtual();
-system iVirtual_Virtual,iVirtual_install,iVirtual_main,iAclass_bar,iAclass_Aclass,iAclass_foo,iBclass_Bclass,iBclass_foo,iVirtual;
+iVirtual = Virtual(0);
+iVirtual2 = Virtual(1);
+iVirtual3 = Virtual(2);
+system iVirtual_Virtual,iVirtual_install,iVirtual_main,iAclass_bar,iAclass_Aclass,iAclass_foo,iBclass_Bclass,iBclass_foo,
+iVirtual,iVirtual2,iVirtual3;
 </system>
 	<queries>
 		<query>
