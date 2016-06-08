@@ -2,7 +2,7 @@
 
 % Rewriting => Giv et overview over de tools, konkret eksempel paa hvordan man implementerer det i et af tools'ene, kig paa hvilke features der er i hvert tool og stil det mere systematisk op end i rapporten
 
-\begin{frame}{Annotate Bytecode}{}
+\begin{frame}{Bytecode Annotation}{}
 \begin{itemize}
 \item When does a fault compromise the code?
 \item What is a sensitive region and how do we determine a successful run?
@@ -12,15 +12,16 @@
 \end{frame}
 %focused security, selectiv
 
-\begin{frame}[fragile]{Annotate Bytecode}{}
-\begin{minipage}{.30\textwidth}
+\begin{frame}[fragile]{Bytecode Annotation}{}
+\begin{minipage}{.35\textwidth}
 \begin{itemize}
-\item Parameter set.
+\item Define variable sets
+\item Selective countermeasure implementation
 \item Assessments
 \end{itemize}
 
 \end{minipage}%
-\hspace{20px}
+\hspace{10px}
 \begin{minipage}{0.60\textwidth}
 \begin{lstlisting}[frame=single]
 public int stub()
@@ -28,7 +29,7 @@ public int stub()
  	          //*INVALID(2,4)
  2: ireturn 
 
-public int foo()
+public int foo() //*Secure
 ...
  4: ifeq 9
  7: aload_5 
@@ -72,16 +73,3 @@ public int bar() { return 4; }
 
 \end{block}
 \end{frame}
-
-
-\begin{frame}{Full Automation}{}
-\begin{itemize}
-\item UPPAAL CLI
-\end{itemize}
-\textit{figure of cli}
-\end{frame}
-
-\begin{frame}{Demo}{}
-example.
-\end{frame}
-
